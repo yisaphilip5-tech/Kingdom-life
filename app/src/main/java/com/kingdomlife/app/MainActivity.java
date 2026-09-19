@@ -464,7 +464,8 @@ addCard("✅ Challenges", "Complete daily challenges to track your progress.", v
 
         buttons[i].setOnClickListener(v -> {
             if (selected == correctAnswer) {
-                feedback.setText("✅ Correct! Jeremiah 29:11.");
+    totalPoints += 10;
+    feedback.setText("✅ Correct! Jeremiah 29:11.\n+10 points");
             } else {
                 feedback.setText("❌ Not quite. The correct answer is Jeremiah 29:11.");
             }
