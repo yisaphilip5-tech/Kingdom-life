@@ -378,6 +378,9 @@ addCard(
         buttons[i].setOnClickListener(v -> {
             if (selected == correctAnswer) {
     totalPoints += 10;
+              prefs.edit()
+        .putInt("totalPoints", totalPoints)
+        .apply();
     feedback.setText("✅ Correct! Excellent memory!\n+10 points");
             } else {
                 feedback.setText("❌ Not quite. Try to remember Jeremiah 29:11.");
