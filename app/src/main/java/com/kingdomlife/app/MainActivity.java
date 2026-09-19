@@ -663,8 +663,9 @@ addCard("✅ Challenges", "Complete daily challenges to track your progress.", v
         feedback.setTextSize(18);
 
         if (selected == answers[currentQuestion]) {
-            score += 10;
-            correctAnswers++;
+    score += 10;
+    totalPoints += 10;
+    correctAnswers++;
             feedback.setText("✅ Correct! +10 points");
         } else {
             wrongAnswers++;
