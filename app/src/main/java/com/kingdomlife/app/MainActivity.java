@@ -117,8 +117,11 @@ public class MainActivity extends Activity {
         "🎯 Daily Challenge",
         "Read today's verse, say a short prayer, and do one act of kindness.",
         v -> {
-            dailyStreak++;
-            totalPoints += 5;
+            if (!challengeCompletedToday) {
+    dailyStreak++;
+    totalPoints += 5;
+    challengeCompletedToday = true;
+            }
 
             showMessage(
                     "✅ Challenge Completed",
