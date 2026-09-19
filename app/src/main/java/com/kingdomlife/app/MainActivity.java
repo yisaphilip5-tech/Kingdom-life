@@ -379,14 +379,83 @@ public class MainActivity extends Activity {
     addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
     }
   void showGuessReference() {
-    showMessage(
-            "🔄 Guess the Reference",
-            "Which Bible reference contains this verse?\n\n" +
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔄 Guess the Reference");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Which Bible reference contains this verse?");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    TextView verse = new TextView(this);
+    verse.setText(
             "\"For I know the thoughts that I think toward you, saith the LORD, " +
-            "thoughts of peace, and not of evil, to give you an expected end.\"\n\n" +
-            "Answer: Jeremiah 29:11 — KJV"
+            "thoughts of peace, and not of evil, to give you an expected end.\""
     );
-  }
+    verse.setTextSize(18);
+    verse.setTextColor(darkText);
+    verse.setPadding(10, 15, 10, 20);
+    content.addView(verse);
+
+    String[] choices = {
+            "Jeremiah 29:11",
+            "Psalm 23:1",
+            "John 3:16",
+            "Philippians 4:13"
+    };
+
+    int correctAnswer = 0;
+
+    TextView feedback = new TextView(this);
+    feedback.setTextSize(18);
+    feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    feedback.setTextColor(darkText);
+    feedback.setPadding(0, 15, 0, 15);
+
+    Button[] buttons = new Button[choices.length];
+
+    for (int i = 0; i < choices.length; i++) {
+        final int selected = i;
+
+        buttons[i] = new Button(this);
+        buttons[i].setText(choices[i]);
+        buttons[i].setTextSize(17);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        params.setMargins(0, 6, 0, 6);
+        content.addView(buttons[i], params);
+
+        buttons[i].setOnClickListener(v -> {
+            if (selected == correctAnswer) {
+                feedback.setText("✅ Correct! Jeremiah 29:11.");
+            } else {
+                feedback.setText("❌ Not quite. The correct answer is Jeremiah 29:11.");
+            }
+
+            for (Button button : buttons) {
+                button.setEnabled(false);
+            }
+        });
+    }
+
+    content.addView(feedback);
+
+    addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
+                                  }
     void showGameMenu() {
         stopTimer();
         content.removeAllViews();
