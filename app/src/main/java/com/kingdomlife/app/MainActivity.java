@@ -385,7 +385,8 @@ addCard("✅ Challenges", "Complete daily challenges to track your progress.", v
 
         buttons[i].setOnClickListener(v -> {
             if (selected == correctAnswer) {
-                feedback.setText("✅ Correct! The missing word is \"expected\".");
+    totalPoints += 10;
+    feedback.setText("✅ Correct! The missing word is \"expected\".\n+10 points");
             } else {
                 feedback.setText("❌ Not quite. The correct answer is \"expected\".");
             }
