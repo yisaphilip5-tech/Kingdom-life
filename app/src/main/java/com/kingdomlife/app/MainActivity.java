@@ -139,6 +139,11 @@ lastChallengeDate = prefs.getString("lastChallengeDate", "");
         totalPoints += 5;
         challengeCompletedToday = true;
         lastChallengeDate = today;
+      prefs.edit()
+        .putInt("dailyStreak", dailyStreak)
+        .putInt("totalPoints", totalPoints)
+        .putString("lastChallengeDate", lastChallengeDate)
+        .apply();
     }
             showMessage(
                     "✅ Challenge Completed",
