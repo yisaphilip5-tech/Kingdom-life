@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
     int score = 0;
   int totalPoints = 0;
   int learnedVerses = 0;
+  int dailyStreak = 0;
     int correctAnswers = 0;
     int wrongAnswers = 0;
 
