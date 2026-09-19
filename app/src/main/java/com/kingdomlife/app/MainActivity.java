@@ -159,14 +159,6 @@ public class MainActivity extends Activity {
         content.addView(card, cardParams);
     }
 
-    void showVerse() {
-        showMessage(
-                "📖 Verse of the Day",
-                "Jeremiah 29:11 — KJV\n\n" +
-                        "For I know the thoughts that I think toward you, saith the LORD, " +
-                        "thoughts of peace, and not of evil, to give you an expected end."
-        );
-    }
 
     void showVerse() {
     stopTimer();
@@ -211,6 +203,15 @@ public class MainActivity extends Activity {
                         "Reflection:\nWhat is one good thing you can do for someone today?"
         );
     }
+  void showPrayer() {
+    showMessage(
+            "🙏 Prayer for the Day",
+            "Lord, guide us today and give us wisdom in every decision we make. " +
+            "Strengthen our faith, help us walk in love and truth, and give us peace. " +
+            "Help us to be a blessing to those around us.\n\n" +
+            "Amen."
+    );
+  }
 
     void showMemoryVerse() {
     stopTimer();
