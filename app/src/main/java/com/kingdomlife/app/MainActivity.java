@@ -221,14 +221,76 @@ public class MainActivity extends Activity {
         );
     }
     void showGuessVerse() {
-        showMessage(
-                "📖 Guess the Verse",
-                "Jeremiah 29:11 — KJV\n\n" +
-                "Choose the correct verse for this reference.\n\n" +
-                "For I know the thoughts that I think toward you, saith the LORD, " +
-                "thoughts of peace, and not of evil, to give you an expected end."
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 Guess the Verse");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Which verse belongs to this reference?");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    TextView reference = new TextView(this);
+    reference.setText("📖 Jeremiah 29:11 — KJV");
+    reference.setTextSize(21);
+    reference.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    reference.setTextColor(darkText);
+    reference.setGravity(Gravity.CENTER);
+    reference.setPadding(10, 15, 10, 20);
+    content.addView(reference);
+
+    String[] choices = {
+            "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
+            "The LORD is my shepherd; I shall not want.",
+            "I can do all things through Christ which strengtheneth me.",
+            "Trust in the LORD with all thine heart; and lean not unto thine own understanding."
+    };
+
+    int correctAnswer = 0;
+
+    TextView feedback = new TextView(this);
+    feedback.setTextSize(18);
+    feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    feedback.setTextColor(darkText);
+    feedback.setPadding(0, 15, 0, 15);
+
+    Button[] buttons = new Button[choices.length];
+
+    for (int i = 0; i < choices.length; i++) {
+        final int selected = i;
+
+        buttons[i] = new Button(this);
+        buttons[i].setText(choices[i]);
+        buttons[i].setTextSize(15);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
         );
-    }
+
+        params.setMargins(0, 6, 0, 6);
+        content.addView(buttons[i], params);
+
+        buttons[i].setOnClickListener(v -> {
+            if (selected == correctAnswer) {
+                feedback.setText("✅ Correct! Excellent memory!");
+            } else {
+                feedback.setText("❌ Not quite. Try to remember Jeremiah 29:11.");
+            }
+
+            for (Button button : buttons) {
+                button.setEnabled(false);
+            }
+       
 
     void showCompleteVerse() {
         showMessage(
