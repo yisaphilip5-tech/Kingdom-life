@@ -168,13 +168,39 @@ public class MainActivity extends Activity {
         );
     }
 
-    void showPrayer() {
+    void showVerse() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 Verse of the Day");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView verse = new TextView(this);
+    verse.setText(
+            "Jeremiah 29:11 — KJV\n\n" +
+            "For I know the thoughts that I think toward you, saith the LORD, " +
+            "thoughts of peace, and not of evil, to give you an expected end."
+    );
+    verse.setTextSize(18);
+    verse.setTextColor(darkText);
+    verse.setPadding(10, 15, 10, 25);
+    content.addView(verse);
+
+    addButton("🧠 Mark as Learned", v -> {
+        totalPoints += 5;
         showMessage(
-                "🙏 Prayer for the Day",
-                "Lord, guide us today and give us wisdom in every decision we make. " +
-                        "Strengthen our faith, help us walk in love and truth, and give us peace. " +
-                        "Help us to be a blessing to those around us.\n\nAmen."
+                "✅ Verse Learned",
+                "Jeremiah 29:11 has been marked as learned.\n\n" +
+                "+5 points"
         );
+    });
+
+    addButton("⬅️ Back to Home", v -> showHome());
     }
 
     void showThought() {
