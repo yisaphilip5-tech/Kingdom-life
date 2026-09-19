@@ -220,7 +220,12 @@ lastChallengeDate = prefs.getString("lastChallengeDate", "");
 
     addButton("🧠 Mark as Learned", v -> {
       learnedVerses++;
-        totalPoints += 5;
+totalPoints += 5;
+
+prefs.edit()
+        .putInt("learnedVerses", learnedVerses)
+        .putInt("totalPoints", totalPoints)
+        .apply();
         showMessage(
                 "✅ Verse Learned",
                 "Jeremiah 29:11 has been marked as learned.\n\n" +
