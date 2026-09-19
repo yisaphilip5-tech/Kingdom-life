@@ -185,6 +185,7 @@ public class MainActivity extends Activity {
     content.addView(verse);
 
     addButton("🧠 Mark as Learned", v -> {
+      learnedVerses++;
         totalPoints += 5;
         showMessage(
                 "✅ Verse Learned",
