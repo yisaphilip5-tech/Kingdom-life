@@ -190,7 +190,7 @@ public class MainActivity extends Activity {
     content.removeAllViews();
 
     TextView title = new TextView(this);
-    title.setText("🧠 Memory Verse");
+    title.setText("🧠 Memory Verse Quiz");
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
@@ -198,7 +198,7 @@ public class MainActivity extends Activity {
     content.addView(title);
 
     TextView instruction = new TextView(this);
-    instruction.setText("Can you remember this KJV verse?");
+    instruction.setText("Choose the correct KJV verse for this reference:");
     instruction.setTextSize(18);
     instruction.setTextColor(darkText);
     instruction.setPadding(0, 0, 0, 15);
@@ -213,20 +213,53 @@ public class MainActivity extends Activity {
     reference.setPadding(15, 20, 15, 20);
     content.addView(reference);
 
-    addButton(
-            "I know the verse!",
-            v -> showMessage(
-                    "🧠 Memory Verse",
-                    "Jeremiah 29:11 — KJV\n\n" +
-                    "For I know the thoughts that I think toward you, saith the LORD, " +
-                    "thoughts of peace, and not of evil, to give you an expected end.\n\n" +
-                    "🎉 Keep practicing and hide God's Word in your heart!"
-            )
-    );
+    String[] choices = {
+            "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
+            "The LORD is my shepherd; I shall not want.",
+            "I can do all things through Christ which strengtheneth me.",
+            "Trust in the LORD with all thine heart; and lean not unto thine own understanding."
+    };
 
-    addButton("⬅️ Back to Home", v -> showHome());
+    int correctAnswer = 0;
+    TextView feedback = new TextView(this);
+    feedback.setTextSize(18);
+    feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    feedback.setTextColor(darkText);
+    feedback.setPadding(0, 15, 0, 15);
+
+    for (int i = 0; i < choices.length; i++) {
+        final int selected = i;
+
+        Button option = new Button(this);
+        option.setText(choices[i]);
+        option.setTextSize(15);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        params.setMargins(0, 6, 0, 6);
+        content.addView(option, params);
+
+        option.setOnClickListener(v -> {
+            if (selected == correctAnswer) {
+                feedback.setText("✅ Correct! Excellent memory!");
+            } else {
+                feedback.setText("❌ Not quite. The correct answer is the first option.");
+            }
+
+            for (int j = 0; j < choices.length; j++) {
+                ((Button) content.getChildAt(content.indexOfChild(option) - selected + j))
+                        .setEnabled(false);
+            }
+        });
     }
 
+    content.addView(feedback);
+
+    addButton("⬅️ Back to Home", v -> showHome());
+      }
     void showAbout() {
         showMessage(
                 "ℹ️ About Kingdom Life",
