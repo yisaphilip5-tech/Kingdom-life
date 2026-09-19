@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
   int totalPoints = 0;
   int learnedVerses = 0;
   int dailyStreak = 0;
+  boolean challengeCompletedToday = false;
     int correctAnswers = 0;
     int wrongAnswers = 0;
 
