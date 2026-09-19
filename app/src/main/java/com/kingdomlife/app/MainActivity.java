@@ -186,12 +186,45 @@ public class MainActivity extends Activity {
     }
 
     void showMemoryVerse() {
-        showMessage(
-                "🧠 Memory Verse",
-                "Jeremiah 29:11 — KJV\n\n" +
-                        "Can you remember what this verse says?\n\n" +
-                        "The interactive Memory Verse system will be added in the next update."
-        );
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🧠 Memory Verse");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Can you remember this KJV verse?");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    TextView reference = new TextView(this);
+    reference.setText("📖 Jeremiah 29:11");
+    reference.setTextSize(22);
+    reference.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    reference.setTextColor(darkText);
+    reference.setGravity(Gravity.CENTER);
+    reference.setPadding(15, 20, 15, 20);
+    content.addView(reference);
+
+    addButton(
+            "I know the verse!",
+            v -> showMessage(
+                    "🧠 Memory Verse",
+                    "Jeremiah 29:11 — KJV\n\n" +
+                    "For I know the thoughts that I think toward you, saith the LORD, " +
+                    "thoughts of peace, and not of evil, to give you an expected end.\n\n" +
+                    "🎉 Keep practicing and hide God's Word in your heart!"
+            )
+    );
+
+    addButton("⬅️ Back to Home", v -> showHome());
     }
 
     void showAbout() {
