@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
     int currentQuestion = 0;
     int score = 0;
   int totalPoints = 0;
+  int learnedVerses = 0;
     int correctAnswers = 0;
     int wrongAnswers = 0;
 
