@@ -225,7 +225,7 @@ public class MainActivity extends Activity {
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    addCard("⭐ Points", "0 points earned so far.", v -> {});
+    addCard("⭐ Points", totalPoints + " points earned so far.", v -> {});
 addCard("🎮 Game Scores", "Complete Bible games to build your score.", v -> {});
 addCard("🧠 Memory Verses", "Keep practicing to learn more verses.", v -> {});
 addCard("🔥 Daily Streak", "Start your daily journey today.", v -> {});
