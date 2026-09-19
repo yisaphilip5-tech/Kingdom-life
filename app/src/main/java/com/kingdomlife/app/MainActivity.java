@@ -270,7 +270,13 @@ public class MainActivity extends Activity {
 addCard("🎮 Game Scores", "Complete Bible games to build your score.", v -> {});
 addCard("🧠 Memory Verses", learnedVerses + " verse(s) learned.", v -> {});
 addCard("🔥 Daily Streak", dailyStreak + " day(s) streak.", v -> {});
-addCard("✅ Challenges", "Complete daily challenges to track your progress.", v -> {});
+addCard(
+        "✅ Challenges",
+        challengeCompletedToday
+                ? "Today's challenge completed."
+                : "Today's challenge not completed yet.",
+        v -> {}
+);
 
     addButton("⬅️ Back to Home", v -> showHome());
   }
