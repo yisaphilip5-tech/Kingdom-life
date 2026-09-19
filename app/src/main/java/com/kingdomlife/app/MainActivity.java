@@ -60,7 +60,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
       prefs = getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE);
-
+dailyStreak = prefs.getInt("dailyStreak", 0);
+totalPoints = prefs.getInt("totalPoints", 0);
+learnedVerses = prefs.getInt("learnedVerses", 0);
+lastChallengeDate = prefs.getString("lastChallengeDate", "");
         LinearLayout main = new LinearLayout(this);
         main.setOrientation(LinearLayout.VERTICAL);
         main.setBackgroundColor(Color.WHITE);
