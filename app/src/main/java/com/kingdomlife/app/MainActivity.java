@@ -1,9 +1,10 @@
-                package com.kingdomlife.app;
+                      package com.kingdomlife.app;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.CountDownTimer;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,34 @@ public class MainActivity extends Activity {
 
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
+
+    String[] questions = {
+            "Who built the ark?",
+            "Which Bible book comes first?",
+            "Who was swallowed by a great fish?",
+            "Who defeated Goliath?",
+            "How many disciples did Jesus choose?"
+    };
+
+    String[][] options = {
+            {"Moses", "Noah", "David", "Abraham"},
+            {"Exodus", "Genesis", "Matthew", "Psalms"},
+            {"Jonah", "Peter", "Paul", "Daniel"},
+            {"Solomon", "David", "Samuel", "Joshua"},
+            {"10", "11", "12", "14"}
+    };
+
+    int[] answers = {1, 1, 0, 1, 2};
+
+    int currentQuestion = 0;
+    int score = 0;
+    int correctAnswers = 0;
+    int wrongAnswers = 0;
+
+    boolean answered = false;
+    CountDownTimer timer;
+
+    int timeLimit = 30000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +80,7 @@ public class MainActivity extends Activity {
     }
 
     void showHome() {
+        stopTimer();
         content.removeAllViews();
 
         TextView welcome = new TextView(this);
@@ -88,7 +118,7 @@ public class MainActivity extends Activity {
                 )
         );
 
-        addButton("🎮 Bible Games", v -> showGames());
+        addButton("🎮 Bible Games", v -> showGameMenu());
 
         addButton("🧠 Memory Verse", v -> showMemoryVerse());
 
@@ -132,8 +162,8 @@ public class MainActivity extends Activity {
         showMessage(
                 "📖 Verse of the Day",
                 "Jeremiah 29:11 — KJV\n\n" +
-                "For I know the thoughts that I think toward you, saith the LORD, " +
-                "thoughts of peace, and not of evil, to give you an expected end."
+                        "For I know the thoughts that I think toward you, saith the LORD, " +
+                        "thoughts of peace, and not of evil, to give you an expected end."
         );
     }
 
@@ -141,8 +171,8 @@ public class MainActivity extends Activity {
         showMessage(
                 "🙏 Prayer for the Day",
                 "Lord, guide us today and give us wisdom in every decision we make. " +
-                "Strengthen our faith, help us walk in love and truth, and give us peace. " +
-                "Help us to be a blessing to those around us.\n\nAmen."
+                        "Strengthen our faith, help us walk in love and truth, and give us peace. " +
+                        "Help us to be a blessing to those around us.\n\nAmen."
         );
     }
 
@@ -150,8 +180,8 @@ public class MainActivity extends Activity {
         showMessage(
                 "💭 Food for Thought",
                 "Kindness does not always require something big. " +
-                "A simple word of encouragement, patience, or helping someone can make a difference.\n\n" +
-                "Reflection:\nWhat is one good thing you can do for someone today?"
+                        "A simple word of encouragement, patience, or helping someone can make a difference.\n\n" +
+                        "Reflection:\nWhat is one good thing you can do for someone today?"
         );
     }
 
@@ -159,8 +189,8 @@ public class MainActivity extends Activity {
         showMessage(
                 "🧠 Memory Verse",
                 "Jeremiah 29:11 — KJV\n\n" +
-                "Can you remember what this verse says?\n\n" +
-                "The full Memory Verse challenge system will be added next."
+                        "Can you remember what this verse says?\n\n" +
+                        "The interactive Memory Verse system will be added in the next update."
         );
     }
 
@@ -168,12 +198,13 @@ public class MainActivity extends Activity {
         showMessage(
                 "ℹ️ About Kingdom Life",
                 "Kingdom Life is a Christian app designed to encourage Bible learning, " +
-                "prayer, reflection, daily challenges, and fun Bible activities.\n\n" +
-                "Version 2.1"
+                        "prayer, reflection, daily challenges, and fun Bible activities.\n\n" +
+                        "Version 2.2"
         );
     }
 
-    void showGames() {
+    void showGameMenu() {
+        stopTimer();
         content.removeAllViews();
 
         TextView title = new TextView(this);
@@ -185,22 +216,228 @@ public class MainActivity extends Activity {
 
         content.addView(title);
 
-        addButton("❓ Fill in the Gap", v -> showMessage(
-                "Fill in the Gap",
-                "In the beginning God created the _____ and the earth."
-        ));
+        TextView instruction = new TextView(this);
+        instruction.setText("Choose a difficulty level:");
+        instruction.setTextSize(18);
+        instruction.setTextColor(darkText);
+        instruction.setPadding(0, 0, 0, 15);
 
-        addButton("🧩 Bible Puzzle", v -> showMessage(
-                "Bible Puzzle",
-                "Who built the ark? Think carefully!"
-        ));
+        content.addView(instruction);
 
-        addButton("🏆 Bible Quiz", v -> showMessage(
-                "Bible Quiz",
-                "Which Bible book comes first?\n\nA) Exodus\nB) Genesis\nC) Matthew"
-        ));
+        addButton("🟢 Easy — 30 seconds", v -> startGame(30000));
+
+        addButton("🟡 Medium — 20 seconds", v -> startGame(20000));
+
+        addButton("🔴 Hard — 10 seconds", v -> startGame(10000));
 
         addButton("⬅️ Back to Home", v -> showHome());
+    }
+
+    void startGame(int milliseconds) {
+        stopTimer();
+
+        timeLimit = milliseconds;
+        currentQuestion = 0;
+        score = 0;
+        correctAnswers = 0;
+        wrongAnswers = 0;
+
+        showQuestion();
+    }
+
+    void showQuestion() {
+        stopTimer();
+        content.removeAllViews();
+
+        answered = false;
+
+        TextView progress = new TextView(this);
+        progress.setText("Question " + (currentQuestion + 1) + " of " + questions.length);
+        progress.setTextSize(18);
+        progress.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        progress.setTextColor(darkText);
+        progress.setPadding(0, 10, 0, 10);
+
+        content.addView(progress);
+
+        TextView timerText = new TextView(this);
+        timerText.setTextSize(18);
+        timerText.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        timerText.setTextColor(darkText);
+        timerText.setGravity(Gravity.CENTER);
+        timerText.setPadding(0, 5, 0, 15);
+
+        content.addView(timerText);
+
+        TextView question = new TextView(this);
+        question.setText(questions[currentQuestion]);
+        question.setTextSize(22);
+        question.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        question.setTextColor(darkText);
+        question.setPadding(0, 10, 0, 20);
+
+        content.addView(question);
+
+        Button[] answerButtons = new Button[4];
+
+        for (int i = 0; i < 4; i++) {
+            final int selected = i;
+
+            answerButtons[i] = new Button(this);
+            answerButtons[i].setText(options[currentQuestion][i]);
+            answerButtons[i].setTextSize(17);
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+            params.setMargins(0, 5, 0, 5);
+
+            content.addView(answerButtons[i], params);
+
+            answerButtons[i].setOnClickListener(v ->
+                    answerQuestion(selected, answerButtons)
+            );
+        }
+
+        TextView result = new TextView(this);
+        result.setTextSize(18);
+        result.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        result.setPadding(0, 15, 0, 10);
+        content.addView(result);
+
+        LinearLayout navigation = new LinearLayout(this);
+        navigation.setOrientation(LinearLayout.HORIZONTAL);
+
+        Button previous = new Button(this);
+        previous.setText("← Previous");
+        previous.setTextSize(15);
+        previous.setEnabled(currentQuestion > 0);
+
+        Button next = new Button(this);
+        next.setText(currentQuestion == questions.length - 1
+                ? "Finish →"
+                : "Next →");
+        next.setTextSize(15);
+
+        navigation.addView(previous, new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        ));
+
+        navigation.addView(next, new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        ));
+
+        content.addView(navigation);
+
+        previous.setOnClickListener(v -> {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        });
+
+        next.setOnClickListener(v -> {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        timer = new CountDownTimer(timeLimit, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                timerText.setText("⏱️ Time: "
+                        + ((millisUntilFinished + 999) / 1000)
+                        + " seconds");
+            }
+
+            public void onFinish() {
+                if (!answered) {
+                    answered = true;
+                    wrongAnswers++;
+                    result.setText("⏰ Time's up! The correct answer is: "
+                            + options[currentQuestion][answers[currentQuestion]]);
+
+                    for (Button button : answerButtons) {
+                        button.setEnabled(false);
+                    }
+                }
+            }
+        }.start();
+    }
+
+    void answerQuestion(int selected, Button[] buttons) {
+        if (answered) {
+            return;
+        }
+
+        answered = true;
+        stopTimer();
+
+        TextView feedback = new TextView(this);
+        feedback.setTextSize(18);
+
+        if (selected == answers[currentQuestion]) {
+            score += 10;
+            correctAnswers++;
+            feedback.setText("✅ Correct! +10 points");
+        } else {
+            wrongAnswers++;
+            feedback.setText("❌ Wrong! Correct answer: "
+                    + options[currentQuestion][answers[currentQuestion]]);
+        }
+
+        feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        feedback.setTextColor(darkText);
+
+        content.addView(feedback, 3);
+
+        for (Button button : buttons) {
+            button.setEnabled(false);
+        }
+    }
+
+    void showResults() {
+        stopTimer();
+        content.removeAllViews();
+
+        TextView title = new TextView(this);
+        title.setText("🏆 Game Complete!");
+        title.setTextSize(26);
+        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        title.setTextColor(darkText);
+        title.setGravity(Gravity.CENTER);
+        title.setPadding(0, 20, 0, 20);
+
+        content.addView(title);
+
+        TextView results = new TextView(this);
+        results.setText(
+                "Score: " + score + "\n\n" +
+                        "✅ Correct: " + correctAnswers + "\n" +
+                        "❌ Wrong: " + wrongAnswers + "\n\n" +
+                        "Great job! Keep learning God's Word."
+        );
+        results.setTextSize(20);
+        results.setTextColor(darkText);
+        results.setGravity(Gravity.CENTER);
+        results.setPadding(0, 10, 0, 25);
+
+        content.addView(results);
+
+        addButton("🔄 Play Again", v -> startGame(timeLimit));
+
+        addButton("⬅️ Back to Games", v -> showGameMenu());
+
+        addButton("🏠 Back to Home", v -> showHome());
     }
 
     void addButton(String text, View.OnClickListener listener) {
@@ -240,4 +477,17 @@ public class MainActivity extends Activity {
 
         addButton("⬅️ Back to Home", v -> showHome());
     }
+
+    void stopTimer() {
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
     }
+
+    @Override
+    protected void onDestroy() {
+        stopTimer();
+        super.onDestroy();
+    }
+  }
