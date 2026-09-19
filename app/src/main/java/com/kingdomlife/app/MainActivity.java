@@ -303,7 +303,8 @@ addCard("✅ Challenges", "Complete daily challenges to track your progress.", v
 
         buttons[i].setOnClickListener(v -> {
             if (selected == correctAnswer) {
-                feedback.setText("✅ Correct! Excellent memory!");
+    totalPoints += 10;
+    feedback.setText("✅ Correct! Excellent memory!\n+10 points");
             } else {
                 feedback.setText("❌ Not quite. Try to remember Jeremiah 29:11.");
             }
