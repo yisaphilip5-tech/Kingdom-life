@@ -224,11 +224,11 @@ public class MainActivity extends Activity {
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    addCard("⭐ Points", "0 points earned so far.");
-    addCard("🎮 Game Scores", "Complete Bible games to build your score.");
-    addCard("🧠 Memory Verses", "Keep practicing to learn more verses.");
-    addCard("🔥 Daily Streak", "Start your daily journey today.");
-    addCard("✅ Challenges", "Complete daily challenges to track your progress.");
+    addCard("⭐ Points", "0 points earned so far.", v -> {});
+addCard("🎮 Game Scores", "Complete Bible games to build your score.", v -> {});
+addCard("🧠 Memory Verses", "Keep practicing to learn more verses.", v -> {});
+addCard("🔥 Daily Streak", "Start your daily journey today.", v -> {});
+addCard("✅ Challenges", "Complete daily challenges to track your progress.", v -> {});
 
     addButton("⬅️ Back to Home", v -> showHome());
   }
