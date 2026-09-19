@@ -547,9 +547,14 @@ addCard(
         buttons[i].setOnClickListener(v -> {
             if (selected == correctAnswer) {
     totalPoints += 10;
+
+    prefs.edit()
+            .putInt("totalPoints", totalPoints)
+            .apply();
+
     feedback.setText("✅ Correct! Jeremiah 29:11.\n+10 points");
-            } else {
-                feedback.setText("❌ Not quite. The correct answer is Jeremiah 29:11.");
+} else {
+    feedback.setText("❌ Not quite. The correct answer is Jeremiah 29:11.");
             }
 
             for (Button button : buttons) {
