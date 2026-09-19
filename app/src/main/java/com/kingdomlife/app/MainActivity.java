@@ -212,6 +212,26 @@ public class MainActivity extends Activity {
 
     addButton("⬅️ Back to Home", v -> showHome());
     }
+  void showProgress() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🏆 Progress");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addCard("⭐ Points", "0 points earned so far.");
+    addCard("🎮 Game Scores", "Complete Bible games to build your score.");
+    addCard("🧠 Memory Verses", "Keep practicing to learn more verses.");
+    addCard("🔥 Daily Streak", "Start your daily journey today.");
+    addCard("✅ Challenges", "Complete daily challenges to track your progress.");
+
+    addButton("⬅️ Back to Home", v -> showHome());
+  }
     void showAbout() {
         showMessage(
                 "ℹ️ About Kingdom Life",
