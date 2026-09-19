@@ -121,12 +121,19 @@ public class MainActivity extends Activity {
         "🎯 Daily Challenge",
         "Read today's verse, say a short prayer, and do one act of kindness.",
         v -> {
-            if (!challengeCompletedToday) {
-    dailyStreak++;
-    totalPoints += 5;
-    challengeCompletedToday = true;
-            }
+    String today = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            .format(new Date());
 
+    if (!today.equals(lastChallengeDate)) {
+        challengeCompletedToday = false;
+    }
+
+    if (!challengeCompletedToday) {
+        dailyStreak++;
+        totalPoints += 5;
+        challengeCompletedToday = true;
+        lastChallengeDate = today;
+    }
             showMessage(
                     "✅ Challenge Completed",
                     "Today's challenge has been completed!\n\n" +
