@@ -740,6 +740,9 @@ addCard(
     score += 10;
     totalPoints += 10;
     correctAnswers++;
+          prefs.edit()
+        .putInt("totalPoints", totalPoints)
+        .apply();
             feedback.setText("✅ Correct! +10 points");
         } else {
             wrongAnswers++;
