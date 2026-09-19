@@ -113,13 +113,20 @@ public class MainActivity extends Activity {
         );
 
         addCard(
-                "🎯 Daily Challenge",
-                "Read today's verse, say a short prayer, and do one act of kindness.",
-                v -> showMessage(
-                        "Daily Challenge",
-                        "Today's challenge:\n\n1. Read Jeremiah 29:11.\n2. Say a short prayer.\n3. Do one kind thing for someone.\n\nComplete all three today!"
-                )
-        );
+        "🎯 Daily Challenge",
+        "Read today's verse, say a short prayer, and do one act of kindness.",
+        v -> {
+            dailyStreak++;
+            totalPoints += 5;
+
+            showMessage(
+                    "✅ Challenge Completed",
+                    "Today's challenge has been completed!\n\n" +
+                    "🔥 Streak: " + dailyStreak + " day(s)\n" +
+                    "+5 points"
+            );
+        }
+);
 
         addButton("🎮 Bible Games", v -> showGameMenu());
 
