@@ -308,14 +308,84 @@ public class MainActivity extends Activity {
         );
     }
 
-    void showGuessReference() {
-        showMessage(
-                "🔄 Guess the Reference",
-                "Which Bible reference contains this verse?\n\n" +
-                "\"For I know the thoughts that I think toward you, saith the LORD, " +
-                "thoughts of peace, and not of evil, to give you an expected end.\"\n\n" +
-                "Answer: Jeremiah 29:11 — KJV"
+    void showCompleteVerse() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("✍️ Complete the Verse");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Choose the missing words from Jeremiah 29:11.");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    TextView verse = new TextView(this);
+    verse.setText(
+            "📖 Jeremiah 29:11 — KJV\n\n" +
+            "For I know the thoughts that I think toward you, saith the LORD, " +
+            "thoughts of peace, and not of evil, to give you an ________ end."
+    );
+    verse.setTextSize(18);
+    verse.setTextColor(darkText);
+    verse.setPadding(10, 15, 10, 20);
+    content.addView(verse);
+
+    String[] choices = {
+            "expected",
+            "peaceful",
+            "wonderful",
+            "joyful"
+    };
+
+    int correctAnswer = 0;
+
+    TextView feedback = new TextView(this);
+    feedback.setTextSize(18);
+    feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    feedback.setTextColor(darkText);
+    feedback.setPadding(0, 15, 0, 15);
+
+    Button[] buttons = new Button[choices.length];
+
+    for (int i = 0; i < choices.length; i++) {
+        final int selected = i;
+
+        buttons[i] = new Button(this);
+        buttons[i].setText(choices[i]);
+        buttons[i].setTextSize(17);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
         );
+
+        params.setMargins(0, 6, 0, 6);
+        content.addView(buttons[i], params);
+
+        buttons[i].setOnClickListener(v -> {
+            if (selected == correctAnswer) {
+                feedback.setText("✅ Correct! The missing word is \"expected\".");
+            } else {
+                feedback.setText("❌ Not quite. The correct answer is \"expected\".");
+            }
+
+            for (Button button : buttons) {
+                button.setEnabled(false);
+            }
+        });
+    }
+
+    content.addView(feedback);
+
+    addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
     }
     void showGameMenu() {
         stopTimer();
