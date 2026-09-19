@@ -463,9 +463,14 @@ addCard(
         buttons[i].setOnClickListener(v -> {
             if (selected == correctAnswer) {
     totalPoints += 10;
+
+    prefs.edit()
+            .putInt("totalPoints", totalPoints)
+            .apply();
+
     feedback.setText("✅ Correct! The missing word is \"expected\".\n+10 points");
-            } else {
-                feedback.setText("❌ Not quite. The correct answer is \"expected\".");
+} else {
+    feedback.setText("❌ Not quite. The correct answer is \"expected\".");
             }
 
             for (Button button : buttons) {
