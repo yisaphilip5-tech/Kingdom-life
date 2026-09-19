@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
   int learnedVerses = 0;
   int dailyStreak = 0;
   boolean challengeCompletedToday = false;
+  String lastChallengeDate = "";
     int correctAnswers = 0;
     int wrongAnswers = 0;
 
