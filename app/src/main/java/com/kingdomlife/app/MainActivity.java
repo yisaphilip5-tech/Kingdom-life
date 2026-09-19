@@ -288,15 +288,15 @@ public class MainActivity extends Activity {
             }
 
             for (Button button : buttons) {
-    button.setEnabled(false);
-}
-});
+                button.setEnabled(false);
+            }
+        });
+    }
 
-content.addView(feedback);
+    content.addView(feedback);
 
-addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
-}
-
+    addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
+    }
        
 
     void showCompleteVerse() {
