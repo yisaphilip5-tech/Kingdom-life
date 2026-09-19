@@ -300,15 +300,6 @@ public class MainActivity extends Activity {
        
 
     void showCompleteVerse() {
-        showMessage(
-                "✍️ Complete the Verse",
-                "Jeremiah 29:11 — KJV\n\n" +
-                "For I know the thoughts that I think toward you, saith the LORD, " +
-                "thoughts of peace, and not of evil, to give you an ________ end."
-        );
-    }
-
-    void showCompleteVerse() {
     stopTimer();
     content.removeAllViews();
 
@@ -387,6 +378,15 @@ public class MainActivity extends Activity {
 
     addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
     }
+  void showGuessReference() {
+    showMessage(
+            "🔄 Guess the Reference",
+            "Which Bible reference contains this verse?\n\n" +
+            "\"For I know the thoughts that I think toward you, saith the LORD, " +
+            "thoughts of peace, and not of evil, to give you an expected end.\"\n\n" +
+            "Answer: Jeremiah 29:11 — KJV"
+    );
+  }
     void showGameMenu() {
         stopTimer();
         content.removeAllViews();
