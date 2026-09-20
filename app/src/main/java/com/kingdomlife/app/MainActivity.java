@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
