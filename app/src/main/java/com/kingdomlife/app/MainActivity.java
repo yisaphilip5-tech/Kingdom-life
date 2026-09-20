@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import java.text.SimpleDateFormat;
@@ -343,38 +344,47 @@ addButton("ℹ️ About Kingdom Life", v -> showAbout());
     }
 
     void addCard(String heading, String message, View.OnClickListener listener) {
-        LinearLayout card = new LinearLayout(this);
-        card.setOrientation(LinearLayout.VERTICAL);
-        card.setPadding(20, 18, 20, 18);
-        card.setBackgroundColor(cardColor);
-        card.setOnClickListener(listener);
 
-        LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+    LinearLayout card = new LinearLayout(this);
+    card.setOrientation(LinearLayout.VERTICAL);
+    card.setPadding(24, 20, 24, 20);
 
-        cardParams.setMargins(0, 8, 0, 8);
+    // Rounded card background
+    GradientDrawable cardBackground = new GradientDrawable();
+    cardBackground.setColor(cardColor);
+    cardBackground.setCornerRadius(28);
+    card.setBackground(cardBackground);
 
-        TextView headingView = new TextView(this);
-        headingView.setText(heading);
-        headingView.setTextSize(20);
-        headingView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        headingView.setTextColor(darkText);
+    // Small elevation for depth
+    card.setElevation(5);
 
-        card.addView(headingView);
+    card.setOnClickListener(listener);
 
-        TextView messageView = new TextView(this);
-        messageView.setText(message);
-        messageView.setTextSize(16);
-        messageView.setTextColor(darkText);
-        messageView.setPadding(0, 10, 0, 0);
+    LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+    );
 
-        card.addView(messageView);
+    cardParams.setMargins(0, 10, 0, 10);
 
-        content.addView(card, cardParams);
-    }
+    TextView headingView = new TextView(this);
+    headingView.setText(heading);
+    headingView.setTextSize(20);
+    headingView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    headingView.setTextColor(darkText);
 
+    card.addView(headingView);
+
+    TextView messageView = new TextView(this);
+    messageView.setText(message);
+    messageView.setTextSize(16);
+    messageView.setTextColor(darkText);
+    messageView.setPadding(0, 10, 0, 0);
+
+    card.addView(messageView);
+
+    content.addView(card, cardParams);
+        }
 
     void showVerse() {
     stopTimer();
