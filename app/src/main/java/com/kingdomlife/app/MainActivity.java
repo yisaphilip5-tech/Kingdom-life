@@ -732,7 +732,7 @@ addButton("⬅️ Back to Home", v -> showHome());
 } else {
     addButton("🔒 Level 3 — Locked", v -> {});
         }
-
+addButton("🧩 Bible Scramble", v -> showBibleScramble());
         addButton("⬅️ Back to Home", v -> showHome());
     }
 
