@@ -77,8 +77,42 @@ int[] answers = {
         2,
         1
 };
+String[] level2Questions = {
+        "Which prophet confronted the prophets of Baal on Mount Carmel?",
+        "Who interpreted Pharaoh's dreams in Egypt?",
+        "Which judge of Israel was known for his great strength?",
+        "Who was the father of King Solomon?",
+        "Which disciple was also called Didymus?"
+};
 
+String[][] level2Options = {
+        {"Elijah", "Isaiah", "Jeremiah", "Ezekiel"},
+        {"Joseph", "Daniel", "Moses", "Aaron"},
+        {"Gideon", "Samson", "Samuel", "Jephthah"},
+        {"Saul", "David", "Samuel", "Jesse"},
+        {"Peter", "Thomas", "Andrew", "Philip"}
+};
+
+int[] level2Answers = {0, 0, 1, 1, 1};
+    String[] level3Questions = {
+        "Which king of Judah was shown the shadow moving backward as a sign?",
+        "Which prophet married Gomer?",
+        "Who was the first Christian martyr recorded in Acts?",
+        "Which judge made a vow before going into battle against the Ammonites?",
+        "Which king asked God for wisdom rather than riches or long life?"
+};
+
+String[][] level3Options = {
+        {"Hezekiah", "Josiah", "Uzziah", "Manasseh"},
+        {"Hosea", "Amos", "Joel", "Micah"},
+        {"Stephen", "James", "Barnabas", "Philip"},
+        {"Jephthah", "Gideon", "Samson", "Ehud"},
+        {"Solomon", "David", "Saul", "Rehoboam"}
+};
+
+int[] level3Answers = {0, 0, 0, 0, 0};
     int currentQuestion = 0;
+    int currentLevel = 1;
     int score = 0;
   int totalPoints = 0;
   int learnedVerses = 0;
@@ -674,11 +708,20 @@ addButton("⬅️ Back to Home", v -> showHome());
 
         content.addView(instruction);
 
-        addButton("🟢 Easy — 30 seconds", v -> startGame(30000));
+        addButton("🟢 Level 1 — Easy", v -> {
+    currentLevel = 1;
+    startGame(30000);
+});
 
-        addButton("🟡 Medium — 20 seconds", v -> startGame(20000));
+        addButton("🟡 Level 2 — Medium", v -> {
+    currentLevel = 2;
+    startGame(20000);
+});
 
-        addButton("🔴 Hard — 10 seconds", v -> startGame(10000));
+        addButton("🔴 Level 3 — Hard", v -> {
+    currentLevel = 3;
+    startGame(10000);
+});
 
         addButton("⬅️ Back to Home", v -> showHome());
     }
@@ -687,10 +730,10 @@ addButton("⬅️ Back to Home", v -> showHome());
         stopTimer();
 
         timeLimit = milliseconds;
-        currentQuestion = 0;
-        score = 0;
-        correctAnswers = 0;
-        wrongAnswers = 0;
+       currentQuestion = 0;
+score = 0;
+correctAnswers = 0;
+wrongAnswers = 0; 
 
         showQuestion();
     }
@@ -700,7 +743,14 @@ addButton("⬅️ Back to Home", v -> showHome());
         content.removeAllViews();
 
         answered = false;
+TextView levelText = new TextView(this);
+levelText.setText("🏆 Level " + currentLevel);
+levelText.setTextSize(20);
+levelText.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+levelText.setTextColor(darkText);
+levelText.setPadding(0, 10, 0, 5);
 
+content.addView(levelText);
         TextView progress = new TextView(this);
         progress.setText("Question " + (currentQuestion + 1) + " of " + questions.length);
         progress.setTextSize(18);
@@ -720,7 +770,13 @@ addButton("⬅️ Back to Home", v -> showHome());
         content.addView(timerText);
 
         TextView question = new TextView(this);
-        question.setText(questions[currentQuestion]);
+        if (currentLevel == 2) {
+    question.setText(level2Questions[currentQuestion]);
+} else if (currentLevel == 3) {
+    question.setText(level3Questions[currentQuestion]);
+} else {
+    question.setText(questions[currentQuestion]);
+        }
         question.setTextSize(22);
         question.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
         question.setTextColor(darkText);
@@ -734,7 +790,13 @@ addButton("⬅️ Back to Home", v -> showHome());
             final int selected = i;
 
             answerButtons[i] = new Button(this);
-            answerButtons[i].setText(options[currentQuestion][i]);
+            if (currentLevel == 2) {
+    answerButtons[i].setText(level2Options[currentQuestion][i]);
+} else if (currentLevel == 3) {
+    answerButtons[i].setText(level3Options[currentQuestion][i]);
+} else {
+    answerButtons[i].setText(options[currentQuestion][i]);
+            }
             answerButtons[i].setTextSize(17);
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -813,8 +875,17 @@ addButton("⬅️ Back to Home", v -> showHome());
                 if (!answered) {
                     answered = true;
                     wrongAnswers++;
-                    result.setText("⏰ Time's up! The correct answer is: "
-                            + options[currentQuestion][answers[currentQuestion]]);
+                    String correctOption;
+
+if (currentLevel == 2) {
+    correctOption = level2Options[currentQuestion][level2Answers[currentQuestion]];
+} else if (currentLevel == 3) {
+    correctOption = level3Options[currentQuestion][level3Answers[currentQuestion]];
+} else {
+    correctOption = options[currentQuestion][answers[currentQuestion]];
+}
+
+result.setText("⏰ Time's up! The correct answer is: " + correctOption);
 
                     for (Button button : answerButtons) {
                         button.setEnabled(false);
@@ -835,7 +906,17 @@ addButton("⬅️ Back to Home", v -> showHome());
         TextView feedback = new TextView(this);
         feedback.setTextSize(18);
 
-        if (selected == answers[currentQuestion]) {
+        int correctAnswer;
+
+if (currentLevel == 2) {
+    correctAnswer = level2Answers[currentQuestion];
+} else if (currentLevel == 3) {
+    correctAnswer = level3Answers[currentQuestion];
+} else {
+    correctAnswer = answers[currentQuestion];
+}
+
+if (selected == correctAnswer) {
     score += 10;
     totalPoints += 10;
     correctAnswers++;
@@ -845,8 +926,17 @@ addButton("⬅️ Back to Home", v -> showHome());
             feedback.setText("✅ Correct! +10 points");
         } else {
             wrongAnswers++;
-            feedback.setText("❌ Wrong! Correct answer: "
-                    + options[currentQuestion][answers[currentQuestion]]);
+            String correctOption;
+
+if (currentLevel == 2) {
+    correctOption = level2Options[currentQuestion][level2Answers[currentQuestion]];
+} else if (currentLevel == 3) {
+    correctOption = level3Options[currentQuestion][level3Answers[currentQuestion]];
+} else {
+    correctOption = options[currentQuestion][answers[currentQuestion]];
+}
+
+feedback.setText("❌ Wrong! Correct answer: " + correctOption);
         }
 
         feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
