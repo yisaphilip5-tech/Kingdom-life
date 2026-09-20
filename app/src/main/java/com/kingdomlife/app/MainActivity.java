@@ -216,8 +216,56 @@ new Handler().postDelayed(() -> {
 
     void showHome() {
         stopTimer();
-        content.removeAllViews();
-        TextView dateText = new TextView(this);
+content.removeAllViews();
+
+/* ===== KINGDOM LIFE HEADER ===== */
+
+TextView kingdomTitle = new TextView(this);
+kingdomTitle.setText("👑 Kingdom Life");
+kingdomTitle.setTextSize(28);
+kingdomTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+kingdomTitle.setTextColor(darkText);
+kingdomTitle.setGravity(Gravity.CENTER);
+kingdomTitle.setPadding(5, 20, 5, 4);
+
+content.addView(kingdomTitle);
+
+TextView kingdomSubtitle = new TextView(this);
+kingdomSubtitle.setText("Grow in faith. Live with purpose.");
+kingdomSubtitle.setTextSize(15);
+kingdomSubtitle.setTextColor(darkText);
+kingdomSubtitle.setGravity(Gravity.CENTER);
+kingdomSubtitle.setPadding(5, 0, 5, 12);
+
+content.addView(kingdomSubtitle);
+
+/* ===== DATE ===== */
+
+TextView dateText = new TextView(this);
+
+String currentDate = new SimpleDateFormat(
+        "EEEE, MMMM d, yyyy",
+        Locale.getDefault()
+).format(new Date());
+
+dateText.setText("📅 " + currentDate);
+dateText.setTextSize(15);
+dateText.setTextColor(darkText);
+dateText.setGravity(Gravity.CENTER);
+dateText.setPadding(0, 5, 0, 15);
+
+content.addView(dateText);
+
+/* ===== WELCOME ===== */
+
+TextView welcome = new TextView(this);
+welcome.setText("🌅 Welcome to Kingdom Life");
+welcome.setTextSize(22);
+welcome.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+welcome.setTextColor(darkText);
+welcome.setPadding(5, 10, 5, 18);
+
+content.addView(welcome);
 
 String currentDate = new SimpleDateFormat(
         "EEEE, MMMM d, yyyy",
