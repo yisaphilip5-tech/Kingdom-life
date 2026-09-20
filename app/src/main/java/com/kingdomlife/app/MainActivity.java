@@ -382,12 +382,46 @@ prefs.edit()
     }
 
     void showThought() {
-        showMessage(
-                "💭 Food for Thought",
-                "Kindness does not always require something big. " +
-                        "A simple word of encouragement, patience, or helping someone can make a difference.\n\n" +
-                        "Reflection:\nWhat is one good thing you can do for someone today?"
-        );
+    String[] dailyThoughts = {
+            "💭 Food for Thought\n\n" +
+            "Kindness does not always require something big. " +
+            "A simple word of encouragement, patience, or helping someone can make a difference.\n\n" +
+            "Reflection:\nWhat is one good thing you can do for someone today?",
+
+            "💭 Food for Thought\n\n" +
+            "Your words can bring hope to someone who needs encouragement.\n\n" +
+            "Reflection:\nHow can you use your words to encourage someone today?",
+
+            "💭 Food for Thought\n\n" +
+            "Patience helps us respond with wisdom instead of reacting in anger.\n\n" +
+            "Reflection:\nIs there a situation where you can practice more patience?",
+
+            "💭 Food for Thought\n\n" +
+            "Gratitude helps us notice the good things we often overlook.\n\n" +
+            "Reflection:\nWhat are three things you are thankful for today?",
+
+            "💭 Food for Thought\n\n" +
+            "Forgiveness can help us let go of anger and choose peace.\n\n" +
+            "Reflection:\nIs there someone you can choose to forgive?",
+
+            "💭 Food for Thought\n\n" +
+            "Serving others is one way to show love through action.\n\n" +
+            "Reflection:\nWhat helpful thing can you do for someone today?",
+
+            "💭 Food for Thought\n\n" +
+            "Doing what is right matters even when nobody is watching.\n\n" +
+            "Reflection:\nWhat good choice can you make today?"
+    };
+
+    int thoughtIndex = (int) (
+            System.currentTimeMillis() / (1000L * 60 * 60 * 24)
+            % dailyThoughts.length
+    );
+
+    showMessage(
+            "💭 Food for Thought",
+            dailyThoughts[thoughtIndex]
+    );
     }
   void showPrayer() {
     showMessage(
