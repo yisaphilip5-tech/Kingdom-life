@@ -238,10 +238,25 @@ content.addView(dateText);
                 "How can you show kindness, patience, and faith to someone today?",
                 v -> showThought()
         );
+String[] dailyChallenges = {
+        "Read today's verse, say a short prayer, and do one act of kindness.",
+        "Read a Bible passage, thank God for three things, and encourage someone.",
+        "Spend a few quiet minutes in prayer and help someone who needs it.",
+        "Read today's verse twice, reflect on it, and show patience to someone.",
+        "Say a prayer for someone else and do one helpful thing without being asked.",
+        "Read a Bible passage and write down one thing you learned from it.",
+        "Thank God for the week, read today's verse, and encourage someone."
+};
+
+int challengeIndex = (int) (
+        System.currentTimeMillis() / (1000L * 60 * 60 * 24)
+        % dailyChallenges.length
+);
+
 
         addCard(
         "🎯 Daily Challenge",
-        "Read today's verse, say a short prayer, and do one act of kindness.",
+dailyChallenges[challengeIndex],
         v -> {
     String today = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
             .format(new Date());
