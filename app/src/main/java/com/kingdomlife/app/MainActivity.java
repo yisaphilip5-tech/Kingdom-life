@@ -334,15 +334,9 @@ dailyChallenges[challengeIndex],
         }
 );
 
-        addButton("🎮 Bible Games", v -> showGameMenu());
-
-addButton("🧠 Memory Verse", v -> showMemoryVerse());
-
-addButton("🏆 Progress", v -> showProgress());
+        addFeatureGrid();
 
 addButton("ℹ️ About Kingdom Life", v -> showAbout());
-    }
-
     void addCard(String heading, String message, View.OnClickListener listener) {
 
     LinearLayout card = new LinearLayout(this);
@@ -1361,6 +1355,64 @@ content.addView(answerInput);
 
         params.setMargins(0, 8, 0, 8);
         content.addView(button, params);
+    }
+    void addFeatureGrid() {
+
+    LinearLayout grid = new LinearLayout(this);
+    grid.setOrientation(LinearLayout.VERTICAL);
+
+    LinearLayout row1 = new LinearLayout(this);
+    row1.setOrientation(LinearLayout.HORIZONTAL);
+
+    LinearLayout row2 = new LinearLayout(this);
+    row2.setOrientation(LinearLayout.HORIZONTAL);
+
+    String[] titles = {
+            "🎮 Bible Quiz",
+            "🧠 Memory Verse",
+            "🧩 Bible Puzzles",
+            "🎯 Daily Challenge",
+            "📈 Progress",
+            "🏆 Achievements"
+    };
+
+    View.OnClickListener[] actions = {
+            v -> showGameMenu(),
+            v -> showMemoryVerse(),
+            v -> showGameMenu(),
+            v -> showMessage("🎯 Daily Challenge", "Complete today's challenge to earn points and build your streak."),
+            v -> showProgress(),
+            v -> showProgress()
+    };
+
+    for (int i = 0; i < titles.length; i++) {
+
+        Button button = new Button(this);
+        button.setText(titles[i]);
+        button.setTextSize(14);
+        button.setAllCaps(false);
+        button.setOnClickListener(actions[i]);
+
+        LinearLayout.LayoutParams params =
+                new LinearLayout.LayoutParams(
+                        0,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        1
+                );
+
+        params.setMargins(6, 6, 6, 6);
+
+        if (i < 2) {
+            row1.addView(button, params);
+        } else if (i < 4) {
+            row2.addView(button, params);
+        }
+    }
+
+    grid.addView(row1);
+    grid.addView(row2);
+
+    content.addView(grid);
     }
 
     void showMessage(String heading, String message) {
