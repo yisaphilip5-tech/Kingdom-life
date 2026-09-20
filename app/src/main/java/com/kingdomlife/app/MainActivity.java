@@ -1368,6 +1368,9 @@ content.addView(answerInput);
     LinearLayout row2 = new LinearLayout(this);
     row2.setOrientation(LinearLayout.HORIZONTAL);
 
+    LinearLayout row3 = new LinearLayout(this);
+    row3.setOrientation(LinearLayout.HORIZONTAL);
+
     String[] titles = {
             "🎮 Bible Quiz",
             "🧠 Memory Verse",
@@ -1381,7 +1384,8 @@ content.addView(answerInput);
             v -> showGameMenu(),
             v -> showMemoryVerse(),
             v -> showGameMenu(),
-            v -> showMessage("🎯 Daily Challenge", "Complete today's challenge to earn points and build your streak."),
+            v -> showMessage("🎯 Daily Challenge",
+                    "Complete today's challenge to earn points and build your streak."),
             v -> showProgress(),
             v -> showProgress()
     };
@@ -1407,15 +1411,17 @@ content.addView(answerInput);
             row1.addView(button, params);
         } else if (i < 4) {
             row2.addView(button, params);
+        } else {
+            row3.addView(button, params);
         }
     }
 
     grid.addView(row1);
     grid.addView(row2);
+    grid.addView(row3);
 
     content.addView(grid);
     }
-
     void showMessage(String heading, String message) {
         content.removeAllViews();
 
