@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.EditText;
 import android.content.SharedPreferences;
 
 public class MainActivity extends Activity {
@@ -23,7 +24,33 @@ public class MainActivity extends Activity {
 
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
-
+String[] scrambleWords = {
+    "JESUS",
+    "MOSES",
+    "DAVID",
+    "NOAH",
+    "ABRAHAM",
+    "SAMSON",
+    "SOLOMON",
+    "JERUSALEM",
+    "BETHLEHEM",
+    "NAZARETH",
+    "GALILEE",
+    "JORDAN",
+    "GENESIS",
+    "EXODUS",
+    "PSALMS",
+    "PROVERBS",
+    "MATTHEW",
+    "MARK",
+    "LUKE",
+    "JOHN",
+    "PETER",
+    "PAUL",
+    "STEPHEN",
+    "ELIJAH",
+    "DANIEL"
+};
     String[] questions = {
         "Who built the ark?",
         "Which Bible book comes first?",
@@ -115,6 +142,8 @@ int[] level3Answers = {0, 0, 0, 0, 0};
     int currentLevel = 1;
     int highestLevelUnlocked = 1;
     int score = 0;
+    int scrambleQuestion = 0;
+int scrambleScore = 0;
   int totalPoints = 0;
   int learnedVerses = 0;
   int dailyStreak = 0;
@@ -1013,59 +1042,139 @@ void showBibleScramble() {
     stopTimer();
     content.removeAllViews();
 
+    scrambleQuestion = 0;
+    scrambleScore = 0;
+
+    showScrambleQuestion();
+}
+    void showScrambleQuestion() {
+    content.removeAllViews();
+
+    String word = scrambleWords[scrambleQuestion];
+
     TextView title = new TextView(this);
     title.setText("🧩 Bible Scramble");
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(0, 15, 0, 15);
     content.addView(title);
 
-    TextView message = new TextView(this);
-    message.setText(
-            "Unscramble the Bible word and choose the correct answer."
+    TextView progress = new TextView(this);
+    progress.setText(
+            "Question " + (scrambleQuestion + 1) + " of 25"
     );
-    message.setTextSize(18);
-    message.setTextColor(darkText);
-    message.setPadding(0, 0, 0, 20);
-    content.addView(message);
+    progress.setTextSize(18);
+    progress.setTextColor(darkText);
+    progress.setPadding(0, 0, 0, 15);
+    content.addView(progress);
 
-    addButton("✝️ JESUS", v -> {
+    TextView scrambled = new TextView(this);
+    scrambled.setText("Unscramble: " + scrambleWord(word));
+    scrambled.setTextSize(26);
+    scrambled.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    scrambled.setTextColor(darkText);
+    scrambled.setGravity(Gravity.CENTER);
+    scrambled.setPadding(0, 20, 0, 25);
+    content.addView(scrambled);
+EditText answerInput = new EditText(this);
+answerInput.setHint("Type your answer here");
+answerInput.setTextSize(18);
+answerInput.setSingleLine(true);
+content.addView(answerInput);
+    addButton("✅ Submit Answer", v -> {
+    String userAnswer = answerInput.getText().toString().trim();
+
+    if (userAnswer.equalsIgnoreCase(word)) {
+        scrambleScore += 5;
         totalPoints += 5;
 
         prefs.edit()
                 .putInt("totalPoints", totalPoints)
                 .apply();
 
-        showScrambleResult("✅ Correct! +5 points");
+        TextView feedback = new TextView(this);
+        feedback.setText("🎉 Correct! +5 points");
+        feedback.setTextSize(20);
+        feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        feedback.setTextColor(darkText);
+        feedback.setGravity(Gravity.CENTER);
+        feedback.setPadding(0, 15, 0, 15);
+        content.addView(feedback, 3);
+
+        answerInput.setEnabled(false);
+        addButton("➡️ Next Question", nextView -> {
+    if (scrambleQuestion < scrambleWords.length - 1) {
+        scrambleQuestion++;
+        showScrambleQuestion();
+    } else {
+        showScrambleFinalResult();
+    }
+});
+    } else {
+        TextView feedback = new TextView(this);
+        feedback.setText("❌ Not quite. Try again!");
+        feedback.setTextSize(18);
+        feedback.setTextColor(darkText);
+        feedback.setGravity(Gravity.CENTER);
+        feedback.setPadding(0, 15, 0, 15);
+        content.addView(feedback, 3);
+    }
+});
+
+    addButton("➡️ Skip", v -> {
+        if (scrambleQuestion < scrambleWords.length - 1) {
+            scrambleQuestion++;
+            showScrambleQuestion();
+        } else {
+            showScrambleFinalResult();
+        }
     });
 
-    addButton("📖 MOSES", v -> {
-        showScrambleResult("❌ Not this one. Try again!");
-    });
-
-    addButton("👑 DAVID", v -> {
-        showScrambleResult("❌ Not this one. Try again!");
-    });
-
-    addButton("⬅️ Back to Games", v -> showGameMenu());
-}
-    void showScrambleResult(String message) {
-    content.removeAllViews();
-
-    TextView result = new TextView(this);
-    result.setText(message);
-    result.setTextSize(22);
-    result.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    result.setTextColor(darkText);
-    result.setGravity(Gravity.CENTER);
-    result.setPadding(0, 40, 0, 30);
-
-    content.addView(result);
-
-    addButton("🧩 Try Again", v -> showBibleScramble());
     addButton("⬅️ Back to Games", v -> showGameMenu());
     }
+    String scrambleWord(String word) {
+    char[] letters = word.toCharArray();
+
+    for (int i = letters.length - 1; i > 0; i--) {
+        int j = (int) (Math.random() * (i + 1));
+
+        char temp = letters[i];
+        letters[i] = letters[j];
+        letters[j] = temp;
+    }
+
+    return new String(letters);
+    }
+    void showScrambleFinalResult() {
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🏆 Scramble Complete!");
+    title.setTextSize(26);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 25, 0, 20);
+    content.addView(title);
+
+    TextView result = new TextView(this);
+    result.setText(
+            "You completed all 25 questions!\n\n" +
+            "🧩 Scramble Score: " + scrambleScore + "\n" +
+            "⭐ Total Points: " + totalPoints
+    );
+    result.setTextSize(20);
+    result.setTextColor(darkText);
+    result.setGravity(Gravity.CENTER);
+    result.setPadding(0, 10, 0, 30);
+    content.addView(result);
+
+    addButton("🔄 Play Again", v -> showBibleScramble());
+    addButton("⬅️ Back to Games", v -> showGameMenu());
+    addButton("🏠 Back to Home", v -> showHome());
+    }
+    
     void addButton(String text, View.OnClickListener listener) {
         Button button = new Button(this);
         button.setText(text);
