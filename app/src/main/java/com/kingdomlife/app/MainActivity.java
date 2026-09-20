@@ -1,4 +1,5 @@
-                      package com.kingdomlife.app;
+
+package com.kingdomlife.app;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -156,9 +157,11 @@ lastChallengeDate = prefs.getString("lastChallengeDate", "");
 
         addButton("🎮 Bible Games", v -> showGameMenu());
 
-        addButton("🧠 Memory Verse", v -> showMemoryVerse());
+addButton("🧠 Memory Verse", v -> showMemoryVerse());
 
-        addButton("ℹ️ About Kingdom Life", v -> showAbout());
+addButton("🏆 Progress", v -> showProgress());
+
+addButton("ℹ️ About Kingdom Life", v -> showAbout());
     }
 
     void addCard(String heading, String message, View.OnClickListener listener) {
