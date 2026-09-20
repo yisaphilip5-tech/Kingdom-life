@@ -743,6 +743,15 @@ wrongAnswers = 0;
         content.removeAllViews();
 
         answered = false;
+        int questionCount;
+
+if (currentLevel == 2) {
+    questionCount = level2Questions.length;
+} else if (currentLevel == 3) {
+    questionCount = level3Questions.length;
+} else {
+    questionCount = questions.length;
+}
 TextView levelText = new TextView(this);
 levelText.setText("🏆 Level " + currentLevel);
 levelText.setTextSize(20);
@@ -752,7 +761,7 @@ levelText.setPadding(0, 10, 0, 5);
 
 content.addView(levelText);
         TextView progress = new TextView(this);
-        progress.setText("Question " + (currentQuestion + 1) + " of " + questions.length);
+        progress.setText("Question " + (currentQuestion + 1) + " of " + questionCount);
         progress.setTextSize(18);
         progress.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
         progress.setTextColor(darkText);
@@ -828,9 +837,9 @@ content.addView(levelText);
         previous.setEnabled(currentQuestion > 0);
 
         Button next = new Button(this);
-        next.setText(currentQuestion == questions.length - 1
-                ? "Finish →"
-                : "Next →");
+        next.setText(currentQuestion == questionCount - 1
+        ? "Finish →"
+        : "Next →");
         next.setTextSize(15);
 
         navigation.addView(previous, new LinearLayout.LayoutParams(
@@ -855,11 +864,11 @@ content.addView(levelText);
         });
 
         next.setOnClickListener(v -> {
-            if (currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                showQuestion();
-            } else {
-                showResults();
+            if (currentQuestion < questionCount - 1) {
+    currentQuestion++;
+    showQuestion();
+} else {
+    showResults();
             }
         });
 
