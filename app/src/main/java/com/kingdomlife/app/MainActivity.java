@@ -25,22 +25,58 @@ public class MainActivity extends Activity {
     int cardColor = Color.rgb(245, 247, 250);
 
     String[] questions = {
-            "Who built the ark?",
-            "Which Bible book comes first?",
-            "Who was swallowed by a great fish?",
-            "Who defeated Goliath?",
-            "How many disciples did Jesus choose?"
-    };
+        "Who built the ark?",
+        "Which Bible book comes first?",
+        "Who was swallowed by a great fish?",
+        "Who defeated Goliath?",
+        "How many disciples did Jesus choose?",
+        "Who led the Israelites out of Egypt?",
+        "What was the first miracle of Jesus recorded in John?",
+        "Who was the mother of Jesus?",
+        "Who betrayed Jesus?",
+        "What did David use to defeat Goliath?",
+        "Who received the Ten Commandments?",
+        "Which New Testament book has only one chapter and is addressed to Philemon?",
+        "Who was known for his great wisdom?",
+        "Where was Jesus born?",
+        "Who denied Jesus three times?"
+};
 
-    String[][] options = {
-            {"Moses", "Noah", "David", "Abraham"},
-            {"Exodus", "Genesis", "Matthew", "Psalms"},
-            {"Jonah", "Peter", "Paul", "Daniel"},
-            {"Solomon", "David", "Samuel", "Joshua"},
-            {"10", "11", "12", "14"}
-    };
+String[][] options = {
+        {"Moses", "Noah", "David", "Abraham"},
+        {"Exodus", "Genesis", "Matthew", "Psalms"},
+        {"Jonah", "Peter", "Paul", "Daniel"},
+        {"Solomon", "David", "Samuel", "Joshua"},
+        {"10", "11", "12", "14"},
+        {"Moses", "Joshua", "Aaron", "Samuel"},
+        {"Walking on water", "Turning water into wine", "Healing a blind man", "Feeding 5,000"},
+        {"Mary", "Martha", "Elizabeth", "Sarah"},
+        {"Peter", "Judas Iscariot", "Thomas", "John"},
+        {"A sword", "A spear", "A sling and stones", "A bow"},
+        {"David", "Moses", "Solomon", "Joshua"},
+        {"Philemon", "Romans", "Genesis", "Revelation"},
+        {"Solomon", "Samson", "Paul", "Isaiah"},
+        {"Jerusalem", "Nazareth", "Bethlehem", "Capernaum"},
+        {"John", "Peter", "James", "Matthew"}
+};
 
-    int[] answers = {1, 1, 0, 1, 2};
+int[] answers = {
+        1,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        0,
+        2,
+        1
+};
 
     int currentQuestion = 0;
     int score = 0;
