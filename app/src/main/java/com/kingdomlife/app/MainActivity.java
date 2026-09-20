@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.content.SharedPreferences;
 
 public class MainActivity extends Activity {
@@ -180,16 +181,19 @@ lastChallengeDate = prefs.getString("lastChallengeDate", "");
 
         main.addView(title);
 
-        content = new LinearLayout(this);
-        content.setOrientation(LinearLayout.VERTICAL);
-        content.setPadding(20, 10, 20, 25);
+        ScrollView scrollView = new ScrollView(this);
 
-        main.addView(content, new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                0,
-                1
-        ));
+content = new LinearLayout(this);
+content.setOrientation(LinearLayout.VERTICAL);
+content.setPadding(20, 10, 20, 25);
 
+scrollView.addView(content);
+
+main.addView(scrollView, new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams.MATCH_PARENT,
+        0,
+        1
+));
         showHome();
 
         setContentView(main);
