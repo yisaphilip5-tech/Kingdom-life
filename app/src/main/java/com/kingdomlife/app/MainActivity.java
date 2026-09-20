@@ -195,9 +195,23 @@ main.addView(scrollView, new LinearLayout.LayoutParams(
         0,
         1
 ));
-        showHome();
+    setContentView(main);
 
-        setContentView(main);
+content.removeAllViews();
+
+TextView loading = new TextView(this);
+loading.setText("✝️\n\nKingdom Life\n\nLoading...");
+loading.setTextSize(24);
+loading.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+loading.setTextColor(darkText);
+loading.setGravity(Gravity.CENTER);
+loading.setPadding(0, 80, 0, 80);
+
+content.addView(loading);
+
+new Handler().postDelayed(() -> {
+    showHome();
+}, 1200);
     }
 
     void showHome() {
