@@ -267,26 +267,7 @@ welcome.setPadding(5, 10, 5, 18);
 
 content.addView(welcome);
 
-String currentDate = new SimpleDateFormat(
-        "EEEE, MMMM d, yyyy",
-        Locale.getDefault()
-).format(new Date());
 
-dateText.setText("📅 " + currentDate);
-dateText.setTextSize(17);
-dateText.setTextColor(darkText);
-dateText.setGravity(Gravity.CENTER);
-dateText.setPadding(0, 5, 0, 15);
-
-content.addView(dateText);
-
-        TextView welcome = new TextView(this);
-        welcome.setText("🌅 Welcome to Kingdom Life");
-        welcome.setTextSize(22);
-        welcome.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        welcome.setTextColor(darkText);
-        welcome.setPadding(5, 10, 5, 18);
-        content.addView(welcome);
 
         addCard(
                 "📖 Verse of the Day",
