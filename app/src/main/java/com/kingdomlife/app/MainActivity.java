@@ -336,7 +336,20 @@ dailyChallenges[challengeIndex],
 
         addFeatureGrid();
 
+addCard(
+        "▶️ Continue Learning",
+        "Continue your Bible learning journey from where you left off.",
+        v -> showMemoryVerse()
+);
+addButton(
+        "🎵 Background Sound: OFF",
+        v -> showMessage(
+                "🎵 Background Sound",
+                "Background sound controls will be connected when the sound feature is added."
+        )
+);
 addButton("ℹ️ About Kingdom Life", v -> showAbout());
+        
     }
     void addCard(String heading, String message, View.OnClickListener listener) {
 
