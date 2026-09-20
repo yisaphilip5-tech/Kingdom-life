@@ -304,8 +304,55 @@ addCard(
                 : "Today's challenge not completed yet.",
         v -> {}
 );
+TextView achievementTitle = new TextView(this);
+achievementTitle.setText("🏆 Achievements");
+achievementTitle.setTextSize(22);
+achievementTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+achievementTitle.setTextColor(darkText);
+achievementTitle.setPadding(0, 20, 0, 10);
+content.addView(achievementTitle);
 
-    addButton("⬅️ Back to Home", v -> showHome());
+addCard(
+        totalPoints >= 5 ? "✅ First Step" : "🔒 First Step",
+        totalPoints >= 5
+                ? "You earned your first points!"
+                : "Earn 5 points to unlock this achievement.",
+        v -> {}
+);
+
+addCard(
+        learnedVerses >= 5 ? "✅ Bible Learner" : "🔒 Bible Learner",
+        learnedVerses >= 5
+                ? "You have learned 5 Bible verses!"
+                : "Learn 5 Bible verses to unlock this achievement.",
+        v -> {}
+);
+
+addCard(
+        dailyStreak >= 3 ? "✅ Streak Keeper" : "🔒 Streak Keeper",
+        dailyStreak >= 3
+                ? "You reached a 3-day streak!"
+                : "Reach a 3-day streak to unlock this achievement.",
+        v -> {}
+);
+
+addCard(
+        totalPoints >= 50 ? "✅ Point Builder" : "🔒 Point Builder",
+        totalPoints >= 50
+                ? "You reached 50 points!"
+                : "Earn 50 points to unlock this achievement.",
+        v -> {}
+);
+
+addCard(
+        challengeCompletedToday ? "✅ Challenge Complete" : "🔒 Challenge Complete",
+        challengeCompletedToday
+                ? "You completed today's challenge!"
+                : "Complete today's challenge to unlock this achievement.",
+        v -> {}
+);
+
+addButton("⬅️ Back to Home", v -> showHome());
   }
     void showAbout() {
         showMessage(
