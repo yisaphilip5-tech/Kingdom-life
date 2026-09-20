@@ -337,6 +337,7 @@ dailyChallenges[challengeIndex],
         addFeatureGrid();
 
 addButton("ℹ️ About Kingdom Life", v -> showAbout());
+    }
     void addCard(String heading, String message, View.OnClickListener listener) {
 
     LinearLayout card = new LinearLayout(this);
