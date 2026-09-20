@@ -1009,7 +1009,63 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
 
         addButton("🏠 Back to Home", v -> showHome());
     }
+void showBibleScramble() {
+    stopTimer();
+    content.removeAllViews();
 
+    TextView title = new TextView(this);
+    title.setText("🧩 Bible Scramble");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView message = new TextView(this);
+    message.setText(
+            "Unscramble the Bible word and choose the correct answer."
+    );
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(0, 0, 0, 20);
+    content.addView(message);
+
+    addButton("✝️ JESUS", v -> {
+        totalPoints += 5;
+
+        prefs.edit()
+                .putInt("totalPoints", totalPoints)
+                .apply();
+
+        showScrambleResult("✅ Correct! +5 points");
+    });
+
+    addButton("📖 MOSES", v -> {
+        showScrambleResult("❌ Not this one. Try again!");
+    });
+
+    addButton("👑 DAVID", v -> {
+        showScrambleResult("❌ Not this one. Try again!");
+    });
+
+    addButton("⬅️ Back to Games", v -> showGameMenu());
+}
+    void showScrambleResult(String message) {
+    content.removeAllViews();
+
+    TextView result = new TextView(this);
+    result.setText(message);
+    result.setTextSize(22);
+    result.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    result.setTextColor(darkText);
+    result.setGravity(Gravity.CENTER);
+    result.setPadding(0, 40, 0, 30);
+
+    content.addView(result);
+
+    addButton("🧩 Try Again", v -> showBibleScramble());
+    addButton("⬅️ Back to Games", v -> showGameMenu());
+    }
     void addButton(String text, View.OnClickListener listener) {
         Button button = new Button(this);
         button.setText(text);
