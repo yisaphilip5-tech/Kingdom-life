@@ -326,11 +326,38 @@ addButton("ℹ️ About Kingdom Life", v -> showAbout());
     content.addView(title);
 
     TextView verse = new TextView(this);
-    verse.setText(
-            "Jeremiah 29:11 — KJV\n\n" +
-            "For I know the thoughts that I think toward you, saith the LORD, " +
-            "thoughts of peace, and not of evil, to give you an expected end."
-    );
+    String[] dailyVerses = {
+        "Joshua 1:9 — KJV\n\n" +
+        "Have not I commanded thee? Be strong and of a good courage; " +
+        "be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.",
+
+        "Psalm 23:1 — KJV\n\n" +
+        "The LORD is my shepherd; I shall not want.",
+
+        "Proverbs 3:5 — KJV\n\n" +
+        "Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+
+        "Isaiah 41:10 — KJV\n\n" +
+        "Fear thou not; for I am with thee: be not dismayed; for I am thy God: " +
+        "I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.",
+
+        "Philippians 4:13 — KJV\n\n" +
+        "I can do all things through Christ which strengtheneth me.",
+
+        "Psalm 119:105 — KJV\n\n" +
+        "Thy word is a lamp unto my feet, and a light unto my path.",
+
+        "Romans 8:28 — KJV\n\n" +
+        "And we know that all things work together for good to them that love God, " +
+        "to them who are the called according to his purpose."
+};
+
+int verseIndex = (int) (
+        System.currentTimeMillis() / (1000L * 60 * 60 * 24)
+        % dailyVerses.length
+);
+
+verse.setText(dailyVerses[verseIndex]);
     verse.setTextSize(18);
     verse.setTextColor(darkText);
     verse.setPadding(10, 15, 10, 25);
