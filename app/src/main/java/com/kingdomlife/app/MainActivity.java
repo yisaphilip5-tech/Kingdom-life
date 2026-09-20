@@ -113,6 +113,7 @@ String[][] level3Options = {
 int[] level3Answers = {0, 0, 0, 0, 0};
     int currentQuestion = 0;
     int currentLevel = 1;
+    int highestLevelUnlocked = 1;
     int score = 0;
   int totalPoints = 0;
   int learnedVerses = 0;
@@ -135,6 +136,7 @@ dailyStreak = prefs.getInt("dailyStreak", 0);
 totalPoints = prefs.getInt("totalPoints", 0);
 learnedVerses = prefs.getInt("learnedVerses", 0);
 lastChallengeDate = prefs.getString("lastChallengeDate", "");
+        highestLevelUnlocked = prefs.getInt("highestLevelUnlocked", 1);
         LinearLayout main = new LinearLayout(this);
         main.setOrientation(LinearLayout.VERTICAL);
         main.setBackgroundColor(Color.WHITE);
@@ -713,15 +715,23 @@ addButton("⬅️ Back to Home", v -> showHome());
     startGame(30000);
 });
 
-        addButton("🟡 Level 2 — Medium", v -> {
-    currentLevel = 2;
-    startGame(20000);
-});
+        if (highestLevelUnlocked >= 2) {
+    addButton("🟡 Level 2 — Medium", v -> {
+        currentLevel = 2;
+        startGame(20000);
+    });
+} else {
+    addButton("🔒 Level 2 — Locked", v -> {});
+                  }
 
-        addButton("🔴 Level 3 — Hard", v -> {
-    currentLevel = 3;
-    startGame(10000);
-});
+        if (highestLevelUnlocked >= 3) {
+    addButton("🔴 Level 3 — Hard", v -> {
+        currentLevel = 3;
+        startGame(10000);
+    });
+} else {
+    addButton("🔒 Level 3 — Locked", v -> {});
+        }
 
         addButton("⬅️ Back to Home", v -> showHome());
     }
@@ -961,6 +971,13 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
     void showResults() {
         stopTimer();
         content.removeAllViews();
+        if (currentLevel == highestLevelUnlocked && highestLevelUnlocked < 3) {
+    highestLevelUnlocked++;
+
+    prefs.edit()
+            .putInt("highestLevelUnlocked", highestLevelUnlocked)
+            .apply();
+        }
 
         TextView title = new TextView(this);
         title.setText("🏆 Game Complete!");
