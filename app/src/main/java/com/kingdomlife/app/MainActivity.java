@@ -783,6 +783,15 @@ addCard(
                 : "Reach a 7-day streak to unlock this achievement.",
         v -> {}
 );
+      addCard(
+        totalPoints >= 100
+                ? "✅ 100 Point Milestone"
+                : "🔒 100 Point Milestone",
+        totalPoints >= 100
+                ? "You reached 100 total points!"
+                : "Earn 100 points to unlock this achievement.",
+        v -> {}
+);
 addButton("⬅️ Back to Home", v -> showHome());
   }
     void showAchievements() {
