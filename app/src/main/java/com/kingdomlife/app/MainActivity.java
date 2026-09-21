@@ -782,12 +782,9 @@ prefs.edit()
 );
 
     addButton(
-            "📚 New Testament",
-            v -> showMessage(
-                    "📚 New Testament",
-                    "New Testament books will be available here."
-            )
-    );
+        "📚 New Testament",
+        v -> showNewTestament()
+);
 
     addButton("⬅️ Back to Home", v -> showHome());
     }
@@ -854,12 +851,70 @@ prefs.edit()
                 )
         );
     }
+        addButton(
+            "⬅️ Back to Bible",
+            v -> showBible()
+    );
+    }
+        void showNewTestament() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📚 New Testament");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    String[] books = {
+            "Matthew",
+            "Mark",
+            "Luke",
+            "John",
+            "Acts",
+            "Romans",
+            "1 Corinthians",
+            "2 Corinthians",
+            "Galatians",
+            "Ephesians",
+            "Philippians",
+            "Colossians",
+            "1 Thessalonians",
+            "2 Thessalonians",
+            "1 Timothy",
+            "2 Timothy",
+            "Titus",
+            "Philemon",
+            "Hebrews",
+            "James",
+            "1 Peter",
+            "2 Peter",
+            "1 John",
+            "2 John",
+            "3 John",
+            "Jude",
+            "Revelation"
+    };
+
+    for (String book : books) {
+        addButton(
+                "📖 " + book,
+                v -> showMessage(
+                        "📖 " + book,
+                        "Chapters for " + book + " will be added next."
+                )
+        );
+    }
 
     addButton(
             "⬅️ Back to Bible",
             v -> showBible()
     );
-    }
+        }
+
+    
   void showProgress() {
     stopTimer();
     content.removeAllViews();
