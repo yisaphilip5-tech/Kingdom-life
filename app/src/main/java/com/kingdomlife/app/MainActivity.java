@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Calendar;
 import java.util.Locale;
 import android.view.Gravity;
 import android.view.View;
@@ -218,7 +219,13 @@ new Handler().postDelayed(() -> {
     void showHome() {
         stopTimer();
 content.removeAllViews();
-        content.setBackgroundResource(R.drawable.kingdom_home_bg);
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+if (hour >= 6 && hour < 18) {
+    content.setBackgroundResource(R.drawable.kingdom_home_bg);
+} else {
+    content.setBackgroundResource(R.drawable.kingdom_night_bg);
+}
 
 /* ===== KINGDOM LIFE HEADER ===== */
 
