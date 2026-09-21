@@ -765,6 +765,15 @@ addCard(
                 : "Answer a Missing Word question correctly to unlock this achievement.",
         v -> {}
 );
+      addCard(
+        learnedVerses >= 10
+                ? "✅ Memory Master"
+                : "🔒 Memory Master",
+        learnedVerses >= 10
+                ? "You have learned 10 Bible verses!"
+                : "Learn 10 Bible verses to unlock this achievement.",
+        v -> {}
+);
 addButton("⬅️ Back to Home", v -> showHome());
   }
     void showAchievements() {
