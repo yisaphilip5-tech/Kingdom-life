@@ -457,14 +457,6 @@ void addHomeButtonGrid() {
     row2.setOrientation(LinearLayout.HORIZONTAL);
 
     row2.addView(createHomeSquareButton(
-            "🎯\nDaily Challenge",
-            v -> showMessage(
-                    "🎯 Daily Challenge",
-                    "Complete today's challenge to earn points and build your streak."
-            )
-    ));
-
-    row2.addView(createHomeSquareButton(
             "📊\nProgress",
             v -> showProgress()
     ));
