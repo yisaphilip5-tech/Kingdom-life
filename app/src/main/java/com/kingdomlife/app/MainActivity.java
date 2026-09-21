@@ -948,13 +948,23 @@ prefs.edit()
 
         final int selectedChapter = chapter;
 
-        addButton(
-                "📜 Chapter " + chapter,
-                v -> showMessage(
-                        "📖 Genesis " + selectedChapter,
-                        "The KJV text for this chapter will be added next."
-                )
-        );
+        if (chapter == 1) {
+
+    addButton(
+            "📜 Chapter " + chapter,
+            v -> showGenesisChapter1()
+    );
+
+} else {
+
+    addButton(
+            "📜 Chapter " + chapter,
+            v -> showMessage(
+                    "📖 Genesis " + selectedChapter,
+                    "The KJV text for this chapter will be added next."
+            )
+    );
+        }
     }
 
     addButton(
