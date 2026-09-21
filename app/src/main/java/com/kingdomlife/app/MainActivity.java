@@ -843,6 +843,16 @@ prefs.edit()
     };
 
     for (String book : books) {
+
+    if (book.equals("Genesis")) {
+
+        addButton(
+                "📖 " + book,
+                v -> showGenesisChapters()
+        );
+
+    } else {
+
         addButton(
                 "📖 " + book,
                 v -> showMessage(
@@ -850,6 +860,7 @@ prefs.edit()
                         "Chapters for " + book + " will be added next."
                 )
         );
+    }
     }
         addButton(
             "⬅️ Back to Bible",
