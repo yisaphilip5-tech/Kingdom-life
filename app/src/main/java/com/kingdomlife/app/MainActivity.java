@@ -269,12 +269,7 @@ settingsButton.setAllCaps(false);
 settingsButton.setTextColor(darkText);
 settingsButton.setBackgroundColor(Color.TRANSPARENT);
 
-settingsButton.setOnClickListener(v ->
-        showMessage(
-                "⚙️ Settings",
-                "Kingdom Life settings will be available here."
-        )
-);
+settingsButton.setOnClickListener(v -> showSettings());
 
 header.addView(settingsButton);
 
@@ -794,6 +789,60 @@ addCard(
 );
 addButton("⬅️ Back to Home", v -> showHome());
   }
+    void showSettings() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("⚙️ Settings");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addCard(
+            "🎵 Background Sound",
+            "Control background sound for Kingdom Life.",
+            v -> showMessage(
+                    "🎵 Background Sound",
+                    "Sound controls will be connected when the sound feature is added."
+            )
+    );
+
+    addCard(
+            "🔊 Button Sounds",
+            "Control sounds when buttons are pressed.",
+            v -> showMessage(
+                    "🔊 Button Sounds",
+                    "Button sound controls will be available here."
+            )
+    );
+
+    addCard(
+            "🌅 Day & Night Background",
+            "Kingdom Life automatically changes the home background based on the time.",
+            v -> showMessage(
+                    "🌅 Day & Night",
+                    "Day background: 6:00 AM – 5:59 PM\n" +
+                    "Night background: 6:00 PM – 5:59 AM"
+            )
+    );
+
+    addCard(
+            "📊 Progress",
+            "View your points, streaks, and learning progress.",
+            v -> showProgress()
+    );
+
+    addCard(
+            "🏆 Achievements",
+            "View your unlocked and locked achievements.",
+            v -> showAchievements()
+    );
+
+    addButton("⬅️ Back to Home", v -> showHome());
+    }
     void showAchievements() {
     stopTimer();
     content.removeAllViews();
