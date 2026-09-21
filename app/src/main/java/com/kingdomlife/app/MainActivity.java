@@ -229,17 +229,40 @@ if (hour >= 6 && hour < 18) {
 
 /* ===== KINGDOM LIFE HEADER ===== */
 
+LinearLayout header = new LinearLayout(this);
+header.setOrientation(LinearLayout.HORIZONTAL);
+header.setGravity(Gravity.CENTER_VERTICAL);
+header.setPadding(5, 15, 5, 5);
+
+LinearLayout titleArea = new LinearLayout(this);
+titleArea.setOrientation(LinearLayout.VERTICAL);
+titleArea.setGravity(Gravity.CENTER_VERTICAL);
+
 TextView kingdomTitle = new TextView(this);
 kingdomTitle.setText("👑 Kingdom Life");
 kingdomTitle.setTextSize(28);
 kingdomTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 kingdomTitle.setTextColor(darkText);
-kingdomTitle.setGravity(Gravity.CENTER);
-kingdomTitle.setPadding(5, 20, 5, 4);
 
-content.addView(kingdomTitle);
-        Button settingsButton = new Button(this);
+titleArea.addView(kingdomTitle);
 
+TextView kingdomSubtitle = new TextView(this);
+kingdomSubtitle.setText("Grow in faith. Live with purpose.");
+kingdomSubtitle.setTextSize(15);
+kingdomSubtitle.setTextColor(darkText);
+
+titleArea.addView(kingdomSubtitle);
+
+LinearLayout.LayoutParams titleParams =
+        new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        );
+
+header.addView(titleArea, titleParams);
+
+Button settingsButton = new Button(this);
 settingsButton.setText("⚙️");
 settingsButton.setTextSize(20);
 settingsButton.setAllCaps(false);
@@ -253,16 +276,9 @@ settingsButton.setOnClickListener(v ->
         )
 );
 
-content.addView(settingsButton);
+header.addView(settingsButton);
 
-TextView kingdomSubtitle = new TextView(this);
-kingdomSubtitle.setText("Grow in faith. Live with purpose.");
-kingdomSubtitle.setTextSize(15);
-kingdomSubtitle.setTextColor(darkText);
-kingdomSubtitle.setGravity(Gravity.CENTER);
-kingdomSubtitle.setPadding(5, 0, 5, 12);
-
-content.addView(kingdomSubtitle);
+content.addView(header);
 
 /* ===== DATE ===== */
 
