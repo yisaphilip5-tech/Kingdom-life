@@ -756,6 +756,15 @@ addCard(
                 : "Earn points from a Bible puzzle to unlock this achievement.",
         v -> {}
 );
+      addCard(
+        totalPoints >= 5
+                ? "✅ Word Finder"
+                : "🔒 Word Finder",
+        totalPoints >= 5
+                ? "You earned points from Missing Word!"
+                : "Answer a Missing Word question correctly to unlock this achievement.",
+        v -> {}
+);
 addButton("⬅️ Back to Home", v -> showHome());
   }
     void showAchievements() {
