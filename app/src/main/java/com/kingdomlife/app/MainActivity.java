@@ -231,6 +231,22 @@ kingdomTitle.setGravity(Gravity.CENTER);
 kingdomTitle.setPadding(5, 20, 5, 4);
 
 content.addView(kingdomTitle);
+        Button settingsButton = new Button(this);
+
+settingsButton.setText("⚙️");
+settingsButton.setTextSize(20);
+settingsButton.setAllCaps(false);
+settingsButton.setTextColor(darkText);
+settingsButton.setBackgroundColor(Color.TRANSPARENT);
+
+settingsButton.setOnClickListener(v ->
+        showMessage(
+                "⚙️ Settings",
+                "Kingdom Life settings will be available here."
+        )
+);
+
+content.addView(settingsButton);
 
 TextView kingdomSubtitle = new TextView(this);
 kingdomSubtitle.setText("Grow in faith. Live with purpose.");
