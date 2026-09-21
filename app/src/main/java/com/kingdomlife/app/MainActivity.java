@@ -430,7 +430,7 @@ void addHomeButtonGrid() {
 
     row1.addView(createHomeSquareButton(
             "📖\nBible Quiz",
-            v -> showBibleQuiz()
+            v -> showGameMenu()
     ));
 
     row1.addView(createHomeSquareButton(
@@ -440,7 +440,7 @@ void addHomeButtonGrid() {
 
     row1.addView(createHomeSquareButton(
             "🧩\nPuzzle",
-            v -> showPuzzle()
+            v -> showGameMenu()
     ));
 
     grid.addView(row1);
@@ -464,7 +464,7 @@ void addHomeButtonGrid() {
 
     row2.addView(createHomeSquareButton(
             "🏆\nAchievements",
-            v -> showAchievements()
+            v -> showProgress()
     ));
 
     grid.addView(row2);
@@ -1528,7 +1528,7 @@ content.addView(answerInput);
             v -> showMessage("🎯 Daily Challenge",
                     "Complete today's challenge to earn points and build your streak."),
             v -> showProgress(),
-            v -> showAchievements()
+            v -> showProgress()
     };
 
     for (int i = 0; i < titles.length; i++) {
