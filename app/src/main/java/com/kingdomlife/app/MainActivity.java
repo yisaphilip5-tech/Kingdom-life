@@ -777,12 +777,9 @@ prefs.edit()
     content.addView(message);
 
     addButton(
-            "📚 Old Testament",
-            v -> showMessage(
-                    "📚 Old Testament",
-                    "Old Testament books will be available here."
-            )
-    );
+        "📚 Old Testament",
+        v -> showOldTestament()
+);
 
     addButton(
             "📚 New Testament",
@@ -793,6 +790,75 @@ prefs.edit()
     );
 
     addButton("⬅️ Back to Home", v -> showHome());
+    }
+    void showOldTestament() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📚 Old Testament");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    String[] books = {
+            "Genesis",
+            "Exodus",
+            "Leviticus",
+            "Numbers",
+            "Deuteronomy",
+            "Joshua",
+            "Judges",
+            "Ruth",
+            "1 Samuel",
+            "2 Samuel",
+            "1 Kings",
+            "2 Kings",
+            "1 Chronicles",
+            "2 Chronicles",
+            "Ezra",
+            "Nehemiah",
+            "Esther",
+            "Job",
+            "Psalms",
+            "Proverbs",
+            "Ecclesiastes",
+            "Song of Solomon",
+            "Isaiah",
+            "Jeremiah",
+            "Lamentations",
+            "Ezekiel",
+            "Daniel",
+            "Hosea",
+            "Joel",
+            "Amos",
+            "Obadiah",
+            "Jonah",
+            "Micah",
+            "Nahum",
+            "Habakkuk",
+            "Zephaniah",
+            "Haggai",
+            "Zechariah",
+            "Malachi"
+    };
+
+    for (String book : books) {
+        addButton(
+                "📖 " + book,
+                v -> showMessage(
+                        "📖 " + book,
+                        "Chapters for " + book + " will be added next."
+                )
+        );
+    }
+
+    addButton(
+            "⬅️ Back to Bible",
+            v -> showBible()
+    );
     }
   void showProgress() {
     stopTimer();
