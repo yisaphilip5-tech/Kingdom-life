@@ -327,37 +327,6 @@ int challengeIndex = (int) (
 );
 
 
-        addCard(
-        "🎯 Daily Challenge",
-dailyChallenges[challengeIndex],
-        v -> {
-    String today = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-            .format(new Date());
-
-    if (!today.equals(lastChallengeDate)) {
-        challengeCompletedToday = false;
-    }
-
-    if (!challengeCompletedToday) {
-        dailyStreak++;
-        totalPoints += 5;
-        challengeCompletedToday = true;
-        lastChallengeDate = today;
-      prefs.edit()
-        .putInt("dailyStreak", dailyStreak)
-        .putInt("totalPoints", totalPoints)
-        .putString("lastChallengeDate", lastChallengeDate)
-        .apply();
-    }
-            showMessage(
-                    "✅ Challenge Completed",
-                    "Today's challenge has been completed!\n\n" +
-                    "🔥 Streak: " + dailyStreak + " day(s)\n" +
-                    "+5 points"
-            );
-        }
-);
-
         addHomeButtonGrid();
 
 addCard(
@@ -454,7 +423,14 @@ void addHomeButtonGrid() {
     // SECOND ROW
     LinearLayout row2 = new LinearLayout(this);
     row2.setOrientation(LinearLayout.HORIZONTAL);
-
+    
+row2.addView(createHomeSquareButton(
+        "🎯\nDaily Challenge",
+        v -> showMessage(
+                "🎯 Daily Challenge",
+                "Complete today's challenge to earn points and build your streak."
+        )
+));
     row2.addView(createHomeSquareButton(
             "📊\nProgress",
             v -> showProgress()
