@@ -197,6 +197,93 @@ main.addView(scrollView, new LinearLayout.LayoutParams(
         0,
         1
 ));
+        LinearLayout bottomNav = new LinearLayout(this);
+bottomNav.setOrientation(LinearLayout.HORIZONTAL);
+bottomNav.setGravity(Gravity.CENTER);
+bottomNav.setPadding(4, 4, 4, 4);
+
+String[] navItems = {
+        "🏠\nHome",
+        "📖\nLearn",
+        "🔎\nExplore",
+        "🏆\nAchievements",
+        "⋯\nMore"
+};
+
+for (String item : navItems) {
+
+    Button navButton = new Button(this);
+
+    navButton.setText(item);
+    navButton.setTextSize(11);
+    navButton.setAllCaps(false);
+    navButton.setTextColor(Color.WHITE);
+    navButton.setGravity(Gravity.CENTER);
+
+    GradientDrawable navBackground =
+            new GradientDrawable();
+
+    navBackground.setColor(
+            Color.argb(220, 0, 0, 0)
+    );
+
+    navBackground.setCornerRadius(18);
+
+    navButton.setBackground(navBackground);
+
+    LinearLayout.LayoutParams navParams =
+            new LinearLayout.LayoutParams(
+                    0,
+                    60,
+                    1
+            );
+
+    navParams.setMargins(2, 2, 2, 2);
+
+    bottomNav.addView(navButton, navParams);
+
+    if (item.contains("Home")) {
+
+        navButton.setOnClickListener(v ->
+                showHome()
+        );
+
+    } else if (item.contains("Learn")) {
+
+        navButton.setOnClickListener(v ->
+                showMessage(
+                        "📖 Learn",
+                        "Bible learning features are here."
+                )
+        );
+
+    } else if (item.contains("Explore")) {
+
+        navButton.setOnClickListener(v ->
+                showMessage(
+                        "🔎 Explore",
+                        "Explore Kingdom Life features."
+                )
+        );
+
+    } else if (item.contains("Achievements")) {
+
+        navButton.setOnClickListener(v ->
+                showAchievements()
+        );
+
+    } else {
+
+        navButton.setOnClickListener(v ->
+                showMessage(
+                        "⋯ More",
+                        "More Kingdom Life options."
+                )
+        );
+    }
+}
+
+main.addView(bottomNav);
     setContentView(main);
 
 content.removeAllViews();
