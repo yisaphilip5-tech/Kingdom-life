@@ -218,6 +218,7 @@ new Handler().postDelayed(() -> {
     void showHome() {
         stopTimer();
 content.removeAllViews();
+        content.setBackgroundResource(R.drawable.kingdom_home_bg);
 
 /* ===== KINGDOM LIFE HEADER ===== */
 
