@@ -1528,7 +1528,7 @@ content.addView(answerInput);
             v -> showMessage("🎯 Daily Challenge",
                     "Complete today's challenge to earn points and build your streak."),
             v -> showProgress(),
-            v -> showProgress()
+            v -> showAchievements()
     };
 
     for (int i = 0; i < titles.length; i++) {
@@ -1538,13 +1538,22 @@ content.addView(answerInput);
         button.setTextSize(14);
         button.setAllCaps(false);
         button.setOnClickListener(actions[i]);
+        button.setTextColor(Color.WHITE);
+button.setGravity(Gravity.CENTER);
+
+GradientDrawable buttonBackground = new GradientDrawable();
+buttonBackground.setColor(Color.argb(220, 0, 0, 0));
+buttonBackground.setCornerRadius(24);
+
+button.setBackground(buttonBackground);
+button.setElevation(4);
 
         LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(
-                        0,
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        1
-                );
+        new LinearLayout.LayoutParams(
+                0,
+                110,
+                1
+        );
 
         params.setMargins(6, 6, 6, 6);
 
