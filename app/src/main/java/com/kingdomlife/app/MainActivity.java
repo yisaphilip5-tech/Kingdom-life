@@ -356,16 +356,16 @@ addButton("ℹ️ About Kingdom Life", v -> showAbout());
 
     LinearLayout card = new LinearLayout(this);
     card.setOrientation(LinearLayout.VERTICAL);
-    card.setPadding(24, 20, 24, 20);
+    card.setPadding(28, 22, 28, 22);
 
-    // Rounded card background
+    // Soft rounded background
     GradientDrawable cardBackground = new GradientDrawable();
-    cardBackground.setColor(cardColor);
-    cardBackground.setCornerRadius(28);
+    cardBackground.setColor(Color.argb(225, 255, 255, 255));
+    cardBackground.setCornerRadius(32);
     card.setBackground(cardBackground);
 
-    // Small elevation for depth
-    card.setElevation(5);
+    // Subtle depth
+    card.setElevation(6);
 
     card.setOnClickListener(listener);
 
@@ -374,13 +374,14 @@ addButton("ℹ️ About Kingdom Life", v -> showAbout());
             LinearLayout.LayoutParams.WRAP_CONTENT
     );
 
-    cardParams.setMargins(0, 10, 0, 10);
+    cardParams.setMargins(12, 10, 12, 10);
 
     TextView headingView = new TextView(this);
     headingView.setText(heading);
     headingView.setTextSize(20);
     headingView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     headingView.setTextColor(darkText);
+    headingView.setGravity(Gravity.CENTER_VERTICAL);
 
     card.addView(headingView);
 
@@ -393,7 +394,7 @@ addButton("ℹ️ About Kingdom Life", v -> showAbout());
     card.addView(messageView);
 
     content.addView(card, cardParams);
-        }
+    }
 
     void showVerse() {
     stopTimer();
@@ -1358,18 +1359,34 @@ content.addView(answerInput);
     }
     
     void addButton(String text, View.OnClickListener listener) {
-        Button button = new Button(this);
-        button.setText(text);
-        button.setTextSize(17);
-        button.setOnClickListener(listener);
+    Button button = new Button(this);
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+    button.setText(text);
+    button.setTextSize(17);
+    button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    button.setTextColor(darkText);
+    button.setAllCaps(false);
+    button.setPadding(24, 16, 24, 16);
 
-        params.setMargins(0, 8, 0, 8);
-        content.addView(button, params);
+    // Rounded button background
+    GradientDrawable buttonBackground = new GradientDrawable();
+    buttonBackground.setColor(Color.argb(225, 255, 255, 255));
+    buttonBackground.setCornerRadius(32);
+    button.setBackground(buttonBackground);
+
+    // Subtle depth
+    button.setElevation(5);
+
+    button.setOnClickListener(listener);
+
+    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+    );
+
+    params.setMargins(12, 8, 12, 8);
+
+    content.addView(button, params);
     }
     void addFeatureGrid() {
 
