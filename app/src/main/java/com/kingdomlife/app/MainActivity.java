@@ -1602,56 +1602,199 @@ button.setElevation(4);
     stopTimer();
     content.removeAllViews();
 
+    final String[][] questions = {
+            {"Trust in the Lord with all your ___",
+             "heart", "mind", "strength", "soul", "Proverbs 3:5"},
+
+            {"I can do all things through Christ which ___ me",
+             "strengtheneth", "guideth", "teacheth", "keepeth", "Philippians 4:13"},
+
+            {"The Lord is my ___; I shall not want",
+             "shepherd", "refuge", "strength", "rock", "Psalm 23:1"},
+
+            {"Be strong and of a good ___",
+             "courage", "faith", "hope", "heart", "Joshua 1:9"},
+
+            {"And we know that all things work together for ___",
+             "good", "peace", "love", "wisdom", "Romans 8:28"},
+
+            {"Thy word is a ___ unto my feet",
+             "lamp", "light", "guide", "shield", "Psalm 119:105"},
+
+            {"Fear thou not; for I am with ___",
+             "thee", "you", "him", "them", "Isaiah 41:10"},
+
+            {"But seek ye first the kingdom of ___",
+             "God", "heaven", "Christ", "glory", "Matthew 6:33"},
+
+            {"If any of you lack ___, let him ask of God",
+             "wisdom", "faith", "strength", "knowledge", "James 1:5"},
+
+            {"Let all your things be done with ___",
+             "charity", "faith", "joy", "peace", "1 Corinthians 16:14"},
+
+            {"The joy of the Lord is your ___",
+             "strength", "peace", "refuge", "salvation", "Nehemiah 8:10"},
+
+            {"God is our refuge and ___",
+             "strength", "shield", "rock", "helper", "Psalm 46:1"},
+
+            {"The fear of the Lord is the beginning of ___",
+             "wisdom", "knowledge", "understanding", "faith", "Proverbs 9:10"},
+
+            {"Create in me a clean ___, O God",
+             "heart", "spirit", "mind", "soul", "Psalm 51:10"},
+
+            {"This is the day which the Lord hath ___",
+             "made", "given", "blessed", "chosen", "Psalm 118:24"},
+
+            {"Cast thy burden upon the Lord, and he shall ___ thee",
+             "sustain", "strengthen", "guide", "comfort", "Psalm 55:22"},
+
+            {"The Lord is good, a strong hold in the day of ___",
+             "trouble", "battle", "sorrow", "fear", "Nahum 1:7"},
+
+            {"Walk by ___, not by sight",
+             "faith", "hope", "love", "wisdom", "2 Corinthians 5:7"},
+
+            {"Rejoice in the Lord ___",
+             "alway", "always", "daily", "forever", "Philippians 4:4"},
+
+            {"Pray without ___",
+             "ceasing", "stopping", "fear", "doubt", "1 Thessalonians 5:17"},
+
+            {"Let your light so ___ before men",
+             "shine", "glow", "stand", "rise", "Matthew 5:16"},
+
+            {"Blessed are the ___ in heart",
+             "pure", "humble", "meek", "faithful", "Matthew 5:8"},
+
+            {"The Lord is my light and my ___",
+             "salvation", "strength", "refuge", "shield", "Psalm 27:1"},
+
+            {"Wait on the Lord: be of good ___",
+             "courage", "hope", "faith", "cheer", "Psalm 27:14"},
+
+            {"Whatsoever ye do, do it ___",
+             "heartily", "faithfully", "quickly", "joyfully", "Colossians 3:23"}
+    };
+
+    showMissingWordQuestion(questions, 0);
+}
+
+void showMissingWordQuestion(String[][] questions, int questionIndex) {
+    content.removeAllViews();
+
+    String[] q = questions[questionIndex];
+    final boolean[] answered = {false};
+
     TextView title = new TextView(this);
     title.setText("🔤 Missing Word");
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(0, 15, 0, 15);
     content.addView(title);
 
-    TextView instruction = new TextView(this);
-    instruction.setText("Complete the Bible verse by choosing the missing word.");
-    instruction.setTextSize(18);
-    instruction.setTextColor(darkText);
-    instruction.setPadding(0, 0, 0, 20);
-    content.addView(instruction);
+    TextView progress = new TextView(this);
+    progress.setText(
+            "Question " + (questionIndex + 1) + " of " + questions.length
+    );
+    progress.setTextSize(18);
+    progress.setTextColor(darkText);
+    progress.setPadding(0, 0, 0, 15);
+    content.addView(progress);
+
+    TextView reference = new TextView(this);
+    reference.setText("📖 " + q[5]);
+    reference.setTextSize(16);
+    reference.setTextColor(darkText);
+    reference.setGravity(Gravity.CENTER);
+    reference.setPadding(0, 0, 0, 15);
+    content.addView(reference);
 
     TextView verse = new TextView(this);
-    verse.setText(
-            "\"For I know the plans I have for you,\" declares the Lord..."
-    );
-    verse.setTextSize(20);
+    verse.setText(q[0]);
+    verse.setTextSize(21);
     verse.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     verse.setTextColor(darkText);
     verse.setGravity(Gravity.CENTER);
-    verse.setPadding(0, 10, 0, 25);
+    verse.setPadding(0, 15, 0, 25);
     content.addView(verse);
 
-    addButton("A. plans", v -> {
-        totalPoints += 5;
-        prefs.edit()
-                .putInt("totalPoints", totalPoints)
-                .apply();
+    Button[] answerButtons = new Button[4];
 
-        showMessage(
-                "🎉 Correct!",
-                "You earned +5 points."
+    for (int i = 0; i < 4; i++) {
+        final int selected = i;
+
+        answerButtons[i] = new Button(this);
+        answerButtons[i].setText(
+                (char)('A' + i) + ". " + q[i + 1]
         );
-    });
+        answerButtons[i].setTextSize(17);
+        answerButtons[i].setAllCaps(false);
 
-    addButton("B. dreams", v ->
-            showMessage("❌ Not quite", "Try another answer.")
-    );
+        content.addView(answerButtons[i]);
 
-    addButton("C. journeys", v ->
-            showMessage("❌ Not quite", "Try another answer.")
-    );
+        answerButtons[i].setOnClickListener(v -> {
+            if (answered[0]) {
+                return;
+            }
 
-    addButton("D. hopes", v ->
-            showMessage("❌ Not quite", "Try another answer.")
-    );
+            answered[0] = true;
+
+            for (Button button : answerButtons) {
+                button.setEnabled(false);
+            }
+
+            TextView feedback = new TextView(this);
+            feedback.setTextSize(19);
+            feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+            feedback.setTextColor(darkText);
+            feedback.setGravity(Gravity.CENTER);
+            feedback.setPadding(0, 15, 0, 15);
+
+            if (selected == 0) {
+                totalPoints += 5;
+
+                prefs.edit()
+                        .putInt("totalPoints", totalPoints)
+                        .apply();
+
+                feedback.setText(
+                        "🎉 Correct! +5 points\n\n" +
+                        "⭐ Total Points: " + totalPoints
+                );
+            } else {
+                feedback.setText(
+                        "❌ Not quite.\n\n" +
+                        "The correct answer is: " + q[1]
+                );
+            }
+
+            content.addView(feedback);
+
+            if (questionIndex < questions.length - 1) {
+                addButton(
+                        "➡️ Next Question",
+                        nextView -> showMissingWordQuestion(
+                                questions,
+                                questionIndex + 1
+                        )
+                );
+            } else {
+                addButton(
+                        "🏆 Finish",
+                        finishView -> showMessage(
+                                "🏆 Missing Word Complete!",
+                                "You completed all 25 questions!\n\n" +
+                                "⭐ Total Points: " + totalPoints
+                        )
+                );
+            }
+        });
+    }
 
     addButton("⬅️ Back to Games", v -> showGameMenu());
-    }
+            }
   }
