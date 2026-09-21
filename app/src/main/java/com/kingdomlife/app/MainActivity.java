@@ -774,6 +774,15 @@ addCard(
                 : "Learn 10 Bible verses to unlock this achievement.",
         v -> {}
 );
+      addCard(
+        dailyStreak >= 7
+                ? "✅ Streak Champion"
+                : "🔒 Streak Champion",
+        dailyStreak >= 7
+                ? "You reached a 7-day streak!"
+                : "Reach a 7-day streak to unlock this achievement.",
+        v -> {}
+);
 addButton("⬅️ Back to Home", v -> showHome());
   }
     void showAchievements() {
