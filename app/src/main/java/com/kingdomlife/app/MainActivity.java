@@ -738,7 +738,15 @@ addCard(
                 : "Complete today's challenge to unlock this achievement.",
         v -> {}
 );
-
+addCard(
+        correctAnswers > 0
+                ? "✅ Quiz Starter"
+                : "🔒 Quiz Starter",
+        correctAnswers > 0
+                ? "You answered a Bible Quiz question correctly!"
+                : "Answer a Bible Quiz question correctly to unlock this achievement.",
+        v -> {}
+);
 addButton("⬅️ Back to Home", v -> showHome());
   }
     void showAchievements() {
