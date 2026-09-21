@@ -351,7 +351,7 @@ dailyChallenges[challengeIndex],
         }
 );
 
-        addFeatureGrid();
+        addHomeButtonGrid();
 
 addCard(
         "▶️ Continue Learning",
@@ -411,7 +411,101 @@ addButton("ℹ️ About Kingdom Life", v -> showAbout());
 
     content.addView(card, cardParams);
     }
+void addHomeButtonGrid() {
 
+    LinearLayout grid = new LinearLayout(this);
+    grid.setOrientation(LinearLayout.VERTICAL);
+
+    LinearLayout.LayoutParams gridParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    gridParams.setMargins(8, 8, 8, 8);
+
+    // FIRST ROW
+    LinearLayout row1 = new LinearLayout(this);
+    row1.setOrientation(LinearLayout.HORIZONTAL);
+
+    row1.addView(createHomeSquareButton(
+            "📖\nBible Quiz",
+            v -> showBibleQuiz()
+    ));
+
+    row1.addView(createHomeSquareButton(
+            "🧠\nMemory Verse",
+            v -> showMemoryVerse()
+    ));
+
+    row1.addView(createHomeSquareButton(
+            "🧩\nPuzzle",
+            v -> showPuzzle()
+    ));
+
+    grid.addView(row1);
+
+    // SECOND ROW
+    LinearLayout row2 = new LinearLayout(this);
+    row2.setOrientation(LinearLayout.HORIZONTAL);
+
+    row2.addView(createHomeSquareButton(
+            "🎯\nDaily Challenge",
+            v -> showMessage(
+                    "🎯 Daily Challenge",
+                    "Complete today's challenge to earn points and build your streak."
+            )
+    ));
+
+    row2.addView(createHomeSquareButton(
+            "📊\nProgress",
+            v -> showProgress()
+    ));
+
+    row2.addView(createHomeSquareButton(
+            "🏆\nAchievements",
+            v -> showAchievements()
+    ));
+
+    grid.addView(row2);
+
+    content.addView(grid, gridParams);
+    }
+    View createHomeSquareButton(
+        String text,
+        View.OnClickListener listener
+) {
+
+    Button button = new Button(this);
+
+    button.setText(text);
+    button.setTextSize(14);
+    button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    button.setTextColor(Color.WHITE);
+    button.setGravity(Gravity.CENTER);
+    button.setAllCaps(false);
+
+    GradientDrawable background = new GradientDrawable();
+    background.setColor(Color.argb(220, 0, 0, 0));
+    background.setCornerRadius(24);
+
+    button.setBackground(background);
+    button.setElevation(4);
+    button.setOnClickListener(listener);
+
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    0,
+                    110,
+                    1
+            );
+
+    params.setMargins(5, 5, 5, 5);
+
+    button.setLayoutParams(params);
+
+    return button;
+    }
     void showVerse() {
     stopTimer();
     content.removeAllViews();
