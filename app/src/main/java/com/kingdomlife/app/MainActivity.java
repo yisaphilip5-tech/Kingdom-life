@@ -925,7 +925,43 @@ prefs.edit()
     );
         }
 
-    
+    void showGenesisChapters() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 Genesis");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Choose a chapter:");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    for (int chapter = 1; chapter <= 50; chapter++) {
+
+        final int selectedChapter = chapter;
+
+        addButton(
+                "📜 Chapter " + chapter,
+                v -> showMessage(
+                        "📖 Genesis " + selectedChapter,
+                        "The KJV text for this chapter will be added next."
+                )
+        );
+    }
+
+    addButton(
+            "⬅️ Back to Old Testament",
+            v -> showOldTestament()
+    );
+    }
   void showProgress() {
     stopTimer();
     content.removeAllViews();
