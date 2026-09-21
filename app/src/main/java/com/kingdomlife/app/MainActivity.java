@@ -172,6 +172,7 @@ lastChallengeDate = prefs.getString("lastChallengeDate", "");
         highestLevelUnlocked = prefs.getInt("highestLevelUnlocked", 1);
         LinearLayout main = new LinearLayout(this);
         main.setOrientation(LinearLayout.VERTICAL);
+        main.setPadding(0, 0, 0, 80);
         main.setBackgroundColor(Color.WHITE);
 
         TextView title = new TextView(this);
