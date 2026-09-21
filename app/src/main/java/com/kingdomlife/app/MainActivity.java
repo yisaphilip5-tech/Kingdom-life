@@ -1045,6 +1045,7 @@ addButton("⬅️ Back to Home", v -> showHome());
     addButton("🔒 Level 3 — Locked", v -> {});
         }
 addButton("🧩 Bible Scramble", v -> showBibleScramble());
+        addButton("🔤 Missing Word", v -> showMissingWord());
         addButton("⬅️ Back to Home", v -> showHome());
     }
 
@@ -1596,5 +1597,61 @@ button.setElevation(4);
     protected void onDestroy() {
         stopTimer();
         super.onDestroy();
+    }
+    void showMissingWord() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔤 Missing Word");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Complete the Bible verse by choosing the missing word.");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 20);
+    content.addView(instruction);
+
+    TextView verse = new TextView(this);
+    verse.setText(
+            "\"For I know the plans I have for you,\" declares the Lord..."
+    );
+    verse.setTextSize(20);
+    verse.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    verse.setTextColor(darkText);
+    verse.setGravity(Gravity.CENTER);
+    verse.setPadding(0, 10, 0, 25);
+    content.addView(verse);
+
+    addButton("A. plans", v -> {
+        totalPoints += 5;
+        prefs.edit()
+                .putInt("totalPoints", totalPoints)
+                .apply();
+
+        showMessage(
+                "🎉 Correct!",
+                "You earned +5 points."
+        );
+    });
+
+    addButton("B. dreams", v ->
+            showMessage("❌ Not quite", "Try another answer.")
+    );
+
+    addButton("C. journeys", v ->
+            showMessage("❌ Not quite", "Try another answer.")
+    );
+
+    addButton("D. hopes", v ->
+            showMessage("❌ Not quite", "Try another answer.")
+    );
+
+    addButton("⬅️ Back to Games", v -> showGameMenu());
     }
   }
