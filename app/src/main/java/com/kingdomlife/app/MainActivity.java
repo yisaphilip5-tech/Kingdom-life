@@ -431,7 +431,7 @@ int challengeIndex = (int) (
 addCard(
         "▶️ Continue Learning",
         "Continue your Bible learning journey from where you left off.",
-        v -> showMemoryVerse()
+        v -> showBible()
 );
 addButton(
         "🎵 Background Sound: OFF",
@@ -748,6 +748,49 @@ prefs.edit()
     addButton("✍️ Complete the Verse", v -> showCompleteVerse());
 
     addButton("🔄 Guess the Reference", v -> showGuessReference());
+
+    addButton("⬅️ Back to Home", v -> showHome());
+    }
+    void showBible() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 Holy Bible — KJV");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView message = new TextView(this);
+    message.setText(
+            "King James Version\n\n" +
+            "The complete Bible will be organized here by:\n\n" +
+            "📚 Old Testament\n" +
+            "📚 New Testament\n\n" +
+            "Choose a book and chapter to begin reading."
+    );
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(0, 10, 0, 20);
+    content.addView(message);
+
+    addButton(
+            "📚 Old Testament",
+            v -> showMessage(
+                    "📚 Old Testament",
+                    "Old Testament books will be available here."
+            )
+    );
+
+    addButton(
+            "📚 New Testament",
+            v -> showMessage(
+                    "📚 New Testament",
+                    "New Testament books will be available here."
+            )
+    );
 
     addButton("⬅️ Back to Home", v -> showHome());
     }
