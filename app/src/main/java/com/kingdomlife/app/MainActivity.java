@@ -747,6 +747,15 @@ addCard(
                 : "Answer a Bible Quiz question correctly to unlock this achievement.",
         v -> {}
 );
+      addCard(
+        scrambleScore > 0
+                ? "✅ Puzzle Solver"
+                : "🔒 Puzzle Solver",
+        scrambleScore > 0
+                ? "You earned points from a Bible puzzle!"
+                : "Earn points from a Bible puzzle to unlock this achievement.",
+        v -> {}
+);
 addButton("⬅️ Back to Home", v -> showHome());
   }
     void showAchievements() {
