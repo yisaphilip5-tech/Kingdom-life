@@ -372,7 +372,6 @@ addButton(
                 "Background sound controls will be connected when the sound feature is added."
         )
 );
-addButton("ℹ️ About Kingdom Life", v -> showAbout());
         
     }
     void addCard(String heading, String message, View.OnClickListener listener) {
