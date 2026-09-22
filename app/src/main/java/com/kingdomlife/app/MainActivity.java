@@ -1265,6 +1265,13 @@ prefs.edit()
             v -> showBookChapters("Colossians", 4)
     );
 
+} else if (book.equals("1 Thessalonians")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("1 Thessalonians", 5)
+    );
+
 } else {
 
         addButton(
