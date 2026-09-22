@@ -1195,6 +1195,13 @@ prefs.edit()
             v -> showBookChapters("Mark", 16)
     );
 
+} else if (book.equals("Luke")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Luke", 24)
+    );
+
 } else {
 
         addButton(
