@@ -1294,6 +1294,13 @@ prefs.edit()
             v -> showBookChapters("2 Timothy", 4)
     );
 
+} else if (book.equals("Titus")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Titus", 3)
+    );
+
 } else {
 
         addButton(
