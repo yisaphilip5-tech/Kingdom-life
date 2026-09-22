@@ -988,6 +988,13 @@ prefs.edit()
             v -> showBookChapters("Proverbs", 31)
     );
 
+} else if (book.equals("Ecclesiastes")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Ecclesiastes", 12)
+    );
+
 } else {
 
     addButton(
