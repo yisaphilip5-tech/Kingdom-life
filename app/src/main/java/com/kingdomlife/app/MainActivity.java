@@ -956,7 +956,7 @@ prefs.edit()
 
     addButton(
             "📜 Chapter " + chapter,
-            v -> showGenesisChapter1()
+            v -> showBibleChapter("Genesis", 1)
     );
 
 } else {
