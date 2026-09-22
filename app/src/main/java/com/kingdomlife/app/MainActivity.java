@@ -1107,6 +1107,13 @@ prefs.edit()
             v -> showBookChapters("Haggai", 2)
     );
 
+} else if (book.equals("Zechariah")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Zechariah", 14)
+    );
+
 } else {
 
     addButton(
