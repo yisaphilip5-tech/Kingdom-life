@@ -1016,6 +1016,13 @@ prefs.edit()
             v -> showBookChapters("Jeremiah", 52)
     );
 
+} else if (book.equals("Lamentations")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Lamentations", 5)
+    );
+
 } else {
 
     addButton(
