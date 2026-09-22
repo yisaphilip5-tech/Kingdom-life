@@ -1382,7 +1382,7 @@ prefs.edit()
         );
     }
     }
-
+           }
     void showGenesisChapters() {
     stopTimer();
     content.removeAllViews();
