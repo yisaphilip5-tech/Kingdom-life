@@ -12,6 +12,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Calendar;
 import java.util.Locale;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import org.json.JSONObject;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -1087,6 +1091,41 @@ prefs.edit()
             v -> showGenesisChapters()
     );
         }
+    String getKJVChapter(String book, int chapter) {
+
+    try {
+        InputStream inputStream = getAssets().open("kjv.json");
+
+        BufferedReader reader =
+                new BufferedReader(
+                        new InputStreamReader(inputStream)
+                );
+
+        StringBuilder jsonText = new StringBuilder();
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            jsonText.append(line);
+        }
+
+        reader.close();
+
+        JSONObject bible =
+                new JSONObject(jsonText.toString());
+
+        JSONObject selectedBook =
+                bible.getJSONObject(book);
+
+        return selectedBook.getString(
+                String.valueOf(chapter)
+        );
+
+    } catch (Exception e) {
+
+        return "Unable to load this Bible chapter.";
+
+    }
+    }
   void showProgress() {
     stopTimer();
     content.removeAllViews();
