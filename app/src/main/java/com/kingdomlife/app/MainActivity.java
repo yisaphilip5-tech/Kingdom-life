@@ -1044,6 +1044,13 @@ prefs.edit()
             v -> showBookChapters("Hosea", 14)
     );
 
+} else if (book.equals("Joel")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Joel", 3)
+    );
+
 } else {
 
     addButton(
