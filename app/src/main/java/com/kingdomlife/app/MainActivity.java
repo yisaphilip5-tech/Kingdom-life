@@ -1308,6 +1308,13 @@ prefs.edit()
             v -> showBookChapters("Philemon", 1)
     );
 
+} else if (book.equals("Hebrews")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Hebrews", 13)
+    );
+
 } else {
 
         addButton(
