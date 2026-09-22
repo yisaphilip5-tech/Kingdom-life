@@ -1093,6 +1093,13 @@ prefs.edit()
             v -> showBookChapters("Habakkuk", 3)
     );
 
+} else if (book.equals("Zephaniah")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Zephaniah", 3)
+    );
+
 } else {
 
     addButton(
