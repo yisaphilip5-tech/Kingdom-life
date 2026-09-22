@@ -952,20 +952,10 @@ prefs.edit()
 
         final int selectedChapter = chapter;
 
-        if (chapter == 1) {
-
-    addButton(
-            "📜 Chapter " + chapter,
-            v -> showBibleChapter("Genesis", 1)
-    );
-
-} else {
-
-    addButton(
-            "📜 Chapter " + chapter,
-            v -> showBibleChapter("Genesis", selectedChapter)
-    );
-        }
+        addButton(
+        "📜 Chapter " + chapter,
+        v -> showBibleChapter("Genesis", selectedChapter)
+);
     }
 
     addButton(
