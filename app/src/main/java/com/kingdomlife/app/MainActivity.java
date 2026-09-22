@@ -1057,7 +1057,6 @@ prefs.edit()
         return "Unable to load this Bible chapter.";
     }
     }
-    }
   void showProgress() {
     stopTimer();
     content.removeAllViews();
