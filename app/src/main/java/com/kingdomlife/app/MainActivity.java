@@ -1508,6 +1508,7 @@ prefs.edit()
     String getKJVChapter(String book, int chapter) {
 
     try {
+
         InputStream inputStream =
                 getAssets().open("kjv/" + book + ".json");
 
@@ -1516,7 +1517,9 @@ prefs.edit()
                         new InputStreamReader(inputStream)
                 );
 
-        StringBuilder jsonText = new StringBuilder();
+        StringBuilder jsonText =
+                new StringBuilder();
+
         String line;
 
         while ((line = reader.readLine()) != null) {
@@ -1528,31 +1531,45 @@ prefs.edit()
         JSONObject bible =
                 new JSONObject(jsonText.toString());
 
-        JSONObject chapters =
-                bible.getJSONObject("chapters");
+        org.json.JSONArray chapters =
+                bible.getJSONArray("chapters");
 
-        JSONObject selectedChapter =
-                chapters.getJSONObject(
-                        String.valueOf(chapter)
-                );
+        for (int i = 0; i < chapters.length(); i++) {
 
-        StringBuilder result =
-                new StringBuilder();
+            JSONObject chapterObject =
+                    chapters.getJSONObject(i);
 
-        java.util.Iterator<String> keys =
-                selectedChapter.keys();
+            if (chapterObject.getInt("chapter") == chapter) {
 
-        while (keys.hasNext()) {
+                org.json.JSONArray verses =
+                        chapterObject.getJSONArray("verses");
 
-            String verseNumber = keys.next();
+                StringBuilder result =
+                        new StringBuilder();
 
-            result.append(verseNumber)
-                    .append(" ")
-                    .append(selectedChapter.getString(verseNumber))
-                    .append("\n\n");
+                for (int j = 0; j < verses.length(); j++) {
+
+                    JSONObject verse =
+                            verses.getJSONObject(j);
+
+                    result.append(
+                            verse.getInt("verse")
+                    );
+
+                    result.append(" ");
+
+                    result.append(
+                            verse.getString("text")
+                    );
+
+                    result.append("\n\n");
+                }
+
+                return result.toString().trim();
+            }
         }
 
-        return result.toString().trim();
+        return "Chapter not found.";
 
     } catch (Exception e) {
 
