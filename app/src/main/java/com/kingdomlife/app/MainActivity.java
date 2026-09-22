@@ -855,15 +855,22 @@ prefs.edit()
                 v -> showBookChapters("Genesis", 50)
         );
 
-    } else {
+    } else if (book.equals("Exodus")) {
 
-        addButton(
-                "📖 " + book,
-                v -> showMessage(
-                        "📖 " + book,
-                        "Chapters for " + book + " will be added next."
-                )
-        );
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Exodus", 40)
+    );
+
+} else {
+
+    addButton(
+            "📖 " + book,
+            v -> showMessage(
+                    "📖 " + book,
+                    "Chapters for " + book + " will be added next."
+            )
+    );
     }
     }
         addButton(
