@@ -1251,6 +1251,13 @@ prefs.edit()
             v -> showBookChapters("Ephesians", 6)
     );
 
+} else if (book.equals("Philippians")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Philippians", 4)
+    );
+
 } else {
 
         addButton(
