@@ -1180,6 +1180,16 @@ prefs.edit()
     };
 
     for (String book : books) {
+
+    if (book.equals("Matthew")) {
+
+        addButton(
+                "📖 " + book,
+                v -> showBookChapters("Matthew", 28)
+        );
+
+    } else {
+
         addButton(
                 "📖 " + book,
                 v -> showMessage(
@@ -1188,12 +1198,7 @@ prefs.edit()
                 )
         );
     }
-
-    addButton(
-            "⬅️ Back to Bible",
-            v -> showBible()
-    );
-        }
+    }
 
     void showGenesisChapters() {
     stopTimer();
