@@ -1272,6 +1272,13 @@ prefs.edit()
             v -> showBookChapters("1 Thessalonians", 5)
     );
 
+} else if (book.equals("2 Thessalonians")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("2 Thessalonians", 3)
+    );
+
 } else {
 
         addButton(
