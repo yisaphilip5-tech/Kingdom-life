@@ -939,6 +939,13 @@ prefs.edit()
             v -> showBookChapters("1 Chronicles", 29)
     );
 
+} else if (book.equals("2 Chronicles")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("2 Chronicles", 36)
+    );
+
 } else {
 
     addButton(
