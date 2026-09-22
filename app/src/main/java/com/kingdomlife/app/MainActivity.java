@@ -1531,51 +1531,35 @@ prefs.edit()
         JSONObject bible =
                 new JSONObject(jsonText.toString());
 
-        org.json.JSONArray chapters =
-                bible.getJSONArray("chapters");
+        JSONObject selectedChapter =
+                bible.getJSONObject(
+                        String.valueOf(chapter)
+                );
 
-        for (int i = 0; i < chapters.length(); i++) {
+        StringBuilder result =
+                new StringBuilder();
 
-            JSONObject chapterObject =
-                    chapters.getJSONObject(i);
+        java.util.Iterator<String> keys =
+                selectedChapter.keys();
 
-            if (chapterObject.getInt("chapter") == chapter) {
+        while (keys.hasNext()) {
 
-                org.json.JSONArray verses =
-                        chapterObject.getJSONArray("verses");
+            String verseNumber = keys.next();
 
-                StringBuilder result =
-                        new StringBuilder();
-
-                for (int j = 0; j < verses.length(); j++) {
-
-                    JSONObject verse =
-                            verses.getJSONObject(j);
-
-                    result.append(
-                            verse.getInt("verse")
-                    );
-
-                    result.append(" ");
-
-                    result.append(
-                            verse.getString("text")
-                    );
-
-                    result.append("\n\n");
-                }
-
-                return result.toString().trim();
-            }
+            result.append(verseNumber)
+                    .append(" ")
+                    .append(selectedChapter.getString(verseNumber))
+                    .append("\n\n");
         }
 
-        return "Chapter not found.";
+        return result.toString().trim();
 
     } catch (Exception e) {
 
         return "Unable to load this Bible chapter.";
     }
     }
+        
   void showProgress() {
     stopTimer();
     content.removeAllViews();
