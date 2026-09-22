@@ -1094,7 +1094,8 @@ prefs.edit()
     String getKJVChapter(String book, int chapter) {
 
     try {
-        InputStream inputStream = getAssets().open("kjv.json");
+        InputStream inputStream =
+                getAssets().open("kjv/" + book + ".json");
 
         BufferedReader reader =
                 new BufferedReader(
@@ -1113,17 +1114,36 @@ prefs.edit()
         JSONObject bible =
                 new JSONObject(jsonText.toString());
 
-        JSONObject selectedBook =
-                bible.getJSONObject(book);
+        JSONObject chapters =
+                bible.getJSONObject("chapters");
 
-        return selectedBook.getString(
-                String.valueOf(chapter)
-        );
+        JSONObject selectedChapter =
+                chapters.getJSONObject(
+                        String.valueOf(chapter)
+                );
+
+        StringBuilder result =
+                new StringBuilder();
+
+        java.util.Iterator<String> keys =
+                selectedChapter.keys();
+
+        while (keys.hasNext()) {
+
+            String verseNumber = keys.next();
+
+            result.append(verseNumber)
+                    .append(" ")
+                    .append(selectedChapter.getString(verseNumber))
+                    .append("\n\n");
+        }
+
+        return result.toString().trim();
 
     } catch (Exception e) {
 
         return "Unable to load this Bible chapter.";
-
+    }
     }
     }
   void showProgress() {
