@@ -1223,6 +1223,13 @@ prefs.edit()
             v -> showBookChapters("Romans", 16)
     );
 
+} else if (book.equals("1 Corinthians")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("1 Corinthians", 16)
+    );
+
 } else {
 
         addButton(
