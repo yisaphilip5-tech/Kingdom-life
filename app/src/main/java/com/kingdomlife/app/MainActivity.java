@@ -918,6 +918,13 @@ prefs.edit()
             v -> showBookChapters("2 Samuel", 24)
     );
 
+} else if (book.equals("1 Kings")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("1 Kings", 22)
+    );
+
 } else {
 
     addButton(
