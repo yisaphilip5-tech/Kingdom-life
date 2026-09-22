@@ -1030,6 +1030,13 @@ prefs.edit()
             v -> showBookChapters("Ezekiel", 48)
     );
 
+} else if (book.equals("Daniel")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Daniel", 12)
+    );
+
 } else {
 
     addButton(
