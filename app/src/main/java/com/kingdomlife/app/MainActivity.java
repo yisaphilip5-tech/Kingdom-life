@@ -1023,6 +1023,13 @@ prefs.edit()
             v -> showBookChapters("Lamentations", 5)
     );
 
+} else if (book.equals("Ezekiel")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Ezekiel", 48)
+    );
+
 } else {
 
     addButton(
