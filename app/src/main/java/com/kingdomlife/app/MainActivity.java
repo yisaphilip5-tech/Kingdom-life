@@ -963,6 +963,40 @@ prefs.edit()
             v -> showOldTestament()
     );
     }
+    void showBookChapters(String book, int chapterCount) {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 " + book);
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Choose a chapter:");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    for (int chapter = 1; chapter <= chapterCount; chapter++) {
+
+        final int selectedChapter = chapter;
+
+        addButton(
+                "📜 Chapter " + chapter,
+                v -> showBibleChapter(book, selectedChapter)
+        );
+    }
+
+    addButton(
+            "⬅️ Back",
+            v -> showBible()
+    );
+    }
     void showGenesisChapter1() {
     stopTimer();
     content.removeAllViews();
