@@ -1417,6 +1417,33 @@ prefs.edit()
             v -> showOldTestament()
     );
     }
+    void showBibleChapter(String book, int chapter) {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 " + book + " " + chapter + " — KJV");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView chapterText = new TextView(this);
+    chapterText.setText(
+            getKJVChapter(book, chapter)
+    );
+    chapterText.setTextSize(18);
+    chapterText.setTextColor(darkText);
+    chapterText.setPadding(5, 10, 5, 20);
+
+    content.addView(chapterText);
+
+    addButton(
+            "⬅️ Back to Chapters",
+            v -> showGenesisChapters()
+    );
+    }
     void showBookChapters(String book, int chapterCount) {
     stopTimer();
     content.removeAllViews();
