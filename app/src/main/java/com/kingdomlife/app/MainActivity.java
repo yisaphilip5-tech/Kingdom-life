@@ -963,10 +963,7 @@ prefs.edit()
 
     addButton(
             "📜 Chapter " + chapter,
-            v -> showMessage(
-                    "📖 Genesis " + selectedChapter,
-                    "The KJV text for this chapter will be added next."
-            )
+            v -> showBibleChapter("Genesis", selectedChapter)
     );
         }
     }
