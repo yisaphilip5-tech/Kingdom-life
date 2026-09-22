@@ -852,7 +852,7 @@ prefs.edit()
 
         addButton(
                 "📖 " + book,
-                v -> showGenesisChapters()
+                v -> showBookChapters("Genesis", 50)
         );
 
     } else {
