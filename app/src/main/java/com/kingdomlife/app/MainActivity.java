@@ -1086,6 +1086,13 @@ prefs.edit()
             v -> showBookChapters("Nahum", 3)
     );
 
+} else if (book.equals("Habakkuk")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Habakkuk", 3)
+    );
+
 } else {
 
     addButton(
