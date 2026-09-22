@@ -883,6 +883,13 @@ prefs.edit()
             v -> showBookChapters("Deuteronomy", 34)
     );
 
+} else if (book.equals("Joshua")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Joshua", 24)
+    );
+
 } else {
 
     addButton(
