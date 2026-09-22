@@ -1556,7 +1556,7 @@ prefs.edit()
 
     } catch (Exception e) {
 
-        return "Unable to load this Bible chapter.";
+        return "ERROR: " + e.toString();
     }
     }
         
