@@ -1002,6 +1002,13 @@ prefs.edit()
             v -> showBookChapters("Song of Solomon", 8)
     );
 
+} else if (book.equals("Isaiah")) {
+
+    addButton(
+            "📖 " + book,
+            v -> showBookChapters("Isaiah", 66)
+    );
+
 } else {
 
     addButton(
