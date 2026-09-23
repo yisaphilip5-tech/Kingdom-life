@@ -168,10 +168,15 @@ int scrambleScore = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        savedVersesPrefs = getSharedPreferences(
+        "saved_verses",
+        MODE_PRIVATE
+);
       prefs = getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE);
 dailyStreak = prefs.getInt("dailyStreak", 0);
 totalPoints = prefs.getInt("totalPoints", 0);
 learnedVerses = prefs.getInt("learnedVerses", 0);
+        SharedPreferences savedVersesPrefs;
 lastChallengeDate = prefs.getString("lastChallengeDate", "");
         highestLevelUnlocked = prefs.getInt("highestLevelUnlocked", 1);
         LinearLayout main = new LinearLayout(this);
@@ -1614,6 +1619,21 @@ prefs.edit()
             v -> showBibleSearch()
     );
         }
+    void saveVerse(String reference, String verseText) {
+
+    if (savedVersesPrefs == null) {
+        return;
+    }
+
+    savedVersesPrefs.edit()
+            .putString(reference, verseText)
+            .apply();
+
+    showMessage(
+            "⭐ Verse Saved",
+            reference + "\n\n" + verseText
+    );
+    }
     void showSavedVerses() {
     stopTimer();
     content.removeAllViews();
@@ -1626,15 +1646,33 @@ prefs.edit()
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
+    if (savedVersesPrefs.getAll().isEmpty()) {
+
     TextView message = new TextView(this);
     message.setText(
-            "Your saved Bible verses will appear here."
+            "No saved verses yet.\n\n" +
+            "Save a verse from the Bible reader and it will appear here."
     );
     message.setTextSize(18);
     message.setTextColor(darkText);
     message.setPadding(10, 10, 10, 20);
     content.addView(message);
 
+} else {
+
+    for (java.util.Map.Entry<String, ?> entry :
+            savedVersesPrefs.getAll().entrySet()) {
+
+        String reference = entry.getKey();
+        String verseText = entry.getValue().toString();
+
+        addCard(
+                "⭐ " + reference,
+                verseText,
+                v -> {}
+        );
+    }
+    }
     addButton(
             "⬅️ Back to More",
             v -> showMoreMenu()
@@ -1731,21 +1769,123 @@ prefs.edit()
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    TextView chapterText = new TextView(this);
-    chapterText.setText(
-            getKJVChapter(book, chapter)
-    );
-    chapterText.setTextSize(18);
-    chapterText.setTextColor(darkText);
-    chapterText.setPadding(5, 10, 5, 20);
+    try {
 
-    content.addView(chapterText);
+        InputStream inputStream =
+                getAssets().open("kjv/" + book + ".json");
+
+        BufferedReader reader =
+                new BufferedReader(
+                        new InputStreamReader(inputStream)
+                );
+
+        StringBuilder jsonText =
+                new StringBuilder();
+
+        String line;
+
+        while ((line = reader.readLine()) != null) {
+            jsonText.append(line);
+        }
+
+        reader.close();
+
+        JSONObject bible =
+                new JSONObject(jsonText.toString());
+
+        JSONObject selectedChapter =
+                bible.getJSONObject(
+                        String.valueOf(chapter)
+                );
+
+        java.util.ArrayList<String> verseNumbers =
+                new java.util.ArrayList<>();
+
+        java.util.Iterator<String> keys =
+                selectedChapter.keys();
+
+        while (keys.hasNext()) {
+            verseNumbers.add(keys.next());
+        }
+
+        java.util.Collections.sort(
+                verseNumbers,
+                (a, b) -> Integer.compare(
+                        Integer.parseInt(a),
+                        Integer.parseInt(b)
+                )
+        );
+
+        for (String verseNumber : verseNumbers) {
+
+            String verseText =
+                    selectedChapter.getString(verseNumber);
+
+            LinearLayout verseLayout =
+                    new LinearLayout(this);
+
+            verseLayout.setOrientation(
+                    LinearLayout.VERTICAL
+            );
+
+            TextView verse = new TextView(this);
+
+            verse.setText(
+                    verseNumber + " " + verseText
+            );
+
+            verse.setTextSize(18);
+            verse.setTextColor(darkText);
+            verse.setPadding(5, 10, 5, 5);
+
+            verseLayout.addView(verse);
+
+            Button saveButton =
+                    new Button(this);
+
+            String reference =
+                    book + " " +
+                    chapter + ":" +
+                    verseNumber;
+
+            saveButton.setText("⭐ Save Verse");
+            saveButton.setAllCaps(false);
+
+            saveButton.setOnClickListener(
+                    v -> saveVerse(
+                            reference,
+                            verseText
+                    )
+            );
+
+            verseLayout.addView(saveButton);
+
+            content.addView(verseLayout);
+        }
+
+    } catch (Exception e) {
+
+        TextView error = new TextView(this);
+
+        error.setText(
+                "Unable to load this Bible chapter."
+        );
+
+        error.setTextSize(18);
+        error.setTextColor(darkText);
+        error.setPadding(5, 10, 5, 20);
+
+        content.addView(error);
+    }
 
     addButton(
             "⬅️ Back to Chapters",
-            v -> showBookChapters(book, getChapterCount(book))
+            v -> showBookChapters(
+                    book,
+                    getChapterCount(book)
+            )
     );
-    }
+        }
     int getChapterCount(String book) {
 
     if (book.equals("Genesis")) return 50;
