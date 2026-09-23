@@ -261,12 +261,9 @@ for (String item : navItems) {
 
     } else if (item.contains("Learn")) {
 
-        navButton.setOnClickListener(v ->
-                showMessage(
-                        "📖 Learn",
-                        "Bible learning features are here."
-                )
-        );
+    navButton.setOnClickListener(v ->
+            showLearnMenu()
+    );
 
     } else if (item.contains("Explore")) {
 
@@ -1831,6 +1828,162 @@ prefs.edit()
     addButton(
             "⬅️ Back to Home",
             v -> showHome()
+    );
+    }
+    void showLearnMenu() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 Learn & Grow");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addCard(
+            "📚 Spiritual Growth Books",
+            "Read books and resources that help you grow in faith.",
+            v -> showSpiritualBooks()
+    );
+
+    addCard(
+            "🎙️ Sermons",
+            "Listen to sermons and messages for spiritual encouragement.",
+            v -> showSermons()
+    );
+
+    addCard(
+            "📖 Bible Study",
+            "Explore the Bible and deepen your understanding of Scripture.",
+            v -> showBible()
+    );
+
+    addCard(
+            "🧠 Memory Verse",
+            "Practice Scripture and strengthen your Bible memory.",
+            v -> showMemoryVerse()
+    );
+
+    addCard(
+            "🎯 Daily Challenge",
+            "Complete a daily faith-building challenge.",
+            v -> showMessage(
+                    "🎯 Daily Challenge",
+                    "Complete today's challenge to earn points and build your streak."
+            )
+    );
+
+    addButton(
+            "⬅️ Back to Home",
+            v -> showHome()
+    );
+    }
+    void showSpiritualBooks() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📚 Spiritual Growth Books");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addCard(
+            "📖 Growing in Faith",
+            "Learn practical ways to strengthen your faith and walk with God.",
+            v -> showMessage(
+                    "📖 Growing in Faith",
+                    "Book content will be added here."
+            )
+    );
+
+    addCard(
+            "🙏 The Power of Prayer",
+            "Explore the importance of prayer and developing a consistent prayer life.",
+            v -> showMessage(
+                    "🙏 The Power of Prayer",
+                    "Book content will be added here."
+            )
+    );
+
+    addCard(
+            "❤️ Living With Love",
+            "Learn how Christian love can shape everyday life and relationships.",
+            v -> showMessage(
+                    "❤️ Living With Love",
+                    "Book content will be added here."
+            )
+    );
+
+    addCard(
+            "🌱 Christian Character",
+            "Study qualities that help believers grow spiritually and live with purpose.",
+            v -> showMessage(
+                    "🌱 Christian Character",
+                    "Book content will be added here."
+            )
+    );
+
+    addButton(
+            "⬅️ Back to Learn",
+            v -> showLearnMenu()
+    );
+    }
+    void showSermons() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🎙️ Sermons");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addCard(
+            "🙏 Faith & Trust",
+            "A message about trusting God through difficult seasons.",
+            v -> showMessage(
+                    "🙏 Faith & Trust",
+                    "Sermon content will be added here."
+            )
+    );
+
+    addCard(
+            "🔥 Growing Spiritually",
+            "A message about developing a stronger relationship with God.",
+            v -> showMessage(
+                    "🔥 Growing Spiritually",
+                    "Sermon content will be added here."
+            )
+    );
+
+    addCard(
+            "❤️ Walking in Love",
+            "A message about living out Christian love every day.",
+            v -> showMessage(
+                    "❤️ Walking in Love",
+                    "Sermon content will be added here."
+            )
+    );
+
+    addCard(
+            "🌱 Living With Purpose",
+            "A message about living with faith, purpose, and obedience.",
+            v -> showMessage(
+                    "🌱 Living With Purpose",
+                    "Sermon content will be added here."
+            )
+    );
+
+    addButton(
+            "⬅️ Back to Learn",
+            v -> showLearnMenu()
     );
     }
     void showBibleChapter(String book, int chapter) {
