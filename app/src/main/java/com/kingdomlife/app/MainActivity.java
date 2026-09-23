@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
     LinearLayout content;
   SharedPreferences prefs;
     SharedPreferences savedVersesPrefs;
+    SharedPreferences notesPrefs;
 
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
@@ -171,6 +172,10 @@ int scrambleScore = 0;
         super.onCreate(savedInstanceState);
         savedVersesPrefs = getSharedPreferences(
         "saved_verses",
+        MODE_PRIVATE
+);
+        notesPrefs = getSharedPreferences(
+        "bible_notes",
         MODE_PRIVATE
 );
       prefs = getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE);
@@ -1632,6 +1637,23 @@ prefs.edit()
             reference + "\n\n" + verseText
     );
     }
+    void saveNote(String reference, String noteText) {
+
+    if (notesPrefs == null) {
+        return;
+    }
+
+    String key = reference + "_" + System.currentTimeMillis();
+
+    notesPrefs.edit()
+            .putString(key, noteText)
+            .apply();
+
+    showMessage(
+            "📝 Note Saved",
+            noteText
+    );
+    }
     void showSavedVerses() {
     stopTimer();
     content.removeAllViews();
@@ -1846,22 +1868,67 @@ prefs.edit()
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
+    if (notesPrefs.getAll().isEmpty()) {
+
     TextView message = new TextView(this);
     message.setText(
-            "Your Bible notes and highlighted verses will appear here."
+            "No notes saved yet.\n\n" +
+            "Add a note and it will appear here."
     );
     message.setTextSize(18);
     message.setTextColor(darkText);
     message.setPadding(10, 10, 10, 20);
     content.addView(message);
 
+} else {
+
+    for (java.util.Map.Entry<String, ?> entry :
+            notesPrefs.getAll().entrySet()) {
+
+        String noteText =
+                entry.getValue().toString();
+
+        addCard(
+                "📝 Note",
+                noteText,
+                v -> {}
+        );
+    }
+    }
     addButton(
-            "📝 Add Note",
-            v -> showMessage(
-                    "📝 Add Note",
-                    "Note creation will be connected next."
-            )
-    );
+        "📝 Add Note",
+        v -> {
+
+            EditText noteInput = new EditText(this);
+
+            noteInput.setHint("Write your note here");
+            noteInput.setTextSize(18);
+
+            content.addView(noteInput);
+
+            addButton(
+                    "💾 Save Note",
+                    saveView -> {
+
+                        String noteText =
+                                noteInput.getText().toString().trim();
+
+                        if (noteText.isEmpty()) {
+                            showMessage(
+                                    "📝 Add Note",
+                                    "Please write a note first."
+                            );
+                            return;
+                        }
+
+                        saveNote(
+                                "General Note",
+                                noteText
+                        );
+                    }
+            );
+        }
+);
 
     addButton(
             "🖍️ Highlights",
