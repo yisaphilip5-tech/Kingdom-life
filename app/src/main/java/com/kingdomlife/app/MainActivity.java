@@ -2237,22 +2237,39 @@ if (savedHighlight != null) {
 
             verseLayout.addView(verse);
 
-            Button saveButton =
-                    new Button(this);
+            LinearLayout actionRow = new LinearLayout(this);
 
-            
-            saveButton.setText("⭐ Save Verse");
-            saveButton.setAllCaps(false);
+actionRow.setOrientation(
+        LinearLayout.HORIZONTAL
+);
 
-            saveButton.setOnClickListener(
-                    v -> saveVerse(
-                            reference,
-                            verseText
-                    )
-            );
+actionRow.setGravity(
+        Gravity.LEFT | Gravity.CENTER_VERTICAL
+);
 
-            verseLayout.addView(saveButton);
-            Button bookmarkButton = new Button(this);
+actionRow.setPadding(0, 0, 0, 5);
+
+// ⭐ Save Verse
+Button saveButton = new Button(this);
+
+saveButton.setText("⭐");
+saveButton.setTextSize(18);
+saveButton.setAllCaps(false);
+saveButton.setTextColor(darkText);
+saveButton.setBackgroundColor(Color.TRANSPARENT);
+saveButton.setPadding(5, 0, 5, 0);
+
+saveButton.setOnClickListener(
+        v -> saveVerse(
+                reference,
+                verseText
+        )
+);
+
+actionRow.addView(saveButton);
+
+// 🔖 Bookmark
+Button bookmarkButton = new Button(this);
 
 bookmarkButton.setText("🔖");
 bookmarkButton.setTextSize(18);
@@ -2260,10 +2277,6 @@ bookmarkButton.setAllCaps(false);
 bookmarkButton.setTextColor(darkText);
 bookmarkButton.setBackgroundColor(Color.TRANSPARENT);
 bookmarkButton.setPadding(5, 0, 5, 0);
-
-if (bookmarksPrefs.contains(reference)) {
-    bookmarkButton.setText("🔖");
-}
 
 bookmarkButton.setOnClickListener(v -> {
 
@@ -2284,12 +2297,17 @@ bookmarkButton.setOnClickListener(v -> {
     }
 });
 
-verseLayout.addView(bookmarkButton);
-            Button highlightButton =
-        new Button(this);
+actionRow.addView(bookmarkButton);
 
-highlightButton.setText("🖍️ Highlight");
+// 🖍️ Highlight
+Button highlightButton = new Button(this);
+
+highlightButton.setText("🖍️");
+highlightButton.setTextSize(18);
 highlightButton.setAllCaps(false);
+highlightButton.setTextColor(darkText);
+highlightButton.setBackgroundColor(Color.TRANSPARENT);
+highlightButton.setPadding(5, 0, 5, 0);
 
 highlightButton.setOnClickListener(
         v -> showHighlightColors(
@@ -2298,7 +2316,9 @@ highlightButton.setOnClickListener(
         )
 );
 
-verseLayout.addView(highlightButton);
+actionRow.addView(highlightButton);
+
+verseLayout.addView(actionRow);
 
             content.addView(verseLayout);
         }
