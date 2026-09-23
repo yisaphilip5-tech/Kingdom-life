@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
     SharedPreferences notesPrefs;
     SharedPreferences highlightsPrefs;
     SharedPreferences bookmarksPrefs;
+    SharedPreferences challengePrefs;
 
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
@@ -159,6 +160,20 @@ int scrambleScore = 0;
   int totalPoints = 0;
   int learnedVerses = 0;
   int dailyStreak = 0;
+    String today =
+        new java.text.SimpleDateFormat(
+                "yyyy-MM-dd",
+                java.util.Locale.getDefault()
+        ).format(new java.util.Date());
+
+String completedDate =
+        challengePrefs.getString(
+                "completed_date",
+                ""
+        );
+
+challengeCompletedToday =
+        today.equals(completedDate);
   boolean challengeCompletedToday = false;
   String lastChallengeDate = "";
     int correctAnswers = 0;
@@ -186,6 +201,10 @@ int scrambleScore = 0;
 );
         bookmarksPrefs = getSharedPreferences(
         "bible_bookmarks",
+        MODE_PRIVATE
+);
+        challengePrefs = getSharedPreferences(
+        "daily_challenge",
         MODE_PRIVATE
 );
       prefs = getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE);
@@ -544,10 +563,7 @@ void addHomeButtonGrid() {
     
 row2.addView(createHomeSquareButton(
         "🎯\nDaily Challenge",
-        v -> showMessage(
-                "🎯 Daily Challenge",
-                "Complete today's challenge to earn points and build your streak."
-        )
+        v -> showDailyChallenge()
 ));
     row2.addView(createHomeSquareButton(
             "📊\nProgress",
@@ -2010,10 +2026,7 @@ prefs.edit()
     addCard(
             "🎯 Daily Challenge",
             "Complete a daily faith-building challenge.",
-            v -> showMessage(
-                    "🎯 Daily Challenge",
-                    "Complete today's challenge to earn points and build your streak."
-            )
+            v -> showDailyChallenge()
     );
 
     addButton(
@@ -4059,4 +4072,108 @@ void showBookmarks() {
             v -> showMoreMenu()
     );
     }
+    void showDailyChallenge() {
+    stopTimer();
+    content.removeAllViews();
+
+    String today =
+            new java.text.SimpleDateFormat(
+                    "yyyy-MM-dd",
+                    java.util.Locale.getDefault()
+            ).format(new java.util.Date());
+
+    String completedDate =
+            challengePrefs.getString(
+                    "completed_date",
+                    ""
+            );
+
+    boolean completedToday =
+            today.equals(completedDate);
+
+    int dayNumber =
+            Math.abs(today.hashCode()) % 5;
+
+    String challengeTitle;
+    String challengeText;
+
+    if (dayNumber == 0) {
+
+        challengeTitle = "🙏 Prayer Challenge";
+        challengeText =
+                "Spend a few quiet minutes talking to God today.";
+
+    } else if (dayNumber == 1) {
+
+        challengeTitle = "❤️ Love Challenge";
+        challengeText =
+                "Show kindness and encouragement to someone today.";
+
+    } else if (dayNumber == 2) {
+
+        challengeTitle = "📖 Scripture Challenge";
+        challengeText =
+                "Read a Bible passage and think about one lesson from it.";
+
+    } else if (dayNumber == 3) {
+
+        challengeTitle = "🤝 Kindness Challenge";
+        challengeText =
+                "Do one helpful thing for someone without expecting anything in return.";
+
+    } else {
+
+        challengeTitle = "🌟 Gratitude Challenge";
+        challengeText =
+                "Think of three things you are thankful to God for today.";
+    }
+
+    TextView title = new TextView(this);
+    title.setText("🎯 Daily Challenge");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addCard(
+            challengeTitle,
+            challengeText,
+            v -> {}
+    );
+
+    if (completedToday) {
+
+        addCard(
+                "✅ Completed",
+                "Today's challenge is complete.\n\n" +
+                "Come back tomorrow for another challenge!",
+                v -> {}
+        );
+
+    } else {
+
+        addButton(
+                "✅ Complete Challenge",
+                v -> completeDailyChallenge(today)
+        );
+    }
+
+    addCard(
+            "⭐ Points",
+            totalPoints + " points earned so far.",
+            v -> {}
+    );
+
+    addCard(
+            "🔥 Daily Streak",
+            dailyStreak + " day(s) streak.",
+            v -> {}
+    );
+
+    addButton(
+            "⬅️ Back to Home",
+            v -> showHome()
+    );
+        }
   }
