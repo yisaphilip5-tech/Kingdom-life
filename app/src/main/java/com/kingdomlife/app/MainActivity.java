@@ -784,6 +784,10 @@ prefs.edit()
         "📚 Old Testament",
         v -> showOldTestament()
 );
+        addButton(
+        "🔎 Search Bible",
+        v -> showBibleSearch()
+);
 
     addButton(
         "📚 New Testament",
@@ -1415,6 +1419,50 @@ prefs.edit()
     addButton(
             "⬅️ Back to Old Testament",
             v -> showOldTestament()
+    );
+    }
+    void showBibleSearch() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔎 Search Bible — KJV");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    EditText searchInput = new EditText(this);
+    searchInput.setHint("Enter a word or phrase");
+    searchInput.setTextSize(18);
+    searchInput.setSingleLine(true);
+    content.addView(searchInput);
+
+    addButton(
+            "🔎 Search",
+            v -> {
+                String query = searchInput.getText().toString().trim();
+
+                if (query.isEmpty()) {
+                    showMessage(
+                            "🔎 Bible Search",
+                            "Please enter a word or phrase to search."
+                    );
+                    return;
+                }
+
+                showMessage(
+                        "🔎 Bible Search",
+                        "Search is ready for the KJV Bible.\n\n" +
+                        "You searched for: " + query
+                );
+            }
+    );
+
+    addButton(
+            "⬅️ Back to Bible",
+            v -> showBible()
     );
     }
     void showBibleChapter(String book, int chapter) {
