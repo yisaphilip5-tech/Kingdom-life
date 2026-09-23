@@ -279,12 +279,9 @@ for (String item : navItems) {
 
     } else {
 
-        navButton.setOnClickListener(v ->
-                showMessage(
-                        "⋯ More",
-                        "More Kingdom Life options."
-                )
-        );
+    navButton.setOnClickListener(v ->
+            showMoreMenu()
+    );
     }
 }
 
@@ -1617,6 +1614,111 @@ prefs.edit()
             v -> showBibleSearch()
     );
         }
+    void showSavedVerses() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("⭐ Saved Verses");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView message = new TextView(this);
+    message.setText(
+            "Your saved Bible verses will appear here."
+    );
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(10, 10, 10, 20);
+    content.addView(message);
+
+    addButton(
+            "⬅️ Back to More",
+            v -> showMoreMenu()
+    );
+    }
+    void showBibleDictionary() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📚 Bible Dictionary");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView message = new TextView(this);
+    message.setText(
+            "Search Bible words and terms to learn their meanings."
+    );
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(10, 10, 10, 20);
+    content.addView(message);
+
+    EditText searchInput = new EditText(this);
+    searchInput.setHint("Enter a Bible word");
+    searchInput.setTextSize(18);
+    searchInput.setSingleLine(true);
+    content.addView(searchInput);
+
+    addButton(
+            "🔎 Search Dictionary",
+            v -> showMessage(
+                    "📚 Bible Dictionary",
+                    "Dictionary search for \"" +
+                    searchInput.getText().toString().trim() +
+                    "\" will be connected next."
+            )
+    );
+
+    addButton(
+            "⬅️ Back to More",
+            v -> showMoreMenu()
+    );
+    }
+    void showMoreMenu() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("⋯ More");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addButton(
+            "⭐ Saved Verses",
+            v -> showSavedVerses()
+    );
+
+    addButton(
+            "📚 Bible Dictionary",
+            v -> showBibleDictionary()
+    );
+
+    addButton(
+            "⚙️ Settings",
+            v -> showSettings()
+    );
+
+    addButton(
+            "ℹ️ About Kingdom Life",
+            v -> showAbout()
+    );
+
+    addButton(
+            "⬅️ Back to Home",
+            v -> showHome()
+    );
+    }
     void showBibleChapter(String book, int chapter) {
     stopTimer();
     content.removeAllViews();
