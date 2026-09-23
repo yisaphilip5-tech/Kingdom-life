@@ -3626,6 +3626,7 @@ button.setElevation(4);
         stopTimer();
         super.onDestroy();
     }
+    
     void showMissingWord() {
     stopTimer();
     content.removeAllViews();
@@ -3825,4 +3826,62 @@ void showMissingWordQuestion(String[][] questions, int questionIndex) {
 
     addButton("⬅️ Back to Games", v -> showGameMenu());
             }
+    void showHighlights() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🖍️ Highlights");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    if (highlightsPrefs.getAll().isEmpty()) {
+
+        TextView message = new TextView(this);
+        message.setText(
+                "No highlighted verses yet.\n\n" +
+                "Highlight a verse from the Bible reader and it will appear here."
+        );
+        message.setTextSize(18);
+        message.setTextColor(darkText);
+        message.setPadding(10, 10, 10, 20);
+        content.addView(message);
+
+    } else {
+
+        for (java.util.Map.Entry<String, ?> entry :
+                highlightsPrefs.getAll().entrySet()) {
+
+            String reference = entry.getKey();
+            String savedHighlight =
+                    entry.getValue().toString();
+
+            String verseText = savedHighlight;
+
+            try {
+                String[] parts =
+                        savedHighlight.split("\\|", 2);
+
+                if (parts.length == 2) {
+                    verseText = parts[1];
+                }
+            } catch (Exception ignored) {
+            }
+
+            addCard(
+                    "🖍️ " + reference,
+                    verseText,
+                    v -> {}
+            );
+        }
+    }
+
+    addButton(
+            "⬅️ Back to Notes & Highlights",
+            v -> showNotesHighlights()
+    );
+    }
   }
