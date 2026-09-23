@@ -1707,13 +1707,88 @@ prefs.edit()
     content.addView(searchInput);
 
     addButton(
-            "🔎 Search Dictionary",
-            v -> showMessage(
-                    "📚 Bible Dictionary",
-                    "Dictionary search for \"" +
-                    searchInput.getText().toString().trim() +
-                    "\" will be connected next."
-            )
+        "🔎 Search Dictionary",
+        v -> {
+            String query =
+                    searchInput.getText().toString().trim();
+
+            if (query.isEmpty()) {
+                showMessage(
+                        "📚 Bible Dictionary",
+                        "Please enter a Bible word to search."
+                );
+                return;
+            }
+
+            showDictionaryResult(query);
+        }
+);
+
+    addButton(
+            "⬅️ Back to More",
+            v -> showMoreMenu()
+    );
+    }
+    void showDictionaryResult(String query) {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📚 Bible Dictionary");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    String word = query.toLowerCase();
+
+    String meaning = null;
+
+    if (word.equals("faith")) {
+        meaning = "Trust and confidence in God and His promises.";
+    } else if (word.equals("grace")) {
+        meaning = "God's undeserved favor and kindness toward people.";
+    } else if (word.equals("prayer")) {
+        meaning = "Communication with God through speaking, asking, thanking, and worship.";
+    } else if (word.equals("love")) {
+        meaning = "Selfless care, affection, and devotion toward God and others.";
+    } else if (word.equals("sin")) {
+        meaning = "Disobedience or wrongdoing against God's will.";
+    } else if (word.equals("salvation")) {
+        meaning = "Deliverance from sin and reconciliation with God.";
+    } else if (word.equals("wisdom")) {
+        meaning = "The ability to understand and apply what is right according to God.";
+    } else if (word.equals("forgiveness")) {
+        meaning = "Choosing to release someone from the debt of their wrongdoing.";
+    } else if (word.equals("hope")) {
+        meaning = "Confident expectation and trust in God's promises.";
+    } else if (word.equals("peace")) {
+        meaning = "A state of calm, reconciliation, and trust in God.";
+    }
+
+    if (meaning != null) {
+
+        addCard(
+                "🔤 " + query,
+                meaning,
+                v -> {}
+        );
+
+    } else {
+
+        addCard(
+                "🔎 No Entry Found",
+                "No dictionary entry was found for \"" +
+                        query +
+                        "\" yet.",
+                v -> {}
+        );
+    }
+
+    addButton(
+            "🔎 Search Again",
+            v -> showBibleDictionary()
     );
 
     addButton(
