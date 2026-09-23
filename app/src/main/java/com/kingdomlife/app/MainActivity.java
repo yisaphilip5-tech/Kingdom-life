@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
     SharedPreferences savedVersesPrefs;
     SharedPreferences notesPrefs;
     SharedPreferences highlightsPrefs;
+    SharedPreferences bookmarksPrefs;
 
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
@@ -181,6 +182,10 @@ int scrambleScore = 0;
 );
         highlightsPrefs = getSharedPreferences(
         "bible_highlights",
+        MODE_PRIVATE
+);
+        bookmarksPrefs = getSharedPreferences(
+        "bible_bookmarks",
         MODE_PRIVATE
 );
       prefs = getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE);
@@ -1855,6 +1860,10 @@ prefs.edit()
             v -> showSavedVerses()
     );
         addButton(
+        "🔖 Bookmarks",
+        v -> showBookmarks()
+);
+        addButton(
         "📝 Notes & Highlights",
         v -> showNotesHighlights()
 );
@@ -2243,6 +2252,39 @@ if (savedHighlight != null) {
             );
 
             verseLayout.addView(saveButton);
+            Button bookmarkButton = new Button(this);
+
+bookmarkButton.setText("🔖");
+bookmarkButton.setTextSize(18);
+bookmarkButton.setAllCaps(false);
+bookmarkButton.setTextColor(darkText);
+bookmarkButton.setBackgroundColor(Color.TRANSPARENT);
+bookmarkButton.setPadding(5, 0, 5, 0);
+
+if (bookmarksPrefs.contains(reference)) {
+    bookmarkButton.setText("🔖");
+}
+
+bookmarkButton.setOnClickListener(v -> {
+
+    if (bookmarksPrefs.contains(reference)) {
+
+        bookmarksPrefs.edit()
+                .remove(reference)
+                .apply();
+
+        showMessage(
+                "🔖 Bookmark Removed",
+                reference + " was removed from bookmarks."
+        );
+
+    } else {
+
+        saveBookmark(reference);
+    }
+});
+
+verseLayout.addView(bookmarkButton);
             Button highlightButton =
         new Button(this);
 
@@ -3882,6 +3924,119 @@ void showMissingWordQuestion(String[][] questions, int questionIndex) {
     addButton(
             "⬅️ Back to Notes & Highlights",
             v -> showNotesHighlights()
+    );
+    }
+    void saveBookmark(String reference) {
+
+    if (bookmarksPrefs == null) {
+        return;
+    }
+
+    bookmarksPrefs.edit()
+            .putString(reference, reference)
+            .apply();
+
+    showMessage(
+            "🔖 Bookmark Saved",
+            reference + " has been bookmarked."
+    );
+}
+
+void removeBookmark(String reference) {
+
+    if (bookmarksPrefs == null) {
+        return;
+    }
+
+    bookmarksPrefs.edit()
+            .remove(reference)
+            .apply();
+
+    showBookmarks();
+}
+
+void showBookmarks() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔖 Bible Bookmarks");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    if (bookmarksPrefs.getAll().isEmpty()) {
+
+        TextView message = new TextView(this);
+        message.setText(
+                "No bookmarks saved yet.\n\n" +
+                "Tap 🔖 beside a Bible verse to save your reading location."
+        );
+        message.setTextSize(18);
+        message.setTextColor(darkText);
+        message.setPadding(10, 10, 10, 20);
+        content.addView(message);
+
+    } else {
+
+        for (java.util.Map.Entry<String, ?> entry :
+                bookmarksPrefs.getAll().entrySet()) {
+
+            String reference = entry.getKey();
+
+            addCard(
+                    "🔖 " + reference,
+                    "Tap to return to this Bible location.",
+                    v -> {
+
+                        try {
+
+                            int colonIndex =
+                                    reference.lastIndexOf(":");
+
+                            int spaceIndex =
+                                    reference.lastIndexOf(" ");
+
+                            if (colonIndex > spaceIndex &&
+                                spaceIndex > 0) {
+
+                                String book =
+                                        reference.substring(
+                                                0,
+                                                spaceIndex
+                                        );
+
+                                int chapter =
+                                        Integer.parseInt(
+                                                reference.substring(
+                                                        spaceIndex + 1,
+                                                        colonIndex
+                                                )
+                                        );
+
+                                showBibleChapter(
+                                        book,
+                                        chapter
+                                );
+                            }
+
+                        } catch (Exception ignored) {
+                        }
+                    }
+            );
+
+            addButton(
+                    "🗑️ Remove " + reference,
+                    v -> removeBookmark(reference)
+            );
+        }
+    }
+
+    addButton(
+            "⬅️ Back to More",
+            v -> showMoreMenu()
     );
     }
   }
