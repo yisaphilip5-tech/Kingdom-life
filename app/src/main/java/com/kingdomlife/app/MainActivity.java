@@ -1441,9 +1441,81 @@ prefs.edit()
 
     addButton(
             "⬅️ Back to Chapters",
-            v -> showGenesisChapters()
+            v -> showBookChapters(book, getChapterCount(book))
     );
     }
+    int getChapterCount(String book) {
+
+    if (book.equals("Genesis")) return 50;
+    if (book.equals("Exodus")) return 40;
+    if (book.equals("Leviticus")) return 27;
+    if (book.equals("Numbers")) return 36;
+    if (book.equals("Deuteronomy")) return 34;
+    if (book.equals("Joshua")) return 24;
+    if (book.equals("Judges")) return 21;
+    if (book.equals("Ruth")) return 4;
+    if (book.equals("1 Samuel")) return 31;
+    if (book.equals("2 Samuel")) return 24;
+    if (book.equals("1 Kings")) return 22;
+    if (book.equals("2 Kings")) return 25;
+    if (book.equals("1 Chronicles")) return 29;
+    if (book.equals("2 Chronicles")) return 36;
+    if (book.equals("Ezra")) return 10;
+    if (book.equals("Nehemiah")) return 13;
+    if (book.equals("Esther")) return 10;
+    if (book.equals("Job")) return 42;
+    if (book.equals("Psalms")) return 150;
+    if (book.equals("Proverbs")) return 31;
+    if (book.equals("Ecclesiastes")) return 12;
+    if (book.equals("Song of Solomon")) return 8;
+    if (book.equals("Isaiah")) return 66;
+    if (book.equals("Jeremiah")) return 52;
+    if (book.equals("Lamentations")) return 5;
+    if (book.equals("Ezekiel")) return 48;
+    if (book.equals("Daniel")) return 12;
+    if (book.equals("Hosea")) return 14;
+    if (book.equals("Joel")) return 3;
+    if (book.equals("Amos")) return 9;
+    if (book.equals("Obadiah")) return 1;
+    if (book.equals("Jonah")) return 4;
+    if (book.equals("Micah")) return 7;
+    if (book.equals("Nahum")) return 3;
+    if (book.equals("Habakkuk")) return 3;
+    if (book.equals("Zephaniah")) return 3;
+    if (book.equals("Haggai")) return 2;
+    if (book.equals("Zechariah")) return 14;
+    if (book.equals("Malachi")) return 4;
+
+    if (book.equals("Matthew")) return 28;
+    if (book.equals("Mark")) return 16;
+    if (book.equals("Luke")) return 24;
+    if (book.equals("John")) return 21;
+    if (book.equals("Acts")) return 28;
+    if (book.equals("Romans")) return 16;
+    if (book.equals("1 Corinthians")) return 16;
+    if (book.equals("2 Corinthians")) return 13;
+    if (book.equals("Galatians")) return 6;
+    if (book.equals("Ephesians")) return 6;
+    if (book.equals("Philippians")) return 4;
+    if (book.equals("Colossians")) return 4;
+    if (book.equals("1 Thessalonians")) return 5;
+    if (book.equals("2 Thessalonians")) return 3;
+    if (book.equals("1 Timothy")) return 6;
+    if (book.equals("2 Timothy")) return 4;
+    if (book.equals("Titus")) return 3;
+    if (book.equals("Philemon")) return 1;
+    if (book.equals("Hebrews")) return 13;
+    if (book.equals("James")) return 5;
+    if (book.equals("1 Peter")) return 5;
+    if (book.equals("2 Peter")) return 3;
+    if (book.equals("1 John")) return 5;
+    if (book.equals("2 John")) return 1;
+    if (book.equals("3 John")) return 1;
+    if (book.equals("Jude")) return 1;
+    if (book.equals("Revelation")) return 22;
+
+    return 0;
+        }
     void showBookChapters(String book, int chapterCount) {
     stopTimer();
     content.removeAllViews();
