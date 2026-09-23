@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
   SharedPreferences prefs;
     SharedPreferences savedVersesPrefs;
     SharedPreferences notesPrefs;
+    SharedPreferences highlightsPrefs;
 
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
@@ -176,6 +177,10 @@ int scrambleScore = 0;
 );
         notesPrefs = getSharedPreferences(
         "bible_notes",
+        MODE_PRIVATE
+);
+        highlightsPrefs = getSharedPreferences(
+        "bible_highlights",
         MODE_PRIVATE
 );
       prefs = getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE);
@@ -1654,6 +1659,24 @@ prefs.edit()
             noteText
     );
     }
+    void saveHighlight(String reference, String verseText) {
+
+    if (highlightsPrefs == null) {
+        return;
+    }
+
+    String key =
+            reference + "_" + System.currentTimeMillis();
+
+    highlightsPrefs.edit()
+            .putString(key, verseText)
+            .apply();
+
+    showMessage(
+            "🖍️ Verse Highlighted",
+            reference + "\n\n" + verseText
+    );
+    }
     void showSavedVerses() {
     stopTimer();
     content.removeAllViews();
@@ -1931,13 +1954,9 @@ prefs.edit()
 );
 
     addButton(
-            "🖍️ Highlights",
-            v -> showMessage(
-                    "🖍️ Highlights",
-                    "Your highlighted Bible verses will appear here."
-            )
-    );
-
+        "🖍️ Highlights",
+        v -> showHighlights()
+);
     addButton(
             "⬅️ Back to More",
             v -> showMoreMenu()
@@ -2175,21 +2194,44 @@ prefs.edit()
             verse.setText(
                     verseNumber + " " + verseText
             );
+            String reference =
+        book + " " +
+        chapter + ":" +
+        verseNumber;
 
             verse.setTextSize(18);
             verse.setTextColor(darkText);
             verse.setPadding(5, 10, 5, 5);
+            String savedHighlight =
+        highlightsPrefs.getString(
+                reference,
+                null
+        );
+
+if (savedHighlight != null) {
+
+    try {
+        String[] parts =
+                savedHighlight.split("\\|", 2);
+
+        int highlightColor =
+                Integer.parseInt(parts[0]);
+
+        verse.setBackgroundColor(
+                highlightColor
+        );
+
+    } catch (Exception ignored) {
+    }
+            }
+            
 
             verseLayout.addView(verse);
 
             Button saveButton =
                     new Button(this);
 
-            String reference =
-                    book + " " +
-                    chapter + ":" +
-                    verseNumber;
-
+            
             saveButton.setText("⭐ Save Verse");
             saveButton.setAllCaps(false);
 
@@ -2201,6 +2243,20 @@ prefs.edit()
             );
 
             verseLayout.addView(saveButton);
+            Button highlightButton =
+        new Button(this);
+
+highlightButton.setText("🖍️ Highlight");
+highlightButton.setAllCaps(false);
+
+highlightButton.setOnClickListener(
+        v -> showHighlightColors(
+                reference,
+                verseText
+        )
+);
+
+verseLayout.addView(highlightButton);
 
             content.addView(verseLayout);
         }
@@ -2300,6 +2356,67 @@ prefs.edit()
 
     return 0;
         }
+    void showHighlightColors(String reference, String verseText) {
+
+    stopTimer();
+
+    String[] colors = {
+            "🟨 Yellow",
+            "🟩 Green",
+            "🟦 Blue",
+            "🩷 Pink"
+    };
+
+    new android.app.AlertDialog.Builder(this)
+            .setTitle("🖍️ Choose Highlight Color")
+            .setItems(
+                    colors,
+                    (dialog, which) -> {
+
+                        int color;
+
+                        if (which == 0) {
+    color = Color.rgb(255, 245, 157);
+} else if (which == 1) {
+    color = Color.rgb(200, 230, 201);
+} else if (which == 2) {
+    color = Color.rgb(187, 222, 251);
+} else {
+    color = Color.rgb(248, 187, 208);
+                        }
+
+                        saveColoredHighlight(
+                                reference,
+                                verseText,
+                                color
+                        );
+                    }
+            )
+            .setNegativeButton("Cancel", null)
+            .show();
+    }
+    void saveColoredHighlight(
+        String reference,
+        String verseText,
+        int color
+) {
+
+    if (highlightsPrefs == null) {
+        return;
+    }
+
+    highlightsPrefs.edit()
+            .putString(
+                    reference,
+                    color + "|" + verseText
+            )
+            .apply();
+
+    showMessage(
+            "🖍️ Highlight Saved",
+            reference + "\n\n" + verseText
+    );
+    }
     void showBookChapters(String book, int chapterCount) {
     stopTimer();
     content.removeAllViews();
