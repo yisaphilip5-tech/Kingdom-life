@@ -1440,31 +1440,183 @@ prefs.edit()
     content.addView(searchInput);
 
     addButton(
-            "🔎 Search",
-            v -> {
-                String query = searchInput.getText().toString().trim();
+        "🔎 Search",
+        v -> {
+            String query = searchInput.getText().toString().trim();
 
-                if (query.isEmpty()) {
-                    showMessage(
-                            "🔎 Bible Search",
-                            "Please enter a word or phrase to search."
-                    );
-                    return;
-                }
-
+            if (query.isEmpty()) {
                 showMessage(
                         "🔎 Bible Search",
-                        "Search is ready for the KJV Bible.\n\n" +
-                        "You searched for: " + query
+                        "Please enter a word or phrase to search."
                 );
+                return;
             }
-    );
+
+            showBibleSearchResults(query);
+        }
+);
 
     addButton(
             "⬅️ Back to Bible",
             v -> showBible()
     );
     }
+    void showBibleSearchResults(String query) {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔎 Search Results");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    String searchText = query.toLowerCase();
+    int resultCount = 0;
+
+    try {
+
+        String[] books = {
+                "Genesis", "Exodus", "Leviticus", "Numbers",
+                "Deuteronomy", "Joshua", "Judges", "Ruth",
+                "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
+                "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah",
+                "Esther", "Job", "Psalms", "Proverbs",
+                "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah",
+                "Lamentations", "Ezekiel", "Daniel", "Hosea",
+                "Joel", "Amos", "Obadiah", "Jonah", "Micah",
+                "Nahum", "Habakkuk", "Zephaniah", "Haggai",
+                "Zechariah", "Malachi",
+
+                "Matthew", "Mark", "Luke", "John", "Acts",
+                "Romans", "1 Corinthians", "2 Corinthians",
+                "Galatians", "Ephesians", "Philippians", "Colossians",
+                "1 Thessalonians", "2 Thessalonians", "1 Timothy",
+                "2 Timothy", "Titus", "Philemon", "Hebrews", "James",
+                "1 Peter", "2 Peter", "1 John", "2 John",
+                "3 John", "Jude", "Revelation"
+        };
+
+        for (String book : books) {
+
+            InputStream inputStream =
+                    getAssets().open("kjv/" + book + ".json");
+
+            BufferedReader reader =
+                    new BufferedReader(
+                            new InputStreamReader(inputStream)
+                    );
+
+            StringBuilder jsonText =
+                    new StringBuilder();
+
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                jsonText.append(line);
+            }
+
+            reader.close();
+
+            JSONObject bible =
+                    new JSONObject(jsonText.toString());
+
+            java.util.Iterator<String> chapters =
+                    bible.keys();
+
+            while (chapters.hasNext()) {
+
+                String chapterNumber = chapters.next();
+
+                JSONObject chapter =
+                        bible.getJSONObject(chapterNumber);
+
+                java.util.Iterator<String> verses =
+                        chapter.keys();
+
+                while (verses.hasNext()) {
+
+                    String verseNumber = verses.next();
+
+                    String verseText =
+                            chapter.getString(verseNumber);
+
+                    if (verseText.toLowerCase()
+                            .contains(searchText)) {
+
+                        TextView result = new TextView(this);
+
+                        result.setText(
+                                "📖 " + book +
+                                " " + chapterNumber +
+                                ":" + verseNumber +
+                                "\n" + verseText
+                        );
+
+                        result.setTextSize(17);
+                        result.setTextColor(darkText);
+                        result.setPadding(
+                                10, 12, 10, 12
+                        );
+
+                        content.addView(result);
+
+                        resultCount++;
+
+                        if (resultCount >= 50) {
+                            break;
+                        }
+                    }
+                }
+
+                if (resultCount >= 50) {
+                    break;
+                }
+            }
+
+            if (resultCount >= 50) {
+                break;
+            }
+        }
+
+        if (resultCount == 0) {
+
+            TextView none = new TextView(this);
+
+            none.setText(
+                    "No verses found for: " + query
+            );
+
+            none.setTextSize(18);
+            none.setTextColor(darkText);
+            none.setPadding(10, 20, 10, 20);
+
+            content.addView(none);
+        }
+
+    } catch (Exception e) {
+
+        TextView error = new TextView(this);
+
+        error.setText(
+                "Unable to search the Bible.\n\n" +
+                e.toString()
+        );
+
+        error.setTextSize(16);
+        error.setTextColor(darkText);
+        error.setPadding(10, 20, 10, 20);
+
+        content.addView(error);
+    }
+
+    addButton(
+            "⬅️ Back to Search",
+            v -> showBibleSearch()
+    );
+        }
     void showBibleChapter(String book, int chapter) {
     stopTimer();
     content.removeAllViews();
