@@ -1809,6 +1809,10 @@ prefs.edit()
             "⭐ Saved Verses",
             v -> showSavedVerses()
     );
+        addButton(
+        "📝 Notes & Highlights",
+        v -> showNotesHighlights()
+);
 
     addButton(
             "📚 Bible Dictionary",
@@ -1828,6 +1832,48 @@ prefs.edit()
     addButton(
             "⬅️ Back to Home",
             v -> showHome()
+    );
+    }
+    void showNotesHighlights() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📝 Notes & Highlights");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView message = new TextView(this);
+    message.setText(
+            "Your Bible notes and highlighted verses will appear here."
+    );
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(10, 10, 10, 20);
+    content.addView(message);
+
+    addButton(
+            "📝 Add Note",
+            v -> showMessage(
+                    "📝 Add Note",
+                    "Note creation will be connected next."
+            )
+    );
+
+    addButton(
+            "🖍️ Highlights",
+            v -> showMessage(
+                    "🖍️ Highlights",
+                    "Your highlighted Bible verses will appear here."
+            )
+    );
+
+    addButton(
+            "⬅️ Back to More",
+            v -> showMoreMenu()
     );
     }
     void showLearnMenu() {
