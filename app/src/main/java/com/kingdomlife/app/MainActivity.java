@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
 
     LinearLayout content;
   SharedPreferences prefs;
+    SharedPreferences savedVersesPrefs;
 
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
