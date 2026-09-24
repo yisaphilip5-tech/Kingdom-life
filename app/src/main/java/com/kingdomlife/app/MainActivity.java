@@ -380,6 +380,7 @@ new Handler().postDelayed(() -> {
     void showHome() {
         stopTimer();
 content.removeAllViews();
+        content.setPadding(12, 0, 12, 12);
         int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
 if (hour >= 6 && hour < 18) {
@@ -435,6 +436,15 @@ settingsButton.setOnClickListener(v -> showSettings());
 header.addView(settingsButton);
 
 content.addView(header);
+        Space headerSpace = new Space(this);
+
+content.addView(
+        headerSpace,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                12
+        )
+);
 
 /* ===== DATE ===== */
 
@@ -633,11 +643,11 @@ row2.addView(createHomeSquareButton(
     LinearLayout.LayoutParams params =
             new LinearLayout.LayoutParams(
                     0,
-                    110,
+                    120,
                     1
             );
 
-    params.setMargins(5, 5, 5, 5);
+    params.setMargins(4, 4, 4, 4);
 
     button.setLayoutParams(params);
 
@@ -1897,7 +1907,7 @@ prefs.edit()
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(0, 15, 0, 15);
     content.addView(title);
 
     addButton(
@@ -2772,18 +2782,10 @@ addButton("⬅️ Back to Home", v -> showHome());
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(0, 15, 0, 15);
     content.addView(title);
 
-    addCard(
-            "🎵 Background Sound",
-            "Control background sound for Kingdom Life.",
-            v -> showMessage(
-                    "🎵 Background Sound",
-                    "Sound controls will be connected when the sound feature is added."
-            )
-    );
-
+    
     addCard(
             "🔊 Button Sounds",
             "Control sounds when buttons are pressed.",
