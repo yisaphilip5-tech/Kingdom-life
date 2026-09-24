@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.app.Notification;
 import android.os.Build;
 
 
@@ -57,20 +58,22 @@ public class KingdomLifeNotificationReceiver extends BroadcastReceiver {
                                 : 0)
                 );
 
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(
-                        context,
-                        "kingdom_life_reminders"
-                )
-                .setSmallIcon(R.drawable.kingdom_life_icon)
-                .setContentTitle(title)
-                .setContentText(message)
-                .setPriority(
-                        NotificationCompat.PRIORITY_DEFAULT
-                )
-                .setAutoCancel(true)
-                .setContentIntent(pendingIntent);
+        Notification.Builder builder;
 
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    builder = new Notification.Builder(
+            context,
+            "kingdom_life_reminders"
+    );
+} else {
+    builder = new Notification.Builder(context);
+}
+
+builder.setSmallIcon(R.drawable.kingdom_life_icon)
+        .setContentTitle(title)
+        .setContentText(message)
+        .setAutoCancel(true)
+        .setContentIntent(pendingIntent);
         NotificationManager manager =
                 (NotificationManager)
                         context.getSystemService(
