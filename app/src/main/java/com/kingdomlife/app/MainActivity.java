@@ -8,6 +8,11 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import androidx.core.app.NotificationCompat;
+import android.os.Build;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Calendar;
@@ -174,6 +179,26 @@ int scrambleScore = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+    NotificationChannel channel =
+            new NotificationChannel(
+                    "kingdom_life_reminders",
+                    "Kingdom Life Reminders",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+
+    channel.setDescription(
+            "Reminders for Bible reading, Memory Verse, and Daily Challenge."
+    );
+
+    NotificationManager manager =
+            getSystemService(NotificationManager.class);
+
+    if (manager != null) {
+        manager.createNotificationChannel(channel);
+    }
+        }
         savedVersesPrefs = getSharedPreferences(
         "saved_verses",
         MODE_PRIVATE
@@ -2779,8 +2804,57 @@ addButton("⬅️ Back to Home", v -> showHome());
             "View your unlocked and locked achievements.",
             v -> showAchievements()
     );
+        addCard(
+        "🔔 Notifications",
+        "Manage reminders for your Kingdom Life activities.",
+        v -> showNotificationSettings()
+);
 
     addButton("⬅️ Back to Home", v -> showHome());
+    }
+    void showNotificationSettings() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔔 Notifications");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addCard(
+            "🎯 Daily Challenge Reminder",
+            "Receive a reminder to complete your daily challenge.",
+            v -> showMessage(
+                    "🎯 Daily Challenge",
+                    "Daily Challenge reminders will be connected here."
+            )
+    );
+
+    addCard(
+            "📖 Bible Reading Reminder",
+            "Receive a reminder to spend time reading the Bible.",
+            v -> showMessage(
+                    "📖 Bible Reading",
+                    "Bible reading reminders will be connected here."
+            )
+    );
+
+    addCard(
+            "🧠 Memory Verse Reminder",
+            "Receive a reminder to practice your memory verse.",
+            v -> showMessage(
+                    "🧠 Memory Verse",
+                    "Memory Verse reminders will be connected here."
+            )
+    );
+
+    addButton(
+            "⬅️ Back to Settings",
+            v -> showSettings()
+    );
     }
     void showAchievements() {
     stopTimer();
