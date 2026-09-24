@@ -18,6 +18,9 @@
             </intent-filter>
 
         </activity>
+        <receiver
+    android:name=".KingdomLifeNotificationReceiver"
+    android:exported="false" />
 
     </application>
 
