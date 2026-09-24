@@ -506,13 +506,7 @@ addCard(
         "Continue your Bible learning journey from where you left off.",
         v -> showBible()
 );
-addButton(
-        "🎵 Background Sound: OFF",
-        v -> showMessage(
-                "🎵 Background Sound",
-                "Background sound controls will be connected when the sound feature is added."
-        )
-);
+
         
     }
     void addCard(String heading, String message, View.OnClickListener listener) {
