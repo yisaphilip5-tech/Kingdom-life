@@ -30,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.ScrollView;
+import android.widget.Space;
 import android.content.SharedPreferences;
 
 public class MainActivity extends Activity {
