@@ -160,20 +160,7 @@ int scrambleScore = 0;
   int totalPoints = 0;
   int learnedVerses = 0;
   int dailyStreak = 0;
-    String today =
-        new java.text.SimpleDateFormat(
-                "yyyy-MM-dd",
-                java.util.Locale.getDefault()
-        ).format(new java.util.Date());
-
-String completedDate =
-        challengePrefs.getString(
-                "completed_date",
-                ""
-        );
-
-challengeCompletedToday =
-        today.equals(completedDate);
+    
   boolean challengeCompletedToday = false;
   String lastChallengeDate = "";
     int correctAnswers = 0;
@@ -213,7 +200,17 @@ totalPoints = prefs.getInt("totalPoints", 0);
 learnedVerses = prefs.getInt("learnedVerses", 0);
         SharedPreferences savedVersesPrefs;
 lastChallengeDate = prefs.getString("lastChallengeDate", "");
-        highestLevelUnlocked = prefs.getInt("highestLevelUnlocked", 1);
+
+String today =
+        new java.text.SimpleDateFormat(
+                "yyyy-MM-dd",
+                java.util.Locale.getDefault()
+        ).format(new java.util.Date());
+
+challengeCompletedToday =
+        today.equals(lastChallengeDate);
+
+highestLevelUnlocked = prefs.getInt("highestLevelUnlocked", 1);
         LinearLayout main = new LinearLayout(this);
         main.setOrientation(LinearLayout.VERTICAL);
         main.setPadding(0, 0, 0, 80);
@@ -4082,14 +4079,8 @@ void showBookmarks() {
                     java.util.Locale.getDefault()
             ).format(new java.util.Date());
 
-    String completedDate =
-            challengePrefs.getString(
-                    "completed_date",
-                    ""
-            );
-
     boolean completedToday =
-            today.equals(completedDate);
+        today.equals(lastChallengeDate);
 
     int dayNumber =
             Math.abs(today.hashCode()) % 5;
@@ -4176,4 +4167,68 @@ void showBookmarks() {
             v -> showHome()
     );
         }
+    void completeDailyChallenge(String today) {
+
+    if (prefs == null) {
+        return;
+    }
+
+    String lastDate =
+            prefs.getString(
+                    "lastChallengeDate",
+                    ""
+            );
+
+    if (today.equals(lastDate)) {
+        showDailyChallenge();
+        return;
+    }
+
+    String yesterday =
+            new java.text.SimpleDateFormat(
+                    "yyyy-MM-dd",
+                    java.util.Locale.getDefault()
+            ).format(
+                    new java.util.Date(
+                            System.currentTimeMillis()
+                                    - (24L * 60L * 60L * 1000L)
+                    )
+            );
+
+    if (yesterday.equals(lastDate)) {
+        dailyStreak++;
+    } else {
+        dailyStreak = 1;
+    }
+
+    totalPoints += 10;
+
+    lastChallengeDate = today;
+    challengeCompletedToday = true;
+
+    prefs.edit()
+            .putInt(
+                    "dailyStreak",
+                    dailyStreak
+            )
+            .putInt(
+                    "totalPoints",
+                    totalPoints
+            )
+            .putString(
+                    "lastChallengeDate",
+                    lastChallengeDate
+            )
+            .apply();
+
+    showMessage(
+            "🎉 Challenge Complete!",
+            "+10 points earned!\n\n" +
+            "🔥 Daily streak: " +
+            dailyStreak +
+            " day(s)"
+    );
+
+    showDailyChallenge();
+    }
   }
