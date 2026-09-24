@@ -199,6 +199,20 @@ int scrambleScore = 0;
     if (manager != null) {
         manager.createNotificationChannel(channel);
     }
+            if (Build.VERSION.SDK_INT >= 33) {
+
+    if (checkSelfPermission(
+            "android.permission.POST_NOTIFICATIONS"
+    ) != PackageManager.PERMISSION_GRANTED) {
+
+        requestPermissions(
+                new String[]{
+                        "android.permission.POST_NOTIFICATIONS"
+                },
+                2001
+        );
+    }
+            }
         }
         savedVersesPrefs = getSharedPreferences(
         "saved_verses",
