@@ -2826,35 +2826,201 @@ addButton("⬅️ Back to Home", v -> showHome());
 
     addCard(
             "🎯 Daily Challenge Reminder",
-            "Receive a reminder to complete your daily challenge.",
-            v -> showMessage(
-                    "🎯 Daily Challenge",
-                    "Daily Challenge reminders will be connected here."
-            )
+            "Get a daily reminder to complete your challenge.",
+            v -> {
+
+                scheduleKingdomLifeNotification(
+                        "daily",
+                        18,
+                        0
+                );
+
+                showMessage(
+                        "🔔 Reminder Enabled",
+                        "Daily Challenge reminder set for 6:00 PM."
+                );
+            }
     );
 
     addCard(
             "📖 Bible Reading Reminder",
-            "Receive a reminder to spend time reading the Bible.",
-            v -> showMessage(
-                    "📖 Bible Reading",
-                    "Bible reading reminders will be connected here."
-            )
+            "Get a daily reminder to spend time reading the Bible.",
+            v -> {
+
+                scheduleKingdomLifeNotification(
+                        "bible",
+                        8,
+                        0
+                );
+
+                showMessage(
+                        "🔔 Reminder Enabled",
+                        "Bible Reading reminder set for 8:00 AM."
+                );
+            }
     );
 
     addCard(
             "🧠 Memory Verse Reminder",
-            "Receive a reminder to practice your memory verse.",
-            v -> showMessage(
-                    "🧠 Memory Verse",
-                    "Memory Verse reminders will be connected here."
-            )
+            "Get a daily reminder to practice your Memory Verse.",
+            v -> {
+
+                scheduleKingdomLifeNotification(
+                        "memory",
+                        20,
+                        0
+                );
+
+                showMessage(
+                        "🔔 Reminder Enabled",
+                        "Memory Verse reminder set for 8:00 PM."
+                );
+            }
+    );
+
+    addButton(
+            "🔕 Turn Off All Reminders",
+            v -> {
+
+                cancelKingdomLifeNotification("daily");
+                cancelKingdomLifeNotification("bible");
+                cancelKingdomLifeNotification("memory");
+
+                showMessage(
+                        "🔕 Reminders Disabled",
+                        "All Kingdom Life reminders have been turned off."
+                );
+            }
     );
 
     addButton(
             "⬅️ Back to Settings",
             v -> showSettings()
     );
+    }
+    void scheduleKingdomLifeNotification(
+        String type,
+        int hour,
+        int minute
+) {
+
+    AlarmManager alarmManager =
+            (AlarmManager) getSystemService(
+                    ALARM_SERVICE
+            );
+
+    if (alarmManager == null) {
+        return;
+    }
+
+    Intent intent =
+            new Intent(
+                    this,
+                    KingdomLifeNotificationReceiver.class
+            );
+
+    intent.putExtra(
+            "notification_type",
+            type
+    );
+
+    int requestCode;
+
+    if ("daily".equals(type)) {
+        requestCode = 1001;
+    } else if ("bible".equals(type)) {
+        requestCode = 1002;
+    } else {
+        requestCode = 1003;
+    }
+
+    PendingIntent pendingIntent =
+            PendingIntent.getBroadcast(
+                    this,
+                    requestCode,
+                    intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT |
+                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                            ? PendingIntent.FLAG_IMMUTABLE
+                            : 0)
+            );
+
+    java.util.Calendar calendar =
+            java.util.Calendar.getInstance();
+
+    calendar.set(
+            java.util.Calendar.HOUR_OF_DAY,
+            hour
+    );
+
+    calendar.set(
+            java.util.Calendar.MINUTE,
+            minute
+    );
+
+    calendar.set(
+            java.util.Calendar.SECOND,
+            0
+    );
+
+    if (calendar.getTimeInMillis()
+            <= System.currentTimeMillis()) {
+
+        calendar.add(
+                java.util.Calendar.DAY_OF_YEAR,
+                1
+        );
+    }
+
+    alarmManager.setInexactRepeating(
+            AlarmManager.RTC_WAKEUP,
+            calendar.getTimeInMillis(),
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+    );
+    }
+    void cancelKingdomLifeNotification(
+        String type
+) {
+
+    AlarmManager alarmManager =
+            (AlarmManager) getSystemService(
+                    ALARM_SERVICE
+            );
+
+    if (alarmManager == null) {
+        return;
+    }
+
+    Intent intent =
+            new Intent(
+                    this,
+                    KingdomLifeNotificationReceiver.class
+            );
+
+    int requestCode;
+
+    if ("daily".equals(type)) {
+        requestCode = 1001;
+    } else if ("bible".equals(type)) {
+        requestCode = 1002;
+    } else {
+        requestCode = 1003;
+    }
+
+    PendingIntent pendingIntent =
+            PendingIntent.getBroadcast(
+                    this,
+                    requestCode,
+                    intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT |
+                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                            ? PendingIntent.FLAG_IMMUTABLE
+                            : 0)
+            );
+
+    alarmManager.cancel(pendingIntent);
+    pendingIntent.cancel();
     }
     void showAchievements() {
     stopTimer();
