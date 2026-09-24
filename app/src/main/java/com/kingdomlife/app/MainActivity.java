@@ -298,12 +298,9 @@ for (String item : navItems) {
 
     } else if (item.contains("Explore")) {
 
-        navButton.setOnClickListener(v ->
-                showMessage(
-                        "🔎 Explore",
-                        "Explore Kingdom Life features."
-                )
-        );
+    navButton.setOnClickListener(v ->
+            showExplore()
+    );
 
     } else if (item.contains("Achievements")) {
 
@@ -4231,4 +4228,199 @@ void showBookmarks() {
 
     showDailyChallenge();
     }
+    void showExplore() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔎 Explore");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 10);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText(
+            "Search for a Kingdom Life feature."
+    );
+    instruction.setTextSize(17);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    EditText searchInput = new EditText(this);
+    searchInput.setHint("Search features...");
+    searchInput.setTextSize(18);
+    searchInput.setSingleLine(true);
+    content.addView(searchInput);
+
+    addButton(
+            "🔎 Search",
+            v -> {
+
+                String query =
+                        searchInput.getText()
+                                .toString()
+                                .trim()
+                                .toLowerCase();
+
+                if (query.isEmpty()) {
+
+                    showMessage(
+                            "🔎 Explore",
+                            "Please type a feature to search for."
+                    );
+
+                    return;
+                }
+
+                showExploreResults(query);
+            }
+    );
+
+    addButton(
+            "⬅️ Back to Home",
+            v -> showHome()
+    );
+    }
+    void showExploreResults(String query) {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🔎 Explore Results");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    boolean found = false;
+
+    if (query.contains("bible")) {
+        addCard(
+                "📖 Holy Bible",
+                "Read the King James Version of the Bible.",
+                v -> showBible()
+        );
+        found = true;
+    }
+
+    if (query.contains("memory") || query.contains("verse")) {
+        addCard(
+                "🧠 Memory Verse",
+                "Practice and learn Bible verses.",
+                v -> showMemoryVerse()
+        );
+        found = true;
+    }
+
+    if (query.contains("quiz") || query.contains("game")) {
+        addCard(
+                "🎮 Bible Games",
+                "Test your Bible knowledge with different challenges.",
+                v -> showGameMenu()
+        );
+        found = true;
+    }
+
+    if (query.contains("puzzle") || query.contains("scramble")) {
+        addCard(
+                "🧩 Bible Puzzle",
+                "Try Bible puzzle challenges.",
+                v -> showGameMenu()
+        );
+        found = true;
+    }
+
+    if (query.contains("dictionary")) {
+        addCard(
+                "📚 Bible Dictionary",
+                "Search Bible words and their meanings.",
+                v -> showBibleDictionary()
+        );
+        found = true;
+    }
+
+    if (query.contains("bookmark")) {
+        addCard(
+                "🔖 Bookmarks",
+                "Return quickly to saved Bible locations.",
+                v -> showBookmarks()
+        );
+        found = true;
+    }
+
+    if (query.contains("note") ||
+            query.contains("highlight")) {
+
+        addCard(
+                "📝 Notes & Highlights",
+                "View your saved notes and highlighted verses.",
+                v -> showNotesHighlights()
+        );
+        found = true;
+    }
+
+    if (query.contains("challenge")) {
+        addCard(
+                "🎯 Daily Challenge",
+                "Complete today's faith-building challenge.",
+                v -> showDailyChallenge()
+        );
+        found = true;
+    }
+
+    if (query.contains("progress") ||
+            query.contains("points") ||
+            query.contains("streak")) {
+
+        addCard(
+                "📊 Progress",
+                "View your points, streaks, and learning progress.",
+                v -> showProgress()
+        );
+        found = true;
+    }
+
+    if (query.contains("achievement")) {
+        addCard(
+                "🏆 Achievements",
+                "View your unlocked and locked achievements.",
+                v -> showAchievements()
+        );
+        found = true;
+    }
+
+    if (query.contains("setting") ||
+            query.contains("sound")) {
+
+        addCard(
+                "⚙️ Settings",
+                "Manage Kingdom Life settings.",
+                v -> showSettings()
+        );
+        found = true;
+    }
+
+    if (!found) {
+
+        addCard(
+                "🔎 No Feature Found",
+                "No matching feature was found. Try another search.",
+                v -> {}
+        );
+    }
+
+    addButton(
+            "🔎 Search Again",
+            v -> showExplore()
+    );
+
+    addButton(
+            "⬅️ Back to Home",
+            v -> showHome()
+    );
+        }
   }
