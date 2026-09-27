@@ -23,6 +23,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import org.json.JSONObject;
 import android.view.Gravity;
 import android.view.View;
@@ -190,7 +191,8 @@ int bibleJourneyScore = 0;
 ArrayList<String> bibleJourneyQuestions = new ArrayList<>();
 ArrayList<String[]> bibleJourneyOptions = new ArrayList<>();
 ArrayList<Integer> bibleJourneyAnswers = new ArrayList<>();
-    void loadGenesisQuestions(String difficulty) {
+ 
+        void loadGenesisQuestions(String difficulty) {
 
     bibleJourneyQuestions.clear();
     bibleJourneyOptions.clear();
@@ -200,92 +202,676 @@ ArrayList<Integer> bibleJourneyAnswers = new ArrayList<>();
 
         bibleJourneyQuestions.add("Who created the heavens and the earth?");
         bibleJourneyOptions.add(new String[]{
-                "God",
-                "Moses",
-                "Abraham",
-                "Noah"
+                "God", "Moses", "Abraham", "Noah"
         });
         bibleJourneyAnswers.add(0);
 
         bibleJourneyQuestions.add("Who was the first man?");
         bibleJourneyOptions.add(new String[]{
-                "Noah",
-                "Adam",
-                "Abraham",
-                "Jacob"
+                "Noah", "Adam", "Abraham", "Jacob"
         });
         bibleJourneyAnswers.add(1);
 
         bibleJourneyQuestions.add("Who was the first woman?");
         bibleJourneyOptions.add(new String[]{
-                "Sarah",
-                "Rachel",
-                "Eve",
-                "Rebekah"
+                "Sarah", "Rachel", "Eve", "Rebekah"
         });
         bibleJourneyAnswers.add(2);
 
         bibleJourneyQuestions.add("Who built the ark?");
         bibleJourneyOptions.add(new String[]{
-                "Abraham",
-                "Noah",
-                "Isaac",
-                "Jacob"
+                "Abraham", "Noah", "Isaac", "Jacob"
         });
         bibleJourneyAnswers.add(1);
 
         bibleJourneyQuestions.add("What was the name of Adam's wife?");
         bibleJourneyOptions.add(new String[]{
-                "Eve",
-                "Sarah",
-                "Leah",
-                "Rachel"
+                "Eve", "Sarah", "Leah", "Rachel"
         });
         bibleJourneyAnswers.add(0);
 
-    } else if (difficulty.equals("Medium")) {
-
-        bibleJourneyQuestions.add("What was the name of Abraham's wife?");
+        bibleJourneyQuestions.add("Who was Cain's brother?");
         bibleJourneyOptions.add(new String[]{
-                "Rachel",
-                "Sarah",
-                "Rebekah",
-                "Leah"
+                "Seth", "Abel", "Enoch", "Lamech"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Who was the father of Isaac?");
+        bibleJourneyOptions.add(new String[]{
+                "Jacob", "Abraham", "Noah", "Joseph"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Who was Isaac's mother?");
+        bibleJourneyOptions.add(new String[]{
+                "Rachel", "Sarah", "Rebekah", "Leah"
         });
         bibleJourneyAnswers.add(1);
 
         bibleJourneyQuestions.add("Who was Isaac's wife?");
         bibleJourneyOptions.add(new String[]{
-                "Rebekah",
-                "Sarah",
-                "Rachel",
-                "Leah"
+                "Sarah", "Rachel", "Rebekah", "Leah"
         });
-        bibleJourneyAnswers.add(0);
+        bibleJourneyAnswers.add(2);
 
-    } else if (difficulty.equals("Hard")) {
-
-        bibleJourneyQuestions.add("What was the name of Jacob's youngest son?");
+        bibleJourneyQuestions.add("Who was the father of Jacob and Esau?");
         bibleJourneyOptions.add(new String[]{
-                "Joseph",
-                "Benjamin",
-                "Judah",
-                "Reuben"
+                "Abraham", "Isaac", "Joseph", "Jacob"
         });
         bibleJourneyAnswers.add(1);
 
-    } else if (difficulty.equals("Scholar")) {
-
-        bibleJourneyQuestions.add("Which son of Jacob was sold into Egypt by his brothers?");
+        bibleJourneyQuestions.add("Who was Jacob's twin brother?");
         bibleJourneyOptions.add(new String[]{
-                "Joseph",
-                "Benjamin",
-                "Levi",
-                "Judah"
+                "Joseph", "Benjamin", "Esau", "Judah"
+        });
+        bibleJourneyAnswers.add(2);
+
+        bibleJourneyQuestions.add("What new name was given to Jacob?");
+        bibleJourneyOptions.add(new String[]{
+                "Israel", "Judah", "Ephraim", "Benjamin"
         });
         bibleJourneyAnswers.add(0);
+
+        bibleJourneyQuestions.add("How many sons did Jacob have?");
+        bibleJourneyOptions.add(new String[]{
+                "10", "11", "12", "13"
+        });
+        bibleJourneyAnswers.add(2);
+
+        bibleJourneyQuestions.add("Which son of Jacob was sold by his brothers?");
+        bibleJourneyOptions.add(new String[]{
+                "Benjamin", "Joseph", "Judah", "Reuben"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("What special garment did Jacob give Joseph?");
+        bibleJourneyOptions.add(new String[]{
+                "A crown", "A coat of many colors", "A robe of gold", "A cloak of linen"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Who bought Joseph after he was sold by his brothers?");
+        bibleJourneyOptions.add(new String[]{
+                "Potiphar", "Pharaoh", "Laban", "Abimelech"
+        });
+        bibleJourneyAnswers.add(0);
+
+        bibleJourneyQuestions.add("Who became Joseph's father-in-law in Egypt?");
+        bibleJourneyOptions.add(new String[]{
+                "Potiphar", "Pharaoh", "Onan", "Asenath"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Who was Joseph's younger brother?");
+        bibleJourneyOptions.add(new String[]{
+                "Benjamin", "Judah", "Levi", "Reuben"
+        });
+        bibleJourneyAnswers.add(0);
+
+        bibleJourneyQuestions.add("Who was Jacob's father?");
+        bibleJourneyOptions.add(new String[]{
+                "Abraham", "Isaac", "Joseph", "Esau"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Who was Jacob's grandfather?");
+        bibleJourneyOptions.add(new String[]{
+                "Noah", "Abraham", "Isaac", "Joseph"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Where was Joseph taken after being sold?");
+        bibleJourneyOptions.add(new String[]{
+                "Egypt", "Canaan", "Babylon", "Assyria"
+        });
+        bibleJourneyAnswers.add(0);
+
+        bibleJourneyQuestions.add("Who interpreted Pharaoh's dreams?");
+        bibleJourneyOptions.add(new String[]{
+                "Daniel", "Joseph", "Moses", "Aaron"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("What did God tell Abraham his descendants would be as numerous as?");
+        bibleJourneyOptions.add(new String[]{
+                "The stars", "The mountains", "The rivers", "The trees"
+        });
+        bibleJourneyAnswers.add(0);
+
+        bibleJourneyQuestions.add("What was the name of the city where Abraham's nephew Lot lived before its destruction?");
+        bibleJourneyOptions.add(new String[]{
+                "Sodom", "Jericho", "Bethlehem", "Nazareth"
+        });
+        bibleJourneyAnswers.add(0);
+
+        bibleJourneyQuestions.add("What happened to Lot's wife when she looked back?");
+        bibleJourneyOptions.add(new String[]{
+                "She became blind", "She became a pillar of salt",
+                "She disappeared", "She became stone"
+        });
+        bibleJourneyAnswers.add(1);
+
+    } else if (difficulty.equals("Medium")) {
+
+    bibleJourneyQuestions.add("What was the name of the garden where God placed Adam?");
+    bibleJourneyOptions.add(new String[]{
+            "Eden", "Gethsemane", "Carmel", "Bethel"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("Which son of Adam and Eve became a keeper of sheep?");
+    bibleJourneyOptions.add(new String[]{
+            "Cain", "Abel", "Seth", "Enoch"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("Who was the oldest man mentioned in Genesis?");
+    bibleJourneyOptions.add(new String[]{
+            "Noah", "Adam", "Methuselah", "Enoch"
+    });
+    bibleJourneyAnswers.add(2);
+
+    bibleJourneyQuestions.add("How many days and nights did rain fall during the flood?");
+    bibleJourneyOptions.add(new String[]{
+            "7", "12", "30", "40"
+    });
+    bibleJourneyAnswers.add(3);
+
+    bibleJourneyQuestions.add("How many people entered Noah's ark?");
+    bibleJourneyOptions.add(new String[]{
+            "6", "8", "10", "12"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What did Noah send out first after the waters began to recede?");
+    bibleJourneyOptions.add(new String[]{
+            "A raven", "A dove", "An eagle", "A sparrow"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("What did the dove bring back to Noah?");
+    bibleJourneyOptions.add(new String[]{
+            "A flower", "An olive leaf", "A branch", "A piece of grain"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What did God place in the sky as a sign of His covenant with Noah?");
+    bibleJourneyOptions.add(new String[]{
+            "A star", "A cloud", "A rainbow", "The sun"
+    });
+    bibleJourneyAnswers.add(2);
+
+    bibleJourneyQuestions.add("What was the name of Abraham's nephew?");
+    bibleJourneyOptions.add(new String[]{
+            "Lot", "Laban", "Nahor", "Terah"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("What was Abraham's original name?");
+    bibleJourneyOptions.add(new String[]{
+            "Abram", "Abner", "Amram", "Abimelech"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("What was Sarah's original name?");
+    bibleJourneyOptions.add(new String[]{
+            "Sarai", "Serah", "Sharon", "Salome"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("Who was Abraham's son through Hagar?");
+    bibleJourneyOptions.add(new String[]{
+            "Isaac", "Ishmael", "Esau", "Jacob"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What was the name of Abraham's wife before God changed her name to Sarah?");
+    bibleJourneyOptions.add(new String[]{
+            "Sarai", "Hagar", "Keturah", "Milcah"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("Who was Rebekah's brother?");
+    bibleJourneyOptions.add(new String[]{
+            "Laban", "Lot", "Nahor", "Terah"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("Which twin was born first, Esau or Jacob?");
+    bibleJourneyOptions.add(new String[]{
+            "Jacob", "Esau", "They were born together", "The Bible does not say"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What did Esau sell to Jacob?");
+    bibleJourneyOptions.add(new String[]{
+            "His blessing", "His birthright", "His inheritance", "His cattle"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("Which wife did Jacob love more?");
+    bibleJourneyOptions.add(new String[]{
+            "Leah", "Rachel", "Bilhah", "Zilpah"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("How many years did Jacob serve Laban for Rachel?");
+    bibleJourneyOptions.add(new String[]{
+            "5", "7", "10", "14"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("Who was Jacob's first wife?");
+    bibleJourneyOptions.add(new String[]{
+            "Rachel", "Leah", "Bilhah", "Zilpah"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("Which son of Jacob was the firstborn?");
+    bibleJourneyOptions.add(new String[]{
+            "Joseph", "Judah", "Reuben", "Simeon"
+    });
+    bibleJourneyAnswers.add(2);
+
+    bibleJourneyQuestions.add("Which son of Jacob was Joseph's full brother?");
+    bibleJourneyOptions.add(new String[]{
+            "Benjamin", "Judah", "Levi", "Dan"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("Who was Joseph's father?");
+    bibleJourneyOptions.add(new String[]{
+            "Isaac", "Jacob", "Abraham", "Esau"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What did Joseph's brothers initially plan to do to him?");
+    bibleJourneyOptions.add(new String[]{
+            "Send him home", "Kill him", "Make him a servant", "Take him to Egypt"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("Who suggested that Joseph should be put into a pit instead of being killed?");
+    bibleJourneyOptions.add(new String[]{
+            "Judah", "Reuben", "Simeon", "Levi"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What did Joseph interpret Pharaoh's dreams to mean?");
+    bibleJourneyOptions.add(new String[]{
+            "War and peace", "Seven years of plenty followed by seven years of famine",
+            "A coming flood", "Seven years of war"
+    });
+    bibleJourneyAnswers.add(1);
+        } else if (difficulty.equals("Hard")) {
+        bibleJourneyQuestions.add("What was the name of the river that flowed from Eden and divided into four branches?");
+bibleJourneyOptions.add(new String[]{
+        "Jordan", "Euphrates", "Nile", "Tigris"
+});
+bibleJourneyAnswers.add(3);
+
+bibleJourneyQuestions.add("Which two sons of Adam and Eve are specifically named before Seth?");
+bibleJourneyOptions.add(new String[]{
+        "Cain and Abel", "Cain and Seth", "Abel and Seth", "Enoch and Cain"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("Who was the father of Enoch in Cain's family line?");
+bibleJourneyOptions.add(new String[]{
+        "Lamech", "Jared", "Methuselah", "Irad"
+});
+bibleJourneyAnswers.add(3);
+
+bibleJourneyQuestions.add("Who was the father of Methuselah?");
+bibleJourneyOptions.add(new String[]{
+        "Jared", "Enoch", "Lamech", "Seth"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("How old was Noah when the floodwaters came upon the earth?");
+bibleJourneyOptions.add(new String[]{
+        "500", "600", "700", "800"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("How many days did the waters prevail upon the earth after the flood began?");
+bibleJourneyOptions.add(new String[]{
+        "40", "100", "150", "365"
+});
+bibleJourneyAnswers.add(2);
+
+bibleJourneyQuestions.add("What was the name of the mountain where Noah's ark rested?");
+bibleJourneyOptions.add(new String[]{
+        "Mount Sinai", "Mount Ararat", "Mount Carmel", "Mount Moriah"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("Who was the father of Abram?");
+bibleJourneyOptions.add(new String[]{
+        "Nahor", "Terah", "Haran", "Shem"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("Which relative of Abram died in Ur of the Chaldees?");
+bibleJourneyOptions.add(new String[]{
+        "Lot", "Haran", "Nahor", "Terah"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("Who was the king of Salem who blessed Abram?");
+bibleJourneyOptions.add(new String[]{
+        "Abimelech", "Melchizedek", "Pharaoh", "Bera"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What did Abram give Melchizedek?");
+bibleJourneyOptions.add(new String[]{
+        "A tenth of everything", "Gold", "Sheep", "Bread and wine"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What was the name of Hagar's son?");
+bibleJourneyOptions.add(new String[]{
+        "Isaac", "Ishmael", "Esau", "Lot"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("How old was Abraham when Ishmael was born?");
+bibleJourneyOptions.add(new String[]{
+        "75", "86", "99", "100"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("How old was Abraham when Isaac was born?");
+bibleJourneyOptions.add(new String[]{
+        "86", "90", "99", "100"
+});
+bibleJourneyAnswers.add(3);
+
+bibleJourneyQuestions.add("What did Abraham call the place where he was commanded to offer Isaac?");
+bibleJourneyOptions.add(new String[]{
+        "Bethel", "The LORD Will Provide", "Beersheba", "Hebron"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What was the name of Abraham's servant who went to find a wife for Isaac?");
+bibleJourneyOptions.add(new String[]{
+        "Eliezer", "Abner", "The text does not name him", "Ephron"
+});
+bibleJourneyAnswers.add(2);
+
+bibleJourneyQuestions.add("Who was the father of Rebekah?");
+bibleJourneyOptions.add(new String[]{
+        "Bethuel", "Laban", "Nahor", "Haran"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("Which son of Isaac was the father of Edom?");
+bibleJourneyOptions.add(new String[]{
+        "Jacob", "Esau", "Joseph", "Benjamin"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What was the name Jacob gave the place where he dreamed of a ladder reaching heaven?");
+bibleJourneyOptions.add(new String[]{
+        "Hebron", "Bethel", "Beersheba", "Peniel"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What did Jacob use as a pillow when he slept at Bethel?");
+bibleJourneyOptions.add(new String[]{
+        "A folded garment", "A stone", "A wooden board", "A bundle of grass"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What was the name of Rachel's first son?");
+bibleJourneyOptions.add(new String[]{
+        "Joseph", "Benjamin", "Dan", "Naphtali"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("Which son of Jacob was born after Rachel died?");
+bibleJourneyOptions.add(new String[]{
+        "Joseph", "Benjamin", "Judah", "Levi"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What was the name Jacob gave Benjamin at birth?");
+bibleJourneyOptions.add(new String[]{
+        "Benjamin", "Ben-oni", "Israel", "Joseph"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What did Joseph's brothers dip his coat into?");
+bibleJourneyOptions.add(new String[]{
+        "Oil", "Water", "The blood of a kid of the goats", "Wine"
+});
+bibleJourneyAnswers.add(2);
+        } else if (difficulty.equals("Scholar")) {
+        bibleJourneyQuestions.add("What were the names of the four rivers that went out of Eden?");
+bibleJourneyOptions.add(new String[]{
+        "Pishon, Gihon, Hiddekel, Euphrates",
+        "Jordan, Nile, Tigris, Euphrates",
+        "Pishon, Jordan, Gihon, Nile",
+        "Gihon, Jordan, Euphrates, Arnon"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What land was associated with the river Pishon?");
+bibleJourneyOptions.add(new String[]{
+        "Cush", "Havilah", "Canaan", "Shinar"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What was said about the gold of the land of Havilah?");
+bibleJourneyOptions.add(new String[]{
+        "It was pure", "It was good", "It was rare", "It was hidden"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What other valuable substance is specifically mentioned alongside gold and onyx stone in Eden?");
+bibleJourneyOptions.add(new String[]{
+        "Bdellium", "Frankincense", "Myrrh", "Silver"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What did Adam call the woman after God brought her to him?");
+bibleJourneyOptions.add(new String[]{
+        "Eve", "Woman", "Mother of all living", "Helper"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("According to Genesis, why was the woman called Eve?");
+bibleJourneyOptions.add(new String[]{
+        "She was Adam's wife",
+        "She was the mother of all living",
+        "She was created from Adam",
+        "She was blessed by God"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What occupation did Cain have?");
+bibleJourneyOptions.add(new String[]{
+        "Keeper of sheep", "Tiller of the ground", "Hunter", "Builder"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What occupation did Abel have?");
+bibleJourneyOptions.add(new String[]{
+        "Keeper of sheep", "Tiller of the ground", "Hunter", "Carpenter"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What did Cain build after leaving the presence of the LORD?");
+bibleJourneyOptions.add(new String[]{
+        "An altar", "A city", "A tower", "A house"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What was the name of the city Cain built?");
+bibleJourneyOptions.add(new String[]{
+        "Enoch", "Nod", "Shinar", "Babel"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("Which descendant of Cain is described as the father of those who dwell in tents and have cattle?");
+bibleJourneyOptions.add(new String[]{
+        "Jubal", "Jabal", "Tubal-cain", "Lamech"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("Which descendant of Cain is associated with those who play the harp and organ?");
+bibleJourneyOptions.add(new String[]{
+        "Jabal", "Jubal", "Tubal-cain", "Enoch"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("Which descendant of Cain was described as an instructor of every artificer in brass and iron?");
+bibleJourneyOptions.add(new String[]{
+        "Jubal", "Jabal", "Tubal-cain", "Lamech"
+});
+bibleJourneyAnswers.add(2);
+
+bibleJourneyQuestions.add("Who was the sister of Tubal-cain?");
+bibleJourneyOptions.add(new String[]{
+        "Naamah", "Adah", "Zillah", "Irad"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What was unusual about Enoch's life according to Genesis?");
+bibleJourneyOptions.add(new String[]{
+        "He lived the longest",
+        "He was the first priest",
+        "He walked with God and was not, because God took him",
+        "He built the ark"
+});
+bibleJourneyAnswers.add(2);
+
+bibleJourneyQuestions.add("What was Noah's first recorded action after leaving the ark?");
+bibleJourneyOptions.add(new String[]{
+        "He planted a vineyard",
+        "He built an altar",
+        "He offered gold",
+        "He built another ark"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("What plant did Noah later plant after the flood?");
+bibleJourneyOptions.add(new String[]{
+        "Olive tree", "Fig tree", "Vineyard", "Wheat"
+});
+bibleJourneyAnswers.add(2);
+
+bibleJourneyQuestions.add("What happened to Noah after he drank the wine from his vineyard?");
+bibleJourneyOptions.add(new String[]{
+        "He became sick",
+        "He became drunk and was uncovered inside his tent",
+        "He fell asleep outside",
+        "He left his family"
+});
+bibleJourneyAnswers.add(1);
+
+bibleJourneyQuestions.add("Which son saw Noah's nakedness and told his brothers?");
+bibleJourneyOptions.add(new String[]{
+        "Shem", "Japheth", "Ham", "Canaan"
+});
+bibleJourneyAnswers.add(2);
+
+bibleJourneyQuestions.add("What did Noah say Canaan would be to his brethren?");
+bibleJourneyOptions.add(new String[]{
+        "A servant of servants",
+        "A mighty hunter",
+        "A ruler of nations",
+        "A keeper of sheep"
+});
+bibleJourneyAnswers.add(0);
+        bibleJourneyQuestions.add("What did Joseph make the children of Israel swear to do when God would surely visit them?");
+bibleJourneyOptions.add(new String[]{
+        "Carry his bones out of Egypt",
+        "Build an altar in Canaan",
+        "Return to Hebron",
+        "Carry his possessions to Shechem"
+});
+bibleJourneyAnswers.add(0);
+bibleJourneyQuestions.add("What did Shem and Japheth use to cover Noah?");
+bibleJourneyOptions.add(new String[]{
+        "A garment", "A blanket", "A tent curtain", "Animal skins"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What was the name of the tower-building project associated with Babel?");
+bibleJourneyOptions.add(new String[]{
+        "A city and a tower whose top was intended to reach heaven",
+        "A temple and an altar",
+        "A palace and a fortress",
+        "A city and a bridge"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("What did the LORD do to the language of the people at Babel?");
+bibleJourneyOptions.add(new String[]{
+        "He removed their language",
+        "He confused their language",
+        "He gave them one new language",
+        "He made them unable to speak"
+});
+bibleJourneyAnswers.add(1);
+
+
+        bibleJourneyQuestions.add("What additional family relationship did Abram say Sarai had to him?");
+bibleJourneyOptions.add(new String[]{
+        "His half-sister",
+        "His cousin",
+        "His niece",
+        "His aunt"
+});
+bibleJourneyAnswers.add(0);
+
+bibleJourneyQuestions.add("Who is described in Genesis as a mighty hunter before the LORD?");
+bibleJourneyOptions.add(new String[]{
+        "Nimrod",
+        "Canaan",
+        "Cush",
+        "Shem"
+});
+bibleJourneyAnswers.add(0);
     }
+            void shuffleBibleJourneyQuestions() {
+
+    ArrayList<Integer> order = new ArrayList<>();
+
+    for (int i = 0; i < bibleJourneyQuestions.size(); i++) {
+        order.add(i);
     }
+
+    Collections.shuffle(order);
+
+    ArrayList<String> shuffledQuestions = new ArrayList<>();
+    ArrayList<String[]> shuffledOptions = new ArrayList<>();
+    ArrayList<Integer> shuffledAnswers = new ArrayList<>();
+
+    for (int index : order) {
+        shuffledQuestions.add(
+                bibleJourneyQuestions.get(index)
+        );
+
+        shuffledOptions.add(
+                bibleJourneyOptions.get(index)
+        );
+
+        shuffledAnswers.add(
+                bibleJourneyAnswers.get(index)
+        );
+    }
+
+    bibleJourneyQuestions.clear();
+    bibleJourneyOptions.clear();
+    bibleJourneyAnswers.clear();
+
+    bibleJourneyQuestions.addAll(shuffledQuestions);
+    bibleJourneyOptions.addAll(shuffledOptions);
+    bibleJourneyAnswers.addAll(shuffledAnswers);
+            }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -3741,8 +4327,9 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     bibleJourneyScore = 0;
 
     if (book.equals("Genesis")) {
-        loadGenesisQuestions(difficulty);
-    } else {
+    loadGenesisQuestions(difficulty);
+    shuffleBibleJourneyQuestions();
+} else {
         bibleJourneyQuestions.clear();
         bibleJourneyOptions.clear();
         bibleJourneyAnswers.clear();
