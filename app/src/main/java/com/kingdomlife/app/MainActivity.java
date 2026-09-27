@@ -836,42 +836,6 @@ bibleJourneyOptions.add(new String[]{
 });
 bibleJourneyAnswers.add(0);
     }
-            void shuffleBibleJourneyQuestions() {
-
-    ArrayList<Integer> order = new ArrayList<>();
-
-    for (int i = 0; i < bibleJourneyQuestions.size(); i++) {
-        order.add(i);
-    }
-
-    Collections.shuffle(order);
-
-    ArrayList<String> shuffledQuestions = new ArrayList<>();
-    ArrayList<String[]> shuffledOptions = new ArrayList<>();
-    ArrayList<Integer> shuffledAnswers = new ArrayList<>();
-
-    for (int index : order) {
-        shuffledQuestions.add(
-                bibleJourneyQuestions.get(index)
-        );
-
-        shuffledOptions.add(
-                bibleJourneyOptions.get(index)
-        );
-
-        shuffledAnswers.add(
-                bibleJourneyAnswers.get(index)
-        );
-    }
-
-    bibleJourneyQuestions.clear();
-    bibleJourneyOptions.clear();
-    bibleJourneyAnswers.clear();
-
-    bibleJourneyQuestions.addAll(shuffledQuestions);
-    bibleJourneyOptions.addAll(shuffledOptions);
-    bibleJourneyAnswers.addAll(shuffledAnswers);
-            }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -1070,6 +1034,42 @@ content.addView(loading);
 new Handler().postDelayed(() -> {
     showHome();
 }, 1200);
+    }
+    void shuffleBibleJourneyQuestions() {
+
+    ArrayList<Integer> order = new ArrayList<>();
+
+    for (int i = 0; i < bibleJourneyQuestions.size(); i++) {
+        order.add(i);
+    }
+
+    Collections.shuffle(order);
+
+    ArrayList<String> shuffledQuestions = new ArrayList<>();
+    ArrayList<String[]> shuffledOptions = new ArrayList<>();
+    ArrayList<Integer> shuffledAnswers = new ArrayList<>();
+
+    for (int index : order) {
+        shuffledQuestions.add(
+                bibleJourneyQuestions.get(index)
+        );
+
+        shuffledOptions.add(
+                bibleJourneyOptions.get(index)
+        );
+
+        shuffledAnswers.add(
+                bibleJourneyAnswers.get(index)
+        );
+    }
+
+    bibleJourneyQuestions.clear();
+    bibleJourneyOptions.clear();
+    bibleJourneyAnswers.clear();
+
+    bibleJourneyQuestions.addAll(shuffledQuestions);
+    bibleJourneyOptions.addAll(shuffledOptions);
+    bibleJourneyAnswers.addAll(shuffledAnswers);
     }
 
     void showHome() {
