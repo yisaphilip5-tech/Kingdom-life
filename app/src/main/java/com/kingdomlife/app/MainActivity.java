@@ -22,6 +22,7 @@ import java.util.Locale;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import org.json.JSONObject;
 import android.view.Gravity;
 import android.view.View;
@@ -172,12 +173,121 @@ int scrambleScore = 0;
   boolean challengeCompletedToday = false;
   String lastChallengeDate = "";
     int correctAnswers = 0;
-    int wrongAnswers = 0;
+int wrongAnswers = 0;
 
-    boolean answered = false;
-    CountDownTimer timer;
+boolean answered = false;
+CountDownTimer timer;
 
-    int timeLimit = 30000;
+int timeLimit = 30000;
+
+// Bible Journey
+String currentBibleBook = "";
+String currentBibleDifficulty = "";
+
+int bibleJourneyQuestion = 0;
+int bibleJourneyScore = 0;
+
+ArrayList<String> bibleJourneyQuestions = new ArrayList<>();
+ArrayList<String[]> bibleJourneyOptions = new ArrayList<>();
+ArrayList<Integer> bibleJourneyAnswers = new ArrayList<>();
+    void loadGenesisQuestions(String difficulty) {
+
+    bibleJourneyQuestions.clear();
+    bibleJourneyOptions.clear();
+    bibleJourneyAnswers.clear();
+
+    if (difficulty.equals("Easy")) {
+
+        bibleJourneyQuestions.add("Who created the heavens and the earth?");
+        bibleJourneyOptions.add(new String[]{
+                "God",
+                "Moses",
+                "Abraham",
+                "Noah"
+        });
+        bibleJourneyAnswers.add(0);
+
+        bibleJourneyQuestions.add("Who was the first man?");
+        bibleJourneyOptions.add(new String[]{
+                "Noah",
+                "Adam",
+                "Abraham",
+                "Jacob"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Who was the first woman?");
+        bibleJourneyOptions.add(new String[]{
+                "Sarah",
+                "Rachel",
+                "Eve",
+                "Rebekah"
+        });
+        bibleJourneyAnswers.add(2);
+
+        bibleJourneyQuestions.add("Who built the ark?");
+        bibleJourneyOptions.add(new String[]{
+                "Abraham",
+                "Noah",
+                "Isaac",
+                "Jacob"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("What was the name of Adam's wife?");
+        bibleJourneyOptions.add(new String[]{
+                "Eve",
+                "Sarah",
+                "Leah",
+                "Rachel"
+        });
+        bibleJourneyAnswers.add(0);
+
+    } else if (difficulty.equals("Medium")) {
+
+        bibleJourneyQuestions.add("What was the name of Abraham's wife?");
+        bibleJourneyOptions.add(new String[]{
+                "Rachel",
+                "Sarah",
+                "Rebekah",
+                "Leah"
+        });
+        bibleJourneyAnswers.add(1);
+
+        bibleJourneyQuestions.add("Who was Isaac's wife?");
+        bibleJourneyOptions.add(new String[]{
+                "Rebekah",
+                "Sarah",
+                "Rachel",
+                "Leah"
+        });
+        bibleJourneyAnswers.add(0);
+
+    } else if (difficulty.equals("Hard")) {
+
+        bibleJourneyQuestions.add("What was the name of Jacob's youngest son?");
+        bibleJourneyOptions.add(new String[]{
+                "Joseph",
+                "Benjamin",
+                "Judah",
+                "Reuben"
+        });
+        bibleJourneyAnswers.add(1);
+
+    } else if (difficulty.equals("Scholar")) {
+
+        bibleJourneyQuestions.add("Which son of Jacob was sold into Egypt by his brothers?");
+        bibleJourneyOptions.add(new String[]{
+                "Joseph",
+                "Benjamin",
+                "Levi",
+                "Judah"
+        });
+        bibleJourneyAnswers.add(0);
+    }
+    }
+
+@Override
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -3396,7 +3506,465 @@ addButton("⬅️ Back to Home", v -> showHome());
         }
 addButton("🧩 Bible Scramble", v -> showBibleScramble());
         addButton("🔤 Missing Word", v -> showMissingWord());
+        addButton("📖 Bible Journey", v -> showBibleJourney());
         addButton("⬅️ Back to Home", v -> showHome());
+    }
+    void showBibleJourney() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 Bible Journey");
+    title.setTextSize(26);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 20, 0, 10);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Swipe between the Old Testament and New Testament");
+    instruction.setTextSize(17);
+    instruction.setTextColor(darkText);
+    instruction.setGravity(Gravity.CENTER);
+    instruction.setPadding(0, 0, 0, 20);
+    content.addView(instruction);
+
+    addButton("📜 Old Testament", v -> showOldTestament());
+
+    addButton("✝️ New Testament", v -> showNewTestament());
+
+    addButton("⬅️ Back to Games", v -> showGameMenu());
+    }
+    void showOldTestament() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📜 Old Testament");
+    title.setTextSize(26);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 20, 0, 20);
+    content.addView(title);
+
+    String[] books = {
+            "Genesis", "Exodus",
+            "Leviticus", "Numbers",
+            "Deuteronomy", "Joshua",
+            "Judges", "Ruth",
+            "1 Samuel", "2 Samuel",
+            "1 Kings", "2 Kings",
+            "1 Chronicles", "2 Chronicles",
+            "Ezra", "Nehemiah",
+            "Esther", "Job",
+            "Psalms", "Proverbs",
+            "Ecclesiastes", "Song of Solomon",
+            "Isaiah", "Jeremiah",
+            "Lamentations", "Ezekiel",
+            "Daniel", "Hosea",
+            "Joel", "Amos",
+            "Obadiah", "Jonah",
+            "Micah", "Nahum",
+            "Habakkuk", "Zephaniah",
+            "Haggai", "Zechariah",
+            "Malachi"
+    };
+
+    for (int i = 0; i < books.length; i += 2) {
+
+        LinearLayout row = new LinearLayout(this);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setGravity(Gravity.CENTER);
+        row.setPadding(0, 5, 0, 5);
+
+        String book1 = books[i];
+
+        Button button1 = new Button(this);
+        button1.setText(book1);
+        button1.setTextSize(15);
+        button1.setAllCaps(false);
+
+        button1.setOnClickListener(v -> showBookDifficulty(book1));
+
+        row.addView(button1, new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        ));
+
+        if (i + 1 < books.length) {
+
+            String book2 = books[i + 1];
+
+            Button button2 = new Button(this);
+            button2.setText(book2);
+            button2.setTextSize(15);
+            button2.setAllCaps(false);
+
+            button2.setOnClickListener(v -> showBookDifficulty(book2));
+
+            row.addView(button2, new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            ));
+        }
+
+        content.addView(row);
+    }
+
+    addButton("✝️ New Testament →", v -> showNewTestament());
+    addButton("⬅️ Back to Bible Journey", v -> showBibleJourney());
+    }
+    void showNewTestament() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("✝️ New Testament");
+    title.setTextSize(26);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 20, 0, 20);
+    content.addView(title);
+
+    String[] books = {
+            "Matthew", "Mark",
+            "Luke", "John",
+            "Acts", "Romans",
+            "1 Corinthians", "2 Corinthians",
+            "Galatians", "Ephesians",
+            "Philippians", "Colossians",
+            "1 Thessalonians", "2 Thessalonians",
+            "1 Timothy", "2 Timothy",
+            "Titus", "Philemon",
+            "Hebrews", "James",
+            "1 Peter", "2 Peter",
+            "1 John", "2 John",
+            "3 John", "Jude",
+            "Revelation"
+    };
+
+    for (int i = 0; i < books.length; i += 2) {
+
+        LinearLayout row = new LinearLayout(this);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setGravity(Gravity.CENTER);
+        row.setPadding(0, 5, 0, 5);
+
+        String book1 = books[i];
+
+        Button button1 = new Button(this);
+        button1.setText(book1);
+        button1.setTextSize(15);
+        button1.setAllCaps(false);
+
+        button1.setOnClickListener(v -> showBookDifficulty(book1));
+
+        row.addView(button1, new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        ));
+
+        if (i + 1 < books.length) {
+
+            String book2 = books[i + 1];
+
+            Button button2 = new Button(this);
+            button2.setText(book2);
+            button2.setTextSize(15);
+            button2.setAllCaps(false);
+
+            button2.setOnClickListener(v -> showBookDifficulty(book2));
+
+            row.addView(button2, new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            ));
+        }
+
+        content.addView(row);
+    }
+
+    addButton("← Old Testament", v -> showOldTestament());
+    addButton("⬅️ Back to Bible Journey", v -> showBibleJourney());
+    }
+    void showBookDifficulty(String book) {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 " + book);
+    title.setTextSize(26);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 20, 0, 10);
+    content.addView(title);
+
+    TextView info = new TextView(this);
+    info.setText("Choose your difficulty");
+    info.setTextSize(18);
+    info.setTextColor(darkText);
+    info.setGravity(Gravity.CENTER);
+    info.setPadding(0, 0, 0, 20);
+    content.addView(info);
+
+    addButton("🟢 Easy", v -> startBibleJourney(book, "Easy"));
+
+    addButton("🔵 Medium", v -> startBibleJourney(book, "Medium"));
+
+    addButton("🟠 Hard", v -> startBibleJourney(book, "Hard"));
+
+    addButton("🟣 Scholar", v -> startBibleJourney(book, "Scholar"));
+
+    addButton("⬅️ Back", v -> {
+        if (book.equals("Genesis")) {
+            showOldTestament();
+        } else if (book.equals("Revelation")) {
+            showNewTestament();
+        } else {
+            showBibleJourney();
+        }
+    });
+    }
+    void startBibleJourney(String book, String difficulty) {
+    stopTimer();
+
+    currentBibleBook = book;
+    currentBibleDifficulty = difficulty;
+
+    bibleJourneyQuestion = 0;
+    bibleJourneyScore = 0;
+
+    if (book.equals("Genesis")) {
+        loadGenesisQuestions(difficulty);
+    } else {
+        bibleJourneyQuestions.clear();
+        bibleJourneyOptions.clear();
+        bibleJourneyAnswers.clear();
+
+        bibleJourneyQuestions.add(
+                "Questions for " + book + " are coming soon."
+        );
+
+        bibleJourneyOptions.add(new String[]{
+                "Continue",
+                "Back",
+                "Bible Journey",
+                "Home"
+        });
+
+        bibleJourneyAnswers.add(0);
+    }
+
+    showBibleJourneyQuestion();
+    }
+    void showBibleJourneyQuestion() {
+    content.removeAllViews();
+
+    if (bibleJourneyQuestions.isEmpty()) {
+        TextView empty = new TextView(this);
+        empty.setText("No questions available.");
+        empty.setTextSize(20);
+        empty.setTextColor(darkText);
+        content.addView(empty);
+
+        addButton("⬅️ Back", v -> showBookDifficulty(
+                currentBibleBook
+        ));
+        return;
+    }
+
+    TextView title = new TextView(this);
+    title.setText("📖 " + currentBibleBook);
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 15, 0, 10);
+    content.addView(title);
+
+    TextView difficulty = new TextView(this);
+    difficulty.setText(
+            "Difficulty: " + currentBibleDifficulty
+    );
+    difficulty.setTextSize(17);
+    difficulty.setTextColor(darkText);
+    difficulty.setGravity(Gravity.CENTER);
+    difficulty.setPadding(0, 0, 0, 15);
+    content.addView(difficulty);
+
+    TextView progress = new TextView(this);
+    progress.setText(
+            "Question " +
+            (bibleJourneyQuestion + 1) +
+            " of " +
+            bibleJourneyQuestions.size()
+    );
+    progress.setTextSize(18);
+    progress.setTextColor(darkText);
+    progress.setGravity(Gravity.CENTER);
+    progress.setPadding(0, 0, 0, 20);
+    content.addView(progress);
+
+    TextView question = new TextView(this);
+    question.setText(
+            bibleJourneyQuestions.get(bibleJourneyQuestion)
+    );
+    question.setTextSize(21);
+    question.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    question.setTextColor(darkText);
+    question.setGravity(Gravity.CENTER);
+    question.setPadding(10, 15, 10, 25);
+    content.addView(question);
+
+    String[] options =
+            bibleJourneyOptions.get(bibleJourneyQuestion);
+
+    for (int i = 0; i < options.length; i++) {
+
+        final int selectedAnswer = i;
+
+        addButton(
+                (i + 1) + ". " + options[i],
+                v -> checkBibleJourneyAnswer(selectedAnswer)
+        );
+    }
+
+    addButton(
+            "⬅️ Exit Game",
+            v -> showBookDifficulty(currentBibleBook)
+    );
+        }
+    void checkBibleJourneyAnswer(int selectedAnswer) {
+
+    int correctAnswer =
+            bibleJourneyAnswers.get(bibleJourneyQuestion);
+
+    if (selectedAnswer == correctAnswer) {
+
+        bibleJourneyScore += 5;
+        totalPoints += 5;
+
+        prefs.edit()
+                .putInt("totalPoints", totalPoints)
+                .apply();
+
+        TextView feedback = new TextView(this);
+        feedback.setText("🎉 Correct! +5 points");
+        feedback.setTextSize(20);
+        feedback.setTypeface(
+                Typeface.DEFAULT,
+                Typeface.BOLD
+        );
+        feedback.setTextColor(darkText);
+        feedback.setGravity(Gravity.CENTER);
+        feedback.setPadding(0, 15, 0, 15);
+
+        content.addView(feedback, 5);
+
+    } else {
+
+        TextView feedback = new TextView(this);
+        feedback.setText(
+                "❌ Incorrect!\n\n" +
+                "The correct answer was:\n" +
+                bibleJourneyOptions
+                        .get(bibleJourneyQuestion)
+                        [correctAnswer]
+        );
+        feedback.setTextSize(19);
+        feedback.setTextColor(darkText);
+        feedback.setGravity(Gravity.CENTER);
+        feedback.setPadding(0, 15, 0, 15);
+
+        content.addView(feedback, 5);
+    }
+
+    addButton("➡️ Next Question", v -> {
+
+        if (bibleJourneyQuestion <
+                bibleJourneyQuestions.size() - 1) {
+
+            bibleJourneyQuestion++;
+            showBibleJourneyQuestion();
+
+        } else {
+
+            showBibleJourneyResult();
+        }
+    });
+    }
+    void showBibleJourneyResult() {
+
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🏆 Bible Journey Complete!");
+    title.setTextSize(26);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 25, 0, 20);
+    content.addView(title);
+
+    TextView book = new TextView(this);
+    book.setText(
+            "📖 " + currentBibleBook +
+            "\nDifficulty: " +
+            currentBibleDifficulty
+    );
+    book.setTextSize(18);
+    book.setTextColor(darkText);
+    book.setGravity(Gravity.CENTER);
+    book.setPadding(0, 0, 0, 20);
+    content.addView(book);
+
+    TextView scoreText = new TextView(this);
+    scoreText.setText(
+            "⭐ Score: " +
+            bibleJourneyScore
+    );
+    scoreText.setTextSize(23);
+    scoreText.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    scoreText.setTextColor(darkText);
+    scoreText.setGravity(Gravity.CENTER);
+    scoreText.setPadding(0, 10, 0, 25);
+    content.addView(scoreText);
+
+    addButton(
+            "🔄 Play Again",
+            v -> startBibleJourney(
+                    currentBibleBook,
+                    currentBibleDifficulty
+            )
+    );
+
+    addButton(
+            "📖 Choose Another Book",
+            v -> showBibleJourney()
+    );
+
+    addButton(
+            "⬅️ Back to Games",
+            v -> showGameMenu()
+    );
     }
 
     void startGame(int milliseconds) {
