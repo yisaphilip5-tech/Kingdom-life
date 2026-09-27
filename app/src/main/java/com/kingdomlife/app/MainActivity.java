@@ -3530,13 +3530,13 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     instruction.setPadding(0, 0, 0, 20);
     content.addView(instruction);
 
-    addButton("📜 Old Testament", v -> showOldTestament());
+    addButton("📜 Old Testament", v -> showBibleJourneyOldTestament());
 
-    addButton("✝️ New Testament", v -> showNewTestament());
+    addButton("✝️ New Testament", v -> showBibleJourneyNewTestament());
 
     addButton("⬅️ Back to Games", v -> showGameMenu());
     }
-    void showOldTestament() {
+    void showBibleJourneyOldTestament() {
     stopTimer();
     content.removeAllViews();
 
@@ -3615,10 +3615,10 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
         content.addView(row);
     }
 
-    addButton("✝️ New Testament →", v -> showNewTestament());
+    addButton("✝️ New Testament →", v -> showBibleJourneyNewTestament());
     addButton("⬅️ Back to Bible Journey", v -> showBibleJourney());
     }
-    void showNewTestament() {
+    void showBibleJourneyNewTestament() {
     stopTimer();
     content.removeAllViews();
 
@@ -3691,7 +3691,7 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
         content.addView(row);
     }
 
-    addButton("← Old Testament", v -> showOldTestament());
+    addButton("← Old Testament", v -> showBibleJourneyOldTestament());
     addButton("⬅️ Back to Bible Journey", v -> showBibleJourney());
     }
     void showBookDifficulty(String book) {
