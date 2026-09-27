@@ -287,8 +287,6 @@ ArrayList<Integer> bibleJourneyAnswers = new ArrayList<>();
     }
     }
 
-@Override
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
