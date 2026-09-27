@@ -4329,7 +4329,6 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     if (book.equals("Genesis")) {
     loadGenesisQuestions(difficulty);
     shuffleBibleJourneyQuestions();
-    }
 } else {
         bibleJourneyQuestions.clear();
         bibleJourneyOptions.clear();
