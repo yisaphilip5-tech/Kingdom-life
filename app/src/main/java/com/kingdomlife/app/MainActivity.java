@@ -836,6 +836,7 @@ bibleJourneyOptions.add(new String[]{
 });
 bibleJourneyAnswers.add(0);
     }
+        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
