@@ -898,7 +898,6 @@ bibleJourneyAnswers.add(0);
 dailyStreak = prefs.getInt("dailyStreak", 0);
 totalPoints = prefs.getInt("totalPoints", 0);
 learnedVerses = prefs.getInt("learnedVerses", 0);
-        SharedPreferences savedVersesPrefs;
 lastChallengeDate = prefs.getString("lastChallengeDate", "");
 
 String today =
