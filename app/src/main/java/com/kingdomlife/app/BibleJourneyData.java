@@ -524,6 +524,286 @@ questions.add(new Question(
             },
             0
     ));
+
+                }
+
+                if (difficulty.equals("Hard")) {
+
+                    questions.add(new Question(
+        "Why did God tell Moses to stretch out his hand over the sea before the Israelites crossed?",
+        new String[]{
+                "So the waters would divide",
+                "So Pharaoh would stop his army",
+                "So the Israelites would become invisible",
+                "So the Egyptians would turn back"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What does Exodus say happened when the pillar of cloud came between Israel and the Egyptians?",
+        new String[]{
+                "It led the Egyptians into the sea",
+                "It gave light to the Egyptians",
+                "It separated the two groups",
+                "It disappeared completely"
+        },
+        2
+));
+
+questions.add(new Question(
+        "Why did the Israelites murmur against Moses at Marah?",
+        new String[]{
+                "There was no bread",
+                "The water was bitter",
+                "The Egyptians had returned",
+                "They had lost their animals"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did God use to make the bitter waters at Marah sweet?",
+        new String[]{
+                "A branch",
+                "A stone",
+                "A staff",
+                "A piece of wood"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What happened to the manna when some Israelites kept it until the next morning, contrary to Moses' instruction?",
+        new String[]{
+                "It became larger",
+                "It bred worms and became foul",
+                "It turned into water",
+                "It disappeared without trace"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What happened to the manna kept from the sixth day?",
+        new String[]{
+                "It became twice as much",
+                "It became bitter",
+                "It remained good for the Sabbath",
+                "It disappeared at sunrise"
+        },
+        2
+));
+
+questions.add(new Question(
+        "Why did Moses call the place where Israel fought Amalek Rephidim-related by names such as Massah and Meribah?",
+        new String[]{
+                "Israel tempted the LORD and questioned His presence",
+                "Israel defeated Amalek there",
+                "Moses received the Ten Commandments there",
+                "The tabernacle was built there"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did Moses' father-in-law observe about Moses' work of judging the people?",
+        new String[]{
+                "Moses was refusing to help the people",
+                "Moses was doing too little",
+                "Moses was carrying the responsibility alone",
+                "Moses had appointed too many judges"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What qualifications did Jethro recommend for the men Moses appointed as rulers?",
+        new String[]{
+                "They should be wealthy and powerful",
+                "They should fear God, be truthful, and hate covetousness",
+                "They should be related to Moses",
+                "They should have been Egyptian officials"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did God say Israel would be to Him if they obeyed His covenant?",
+        new String[]{
+                "A kingdom of priests and an holy nation",
+                "A nation greater than every kingdom",
+                "A nation without enemies",
+                "A nation ruled directly by Moses"
+        },
+        0
+));
+
+questions.add(new Question(
+        "Why were the Israelites instructed to sanctify themselves before meeting God at Mount Sinai?",
+        new String[]{
+                "They were preparing for battle",
+                "They were preparing to enter Egypt",
+                "They were preparing to meet the LORD",
+                "They were preparing to build houses"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What happened when the trumpet sounded long at Mount Sinai?",
+        new String[]{
+                "The people were commanded to return to Egypt",
+                "Moses came down from the mountain",
+                "Pharaoh arrived at the camp",
+                "The people could go up toward the mountain"
+        },
+        3
+));
+
+questions.add(new Question(
+        "Which commandment specifically forbids making a graven image?",
+        new String[]{
+                "The first commandment",
+                "The second commandment",
+                "The fourth commandment",
+                "The fifth commandment"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What reason did God give for remembering the Sabbath in Exodus 20?",
+        new String[]{
+                "Because Israel was created in Egypt",
+                "Because Moses rested after the Exodus",
+                "Because God made heaven and earth in six days and rested the seventh",
+                "Because Pharaoh had given Israel that day"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What did the Israelites do when they saw the thunderings, lightning, trumpet sound, and smoking mountain?",
+        new String[]{
+                "They stood far off",
+                "They climbed the mountain",
+                "They demanded to see God",
+                "They returned immediately to Egypt"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did God command concerning an altar made of stone?",
+        new String[]{
+                "It had to be covered with gold",
+                "It had to be built only by Aaron",
+                "It had to be placed inside the tabernacle",
+                "It was not to be built with hewn stone"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What did God command about lending money to the poor among His people?",
+        new String[]{
+                "They were to charge whatever interest they wanted",
+                "They were not to act as a usurer toward him",
+                "They were forbidden to lend at all",
+                "They were to demand double repayment"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What was the blood used for when Moses confirmed the covenant with the people?",
+        new String[]{
+                "It was sprinkled upon the people",
+                "It was poured into the sea",
+                "It was placed inside the ark",
+                "It was used to mark the mountain"
+        },
+        0
+));
+
+questions.add(new Question(
+        "Who went up with Moses when he went higher on Mount Sinai?",
+        new String[]{
+                "Aaron, Nadab, and Abihu, with seventy elders",
+                "Joshua and Caleb only",
+                "Aaron and Miriam only",
+                "Jethro and Joshua"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did the elders of Israel see under the feet of the God of Israel?",
+        new String[]{
+                "A pavement of sapphire, as clear as the sky",
+                "A pavement of gold",
+                "A pavement of bronze",
+                "A pavement of precious stones of many colors"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did God give Moses on Mount Sinai after calling him into the cloud?",
+        new String[]{
+                "The plans for Egypt's army",
+                "The tables of stone containing the law and commandments",
+                "A map of the promised land",
+                "A sword for Joshua"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did Aaron tell the Israelites to bring when they demanded gods to go before them?",
+        new String[]{
+                "Their silver coins",
+                "Their weapons",
+                "The golden earrings of their wives, sons, and daughters",
+                "Their livestock"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What did Moses do when he saw the calf and the dancing?",
+        new String[]{
+                "He immediately crowned Aaron",
+                "He threw the tables from his hands and broke them beneath the mount",
+                "He left Israel permanently",
+                "He ordered Joshua to destroy the tabernacle"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did Moses do with the golden calf after destroying it?",
+        new String[]{
+                "He burned it, ground it to powder, scattered it upon the water, and made Israel drink it",
+                "He buried it under the mountain",
+                "He gave it to Aaron",
+                "He carried it back to Pharaoh"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did Moses place over his face after speaking with the LORD?",
+        new String[]{
+                "A crown",
+                "A veil",
+                "A priestly robe",
+                "A helmet"
+        },
+        1
+));
+
                 }
 
         return questions;
