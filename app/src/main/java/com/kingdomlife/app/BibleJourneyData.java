@@ -802,9 +802,285 @@ questions.add(new Question(
                 "A helmet"
         },
         1
-));
+        ));
 
                 }
+if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+        "Why did God lead Israel by the way of the wilderness toward the Red Sea instead of the shorter route through the land of the Philistines?",
+        new String[]{
+                "The shorter route was blocked by the Egyptians",
+                "God knew the people might turn back when faced with war",
+                "Moses did not know the shorter route",
+                "There was no water along the shorter route"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What connection did Moses make between Israel's departure from Egypt and Joseph's final request?",
+        new String[]{
+                "Joseph had asked that his bones be carried up when God visited Israel",
+                "Joseph had instructed Israel to take Egyptian weapons",
+                "Joseph had commanded Moses to celebrate Passover",
+                "Joseph had chosen the route through the wilderness"
+        },
+        0
+));
+
+questions.add(new Question(
+        "At the Red Sea, what did Moses tell the Israelites they would see when they stood still?",
+        new String[]{
+                "A new path into Egypt",
+                "Pharaoh surrendering",
+                "The salvation of the LORD",
+                "Joshua leading the army"
+        },
+        2
+));
+
+questions.add(new Question(
+        "Why did the waters of the Red Sea return over the Egyptians?",
+        new String[]{
+                "Moses struck the water a second time",
+                "The Egyptians had reached the opposite shore",
+                "The Israelites caused the waters to return",
+                "The LORD caused the sea to return to its strength"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What did the manna demonstrate about gathering food on the sixth and seventh days?",
+        new String[]{
+                "Israel was to gather twice as much on the sixth day because the seventh was the Sabbath",
+                "Israel was forbidden to gather anything on the sixth day",
+                "Israel was required to gather twice as much every day",
+                "The manna stopped permanently on the seventh day"
+        },
+        0
+));
+
+questions.add(new Question(
+        "Why was the manna kept in a pot before the LORD?",
+        new String[]{
+                "It was used as food for Aaron",
+                "It was kept as a memorial for future generations",
+                "It was used during battles",
+                "It was exchanged for animals"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did Moses name the place where Israel tested the LORD by asking whether He was among them?",
+        new String[]{
+                "Rephidim",
+                "Marah",
+                "Massah and Meribah",
+                "Sinai"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What did Aaron and Hur do during Israel's battle with Amalek?",
+        new String[]{
+                "They commanded Joshua's army",
+                "They led Israel around the enemy",
+                "They built an altar",
+                "They supported Moses' hands when he became tired"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What principle was behind Jethro's advice about appointing rulers over Israel?",
+        new String[]{
+                "Only Moses should handle every dispute",
+                "Responsibility could be shared while difficult matters were brought to Moses",
+                "Aaron should replace Moses as judge",
+                "Every family should appoint its own king"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did God describe Israel as being if they obeyed His covenant?",
+        new String[]{
+                "A kingdom of priests and an holy nation",
+                "The greatest army on earth",
+                "A nation without enemies",
+                "A kingdom ruled by Moses"
+        },
+        0
+));
+
+questions.add(new Question(
+        "Why was the people commanded to stay within the boundary around Mount Sinai?",
+        new String[]{
+                "The mountain belonged to Moses",
+                "They were preparing for war",
+                "They were not to approach God's holy presence improperly",
+                "The mountain was controlled by Pharaoh"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What happened when the people heard the thunderings, the noise of the trumpet, and saw the mountain smoking?",
+        new String[]{
+                "They climbed the mountain",
+                "They asked Aaron to lead them",
+                "They returned immediately to Egypt",
+                "They removed themselves and stood afar off"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What does the commandment concerning the Sabbath connect with God's work of creation?",
+        new String[]{
+                "Israel was to rest on the seventh day because God made heaven and earth in six days and rested the seventh",
+                "Israel was to rest because Pharaoh had given them the day",
+                "Israel was to rest only during the wilderness journey",
+                "Israel was to rest because Moses commanded it after the Red Sea"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did Moses do with the blood when he confirmed the covenant with Israel?",
+        new String[]{
+                "He poured it into the Red Sea",
+                "He sprinkled it upon the people",
+                "He placed it inside the ark",
+                "He gave it to Aaron to drink"
+        },
+        1
+));
+
+questions.add(new Question(
+        "Who went up with Moses and saw the God of Israel when the covenant was confirmed?",
+        new String[]{
+                "Joshua and Caleb only",
+                "Aaron and Miriam only",
+                "Aaron, Nadab, Abihu, and seventy of the elders of Israel",
+                "Jethro and Joshua"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What did the elders see beneath the feet of the God of Israel?",
+        new String[]{
+                "A pavement of gold",
+                "A pavement of bronze",
+                "A pavement of precious stones",
+                "A paved work of sapphire stone, as it were the body of heaven in his clearness"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What was the purpose of the testimony that God commanded Moses to put into the ark?",
+        new String[]{
+                "It was to be kept as part of the covenant testimony",
+                "It was to be used as a weapon",
+                "It was to identify Aaron as king",
+                "It was to replace the altar"
+        },
+        0
+));
+
+questions.add(new Question(
+        "Why was the golden calf especially serious in light of the covenant Israel had just received?",
+        new String[]{
+                "Israel had already entered Canaan",
+                "It directly contradicted God's commands concerning other gods and graven images",
+                "Aaron had secretly made it before Moses received the law",
+                "The calf was made from Egyptian weapons"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did Aaron say when Moses confronted him about the golden calf?",
+        new String[]{
+                "He blamed Joshua completely",
+                "He said the people had refused to obey him",
+                "He described how the people's gold was gathered and the calf came forth",
+                "He said Moses had commanded him to make it"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What did Moses do to the golden calf after coming down from the mountain?",
+        new String[]{
+                "He placed it inside the ark",
+                "He returned it to the people",
+                "He buried it intact",
+                "He burned it, ground it to powder, scattered it on the water, and made the Israelites drink it"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What did Moses ask God concerning His presence after Israel's sin with the golden calf?",
+        new String[]{
+                "That God's presence would go with Israel",
+                "That Israel should return to Egypt",
+                "That Aaron should lead Israel instead",
+                "That Israel should remain permanently at Sinai"
+        },
+        0
+));
+
+questions.add(new Question(
+        "When Moses asked to see God's glory, what did God say Moses could not see?",
+        new String[]{
+                "His goodness",
+                "His face",
+                "His glory passing by",
+                "The place where He would stand"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What happened to Moses' face after he came down from Mount Sinai after speaking with the LORD?",
+        new String[]{
+                "It became covered with ashes",
+                "It became dark",
+                "The skin of his face shone",
+                "It became scarred"
+        },
+        2
+));
+
+questions.add(new Question(
+        "Why did Moses tell the people to stop bringing materials for the tabernacle?",
+        new String[]{
+                "The tabernacle had been cancelled",
+                "Aaron had forbidden further offerings",
+                "The craftsmen refused to continue",
+                "They had brought more than enough for the work"
+        },
+        3
+));
+
+questions.add(new Question(
+        "What happened when the tabernacle was finally completed?",
+        new String[]{
+                "The glory of the LORD filled the tabernacle",
+                "Pharaoh returned to Egypt",
+                "Moses became king",
+                "Israel immediately entered Canaan"
+        },
+        0
+));
+                
 
         return questions;
     }
