@@ -246,11 +246,9 @@ questions.add(new Question(
         },
         0
 ));
-        }
+                }
 
-        return questions;
-    }
-    if (difficulty.equals("Medium")) {
+        if (difficulty.equals("Medium")) {
 
     questions.add(new Question(
             "Why did Moses initially hesitate to go to Pharaoh?",
@@ -526,5 +524,8 @@ questions.add(new Question(
             },
             0
     ));
-        }
+                }
+
+        return questions;
+    }
 }
