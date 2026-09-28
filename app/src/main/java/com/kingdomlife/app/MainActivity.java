@@ -4188,6 +4188,39 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     addButton("← Old Testament", v -> showBibleJourneyOldTestament());
     addButton("⬅️ Back to Bible Journey", v -> showBibleJourney());
     }
+    boolean isBibleJourneyDifficultyUnlocked(
+        String book,
+        String difficulty
+) {
+    if (difficulty.equals("Easy")) {
+        return true;
+    }
+
+    String key =
+            "bibleJourney_" +
+            book +
+            "_" +
+            difficulty +
+            "_unlocked";
+
+    return prefs.getBoolean(key, false);
+}
+
+void unlockBibleJourneyDifficulty(
+        String book,
+        String difficulty
+) {
+    String key =
+            "bibleJourney_" +
+            book +
+            "_" +
+            difficulty +
+            "_unlocked";
+
+    prefs.edit()
+            .putBoolean(key, true)
+            .apply();
+}
     void showBookDifficulty(String book) {
     stopTimer();
     content.removeAllViews();
@@ -4209,14 +4242,41 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     info.setPadding(0, 0, 0, 20);
     content.addView(info);
 
-    addButton("🟢 Easy", v -> startBibleJourney(book, "Easy"));
+    if (isBibleJourneyDifficultyUnlocked(book, "Easy")) {
+    addButton(
+            "🟢 Easy",
+            v -> startBibleJourney(book, "Easy")
+    );
+} else {
+    addButton("🔒 Easy", v -> {});
+}
 
-    addButton("🔵 Medium", v -> startBibleJourney(book, "Medium"));
+if (isBibleJourneyDifficultyUnlocked(book, "Medium")) {
+    addButton(
+            "🔵 Medium",
+            v -> startBibleJourney(book, "Medium")
+    );
+} else {
+    addButton("🔒 Medium", v -> {});
+}
 
-    addButton("🟠 Hard", v -> startBibleJourney(book, "Hard"));
+if (isBibleJourneyDifficultyUnlocked(book, "Hard")) {
+    addButton(
+            "🟠 Hard",
+            v -> startBibleJourney(book, "Hard")
+    );
+} else {
+    addButton("🔒 Hard", v -> {});
+}
 
-    addButton("🟣 Scholar", v -> startBibleJourney(book, "Scholar"));
-
+if (isBibleJourneyDifficultyUnlocked(book, "Scholar")) {
+    addButton(
+            "🟣 Scholar",
+            v -> startBibleJourney(book, "Scholar")
+    );
+} else {
+    addButton("🔒 Scholar", v -> {});
+}
     addButton("⬅️ Back", v -> {
     if (book.equals("Genesis")) {
         showBibleJourneyOldTestament();
@@ -4437,7 +4497,28 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     book.setGravity(Gravity.CENTER);
     book.setPadding(0, 0, 0, 20);
     content.addView(book);
+        
+if (currentBibleDifficulty.equals("Easy")) {
 
+    unlockBibleJourneyDifficulty(
+            currentBibleBook,
+            "Medium"
+    );
+
+} else if (currentBibleDifficulty.equals("Medium")) {
+
+    unlockBibleJourneyDifficulty(
+            currentBibleBook,
+            "Hard"
+    );
+
+} else if (currentBibleDifficulty.equals("Hard")) {
+
+    unlockBibleJourneyDifficulty(
+            currentBibleBook,
+            "Scholar"
+    );
+}
     TextView scoreText = new TextView(this);
     scoreText.setText(
             "⭐ Score: " +
