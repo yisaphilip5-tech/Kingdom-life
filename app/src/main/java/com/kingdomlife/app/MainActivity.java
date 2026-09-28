@@ -4238,13 +4238,24 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
 
     if (book.equals("Genesis")) {
         loadGenesisQuestions(difficulty);
-    } else {
-        bibleJourneyQuestions.clear();
-        bibleJourneyOptions.clear();
-        bibleJourneyAnswers.clear();
+    }else {
+    bibleJourneyQuestions.clear();
+    bibleJourneyOptions.clear();
+    bibleJourneyAnswers.clear();
 
+    ArrayList<BibleJourneyData.Question> questions =
+            BibleJourneyData.getQuestions(book, difficulty);
+
+    for (BibleJourneyData.Question q : questions) {
+        bibleJourneyQuestions.add(q.question);
+        bibleJourneyOptions.add(q.options);
+        bibleJourneyAnswers.add(q.answer);
+    }
+
+    if (questions.isEmpty()) {
         bibleJourneyQuestions.add(
-                "Questions for " + book + " are coming soon."
+                "Questions for " + book +
+                " (" + difficulty + ") are coming soon."
         );
 
         bibleJourneyOptions.add(new String[]{
@@ -4256,7 +4267,7 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
 
         bibleJourneyAnswers.add(0);
     }
-
+    }
     showBibleJourneyQuestion();
     }
     void showBibleJourneyQuestion() {
