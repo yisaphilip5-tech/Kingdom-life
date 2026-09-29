@@ -32,6 +32,7 @@ public class BibleJourneyData {
         DataPart6.addQuestions(questions, book, difficulty);
         DataPart7.addQuestions(questions, book, difficulty);
         DataPart8.addQuestions(questions, book, difficulty);
+        DataPart9.addQuestions(questions, book, difficulty);
 
         return questions;
     }
@@ -16862,6 +16863,48 @@ public class BibleJourneyData {
                             0
                     ));
                 }
+        }
+        private static class DataPart9 {
+
+    static void addQuestions(ArrayList<Question> questions, String book, String difficulty) {
+
+        if (book.equals("Hebrews")) {
+            addBookHebrewsQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("James")) {
+            addBookJamesQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("1 Peter")) {
+            addBook1PeterQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("2 Peter")) {
+            addBook2PeterQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("1 John")) {
+            addBook1JohnQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("2 John")) {
+            addBook2JohnQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("3 John")) {
+            addBook3JohnQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("Jude")) {
+            addBookJudeQuestions(questions, difficulty);
+        }
+
+        else if (book.equals("Revelation")) {
+            addBookRevelationQuestions(questions, difficulty);
+        }
+
+    }
         }
         private static void addBookHebrewsQuestions(ArrayList<Question> questions, String difficulty) {
 
