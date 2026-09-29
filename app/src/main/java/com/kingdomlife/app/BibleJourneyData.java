@@ -1910,6 +1910,289 @@ questions.add(new Question(
         ));
     }
 }
+        if (book.equals("Joshua")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who became the leader of Israel after Moses?",
+                new String[]{
+                        "Joshua",
+                        "Caleb",
+                        "Aaron",
+                        "Eleazar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God command Joshua to do after Moses died?",
+                new String[]{
+                        "Return to Egypt",
+                        "Build a new tabernacle",
+                        "Lead Israel across the Jordan",
+                        "Choose a new priest"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What river did the Israelites cross to enter the Promised Land?",
+                new String[]{
+                        "Nile River",
+                        "Euphrates River",
+                        "Red Sea",
+                        "Jordan River"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What city did the Israelites attack after crossing the Jordan?",
+                new String[]{
+                        "Ai",
+                        "Jericho",
+                        "Hebron",
+                        "Gibeon"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many times did Israel march around Jericho on each of the first six days?",
+                new String[]{
+                        "Seven times",
+                        "Three times",
+                        "Once",
+                        "Twice"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the priests carry around Jericho?",
+                new String[]{
+                        "The ark of the covenant",
+                        "The tablets of stone",
+                        "A golden altar",
+                        "A bronze serpent"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to the walls of Jericho?",
+                new String[]{
+                        "They became higher",
+                        "They caught fire",
+                        "They were rebuilt",
+                        "They fell down"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Who hid the Israelite spies in Jericho?",
+                new String[]{
+                        "Deborah",
+                        "Rahab",
+                        "Miriam",
+                        "Ruth"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Where did Rahab hide the spies?",
+                new String[]{
+                        "Under stalks of flax on the roof",
+                        "Inside a cave",
+                        "Behind the city gate",
+                        "Inside the city wall"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Rahab ask the spies to remember when Jericho was taken?",
+                new String[]{
+                        "Her wealth",
+                        "Her neighbours",
+                        "Her place in the city",
+                        "Her and her family's safety"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What sign did Rahab use to identify her house?",
+                new String[]{
+                        "A white cloth",
+                        "A blue flag",
+                        "A scarlet cord",
+                        "A golden lamp"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Joshua tell the people to do when they crossed the Jordan?",
+                new String[]{
+                        "Build houses immediately",
+                        "Follow the priests carrying the ark",
+                        "Return to the wilderness",
+                        "March toward Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the Jordan River when the priests carrying the ark stepped into it?",
+                new String[]{
+                        "It became deeper",
+                        "It changed direction",
+                        "It dried up forever",
+                        "The waters stopped and stood up"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did the Israelites take from the Jordan after crossing?",
+                new String[]{
+                        "Twelve baskets",
+                        "Twelve swords",
+                        "Twelve stones",
+                        "Twelve tents"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Why did Joshua set up the twelve stones?",
+                new String[]{
+                        "As a memorial for future generations",
+                        "To mark the location of Jericho",
+                        "To build an altar",
+                        "To divide the land"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to the manna after Israel ate the produce of Canaan?",
+                new String[]{
+                        "It became more abundant",
+                        "It changed into bread",
+                        "It fell only on the Sabbath",
+                        "It ceased the next day"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Whom did Joshua encounter near Jericho with a drawn sword?",
+                new String[]{
+                        "The king of Jericho",
+                        "The commander of the LORD's army",
+                        "Caleb",
+                        "An Egyptian soldier"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the commander of the LORD's army tell Joshua to remove?",
+                new String[]{
+                        "His robe",
+                        "His sword",
+                        "His sandals",
+                        "His crown"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What happened to the sun during the battle at Gibeon?",
+                new String[]{
+                        "It stood still",
+                        "It became dark",
+                        "It rose twice",
+                        "It disappeared"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who asked Joshua for help against the five Amorite kings?",
+                new String[]{
+                        "The Egyptians",
+                        "The Philistines",
+                        "The Moabites",
+                        "The Gibeonites"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did Joshua command concerning the five Amorite kings hiding in a cave?",
+                new String[]{
+                        "Let them escape",
+                        "Bring them out of the cave",
+                        "Send them back to Egypt",
+                        "Make them priests"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the five Amorite kings after Joshua captured them?",
+                new String[]{
+                        "They became allies of Israel",
+                        "They were sent into exile",
+                        "They were executed",
+                        "They became judges"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What city did Israel conquer after Jericho?",
+                new String[]{
+                        "Bethlehem",
+                        "Nazareth",
+                        "Damascus",
+                        "Ai"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Who caused Israel's defeat at Ai by taking things that had been forbidden?",
+                new String[]{
+                        "Achan",
+                        "Korah",
+                        "Gehazi",
+                        "Absalom"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Joshua do at Mount Ebal?",
+                new String[]{
+                        "Built a palace",
+                        "Built an altar and read the law",
+                        "Established a military camp",
+                        "Divided the Jordan River"
+                },
+                1
+        ));
+
+    }
+                    }
+        
+        
         return questions;
 }
 }
