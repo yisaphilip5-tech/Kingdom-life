@@ -6126,6 +6126,127 @@ questions.add(new Question(
 
     }
  }
+        questions.add(new Question(
+        "Who is traditionally identified as the speaker in Ecclesiastes?",
+        new String[]{"David", "Solomon", "Moses", "Isaiah"},
+        1));
+
+questions.add(new Question(
+        "What does Ecclesiastes repeatedly say about life \"under the sun\"?",
+        new String[]{"It is vanity", "It is always easy", "It is without purpose", "It is perfect"},
+        0));
+
+questions.add(new Question(
+        "What is said to be a time for every purpose under heaven?",
+        new String[]{"A season", "A day", "A generation", "An hour"},
+        0));
+
+questions.add(new Question(
+        "According to Ecclesiastes, there is a time to be born and a time to do what?",
+        new String[]{"To sleep", "To die", "To travel", "To rejoice"},
+        1));
+
+questions.add(new Question(
+        "What does Ecclesiastes say there is a time to plant and a time to do?",
+        new String[]{"Gather", "Build", "Uproot", "Celebrate"},
+        2));
+
+questions.add(new Question(
+        "What is better than two according to Ecclesiastes 4?",
+        new String[]{"One", "Three", "Four", "Ten"},
+        1));
+
+questions.add(new Question(
+        "Why are two better than one?",
+        new String[]{"They can help one another", "They become wealthy faster", "They never disagree", "They always travel together"},
+        0));
+
+questions.add(new Question(
+        "What does a threefold cord say about its strength?",
+        new String[]{"It is quickly broken", "It is easily hidden", "It is not quickly broken", "It cannot be tied"},
+        2));
+
+questions.add(new Question(
+        "What is better than the sacrifice of fools?",
+        new String[]{"A large offering", "To draw near to hear", "A long prayer", "A celebration"},
+        1));
+
+questions.add(new Question(
+        "What does Ecclesiastes advise concerning our words before God?",
+        new String[]{"Be quick to speak", "Speak continually", "Be careful and not rash", "Never speak"},
+        2));
+
+questions.add(new Question(
+        "What should a person do when going into the house of God?",
+        new String[]{"Be ready to hear", "Bring many gifts", "Speak loudly", "Avoid listening"},
+        0));
+
+questions.add(new Question(
+        "What does Ecclesiastes say about the love of money?",
+        new String[]{"It satisfies completely", "It is the root of all wisdom", "It is always harmless", "It does not satisfy the one who loves it"},
+        3));
+
+questions.add(new Question(
+        "What happens to the laborer who works hard according to Ecclesiastes?",
+        new String[]{"His sleep is sweet", "He never sleeps", "He becomes king", "He loses his home"},
+        0));
+
+questions.add(new Question(
+        "What is better than the day of one's birth?",
+        new String[]{"The day of one's death", "The day of wealth", "The day of marriage", "The day of victory"},
+        0));
+
+questions.add(new Question(
+        "According to Ecclesiastes, who is better than a living dog?",
+        new String[]{"A strong lion", "A dead lion", "A wise man", "A rich man"},
+        1));
+
+questions.add(new Question(
+        "What does Ecclesiastes say about wisdom compared with foolishness?",
+        new String[]{"Wisdom is better", "They are exactly equal", "Foolishness is always better", "Neither has value"},
+        0));
+
+questions.add(new Question(
+        "What can make the wise man's heart stronger according to Ecclesiastes?",
+        new String[]{"Correction", "Wealth", "Fame", "Sleep"},
+        0));
+
+questions.add(new Question(
+        "What does Ecclesiastes say about the righteous and the wicked?",
+        new String[]{"Only the wicked die", "Only the righteous die", "Both can experience death", "Neither experiences death"},
+        2));
+
+questions.add(new Question(
+        "What should a person do with the bread they have?",
+        new String[]{"Eat it with joy", "Hide it", "Sell it immediately", "Throw it away"},
+        0));
+
+questions.add(new Question(
+        "What should be done with one's seed according to Ecclesiastes 11?",
+        new String[]{"Keep it forever", "Sow it", "Burn it", "Hide it underground"},
+        1));
+
+questions.add(new Question(
+        "What does Ecclesiastes tell young people to do in their youth?",
+        new String[]{"Remember their Creator", "Avoid all joy", "Seek riches first", "Leave their families"},
+        0));
+
+questions.add(new Question(
+        "What happens to the body when a person dies according to Ecclesiastes?",
+        new String[]{"It becomes immortal on earth", "The dust returns to the earth", "It disappears completely", "It becomes stronger"},
+        1));
+
+questions.add(new Question(
+        "What returns to God who gave it?",
+        new String[]{"The silver", "The body", "The spirit", "The wealth"},
+        2));
+
+questions.add(new Question(
+        "What is the conclusion of the whole matter?",
+        new String[]{"Seek wealth and fame", "Fear God and keep His commandments", "Avoid work", "Live only for pleasure"},
+        1));
+    }
+}
         return questions;
 }
 }
