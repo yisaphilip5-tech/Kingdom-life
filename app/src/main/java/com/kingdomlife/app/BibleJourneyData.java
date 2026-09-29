@@ -13159,6 +13159,846 @@ if (book.equals("Zephaniah")) {
 
     }
             }
+        if (book.equals("1 Corinthians")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote 1 Corinthians?",
+                new String[]{
+                        "Peter",
+                        "Paul",
+                        "John",
+                        "James"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "To which city was 1 Corinthians addressed?",
+                new String[]{
+                        "Corinth",
+                        "Rome",
+                        "Ephesus",
+                        "Philippi"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul urge the believers to have among themselves in 1 Corinthians 1?",
+                new String[]{
+                        "Wealth",
+                        "Political power",
+                        "The same mind and judgment",
+                        "Military strength"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul say was the power of God?",
+                new String[]{
+                        "The wisdom of the world",
+                        "The preaching of the cross",
+                        "The law of Moses",
+                        "The traditions of men"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who planted, while Apollos watered?",
+                new String[]{
+                        "Peter",
+                        "Barnabas",
+                        "Paul",
+                        "Timothy"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who gives the increase according to 1 Corinthians 3?",
+                new String[]{
+                        "God",
+                        "Paul",
+                        "Apollos",
+                        "The church"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say believers are collectively?",
+                new String[]{
+                        "A kingdom of soldiers",
+                        "The temple of God",
+                        "A school of prophets",
+                        "A house of kings"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul say the body of a believer is the temple of?",
+                new String[]{
+                        "The Holy Ghost",
+                        "An angel",
+                        "The law",
+                        "Moses"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul tell believers to flee?",
+                new String[]{
+                        "Work",
+                        "Wisdom",
+                        "Idolatry",
+                        "Prayer"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What kind of race did Paul use as an example of disciplined Christian living?",
+                new String[]{
+                        "A chariot race",
+                        "A race for a prize",
+                        "A race across the sea",
+                        "A race between kings"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul say Israel's experiences were written for?",
+                new String[]{
+                        "Their entertainment",
+                        "Their political instruction",
+                        "Our examples",
+                        "The Roman government"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul say believers should do when tempted?",
+                new String[]{
+                        "Trust that God will provide a way to escape",
+                        "Give up immediately",
+                        "Follow the temptation",
+                        "Return to Egypt"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Jesus establish in the night in which He was betrayed?",
+                new String[]{
+                        "A new kingdom",
+                        "The Lord's Supper",
+                        "A Roman council",
+                        "A school"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "According to 1 Corinthians 12, believers are compared to what?",
+                new String[]{
+                        "A city",
+                        "A temple made of stones",
+                        "One body with many members",
+                        "A flock without a shepherd"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Which chapter contains the famous teaching about charity?",
+                new String[]{
+                        "1 Corinthians 5",
+                        "1 Corinthians 8",
+                        "1 Corinthians 10",
+                        "1 Corinthians 13"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What does charity do according to 1 Corinthians 13?",
+                new String[]{
+                        "Never faileth",
+                        "Always seeks riches",
+                        "Rules by force",
+                        "Avoids everyone"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say was the greatest of faith, hope, and charity?",
+                new String[]{
+                        "Faith",
+                        "Hope",
+                        "Charity",
+                        "Knowledge"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Which gift did Paul say edifies the church when used properly?",
+                new String[]{
+                        "Prophecy",
+                        "Wealth",
+                        "Military authority",
+                        "Political influence"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul teach about the resurrection in 1 Corinthians 15?",
+                new String[]{
+                        "It is unnecessary",
+                        "The dead are raised",
+                        "Only kings are raised",
+                        "It happened only to angels"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who is described as the firstfruits of them that slept?",
+                new String[]{
+                        "Moses",
+                        "Abraham",
+                        "Jesus Christ",
+                        "David"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Paul say is the last enemy that shall be destroyed?",
+                new String[]{
+                        "Death",
+                        "Sin",
+                        "Rome",
+                        "Suffering"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul tell the Corinthians to do concerning the work of the Lord?",
+                new String[]{
+                        "Stop working",
+                        "Be discouraged",
+                        "Be steadfast and unmoveable",
+                        "Return to the law"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What collection did Paul instruct the churches to make?",
+                new String[]{
+                        "A collection for the saints",
+                        "A collection for Roman soldiers",
+                        "A collection for the temple in Corinth",
+                        "A collection for kings"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who did Paul hope would come to Corinth?",
+                new String[]{
+                        "John",
+                        "Apollos",
+                        "Stephen",
+                        "Philip"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How did Paul end the letter's final greeting?",
+                new String[]{
+                        "The Lord is risen",
+                        "Peace with Rome",
+                        "The grace of our Lord Jesus Christ be with you",
+                        "Remember Moses"
+                },
+                2
+        ));
+    }
+            }
+        if (book.equals("2 Corinthians")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote 2 Corinthians?",
+                new String[]{
+                        "Paul",
+                        "Peter",
+                        "John",
+                        "Jude"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "To whom was 2 Corinthians primarily addressed?",
+                new String[]{
+                        "The church at Rome",
+                        "The church at Corinth",
+                        "The church at Jerusalem",
+                        "The church at Philippi"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does God give to His people in times of trouble according to 2 Corinthians 1?",
+                new String[]{
+                        "Earthly riches",
+                        "Political power",
+                        "Comfort",
+                        "Military protection"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul say God comforts us with?",
+                new String[]{
+                        "The comfort with which we ourselves are comforted",
+                        "The wisdom of kings",
+                        "The treasures of the temple",
+                        "The strength of armies"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say we have as a treasure in earthen vessels?",
+                new String[]{
+                        "Gold",
+                        "The excellency of the power of God",
+                        "The law of Moses",
+                        "The wisdom of Rome"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happens to the outward man according to 2 Corinthians 4?",
+                new String[]{
+                        "He becomes king",
+                        "He becomes wealthy",
+                        "He perishes",
+                        "He becomes an angel"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is renewed day by day?",
+                new String[]{
+                        "The inward man",
+                        "The temple",
+                        "The Roman empire",
+                        "The body of Moses"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What kind of creature is someone who is in Christ?",
+                new String[]{
+                        "An earthly ruler",
+                        "A new creature",
+                        "A Roman citizen",
+                        "A priest of Israel"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What ministry did God give Paul and others in 2 Corinthians 5?",
+                new String[]{
+                        "The ministry of reconciliation",
+                        "The ministry of taxation",
+                        "The ministry of war",
+                        "The ministry of farming"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say Christ was made to be for us?",
+                new String[]{
+                        "A king of Rome",
+                        "A prophet only",
+                        "Sin for us",
+                        "A soldier"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul urge believers not to receive in vain?",
+                new String[]{
+                        "The grace of God",
+                        "The law",
+                        "Gold",
+                        "Earthly authority"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What kind of sorrow worketh repentance?",
+                new String[]{
+                        "Worldly sorrow",
+                        "Godly sorrow",
+                        "Political sorrow",
+                        "Temporary sorrow"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Which churches were praised for their generosity in 2 Corinthians 8?",
+                new String[]{
+                        "The churches of Judea",
+                        "The churches of Rome",
+                        "The churches of Macedonia",
+                        "The churches of Egypt"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul say God loves?",
+                new String[]{
+                        "A cheerful giver",
+                        "A wealthy ruler",
+                        "A famous teacher",
+                        "A powerful soldier"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say God is able to make abound toward believers?",
+                new String[]{
+                        "Political influence",
+                        "All grace",
+                        "Earthly fame",
+                        "Military strength"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What kind of weapons does Paul describe in 2 Corinthians 10?",
+                new String[]{
+                        "Carnal weapons",
+                        "Roman weapons",
+                        "Spiritual weapons",
+                        "Weapons of gold"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Paul say spiritual weapons are mighty through?",
+                new String[]{
+                        "God",
+                        "Rome",
+                        "Human wisdom",
+                        "Military training"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul fear the Corinthians might be deceived by?",
+                new String[]{
+                        "The simplicity that is in Christ",
+                        "The law of Rome",
+                        "The wealth of Corinth",
+                        "The wisdom of philosophers"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul call some false teachers who came among the Corinthians?",
+                new String[]{
+                        "False apostles",
+                        "Roman governors",
+                        "Priests of Baal",
+                        "Kings of Israel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul have in his flesh that he called a thorn?",
+                new String[]{
+                        "A crown",
+                        "A thorn in the flesh",
+                        "A broken sword",
+                        "A chain of gold"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say to Paul concerning His grace?",
+                new String[]{
+                        "It is sufficient",
+                        "It is temporary",
+                        "It is only for kings",
+                        "It is hidden"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say was made perfect in weakness?",
+                new String[]{
+                        "The law",
+                        "Christ's strength",
+                        "Human wisdom",
+                        "Earthly power"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul tell the Corinthians to examine?",
+                new String[]{
+                        "Their wealth",
+                        "Their houses",
+                        "Themselves, whether they be in the faith",
+                        "Their political leaders"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul wish for the Corinthians in his closing words?",
+                new String[]{
+                        "The grace of the Lord Jesus Christ",
+                        "Earthly riches",
+                        "Military protection",
+                        "A Roman position"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul encourage the Corinthians to do in 2 Corinthians 13?",
+                new String[]{
+                        "Seek earthly power",
+                        "Live in peace",
+                        "Return to Egypt",
+                        "Avoid one another"
+                },
+                1
+        ));
+    }
+            }
+        if (book.equals("Galatians")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote the book of Galatians?",
+                new String[]{
+                        "Paul",
+                        "Peter",
+                        "John",
+                        "James"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "To whom was Galatians written?",
+                new String[]{
+                        "The Romans",
+                        "The Galatians",
+                        "The Corinthians",
+                        "The Philippians"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul marvel that the Galatians were so soon removed from?",
+                new String[]{
+                        "The law of Moses",
+                        "The traditions of Israel",
+                        "Him that called them into the grace of Christ",
+                        "The city of Jerusalem"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul say should happen to anyone preaching another gospel?",
+                new String[]{
+                        "Let him be accursed",
+                        "Let him become a king",
+                        "Let him teach in Jerusalem",
+                        "Let him receive a reward"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Paul said his gospel was not after what?",
+                new String[]{
+                        "The Scriptures",
+                        "Man",
+                        "Christ",
+                        "Faith"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Whom did Paul rebuke at Antioch?",
+                new String[]{
+                        "Barnabas",
+                        "James",
+                        "Peter",
+                        "Timothy"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul say about his life in Galatians 2:20?",
+                new String[]{
+                        "I live by the law",
+                        "I live for myself",
+                        "I live in the flesh only",
+                        "Christ liveth in me"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "How does Paul say a person is justified?",
+                new String[]{
+                        "By the works of the law",
+                        "By faith of Jesus Christ",
+                        "By earthly wealth",
+                        "By keeping Roman customs"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who is given as an example of one who believed God?",
+                new String[]{
+                        "Abraham",
+                        "Pharaoh",
+                        "Pilate",
+                        "Herod"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Abraham believe, and it was counted to him for righteousness?",
+                new String[]{
+                        "The law",
+                        "The prophets",
+                        "God",
+                        "The Roman government"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul call the law in relation to Christ?",
+                new String[]{
+                        "A king",
+                        "A schoolmaster",
+                        "A temple",
+                        "A prophet"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "In Christ Jesus, what does Paul say makes a person a child of God?",
+                new String[]{
+                        "Faith",
+                        "Wealth",
+                        "Family name",
+                        "Political position"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What are believers described as through Christ?",
+                new String[]{
+                        "Servants of Rome",
+                        "Children of God",
+                        "Kings of Israel",
+                        "Priests of Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul say Christ has given believers?",
+                new String[]{
+                        "Political authority",
+                        "Earthly riches",
+                        "Liberty",
+                        "Military power"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Paul warn believers not to use their liberty as?",
+                new String[]{
+                        "An occasion to the flesh",
+                        "A reason to pray",
+                        "A reason to love",
+                        "A way to serve"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What command summarizes the law according to Galatians 5?",
+                new String[]{
+                        "Love thy neighbour as thyself",
+                        "Build the temple",
+                        "Keep Roman customs",
+                        "Seek earthly riches"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Which of these is a fruit of the Spirit?",
+                new String[]{
+                        "Pride",
+                        "Hatred",
+                        "Love",
+                        "Envy"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Which of these is listed among the works of the flesh?",
+                new String[]{
+                        "Love",
+                        "Joy",
+                        "Peace",
+                        "Idolatry"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What should believers do when someone is overtaken in a fault?",
+                new String[]{
+                        "Restore such a one in the spirit of meekness",
+                        "Cast them out immediately",
+                        "Ignore them",
+                        "Judge them publicly"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What are believers told to bear for one another?",
+                new String[]{
+                        "Riches",
+                        "Burdens",
+                        "Weapons",
+                        "Titles"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does a person reap according to Galatians 6?",
+                new String[]{
+                        "What he sows",
+                        "What his neighbour sows",
+                        "Only what he asks for",
+                        "Nothing"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers not become weary in?",
+                new String[]{
+                        "Travel",
+                        "Well doing",
+                        "Eating",
+                        "Building"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happens to the person who sows to the Spirit?",
+                new String[]{
+                        "He receives earthly riches",
+                        "He becomes a ruler",
+                        "He shall of the Spirit reap life everlasting",
+                        "He becomes famous"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Paul say matters in Christ Jesus?",
+                new String[]{
+                        "Being a new creature",
+                        "Being wealthy",
+                        "Being famous",
+                        "Being politically powerful"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say he bore in his body?",
+                new String[]{
+                        "The marks of the Lord Jesus",
+                        "The crown of David",
+                        "The seal of Rome",
+                        "The law of Moses"
+                },
+                0
+        ));
+    }
+                    }
 return questions;
 }
 }
