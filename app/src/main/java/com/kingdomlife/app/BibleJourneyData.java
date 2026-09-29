@@ -17703,6 +17703,566 @@ public class BibleJourneyData {
         ));
     }
             }
+        private static void addBook2PeterQuestions(ArrayList<Question> questions, String difficulty) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote 2 Peter?",
+                new String[]{
+                        "John",
+                        "Peter",
+                        "Paul",
+                        "James"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Peter say God has given believers?",
+                new String[]{
+                        "All things that pertain to life and godliness",
+                        "Earthly riches",
+                        "Political power",
+                        "Roman citizenship"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers add to their faith?",
+                new String[]{
+                        "Gold",
+                        "Fame",
+                        "Virtue",
+                        "Military strength"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What should be added to virtue?",
+                new String[]{
+                        "Knowledge",
+                        "Riches",
+                        "Power",
+                        "Fame"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should be added to knowledge?",
+                new String[]{
+                        "Patience",
+                        "Temperance",
+                        "Wealth",
+                        "Fame"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should be added to temperance?",
+                new String[]{
+                        "Godliness",
+                        "Riches",
+                        "Political power",
+                        "Wisdom of men"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should be added to godliness?",
+                new String[]{
+                        "Brotherly kindness",
+                        "Earthly honour",
+                        "Military strength",
+                        "Silver"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should be added to brotherly kindness?",
+                new String[]{
+                        "Fame",
+                        "Charity",
+                        "Power",
+                        "Gold"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Peter say will never fall if believers do these things?",
+                new String[]{
+                        "Their riches",
+                        "Their faith",
+                        "Their calling and election",
+                        "Their houses"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Peter say he will always remind believers of?",
+                new String[]{
+                        "These things",
+                        "Roman laws",
+                        "Earthly customs",
+                        "Military rules"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Peter say he would shortly put off?",
+                new String[]{
+                        "His house",
+                        "His earthly riches",
+                        "His tabernacle",
+                        "His clothing"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Peter say he was not following when he taught about Christ's power and coming?",
+                new String[]{
+                        "Fables",
+                        "The law",
+                        "The prophets",
+                        "The Psalms"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Peter and the others see Jesus receive from God the Father?",
+                new String[]{
+                        "A crown",
+                        "Honour and glory",
+                        "A kingdom",
+                        "A sword"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What came to Jesus from the excellent glory?",
+                new String[]{
+                        "A voice",
+                        "A trumpet",
+                        "A cloud",
+                        "A star"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Peter call the word of prophecy?",
+                new String[]{
+                        "A golden treasure",
+                        "A light that shines in a dark place",
+                        "A royal command",
+                        "A worldly law"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Peter say no prophecy of Scripture is of?",
+                new String[]{
+                        "Private interpretation",
+                        "Great importance",
+                        "God's power",
+                        "Public teaching"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who moved holy men of God to speak?",
+                new String[]{
+                        "Kings",
+                        "Angels",
+                        "The Holy Ghost",
+                        "Roman governors"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What kind of teachers does Peter warn would arise?",
+                new String[]{
+                        "False teachers",
+                        "Wise kings",
+                        "Faithful prophets",
+                        "Roman priests"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What would false teachers secretly bring in?",
+                new String[]{
+                        "New songs",
+                        "Damnable heresies",
+                        "New laws",
+                        "Earthly riches"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did God do to the angels that sinned?",
+                new String[]{
+                        "He made them kings",
+                        "He sent them to Jerusalem",
+                        "He cast them down to hell",
+                        "He gave them riches"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who did God preserve during the flood?",
+                new String[]{
+                        "Abraham",
+                        "Noah",
+                        "Moses",
+                        "David"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the cities of Sodom and Gomorrha?",
+                new String[]{
+                        "They became wealthy",
+                        "They were destroyed",
+                        "They became kingdoms",
+                        "They were rebuilt by Peter"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Peter compare false teachers to?",
+                new String[]{
+                        "Clouds without water",
+                        "Rivers of living water",
+                        "Mountains",
+                        "Golden vessels"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Peter say the Lord is not slack concerning?",
+                new String[]{
+                        "His promise",
+                        "His kingdom",
+                        "His riches",
+                        "His angels"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Peter say believers should look for according to God's promise?",
+                new String[]{
+                        "A new heaven and a new earth",
+                        "A new Roman Empire",
+                        "A new temple in Egypt",
+                        "A new earthly king"
+                },
+                0
+        ));
+    }
+        }
+        private static void addBook1JohnQuestions(ArrayList<Question> questions, String difficulty) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote 1 John?",
+                new String[]{
+                        "John",
+                        "Peter",
+                        "Paul",
+                        "James"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John say he and the others had seen and heard?",
+                new String[]{
+                        "Only visions",
+                        "The Word of life",
+                        "Roman soldiers",
+                        "Earthly riches"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What is God described as?",
+                new String[]{
+                        "A consuming fire",
+                        "Light",
+                        "A mighty king",
+                        "A great warrior"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What is there no darkness in?",
+                new String[]{
+                        "The world",
+                        "The heavens",
+                        "God",
+                        "The sea"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What should believers do if they say they have fellowship with God?",
+                new String[]{
+                        "Walk in the light",
+                        "Seek riches",
+                        "Become famous",
+                        "Avoid other believers"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What cleanses believers from all sin?",
+                new String[]{
+                        "The law",
+                        "The blood of Jesus Christ",
+                        "Silver",
+                        "Good reputation"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does John say if we confess our sins?",
+                new String[]{
+                        "God is faithful and just to forgive us",
+                        "We become kings",
+                        "We receive earthly riches",
+                        "We never face trials"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who is our advocate with the Father?",
+                new String[]{
+                        "Moses",
+                        "Peter",
+                        "Jesus Christ the righteous",
+                        "Paul"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is Jesus Christ called in relation to our sins?",
+                new String[]{
+                        "The prophet of Israel",
+                        "The propitiation for our sins",
+                        "The king of Rome",
+                        "The high priest of Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How do we know that we know Christ?",
+                new String[]{
+                        "If we keep his commandments",
+                        "If we become wealthy",
+                        "If we become famous",
+                        "If we rule others"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John call the commandment he writes?",
+                new String[]{
+                        "A new commandment",
+                        "A Roman command",
+                        "An earthly command",
+                        "A military command"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should a believer not love?",
+                new String[]{
+                        "The brethren",
+                        "The word of God",
+                        "The world",
+                        "Prayer"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does John say is not of the Father?",
+                new String[]{
+                        "The love of the brethren",
+                        "The lust of the flesh",
+                        "Faith",
+                        "Righteousness"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What passes away?",
+                new String[]{
+                        "The world and its lust",
+                        "The word of God",
+                        "Faith",
+                        "God's love"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who abides for ever?",
+                new String[]{
+                        "The rich",
+                        "He that does the will of God",
+                        "Kings",
+                        "Roman citizens"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does John warn about concerning the last time?",
+                new String[]{
+                        "Many antichrists would come",
+                        "The temple would become richer",
+                        "Rome would become holy",
+                        "Everyone would become a prophet"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John say believers have from the Holy One?",
+                new String[]{
+                        "An anointing",
+                        "A crown",
+                        "A kingdom",
+                        "Earthly wealth"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers do because the Father has bestowed His love upon them?",
+                new String[]{
+                        "Call themselves kings",
+                        "Be called the sons of God",
+                        "Seek worldly honour",
+                        "Avoid prayer"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does John say we shall be like when Christ appears?",
+                new String[]{
+                        "We shall be like him",
+                        "We shall be angels",
+                        "We shall be kings of Rome",
+                        "We shall become prophets"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does everyone who has this hope in Christ do?",
+                new String[]{
+                        "Purifies himself",
+                        "Seeks riches",
+                        "Avoids other believers",
+                        "Becomes famous"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John say Cain was?",
+                new String[]{
+                        "A prophet",
+                        "Of that wicked one",
+                        "A king",
+                        "A priest"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How should believers love?",
+                new String[]{
+                        "In word only",
+                        "In wealth",
+                        "In deed and in truth",
+                        "In secret only"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does John say God is greater than?",
+                new String[]{
+                        "Our heart",
+                        "The world",
+                        "The heavens",
+                        "The angels"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is the commandment of God according to 1 John 3:23?",
+                new String[]{
+                        "Believe on the name of Jesus Christ and love one another",
+                        "Build a temple",
+                        "Become wealthy",
+                        "Rule over nations"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does perfect love cast out?",
+                new String[]{
+                        "Faith",
+                        "Fear",
+                        "Hope",
+                        "Knowledge"
+                },
+                1
+        ));
+    }
+            }
 
     }
 
