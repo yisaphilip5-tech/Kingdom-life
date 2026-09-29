@@ -1352,6 +1352,285 @@ questions.add(new Question(
 ));
 }
 }
+        if (book.equals("Numbers")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Why is the fourth book of the Bible called Numbers?",
+                new String[]{
+                        "Because Israel was numbered in censuses",
+                        "Because Moses counted the Ten Commandments",
+                        "Because the priests counted sacrifices",
+                        "Because the Israelites counted their enemies"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was the brother of Moses?",
+                new String[]{
+                        "Joshua",
+                        "Aaron",
+                        "Caleb",
+                        "Eleazar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was Moses' sister?",
+                new String[]{
+                        "Miriam",
+                        "Deborah",
+                        "Ruth",
+                        "Hannah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God command Moses to do with the Israelites?",
+                new String[]{
+                        "Build a palace",
+                        "Count and organize them",
+                        "Send them back to Egypt",
+                        "Make them soldiers only"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Which tribe was set apart for the service of the tabernacle?",
+                new String[]{
+                        "Judah",
+                        "Benjamin",
+                        "Levi",
+                        "Dan"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who was the father of Moses, Aaron, and Miriam?",
+                new String[]{
+                        "Amram",
+                        "Korah",
+                        "Caleb",
+                        "Elkanah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was placed over the tabernacle when Israel camped?",
+                new String[]{
+                        "A cloud",
+                        "A wall of fire",
+                        "A golden roof",
+                        "A stone covering"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened when the cloud was taken up from the tabernacle?",
+                new String[]{
+                        "Israel stopped moving",
+                        "Israel journeyed onward",
+                        "Moses returned to Egypt",
+                        "The priests left the camp"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was the firstborn son of Aaron?",
+                new String[]{
+                        "Ithamar",
+                        "Eleazar",
+                        "Nadab",
+                        "Phinehas"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Which tribe was not counted with the other tribes for military service?",
+                new String[]{
+                        "Judah",
+                        "Levi",
+                        "Reuben",
+                        "Simeon"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Israelites do when the Passover was observed in the wilderness?",
+                new String[]{
+                        "They observed the Passover according to God's command",
+                        "They ignored the Passover",
+                        "They returned to Egypt",
+                        "They built a new altar to Pharaoh"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Israelites complain about in Numbers 11?",
+                new String[]{
+                        "They wanted a king",
+                        "They wanted meat",
+                        "They wanted gold",
+                        "They wanted to return to Canaan"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What food did God provide for Israel in the wilderness?",
+                new String[]{
+                        "Bread from Egypt",
+                        "Fish",
+                        "Manna",
+                        "Grapes"
+                },
+                2
+        ));
+                questions.add(new Question(
+                "What happened when the people complained about the manna?",
+                new String[]{
+                        "God sent quail",
+                        "God sent horses",
+                        "God sent grapes",
+                        "God sent bread from Egypt"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who were the twelve men sent to spy out the land of Canaan?",
+                new String[]{
+                        "Priests",
+                        "Spies from the tribes of Israel",
+                        "Kings of Canaan",
+                        "Egyptian soldiers"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Which two spies brought a good report about Canaan?",
+                new String[]{
+                        "Joshua and Caleb",
+                        "Moses and Aaron",
+                        "Nadab and Abihu",
+                        "Korah and Dathan"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the ten spies say about the people of Canaan?",
+                new String[]{
+                        "They were weak and afraid",
+                        "They were unable to fight",
+                        "They were strong and difficult to overcome",
+                        "They had already left the land"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the Israelites want to do after hearing the spies' report?",
+                new String[]{
+                        "Choose a captain and return to Egypt",
+                        "Build the tabernacle",
+                        "Crown Joshua king",
+                        "Attack the Egyptians"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to the ten spies who brought the evil report?",
+                new String[]{
+                        "They became priests",
+                        "They died by a plague before the LORD",
+                        "They returned to Egypt",
+                        "They became kings"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Why were the Israelites told they would wander in the wilderness?",
+                new String[]{
+                        "Because they refused to trust God and enter Canaan",
+                        "Because Moses wanted to leave Canaan",
+                        "Because Egypt attacked them",
+                        "Because Joshua lost the way"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who rebelled against Moses and Aaron in Numbers 16?",
+                new String[]{
+                        "Joshua",
+                        "Korah",
+                        "Caleb",
+                        "Eleazar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to Korah and those who joined his rebellion?",
+                new String[]{
+                        "They became leaders",
+                        "The earth opened and swallowed them",
+                        "They escaped into Egypt",
+                        "They were made priests"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Moses strike when God commanded him to speak to the rock?",
+                new String[]{
+                        "A tree",
+                        "The tabernacle",
+                        "The rock",
+                        "The altar"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who was chosen to succeed Moses as leader of Israel?",
+                new String[]{
+                        "Joshua",
+                        "Aaron",
+                        "Caleb",
+                        "Eleazar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Aaron's rod do that showed God's chosen priesthood?",
+                new String[]{
+                        "It became a serpent",
+                        "It blossomed, produced flowers, and yielded almonds",
+                        "It turned into gold",
+                        "It split the Red Sea"
+                },
+                1
+        ));
+                }
+        }
         return questions;
     }
 }
