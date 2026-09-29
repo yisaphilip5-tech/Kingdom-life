@@ -19428,6 +19428,5 @@ public class BibleJourneyData {
     }
             }
 
-    }
 
 }
