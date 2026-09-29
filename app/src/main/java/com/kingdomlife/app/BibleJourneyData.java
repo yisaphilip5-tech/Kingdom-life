@@ -6688,7 +6688,570 @@ if (book.equals("Song of Solomon")) {
         ));
 
     }
-                    }       
+                    }
+        if (book.equals("Isaiah")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who is named as the prophet who received the vision of Isaiah?",
+                new String[]{
+                        "Isaiah the son of Amoz",
+                        "Jeremiah the son of Hilkiah",
+                        "Ezekiel the priest",
+                        "Daniel the prince"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "In the year King Uzziah died, what did Isaiah see?",
+                new String[]{
+                        "A great army",
+                        "The Lord sitting upon a throne",
+                        "A burning city",
+                        "A golden altar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the seraphim cry to one another?",
+                new String[]{
+                        "Praise the Lord",
+                        "Glory to the King",
+                        "Holy, holy, holy",
+                        "Blessed is His name"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did one of the seraphim use to touch Isaiah's lips?",
+                new String[]{
+                        "A golden branch",
+                        "A burning coal",
+                        "A sword",
+                        "A scroll"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Isaiah say when the Lord asked whom He should send?",
+                new String[]{
+                        "Here am I; send me",
+                        "I will go tomorrow",
+                        "Send another prophet",
+                        "I am not ready"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What sign was given concerning a virgin who would conceive?",
+                new String[]{
+                        "She would have twins",
+                        "She would bear a son",
+                        "She would become queen",
+                        "She would see an angel"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What name is given to the child in Isaiah 7:14?",
+                new String[]{
+                        "Messiah",
+                        "Immanuel",
+                        "Wonderful",
+                        "Counsellor"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "According to Isaiah, what people that walked in darkness saw a great light?",
+                new String[]{
+                        "The people of Israel",
+                        "The people of Judah",
+                        "The people of the land",
+                        "The people that walked in darkness"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What name in Isaiah 9:6 means that the coming child would be a mighty ruler?",
+                new String[]{
+                        "Everlasting Father",
+                        "Prince of Peace",
+                        "The mighty God",
+                        "Wonderful"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What animal is mentioned as dwelling with the lamb in Isaiah's peaceful kingdom?",
+                new String[]{
+                        "Lion",
+                        "Bear",
+                        "Wolf",
+                        "Leopard"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "According to Isaiah, what would the lion eat like the ox?",
+                new String[]{
+                        "Grass",
+                        "Grain",
+                        "Hay",
+                        "Leaves"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Isaiah say will spring up in the wilderness?",
+                new String[]{
+                        "A city",
+                        "Water",
+                        "A palace",
+                        "A great army"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Isaiah say would be made straight?",
+                new String[]{
+                        "The mountains",
+                        "The rivers",
+                        "The highway for our God",
+                        "The walls of Jerusalem"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is compared to grass that withers in Isaiah 40?",
+                new String[]{
+                        "The glory of man",
+                        "The word of God",
+                        "The strength of angels",
+                        "The beauty of Jerusalem"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Isaiah say about the word of our God?",
+                new String[]{
+                        "It changes with time",
+                        "It shall stand for ever",
+                        "It belongs only to kings",
+                        "It will disappear"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Those that wait upon the Lord shall renew what?",
+                new String[]{
+                        "Their wealth",
+                        "Their houses",
+                        "Their strength",
+                        "Their wisdom"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "According to Isaiah 41, God says, 'Fear thou not; for I am with thee.' What does He tell His people not to do?",
+                new String[]{
+                        "Be afraid",
+                        "Leave Jerusalem",
+                        "Build an altar",
+                        "Go to war"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who is called God's servant in Isaiah 42?",
+                new String[]{
+                        "Israel",
+                        "David",
+                        "Moses",
+                        "Samuel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Isaiah say God can do with sins that are like scarlet?",
+                new String[]{
+                        "Make them forgotten by men",
+                        "Make them white as snow",
+                        "Hide them in the earth",
+                        "Turn them into gold"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Isaiah 53 say was laid upon the suffering servant?",
+                new String[]{
+                        "The riches of kings",
+                        "The crown of David",
+                        "The iniquity of us all",
+                        "The judgment of angels"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "By whose stripes does Isaiah say we are healed?",
+                new String[]{
+                        "His",
+                        "The priests'",
+                        "The king's",
+                        "The prophets'"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the suffering servant do when he was oppressed and afflicted?",
+                new String[]{
+                        "He fought back",
+                        "He opened not his mouth",
+                        "He called for soldiers",
+                        "He fled to Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Isaiah 55 invite those who are thirsty to do?",
+                new String[]{
+                        "Come to the waters",
+                        "Climb the mountain",
+                        "Build an altar",
+                        "Go into the wilderness"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Isaiah say God's thoughts are compared with man's thoughts?",
+                new String[]{
+                        "They are exactly the same",
+                        "They are lower",
+                        "They are higher",
+                        "They are weaker"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Isaiah 6 record Isaiah saying after seeing the Lord?",
+                new String[]{
+                        "I am a king",
+                        "Woe is me! for I am undone",
+                        "I have no fear",
+                        "I will build a temple"
+                },
+                1
+        ));
+
+    }
+}
+
+if (book.equals("Jeremiah")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who was the father of Jeremiah?",
+                new String[]{
+                        "Hilkiah",
+                        "Amoz",
+                        "Buzi",
+                        "Jesse"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Jeremiah was from which town?",
+                new String[]{
+                        "Bethlehem",
+                        "Anathoth",
+                        "Jericho",
+                        "Hebron"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was Jeremiah called to be?",
+                new String[]{
+                        "A king",
+                        "A priest only",
+                        "A prophet to the nations",
+                        "A military commander"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did God tell Jeremiah before he was born?",
+                new String[]{
+                        "He would become king",
+                        "He was known and sanctified",
+                        "He would build Jerusalem",
+                        "He would become wealthy"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah say when he felt too young to speak?",
+                new String[]{
+                        "I cannot speak: for I am a child",
+                        "I have no message",
+                        "I am afraid of the king",
+                        "I need more training"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God touch when appointing Jeremiah?",
+                new String[]{
+                        "His eyes",
+                        "His forehead",
+                        "His mouth",
+                        "His hands"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah see in his first vision?",
+                new String[]{
+                        "A burning bush",
+                        "A rod of an almond tree",
+                        "A ladder",
+                        "A golden lampstand"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah see in another vision?",
+                new String[]{
+                        "A seething pot facing toward the north",
+                        "A rainbow",
+                        "A giant sword",
+                        "A river of fire"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God say His people had forsaken?",
+                new String[]{
+                        "The temple",
+                        "The living fountain of waters",
+                        "Their land",
+                        "Their king"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What two things had God's people committed according to Jeremiah 2:13?",
+                new String[]{
+                        "They rejected the law and the prophets",
+                        "They forsook the fountain of living waters and made broken cisterns",
+                        "They left Jerusalem and built another city",
+                        "They stopped offering sacrifices and stopped praying"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah compare Judah's sin to?",
+                new String[]{
+                        "A broken sword",
+                        "A stubborn animal",
+                        "A great storm",
+                        "A false crown"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah see at the potter's house?",
+                new String[]{
+                        "The potter working on the wheels",
+                        "A golden vessel",
+                        "A burning furnace",
+                        "A broken altar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to the vessel the potter made?",
+                new String[]{
+                        "It disappeared",
+                        "It became gold",
+                        "It was marred in the potter's hand",
+                        "It was stolen"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah buy as a sign of restoration?",
+                new String[]{
+                        "A field",
+                        "A house",
+                        "A vineyard",
+                        "A flock of sheep"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah hide in a clay vessel?",
+                new String[]{
+                        "A scroll",
+                        "A field deed",
+                        "A sword",
+                        "A crown"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah's cousin Hanameel offer him?",
+                new String[]{
+                        "A priesthood",
+                        "A field in Anathoth",
+                        "A place in the palace",
+                        "A flock"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did God promise to write on the hearts of His people?",
+                new String[]{
+                        "His law",
+                        "Their names",
+                        "Their history",
+                        "Their victories"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What famous promise appears in Jeremiah 29:11?",
+                new String[]{
+                        "God would make them kings",
+                        "God had thoughts of peace toward them",
+                        "God would remove every enemy immediately",
+                        "God would give them riches"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "According to Jeremiah 29:12, what would God's people do when they called upon Him?",
+                new String[]{
+                        "They would find treasure",
+                        "They would be taken to Jerusalem",
+                        "They would pray unto Him",
+                        "They would become rulers"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah say God's people would do when they searched for Him with all their heart?",
+                new String[]{
+                        "Find Him",
+                        "Become kings",
+                        "Receive gold",
+                        "Leave Babylon"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Jeremiah put around his neck as commanded by God?",
+                new String[]{
+                        "A golden chain",
+                        "A yoke",
+                        "A priestly robe",
+                        "A crown"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who burned Jeremiah's scroll after hearing its words?",
+                new String[]{
+                        "King Josiah",
+                        "King Zedekiah",
+                        "King Jehoiakim",
+                        "King Hezekiah"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What happened to Jeremiah when he was thrown into the dungeon?",
+                new String[]{
+                        "He escaped immediately",
+                        "He sank in the mire",
+                        "He was taken to Egypt",
+                        "He was crowned king"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who helped rescue Jeremiah from the dungeon?",
+                new String[]{
+                        "Ebed-melech",
+                        "Baruch",
+                        "Gedaliah",
+                        "Hanameel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was Jeremiah told to do with the Rechabites?",
+                new String[]{
+                        "Give them land",
+                        "Bring them into the temple and offer them wine",
+                        "Make them soldiers",
+                        "Send them to Egypt"
+                },
+                1
+        ));
+
+    }
+}
 return questions;
 }
 }
