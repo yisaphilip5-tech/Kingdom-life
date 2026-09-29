@@ -6247,4 +6247,125 @@ questions.add(new Question(
         1));
         return questions;
 }
+    questions.add(new Question(
+        "What is another name for the book Song of Solomon?",
+        new String[]{"Song of Songs", "Book of Love", "Song of David", "The Royal Song"},
+        0));
+
+questions.add(new Question(
+        "Who is named as the author of the Song of Solomon?",
+        new String[]{"David", "Moses", "Solomon", "Samuel"},
+        2));
+
+questions.add(new Question(
+        "What is described as being better than wine?",
+        new String[]{"The king's riches", "The beloved's love", "The garden's fruit", "The singer's wisdom"},
+        1));
+
+questions.add(new Question(
+        "What color does the beloved say she is?",
+        new String[]{"White and blue", "Red and gold", "Black but comely", "Purple and white"},
+        2));
+
+questions.add(new Question(
+        "Why does the beloved say she is dark?",
+        new String[]{"She had been working in the vineyards", "She had travelled in the desert", "She had been in the palace", "She had been in the garden"},
+        0));
+
+questions.add(new Question(
+        "What does the beloved ask the daughters of Jerusalem to tell her?",
+        new String[]{"Where the king eats", "Where the shepherd feeds his flock", "Where the palace is", "Where the vineyard grows"},
+        1));
+
+questions.add(new Question(
+        "What does the beloved compare her beloved to among the young men?",
+        new String[]{"A cedar tree", "A lion", "An apple tree", "A mighty river"},
+        2));
+
+questions.add(new Question(
+        "Where does the beloved say she sat down?",
+        new String[]{"Under his shadow", "Beside the river", "At the palace gate", "Among the olive trees"},
+        0));
+
+questions.add(new Question(
+        "What did the beloved's beloved bring her?",
+        new String[]{"A crown", "A banner of love", "A golden necklace", "A basket of bread"},
+        1));
+
+questions.add(new Question(
+        "What does the beloved compare her beloved's voice to?",
+        new String[]{"Thunder", "Music", "A trumpet", "The sound of rain"},
+        3));
+
+questions.add(new Question(
+        "What season is described as having arrived?",
+        new String[]{"Winter", "Spring", "Autumn", "Summer"},
+        1));
+
+questions.add(new Question(
+        "What flowers are mentioned as appearing on the earth?",
+        new String[]{"Roses", "Lilies", "Violets", "Daffodils"},
+        1));
+
+questions.add(new Question(
+        "What small creatures are commanded to be caught because they spoil the vines?",
+        new String[]{"Young lions", "Little foxes", "Wild goats", "Ravens"},
+        1));
+
+questions.add(new Question(
+        "Where does the beloved say her beloved is feeding his flock?",
+        new String[]{"Among the lilies", "Beside the mountains", "Near the palace", "Under the fig trees"},
+        0));
+
+questions.add(new Question(
+        "What does the beloved say about her beloved's appearance?",
+        new String[]{"He is terrible and strong", "He is beautiful and pleasant", "He is old and wise", "He is hidden and silent"},
+        1));
+
+questions.add(new Question(
+        "What does the beloved compare her eyes to?",
+        new String[]{"Doves", "Stars", "Lamps", "Rivers"},
+        0));
+
+questions.add(new Question(
+        "What does the beloved compare her hair to?",
+        new String[]{"A flock of goats", "A field of wheat", "A river of water", "A crown of gold"},
+        0));
+
+questions.add(new Question(
+        "What is said about the beloved's teeth?",
+        new String[]{"They are like pearls", "They are like a flock of sheep", "They are like ivory towers", "They are like stones"},
+        1));
+
+questions.add(new Question(
+        "What is the beloved's neck compared to?",
+        new String[]{"The tower of David", "A golden chain", "A cedar tree", "A silver mountain"},
+        0));
+
+questions.add(new Question(
+        "What does the beloved's beloved call her?",
+        new String[]{"His sister and spouse", "His servant", "His queen alone", "His daughter"},
+        0));
+
+questions.add(new Question(
+        "What does the beloved say her beloved is among the trees of the wood?",
+        new String[]{"Like a cedar", "Like an apple tree", "Like an olive tree", "Like a palm tree"},
+        1));
+
+questions.add(new Question(
+        "What does the beloved say about her heart?",
+        new String[]{"It is filled with fear", "It is wounded by love", "It is filled with riches", "It is hidden from everyone"},
+        1));
+
+questions.add(new Question(
+        "What does the beloved ask her beloved to do until the day breaks?",
+        new String[]{"Return to the palace", "Come quickly to the mountains", "Sleep in the city", "Gather the harvest"},
+        1));
+
+questions.add(new Question(
+        "What does Song of Solomon say is as strong as death?",
+        new String[]{"Wisdom", "Love", "Hope", "Friendship"},
+        1));
+return questions;
+}
 }
