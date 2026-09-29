@@ -3035,6 +3035,287 @@ questions.add(new Question(
 
     }
         }
+        if (book.equals("2 Samuel")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who became king of Judah after Saul died?",
+                new String[]{
+                        "David",
+                        "Jonathan",
+                        "Abner",
+                        "Ish-bosheth"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Over which tribe was David first made king?",
+                new String[]{
+                        "Benjamin",
+                        "Judah",
+                        "Levi",
+                        "Ephraim"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How long did David reign in Hebron over Judah?",
+                new String[]{
+                        "Three years",
+                        "Seven years",
+                        "Seven years and six months",
+                        "Forty years"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Where was David eventually made king over all Israel?",
+                new String[]{
+                        "Jerusalem",
+                        "Hebron",
+                        "Bethlehem",
+                        "Gibeon"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What city did David capture and make his capital?",
+                new String[]{
+                        "Jericho",
+                        "Jerusalem",
+                        "Samaria",
+                        "Gaza"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What sacred object did David bring to Jerusalem?",
+                new String[]{
+                        "The ark of the covenant",
+                        "The bronze serpent",
+                        "Moses' staff",
+                        "The tablets of stone"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "How did David celebrate when the ark was brought to Jerusalem?",
+                new String[]{
+                        "He remained silent",
+                        "He danced before the LORD",
+                        "He left the city",
+                        "He built a new palace"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who touched the ark and died?",
+                new String[]{
+                        "Uzzah",
+                        "Joab",
+                        "Abner",
+                        "Nathan"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was the prophet who told David about God's covenant with him?",
+                new String[]{
+                        "Samuel",
+                        "Nathan",
+                        "Elijah",
+                        "Gad"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did David want to build for the LORD?",
+                new String[]{
+                        "A palace",
+                        "A city wall",
+                        "A temple",
+                        "A new army camp"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who did David show kindness to because of his friendship with Jonathan?",
+                new String[]{
+                        "Mephibosheth",
+                        "Absalom",
+                        "Amnon",
+                        "Adonijah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was special about Mephibosheth?",
+                new String[]{
+                        "He was a priest",
+                        "He was Jonathan's son and was lame in his feet",
+                        "He was a Philistine king",
+                        "He was David's brother"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was the wife of Uriah whom David took?",
+                new String[]{
+                        "Bathsheba",
+                        "Abigail",
+                        "Michal",
+                        "Tamar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was Uriah's occupation?",
+                new String[]{
+                        "Priest",
+                        "Prophet",
+                        "Soldier",
+                        "Farmer"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did David arrange concerning Uriah?",
+                new String[]{
+                        "He sent him to Egypt",
+                        "He placed him in the most dangerous part of the battle",
+                        "He made him king",
+                        "He sent him to Bethlehem"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who confronted David about his sin involving Bathsheba and Uriah?",
+                new String[]{
+                        "Nathan the prophet",
+                        "Samuel",
+                        "Joab",
+                        "Abner"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to the child born to David and Bathsheba?",
+                new String[]{
+                        "He became king",
+                        "He became a priest",
+                        "He died",
+                        "He became a soldier"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What son of David rebelled against him?",
+                new String[]{
+                        "Solomon",
+                        "Absalom",
+                        "Jonathan",
+                        "Mephibosheth"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was notable about Absalom's hair?",
+                new String[]{
+                        "He shaved it every year",
+                        "It was very long and heavy",
+                        "It was completely white",
+                        "He wore a crown in it"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was David's military commander during Absalom's rebellion?",
+                new String[]{
+                        "Joab",
+                        "Nathan",
+                        "Zadok",
+                        "Abiathar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to Absalom during the battle?",
+                new String[]{
+                        "He escaped to Egypt",
+                        "His hair became caught in a tree",
+                        "He became king",
+                        "He surrendered to David"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who killed Absalom?",
+                new String[]{
+                        "David",
+                        "Joab",
+                        "Abner",
+                        "Mephibosheth"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How did David react when he heard that Absalom had died?",
+                new String[]{
+                        "He celebrated",
+                        "He became angry with Israel",
+                        "He mourned deeply",
+                        "He immediately left Jerusalem"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "How many years did David reign as king in total?",
+                new String[]{
+                        "20 years",
+                        "30 years",
+                        "40 years",
+                        "70 years"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Where was David buried?",
+                new String[]{
+                        "Jerusalem",
+                        "Bethlehem",
+                        "Hebron",
+                        "Gibeah"
+                },
+                0
+        ));
+
+    }
+            }
         return questions;
 }
 }
