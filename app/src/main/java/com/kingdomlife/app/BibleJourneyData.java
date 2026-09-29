@@ -5564,6 +5564,568 @@ questions.add(new Question(
 
     }
 }
+        if (book.equals("Psalms")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "How many Psalms are in the Book of Psalms?",
+                new String[]{
+                        "50",
+                        "100",
+                        "150",
+                        "200"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who is named as the author of many Psalms?",
+                new String[]{
+                        "David",
+                        "Moses",
+                        "Solomon",
+                        "Isaiah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Psalm 23 begins with which famous statement?",
+                new String[]{
+                        "The LORD is my light",
+                        "Blessed is the man",
+                        "God is our refuge",
+                        "The LORD is my shepherd"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "According to Psalm 23, what does the LORD make the psalmist lie down in?",
+                new String[]{
+                        "Green pastures",
+                        "A strong city",
+                        "A wilderness",
+                        "A royal palace"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "According to Psalm 23, beside what does the LORD lead the psalmist?",
+                new String[]{
+                        "The sea",
+                        "Still waters",
+                        "The Jordan",
+                        "The river of life"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Psalm 1 compares the righteous person to what?",
+                new String[]{
+                        "A strong tower",
+                        "A mighty lion",
+                        "A tree planted by rivers of water",
+                        "A burning lamp"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "According to Psalm 1, what happens to the wicked?",
+                new String[]{
+                        "They become kings",
+                        "They prosper forever",
+                        "They become priests",
+                        "They are like chaff driven by the wind"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Psalm 27 says, 'The LORD is my light and my ____.'",
+                new String[]{
+                        "salvation",
+                        "shepherd",
+                        "strength",
+                        "refuge"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Psalm 46 describes God as our refuge and what?",
+                new String[]{
+                        "King",
+                        "Strength",
+                        "Shepherd",
+                        "Judge"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Psalm 51 is strongly associated with David's repentance after his sin involving whom?",
+                new String[]{
+                        "Bathsheba",
+                        "Ruth",
+                        "Abigail",
+                        "Miriam"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Psalm 51 asks God to create in David what kind of heart?",
+                new String[]{
+                        "A wise heart",
+                        "A clean heart",
+                        "A strong heart",
+                        "A joyful heart"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Psalm 91 speaks about dwelling in the secret place of whom?",
+                new String[]{
+                        "The Almighty",
+                        "The king",
+                        "The priest",
+                        "The prophet"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Psalm 100 calls people to serve the LORD with what?",
+                new String[]{
+                        "Fear",
+                        "Silence",
+                        "Gladness",
+                        "Wealth"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Psalm 103 tells God's people not to forget all His what?",
+                new String[]{
+                        "Commandments",
+                        "Benefits",
+                        "Prophets",
+                        "Battles"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Psalm 119 is especially focused on what?",
+                new String[]{
+                        "The temple",
+                        "The kings of Israel",
+                        "God's word and law",
+                        "The creation of the world"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Psalm 119 says God's word is a lamp to what?",
+                new String[]{
+                        "My feet",
+                        "My house",
+                        "My heart",
+                        "My nation"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Psalm 121 says the psalmist's help comes from whom?",
+                new String[]{
+                        "The mountains",
+                        "The LORD",
+                        "The king",
+                        "The priests"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "According to Psalm 121, the LORD neither slumbers nor what?",
+                new String[]{
+                        "Sleeps",
+                        "Speaks",
+                        "Works",
+                        "Travels"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Psalm 133 describes how good and pleasant it is for what to dwell together in unity?",
+                new String[]{
+                        "Kings",
+                        "Priests",
+                        "Brothers",
+                        "Nations"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Psalm 136 repeatedly emphasizes that God's mercy endures how long?",
+                new String[]{
+                        "Forever",
+                        "For a generation",
+                        "For a thousand years",
+                        "Until judgment"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Psalm 139 says God knows when the psalmist sits down and when he does what?",
+                new String[]{
+                        "Prays",
+                        "Rises up",
+                        "Sleeps",
+                        "Travels"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Psalm 150 begins by calling people to praise God where?",
+                new String[]{
+                        "In His sanctuary",
+                        "At the city gate",
+                        "On Mount Sinai",
+                        "In the palace"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What instrument is mentioned in Psalm 150?",
+                new String[]{
+                        "Trumpet",
+                        "Flute",
+                        "Harp",
+                        "All of these"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Psalm 150 ends by saying what should praise the LORD?",
+                new String[]{
+                        "The priests",
+                        "Every living thing that has breath",
+                        "Only Israel",
+                        "The angels alone"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Many Psalms are written as prayers, songs, or what?",
+                new String[]{
+                        "Poems",
+                        "Laws",
+                        "Genealogies",
+                        "Historical records"
+                },
+                0
+        ));
+
+    }
+            }
+        if (book.equals("Proverbs")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who is traditionally associated with writing many of the Proverbs?",
+                new String[]{
+                        "David",
+                        "Solomon",
+                        "Moses",
+                        "Joshua"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What is described as the beginning of knowledge?",
+                new String[]{
+                        "Wisdom",
+                        "Understanding",
+                        "The fear of the LORD",
+                        "Wealth"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Proverbs contrasts wisdom with what?",
+                new String[]{
+                        "Foolishness",
+                        "Strength",
+                        "Riches",
+                        "Kingship"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Proverbs 3 tells the reader to trust in the LORD with all their what?",
+                new String[]{
+                        "Strength",
+                        "Heart",
+                        "Mind",
+                        "Wealth"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Proverbs 3 warns against leaning on your own what?",
+                new String[]{
+                        "Understanding",
+                        "Strength",
+                        "Wisdom",
+                        "Power"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Proverbs 3 says to acknowledge God in all your ways, and He will what?",
+                new String[]{
+                        "Give you riches",
+                        "Make you king",
+                        "Direct your paths",
+                        "Remove every enemy"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "According to Proverbs, what should a person not withhold from those to whom it is due?",
+                new String[]{
+                        "Wisdom",
+                        "Good",
+                        "Food",
+                        "Gold"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Proverbs teaches that a soft answer turns away what?",
+                new String[]{
+                        "Fear",
+                        "Trouble",
+                        "Wrath",
+                        "Poverty"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Proverbs say a merry heart does like a medicine?",
+                new String[]{
+                        "Good",
+                        "Nothing",
+                        "Little",
+                        "Much"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "According to Proverbs, pride goes before what?",
+                new String[]{
+                        "Victory",
+                        "Destruction",
+                        "Wisdom",
+                        "Riches"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Proverbs says a haughty spirit comes before what?",
+                new String[]{
+                        "A fall",
+                        "Success",
+                        "Honor",
+                        "Wisdom"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Proverbs say is better than great riches?",
+                new String[]{
+                        "A good name",
+                        "A large house",
+                        "A strong army",
+                        "A powerful position"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Proverbs teaches that whoever is slow to anger is better than whom?",
+                new String[]{
+                        "A wise man",
+                        "A mighty man",
+                        "A rich man",
+                        "A king"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "According to Proverbs, what does the diligent hand make?",
+                new String[]{
+                        "Poor",
+                        "Rich",
+                        "Angry",
+                        "Fearful"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Proverbs contrasts the diligent with what kind of person?",
+                new String[]{
+                        "Lazy",
+                        "Wise",
+                        "Faithful",
+                        "Generous"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Proverbs say about a friend who loves at all times?",
+                new String[]{
+                        "He is a brother",
+                        "He is a king",
+                        "He is a stranger",
+                        "He is a servant"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "According to Proverbs, what is more valuable than rubies?",
+                new String[]{
+                        "Silver",
+                        "Wisdom",
+                        "Gold",
+                        "Land"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Proverbs says the fear of the LORD is the beginning of what?",
+                new String[]{
+                        "Knowledge",
+                        "Wealth",
+                        "Power",
+                        "Victory"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What animal does Proverbs use as an example of diligence?",
+                new String[]{
+                        "Lion",
+                        "Horse",
+                        "Ant",
+                        "Eagle"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Proverbs warns that whoever digs a pit may fall into what?",
+                new String[]{
+                        "The same pit",
+                        "A river",
+                        "A prison",
+                        "A valley"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "According to Proverbs, what does a faithful witness not do?",
+                new String[]{
+                        "Speak truth",
+                        "Lie",
+                        "Help others",
+                        "Give advice"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Proverbs says a good name is rather to be chosen than what?",
+                new String[]{
+                        "Great riches",
+                        "Wisdom",
+                        "Knowledge",
+                        "Long life"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Proverbs say about whoever walks with wise people?",
+                new String[]{
+                        "They become wealthy",
+                        "They become wise",
+                        "They become rulers",
+                        "They become famous"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "According to Proverbs, what does a gentle tongue do?",
+                new String[]{
+                        "Breaks a bone",
+                        "Creates wealth",
+                        "Is a tree of life",
+                        "Makes a person king"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is one major theme of Proverbs?",
+                new String[]{
+                        "Wisdom for righteous living",
+                        "The history of Israel's kings",
+                        "The rebuilding of Jerusalem",
+                        "The journeys of Paul"
+                },
+                0
+        ));
+
+    }
+ }
         return questions;
 }
 }
