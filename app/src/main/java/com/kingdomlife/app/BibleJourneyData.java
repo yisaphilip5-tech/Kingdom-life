@@ -6245,8 +6245,6 @@ questions.add(new Question(
         "What is the conclusion of the whole matter?",
         new String[]{"Seek wealth and fame", "Fear God and keep His commandments", "Avoid work", "Live only for pleasure"},
         1));
-    }
-}
         return questions;
 }
 }
