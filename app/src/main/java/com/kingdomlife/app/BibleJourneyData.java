@@ -1082,7 +1082,7 @@ questions.add(new Question(
 ));
                 
 }
-
+        }
 if (book.equals("Leviticus")) {
 
     if (difficulty.equals("Easy")) {
