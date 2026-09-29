@@ -13999,6 +13999,846 @@ if (book.equals("Zephaniah")) {
         ));
     }
                     }
+        if (book.equals("Ephesians")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote the book of Ephesians?",
+                new String[]{
+                        "Peter",
+                        "Paul",
+                        "John",
+                        "James"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "To whom was Ephesians addressed?",
+                new String[]{
+                        "The saints at Ephesus",
+                        "The church at Corinth",
+                        "The Romans",
+                        "The Galatians"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What has God blessed believers with in heavenly places?",
+                new String[]{
+                        "Earthly riches",
+                        "Political power",
+                        "All spiritual blessings",
+                        "Military strength"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "According to Ephesians 2, believers are saved by what?",
+                new String[]{
+                        "Grace through faith",
+                        "Works of the law",
+                        "Earthly wisdom",
+                        "Human strength"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Ephesians 2 say salvation is not of?",
+                new String[]{
+                        "Faith",
+                        "God",
+                        "Works",
+                        "Grace"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What are believers described as God's workmanship?",
+                new String[]{
+                        "Created in Christ Jesus unto good works",
+                        "Created for earthly riches",
+                        "Created to rule nations",
+                        "Created to build temples"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Christ break down between Jews and Gentiles?",
+                new String[]{
+                        "The wall of partition",
+                        "The temple wall",
+                        "The city gate",
+                        "The Roman wall"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say believers should walk worthy of?",
+                new String[]{
+                        "Their riches",
+                        "The vocation wherewith they were called",
+                        "Their nationality",
+                        "Their education"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers endeavor to keep?",
+                new String[]{
+                        "The traditions of Rome",
+                        "The unity of the Spirit",
+                        "Their earthly possessions",
+                        "Political peace"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Christ give some people to be?",
+                new String[]{
+                        "Apostles",
+                        "Kings of Rome",
+                        "Military leaders",
+                        "Tax collectors"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers put off concerning their former conversation?",
+                new String[]{
+                        "The old man",
+                        "The new man",
+                        "The Holy Spirit",
+                        "Faith"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers put on?",
+                new String[]{
+                        "The old nature",
+                        "The new man",
+                        "Earthly riches",
+                        "Roman clothing"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers not let go down upon their wrath?",
+                new String[]{
+                        "The moon",
+                        "The stars",
+                        "The sun",
+                        "The light"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What should believers not give place to?",
+                new String[]{
+                        "The devil",
+                        "The poor",
+                        "The stranger",
+                        "The teacher"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers be kind and tenderhearted toward one another in?",
+                new String[]{
+                        "Forgiving one another",
+                        "Judging one another",
+                        "Competing with one another",
+                        "Avoiding one another"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers be filled with according to Ephesians 5?",
+                new String[]{
+                        "Wine",
+                        "The Spirit",
+                        "Gold",
+                        "Knowledge of Rome"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers give thanks for?",
+                new String[]{
+                        "All things",
+                        "Only good weather",
+                        "Only riches",
+                        "Political success"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What relationship does Paul use to teach about Christ and the church?",
+                new String[]{
+                        "King and soldier",
+                        "Shepherd and city",
+                        "Husband and wife",
+                        "Teacher and student"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What should husbands do for their wives?",
+                new String[]{
+                        "Love them",
+                        "Rule them harshly",
+                        "Ignore them",
+                        "Avoid them"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should children do according to Ephesians 6?",
+                new String[]{
+                        "Obey their parents",
+                        "Leave their families",
+                        "Rule their parents",
+                        "Avoid instruction"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should fathers not provoke their children to?",
+                new String[]{
+                        "Wisdom",
+                        "Wrath",
+                        "Faith",
+                        "Joy"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should servants do toward their masters?",
+                new String[]{
+                        "Obey them",
+                        "Fight them",
+                        "Ignore them",
+                        "Rule them"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers put on to stand against the wiles of the devil?",
+                new String[]{
+                        "The armour of God",
+                        "Roman armour",
+                        "Royal clothing",
+                        "A crown"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is described as the shield of the armour of God?",
+                new String[]{
+                        "Hope",
+                        "Faith",
+                        "Love",
+                        "Knowledge"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers do always?",
+                new String[]{
+                        "Pray",
+                        "Travel",
+                        "Fight",
+                        "Fast from everything"
+                },
+                0
+        ));
+    }
+    }
+        if (book.equals("Philippians")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote Philippians?",
+                new String[]{
+                        "Paul",
+                        "Peter",
+                        "John",
+                        "James"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "To which church was Philippians written?",
+                new String[]{
+                        "Ephesus",
+                        "Philippi",
+                        "Corinth",
+                        "Galatia"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul say he was confident God would perform until the day of Jesus Christ?",
+                new String[]{
+                        "A good work",
+                        "A political reform",
+                        "A military victory",
+                        "A new temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say had happened to him for the furtherance of the gospel?",
+                new String[]{
+                        "His bonds",
+                        "His riches",
+                        "His travels",
+                        "His education"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say he wanted Christ to be magnified in?",
+                new String[]{
+                        "His body",
+                        "His house",
+                        "His city",
+                        "His possessions"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "For Paul, to live was what?",
+                new String[]{
+                        "Gain",
+                        "Christ",
+                        "Wealth",
+                        "Power"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "For Paul, to die was what?",
+                new String[]{
+                        "Defeat",
+                        "Gain",
+                        "Punishment",
+                        "Loss"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul urge the Philippians to let be in them?",
+                new String[]{
+                        "The mind of Christ",
+                        "The wisdom of Rome",
+                        "The spirit of competition",
+                        "The desire for wealth"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Christ take upon Himself according to Philippians 2?",
+                new String[]{
+                        "The form of a servant",
+                        "The form of a king",
+                        "The form of an angel",
+                        "The form of a soldier"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened because Christ humbled Himself and became obedient unto death?",
+                new String[]{
+                        "God highly exalted Him",
+                        "He became a Roman ruler",
+                        "He received earthly wealth",
+                        "He returned to Nazareth"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers do without murmurings and disputings?",
+                new String[]{
+                        "Work out their own salvation",
+                        "Build a temple",
+                        "Gather riches",
+                        "Avoid prayer"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers do in the midst of a crooked and perverse nation?",
+                new String[]{
+                        "Hide",
+                        "Shine as lights",
+                        "Become rulers",
+                        "Return to Jerusalem"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who did Paul describe as a fellow labourer?",
+                new String[]{
+                        "Timotheus",
+                        "Pilate",
+                        "Herod",
+                        "Caiaphas"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul count as loss for Christ?",
+                new String[]{
+                        "The things that were gain to him",
+                        "The gospel",
+                        "His faith",
+                        "His hope"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul count all things as for the excellency of the knowledge of Christ?",
+                new String[]{
+                        "Dung",
+                        "Treasure",
+                        "Wisdom",
+                        "Gold"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say he was pressing toward?",
+                new String[]{
+                        "The mark for the prize of the high calling of God",
+                        "Earthly riches",
+                        "Political authority",
+                        "A Roman crown"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Where does Paul say the believer's conversation is?",
+                new String[]{
+                        "In heaven",
+                        "In Rome",
+                        "In Jerusalem",
+                        "In Corinth"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul tell the Philippians to rejoice in?",
+                new String[]{
+                        "The Lord",
+                        "Their wealth",
+                        "Their position",
+                        "Their possessions"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers' moderation be known unto?",
+                new String[]{
+                        "All men",
+                        "Only the apostles",
+                        "Only their families",
+                        "Only the church leaders"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers be careful for?",
+                new String[]{
+                        "Nothing",
+                        "Everything",
+                        "Only money",
+                        "Only food"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers make known unto God?",
+                new String[]{
+                        "Their requests",
+                        "Their wealth",
+                        "Their political views",
+                        "Their achievements"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What will keep hearts and minds according to Philippians 4?",
+                new String[]{
+                        "The peace of God",
+                        "Earthly wealth",
+                        "Military power",
+                        "Human wisdom"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers think about according to Philippians 4?",
+                new String[]{
+                        "Things that are true, honest, just, pure, lovely, and of good report",
+                        "Only earthly things",
+                        "Only riches",
+                        "Only political matters"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say he had learned to be in whatever state he was?",
+                new String[]{
+                        "Content",
+                        "Angry",
+                        "Famous",
+                        "Rich"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say he could do through Christ?",
+                new String[]{
+                        "All things",
+                        "Only travel",
+                        "Only preach",
+                        "Only suffer"
+                },
+                0
+        ));
+    }
+        }
+        if (book.equals("Colossians")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote Colossians?",
+                new String[]{
+                        "Paul",
+                        "Peter",
+                        "John",
+                        "James"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "To whom was Colossians written?",
+                new String[]{
+                        "The saints at Colosse",
+                        "The church at Rome",
+                        "The Galatians",
+                        "The Corinthians"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Paul say he heard about the Colossians?",
+                new String[]{
+                        "Their faith in Christ Jesus and love toward all the saints",
+                        "Their wealth",
+                        "Their military victories",
+                        "Their political influence"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who is described as the image of the invisible God?",
+                new String[]{
+                        "Moses",
+                        "Jesus Christ",
+                        "Paul",
+                        "Abraham"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who is described as the firstborn of every creature?",
+                new String[]{
+                        "Adam",
+                        "David",
+                        "Christ",
+                        "Moses"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "By whom were all things created?",
+                new String[]{
+                        "Christ",
+                        "Paul",
+                        "Moses",
+                        "Angels"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is Christ the head of?",
+                new String[]{
+                        "The Roman Empire",
+                        "The body, the church",
+                        "The temple at Jerusalem",
+                        "The nation of Israel"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Paul say was hid in Christ?",
+                new String[]{
+                        "All the treasures of wisdom and knowledge",
+                        "Earthly riches",
+                        "Roman law",
+                        "Military power"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers beware of being spoiled through?",
+                new String[]{
+                        "Philosophy and vain deceit",
+                        "Prayer",
+                        "Faith",
+                        "Love"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers seek according to Colossians 3?",
+                new String[]{
+                        "Those things which are above",
+                        "Earthly riches",
+                        "Political power",
+                        "Fame"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Where is Christ seated?",
+                new String[]{
+                        "At the right hand of God",
+                        "At the gate of Jerusalem",
+                        "On David's throne in Rome",
+                        "In the temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers mortify?",
+                new String[]{
+                        "Their members which are upon the earth",
+                        "Their faith",
+                        "Their hope",
+                        "Their prayers"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers put on above all things?",
+                new String[]{
+                        "Charity",
+                        "Wealth",
+                        "Power",
+                        "Knowledge"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should rule in believers' hearts?",
+                new String[]{
+                        "The peace of God",
+                        "Fear",
+                        "Anger",
+                        "Earthly ambition"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should dwell in believers richly?",
+                new String[]{
+                        "The word of Christ",
+                        "Earthly wealth",
+                        "Roman law",
+                        "Human philosophy"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers do in word or deed?",
+                new String[]{
+                        "Do all in the name of the Lord Jesus",
+                        "Do everything for fame",
+                        "Follow Roman customs",
+                        "Seek political power"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should wives do according to Colossians 3?",
+                new String[]{
+                        "Submit to their own husbands",
+                        "Rule every household",
+                        "Avoid their husbands",
+                        "Leave their families"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should husbands do?",
+                new String[]{
+                        "Love their wives",
+                        "Ignore their wives",
+                        "Rule harshly",
+                        "Avoid their families"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should children do?",
+                new String[]{
+                        "Obey their parents",
+                        "Rule their parents",
+                        "Leave home immediately",
+                        "Ignore instruction"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should fathers not provoke their children to?",
+                new String[]{
+                        "Anger",
+                        "Faith",
+                        "Wisdom",
+                        "Joy"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should servants do?",
+                new String[]{
+                        "Obey their masters",
+                        "Fight their masters",
+                        "Ignore their masters",
+                        "Rule their masters"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers continue in?",
+                new String[]{
+                        "Prayer",
+                        "Wealth",
+                        "Political activity",
+                        "Earthly ambition"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers walk in toward outsiders?",
+                new String[]{
+                        "Wisdom",
+                        "Anger",
+                        "Fear",
+                        "Pride"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers' speech always be?",
+                new String[]{
+                        "With grace, seasoned with salt",
+                        "Harsh and angry",
+                        "Long and complicated",
+                        "Silent"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was described as a faithful and beloved brother?",
+                new String[]{
+                        "Tychicus",
+                        "Pilate",
+                        "Herod",
+                        "Caiaphas"
+                },
+                0
+        ));
+    }
+            }
 return questions;
 }
 }
