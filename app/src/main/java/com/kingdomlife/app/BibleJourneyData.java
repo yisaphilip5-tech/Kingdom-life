@@ -7252,6 +7252,1132 @@ if (book.equals("Jeremiah")) {
 
     }
 }
+        if (book.equals("Lamentations")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who is traditionally associated with the book of Lamentations?",
+                new String[]{
+                        "Jeremiah",
+                        "Isaiah",
+                        "Ezekiel",
+                        "Daniel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is the main subject of Lamentations?",
+                new String[]{
+                        "The building of the temple",
+                        "The fall and suffering of Jerusalem",
+                        "The life of King David",
+                        "The creation of the world"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How is Jerusalem described at the beginning of Lamentations?",
+                new String[]{
+                        "A joyful city",
+                        "A mighty kingdom",
+                        "A lonely city",
+                        "A prosperous nation"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What has Jerusalem become according to Lamentations 1?",
+                new String[]{
+                        "A widow",
+                        "A queen",
+                        "A fortress",
+                        "A palace"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Why does Jerusalem weep?",
+                new String[]{
+                        "Because there is no rain",
+                        "Because her lovers have forsaken her",
+                        "Because the king has left",
+                        "Because the temple is being rebuilt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What had Jerusalem's enemies done to her sanctuary?",
+                new String[]{
+                        "They protected it",
+                        "They decorated it",
+                        "They entered it",
+                        "They rebuilt it"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Jerusalem remember in her suffering?",
+                new String[]{
+                        "Her former pleasant things",
+                        "Her armies",
+                        "Her future kings",
+                        "Her treasures"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What had Jerusalem's adversaries become?",
+                new String[]{
+                        "Friends",
+                        "The head",
+                        "Priests",
+                        "Servants"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Lamentations say happened because Jerusalem had sinned grievously?",
+                new String[]{
+                        "She became famous",
+                        "She became prosperous",
+                        "She was removed",
+                        "She became a kingdom"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does the writer ask God to look upon?",
+                new String[]{
+                        "His crown",
+                        "His palace",
+                        "His affliction",
+                        "His army"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "In Lamentations 2, what has the Lord cast down from heaven?",
+                new String[]{
+                        "The beauty of Israel",
+                        "The walls of Babylon",
+                        "The throne of Egypt",
+                        "The army of Assyria"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord become like an enemy toward Jerusalem?",
+                new String[]{
+                        "He protected her",
+                        "He swallowed up Israel",
+                        "He crowned her",
+                        "He strengthened her"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the Lord's altar and sanctuary?",
+                new String[]{
+                        "They were enlarged",
+                        "They were hidden",
+                        "They were cast off",
+                        "They were rebuilt"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the elders of the daughter of Zion do?",
+                new String[]{
+                        "They sat upon the ground",
+                        "They went to war",
+                        "They built houses",
+                        "They crowned a king"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the children ask their mothers for?",
+                new String[]{
+                        "Gold and silver",
+                        "Bread and wine",
+                        "Corn and wine",
+                        "Clothing and shoes"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Lamentations 3 say about the Lord's compassions?",
+                new String[]{
+                        "They fail completely",
+                        "They are hidden",
+                        "They fail not",
+                        "They belong only to kings"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "They are new every what?",
+                new String[]{
+                        "Morning",
+                        "Year",
+                        "Sabbath",
+                        "Evening"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Lamentations 3 say is great?",
+                new String[]{
+                        "Our strength",
+                        "Thy faithfulness",
+                        "Our riches",
+                        "The army"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does the writer say the Lord is unto them that wait for Him?",
+                new String[]{
+                        "A king",
+                        "A warrior",
+                        "Good",
+                        "A judge only"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is it good for a man to do?",
+                new String[]{
+                        "To wait quietly for the salvation of the Lord",
+                        "To gather riches",
+                        "To build a palace",
+                        "To flee from Jerusalem"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Lamentations say a person should put his mouth in?",
+                new String[]{
+                        "The dust",
+                        "The water",
+                        "The fire",
+                        "The temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should a person search and turn again unto?",
+                new String[]{
+                        "The king",
+                        "The Lord",
+                        "The temple",
+                        "The army"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Lamentations 4 describe as darker than snow?",
+                new String[]{
+                        "The streets",
+                        "The Nazarites",
+                        "The gates",
+                        "The walls"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Lamentations 5 ask God to remember?",
+                new String[]{
+                        "Their wealth",
+                        "Their enemies",
+                        "What has happened to them",
+                        "Their former kings"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "How does Lamentations end?",
+                new String[]{
+                        "With a request for restoration",
+                        "With a new king",
+                        "With a military victory",
+                        "With the rebuilding of the temple"
+                },
+                0
+        ));
+
+    }
+}
+
+if (book.equals("Ezekiel")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Where was Ezekiel when he received his visions?",
+                new String[]{
+                        "In Jerusalem",
+                        "By the river Chebar",
+                        "In Bethlehem",
+                        "On Mount Sinai"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was Ezekiel's occupation before becoming a prophet?",
+                new String[]{
+                        "King",
+                        "Soldier",
+                        "Priest",
+                        "Merchant"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Ezekiel see when the heavens were opened?",
+                new String[]{
+                        "Visions of God",
+                        "A great army",
+                        "A burning city",
+                        "The temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What unusual creatures did Ezekiel see in his first vision?",
+                new String[]{
+                        "Serpents",
+                        "Living creatures",
+                        "Lions only",
+                        "Eagles only"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many faces did each living creature have?",
+                new String[]{
+                        "Two",
+                        "Three",
+                        "Four",
+                        "Six"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Ezekiel see above the heads of the living creatures?",
+                new String[]{
+                        "A firmament",
+                        "A mountain",
+                        "A golden temple",
+                        "A cloud of smoke"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was above the firmament Ezekiel saw?",
+                new String[]{
+                        "A throne",
+                        "A river",
+                        "A city",
+                        "An altar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God call Ezekiel when sending him to Israel?",
+                new String[]{
+                        "Son of man",
+                        "King of Israel",
+                        "Son of David",
+                        "Servant of Moses"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Ezekiel eat from the scroll God gave him?",
+                new String[]{
+                        "Bread",
+                        "Honey",
+                        "The scroll",
+                        "A piece of fruit"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "How did the scroll taste to Ezekiel?",
+                new String[]{
+                        "As bitter as herbs",
+                        "As sweet as honey",
+                        "As salty as the sea",
+                        "As sour as vinegar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was Ezekiel appointed to be for the house of Israel?",
+                new String[]{
+                        "A watchman",
+                        "A king",
+                        "A priest",
+                        "A commander"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should a watchman do when he sees the sword coming?",
+                new String[]{
+                        "Hide himself",
+                        "Warn the people",
+                        "Leave the city",
+                        "Call the king"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Ezekiel use to demonstrate the siege of Jerusalem?",
+                new String[]{
+                        "A wooden model",
+                        "A brick",
+                        "A stone altar",
+                        "A golden plate"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the hair Ezekiel was commanded to shave?",
+                new String[]{
+                        "It was divided into portions",
+                        "It was buried in gold",
+                        "It was burned completely",
+                        "It was placed in the temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Ezekiel see in the valley of dry bones?",
+                new String[]{
+                        "A dead army",
+                        "A new temple",
+                        "A great river",
+                        "A living forest"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God ask Ezekiel about the dry bones?",
+                new String[]{
+                        "Can these bones live?",
+                        "Where are these bones from?",
+                        "Who buried these bones?",
+                        "Can these bones speak?"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened when Ezekiel prophesied to the dry bones?",
+                new String[]{
+                        "They disappeared",
+                        "They came together",
+                        "They turned to stone",
+                        "They were buried"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What entered the bodies of the dry bones?",
+                new String[]{
+                        "Water",
+                        "Fire",
+                        "Breath",
+                        "Blood"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the dry bones represent?",
+                new String[]{
+                        "The whole house of Israel",
+                        "The army of Babylon",
+                        "The priests of Jerusalem",
+                        "The kings of Judah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Ezekiel see concerning two sticks?",
+                new String[]{
+                        "They were burned",
+                        "They were joined together",
+                        "They were hidden",
+                        "They were broken"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the two sticks represent?",
+                new String[]{
+                        "Judah and Israel",
+                        "Egypt and Babylon",
+                        "David and Saul",
+                        "Priests and prophets"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God promise to give His people in Ezekiel 36?",
+                new String[]{
+                        "A new heart and a new spirit",
+                        "A new palace",
+                        "A new army",
+                        "A new king immediately"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What would God sprinkle upon His people to cleanse them?",
+                new String[]{
+                        "Oil",
+                        "Water",
+                        "Blood",
+                        "Dust"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Ezekiel see flowing from the temple in his later vision?",
+                new String[]{
+                        "A river",
+                        "Fire",
+                        "Oil",
+                        "Wine"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "How did the water from the temple affect the Dead Sea?",
+                new String[]{
+                        "It became deeper",
+                        "It became salty",
+                        "It was healed and became fresh",
+                        "It disappeared"
+                },
+                2
+        ));
+
+    }
+            }
+        if (book.equals("Daniel")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who was taken captive to Babylon with Daniel?",
+                new String[]{
+                        "Jeremiah",
+                        "Ezekiel",
+                        "Hananiah, Mishael, and Azariah",
+                        "Ezra"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What new name was Daniel given in Babylon?",
+                new String[]{
+                        "Belteshazzar",
+                        "Shadrach",
+                        "Meshach",
+                        "Abednego"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Daniel resolve not to do with the king's food?",
+                new String[]{
+                        "Eat it",
+                        "Sell it",
+                        "Share it",
+                        "Cook it"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Daniel request instead of the king's food?",
+                new String[]{
+                        "Bread and honey",
+                        "Vegetables and water",
+                        "Meat and milk",
+                        "Fruit and wine"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How long was Daniel tested with the different diet?",
+                new String[]{
+                        "Seven days",
+                        "Ten days",
+                        "Twenty days",
+                        "Forty days"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Daniel and his friends excel in?",
+                new String[]{
+                        "Wisdom and knowledge",
+                        "Warfare",
+                        "Farming",
+                        "Trade"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Nebuchadnezzar dream about?",
+                new String[]{
+                        "A great river",
+                        "A great image",
+                        "A burning temple",
+                        "A mighty tree only"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What material was the head of the great image made of?",
+                new String[]{
+                        "Silver",
+                        "Gold",
+                        "Bronze",
+                        "Iron"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the great image in Nebuchadnezzar's dream?",
+                new String[]{
+                        "It became gold",
+                        "A stone struck it and broke it",
+                        "It walked away",
+                        "It disappeared into water"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Nebuchadnezzar build for people to worship?",
+                new String[]{
+                        "A golden image",
+                        "A silver altar",
+                        "A stone temple",
+                        "A golden throne"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who were thrown into the fiery furnace?",
+                new String[]{
+                        "Daniel, Ezra, and Nehemiah",
+                        "Shadrach, Meshach, and Abednego",
+                        "Peter, James, and John",
+                        "Moses, Aaron, and Hur"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the three men in the fiery furnace?",
+                new String[]{
+                        "They escaped through a door",
+                        "They were unharmed",
+                        "They became invisible",
+                        "They were taken to Jerusalem"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many figures did Nebuchadnezzar see walking in the fire?",
+                new String[]{
+                        "Two",
+                        "Three",
+                        "Four",
+                        "Five"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What happened to Nebuchadnezzar after his pride?",
+                new String[]{
+                        "He became a priest",
+                        "He was driven from men",
+                        "He became richer",
+                        "He left Babylon willingly"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Nebuchadnezzar eat during his humbling?",
+                new String[]{
+                        "Bread",
+                        "Grass",
+                        "Fruit",
+                        "Fish"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who saw the handwriting on the wall?",
+                new String[]{
+                        "Belshazzar",
+                        "Cyrus",
+                        "Darius",
+                        "Nebuchadnezzar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was written on the wall?",
+                new String[]{
+                        "MENE, MENE, TEKEL, UPHARSIN",
+                        "HOLY, HOLY, HOLY",
+                        "KING OF KINGS",
+                        "DANIEL, DANIEL, DANIEL"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was Daniel thrown into because he prayed to God?",
+                new String[]{
+                        "A furnace",
+                        "A dungeon",
+                        "A den of lions",
+                        "A prison"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "How often did Daniel pray?",
+                new String[]{
+                        "Once a day",
+                        "Twice a day",
+                        "Three times a day",
+                        "Seven times a day"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Daniel do when he prayed?",
+                new String[]{
+                        "Faced toward Jerusalem",
+                        "Faced toward Babylon",
+                        "Went into the temple",
+                        "Climbed a mountain"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who protected Daniel in the lions' den?",
+                new String[]{
+                        "The king",
+                        "An angel",
+                        "Daniel's friends",
+                        "The priests"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to Daniel after spending the night in the lions' den?",
+                new String[]{
+                        "He was unharmed",
+                        "He became king",
+                        "He fled Babylon",
+                        "He was imprisoned again"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Daniel see in a night vision in chapter 7?",
+                new String[]{
+                        "Four great beasts",
+                        "Four rivers",
+                        "Four temples",
+                        "Four kings only"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who came with the clouds of heaven in Daniel's vision?",
+                new String[]{
+                        "A king of Babylon",
+                        "One like the Son of man",
+                        "A mighty angel",
+                        "A priest"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Daniel do when he received understanding of visions?",
+                new String[]{
+                        "He praised God",
+                        "He became angry",
+                        "He left Babylon",
+                        "He hid the visions"
+                },
+                0
+        ));
+
+    }
+}
+
+if (book.equals("Hosea")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who was Hosea?",
+                new String[]{
+                        "A prophet",
+                        "A king",
+                        "A priest only",
+                        "A soldier"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was Hosea's father?",
+                new String[]{
+                        "Beeri",
+                        "Amoz",
+                        "Hilkiah",
+                        "Jesse"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God command Hosea to take as his wife?",
+                new String[]{
+                        "A faithful priest's daughter",
+                        "A wife of whoredoms",
+                        "A princess",
+                        "A widow"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was the name of Hosea's first son?",
+                new String[]{
+                        "Lo-ammi",
+                        "Jezreel",
+                        "Lo-ruhamah",
+                        "Ephraim"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the name Jezreel refer to?",
+                new String[]{
+                        "A valley or place",
+                        "A king",
+                        "A priest",
+                        "A mountain"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was the name of Hosea's daughter?",
+                new String[]{
+                        "Gomer",
+                        "Jezreel",
+                        "Lo-ruhamah",
+                        "Ruth"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Lo-ruhamah mean?",
+                new String[]{
+                        "Loved",
+                        "Not beloved",
+                        "God is great",
+                        "Peace"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was the name of Hosea's second son?",
+                new String[]{
+                        "Lo-ammi",
+                        "Jezreel",
+                        "Ephraim",
+                        "Amos"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Lo-ammi mean?",
+                new String[]{
+                        "Not my people",
+                        "My beloved",
+                        "God is with us",
+                        "The Lord saves"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God promise would happen to the children of Israel?",
+                new String[]{
+                        "They would become as the sand of the sea",
+                        "They would disappear",
+                        "They would become Egyptians",
+                        "They would never multiply"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Israel do according to Hosea?",
+                new String[]{
+                        "They were faithful",
+                        "They committed spiritual adultery",
+                        "They rebuilt the temple",
+                        "They left Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Israel forget according to Hosea?",
+                new String[]{
+                        "Her Creator",
+                        "Her enemies",
+                        "Her army",
+                        "Her kings"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Israel sow according to Hosea 8?",
+                new String[]{
+                        "Wind",
+                        "Rain",
+                        "Peace",
+                        "Wisdom"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What would Israel reap after sowing the wind?",
+                new String[]{
+                        "A harvest of grain",
+                        "The whirlwind",
+                        "Peace",
+                        "A new kingdom"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Hosea say God desired rather than sacrifice?",
+                new String[]{
+                        "Mercy",
+                        "Gold",
+                        "Fame",
+                        "Military strength"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did God say He desired rather than burnt offerings?",
+                new String[]{
+                        "The knowledge of God",
+                        "More priests",
+                        "More silver",
+                        "A larger temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Israel make according to Hosea 8?",
+                new String[]{
+                        "A golden calf",
+                        "A golden crown",
+                        "A golden temple",
+                        "A golden sword"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Israel do with the calf?",
+                new String[]{
+                        "They worshipped it",
+                        "They destroyed it",
+                        "They sold it",
+                        "They buried it"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Hosea compare Israel to in her unfaithfulness?",
+                new String[]{
+                        "A faithful wife",
+                        "A backsliding heifer",
+                        "A strong lion",
+                        "A fruitful vine"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Hosea say Israel was like?",
+                new String[]{
+                        "A cake not turned",
+                        "A perfect loaf",
+                        "A broken sword",
+                        "A new vessel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Hosea tell Israel to do?",
+                new String[]{
+                        "Return unto the Lord",
+                        "Leave Jerusalem",
+                        "Build an army",
+                        "Seek Egypt"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Hosea 14 say Israel should take with them when returning to God?",
+                new String[]{
+                        "Words",
+                        "Gold",
+                        "Weapons",
+                        "Animals"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Hosea say God will heal?",
+                new String[]{
+                        "Their palaces",
+                        "Their backsliding",
+                        "Their armies",
+                        "Their crops"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What would Israel's branches spread?",
+                new String[]{
+                        "Their fragrance",
+                        "Their wealth",
+                        "Their armies",
+                        "Their laws"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Hosea ultimately call God's people to do?",
+                new String[]{
+                        "Return to the Lord",
+                        "Become warriors",
+                        "Build another city",
+                        "Seek political power"
+                },
+                0
+        ));
+
+    }
+            }
 return questions;
 }
 }
