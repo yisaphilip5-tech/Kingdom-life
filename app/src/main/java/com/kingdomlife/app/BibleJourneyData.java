@@ -16864,6 +16864,7 @@ public class BibleJourneyData {
                     ));
                 }
         }
+    }
         private static class DataPart9 {
 
     static void addQuestions(ArrayList<Question> questions, String book, String difficulty) {
