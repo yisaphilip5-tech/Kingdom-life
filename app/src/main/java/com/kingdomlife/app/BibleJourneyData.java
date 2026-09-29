@@ -10630,6 +10630,849 @@ if (book.equals("Zephaniah")) {
 
     }
             }
+        if (book.equals("Haggai")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who was the prophet who spoke the messages recorded in this book?",
+                new String[]{
+                        "Haggai",
+                        "Zechariah",
+                        "Malachi",
+                        "Micah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "In whose reign did Haggai prophesy?",
+                new String[]{
+                        "Cyrus",
+                        "Darius",
+                        "Artaxerxes",
+                        "Nebuchadnezzar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was governor of Judah when Haggai prophesied?",
+                new String[]{
+                        "Zerubbabel",
+                        "Joshua",
+                        "Ezra",
+                        "Nehemiah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was the high priest mentioned in Haggai?",
+                new String[]{
+                        "Eli",
+                        "Aaron",
+                        "Joshua",
+                        "Zadok"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the people say about the time to build the Lord's house?",
+                new String[]{
+                        "The time had come",
+                        "The time had not come",
+                        "It was already finished",
+                        "It would never come"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What were the people dwelling in while the Lord's house lay waste?",
+                new String[]{
+                        "Walled houses",
+                        "Tents",
+                        "Ceiled houses",
+                        "Palaces"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Haggai tell the people to consider?",
+                new String[]{
+                        "Their ways",
+                        "Their enemies",
+                        "Their wealth",
+                        "Their kings"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What had the people sown, according to Haggai?",
+                new String[]{
+                        "Much",
+                        "Little",
+                        "Nothing",
+                        "Enough"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the people earn for their wages?",
+                new String[]{
+                        "A full reward",
+                        "A treasure",
+                        "Little",
+                        "Double wages"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Why did the heavens over the people stay from dew?",
+                new String[]{
+                        "Because there was no rain in Egypt",
+                        "Because of their disobedience concerning the Lord's house",
+                        "Because the king stopped the rain",
+                        "Because of war"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord tell the people to bring from the mountains?",
+                new String[]{
+                        "Gold",
+                        "Water",
+                        "Timber",
+                        "Stone only"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise to be with the people?",
+                new String[]{
+                        "His Spirit",
+                        "His army",
+                        "His angels only",
+                        "His treasure"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened when the people obeyed the voice of the Lord?",
+                new String[]{
+                        "They left Jerusalem",
+                        "They feared the Lord",
+                        "They built a palace",
+                        "They went to Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who stirred up the spirit of Zerubbabel?",
+                new String[]{
+                        "The king",
+                        "Joshua",
+                        "The Lord",
+                        "Haggai"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who stirred up the spirit of Joshua the high priest?",
+                new String[]{
+                        "The Lord",
+                        "Zerubbabel",
+                        "Haggai",
+                        "Darius"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who stirred up the spirit of the remnant of the people?",
+                new String[]{
+                        "Joshua",
+                        "The Lord",
+                        "Zerubbabel",
+                        "The elders"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "When did the people come and work in the house of the Lord?",
+                new String[]{
+                        "On the same day they heard the message",
+                        "One year later",
+                        "After the king returned",
+                        "At the beginning of winter"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What question did Haggai ask about the former glory of the house?",
+                new String[]{
+                        "Who built it?",
+                        "Who remembers it?",
+                        "Where was it located?",
+                        "Why was it destroyed?"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How did the present house appear in comparison with the former house?",
+                new String[]{
+                        "It was larger",
+                        "It was smaller",
+                        "It was exactly the same",
+                        "It was completely finished"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise to give in the latter house?",
+                new String[]{
+                        "Peace",
+                        "Gold",
+                        "A king",
+                        "More land"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say belonged to Him?",
+                new String[]{
+                        "Only silver",
+                        "Only gold",
+                        "The silver and the gold",
+                        "The temple vessels only"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise to shake?",
+                new String[]{
+                        "The heavens and the earth",
+                        "Only Jerusalem",
+                        "Only the temple",
+                        "Only the nations"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was called the Lord's servant?",
+                new String[]{
+                        "Joshua",
+                        "Zerubbabel",
+                        "Haggai",
+                        "Darius"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say He would make Zerubbabel like?",
+                new String[]{
+                        "A crown",
+                        "A sword",
+                        "A signet",
+                        "A priest"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "On what day did Haggai receive his final message recorded in the book?",
+                new String[]{
+                        "The seventh day",
+                        "The twenty-fourth day of the ninth month",
+                        "The first day of the first month",
+                        "The tenth day of the seventh month"
+                },
+                1
+        ));
+
+    }
+                    }
+        if (book.equals("Zechariah")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who was the prophet who received the visions recorded in this book?",
+                new String[]{
+                        "Zechariah",
+                        "Haggai",
+                        "Malachi",
+                        "Habakkuk"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "In whose reign did Zechariah begin to prophesy?",
+                new String[]{
+                        "Cyrus",
+                        "Darius",
+                        "Ahasuerus",
+                        "Nebuchadnezzar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was the father of Zechariah?",
+                new String[]{
+                        "Berechiah",
+                        "Iddo",
+                        "Joshua",
+                        "Zerubbabel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord tell the people to do?",
+                new String[]{
+                        "Return unto Him",
+                        "Return to Egypt",
+                        "Build a palace",
+                        "Fight Babylon"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say He would do if they returned to Him?",
+                new String[]{
+                        "Leave them",
+                        "Return unto them",
+                        "Send them away",
+                        "Give them to Persia"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "In Zechariah's first vision, what animals were seen among the myrtle trees?",
+                new String[]{
+                        "Horses",
+                        "Lions",
+                        "Camels",
+                        "Donkeys"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What color were some of the horses in the first vision?",
+                new String[]{
+                        "Black",
+                        "Red",
+                        "White",
+                        "Green"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many horns did Zechariah see?",
+                new String[]{
+                        "Two",
+                        "Three",
+                        "Four",
+                        "Seven"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the four horns represent?",
+                new String[]{
+                        "The four seasons",
+                        "Powers that scattered Judah, Israel, and Jerusalem",
+                        "Four priests",
+                        "Four temples"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Zechariah see in his next vision?",
+                new String[]{
+                        "A measuring line",
+                        "A golden crown",
+                        "A sword",
+                        "A scroll"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was the young man going to measure?",
+                new String[]{
+                        "Babylon",
+                        "Jerusalem",
+                        "Egypt",
+                        "Samaria"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise to be around Jerusalem?",
+                new String[]{
+                        "A river",
+                        "A wall of fire",
+                        "A mountain",
+                        "A great army"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Joshua the high priest have on his head in the vision?",
+                new String[]{
+                        "A golden crown",
+                        "A mitre",
+                        "A helmet",
+                        "A royal cap"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who stood before Joshua in the vision to accuse him?",
+                new String[]{
+                        "Satan",
+                        "Darius",
+                        "Haggai",
+                        "The king of Babylon"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What kind of garments was Joshua wearing?",
+                new String[]{
+                        "Royal garments",
+                        "Filthy garments",
+                        "Priestly garments of gold",
+                        "Military clothing"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise to remove from Joshua?",
+                new String[]{
+                        "His crown",
+                        "His iniquity",
+                        "His priesthood",
+                        "His garments"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Zechariah see in the vision of chapter 4?",
+                new String[]{
+                        "A flying scroll",
+                        "A candlestick and two olive trees",
+                        "A chariot",
+                        "A measuring line"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the seven lamps represent?",
+                new String[]{
+                        "The seven nations",
+                        "The seven eyes of the Lord",
+                        "The seven priests",
+                        "The seven feasts"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say would make Zerubbabel's work succeed?",
+                new String[]{
+                        "Military strength",
+                        "Human wisdom",
+                        "Not by might, nor by power, but by His spirit",
+                        "The king of Persia"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What was the first thing Zechariah saw in chapter 5?",
+                new String[]{
+                        "A flying roll",
+                        "A golden altar",
+                        "A horse",
+                        "A crown"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was written on the flying roll?",
+                new String[]{
+                        "The names of kings",
+                        "A curse",
+                        "The law of Moses",
+                        "A prayer"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many chariots appeared in Zechariah's vision in chapter 6?",
+                new String[]{
+                        "Two",
+                        "Three",
+                        "Four",
+                        "Seven"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the Lord tell His people to show toward one another?",
+                new String[]{
+                        "Judgment only",
+                        "Truth, mercy, and compassion",
+                        "Military strength",
+                        "Wealth"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise would happen to Jerusalem?",
+                new String[]{
+                        "It would become a desolation forever",
+                        "It would be called a city of truth",
+                        "It would be abandoned immediately",
+                        "It would become part of Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the people of many nations seek to do in the days described by Zechariah?",
+                new String[]{
+                        "Go to Jerusalem to seek the Lord",
+                        "Destroy Jerusalem",
+                        "Leave Judah",
+                        "Build Babylon"
+                },
+                0
+        ));
+
+    }
+            }
+        if (book.equals("Malachi")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who is named as the messenger in this book?",
+                new String[]{
+                        "Malachi",
+                        "Haggai",
+                        "Zechariah",
+                        "Ezra"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say about His love for Jacob?",
+                new String[]{
+                        "He had forgotten Jacob",
+                        "He loved Jacob",
+                        "He rejected Jacob",
+                        "He feared Jacob"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was Jacob's brother?",
+                new String[]{
+                        "Isaac",
+                        "Esau",
+                        "Joseph",
+                        "Aaron"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the priests despise?",
+                new String[]{
+                        "The name of the Lord",
+                        "The king of Persia",
+                        "The city of Jerusalem",
+                        "The people of Judah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the priests offer upon the altar?",
+                new String[]{
+                        "Perfect animals only",
+                        "Polluted bread and blemished animals",
+                        "Gold and silver",
+                        "Fresh grain only"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What kind of animal did the people offer as sacrifices?",
+                new String[]{
+                        "Blemished animals",
+                        "Only firstborn animals",
+                        "Only birds",
+                        "Only lambs"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say His name would be among the Gentiles?",
+                new String[]{
+                        "Forgotten",
+                        "Great",
+                        "Hidden",
+                        "Feared only in Judah"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord desire to see among the nations?",
+                new String[]{
+                        "Pure offerings",
+                        "Military armies",
+                        "Royal palaces",
+                        "Large cities"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What had the priests caused people to stumble in?",
+                new String[]{
+                        "The law",
+                        "The desert",
+                        "War",
+                        "Famine"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What covenant did Levi have with the Lord?",
+                new String[]{
+                        "A covenant of peace",
+                        "A covenant of gold",
+                        "A covenant of war",
+                        "A covenant of kingship"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say He hated?",
+                new String[]{
+                        "Prayer",
+                        "Putting away and treachery",
+                        "Giving offerings",
+                        "The Sabbath"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the people ask when they had wearied the Lord?",
+                new String[]{
+                        "How have we wearied him?",
+                        "Where is the temple?",
+                        "Who is our king?",
+                        "When will the harvest come?"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the people say was evil in the sight of the Lord?",
+                new String[]{
+                        "Serving God",
+                        "Doing evil",
+                        "Giving offerings",
+                        "Keeping the law"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise to send before the day of the Lord?",
+                new String[]{
+                        "Elijah the prophet",
+                        "Moses",
+                        "Joshua",
+                        "David"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What would Elijah turn the heart of the fathers toward?",
+                new String[]{
+                        "Their riches",
+                        "Their children",
+                        "Their enemies",
+                        "Their kings"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What would the hearts of the children be turned toward?",
+                new String[]{
+                        "Their fathers",
+                        "Their enemies",
+                        "Their kings",
+                        "Their riches"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord say would come upon the proud and wicked?",
+                new String[]{
+                        "A blessing",
+                        "A burning judgment",
+                        "A royal feast",
+                        "A new kingdom"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What would the day that burns as an oven do to the wicked?",
+                new String[]{
+                        "Make them kings",
+                        "Leave them untouched",
+                        "Burn them up",
+                        "Send them to Egypt"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What would arise with healing in his wings?",
+                new String[]{
+                        "The sun of righteousness",
+                        "The moon",
+                        "A new king",
+                        "The angel of the Lord"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What would the righteous do when the Sun of righteousness arose?",
+                new String[]{
+                        "Hide in the temple",
+                        "Go forth and grow up as calves of the stall",
+                        "Leave Jerusalem",
+                        "Build an altar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What law did the Lord tell His people to remember?",
+                new String[]{
+                        "The law of Moses",
+                        "The law of Babylon",
+                        "The law of Persia",
+                        "The law of Egypt"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Lord promise to send before the great and dreadful day?",
+                new String[]{
+                        "Elijah the prophet",
+                        "A Persian army",
+                        "A new priest",
+                        "A king from Egypt"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What would happen if the people's hearts were not turned?",
+                new String[]{
+                        "The Lord would send a curse",
+                        "They would receive riches",
+                        "The temple would become larger",
+                        "They would conquer Babylon"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Malachi repeatedly challenge the people to bring to God?",
+                new String[]{
+                        "Their best offerings",
+                        "Only money",
+                        "Military weapons",
+                        "Foreign idols"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is the final word of the Old Testament book of Malachi?",
+                new String[]{
+                        "Peace",
+                        "Amen",
+                        "Curse",
+                        "Glory"
+                },
+                2
+        ));
+
+    }
+            }
 return questions;
 }
 }
