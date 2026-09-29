@@ -4440,6 +4440,568 @@ questions.add(new Question(
 
     }
     }
+        if (book.equals("Ezra")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Which king allowed the Jews to return to Jerusalem and rebuild the temple?",
+                new String[]{
+                        "Cyrus",
+                        "Darius",
+                        "Nebuchadnezzar",
+                        "Artaxerxes"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Why were the Jews returning to Jerusalem?",
+                new String[]{
+                        "To build an army",
+                        "To rebuild the temple",
+                        "To conquer Babylon",
+                        "To become merchants"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who led the first group of exiles back to Jerusalem?",
+                new String[]{
+                        "Ezra",
+                        "Nehemiah",
+                        "Zerubbabel",
+                        "Mordecai"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who served as high priest during the rebuilding of the temple?",
+                new String[]{
+                        "Ezra",
+                        "Haggai",
+                        "Joshua",
+                        "Zechariah"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the people do when the foundation of the temple was laid?",
+                new String[]{
+                        "They shouted and praised the LORD",
+                        "They stopped the work",
+                        "They returned to Babylon",
+                        "They built a palace"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who opposed the rebuilding of the temple?",
+                new String[]{
+                        "The priests",
+                        "The surrounding peoples",
+                        "The Levites",
+                        "The returning Jews"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Which prophets encouraged the Jews to continue rebuilding?",
+                new String[]{
+                        "Isaiah and Jeremiah",
+                        "Elijah and Elisha",
+                        "Nathan and Gad",
+                        "Haggai and Zechariah"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Who ordered that the records be searched to confirm Cyrus's decree?",
+                new String[]{
+                        "Darius",
+                        "Cyrus",
+                        "Artaxerxes",
+                        "Ahasuerus"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to the temple after the work was completed?",
+                new String[]{
+                        "It was abandoned",
+                        "It was dedicated",
+                        "It was destroyed",
+                        "It became a palace"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What feast did the returned Jews celebrate after the temple was completed?",
+                new String[]{
+                        "Passover",
+                        "Purim",
+                        "Pentecost",
+                        "Day of Atonement"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was Ezra?",
+                new String[]{
+                        "A soldier",
+                        "A priest and skilled scribe",
+                        "A king",
+                        "A governor"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Ezra set his heart to study and teach?",
+                new String[]{
+                        "Military strategy",
+                        "Persian law",
+                        "The Law of the LORD",
+                        "Egyptian history"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Ezra confess on behalf of the people?",
+                new String[]{
+                        "Their sins",
+                        "Their lack of money",
+                        "Their military weakness",
+                        "Their lack of land"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What problem did Ezra discover among some of the returned people?",
+                new String[]{
+                        "They had stopped farming",
+                        "They had destroyed the temple",
+                        "They had left Jerusalem",
+                        "They had married people from surrounding nations"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "How did Ezra respond when he learned about the people's sin?",
+                new String[]{
+                        "He prayed and confessed before God",
+                        "He left Jerusalem",
+                        "He became king",
+                        "He ordered the temple destroyed"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Ezra teach the people?",
+                new String[]{
+                        "The laws of Persia",
+                        "The Law of Moses",
+                        "Military strategy",
+                        "The history of Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the people promise after hearing Ezra?",
+                new String[]{
+                        "To return to Babylon",
+                        "To stop worshipping God",
+                        "To separate themselves from sinful practices",
+                        "To build a palace"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What was rebuilt first in Jerusalem before the temple was completed?",
+                new String[]{
+                        "The altar",
+                        "The palace",
+                        "The city wall",
+                        "The king's house"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the priests and Levites do after the temple was completed?",
+                new String[]{
+                        "They became soldiers",
+                        "They abandoned Jerusalem",
+                        "They returned to Babylon",
+                        "They were organized for worship"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Why did the people rejoice when the temple was completed?",
+                new String[]{
+                        "Because the LORD had helped them",
+                        "Because Persia had become weak",
+                        "Because they had gained wealth",
+                        "Because they had conquered another nation"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "From which empire did Ezra travel to Jerusalem?",
+                new String[]{
+                        "Egypt",
+                        "Persia",
+                        "Assyria",
+                        "Philistia"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Ezra carry with him to Jerusalem?",
+                new String[]{
+                        "The law of God",
+                        "A large army",
+                        "A royal crown",
+                        "David's weapons"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who gave Ezra authority to teach God's law?",
+                new String[]{
+                        "King Saul",
+                        "King David",
+                        "King Artaxerxes",
+                        "King Hezekiah"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What was one major purpose of Ezra's ministry?",
+                new String[]{
+                        "To become king",
+                        "To conquer Persia",
+                        "To rebuild Babylon",
+                        "To teach God's law and restore obedience"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did the people do after the temple was dedicated?",
+                new String[]{
+                        "They offered sacrifices and celebrated",
+                        "They returned immediately to Babylon",
+                        "They abandoned Jerusalem",
+                        "They stopped worshipping God"
+                },
+                0
+        ));
+
+    }
+            }
+        if (book.equals("Nehemiah")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "What was Nehemiah's position in the Persian king's court?",
+                new String[]{
+                        "Cupbearer",
+                        "General",
+                        "Priest",
+                        "Scribe"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Which king did Nehemiah serve?",
+                new String[]{
+                        "Cyrus",
+                        "Artaxerxes",
+                        "Darius",
+                        "Nebuchadnezzar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What news about Jerusalem caused Nehemiah to weep?",
+                new String[]{
+                        "The temple had been moved",
+                        "The people had become wealthy",
+                        "The walls were broken down and the gates burned",
+                        "The king had left Persia"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Nehemiah do after hearing the news?",
+                new String[]{
+                        "He went to war",
+                        "He returned to Egypt",
+                        "He became king",
+                        "He prayed and fasted"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did Nehemiah ask the king for?",
+                new String[]{
+                        "Permission to rebuild Jerusalem",
+                        "A new army",
+                        "A new throne",
+                        "More land in Persia"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Nehemiah inspect secretly at night?",
+                new String[]{
+                        "The temple treasures",
+                        "The walls of Jerusalem",
+                        "The king's army",
+                        "The city of Babylon"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who mocked Nehemiah and the Jews?",
+                new String[]{
+                        "Cyrus and Darius",
+                        "Ezra and Joshua",
+                        "Haggai and Zechariah",
+                        "Sanballat and Tobiah"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did the people rebuild?",
+                new String[]{
+                        "The temple only",
+                        "The walls of Jerusalem",
+                        "The palace",
+                        "The king's throne"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How did the workers protect themselves from enemies?",
+                new String[]{
+                        "They carried weapons while building",
+                        "They left Jerusalem",
+                        "They asked Egypt for soldiers",
+                        "They stopped rebuilding"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Nehemiah tell the people when they were afraid?",
+                new String[]{
+                        "Return to Persia",
+                        "Stop building",
+                        "Remember the LORD and fight for your families",
+                        "Hide in the temple"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What problem did Nehemiah address among some wealthy Jews?",
+                new String[]{
+                        "They were charging excessive interest and exploiting the poor",
+                        "They refused to build the walls",
+                        "They destroyed the temple",
+                        "They left Jerusalem"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Nehemiah refuse to do when enemies tried to lure him away?",
+                new String[]{
+                        "Pray",
+                        "Leave the work",
+                        "Speak to the people",
+                        "Enter Jerusalem"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Sanballat accuse Nehemiah of planning?",
+                new String[]{
+                        "Destroying the temple",
+                        "Stealing the Law",
+                        "Rebellion against the king",
+                        "Leaving Jerusalem"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "How long did it take to rebuild Jerusalem's wall?",
+                new String[]{
+                        "70 days",
+                        "40 days",
+                        "120 days",
+                        "52 days"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What happened when the enemies heard the wall was completed?",
+                new String[]{
+                        "They were afraid",
+                        "They became kings",
+                        "They destroyed the wall",
+                        "They entered the temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who read the Book of the Law to the people?",
+                new String[]{
+                        "Nehemiah",
+                        "Ezra",
+                        "Sanballat",
+                        "Tobiah"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Where did Ezra read the Law to the people?",
+                new String[]{
+                        "Inside Babylon",
+                        "At the king's palace",
+                        "Before the Water Gate",
+                        "On Mount Sinai"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the people do when they understood the Law?",
+                new String[]{
+                        "They went to war",
+                        "They left Jerusalem",
+                        "They built a palace",
+                        "They wept"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did the leaders tell the people to do instead of weeping?",
+                new String[]{
+                        "Celebrate and rejoice",
+                        "Leave Jerusalem",
+                        "Fast for forty days",
+                        "Stop reading the Law"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What feast did the people celebrate after hearing the Law?",
+                new String[]{
+                        "Passover",
+                        "The Feast of Tabernacles",
+                        "Purim",
+                        "Pentecost"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did the people confess during their national prayer?",
+                new String[]{
+                        "Their military victories",
+                        "Their wealth",
+                        "Their sins and the sins of their ancestors",
+                        "Their success in Persia"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the people make with God?",
+                new String[]{
+                        "A military alliance",
+                        "A trade agreement",
+                        "A royal treaty",
+                        "A covenant"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did Nehemiah do when he discovered people violating the Sabbath?",
+                new String[]{
+                        "He confronted them and ordered the gates closed",
+                        "He left Jerusalem",
+                        "He became king",
+                        "He destroyed the temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Nehemiah want the people to remember?",
+                new String[]{
+                        "To become wealthy",
+                        "To remain faithful to God",
+                        "To conquer Persia",
+                        "To leave Jerusalem"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was one major result of Nehemiah's leadership?",
+                new String[]{
+                        "Israel conquered Egypt",
+                        "Persia was destroyed",
+                        "Jerusalem's walls were rebuilt",
+                        "The temple was moved"
+                },
+                2
+        ));
+
+    }
+}
         return questions;
 }
 }
