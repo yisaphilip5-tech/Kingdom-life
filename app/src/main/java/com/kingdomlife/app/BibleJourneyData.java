@@ -18823,6 +18823,566 @@ public class BibleJourneyData {
         ));
     }
             }
+        private static void addBookJudeQuestions(ArrayList<Question> questions, String difficulty) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote the book of Jude?",
+                new String[]{
+                        "Peter",
+                        "Jude",
+                        "Paul",
+                        "John"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How does Jude describe himself?",
+                new String[]{
+                        "A servant of Jesus Christ and brother of James",
+                        "A king of Israel",
+                        "A Roman governor",
+                        "A priest of Jerusalem"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "To whom is Jude's letter written?",
+                new String[]{
+                        "The kings of Israel",
+                        "The Roman church",
+                        "Them that are sanctified by God",
+                        "The priests of Jerusalem"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Jude tell believers to earnestly contend for?",
+                new String[]{
+                        "Earthly riches",
+                        "The faith",
+                        "Political power",
+                        "Military victory"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What had been delivered to the saints?",
+                new String[]{
+                        "The faith",
+                        "A kingdom",
+                        "A crown",
+                        "A temple"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What kind of people had crept in unnoticed?",
+                new String[]{
+                        "Faithful teachers",
+                        "Angels",
+                        "Certain men",
+                        "Roman soldiers"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Jude say these ungodly men turned the grace of God into?",
+                new String[]{
+                        "A reason to pray",
+                        "Lasciviousness",
+                        "A form of wisdom",
+                        "A spiritual gift"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who did Jude say these ungodly men denied?",
+                new String[]{
+                        "The only Lord God and our Lord Jesus Christ",
+                        "Moses",
+                        "Abraham",
+                        "The prophets"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to the angels who kept not their first estate?",
+                new String[]{
+                        "They became kings",
+                        "They were given riches",
+                        "They were forgiven immediately",
+                        "They are reserved in everlasting chains"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "Which cities are given as an example of judgment?",
+                new String[]{
+                        "Jerusalem and Bethlehem",
+                        "Sodom and Gomorrha",
+                        "Rome and Corinth",
+                        "Egypt and Babylon"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who disputed with the devil about the body of Moses?",
+                new String[]{
+                        "Michael the archangel",
+                        "Gabriel",
+                        "Peter",
+                        "Moses"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Michael say to the devil?",
+                new String[]{
+                        "Be gone forever",
+                        "You are defeated",
+                        "The Lord rebuke thee",
+                        "Leave this place"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Jude compare the false teachers to?",
+                new String[]{
+                        "Faithful shepherds",
+                        "Rocks in the sea",
+                        "Wise kings",
+                        "Clouds without water"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What kind of trees are the false teachers compared to?",
+                new String[]{
+                        "Fruitful trees",
+                        "Trees whose fruit withereth",
+                        "Olive trees",
+                        "Cedars of Lebanon"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What are the false teachers compared to when they are described as wandering stars?",
+                new String[]{
+                        "Stars that give light",
+                        "The sun",
+                        "Wandering stars",
+                        "The moon"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who prophesied that the Lord would come with ten thousands of his saints?",
+                new String[]{
+                        "Enoch",
+                        "Moses",
+                        "David",
+                        "Isaiah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Enoch say the Lord would execute upon the ungodly?",
+                new String[]{
+                        "Great riches",
+                        "Judgment",
+                        "A new kingdom",
+                        "Peace"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers do to themselves in relation to their most holy faith?",
+                new String[]{
+                        "Build themselves up",
+                        "Make themselves wealthy",
+                        "Hide themselves",
+                        "Separate from everyone"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers pray in?",
+                new String[]{
+                        "Their own wisdom",
+                        "The law",
+                        "The Holy Ghost",
+                        "Earthly power"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What should believers keep themselves in?",
+                new String[]{
+                        "The love of God",
+                        "Earthly riches",
+                        "Political power",
+                        "Human wisdom"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers look for concerning Jesus Christ?",
+                new String[]{
+                        "His earthly kingdom",
+                        "The mercy of our Lord Jesus Christ unto eternal life",
+                        "His earthly riches",
+                        "His political authority"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers have compassion on?",
+                new String[]{
+                        "Those who doubt",
+                        "Kings",
+                        "Roman soldiers",
+                        "The wealthy"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers save others from?",
+                new String[]{
+                        "Earthly poverty",
+                        "Political trouble",
+                        "Fear of people",
+                        "The fire"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What should believers hate even while showing mercy?",
+                new String[]{
+                        "The clothing",
+                        "The garment spotted by the flesh",
+                        "The word of God",
+                        "The church"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who is able to keep believers from falling?",
+                new String[]{
+                        "The angels",
+                        "Moses",
+                        "God",
+                        "The apostles"
+                },
+                2
+        ));
+    }
+        }
+        private static void addBookRevelationQuestions(ArrayList<Question> questions, String difficulty) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who received the Revelation?",
+                new String[]{
+                        "Peter",
+                        "John",
+                        "Paul",
+                        "James"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Where was John when he received the Revelation?",
+                new String[]{
+                        "Patmos",
+                        "Jerusalem",
+                        "Rome",
+                        "Ephesus"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is the first church addressed in Revelation?",
+                new String[]{
+                        "Smyrna",
+                        "Pergamos",
+                        "Ephesus",
+                        "Laodicea"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "How many churches are addressed in Revelation chapters 2 and 3?",
+                new String[]{
+                        "Seven",
+                        "Five",
+                        "Ten",
+                        "Twelve"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Jesus call Himself in the message to the church at Smyrna?",
+                new String[]{
+                        "The beginning and the end",
+                        "The first and the last",
+                        "The great prophet",
+                        "The King of Rome"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did John see in heaven after the messages to the churches?",
+                new String[]{
+                        "A throne",
+                        "A temple",
+                        "A city",
+                        "A mountain"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "How many elders were around the throne?",
+                new String[]{
+                        "Twelve",
+                        "Twenty-four",
+                        "Forty",
+                        "Seventy"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many living creatures were around the throne?",
+                new String[]{
+                        "Two",
+                        "Seven",
+                        "Four",
+                        "Twelve"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who was worthy to open the book?",
+                new String[]{
+                        "The Lion of the tribe of Judah",
+                        "Michael",
+                        "Peter",
+                        "John"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John see standing in the midst of the throne?",
+                new String[]{
+                        "A king",
+                        "A lamb as it had been slain",
+                        "An angel",
+                        "A prophet"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many seals were on the book?",
+                new String[]{
+                        "Four",
+                        "Seven",
+                        "Ten",
+                        "Twelve"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What appeared when the first seal was opened?",
+                new String[]{
+                        "A white horse",
+                        "A red dragon",
+                        "A great eagle",
+                        "A golden city"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What appeared when the second seal was opened?",
+                new String[]{
+                        "A black horse",
+                        "A white horse",
+                        "A red horse",
+                        "A pale horse"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What appeared when the fourth seal was opened?",
+                new String[]{
+                        "A white horse",
+                        "A pale horse",
+                        "A red horse",
+                        "A black horse"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many people were sealed from the tribes of Israel?",
+                new String[]{
+                        "12,000",
+                        "70,000",
+                        "144,000",
+                        "7,000"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "How many angels stood before God with seven trumpets?",
+                new String[]{
+                        "Seven",
+                        "Four",
+                        "Twelve",
+                        "Twenty-four"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What came out of the bottomless pit in Revelation 9?",
+                new String[]{
+                        "A great army of locust-like creatures",
+                        "A flood of water",
+                        "A golden city",
+                        "Seven kings"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John see coming down from heaven in Revelation 21?",
+                new String[]{
+                        "A new Jerusalem",
+                        "A new Egypt",
+                        "A new Rome",
+                        "A new Babylon"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the New Jerusalem have instead of a temple?",
+                new String[]{
+                        "A great palace",
+                        "The Lord God Almighty and the Lamb",
+                        "A throne of David",
+                        "Seven churches"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What will be no more in the new heaven and new earth?",
+                new String[]{
+                        "The sea",
+                        "The sun",
+                        "The moon",
+                        "The stars"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What will God wipe away from their eyes?",
+                new String[]{
+                        "Sweat",
+                        "Tears",
+                        "Dust",
+                        "Blood"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What will be no more?",
+                new String[]{
+                        "Death",
+                        "Prayer",
+                        "Worship",
+                        "Faith"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is the river in the New Jerusalem called?",
+                new String[]{
+                        "The river of life",
+                        "The river of Jordan",
+                        "The river of fire",
+                        "The river of mercy"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What tree is mentioned in the New Jerusalem?",
+                new String[]{
+                        "The tree of knowledge",
+                        "The tree of life",
+                        "The olive tree",
+                        "The fig tree"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does Revelation say about the words of its prophecy?",
+                new String[]{
+                        "They are uncertain",
+                        "They are only for kings",
+                        "They are faithful and true",
+                        "They are hidden forever"
+                },
+                2
+        ));
+    }
+            }
 
     }
 
