@@ -2754,6 +2754,287 @@ questions.add(new Question(
 
     }
         }
+        if (book.equals("1 Samuel")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who was the mother of Samuel?",
+                new String[]{
+                        "Hannah",
+                        "Deborah",
+                        "Ruth",
+                        "Abigail"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Hannah pray to God for?",
+                new String[]{
+                        "A new house",
+                        "A son",
+                        "A kingdom",
+                        "A victory in battle"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was the priest serving at the tabernacle when Hannah prayed?",
+                new String[]{
+                        "Eli",
+                        "Samuel",
+                        "Aaron",
+                        "Phinehas"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Hannah promise to do if God gave her a son?",
+                new String[]{
+                        "Make him a king",
+                        "Send him to Egypt",
+                        "Give him to the LORD for his whole life",
+                        "Make him a soldier"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What was Hannah's son's name?",
+                new String[]{
+                        "Samuel",
+                        "Saul",
+                        "Jonathan",
+                        "David"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who called Samuel during the night?",
+                new String[]{
+                        "Saul",
+                        "Eli",
+                        "David",
+                        "Jonathan"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Samuel eventually understand when he heard the voice calling him?",
+                new String[]{
+                        "It was Eli",
+                        "It was Saul",
+                        "The LORD was calling him",
+                        "It was his mother"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Samuel say when the LORD called him?",
+                new String[]{
+                        "Speak, LORD, for your servant hears",
+                        "I am ready to fight",
+                        "Send me to Egypt",
+                        "Here is the king"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What sacred object did Israel take into battle against the Philistines?",
+                new String[]{
+                        "The bronze serpent",
+                        "The ark of the covenant",
+                        "The golden calf",
+                        "Moses' staff"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What happened to the ark when the Philistines captured it?",
+                new String[]{
+                        "It was destroyed",
+                        "It was hidden by Samuel",
+                        "It was taken to the land of the Philistines",
+                        "It was returned immediately"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What happened to the Philistine god Dagon when the ark was placed beside it?",
+                new String[]{
+                        "Dagon fell before the ark",
+                        "Dagon became larger",
+                        "Dagon was moved to Jerusalem",
+                        "Dagon was covered with gold"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was Israel's first king?",
+                new String[]{
+                        "David",
+                        "Saul",
+                        "Samuel",
+                        "Jonathan"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Which tribe was Saul from?",
+                new String[]{
+                        "Judah",
+                        "Levi",
+                        "Benjamin",
+                        "Ephraim"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What was Saul doing when Samuel first anointed him as king?",
+                new String[]{
+                        "Looking for his father's lost donkeys",
+                        "Fighting the Philistines",
+                        "Building an altar",
+                        "Gathering grain"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was Saul's son and David's close friend?",
+                new String[]{
+                        "Ish-bosheth",
+                        "Jonathan",
+                        "Abner",
+                        "Eliab"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did David use to defeat Goliath?",
+                new String[]{
+                        "A sword",
+                        "A spear",
+                        "A sling and a stone",
+                        "A bow and arrows"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who was Goliath?",
+                new String[]{
+                        "A Philistine warrior",
+                        "An Israelite priest",
+                        "A king of Moab",
+                        "A judge of Israel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "How many stones did David take from the brook before facing Goliath?",
+                new String[]{
+                        "One",
+                        "Five",
+                        "Ten",
+                        "Twelve"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did David cut off after defeating Goliath?",
+                new String[]{
+                        "His shield",
+                        "His hand",
+                        "His head",
+                        "His robe"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Why did Saul become jealous of David?",
+                new String[]{
+                        "People praised David's victories",
+                        "David became a priest",
+                        "David left Israel",
+                        "David refused to fight"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Saul throw at David when he tried to kill him?",
+                new String[]{
+                        "A spear",
+                        "A sword",
+                        "A stone",
+                        "A staff"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who helped David escape from Saul by warning him of Saul's plans?",
+                new String[]{
+                        "Jonathan",
+                        "Goliath",
+                        "Eli",
+                        "Abner"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did David do when he found Saul sleeping in the cave?",
+                new String[]{
+                        "He killed Saul",
+                        "He took Saul's kingdom",
+                        "He spared Saul's life",
+                        "He captured Saul"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Samuel use to anoint David?",
+                new String[]{
+                        "A horn of oil",
+                        "A golden cup",
+                        "A bronze bowl",
+                        "A jar of water"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What happened to Saul and Jonathan near the end of 1 Samuel?",
+                new String[]{
+                        "They became priests",
+                        "They died in battle",
+                        "They moved to Moab",
+                        "They crowned David"
+                },
+                1
+        ));
+
+    }
+        }
         return questions;
 }
 }
