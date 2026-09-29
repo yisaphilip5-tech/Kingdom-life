@@ -2192,7 +2192,287 @@ questions.add(new Question(
     }
                     }
         
-        
+        if (book.equals("Judges")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "What was the main problem Israel repeatedly faced during the time of the judges?",
+                new String[]{
+                        "They had no food",
+                        "They turned away from the LORD",
+                        "They could not build cities",
+                        "They had no priests"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was the first judge mentioned in the book of Judges?",
+                new String[]{
+                        "Gideon",
+                        "Samson",
+                        "Othniel",
+                        "Deborah"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Which enemy did Othniel deliver Israel from?",
+                new String[]{
+                        "The king of Mesopotamia",
+                        "The Philistines",
+                        "The Midianites",
+                        "The Moabites"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was the left-handed judge who killed King Eglon?",
+                new String[]{
+                        "Barak",
+                        "Ehud",
+                        "Jephthah",
+                        "Shamgar"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Which king was killed by Ehud?",
+                new String[]{
+                        "Eglon",
+                        "Jabin",
+                        "Abimelech",
+                        "Sisera"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was the woman who served as a judge of Israel?",
+                new String[]{
+                        "Jael",
+                        "Deborah",
+                        "Delilah",
+                        "Hannah"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was the military leader who fought alongside Deborah?",
+                new String[]{
+                        "Gideon",
+                        "Jephthah",
+                        "Barak",
+                        "Samson"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who killed Sisera?",
+                new String[]{
+                        "Deborah",
+                        "Jael",
+                        "Delilah",
+                        "Ruth"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Gideon use to test whether God was with him?",
+                new String[]{
+                        "A fleece",
+                        "A trumpet",
+                        "A staff",
+                        "A stone"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What name did the angel of the LORD call Gideon?",
+                new String[]{
+                        "Mighty warrior",
+                        "King of Israel",
+                        "Prophet of God",
+                        "Prince of Judah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Gideon destroy that belonged to his father?",
+                new String[]{
+                        "A palace",
+                        "An idol altar dedicated to Baal",
+                        "A city wall",
+                        "A military camp"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How many men did Gideon eventually lead into battle against Midian?",
+                new String[]{
+                        "300",
+                        "1,000",
+                        "3,000",
+                        "12,000"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Gideon's men carry when they surrounded the Midianite camp?",
+                new String[]{
+                        "Swords and shields",
+                        "Bows and arrows",
+                        "Trumpets, empty jars, and torches",
+                        "Spears and chariots"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What happened when Gideon's men broke their jars and blew their trumpets?",
+                new String[]{
+                        "The Midianites fled in confusion",
+                        "The Jordan River stopped",
+                        "Jericho's walls fell",
+                        "Rain began to fall"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Which judge made a vow concerning whatever came out of his house first?",
+                new String[]{
+                        "Samson",
+                        "Jephthah",
+                        "Gideon",
+                        "Ehud"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was known for his extraordinary strength?",
+                new String[]{
+                        "Barak",
+                        "Othniel",
+                        "Samson",
+                        "Shamgar"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What was the secret of Samson's great strength connected to?",
+                new String[]{
+                        "His uncut hair",
+                        "His sword",
+                        "His royal clothing",
+                        "His shield"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who betrayed Samson by discovering the secret of his strength?",
+                new String[]{
+                        "Jael",
+                        "Deborah",
+                        "Delilah",
+                        "Rahab"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What happened after Samson's hair began to grow again?",
+                new String[]{
+                        "He became king",
+                        "His strength returned",
+                        "He left Israel",
+                        "He became a priest"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Samson pull down at the end of his life?",
+                new String[]{
+                        "The gates of Jerusalem",
+                        "The walls of Jericho",
+                        "The pillars of a Philistine temple",
+                        "The tower of Shechem"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Which people were among Israel's enemies during the period of the judges?",
+                new String[]{
+                        "Philistines",
+                        "Romans",
+                        "Persians",
+                        "Assyrians"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What usually happened after Israel cried out to God for help?",
+                new String[]{
+                        "God raised up a deliverer",
+                        "Israel left the Promised Land",
+                        "The people chose a king",
+                        "The tabernacle was destroyed"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the Israelites repeatedly do after a judge died?",
+                new String[]{
+                        "Build a temple",
+                        "Return to doing evil",
+                        "Move to Egypt",
+                        "Choose a prophet"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What statement describes the condition of Israel near the end of Judges?",
+                new String[]{
+                        "Everyone obeyed the king",
+                        "Israel had become a great empire",
+                        "There was no king in Israel",
+                        "Jerusalem had been rebuilt"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is a major lesson repeated throughout the book of Judges?",
+                new String[]{
+                        "Israel needed to remain faithful to God",
+                        "Israel needed more horses",
+                        "Israel needed to leave Canaan",
+                        "Israel needed to build larger cities"
+                },
+                0
+        ));
+
+    }
+            }
         return questions;
 }
 }
