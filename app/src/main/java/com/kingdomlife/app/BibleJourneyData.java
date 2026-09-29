@@ -6126,245 +6126,569 @@ questions.add(new Question(
 
     }
  }
+         if (book.equals("Ecclesiastes")) {
+
+    if (difficulty.equals("Easy")) {
+
         questions.add(new Question(
-        "Who is traditionally identified as the speaker in Ecclesiastes?",
-        new String[]{"David", "Solomon", "Moses", "Isaiah"},
-        1));
+                "Who is traditionally identified with the authorship of Ecclesiastes?",
+                new String[]{
+                        "Moses",
+                        "Solomon",
+                        "David",
+                        "Isaiah"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What does Ecclesiastes repeatedly say about life \"under the sun\"?",
-        new String[]{"It is vanity", "It is always easy", "It is without purpose", "It is perfect"},
-        0));
+        questions.add(new Question(
+                "What word is repeatedly used to describe life in Ecclesiastes?",
+                new String[]{
+                        "Victory",
+                        "Vanity",
+                        "Wisdom",
+                        "Blessing"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What is said to be a time for every purpose under heaven?",
-        new String[]{"A season", "A day", "A generation", "An hour"},
-        0));
+        questions.add(new Question(
+                "Ecclesiastes says there is a time for every what under heaven?",
+                new String[]{
+                        "Purpose",
+                        "King",
+                        "Nation",
+                        "Treasure"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "According to Ecclesiastes, there is a time to be born and a time to do what?",
-        new String[]{"To sleep", "To die", "To travel", "To rejoice"},
-        1));
+        questions.add(new Question(
+                "There is a time to be born and a time to do what?",
+                new String[]{
+                        "Rejoice",
+                        "Travel",
+                        "Die",
+                        "Build"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What does Ecclesiastes say there is a time to plant and a time to do?",
-        new String[]{"Gather", "Build", "Uproot", "Celebrate"},
-        2));
+        questions.add(new Question(
+                "There is a time to plant and a time to do what?",
+                new String[]{
+                        "Uproot",
+                        "Harvest",
+                        "Sleep",
+                        "Celebrate"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What is better than two according to Ecclesiastes 4?",
-        new String[]{"One", "Three", "Four", "Ten"},
-        1));
+        questions.add(new Question(
+                "According to Ecclesiastes, what is better than one?",
+                new String[]{
+                        "Ten",
+                        "Two",
+                        "Five",
+                        "Seven"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "Why are two better than one?",
-        new String[]{"They can help one another", "They become wealthy faster", "They never disagree", "They always travel together"},
-        0));
+        questions.add(new Question(
+                "Why are two better than one?",
+                new String[]{
+                        "They can help each other",
+                        "They become kings",
+                        "They never disagree",
+                        "They always become wealthy"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What does a threefold cord say about its strength?",
-        new String[]{"It is quickly broken", "It is easily hidden", "It is not quickly broken", "It cannot be tied"},
-        2));
+        questions.add(new Question(
+                "A threefold cord is not quickly what?",
+                new String[]{
+                        "Tied",
+                        "Hidden",
+                        "Broken",
+                        "Found"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What is better than the sacrifice of fools?",
-        new String[]{"A large offering", "To draw near to hear", "A long prayer", "A celebration"},
-        1));
+        questions.add(new Question(
+                "What should a person be ready to do when entering the house of God?",
+                new String[]{
+                        "Speak",
+                        "Hear",
+                        "Sing",
+                        "Run"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What does Ecclesiastes advise concerning our words before God?",
-        new String[]{"Be quick to speak", "Speak continually", "Be careful and not rash", "Never speak"},
-        2));
+        questions.add(new Question(
+                "What does Ecclesiastes say about the laborer's sleep?",
+                new String[]{
+                        "It is sweet",
+                        "It is short",
+                        "It is troubled",
+                        "It is dangerous"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What should a person do when going into the house of God?",
-        new String[]{"Be ready to hear", "Bring many gifts", "Speak loudly", "Avoid listening"},
-        0));
+        questions.add(new Question(
+                "What does Ecclesiastes say about the love of money?",
+                new String[]{
+                        "It always brings joy",
+                        "It satisfies everyone",
+                        "It is harmless",
+                        "It does not satisfy the one who loves it"
+                },
+                3
+        ));
 
-questions.add(new Question(
-        "What does Ecclesiastes say about the love of money?",
-        new String[]{"It satisfies completely", "It is the root of all wisdom", "It is always harmless", "It does not satisfy the one who loves it"},
-        3));
+        questions.add(new Question(
+                "What is better than the day of one's birth?",
+                new String[]{
+                        "The day of one's death",
+                        "The day of wealth",
+                        "The day of victory",
+                        "The day of marriage"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What happens to the laborer who works hard according to Ecclesiastes?",
-        new String[]{"His sleep is sweet", "He never sleeps", "He becomes king", "He loses his home"},
-        0));
+        questions.add(new Question(
+                "Who is better than a living dog according to Ecclesiastes?",
+                new String[]{
+                        "A rich man",
+                        "A dead lion",
+                        "A wise king",
+                        "A strong warrior"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What is better than the day of one's birth?",
-        new String[]{"The day of one's death", "The day of wealth", "The day of marriage", "The day of victory"},
-        0));
+        questions.add(new Question(
+                "What is better than the sacrifice of fools?",
+                new String[]{
+                        "To draw near to hear",
+                        "A large offering",
+                        "A long prayer",
+                        "A great celebration"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "According to Ecclesiastes, who is better than a living dog?",
-        new String[]{"A strong lion", "A dead lion", "A wise man", "A rich man"},
-        1));
+        questions.add(new Question(
+                "What does Ecclesiastes say wisdom is better than?",
+                new String[]{
+                        "Food",
+                        "Strength",
+                        "Foolishness",
+                        "Sleep"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What does Ecclesiastes say about wisdom compared with foolishness?",
-        new String[]{"Wisdom is better", "They are exactly equal", "Foolishness is always better", "Neither has value"},
-        0));
+        questions.add(new Question(
+                "What should a person do with the bread they have?",
+                new String[]{
+                        "Hide it",
+                        "Eat it with joy",
+                        "Sell it",
+                        "Throw it away"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What can make the wise man's heart stronger according to Ecclesiastes?",
-        new String[]{"Correction", "Wealth", "Fame", "Sleep"},
-        0));
+        questions.add(new Question(
+                "What should a person do with their seed according to Ecclesiastes 11?",
+                new String[]{
+                        "Sow it",
+                        "Burn it",
+                        "Hide it",
+                        "Sell it"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What does Ecclesiastes say about the righteous and the wicked?",
-        new String[]{"Only the wicked die", "Only the righteous die", "Both can experience death", "Neither experiences death"},
-        2));
+        questions.add(new Question(
+                "What does Ecclesiastes tell young people to remember?",
+                new String[]{
+                        "Their riches",
+                        "Their enemies",
+                        "Their Creator",
+                        "Their kings"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What should a person do with the bread they have?",
-        new String[]{"Eat it with joy", "Hide it", "Sell it immediately", "Throw it away"},
-        0));
+        questions.add(new Question(
+                "What returns to the earth when a person dies?",
+                new String[]{
+                        "The spirit",
+                        "The soul",
+                        "The dust",
+                        "The wisdom"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What should be done with one's seed according to Ecclesiastes 11?",
-        new String[]{"Keep it forever", "Sow it", "Burn it", "Hide it underground"},
-        1));
+        questions.add(new Question(
+                "What returns to God who gave it?",
+                new String[]{
+                        "The spirit",
+                        "The body",
+                        "The silver",
+                        "The wealth"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What does Ecclesiastes tell young people to do in their youth?",
-        new String[]{"Remember their Creator", "Avoid all joy", "Seek riches first", "Leave their families"},
-        0));
+        questions.add(new Question(
+                "What does Ecclesiastes say about everything there is a time for?",
+                new String[]{
+                        "Only work",
+                        "Every purpose",
+                        "Only prayer",
+                        "Only celebration"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What happens to the body when a person dies according to Ecclesiastes?",
-        new String[]{"It becomes immortal on earth", "The dust returns to the earth", "It disappears completely", "It becomes stronger"},
-        1));
+        questions.add(new Question(
+                "What does Ecclesiastes say is better than great riches?",
+                new String[]{
+                        "A large house",
+                        "A good name",
+                        "A powerful army",
+                        "A long journey"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What returns to God who gave it?",
-        new String[]{"The silver", "The body", "The spirit", "The wealth"},
-        2));
+        questions.add(new Question(
+                "What can make a person's sleep sweet?",
+                new String[]{
+                        "Hard work",
+                        "Fame",
+                        "Riches",
+                        "Power"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What is the conclusion of the whole matter?",
-        new String[]{"Seek wealth and fame", "Fear God and keep His commandments", "Avoid work", "Live only for pleasure"},
-        1));
-        
-    questions.add(new Question(
-        "What is another name for the book Song of Solomon?",
-        new String[]{"Song of Songs", "Book of Love", "Song of David", "The Royal Song"},
-        0));
+        questions.add(new Question(
+                "What does Ecclesiastes say happens to both the wise and the foolish?",
+                new String[]{
+                        "Both become kings",
+                        "Both become rich",
+                        "Both eventually die",
+                        "Both become famous"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "Who is named as the author of the Song of Solomon?",
-        new String[]{"David", "Moses", "Solomon", "Samuel"},
-        2));
+        questions.add(new Question(
+                "What is the conclusion of the whole matter?",
+                new String[]{
+                        "Seek wealth and fame",
+                        "Fear God and keep His commandments",
+                        "Avoid work",
+                        "Live only for pleasure"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What is described as being better than wine?",
-        new String[]{"The king's riches", "The beloved's love", "The garden's fruit", "The singer's wisdom"},
-        1));
+    }
+}
 
-questions.add(new Question(
-        "What color does the beloved say she is?",
-        new String[]{"White and blue", "Red and gold", "Black but comely", "Purple and white"},
-        2));
+if (book.equals("Song of Solomon")) {
 
-questions.add(new Question(
-        "Why does the beloved say she is dark?",
-        new String[]{"She had been working in the vineyards", "She had travelled in the desert", "She had been in the palace", "She had been in the garden"},
-        0));
+    if (difficulty.equals("Easy")) {
 
-questions.add(new Question(
-        "What does the beloved ask the daughters of Jerusalem to tell her?",
-        new String[]{"Where the king eats", "Where the shepherd feeds his flock", "Where the palace is", "Where the vineyard grows"},
-        1));
+        questions.add(new Question(
+                "What is another name for the book Song of Solomon?",
+                new String[]{
+                        "Song of Songs",
+                        "Book of Love",
+                        "Song of David",
+                        "The Royal Song"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What does the beloved compare her beloved to among the young men?",
-        new String[]{"A cedar tree", "A lion", "An apple tree", "A mighty river"},
-        2));
+        questions.add(new Question(
+                "Who is named as the author of the Song of Solomon?",
+                new String[]{
+                        "David",
+                        "Moses",
+                        "Solomon",
+                        "Samuel"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "Where does the beloved say she sat down?",
-        new String[]{"Under his shadow", "Beside the river", "At the palace gate", "Among the olive trees"},
-        0));
+        questions.add(new Question(
+                "What is said to be better than wine?",
+                new String[]{
+                        "The beloved's love",
+                        "The king's riches",
+                        "The garden's fruit",
+                        "The singer's wisdom"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What did the beloved's beloved bring her?",
-        new String[]{"A crown", "A banner of love", "A golden necklace", "A basket of bread"},
-        1));
+        questions.add(new Question(
+                "How does the beloved describe her appearance?",
+                new String[]{
+                        "White and bright",
+                        "Black but comely",
+                        "Red and golden",
+                        "Purple and white"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What does the beloved compare her beloved's voice to?",
-        new String[]{"Thunder", "Music", "A trumpet", "The sound of rain"},
-        3));
+        questions.add(new Question(
+                "Why does the beloved say she is dark?",
+                new String[]{
+                        "She had travelled in the desert",
+                        "She had been in the palace",
+                        "She had been working in the vineyards",
+                        "She had been in the garden"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What season is described as having arrived?",
-        new String[]{"Winter", "Spring", "Autumn", "Summer"},
-        1));
+        questions.add(new Question(
+                "Where does the beloved say her beloved feeds his flock?",
+                new String[]{
+                        "Among the lilies",
+                        "Near the palace",
+                        "Beside the river",
+                        "Under the fig trees"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What flowers are mentioned as appearing on the earth?",
-        new String[]{"Roses", "Lilies", "Violets", "Daffodils"},
-        1));
+        questions.add(new Question(
+                "What does the beloved compare her beloved to among the young men?",
+                new String[]{
+                        "A lion",
+                        "An apple tree",
+                        "A cedar tree",
+                        "A mighty river"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What small creatures are commanded to be caught because they spoil the vines?",
-        new String[]{"Young lions", "Little foxes", "Wild goats", "Ravens"},
-        1));
+        questions.add(new Question(
+                "Where does the beloved say she sat down?",
+                new String[]{
+                        "At the palace gate",
+                        "Among the olive trees",
+                        "Under his shadow",
+                        "Beside the river"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "Where does the beloved say her beloved is feeding his flock?",
-        new String[]{"Among the lilies", "Beside the mountains", "Near the palace", "Under the fig trees"},
-        0));
+        questions.add(new Question(
+                "What did the beloved's beloved bring her?",
+                new String[]{
+                        "A crown",
+                        "A banner of love",
+                        "A golden necklace",
+                        "A basket of bread"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What does the beloved say about her beloved's appearance?",
-        new String[]{"He is terrible and strong", "He is beautiful and pleasant", "He is old and wise", "He is hidden and silent"},
-        1));
+        questions.add(new Question(
+                "What season is described as having arrived?",
+                new String[]{
+                        "Winter",
+                        "Summer",
+                        "Autumn",
+                        "Spring"
+                },
+                3
+        ));
 
-questions.add(new Question(
-        "What does the beloved compare her eyes to?",
-        new String[]{"Doves", "Stars", "Lamps", "Rivers"},
-        0));
+        questions.add(new Question(
+                "What flowers are mentioned as appearing on the earth?",
+                new String[]{
+                        "Lilies",
+                        "Roses",
+                        "Violets",
+                        "Daffodils"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What does the beloved compare her hair to?",
-        new String[]{"A flock of goats", "A field of wheat", "A river of water", "A crown of gold"},
-        0));
+        questions.add(new Question(
+                "What small creatures are told to be caught because they spoil the vines?",
+                new String[]{
+                        "Young lions",
+                        "Ravens",
+                        "Little foxes",
+                        "Wild goats"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What is said about the beloved's teeth?",
-        new String[]{"They are like pearls", "They are like a flock of sheep", "They are like ivory towers", "They are like stones"},
-        1));
+        questions.add(new Question(
+                "What does the beloved compare her beloved's voice to?",
+                new String[]{
+                        "Thunder",
+                        "The sound of rain",
+                        "A trumpet",
+                        "Music"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What is the beloved's neck compared to?",
-        new String[]{"The tower of David", "A golden chain", "A cedar tree", "A silver mountain"},
-        0));
+        questions.add(new Question(
+                "What does the beloved compare her eyes to?",
+                new String[]{
+                        "Stars",
+                        "Doves",
+                        "Lamps",
+                        "Rivers"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What does the beloved's beloved call her?",
-        new String[]{"His sister and spouse", "His servant", "His queen alone", "His daughter"},
-        0));
+        questions.add(new Question(
+                "What does the beloved compare her hair to?",
+                new String[]{
+                        "A flock of goats",
+                        "A field of wheat",
+                        "A crown of gold",
+                        "A river of water"
+                },
+                0
+        ));
 
-questions.add(new Question(
-        "What does the beloved say her beloved is among the trees of the wood?",
-        new String[]{"Like a cedar", "Like an apple tree", "Like an olive tree", "Like a palm tree"},
-        1));
+        questions.add(new Question(
+                "What are the beloved's teeth compared to?",
+                new String[]{
+                        "Pearls",
+                        "Stones",
+                        "Ivory towers",
+                        "A flock of sheep"
+                },
+                3
+        ));
 
-questions.add(new Question(
-        "What does the beloved say about her heart?",
-        new String[]{"It is filled with fear", "It is wounded by love", "It is filled with riches", "It is hidden from everyone"},
-        1));
+        questions.add(new Question(
+                "What is the beloved's neck compared to?",
+                new String[]{
+                        "A cedar tree",
+                        "The tower of David",
+                        "A silver mountain",
+                        "A golden chain"
+                },
+                1
+        ));
 
-questions.add(new Question(
-        "What does the beloved ask her beloved to do until the day breaks?",
-        new String[]{"Return to the palace", "Come quickly to the mountains", "Sleep in the city", "Gather the harvest"},
-        1));
+        questions.add(new Question(
+                "What does the beloved's beloved call her?",
+                new String[]{
+                        "His servant",
+                        "His daughter",
+                        "His sister and spouse",
+                        "His queen alone"
+                },
+                2
+        ));
 
-questions.add(new Question(
-        "What does Song of Solomon say is as strong as death?",
-        new String[]{"Wisdom", "Love", "Hope", "Friendship"},
-        1));
+        questions.add(new Question(
+                "What does the beloved say her beloved is among the trees of the wood?",
+                new String[]{
+                        "Like an apple tree",
+                        "Like an olive tree",
+                        "Like a palm tree",
+                        "Like a cedar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does the beloved say about her heart?",
+                new String[]{
+                        "It is filled with fear",
+                        "It is wounded by love",
+                        "It is filled with riches",
+                        "It is hidden from everyone"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does the beloved ask her beloved to do until the day breaks?",
+                new String[]{
+                        "Return to the palace",
+                        "Sleep in the city",
+                        "Come quickly to the mountains",
+                        "Gather the harvest"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is compared to a flock of goats in Song of Solomon?",
+                new String[]{
+                        "The beloved's hair",
+                        "The beloved's eyes",
+                        "The beloved's teeth",
+                        "The beloved's hands"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is compared to a flock of sheep that are even shorn?",
+                new String[]{
+                        "Her hair",
+                        "Her teeth",
+                        "Her eyes",
+                        "Her lips"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does the beloved say her beloved is altogether?",
+                new String[]{
+                        "Strong",
+                        "Rich",
+                        "Lovely",
+                        "Wise"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Song of Solomon say is as strong as death?",
+                new String[]{
+                        "Wisdom",
+                        "Love",
+                        "Hope",
+                        "Friendship"
+                },
+                1
+        ));
+
+    }
+                    }       
 return questions;
 }
 }
