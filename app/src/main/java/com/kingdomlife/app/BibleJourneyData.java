@@ -2473,6 +2473,287 @@ questions.add(new Question(
 
     }
             }
+        if (book.equals("Ruth")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who was Ruth's mother-in-law?",
+                new String[]{
+                        "Naomi",
+                        "Hannah",
+                        "Deborah",
+                        "Miriam"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Where did Naomi and her family move from?",
+                new String[]{
+                        "Egypt",
+                        "Moab",
+                        "Bethlehem",
+                        "Jericho"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was Ruth's husband who died?",
+                new String[]{
+                        "Boaz",
+                        "Elimelech",
+                        "Mahlon",
+                        "Obed"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Ruth decide to do when Naomi returned to Bethlehem?",
+                new String[]{
+                        "Return to Moab",
+                        "Go to Egypt",
+                        "Stay in Jerusalem",
+                        "Go with Naomi"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What was Ruth doing when Boaz first noticed her?",
+                new String[]{
+                        "Gathering grain in the field",
+                        "Drawing water",
+                        "Selling bread",
+                        "Caring for sheep"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Whose field did Ruth happen to gather grain in?",
+                new String[]{
+                        "Elimelech's",
+                        "Boaz's",
+                        "Jesse's",
+                        "Saul's"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was Boaz known for among the people of Bethlehem?",
+                new String[]{
+                        "Being a mighty warrior",
+                        "Being a priest",
+                        "Being a wealthy and respected man",
+                        "Being a king"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Boaz tell Ruth to do while gathering grain?",
+                new String[]{
+                        "Stay close to his young women",
+                        "Return to Moab",
+                        "Work in another field",
+                        "Leave before sunset"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Why was Boaz impressed by Ruth?",
+                new String[]{
+                        "She was wealthy",
+                        "She had become a queen",
+                        "She was a skilled warrior",
+                        "She had remained loyal to Naomi"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What did Ruth gather while working in Boaz's field?",
+                new String[]{
+                        "Olives",
+                        "Grapes",
+                        "Grain",
+                        "Figs"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Naomi tell Ruth to do at the threshing floor?",
+                new String[]{
+                        "Ask Boaz to be her redeemer",
+                        "Leave Bethlehem",
+                        "Return to Moab",
+                        "Build an altar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Ruth ask Boaz to spread over her?",
+                new String[]{
+                        "His cloak",
+                        "A blanket",
+                        "His robe",
+                        "A veil"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Boaz promise to do for Ruth?",
+                new String[]{
+                        "Send her back to Moab",
+                        "Buy her a field only",
+                        "Act as her redeemer if the nearer relative would not",
+                        "Make her a servant"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Boaz first have to do before marrying Ruth?",
+                new String[]{
+                        "Become a priest",
+                        "Speak with the nearer relative",
+                        "Move to Moab",
+                        "Ask the king"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Where did Boaz settle the matter with the nearer relative?",
+                new String[]{
+                        "At the city gate",
+                        "At the temple",
+                        "At Naomi's house",
+                        "At the threshing floor"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the nearer relative do when Boaz explained the situation?",
+                new String[]{
+                        "He agreed to marry Ruth",
+                        "He refused to redeem the property",
+                        "He left Bethlehem",
+                        "He became angry with Naomi"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Whom did Boaz marry?",
+                new String[]{
+                        "Naomi",
+                        "Orpah",
+                        "Ruth",
+                        "Deborah"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What son was born to Ruth and Boaz?",
+                new String[]{
+                        "Obed",
+                        "Jesse",
+                        "David",
+                        "Mahlon"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was Obed's son?",
+                new String[]{
+                        "Solomon",
+                        "Jesse",
+                        "David",
+                        "Saul"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who was Jesse's famous son?",
+                new String[]{
+                        "Samuel",
+                        "Jonathan",
+                        "David",
+                        "Solomon"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Ruth was originally from which people?",
+                new String[]{
+                        "Moab",
+                        "Egypt",
+                        "Philistia",
+                        "Edom"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was Naomi's husband's name?",
+                new String[]{
+                        "Boaz",
+                        "Elimelech",
+                        "Obed",
+                        "Jesse"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What was the name of Ruth's sister-in-law who returned to Moab?",
+                new String[]{
+                        "Orpah",
+                        "Hannah",
+                        "Tamar",
+                        "Leah"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What role did Boaz have in relation to Naomi's family?",
+                new String[]{
+                        "He was a priest",
+                        "He was a king",
+                        "He was a near relative and redeemer",
+                        "He was a judge"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Ruth became an ancestor of which famous king of Israel?",
+                new String[]{
+                        "Saul",
+                        "David",
+                        "Solomon",
+                        "Hezekiah"
+                },
+                1
+        ));
+
+    }
+        }
         return questions;
 }
 }
