@@ -246,7 +246,7 @@ questions.add(new Question(
         },
         0
 ));
-                }
+                
 
         if (difficulty.equals("Medium")) {
 
