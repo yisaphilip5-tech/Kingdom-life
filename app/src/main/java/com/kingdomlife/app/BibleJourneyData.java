@@ -1631,6 +1631,285 @@ questions.add(new Question(
         ));
                 }
         }
-        return questions;
+        if (book.equals("Deuteronomy")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "What does the name Deuteronomy commonly mean?",
+                new String[]{
+                        "Second law",
+                        "First journey",
+                        "Book of kings",
+                        "Song of Moses"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who spoke the words recorded in Deuteronomy?",
+                new String[]{
+                        "Joshua",
+                        "Moses",
+                        "Aaron",
+                        "Caleb"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Where were the Israelites when Moses gave the speeches recorded in Deuteronomy?",
+                new String[]{
+                        "On the plains of Moab",
+                        "In Egypt",
+                        "At Mount Sinai",
+                        "In Jerusalem"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Moses remind Israel about God's command to enter Canaan?",
+                new String[]{
+                        "They were forbidden to enter",
+                        "They were commanded to go up and possess the land",
+                        "They were told to return to Egypt",
+                        "They were told to remain at Sinai"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Moses repeatedly tell Israel to remember?",
+                new String[]{
+                        "The greatness of Egypt",
+                        "The LORD their God and His works",
+                        "The kings of Canaan",
+                        "Their former enemies"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What is the first commandment in the Ten Commandments?",
+                new String[]{
+                        "Thou shalt not kill",
+                        "Thou shalt not steal",
+                        "Thou shalt have no other gods before me",
+                        "Remember the sabbath day"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What were the Israelites commanded to teach their children diligently?",
+                new String[]{
+                        "The commandments of God",
+                        "The laws of Egypt",
+                        "The history of Babylon",
+                        "The names of Canaanite kings"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What were the Israelites told to bind God's words upon their hands and between their eyes?",
+                new String[]{
+                        "Their weapons",
+                        "His commandments",
+                        "Their clothing",
+                        "Their money"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What warning did Moses give Israel about serving other gods?",
+                new String[]{
+                        "It would bring them away from the LORD",
+                        "It would make them stronger",
+                        "It would give them more land",
+                        "It would make them priests"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Moses say Israel should do when they entered the promised land?",
+                new String[]{
+                        "Forget God",
+                        "Obey God's commandments",
+                        "Return to Egypt",
+                        "Build Egyptian temples"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Moses tell Israel about the LORD's commandments?",
+                new String[]{
+                        "They were impossible to understand",
+                        "They were to be obeyed",
+                        "They belonged only to Egypt",
+                        "They were temporary stories"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What kind of land did Moses describe the promised land as?",
+                new String[]{
+                        "A land flowing with milk and honey",
+                        "A land without water",
+                        "A land covered by snow",
+                        "A land filled with deserts only"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Moses warn Israel not to forget when they became prosperous?",
+                new String[]{
+                        "The LORD who brought them out of Egypt",
+                        "The king of Egypt",
+                        "The cities of Babylon",
+                        "The Philistine army"
+                },
+                0
+        ));
+                questions.add(new Question(
+                "What did Moses say about the LORD's faithfulness to His covenant?",
+                new String[]{
+                        "He is faithful and keeps His covenant",
+                        "He forgets His covenant",
+                        "He changes His commandments daily",
+                        "He only remembers the wealthy"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Moses tell Israel about the nations they would face in Canaan?",
+                new String[]{
+                        "God would drive them out before Israel",
+                        "Israel had to return to Egypt",
+                        "They would rule Israel",
+                        "They could never be defeated"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Why did Moses say God chose Israel?",
+                new String[]{
+                        "Because they were the largest nation",
+                        "Because of God's love and His promise to their fathers",
+                        "Because they were stronger than Egypt",
+                        "Because they had the largest army"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Moses say man does not live by bread alone?",
+                new String[]{
+                        "But by every word that proceeds from the mouth of the LORD",
+                        "But by riches",
+                        "But by military strength",
+                        "But by wisdom alone"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Moses tell Israel to remember about the wilderness?",
+                new String[]{
+                        "How the LORD their God had led them",
+                        "How Egypt had protected them",
+                        "How they became kings",
+                        "How they built Jerusalem"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Moses say happened to Israel's clothing during the forty years in the wilderness?",
+                new String[]{
+                        "It was replaced every year",
+                        "It did not wear out",
+                        "It was destroyed by rain",
+                        "It was exchanged with Egypt"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Moses tell Israel to fear and serve?",
+                new String[]{
+                        "The kings of Canaan",
+                        "The LORD their God",
+                        "The Egyptian army",
+                        "The priests of Moab"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Moses command Israel to do with the words of God?",
+                new String[]{
+                        "Keep them in their hearts",
+                        "Hide them from their children",
+                        "Give them to Egypt",
+                        "Write them only on weapons"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Moses say about God's commandments and statutes?",
+                new String[]{
+                        "They were to be obeyed carefully",
+                        "They were optional",
+                        "Only priests could obey them",
+                        "They applied only in Egypt"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What mountain did Moses ascend before his death?",
+                new String[]{
+                        "Mount Carmel",
+                        "Mount Nebo",
+                        "Mount Zion",
+                        "Mount Tabor"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "From Mount Nebo, what did Moses see?",
+                new String[]{
+                        "The promised land",
+                        "Egypt",
+                        "Babylon",
+                        "The Red Sea"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who became the leader of Israel after Moses?",
+                new String[]{
+                        "Aaron",
+                        "Caleb",
+                        "Joshua",
+                        "Eleazar"
+                },
+                2
+        ));
     }
+}
+        return questions;
+}
 }
