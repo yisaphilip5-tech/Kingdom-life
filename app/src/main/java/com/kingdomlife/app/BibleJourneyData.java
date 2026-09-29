@@ -18263,6 +18263,566 @@ public class BibleJourneyData {
         ));
     }
             }
+        private static void addBook2JohnQuestions(ArrayList<Question> questions, String difficulty) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote 2 John?",
+                new String[]{
+                        "Peter",
+                        "John",
+                        "Paul",
+                        "James"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "To whom is 2 John addressed?",
+                new String[]{
+                        "The elect lady and her children",
+                        "The church at Rome",
+                        "The kings of Israel",
+                        "The apostles only"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John say he rejoiced to find among her children?",
+                new String[]{
+                        "They were wealthy",
+                        "They were famous",
+                        "They walked in truth",
+                        "They were powerful"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What commandment does John say believers have had from the beginning?",
+                new String[]{
+                        "Love one another",
+                        "Build a temple",
+                        "Become rich",
+                        "Rule nations"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John say is love?",
+                new String[]{
+                        "Walking after his commandments",
+                        "Having earthly riches",
+                        "Becoming famous",
+                        "Avoiding other believers"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who does John warn many deceivers will not confess?",
+                new String[]{
+                        "Moses",
+                        "Jesus Christ coming in the flesh",
+                        "Peter",
+                        "Abraham"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What does John call such a deceiver?",
+                new String[]{
+                        "A false prophet",
+                        "An antichrist",
+                        "A Roman ruler",
+                        "A false priest"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers watch themselves against?",
+                new String[]{
+                        "Losing the things they have worked for",
+                        "Becoming rich",
+                        "Becoming famous",
+                        "Having too many friends"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers receive if they abide in the doctrine of Christ?",
+                new String[]{
+                        "They have both the Father and the Son",
+                        "Earthly riches",
+                        "Political authority",
+                        "A crown immediately"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers do concerning someone who does not bring the doctrine of Christ?",
+                new String[]{
+                        "Welcome him into their house",
+                        "Give him money",
+                        "Do not receive him into their house",
+                        "Make him a leader"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What should believers not say to someone who brings false doctrine?",
+                new String[]{
+                        "Hello",
+                        "God bless you",
+                        "Goodbye",
+                        "Welcome"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Why should believers not welcome a false teacher?",
+                new String[]{
+                        "They would become wealthy",
+                        "They would become partakers of his evil deeds",
+                        "They would lose their homes",
+                        "They would become famous"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did John hope to come and speak about?",
+                new String[]{
+                        "Many earthly things",
+                        "Many spiritual things",
+                        "Many political matters",
+                        "Many business matters"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "How did John want to speak to them?",
+                new String[]{
+                        "Face to face",
+                        "Through a king",
+                        "Through soldiers",
+                        "By sending money"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John say their joy would be?",
+                new String[]{
+                        "Complete",
+                        "Small",
+                        "Temporary",
+                        "Hidden"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who sent greetings to the elect lady's children?",
+                new String[]{
+                        "The children of her elect sister",
+                        "The Roman soldiers",
+                        "The elders of Jerusalem",
+                        "The kings of Israel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What word appears repeatedly in 2 John concerning Christian living?",
+                new String[]{
+                        "Love",
+                        "Gold",
+                        "War",
+                        "Power"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John say he had received from the Father?",
+                new String[]{
+                        "A new commandment",
+                        "A crown",
+                        "A kingdom",
+                        "A sword"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What truth does John say would abide with believers?",
+                new String[]{
+                        "Truth",
+                        "Wealth",
+                        "Political power",
+                        "Earthly fame"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Where does John say truth and love should be found?",
+                new String[]{
+                        "Among God's people",
+                        "Only in kings",
+                        "Only in priests",
+                        "Only in Jerusalem"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John say about those who do not abide in Christ's doctrine?",
+                new String[]{
+                        "They have God",
+                        "They have no God",
+                        "They become apostles",
+                        "They become kings"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who has both the Father and the Son?",
+                new String[]{
+                        "He that abides in the doctrine of Christ",
+                        "Every Roman citizen",
+                        "Every rich person",
+                        "Every ruler"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John say he did not want to use?",
+                new String[]{
+                        "Paper and ink",
+                        "Gold and silver",
+                        "A sword",
+                        "A scroll"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John hope their joy would be?",
+                new String[]{
+                        "Complete",
+                        "Hidden",
+                        "Temporary",
+                        "Small"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What is the main Christian command emphasized in 2 John?",
+                new String[]{
+                        "Love one another",
+                        "Build cities",
+                        "Become wealthy",
+                        "Rule nations"
+                },
+                0
+        ));
+    }
+        }
+        private static void addBook3JohnQuestions(ArrayList<Question> questions, String difficulty) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who wrote 3 John?",
+                new String[]{
+                        "Peter",
+                        "John",
+                        "Paul",
+                        "James"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "To whom is 3 John addressed?",
+                new String[]{
+                        "Gaius",
+                        "Diotrephes",
+                        "Demetrius",
+                        "Timothy"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John say he wishes above all things for Gaius?",
+                new String[]{
+                        "That he may prosper and be in health",
+                        "That he may become king",
+                        "That he may become wealthy",
+                        "That he may become famous"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John rejoice to hear about Gaius?",
+                new String[]{
+                        "He was very rich",
+                        "His children walked in truth",
+                        "He had become a ruler",
+                        "He had built a church"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did Gaius do for the brethren and strangers?",
+                new String[]{
+                        "He showed hospitality",
+                        "He ignored them",
+                        "He sent them away",
+                        "He charged them money"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did the brethren testify about Gaius?",
+                new String[]{
+                        "His wealth",
+                        "His fame",
+                        "His truth",
+                        "His political influence"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who loved to have the preeminence?",
+                new String[]{
+                        "Gaius",
+                        "Demetrius",
+                        "Diotrephes",
+                        "John"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Diotrephes refuse to receive?",
+                new String[]{
+                        "The brethren",
+                        "Money",
+                        "Letters from John",
+                        "Food"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did Diotrephes do to those who wanted to receive the brethren?",
+                new String[]{
+                        "He praised them",
+                        "He cast them out of the church",
+                        "He gave them gifts",
+                        "He made them leaders"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What did John say he would do if he came?",
+                new String[]{
+                        "Remember Diotrephes' deeds",
+                        "Give him money",
+                        "Make him an apostle",
+                        "Ignore him"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers follow?",
+                new String[]{
+                        "That which is good",
+                        "Wealth",
+                        "Political power",
+                        "Fame"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who does John say has not seen God?",
+                new String[]{
+                        "He that does evil",
+                        "He that does good",
+                        "Gaius",
+                        "Demetrius"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who had a good report from everyone?",
+                new String[]{
+                        "Diotrephes",
+                        "Demetrius",
+                        "Pilate",
+                        "Herod"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who also gave a good report of Demetrius?",
+                new String[]{
+                        "The truth itself",
+                        "The Roman governor",
+                        "The soldiers",
+                        "The kings"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who said he had many things to write?",
+                new String[]{
+                        "Gaius",
+                        "Demetrius",
+                        "John",
+                        "Diotrephes"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did John not want to write with?",
+                new String[]{
+                        "Pen and ink",
+                        "Gold and silver",
+                        "A sword",
+                        "A scroll"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "How did John hope to speak with Gaius?",
+                new String[]{
+                        "Face to face",
+                        "Through a messenger only",
+                        "Through a king",
+                        "By letter only"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did John wish Gaius?",
+                new String[]{
+                        "Peace",
+                        "Riches",
+                        "Power",
+                        "Fame"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who sent greetings to Gaius?",
+                new String[]{
+                        "The friends",
+                        "The Roman soldiers",
+                        "The kings",
+                        "The merchants"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What did Gaius show toward strangers?",
+                new String[]{
+                        "Faithfulness",
+                        "Anger",
+                        "Fear",
+                        "Dishonesty"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Why did the brethren go forth?",
+                new String[]{
+                        "For the sake of the Name",
+                        "To become rich",
+                        "To gain political power",
+                        "To conquer cities"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What should believers do for travelling brethren?",
+                new String[]{
+                        "Support them",
+                        "Ignore them",
+                        "Charge them money",
+                        "Send them away"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What kind of example was Gaius?",
+                new String[]{
+                        "An example of faithfulness",
+                        "An example of pride",
+                        "An example of greed",
+                        "An example of rebellion"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What was wrong with Diotrephes?",
+                new String[]{
+                        "He loved to have the preeminence",
+                        "He was too quiet",
+                        "He gave too much",
+                        "He helped too many people"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does John encourage believers to imitate?",
+                new String[]{
+                        "Good",
+                        "Wealth",
+                        "Power",
+                        "Fame"
+                },
+                0
+        ));
+    }
+            }
 
     }
 
