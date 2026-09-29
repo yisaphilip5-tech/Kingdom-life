@@ -16863,6 +16863,286 @@ public class BibleJourneyData {
                     ));
                 }
         }
+        private static void addBookHebrewsQuestions(ArrayList<Question> questions, String difficulty) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+                "Who is the Son of God described in Hebrews?",
+                new String[]{
+                        "Jesus Christ",
+                        "Moses",
+                        "Aaron",
+                        "Joshua"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was faithful as a servant over God's house?",
+                new String[]{
+                        "David",
+                        "Moses",
+                        "Samuel",
+                        "Elijah"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who is faithful over God's house as a Son?",
+                new String[]{
+                        "Aaron",
+                        "Joshua",
+                        "Christ",
+                        "Samuel"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What did the Israelites fail to enter because of unbelief?",
+                new String[]{
+                        "The promised land",
+                        "Egypt",
+                        "Babylon",
+                        "Rome"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Hebrews say is living and powerful?",
+                new String[]{
+                        "The temple",
+                        "The law",
+                        "The word of God",
+                        "The priesthood"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What is Jesus called in Hebrews?",
+                new String[]{
+                        "A Roman governor",
+                        "A great High Priest",
+                        "A temple guard",
+                        "A prophet of Baal"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers approach boldly?",
+                new String[]{
+                        "The throne of grace",
+                        "The Roman court",
+                        "The temple gate",
+                        "The throne of Caesar"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who was the king and priest of Salem?",
+                new String[]{
+                        "Aaron",
+                        "Zadok",
+                        "Melchisedec",
+                        "Eli"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What does Hebrews say faith is?",
+                new String[]{
+                        "The evidence of things hoped for",
+                        "Earthly wisdom",
+                        "A political power",
+                        "A type of sacrifice"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who built an ark by faith?",
+                new String[]{
+                        "Abraham",
+                        "Noah",
+                        "Moses",
+                        "Isaac"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who went out without knowing where he was going?",
+                new String[]{
+                        "Abraham",
+                        "David",
+                        "Joseph",
+                        "Samuel"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who received strength to conceive because she judged God faithful?",
+                new String[]{
+                        "Rachel",
+                        "Hannah",
+                        "Sarah",
+                        "Leah"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "Who offered up Isaac by faith?",
+                new String[]{
+                        "Jacob",
+                        "Abraham",
+                        "Moses",
+                        "Joseph"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who chose to suffer with God's people?",
+                new String[]{
+                        "Aaron",
+                        "Joshua",
+                        "Moses",
+                        "Caleb"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What happened to the walls of Jericho by faith?",
+                new String[]{
+                        "They fell down",
+                        "They became stronger",
+                        "They were rebuilt",
+                        "They caught fire"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Hebrews tell believers to lay aside?",
+                new String[]{
+                        "Their possessions",
+                        "Every weight and sin",
+                        "Their families",
+                        "Their homes"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "Who should believers look unto?",
+                new String[]{
+                        "Jesus",
+                        "Moses",
+                        "David",
+                        "Abraham"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Whom does the Lord chasten?",
+                new String[]{
+                        "Only kings",
+                        "Only priests",
+                        "Those He loves",
+                        "Only sinners"
+                },
+                2
+        ));
+
+        questions.add(new Question(
+                "What should believers follow with all men?",
+                new String[]{
+                        "Riches",
+                        "Peace",
+                        "Power",
+                        "Fame"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers not forget to show to strangers?",
+                new String[]{
+                        "Hospitality",
+                        "Anger",
+                        "Fear",
+                        "Wealth"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Whom does Hebrews tell believers to remember?",
+                new String[]{
+                        "Those in bonds",
+                        "Roman soldiers",
+                        "Kings",
+                        "Merchants"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "What does Hebrews say about marriage?",
+                new String[]{
+                        "It is forbidden",
+                        "It is honourable in all",
+                        "It is only for priests",
+                        "It should be avoided"
+                },
+                1
+        ));
+
+        questions.add(new Question(
+                "What should believers be content with?",
+                new String[]{
+                        "Such things as they have",
+                        "Great riches",
+                        "Political power",
+                        "Military strength"
+                },
+                0
+        ));
+
+        questions.add(new Question(
+                "Who is the same yesterday, today, and forever?",
+                new String[]{
+                        "Moses",
+                        "Abraham",
+                        "David",
+                        "Jesus Christ"
+                },
+                3
+        ));
+
+        questions.add(new Question(
+                "What should believers continually offer to God?",
+                new String[]{
+                        "The sacrifice of praise",
+                        "Gold",
+                        "Animals",
+                        "Political gifts"
+                },
+                0
+        ));
+    }
+        }
 
     }
 
