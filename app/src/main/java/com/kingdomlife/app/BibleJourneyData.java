@@ -1082,6 +1082,276 @@ questions.add(new Question(
 ));
                 
 }
+
+if (book.equals("Leviticus")) {
+
+    if (difficulty.equals("Easy")) {
+
+        questions.add(new Question(
+        "What was the main purpose of the book of Leviticus?",
+        new String[]{
+                "To give laws and instructions for worship and holy living",
+                "To describe the reign of David",
+                "To record the creation of the world",
+                "To tell the story of Israel's kings"
+        },
+        0
+));
+
+questions.add(new Question(
+        "From where did the LORD speak to Moses at the beginning of Leviticus?",
+        new String[]{
+                "Mount Sinai",
+                "The tabernacle of the congregation",
+                "The Jordan River",
+                "Jericho"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What animal could be offered as a burnt offering from the herd?",
+        new String[]{
+                "A bullock",
+                "A camel",
+                "A donkey",
+                "A horse"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What type of offering included fine flour and oil?",
+        new String[]{
+                "Peace offering",
+                "Sin offering",
+                "Meat offering",
+                "Trespass offering"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What ingredient were the Israelites specifically forbidden to leave out of the meat offering?",
+        new String[]{
+                "Oil",
+                "Salt",
+                "Flour",
+                "Honey"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What were the Israelites forbidden to add to their meat offering?",
+        new String[]{
+                "Oil",
+                "Salt",
+                "Frankincense",
+                "Leaven"
+        },
+        3
+));
+
+questions.add(new Question(
+        "Which offering was associated with fellowship and thanksgiving?",
+        new String[]{
+                "Peace offering",
+                "Sin offering",
+                "Burnt offering",
+                "Trespass offering"
+        },
+        0
+));
+
+questions.add(new Question(
+        "Who was appointed as Israel's first high priest?",
+        new String[]{
+                "Moses",
+                "Joshua",
+                "Aaron",
+                "Eleazar"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What did Moses place on Aaron and his sons during their consecration?",
+        new String[]{
+                "The priestly garments",
+                "A crown of gold",
+                "A sword",
+                "A royal robe"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What happened when Aaron offered the first sacrifices at the tabernacle?",
+        new String[]{
+                "The Israelites left the camp",
+                "Fire came out from before the LORD and consumed the offering",
+                "Moses became high priest",
+                "The tabernacle was moved"
+        },
+        1
+));
+
+questions.add(new Question(
+        "Which two sons of Aaron offered strange fire before the LORD?",
+        new String[]{
+                "Eleazar and Ithamar",
+                "Nadab and Abihu",
+                "Korah and Dathan",
+                "Joshua and Caleb"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What happened to Nadab and Abihu after they offered strange fire?",
+        new String[]{
+                "They became high priests",
+                "They were sent to Egypt",
+                "Fire from the LORD consumed them",
+                "They became judges"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What were the priests told not to drink before entering the tabernacle?",
+        new String[]{
+                "Wine or strong drink",
+                "Water",
+                "Milk",
+                "Grape juice"
+        },
+        0
+));
+
+questions.add(new Question(
+        "Which animal was considered clean and could be eaten according to Leviticus 11?",
+        new String[]{
+                "Pig",
+                "Camel",
+                "Cattle",
+                "Hare"
+        },
+        2
+));
+
+questions.add(new Question(
+        "Why was the pig considered unclean?",
+        new String[]{
+                "It had no horns",
+                "It divided the hoof but did not chew the cud",
+                "It lived near water",
+                "It was too large"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What was the purpose of the Day of Atonement?",
+        new String[]{
+                "To celebrate Israel's victory over Egypt",
+                "To appoint a new king",
+                "To make atonement for the sins of the people",
+                "To begin the harvest"
+        },
+        2
+));
+
+questions.add(new Question(
+        "Who was allowed to enter the Most Holy Place on the Day of Atonement?",
+        new String[]{
+                "The high priest",
+                "Every Israelite",
+                "Joshua",
+                "The elders"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What animal was sent into the wilderness as part of the Day of Atonement ceremony?",
+        new String[]{
+                "A bullock",
+                "A goat",
+                "A ram",
+                "A lamb"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What command did God give Israel concerning the shedding of blood?",
+        new String[]{
+                "They were to drink blood during sacrifices",
+                "They were forbidden to eat blood",
+                "Only priests could eat blood",
+                "Blood could be eaten during festivals"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What important command appears in Leviticus 19 concerning other people?",
+        new String[]{
+                "Love thy neighbour as thyself",
+                "Build a palace",
+                "Choose a king",
+                "Return to Egypt"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did God command Israel to do with the Sabbath?",
+        new String[]{
+                "Ignore it during harvest",
+                "Keep it holy",
+                "Celebrate it only once a year",
+                "Use it for military training"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What did God command Israel to do with the corners of their fields during harvest?",
+        new String[]{
+                "Harvest every part",
+                "Burn the corners",
+                "Leave them for the poor and the stranger",
+                "Give them to Egypt"
+        },
+        2
+));
+
+questions.add(new Question(
+        "What happened to Hebrew servants during the Year of Jubilee?",
+        new String[]{
+                "They were released according to God's law",
+                "They became priests",
+                "They were sent to Egypt",
+                "They had to serve another fifty years"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What did God promise Israel if they obeyed His statutes and commandments?",
+        new String[]{
+                "They would receive blessing, including rain and fruitful harvests",
+                "They would never have to work again",
+                "They would become rulers of Egypt",
+                "They would never face any enemies"
+        },
+        0
+));
+}
+
         return questions;
     }
 }
