@@ -5016,6 +5016,283 @@ public class BibleJourneyData {
             1
     ));
         }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+            "What did Ehud use to assassinate Eglon?",
+            new String[]{
+                    "A spear",
+                    "A double-edged dagger",
+                    "A bow",
+                    "A sword taken from a Philistine"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Why was Ehud able to approach Eglon privately?",
+            new String[]{
+                    "He claimed to have a secret message",
+                    "He was a priest",
+                    "He was disguised as a soldier",
+                    "He was carrying tribute from Israel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Shamgar use to strike the Philistines?",
+            new String[]{
+                    "A sling",
+                    "A bronze sword",
+                    "An ox goad",
+                    "A spear"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who was the prophetess and judge who summoned Barak?",
+            new String[]{
+                    "Deborah",
+                    "Jael",
+                    "Miriam",
+                    "Hannah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What river was associated with Sisera's battle against Israel?",
+            new String[]{
+                    "Jordan",
+                    "Kishon",
+                    "Jabbok",
+                    "Arnon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who killed Sisera?",
+            new String[]{
+                    "Deborah",
+                    "Barak",
+                    "Jael",
+                    "Gideon"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Gideon first place on the threshing floor as a sign?",
+            new String[]{
+                    "A fleece",
+                    "A staff",
+                    "A branch",
+                    "A stone"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to the fleece during Gideon's second test?",
+            new String[]{
+                    "It became dry while the ground was wet",
+                    "Both fleece and ground were dry",
+                    "The fleece disappeared",
+                    "The fleece and ground were both wet"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why was Gideon's army reduced before fighting Midian?",
+            new String[]{
+                    "They lacked weapons",
+                    "God did not want Israel to boast that its own strength saved it",
+                    "The soldiers became sick",
+                    "The Midianites offered peace"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How did Gideon identify the men who were sent home for drinking water?",
+            new String[]{
+                    "By their weapons",
+                    "By their tribes",
+                    "By how they drank from the river",
+                    "By their age"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Gideon give the three hundred men?",
+            new String[]{
+                    "Trumpets, empty pitchers, and torches",
+                    "Swords and shields",
+                    "Bows and arrows",
+                    "Spears and banners"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Abimelech's men use to attack the tower at Thebez?",
+            new String[]{
+                    "A battering ram",
+                    "Fire",
+                    "A trumpet",
+                    "An axe"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How did Abimelech die?",
+            new String[]{
+                    "A soldier stabbed him",
+                    "He fell from a wall",
+                    "A woman dropped a millstone on his head",
+                    "He drowned"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Which judge made a vow concerning whatever came out of his house?",
+            new String[]{
+                    "Jephthah",
+                    "Samson",
+                    "Tola",
+                    "Jair"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the Ephraimites use to identify the men of Gilead?",
+            new String[]{
+                    "Their clothing",
+                    "Their pronunciation of 'Shibboleth'",
+                    "Their tribal markings",
+                    "Their weapons"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was Samson's first recorded act of killing Philistines?",
+            new String[]{
+                    "He killed a thousand with a jawbone",
+                    "He burned their fields",
+                    "He struck down thirty men at Ashkelon",
+                    "He destroyed the temple"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Samson find inside the carcass of the lion?",
+            new String[]{
+                    "Honey",
+                    "Gold",
+                    "Grapes",
+                    "A scroll"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Samson use to burn the Philistines' crops?",
+            new String[]{
+                    "Torches carried by foxes",
+                    "Fire from the altar",
+                    "Burning arrows",
+                    "A burning city"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Samson's three thousand men of Judah do when they captured him?",
+            new String[]{
+                    "They killed him",
+                    "They bound him and handed him to the Philistines",
+                    "They crowned him",
+                    "They hid him"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened when Samson drank water after killing the Philistines at Lehi?",
+            new String[]{
+                    "A spring came from the ground",
+                    "He returned to Zorah",
+                    "The Philistines surrendered",
+                    "He found a well"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was unusual about Samson's hair?",
+            new String[]{
+                    "It was never to be cut because of his Nazirite calling",
+                    "It was dyed red",
+                    "It was covered by a crown",
+                    "It was shaved every year"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Samson's final prayer ask God to do?",
+            new String[]{
+                    "Give him another army",
+                    "Restore his strength so he could avenge himself on the Philistines",
+                    "Forgive the Philistines",
+                    "Return him to Israel's leadership"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the Levite's concubine in the account of Gibeah?",
+            new String[]{
+                    "She became queen",
+                    "She fled to Bethlehem",
+                    "She died after the abuse",
+                    "She became a judge"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the Israelites do after the battle against Benjamin?",
+            new String[]{
+                    "They sought a way to preserve the tribe of Benjamin",
+                    "They expelled every Benjamite",
+                    "They made Benjamin king",
+                    "They abandoned the land"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What repeated problem summarizes the period of the Judges?",
+            new String[]{
+                    "Israel had no king and everyone did what was right in his own eyes",
+                    "Israel had too many kings",
+                    "The Philistines ruled every tribe",
+                    "The priests refused to serve"
+            },
+            0
+    ));
+            }
         }
 
         private static void addBookRuthQuestions(ArrayList<Question> questions, String difficulty) {
@@ -5573,6 +5850,283 @@ public class BibleJourneyData {
                     "Elimelech"
             },
             0
+    ));
+            }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+            "From what region did Naomi and her family originally come?",
+            new String[]{
+                    "Judah",
+                    "Moab",
+                    "Edom",
+                    "Benjamin"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was the name of Ruth's husband who died?",
+            new String[]{
+                    "Mahlon",
+                    "Boaz",
+                    "Chilion",
+                    "Elimelech"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Which daughter-in-law returned to Moab?",
+            new String[]{
+                    "Ruth",
+                    "Orpah",
+                    "Naomi",
+                    "Tamar"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Ruth ask Naomi to allow her to do?",
+            new String[]{
+                    "Return to Moab",
+                    "Go back to Egypt",
+                    "Go with Naomi and remain with her people",
+                    "Become a priest"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "In whose field did Ruth happen to glean?",
+            new String[]{
+                    "Boaz",
+                    "Elimelech",
+                    "Jesse",
+                    "Obed"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What relationship did Boaz have to Elimelech?",
+            new String[]{
+                    "He was his son",
+                    "He was a close relative",
+                    "He was his servant",
+                    "He was his brother-in-law"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Boaz instruct his workers to do for Ruth?",
+            new String[]{
+                    "Send her away",
+                    "Give her the entire harvest",
+                    "Allow her to glean and deliberately leave extra grain",
+                    "Make her work in the house"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Ruth bring home to Naomi after gleaning?",
+            new String[]{
+                    "Grain",
+                    "Wine",
+                    "Oil",
+                    "Sheep"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Where did Naomi tell Ruth to go at night?",
+            new String[]{
+                    "To the city gate",
+                    "To Boaz's threshing floor",
+                    "To Bethlehem's synagogue",
+                    "To Jesse's house"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Ruth ask Boaz to spread over her?",
+            new String[]{
+                    "His garment",
+                    "A veil",
+                    "A blanket",
+                    "His cloak"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "Why could Boaz not immediately redeem Ruth?",
+            new String[]{
+                    "He was too poor",
+                    "A closer relative had the first right to redeem",
+                    "Naomi refused",
+                    "Ruth was a Moabite"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did Boaz meet the nearer redeemer?",
+            new String[]{
+                    "At the city gate",
+                    "At the threshing floor",
+                    "At Naomi's house",
+                    "At the temple"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the nearer redeemer initially agree to do?",
+            new String[]{
+                    "Redeem the land",
+                    "Marry Ruth",
+                    "Move to Moab",
+                    "Give Boaz his inheritance"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why did the nearer redeemer decline to take Ruth?",
+            new String[]{
+                    "He feared impairing his own inheritance",
+                    "He disliked Boaz",
+                    "He was already a priest",
+                    "He planned to leave Bethlehem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What ancient custom confirmed the transaction between Boaz and the nearer redeemer?",
+            new String[]{
+                    "Breaking bread",
+                    "Removing a sandal",
+                    "Washing hands",
+                    "Offering a lamb"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was born to Ruth and Boaz?",
+            new String[]{
+                    "Jesse",
+                    "David",
+                    "Obed",
+                    "Mahlon"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who was Obed's son?",
+            new String[]{
+                    "Jesse",
+                    "David",
+                    "Boaz",
+                    "Elimelech"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was David's father according to Ruth's genealogy?",
+            new String[]{
+                    "Boaz",
+                    "Obed",
+                    "Jesse",
+                    "Elimelech"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the women say Ruth was better to Naomi than?",
+            new String[]{
+                    "Seven sons",
+                    "Ten daughters",
+                    "Three husbands",
+                    "Many servants"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Naomi originally say should be her name?",
+            new String[]{
+                    "Mara",
+                    "Ruth",
+                    "Orpah",
+                    "Hannah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why did Naomi say she wanted to be called Mara?",
+            new String[]{
+                    "She had become wealthy",
+                    "The Almighty had dealt bitterly with her",
+                    "She wanted to leave Bethlehem",
+                    "She had changed families"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "During what harvest did Ruth begin gleaning?",
+            new String[]{
+                    "Wheat harvest",
+                    "Olive harvest",
+                    "Barley harvest",
+                    "Grape harvest"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Boaz tell Ruth not to do while gleaning?",
+            new String[]{
+                    "Drink water",
+                    "Go to another field to glean",
+                    "Speak to Naomi",
+                    "Carry grain home"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Boaz commend Ruth for leaving behind?",
+            new String[]{
+                    "Her homeland and parents",
+                    "Her wealth",
+                    "Her occupation",
+                    "Her family name"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Boaz become to Ruth after the redemption was completed?",
+            new String[]{
+                    "Her priest",
+                    "Her redeemer and husband",
+                    "Her brother",
+                    "Her servant"
+            },
+            1
     ));
             }
         }
@@ -6168,6 +6722,283 @@ public class BibleJourneyData {
                     "A written message"
             },
             1
+    ));
+            }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+            "What did Hannah promise to do if God gave her a son?",
+            new String[]{
+                    "Make him king",
+                    "Give him to the Lord all the days of his life",
+                    "Send him to Egypt",
+                    "Make him a soldier"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was unusual about Hannah's prayer that Eli misunderstood?",
+            new String[]{
+                    "She prayed silently with her lips moving",
+                    "She shouted at the altar",
+                    "She prayed in a foreign language",
+                    "She refused to speak"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Samuel hear at night before he understood it was the Lord?",
+            new String[]{
+                    "A trumpet",
+                    "A voice calling his name",
+                    "Thunder",
+                    "Eli's voice"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What judgment was announced against Eli's house?",
+            new String[]{
+                    "His house would become king",
+                    "His house would be cut off from the priesthood's strength",
+                    "His family would inherit Canaan",
+                    "His sons would become prophets"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to Hophni and Phinehas in battle?",
+            new String[]{
+                    "They escaped",
+                    "They became prisoners",
+                    "They were killed",
+                    "They became kings"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to the ark after the Philistines captured it?",
+            new String[]{
+                    "It was placed beside Dagon",
+                    "It was destroyed",
+                    "It was taken to Egypt",
+                    "It was hidden in Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to the statue of Dagon before the ark?",
+            new String[]{
+                    "It became covered with gold",
+                    "It fell before the ark",
+                    "It was moved to Jerusalem",
+                    "It was worshipped by Israel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the Philistines after the ark remained among them?",
+            new String[]{
+                    "They experienced plagues",
+                    "They conquered Israel",
+                    "They became Israelites",
+                    "They received manna"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the Philistines place in the guilt offering with the returned ark?",
+            new String[]{
+                    "Golden tumors and golden mice",
+                    "Silver swords",
+                    "Golden crowns",
+                    "Bronze shields"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to the men of Beth-shemesh who looked into the ark?",
+            new String[]{
+                    "They were rewarded",
+                    "They were struck down",
+                    "They became priests",
+                    "They moved to Shiloh"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Samuel use as a memorial after the Lord helped Israel against the Philistines?",
+            new String[]{
+                    "An altar",
+                    "A stone called Ebenezer",
+                    "A golden lamp",
+                    "A bronze serpent"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Why did Israel ask Samuel for a king?",
+            new String[]{
+                    "They wanted to be like the surrounding nations",
+                    "Samuel commanded them",
+                    "They wanted to replace the priests",
+                    "The Philistines had already surrendered"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was Saul doing when Samuel first encountered him privately?",
+            new String[]{
+                    "Looking for his father's lost donkeys",
+                    "Fighting the Philistines",
+                    "Preparing a sacrifice",
+                    "Traveling to Bethlehem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What sign did Samuel give Saul involving the Spirit of God?",
+            new String[]{
+                    "Saul would prophesy with the prophets",
+                    "Saul would become invisible",
+                    "Saul would receive the ark",
+                    "Saul would split the Jordan"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What caused Samuel to reject Saul's excuse after the Amalekite victory?",
+            new String[]{
+                    "Saul had saved what God commanded to destroy",
+                    "Saul had lost the ark",
+                    "Saul had fled the battle",
+                    "Saul had refused to fight"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Samuel say was better than sacrifice?",
+            new String[]{
+                    "Fasting",
+                    "Obedience",
+                    "Military strength",
+                    "Wealth"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Samuel secretly take to anoint David?",
+            new String[]{
+                    "A horn of oil",
+                    "A crown",
+                    "A golden cup",
+                    "A priestly robe"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Saul after David was anointed?",
+            new String[]{
+                    "The Spirit of the Lord came upon David",
+                    "Saul immediately resigned",
+                    "Saul became a priest",
+                    "Saul left Israel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did David use to defeat Goliath?",
+            new String[]{
+                    "A sword",
+                    "A sling and a stone",
+                    "A spear",
+                    "A bow"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did David do with Goliath's sword after killing him?",
+            new String[]{
+                    "He gave it to Saul",
+                    "He kept it for himself",
+                    "He used it to cut off Goliath's head",
+                    "He buried it"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jonathan give David as a sign of their covenant?",
+            new String[]{
+                    "His robe, armor, sword, bow, and belt",
+                    "His crown only",
+                    "His sandals only",
+                    "His priestly garments"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why did Saul become jealous of David?",
+            new String[]{
+                    "David refused to serve him",
+                    "Women praised David's victories",
+                    "David stole his throne",
+                    "David left Israel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How did David escape Saul when Saul attempted to kill him in his house?",
+            new String[]{
+                    "Michal helped him escape through a window",
+                    "Jonathan fought Saul",
+                    "David defeated Saul",
+                    "Samuel hid him in the tabernacle"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did David cut from Saul's robe in the wilderness?",
+            new String[]{
+                    "The sleeve",
+                    "The hem",
+                    "The belt",
+                    "The crown"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did David refuse to do to Saul in the cave?",
+            new String[]{
+                    "Kill the Lord's anointed",
+                    "Speak to him",
+                    "Return his weapons",
+                    "Leave the wilderness"
+            },
+            0
     ));
             }
         }
