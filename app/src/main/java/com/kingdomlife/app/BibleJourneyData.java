@@ -9293,6 +9293,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What happened to Queen Vashti after she refused the king's command?",
+            new String[]{
+                    "She was removed from her royal position",
+                    "She was sent to Jerusalem",
+                    "She became a servant",
+                    "She was made governor"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the king's advisers recommend after Vashti was removed?",
+            new String[]{
+                    "Choose a new army commander",
+                    "Search for young women to become queen",
+                    "Close the royal palace",
+                    "Call the Jewish leaders"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What relationship did Mordecai have with Esther?",
+            new String[]{
+                    "He was her brother",
+                    "He was her uncle",
+                    "He had raised her as his daughter",
+                    "He was her husband"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Why did Esther initially keep her Jewish identity secret?",
+            new String[]{
+                    "Mordecai had instructed her not to reveal it",
+                    "The king forbade her to speak",
+                    "She had forgotten her heritage",
+                    "Haman ordered her to hide it"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Mordecai discover while sitting at the king's gate?",
+            new String[]{
+                    "A plan to attack Persia",
+                    "A plot to assassinate the king",
+                    "A plan to remove Esther",
+                    "A secret alliance with Haman"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who were the two officials involved in the plot against the king?",
+            new String[]{
+                    "Haman and Memucan",
+                    "Bigthan and Teresh",
+                    "Mordecai and Haman",
+                    "Zeresh and Harbona"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the two officials after their plot was discovered?",
+            new String[]{
+                    "They were promoted",
+                    "They were sent away",
+                    "They were executed",
+                    "They became servants"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Why did Haman become angry with Mordecai?",
+            new String[]{
+                    "Mordecai refused to bow to him",
+                    "Mordecai took his property",
+                    "Mordecai accused him before the king",
+                    "Mordecai refused to join the army"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Haman cast to determine when his plan against the Jews should occur?",
+            new String[]{
+                    "A stone",
+                    "Pur",
+                    "A golden coin",
+                    "A scroll"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Haman offer the king in exchange for permission to destroy the Jews?",
+            new String[]{
+                    "His royal position",
+                    "A large amount of silver",
+                    "The city of Jerusalem",
+                    "His army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Mordecai do when he heard about the decree against the Jews?",
+            new String[]{
+                    "He left Persia",
+                    "He celebrated",
+                    "He tore his clothes and mourned",
+                    "He went to the king"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Esther ask the Jews in Susa to do for her before she approached the king?",
+            new String[]{
+                    "Fast for her",
+                    "Build an altar",
+                    "Gather an army",
+                    "Send gifts to Haman"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What danger did Esther face by approaching the king without being summoned?",
+            new String[]{
+                    "She could lose her position",
+                    "She could be put to death",
+                    "She would be sent to Babylon",
+                    "She would lose her wealth"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the king extend toward Esther when she appeared before him?",
+            new String[]{
+                    "A sword",
+                    "A scroll",
+                    "The golden scepter",
+                    "A royal crown"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Esther invite the king and Haman to attend?",
+            new String[]{
+                    "A banquet",
+                    "A military meeting",
+                    "A temple service",
+                    "A royal wedding"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Haman tell his family about his wealth and position?",
+            new String[]{
+                    "He wanted to leave Persia",
+                    "He boasted about his success and his access to the king",
+                    "He planned to become a priest",
+                    "He wanted to rebuild Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Haman build for Mordecai?",
+            new String[]{
+                    "A palace",
+                    "A city wall",
+                    "A gallows",
+                    "A prison"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the king discover when he had the royal records read?",
+            new String[]{
+                    "Mordecai had never been rewarded for exposing the assassination plot",
+                    "Haman had stolen royal money",
+                    "Esther had hidden her identity",
+                    "The Jews had rebelled"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was forced to honor Mordecai publicly?",
+            new String[]{
+                    "The king",
+                    "Haman",
+                    "Memucan",
+                    "Bigthan"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "At Esther's second banquet, what did she reveal about herself?",
+            new String[]{
+                    "She was a Persian princess",
+                    "She was Mordecai's sister",
+                    "She was Jewish and her people were threatened",
+                    "She was related to Haman"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How did Haman react when Esther revealed his plan?",
+            new String[]{
+                    "He pleaded with Esther for his life",
+                    "He attacked Mordecai",
+                    "He left the palace immediately",
+                    "He confessed before the entire city"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Haman after the king learned of his plot?",
+            new String[]{
+                    "He was sent into exile",
+                    "He was hanged on the gallows prepared for Mordecai",
+                    "He was imprisoned in Babylon",
+                    "He was removed from the palace"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the king give Esther after Haman's downfall?",
+            new String[]{
+                    "Haman's house",
+                    "The city of Susa",
+                    "The army of Persia",
+                    "The temple treasury"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What position did Mordecai receive after Haman was removed?",
+            new String[]{
+                    "High priest",
+                    "Governor of Jerusalem",
+                    "A high position under the king",
+                    "Commander of the Jewish army"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the Jews do after their enemies were defeated?",
+            new String[]{
+                    "They returned to Jerusalem",
+                    "They celebrated and established Purim",
+                    "They stopped observing the Law",
+                    "They left Persia"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookJobQuestions(ArrayList<Question> questions, String difficulty) {
@@ -9575,6 +9852,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did Job do regularly for his children before his trials?",
+            new String[]{
+                    "He offered burnt offerings for them",
+                    "He taught them military skills",
+                    "He sent them to Jerusalem",
+                    "He gave them royal positions"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Job say after losing his possessions and children?",
+            new String[]{
+                    "God has abandoned me",
+                    "The LORD gave, and the LORD has taken away",
+                    "I will leave the land",
+                    "My friends will restore everything"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Job's wife tell him to do?",
+            new String[]{
+                    "Return to his children",
+                    "Leave the city",
+                    "Curse God and die",
+                    "Ask the king for help"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How did Job respond to his wife's words?",
+            new String[]{
+                    "He rebuked her and continued to trust God",
+                    "He agreed with her",
+                    "He left his home",
+                    "He called his friends"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Job's three friends initially do when they saw him?",
+            new String[]{
+                    "They immediately gave him advice",
+                    "They sat with him in silence",
+                    "They returned home",
+                    "They brought him food"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Why did Job's friends sit in silence with him?",
+            new String[]{
+                    "They were waiting for the king",
+                    "They were afraid to speak",
+                    "They saw that his suffering was very great",
+                    "They had nothing to say about God"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Which friend spoke first after Job began expressing his grief?",
+            new String[]{
+                    "Eliphaz",
+                    "Bildad",
+                    "Zophar",
+                    "Elihu"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was one major argument made by Job's friends?",
+            new String[]{
+                    "Job should become king",
+                    "Suffering must be connected with wrongdoing",
+                    "God does not care about people",
+                    "Job should leave his family"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Job maintain throughout his arguments with his friends?",
+            new String[]{
+                    "That he had never suffered",
+                    "That his wealth would return immediately",
+                    "That he had not committed the kind of wickedness they accused him of",
+                    "That God was powerless"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Job desire concerning his words and his defense?",
+            new String[]{
+                    "That they would be written down",
+                    "That his friends would forget them",
+                    "That the king would hear them",
+                    "That they would be hidden"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Job say he knew concerning his Redeemer?",
+            new String[]{
+                    "That his Redeemer lived",
+                    "That his Redeemer was a king",
+                    "That his Redeemer lived in Jerusalem",
+                    "That his Redeemer was one of his friends"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Which friend argued that the wicked eventually face judgment?",
+            new String[]{
+                    "Eliphaz",
+                    "Bildad",
+                    "Zophar",
+                    "Elihu"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Job say about God's wisdom compared with human wisdom?",
+            new String[]{
+                    "Human wisdom is always greater",
+                    "God's wisdom is beyond human understanding",
+                    "They are exactly the same",
+                    "Wisdom does not matter"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Job say about the value of wisdom?",
+            new String[]{
+                    "It can be bought with gold",
+                    "It is found only among kings",
+                    "True wisdom comes from fearing the Lord",
+                    "It is gained through wealth"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Elihu believe was wrong with Job's speeches?",
+            new String[]{
+                    "Job was defending himself too strongly",
+                    "Job was refusing to speak",
+                    "Job wanted to become king",
+                    "Job had left his family"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened when God finally answered Job?",
+            new String[]{
+                    "God appeared as a human king",
+                    "God answered Job out of the whirlwind",
+                    "God sent Moses to speak",
+                    "God spoke through Eliphaz"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What kind of questions did God ask Job?",
+            new String[]{
+                    "Questions about Persian history",
+                    "Questions about his wealth",
+                    "Questions about creation and God's wisdom",
+                    "Questions about his children"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Which creature is described in God's speeches as a powerful animal that Job cannot control?",
+            new String[]{
+                    "Leviathan",
+                    "Dove",
+                    "Locust",
+                    "Eagle"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Job acknowledge after God spoke to him?",
+            new String[]{
+                    "That he had become wealthy",
+                    "That he had spoken about things he did not fully understand",
+                    "That his friends were always right",
+                    "That suffering had no purpose"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Job say about God after seeing Him more clearly?",
+            new String[]{
+                    "He had only heard about God before",
+                    "He wanted to leave God",
+                    "He had now seen and understood God in a deeper way",
+                    "He no longer needed faith"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did God say about Job's three friends?",
+            new String[]{
+                    "They had not spoken rightly about Him",
+                    "They were greater than Job",
+                    "They should become priests",
+                    "They had never spoken to Job"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Job pray for after God corrected his friends?",
+            new String[]{
+                    "His enemies",
+                    "His friends",
+                    "The king",
+                    "The people of Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened after Job prayed for his friends?",
+            new String[]{
+                    "His suffering became worse",
+                    "He left his home",
+                    "The LORD restored Job's fortunes",
+                    "His friends became wealthy instead"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How did Job's final condition compare with his former condition?",
+            new String[]{
+                    "He received greater blessings than before",
+                    "He remained exactly the same",
+                    "He lost everything permanently",
+                    "He became a king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Job's story especially explore?",
+            new String[]{
+                    "How to become wealthy",
+                    "Faith and righteousness during suffering",
+                    "How to become a military leader",
+                    "How to build a kingdom"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookPsalmsQuestions(ArrayList<Question> questions, String difficulty) {
