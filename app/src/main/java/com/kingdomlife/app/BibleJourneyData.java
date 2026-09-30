@@ -18297,6 +18297,283 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "Which kings of Judah are named at the beginning of Micah?",
+            new String[]{
+                    "Uzziah, Jotham, and Ahaz",
+                    "Jotham, Ahaz, and Hezekiah",
+                    "Hezekiah, Manasseh, and Josiah",
+                    "Josiah, Jehoiakim, and Zedekiah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What city was Micah from?",
+            new String[]{
+                    "Moresheth",
+                    "Bethlehem",
+                    "Jericho",
+                    "Tekoa"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Micah say will happen to Samaria?",
+            new String[]{
+                    "It will become a great kingdom",
+                    "It will be built higher",
+                    "It will become a heap of ruins",
+                    "It will become the new temple"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Micah say will happen to Jerusalem because of the leaders?",
+            new String[]{
+                    "It will become a forest",
+                    "It will become a fortified city",
+                    "It will be moved to Samaria",
+                    "It will become richer"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What were the rulers of Israel accused of doing to God's people?",
+            new String[]{
+                    "Protecting them",
+                    "Hating good and loving evil",
+                    "Teaching them the Law",
+                    "Giving them land"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the rulers of Israel do to the poor according to Micah?",
+            new String[]{
+                    "They gave them food",
+                    "They appointed them judges",
+                    "They stripped them of what they had",
+                    "They sent them to Egypt"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the prophets do when they were given food?",
+            new String[]{
+                    "They proclaimed peace",
+                    "They refused to speak",
+                    "They fled the city",
+                    "They went to Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Micah say the LORD required of a person?",
+            new String[]{
+                    "Build a palace",
+                    "Do justly, love mercy, and walk humbly with God",
+                    "Offer thousands of animals",
+                    "Become a priest"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Micah say would happen to Zion because of Jerusalem's corruption?",
+            new String[]{
+                    "It would become a plowed field",
+                    "It would become a garden",
+                    "It would become a royal palace",
+                    "It would become a fortress"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "From which town does Micah say a ruler would come?",
+            new String[]{
+                    "Nazareth",
+                    "Hebron",
+                    "Bethlehem Ephratah",
+                    "Jericho"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How is the ruler from Bethlehem described?",
+            new String[]{
+                    "His origins are from ancient days",
+                    "He will be the son of David",
+                    "He will come from Egypt",
+                    "He will rule only for one year"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What would the remnant of Jacob be among many peoples?",
+            new String[]{
+                    "Like a hidden army",
+                    "Like dew from the LORD",
+                    "Like a great wall",
+                    "Like the sands of Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Micah say the remnant of Jacob would be among the nations?",
+            new String[]{
+                    "Like a lion among beasts",
+                    "Like a dove among birds",
+                    "Like a shepherd among kings",
+                    "Like a river among mountains"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the LORD promise to remove from His people?",
+            new String[]{
+                    "Their harvest",
+                    "Their horses and chariots",
+                    "Their vineyards",
+                    "Their priests"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What kind of objects does the LORD say He will destroy among His people?",
+            new String[]{
+                    "Idols and images",
+                    "Books and scrolls",
+                    "Houses and wells",
+                    "Fields and vineyards"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Micah say will happen to nations that do not obey the LORD?",
+            new String[]{
+                    "They will become priests",
+                    "They will be gathered for judgment",
+                    "They will rule Jerusalem",
+                    "They will receive more land"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Micah compare the LORD's coming judgment to?",
+            new String[]{
+                    "A feast",
+                    "A courtroom",
+                    "A harvest celebration",
+                    "A gathering at the mountain"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "What did the LORD bring Israel out of Egypt to do?",
+            new String[]{
+                    "Give them priests",
+                    "Redeem them from slavery",
+                    "Make them wealthy",
+                    "Make them rulers of Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which three people does Micah mention when recalling Israel's history?",
+            new String[]{
+                    "Moses, Aaron, and Miriam",
+                    "Joshua, Caleb, and Samuel",
+                    "David, Solomon, and Nathan",
+                    "Abraham, Isaac, and Jacob"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Micah ask Israel to remember concerning Balak?",
+            new String[]{
+                    "How he defeated Israel",
+                    "What Balaam answered him",
+                    "How he built Jericho",
+                    "How he became king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Micah say God has shown people is good?",
+            new String[]{
+                    "To become wealthy",
+                    "To build large sacrifices",
+                    "To do justly, love mercy, and walk humbly",
+                    "To conquer surrounding nations"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Micah say about God's willingness to pardon?",
+            new String[]{
+                    "He delights in mercy",
+                    "He refuses to forgive",
+                    "He only forgives kings",
+                    "He forgets His covenant"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Micah say God will cast into the depths of the sea?",
+            new String[]{
+                    "The sins of His people",
+                    "The armies of Assyria",
+                    "The idols of Babylon",
+                    "The treasures of Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Micah say God will perform for Jacob?",
+            new String[]{
+                    "His anger forever",
+                    "His truth to Jacob",
+                    "His judgment against Judah",
+                    "His destruction of Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What covenant promises are emphasized at the end of Micah?",
+            new String[]{
+                    "Promises to David only",
+                    "Promises to Jacob and Abraham",
+                    "Promises to Egypt and Assyria",
+                    "Promises to the kings of Israel"
+            },
+            1
+    ));
+                  }
         }
 
         private static void addBookNahumQuestions(ArrayList<Question> questions, String difficulty) {
@@ -18579,6 +18856,283 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What city is the main subject of Nahum's prophecy?",
+            new String[]{
+                    "Jerusalem",
+                    "Nineveh",
+                    "Samaria",
+                    "Damascus"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say the LORD is concerning His enemies?",
+            new String[]{
+                    "Slow to judge",
+                    "Indifferent",
+                    "Jealous and avenging",
+                    "Unable to act"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say about the LORD's anger?",
+            new String[]{
+                    "He never becomes angry",
+                    "He is slow to anger",
+                    "He is always angry",
+                    "He forgets wrongdoing"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What natural features are described as reacting to the LORD's presence?",
+            new String[]{
+                    "Mountains and hills",
+                    "Rivers and forests only",
+                    "Fields and vineyards",
+                    "Cities and palaces"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happens to the mountains at the LORD's presence?",
+            new String[]{
+                    "They become higher",
+                    "They quake",
+                    "They disappear forever",
+                    "They produce water"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say the LORD is to those who trust Him?",
+            new String[]{
+                    "A hiding place only",
+                    "A stronghold",
+                    "A king's servant",
+                    "A distant ruler"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say the LORD knows?",
+            new String[]{
+                    "Those who trust in Him",
+                    "Only the kings of Judah",
+                    "Only the prophets",
+                    "The armies of Nineveh"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Nahum announce concerning Nineveh?",
+            new String[]{
+                    "Its restoration",
+                    "Its prosperity",
+                    "Its destruction",
+                    "Its conversion to Judah"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Nahum call Nineveh?",
+            new String[]{
+                    "The faithful city",
+                    "The bloody city",
+                    "The holy city",
+                    "The city of peace"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Why is Nineveh called a bloody city?",
+            new String[]{
+                    "It was full of violence and lies",
+                    "It had no army",
+                    "It refused to trade",
+                    "It was surrounded by deserts"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say Nineveh is full of?",
+            new String[]{
+                    "Truth and wisdom",
+                    "Robbery and prey",
+                    "Priests and prophets",
+                    "Grain and wine"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum compare Nineveh to because of its influence over nations?",
+            new String[]{
+                    "A shepherd",
+                    "A harlot",
+                    "A lion",
+                    "A dove"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which ancient city is used as an example of a destroyed city?",
+            new String[]{
+                    "Thebes",
+                    "Bethlehem",
+                    "Hebron",
+                    "Joppa"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What name does Nahum use for Thebes?",
+            new String[]{
+                    "Jerusalem",
+                    "No-amon",
+                    "Beth-el",
+                    "Moresheth"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was No-amon trusting for protection?",
+            new String[]{
+                    "Egypt and surrounding nations",
+                    "Judah alone",
+                    "Assyria alone",
+                    "Babylon alone"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to No-amon despite its strength?",
+            new String[]{
+                    "It became stronger",
+                    "It was carried away",
+                    "It conquered Assyria",
+                    "It became Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say will happen to Nineveh's fortresses?",
+            new String[]{
+                    "They will become stronger",
+                    "They will be opened and destroyed",
+                    "They will be rebuilt by Judah",
+                    "They will be moved"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum tell Nineveh's soldiers to prepare?",
+            new String[]{
+                    "Water for the journey",
+                    "The shield and weapons",
+                    "A feast",
+                    "A new temple"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say the soldiers should strengthen?",
+            new String[]{
+                    "Their palaces",
+                    "Their loins",
+                    "Their vineyards",
+                    "Their temples"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happens to Nineveh's river gates?",
+            new String[]{
+                    "They are opened",
+                    "They are strengthened",
+                    "They are moved to Jerusalem",
+                    "They are covered with gold"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happens to the palace according to Nahum?",
+            new String[]{
+                    "It is filled with treasure",
+                    "It is dissolved or consumed",
+                    "It becomes a temple",
+                    "It is given to Judah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say will happen to Nineveh's wealth?",
+            new String[]{
+                    "It will be taken away",
+                    "It will be doubled",
+                    "It will be given to Assyria",
+                    "It will be hidden forever"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say about Nineveh's people during its destruction?",
+            new String[]{
+                    "They become priests",
+                    "They flee or stumble",
+                    "They conquer Judah",
+                    "They rebuild the walls"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Nahum say will happen to Nineveh's merchants?",
+            new String[]{
+                    "They will become kings",
+                    "They will be honored by Judah",
+                    "They will be scattered",
+                    "They will build Jerusalem"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What final reason does Nahum give for Nineveh's downfall?",
+            new String[]{
+                    "Its great wealth",
+                    "Its cruelty and wickedness",
+                    "Its lack of soldiers",
+                    "Its distance from Jerusalem"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookHabakkukQuestions(ArrayList<Question> questions, String difficulty) {
