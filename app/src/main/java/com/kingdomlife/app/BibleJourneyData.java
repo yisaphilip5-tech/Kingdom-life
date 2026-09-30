@@ -10970,6 +10970,7 @@ public class BibleJourneyData {
                     ));
 
                 }
+            
             if (difficulty.equals("Medium")) {
 
     questions.add(new Question(
@@ -11246,7 +11247,7 @@ public class BibleJourneyData {
             },
             0
     ));
-            }
+                }
         }
 
         private static void addBookEcclesiastesQuestions(ArrayList<Question> questions, String difficulty) {
