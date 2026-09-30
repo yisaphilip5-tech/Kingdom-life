@@ -4785,6 +4785,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did Hannah name the son she received after praying for him?",
+            new String[]{
+                    "Ichabod",
+                    "Samuel",
+                    "Eliab",
+                    "Joel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Eli initially think Hannah was doing while she prayed?",
+            new String[]{
+                    "Speaking to Samuel",
+                    "Reading the Law",
+                    "She was drunk",
+                    "Calling for help"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Hannah do each year when she visited Samuel?",
+            new String[]{
+                    "She brought him a little coat",
+                    "She brought him a sword",
+                    "She brought him a scroll",
+                    "She brought him silver"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the man of God say would happen to Eli's priestly house?",
+            new String[]{
+                    "It would become royal",
+                    "It would be established forever",
+                    "Its strength would be cut off",
+                    "It would rule Judah"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Samuel tell Eli after receiving the LORD's message?",
+            new String[]{
+                    "Everything the LORD had said",
+                    "Only the good news",
+                    "Nothing at all",
+                    "Only what concerned Hophni"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What name was given to the child born to Phinehas's wife after the ark was captured?",
+            new String[]{
+                    "Ichabod",
+                    "Samuel",
+                    "Abinadab",
+                    "Ebenezer"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why was the name Ichabod given to the child?",
+            new String[]{
+                    "Saul had been rejected",
+                    "The glory had departed from Israel",
+                    "The tabernacle had been destroyed",
+                    "Samuel had become judge"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How long did the ark remain in the country of the Philistines before it was returned?",
+            new String[]{
+                    "Three months",
+                    "Seven months",
+                    "One year",
+                    "Forty days"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the Philistines place beside the ark as guilt offerings?",
+            new String[]{
+                    "Five golden tumors and five golden mice",
+                    "Five golden crowns and five swords",
+                    "Twelve golden stones",
+                    "A golden calf"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to the men of Beth-shemesh after they looked into the ark?",
+            new String[]{
+                    "They were made priests",
+                    "They were struck by the LORD",
+                    "They fled to Gath",
+                    "They became judges"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Samuel set up between Mizpeh and Shen as a memorial?",
+            new String[]{
+                    "A stone",
+                    "A bronze serpent",
+                    "A wooden altar",
+                    "A pillar of fire"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What name did Samuel give the memorial stone after the LORD helped Israel?",
+            new String[]{
+                    "Bethel",
+                    "Ebenezer",
+                    "Gilgal",
+                    "Mizpeh"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What reason did Samuel give for Israel's request for a king?",
+            new String[]{
+                    "Samuel's sons did not walk in his ways",
+                    "They wanted to build another tabernacle",
+                    "They had no land",
+                    "The Philistines had appointed one"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Samuel warn would happen to Israel's sons if they received a king?",
+            new String[]{
+                    "They would serve in the king's army",
+                    "They would become priests",
+                    "They would inherit Egypt",
+                    "They would be forbidden to farm"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Saul do with the people who despised his kingship?",
+            new String[]{
+                    "He executed them",
+                    "He ignored them",
+                    "He kept his peace",
+                    "He sent them to Samuel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How did Saul divide his army before attacking the Ammonites?",
+            new String[]{
+                    "Into two companies",
+                    "Into three companies",
+                    "Into twelve tribes",
+                    "Into seven groups"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Samuel say was better than sacrifice?",
+            new String[]{
+                    "Fasting",
+                    "Obedience",
+                    "Military strength",
+                    "Wisdom"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Samuel say had been torn from Saul because of his disobedience?",
+            new String[]{
+                    "His crown",
+                    "His kingdom",
+                    "His priesthood",
+                    "His army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Samuel do to Agag after Saul had spared him?",
+            new String[]{
+                    "He released him",
+                    "He imprisoned him",
+                    "He hewed him in pieces before the LORD",
+                    "He sent him to Moab"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Why was David summoned to Saul's court?",
+            new String[]{
+                    "To interpret dreams",
+                    "To play the harp for Saul",
+                    "To serve as a priest",
+                    "To command Saul's army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened whenever the evil spirit troubled Saul while David played?",
+            new String[]{
+                    "Saul immediately slept",
+                    "Saul was refreshed and the spirit departed",
+                    "David left the palace",
+                    "Jonathan called Samuel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jonathan give David as a sign of their covenant?",
+            new String[]{
+                    "His robe, armor, sword, bow, and belt",
+                    "His crown only",
+                    "His father's throne",
+                    "His priestly garments"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Michal use to make it appear that David was lying sick in bed?",
+            new String[]{
+                    "A statue",
+                    "A goat",
+                    "A coat of Saul",
+                    "A pile of blankets"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Saul's messengers when they went to capture David at Naioth?",
+            new String[]{
+                    "They joined David's army",
+                    "They prophesied",
+                    "They were imprisoned",
+                    "They returned to Gibeah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jonathan use to signal David that Saul truly intended to kill him?",
+            new String[]{
+                    "A trumpet",
+                    "Arrows",
+                    "A lamp",
+                    "A written message"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBook2SamuelQuestions(ArrayList<Question> questions, String difficulty) {
@@ -5067,6 +5344,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "Where was David when he learned of Saul's death?",
+            new String[]{
+                    "Ziklag",
+                    "Hebron",
+                    "Jerusalem",
+                    "Gibeah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did David do when he heard that Saul and Jonathan had died?",
+            new String[]{
+                    "He immediately became king",
+                    "He fasted and mourned",
+                    "He attacked the Philistines",
+                    "He returned to Gibeah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the Amalekite claim he had done to Saul?",
+            new String[]{
+                    "Captured him",
+                    "Hidden him",
+                    "Killed him at Saul's request",
+                    "Taken him to David"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did David do to the Amalekite who claimed to have killed Saul?",
+            new String[]{
+                    "He rewarded him",
+                    "He made him a soldier",
+                    "He sent him away",
+                    "He ordered him to be killed"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "What was the name of the song David taught the people concerning Saul and Jonathan?",
+            new String[]{
+                    "The Song of the Bow",
+                    "The Song of Victory",
+                    "The Song of Hebron",
+                    "The Song of Israel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Where was David first anointed king over Judah?",
+            new String[]{
+                    "Jerusalem",
+                    "Hebron",
+                    "Ziklag",
+                    "Bethlehem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was made king over Israel by Abner after Saul's death?",
+            new String[]{
+                    "Mephibosheth",
+                    "Ish-bosheth",
+                    "Jonathan",
+                    "Absalom"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was the commander of David's army?",
+            new String[]{
+                    "Joab",
+                    "Abner",
+                    "Benaiah",
+                    "Asahel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was Asahel, the brother of Joab and Abishai?",
+            new String[]{
+                    "A priest",
+                    "A king",
+                    "A swift runner",
+                    "A prophet"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who killed Asahel during the conflict between David's men and Abner's men?",
+            new String[]{
+                    "Joab",
+                    "Abner",
+                    "Ish-bosheth",
+                    "David"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What caused Abner to become angry with Ish-bosheth?",
+            new String[]{
+                    "Ish-bosheth accused him of stealing",
+                    "Ish-bosheth questioned his loyalty",
+                    "Ish-bosheth accused him concerning Saul's concubine",
+                    "Ish-bosheth refused him an army"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to Ish-bosheth after Abner had died?",
+            new String[]{
+                    "He became king of Judah",
+                    "He was killed by two of his servants",
+                    "He fled to Egypt",
+                    "He joined David"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did David become king over all Israel?",
+            new String[]{
+                    "Hebron",
+                    "Gibeah",
+                    "Jerusalem",
+                    "Ziklag"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How old was David when he began to reign over all Israel?",
+            new String[]{
+                    "Twenty years old",
+                    "Thirty years old",
+                    "Forty years old",
+                    "Fifty years old"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How long did David reign over Israel in total?",
+            new String[]{
+                    "Twenty years",
+                    "Thirty years",
+                    "Forty years",
+                    "Fifty years"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What city did David capture from the Jebusites?",
+            new String[]{
+                    "Samaria",
+                    "Jerusalem",
+                    "Bethel",
+                    "Shechem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What name did David give to the stronghold he captured from the Jebusites?",
+            new String[]{
+                    "The City of David",
+                    "The City of Zion",
+                    "The Holy City",
+                    "The City of Judah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who brought cedar trees, carpenters, and masons to build a house for David?",
+            new String[]{
+                    "Hiram king of Tyre",
+                    "The king of Moab",
+                    "Abner",
+                    "Achish"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Uzzah when he reached out to steady the ark?",
+            new String[]{
+                    "He became blind",
+                    "He was struck dead",
+                    "He was made a priest",
+                    "He fell asleep"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did David take the ark after becoming afraid to bring it into the City of David?",
+            new String[]{
+                    "The house of Obed-edom",
+                    "The house of Abner",
+                    "The house of Jesse",
+                    "The house of Zadok"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Michal see David doing as the ark was brought into the city?",
+            new String[]{
+                    "Praying silently",
+                    "Dancing before the LORD",
+                    "Offering sacrifices alone",
+                    "Playing a harp"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did David want to build for the LORD?",
+            new String[]{
+                    "A palace",
+                    "A temple",
+                    "A house",
+                    "A fortress"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did God promise to establish through David's descendants?",
+            new String[]{
+                    "A permanent priesthood",
+                    "A lasting kingdom",
+                    "A permanent army",
+                    "A new tabernacle"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was the name of Jonathan's son whom David showed kindness to?",
+            new String[]{
+                    "Mephibosheth",
+                    "Ish-bosheth",
+                    "Micaiah",
+                    "Abinadab"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was Mephibosheth's condition when David showed him kindness?",
+            new String[]{
+                    "He was blind",
+                    "He was deaf",
+                    "He was lame in both feet",
+                    "He was unable to speak"
+            },
+            2
+    ));
+            }
         }
 
         private static void addBook1KingsQuestions(ArrayList<Question> questions, String difficulty) {
