@@ -17607,6 +17607,283 @@ public class BibleJourneyData {
             2
     ));
             }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "What does the woman compare her beloved's name to?",
+        new String[]{
+            "A flowing river",
+            "Ointment poured forth",
+            "A precious stone",
+            "A golden crown"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Where does the woman say she is dark but comely?",
+        new String[]{
+            "Among the daughters of Jerusalem",
+            "Among the daughters of Zion",
+            "Among the daughters of Egypt",
+            "Among the daughters of Judah"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the woman say her mother's sons made her do?",
+        new String[]{
+            "Tend the sheep",
+            "Keep the vineyards",
+            "Draw water",
+            "Prepare the fields"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the woman ask the beloved to tell her?",
+        new String[]{
+            "Where he feeds his flock",
+            "Where he builds his house",
+            "Where he gathers his servants",
+            "Where he plants his vineyard"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What animal does the beloved compare the woman's hair to?",
+        new String[]{
+            "Goats",
+            "Sheep",
+            "Doves",
+            "Horses"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the beloved compare her teeth to?",
+        new String[]{
+            "Rows of jewels",
+            "A flock of sheep",
+            "White lilies",
+            "Pearls"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the beloved compare her lips to?",
+        new String[]{
+            "A thread of scarlet",
+            "A river of honey",
+            "A crown of gold",
+            "A field of lilies"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the beloved compare her neck to?",
+        new String[]{
+            "The tower of David",
+            "The tower of Lebanon",
+            "The wall of Jerusalem",
+            "Mount Carmel"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the woman say her beloved is like among ten thousand?",
+        new String[]{
+            "A mighty king",
+            "A great shepherd",
+            "The chiefest",
+            "A precious stone"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What does the woman compare her beloved's head to?",
+        new String[]{
+            "Fine gold",
+            "Lebanon",
+            "Carmel",
+            "Ivory"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the woman compare her beloved's eyes to?",
+        new String[]{
+            "Doves by the rivers",
+            "Doves beside the waters",
+            "Stars of heaven",
+            "Lamps of the temple"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the beloved say about the winter being past?",
+        new String[]{
+            "The rain is over and gone",
+            "The harvest has begun",
+            "The rivers have dried",
+            "The fields are ready"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Which flowers are specifically mentioned as appearing in the land?",
+        new String[]{
+            "Roses",
+            "Lilies",
+            "Violets",
+            "Hyssop"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What creatures are told to catch the foxes?",
+        new String[]{
+            "The shepherds",
+            "The daughters of Jerusalem",
+            "The watchmen",
+            "The young men"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the woman say her beloved is like as he comes leaping?",
+        new String[]{
+            "A lion",
+            "A gazelle or young hart",
+            "An eagle",
+            "A ram"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Where does the woman say her beloved feeds his flock at noon?",
+        new String[]{
+            "Beside the rivers",
+            "Among the lilies",
+            "Near the vineyards",
+            "On Mount Zion"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the watchman do to the woman in her search?",
+        new String[]{
+            "They help her",
+            "They find her beloved",
+            "They take away her veil",
+            "They send her home"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What does the woman say she is sick with?",
+        new String[]{
+            "Hunger",
+            "Love",
+            "Fear",
+            "Grief"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the woman compare her beloved's hands to?",
+        new String[]{
+            "Gold rings set with beryl",
+            "Silver chains",
+            "Ivory towers",
+            "Cedar branches"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the woman compare her beloved's legs to?",
+        new String[]{
+            "Pillars of marble",
+            "Columns of gold",
+            "Cedars of Lebanon",
+            "Strong towers"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the woman compare her beloved's appearance to?",
+        new String[]{
+            "Lebanon and the cedars",
+            "Jerusalem and Zion",
+            "Carmel and Sharon",
+            "Egypt and Assyria"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the beloved say his sister and bride is like?",
+        new String[]{
+            "A garden enclosed",
+            "A city on a hill",
+            "A fruitful field",
+            "A river of water"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the garden contain according to the description?",
+        new String[]{
+            "Spices and pleasant fruits",
+            "Gold and silver",
+            "Wheat and barley",
+            "Olives and figs only"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does the woman say cannot be quenched by many waters?",
+        new String[]{
+            "Wisdom",
+            "Love",
+            "Faith",
+            "Hope"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the final chapter compare love's jealousy to?",
+        new String[]{
+            "A burning fire",
+            "A strong wind",
+            "A mighty river",
+            "A consuming flame"
+        },
+        3
+    ));
+            }
         }
 
     }
@@ -18202,6 +18479,283 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "In Isaiah 6, what did Isaiah see above the Lord's throne?",
+        new String[]{
+            "Seraphim",
+            "Cherubim",
+            "Angels with trumpets",
+            "Elders"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "How many wings did each seraph have?",
+        new String[]{
+            "Two",
+            "Four",
+            "Six",
+            "Eight"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did one seraph use to touch Isaiah's lips?",
+        new String[]{
+            "A branch",
+            "A live coal",
+            "A golden rod",
+            "A scroll"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the seraph say had been taken away from Isaiah?",
+        new String[]{
+            "His fear",
+            "His iniquity",
+            "His weakness",
+            "His sickness"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Isaiah answer when the Lord asked whom He should send?",
+        new String[]{
+            "Send Aaron",
+            "Send me",
+            "Send Elijah",
+            "Send a priest"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What sign did Isaiah give to King Ahaz concerning Immanuel?",
+        new String[]{
+            "A virgin would conceive and bear a son",
+            "A king would defeat Assyria",
+            "Jerusalem would fall",
+            "The temple would be rebuilt"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Isaiah tell Ahaz to ask for as a sign?",
+        new String[]{
+            "A sign from heaven",
+            "A sign from the deep or above",
+            "A military victory",
+            "A prophetic dream"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What name does Isaiah give the coming child in Isaiah 9?",
+        new String[]{
+            "Wonderful, Counsellor, The mighty God",
+            "Prince of Egypt",
+            "King of Judah",
+            "Son of David only"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Isaiah 10, what does the remnant of Israel learn not to rely upon?",
+        new String[]{
+            "Assyria",
+            "Egypt",
+            "The one who struck them",
+            "Babylon"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What does Isaiah 11 say will rest upon the coming shoot from Jesse?",
+        new String[]{
+            "The Spirit of the LORD",
+            "The crown of David",
+            "The glory of Jerusalem",
+            "The strength of Samson"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Which animals are mentioned as dwelling peacefully together in Isaiah 11?",
+        new String[]{
+            "Lion and bear",
+            "Wolf and lamb",
+            "Eagle and dove",
+            "Leopard and goat"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Isaiah 22 say Shebna was responsible for?",
+        new String[]{
+            "The temple treasury",
+            "The royal house",
+            "The army",
+            "The vineyards"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What was Eliakim to receive according to Isaiah 22?",
+        new String[]{
+            "The key of the house of David",
+            "The crown of Israel",
+            "The priesthood",
+            "The army of Judah"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Isaiah 30 say Israel's strength would be in?",
+        new String[]{
+            "Their horses",
+            "Quietness and confidence",
+            "Their army",
+            "Their wealth"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Isaiah say would happen to the Assyrian army?",
+        new String[]{
+            "It would conquer Jerusalem",
+            "The LORD's voice would strike it",
+            "It would join Judah",
+            "It would retreat to Egypt"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Hezekiah do with Sennacherib's threatening letter?",
+        new String[]{
+            "He burned it",
+            "He spread it before the LORD",
+            "He sent it to Egypt",
+            "He hid it"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What sign did Isaiah give Hezekiah concerning the shadow?",
+        new String[]{
+            "It would move forward",
+            "It would move backward",
+            "It would disappear",
+            "It would remain still for seven days"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Hezekiah show the Babylonian visitors?",
+        new String[]{
+            "Only the temple",
+            "His treasures and storehouses",
+            "His army",
+            "The book of the Law"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Isaiah say would eventually happen to the treasures Hezekiah showed?",
+        new String[]{
+            "They would be given to Egypt",
+            "They would be carried to Babylon",
+            "They would be destroyed by Assyria",
+            "They would remain in Jerusalem"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Isaiah 40, what does God measure the waters with?",
+        new String[]{
+            "The span of His hand",
+            "A golden vessel",
+            "A measuring rod",
+            "The Jordan"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Isaiah 40 say happens to those who wait upon the LORD?",
+        new String[]{
+            "They shall renew their strength",
+            "They shall never suffer",
+            "They shall become kings",
+            "They shall never die"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Isaiah 44, what does the craftsman use part of the wood for after making an idol?",
+        new String[]{
+            "Fuel to warm himself",
+            "A spear",
+            "A house beam",
+            "A boat"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What title does Isaiah 45 give Cyrus?",
+        new String[]{
+            "The LORD's shepherd",
+            "The LORD's anointed",
+            "The king of Zion",
+            "The servant of David"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Isaiah 53, what did the servant bear?",
+        new String[]{
+            "The riches of kings",
+            "Our griefs and sorrows",
+            "The sins of Egypt only",
+            "The crown of David"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Isaiah 55, what does God compare His word to?",
+        new String[]{
+            "Rain and snow",
+            "Fire and wind",
+            "Gold and silver",
+            "Bread and wine"
+        },
+        0
+    ));
+            }
         }
 
         private static void addBookJeremiahQuestions(ArrayList<Question> questions, String difficulty) {
@@ -18761,6 +19315,283 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "What object did the LORD show Jeremiah in Jeremiah 1?",
+        new String[]{
+            "A branch of an almond tree",
+            "A basket of figs",
+            "A broken pot",
+            "A burning scroll"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the LORD say He was watching over?",
+        new String[]{
+            "His temple",
+            "His word to perform it",
+            "Jerusalem's walls",
+            "The king's throne"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah see in his second vision?",
+        new String[]{
+            "A boiling pot facing away from the north",
+            "A basket of figs",
+            "A pot facing away from the north",
+            "A branch of an almond tree"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did God command Jeremiah to buy from Hanamel?",
+        new String[]{
+            "A field at Anathoth",
+            "A house in Jerusalem",
+            "A vineyard in Hebron",
+            "A field in Babylon"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "How was Jeremiah's purchase deed preserved?",
+        new String[]{
+            "In a temple chest",
+            "In an earthen vessel",
+            "In the king's palace",
+            "With the priests"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah say about God's power after buying the field?",
+        new String[]{
+            "Nothing is too hard for You",
+            "Jerusalem cannot fall",
+            "Israel will never sin",
+            "Babylon cannot win"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the LORD promise concerning the houses of Jerusalem after judgment?",
+        new String[]{
+            "They would never be rebuilt",
+            "They would again be bought",
+            "They would become palaces",
+            "They would be given to Babylon"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah hide in the Euphrates as a sign?",
+        new String[]{
+            "A scroll",
+            "A linen girdle",
+            "A stone",
+            "A wooden yoke"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What happened to the linen girdle Jeremiah hid?",
+        new String[]{
+            "It became rotten",
+            "It became bright",
+            "It disappeared",
+            "It was stolen"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah wear around his neck as a sign concerning the nations?",
+        new String[]{
+            "A golden chain",
+            "A wooden yoke",
+            "A linen girdle",
+            "A priestly ephod"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Who broke Jeremiah's wooden yoke?",
+        new String[]{
+            "Pashur",
+            "Hananiah",
+            "Gedaliah",
+            "Baruch"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah later put on the wooden yoke?",
+        new String[]{
+            "Iron bands",
+            "Gold plates",
+            "Silver chains",
+            "A royal seal"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Who wrote Jeremiah's words on a scroll?",
+        new String[]{
+            "Baruch",
+            "Ebed-melech",
+            "Seraiah",
+            "Gedaliah"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did King Jehoiakim do as the scroll was read?",
+        new String[]{
+            "He copied it",
+            "He cut it and burned it",
+            "He hid it",
+            "He gave it to the priests"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Where did Jeremiah remain while Jerusalem was under siege?",
+        new String[]{
+            "In the temple",
+            "In the court of the prison",
+            "In Egypt",
+            "In the king's house"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Who secretly rescued Jeremiah from the dungeon?",
+        new String[]{
+            "Baruch",
+            "Ebed-melech the Ethiopian",
+            "Gedaliah",
+            "Zedekiah"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "How did Ebed-melech help Jeremiah out of the dungeon?",
+        new String[]{
+            "He lowered ropes and old rags",
+            "He broke down the wall",
+            "He bribed the guards",
+            "He sent soldiers"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did King Zedekiah secretly ask Jeremiah about?",
+        new String[]{
+            "Whether Egypt would attack Babylon",
+            "Whether the LORD had spoken concerning the city",
+            "Where the temple treasures were",
+            "Who should become king"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah tell the king would happen if he surrendered to Babylon?",
+        new String[]{
+            "His life would be spared",
+            "He would become king of Babylon",
+            "He would escape to Egypt",
+            "He would destroy Babylon"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What happened to Zedekiah after Jerusalem fell?",
+        new String[]{
+            "He escaped to Egypt",
+            "He was taken to Babylon",
+            "He became governor",
+            "He remained in Jerusalem"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What happened to Zedekiah's sons before him?",
+        new String[]{
+            "They became kings",
+            "They were killed",
+            "They escaped",
+            "They became priests"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah say about the Rechabites?",
+        new String[]{
+            "They obeyed their ancestor's command",
+            "They abandoned Jerusalem",
+            "They served Babylon",
+            "They worshiped idols"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the LORD promise the Rechabites because of their obedience?",
+        new String[]{
+            "That they would always have descendants",
+            "That they would become kings",
+            "That they would inherit Jerusalem",
+            "That they would never leave Judah"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Jeremiah say the new covenant would involve?",
+        new String[]{
+            "The Law written on their hearts",
+            "A new temple only",
+            "A new priesthood only",
+            "A new king from Egypt"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the LORD promise about Israel's future according to Jeremiah 31?",
+        new String[]{
+            "He would gather and restore them",
+            "He would destroy them completely",
+            "He would send them permanently to Egypt",
+            "He would remove their language"
+        },
+        0
+    ));
+        }
         }
 
         private static void addBookLamentationsQuestions(ArrayList<Question> questions, String difficulty) {
