@@ -31983,6 +31983,283 @@ questions.add(new Question(
                 0
         ));
     }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "How has God spoken to people in these last days?",
+            new String[]{
+                    "By prophets only",
+                    "By His Son",
+                    "By angels only",
+                    "By kings"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did God appoint the Son to be heir of?",
+            new String[]{
+                    "All things",
+                    "Jerusalem only",
+                    "The temple",
+                    "The nation of Israel only"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the Son uphold by the word of His power?",
+            new String[]{
+                    "The law",
+                    "The temple",
+                    "All things",
+                    "The priesthood"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus accomplish after purging sins?",
+            new String[]{
+                    "He became king of Israel",
+                    "He returned to Galilee",
+                    "He entered Jerusalem",
+                    "He sat down at the right hand of God"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "What are angels described as?",
+            new String[]{
+                    "Ministering spirits",
+                    "Earthly rulers",
+                    "Priests",
+                    "Prophets"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the writer warn believers not to neglect?",
+            new String[]{
+                    "The temple",
+                    "So great a salvation",
+                    "The law",
+                    "Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was made a little lower than the angels?",
+            new String[]{
+                    "Moses",
+                    "David",
+                    "Jesus",
+                    "Abraham"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Jesus call believers?",
+            new String[]{
+                    "His brothers",
+                    "His servants only",
+                    "His subjects",
+                    "His priests"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Moses do as a servant in God's house?",
+            new String[]{
+                    "He built the temple",
+                    "He ruled Israel",
+                    "He was faithful",
+                    "He served as high priest"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What is Christ over according to Hebrews?",
+            new String[]{
+                    "The Roman Empire",
+                    "The temple",
+                    "The house of God",
+                    "The priesthood of Aaron"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What prevented many Israelites from entering God's rest?",
+            new String[]{
+                    "Unbelief",
+                    "Poverty",
+                    "Lack of sacrifices",
+                    "Lack of knowledge"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What is the word of God described as?",
+            new String[]{
+                    "Weak and hidden",
+                    "Living and powerful",
+                    "Only historical",
+                    "Difficult to understand"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What kind of high priest do believers have?",
+            new String[]{
+                    "One who cannot understand weakness",
+                    "One who was never tempted",
+                    "One who can be touched with the feeling of our weaknesses",
+                    "One who served only Israel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What should believers come boldly to?",
+            new String[]{
+                    "The throne of grace",
+                    "The throne of David",
+                    "The temple",
+                    "The judgment seat"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus learn through the things He suffered?",
+            new String[]{
+                    "Wisdom",
+                    "Obedience",
+                    "Leadership",
+                    "The law"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Hebrews say about Melchisedec?",
+            new String[]{
+                    "He was king of Egypt",
+                    "He was a prophet of Israel",
+                    "He was king of Salem and priest of the Most High God",
+                    "He was a Roman ruler"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What tribe did Jesus come from?",
+            new String[]{
+                    "Judah",
+                    "Levi",
+                    "Benjamin",
+                    "Ephraim"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What kind of covenant is Jesus the mediator of?",
+            new String[]{
+                    "The first covenant",
+                    "A better covenant",
+                    "The covenant of Moses only",
+                    "The Davidic covenant only"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the earthly priests offer repeatedly?",
+            new String[]{
+                    "Themselves",
+                    "Gold",
+                    "The same sacrifices",
+                    "Prayers only"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How often did Christ offer Himself?",
+            new String[]{
+                    "Once",
+                    "Daily",
+                    "Every Sabbath",
+                    "Every year"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did believers receive through Christ's blood?",
+            new String[]{
+                    "Political freedom",
+                    "Boldness to enter the holiest",
+                    "Earthly wealth",
+                    "The priesthood of Aaron"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should believers consider when assembling together?",
+            new String[]{
+                    "How to become wealthy",
+                    "How to avoid people",
+                    "How to provoke one another to love and good works",
+                    "How to gain political power"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What is faith described as?",
+            new String[]{
+                    "The substance of things hoped for",
+                    "Knowledge of history",
+                    "The law of Moses",
+                    "Earthly confidence"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Abraham look for?",
+            new String[]{
+                    "A kingdom in Egypt",
+                    "A city with foundations whose builder is God",
+                    "A Roman city",
+                    "The temple in Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should believers run with patience?",
+            new String[]{
+                    "A race set before them",
+                    "A political campaign",
+                    "A military battle",
+                    "A journey to Jerusalem"
+            },
+            0
+    ));
+            }
         }
         private static void addBookJamesQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -32263,6 +32540,283 @@ questions.add(new Question(
                 0
         ));
     }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What should believers count as joy when they fall into trials?",
+            new String[]{
+                    "Earthly success",
+                    "Various temptations",
+                    "Political opposition",
+                    "Poverty"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the trying of faith produce?",
+            new String[]{
+                    "Patience",
+                    "Wealth",
+                    "Political power",
+                    "Knowledge of history"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should someone lacking wisdom ask God for?",
+            new String[]{
+                    "Money",
+                    "Wisdom",
+                    "Authority",
+                    "Long life"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should a person asking God ask in?",
+            new String[]{
+                    "Silence",
+                    "Fear",
+                    "Faith",
+                    "Anger"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What is the person who doubts compared to?",
+            new String[]{
+                    "A strong tree",
+                    "A wave of the sea",
+                    "A mountain",
+                    "A soldier"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does James say about the rich person's flower?",
+            new String[]{
+                    "It fades away",
+                    "It becomes stronger",
+                    "It never dies",
+                    "It produces wealth"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does a person receive after enduring temptation?",
+            new String[]{
+                    "A political position",
+                    "The crown of life",
+                    "Earthly riches",
+                    "A place in Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does James say does not come from God?",
+            new String[]{
+                    "Every good gift",
+                    "Temptation to evil",
+                    "Wisdom",
+                    "Truth"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What is every good and perfect gift from above?",
+            new String[]{
+                    "From the Father of lights",
+                    "From earthly rulers",
+                    "From angels",
+                    "From priests"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should believers be swift to do?",
+            new String[]{
+                    "Speak",
+                    "Become wealthy",
+                    "Hear",
+                    "Judge"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What should believers be slow to do?",
+            new String[]{
+                    "Hear",
+                    "Speak and become angry",
+                    "Pray",
+                    "Help others"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the wrath of man not produce?",
+            new String[]{
+                    "The righteousness of God",
+                    "Earthly wealth",
+                    "Knowledge",
+                    "Political peace"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should believers receive with meekness?",
+            new String[]{
+                    "The law of Rome",
+                    "The sword",
+                    "The engrafted word",
+                    "Political instruction"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What kind of religion does James call vain?",
+            new String[]{
+                    "One that does not control the tongue",
+                    "One that prays",
+                    "One that helps others",
+                    "One that visits the poor"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should pure religion involve?",
+            new String[]{
+                    "Political leadership",
+                    "Visiting the fatherless and widows",
+                    "Building temples",
+                    "Collecting wealth"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should believers not have with respect to persons?",
+            new String[]{
+                    "Faith",
+                    "Love",
+                    "Respect of persons",
+                    "Patience"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does James say about the poor whom God has chosen?",
+            new String[]{
+                    "Rich in faith",
+                    "Rich in gold",
+                    "Rich in political power",
+                    "Rich in land"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does James call the royal law?",
+            new String[]{
+                    "Love your neighbour as yourself",
+                    "Keep the Sabbath",
+                    "Offer sacrifices",
+                    "Obey the king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does mercy rejoice over?",
+            new String[]{
+                    "Judgment",
+                    "Judgment",
+                    "Wealth",
+                    "Power"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does James say faith without works is?",
+            new String[]{
+                    "Dead",
+                    "Perfect",
+                    "Hidden",
+                    "Complete"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who is given as an example of faith demonstrated by works?",
+            new String[]{
+                    "Abraham",
+                    "Caesar",
+                    "Pilate",
+                    "Herod"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who is also given as an example of faith demonstrated by action?",
+            new String[]{
+                    "Rahab",
+                    "Jezebel",
+                    "Delilah",
+                    "Athaliah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does James say about the tongue?",
+            new String[]{
+                    "It is always harmless",
+                    "It can no man tame",
+                    "It should never speak",
+                    "It is stronger than faith"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What kind of wisdom is described as earthly, sensual, and devilish?",
+            new String[]{
+                    "Wisdom from above",
+                    "Heavenly wisdom",
+                    "Earthly wisdom",
+                    "Godly wisdom"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What should believers draw near to?",
+            new String[]{
+                    "God",
+                    "Worldly wealth",
+                    "Political rulers",
+                    "Earthly pleasures"
+            },
+            0
+    ));
+        }
         }
         private static void addBook1PeterQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -32543,6 +33097,289 @@ questions.add(new Question(
                 1
         ));
     }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What does Peter call believers who live as strangers in the world?",
+            new String[]{
+                    "Pilgrims and strangers",
+                    "Roman citizens",
+                    "Priests only",
+                    "Kings"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What kind of hope do believers have through Christ's resurrection?",
+            new String[]{
+                    "Earthly hope",
+                    "A living hope",
+                    "Political hope",
+                    "Temporary hope"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where is the believers' inheritance reserved?",
+            new String[]{
+                    "In Jerusalem",
+                    "In the temple",
+                    "In heaven",
+                    "In Rome"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What is more precious than gold that perishes?",
+            new String[]{
+                    "Faith",
+                    "Political power",
+                    "Knowledge",
+                    "Earthly wealth"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the prophets search and inquire about?",
+            new String[]{
+                    "The Roman Empire",
+                    "The salvation of souls",
+                    "The history of Israel",
+                    "Earthly kingdoms"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should believers gird up the loins of?",
+            new String[]{
+                    "Their minds",
+                    "Their hands",
+                    "Their feet",
+                    "Their hearts"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should believers be holy in?",
+            new String[]{
+                    "Their politics",
+                    "All manner of conduct",
+                    "Their wealth",
+                    "Their education"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "With what were believers redeemed from their former way of life?",
+            new String[]{
+                    "Silver and gold",
+                    "The blood of Christ",
+                    "Political power",
+                    "The law of Moses"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What kind of seed produces the new birth?",
+            new String[]{
+                    "Corruptible seed",
+                    "Earthly seed",
+                    "Incorruptible seed",
+                    "Physical seed"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What should believers desire as newborn babes?",
+            new String[]{
+                    "The sincere milk of the word",
+                    "Earthly riches",
+                    "Political authority",
+                    "Military training"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What is Christ called in relation to the cornerstone?",
+            new String[]{
+                    "The rejected king",
+                    "The chief cornerstone",
+                    "The earthly ruler",
+                    "The temple priest"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What kind of people does Peter say believers are?",
+            new String[]{
+                    "A chosen generation and royal priesthood",
+                    "A Roman army",
+                    "A political nation",
+                    "A group of rulers"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should believers abstain from?",
+            new String[]{
+                    "Spiritual gifts",
+                    "Fleshly lusts",
+                    "Good works",
+                    "Prayer"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should believers submit themselves to?",
+            new String[]{
+                    "Every human ordinance for the Lord's sake",
+                    "Every worldly desire",
+                    "Only Roman rulers",
+                    "No authority"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What example did Christ leave when He suffered?",
+            new String[]{
+                    "That believers should retaliate",
+                    "That believers should follow His steps",
+                    "That believers should avoid everyone",
+                    "That believers should seek power"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Christ bear in His own body on the tree?",
+            new String[]{
+                    "Our sins",
+                    "Our wealth",
+                    "Our diseases only",
+                    "Our political troubles"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should husbands give to their wives?",
+            new String[]{
+                    "Honor",
+                    "Political authority",
+                    "Earthly riches",
+                    "Military protection"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should believers be ready to give to anyone who asks about their hope?",
+            new String[]{
+                    "A defense",
+                    "Money",
+                    "A political speech",
+                    "A sacrifice"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should believers do when suffering for righteousness?",
+            new String[]{
+                    "Consider themselves blessed",
+                    "Seek revenge",
+                    "Leave the faith",
+                    "Hide their beliefs"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Peter say believers should do with their spiritual gifts?",
+            new String[]{
+                    "Use them to minister to one another",
+                    "Keep them secret",
+                    "Use them for wealth",
+                    "Use them for political influence"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should believers do with anxiety?",
+            new String[]{
+                    "Hide it",
+                    "Cast it upon God",
+                    "Ignore everyone",
+                    "Seek political help"
+            },
+            new String[]{
+                    "Hide it",
+                    "Cast it upon God",
+                    "Ignore everyone",
+                    "Seek political help"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Peter say the devil does?",
+            new String[]{
+                    "Sleeps continually",
+                    "Walks about seeking whom he may devour",
+                    "Rules heaven",
+                    "Lives in Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How should believers resist the devil?",
+            new String[]{
+                    "Steadfast in the faith",
+                    "With political power",
+                    "With weapons",
+                    "By leaving society"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who did Peter call his faithful brother?",
+            new String[]{
+                    "Silvanus",
+                    "Timothy",
+                    "Titus",
+                    "Luke"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Peter say was in Babylon?",
+            new String[]{
+                    "The church",
+                    "The temple",
+                    "The Roman army",
+                    "The apostles"
+            },
+            0
+    ));
+            }
             }
         private static void addBook2PeterQuestions(ArrayList<Question> questions, String difficulty) {
 
