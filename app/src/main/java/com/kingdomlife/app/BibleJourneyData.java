@@ -16767,22 +16767,15 @@ questions.add(new Question(
     ));
 
     questions.add(new Question(
-            "What did Israel do to the Nazarites?",
-            new String[]{
-                    "They honored them",
-                    "They commanded them not to drink wine",
-                    "They gave them land",
-                    "They made them kings"
-            },
-            new String[]{
-                    "They honored them",
-                    "They commanded them not to drink wine",
-                    "They gave them land",
-                    "They made them kings"
-            },
-            1
-    ));
-
+        "What did Israel do to the Nazarites?",
+        new String[]{
+                "They honored them",
+                "They commanded them not to drink wine",
+                "They gave them land",
+                "They made them kings"
+        },
+        1
+));
     questions.add(new Question(
             "What did Amos say about two people walking together?",
             new String[]{
