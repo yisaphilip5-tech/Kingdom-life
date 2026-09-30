@@ -33320,21 +33320,15 @@ questions.add(new Question(
     ));
 
     questions.add(new Question(
-            "What should believers do with anxiety?",
-            new String[]{
-                    "Hide it",
-                    "Cast it upon God",
-                    "Ignore everyone",
-                    "Seek political help"
-            },
-            new String[]{
-                    "Hide it",
-                    "Cast it upon God",
-                    "Ignore everyone",
-                    "Seek political help"
-            },
-            1
-    ));
+        "What should believers do with anxiety?",
+        new String[]{
+                "Hide it",
+                "Cast it upon God",
+                "Ignore everyone",
+                "Seek political help"
+        },
+        1
+));
 
     questions.add(new Question(
             "What does Peter say the devil does?",
