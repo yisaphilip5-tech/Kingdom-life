@@ -1676,6 +1676,283 @@ public class BibleJourneyData {
             2
     ));
             }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+            "What was placed on the head of the bullock before it was killed?",
+            new String[]{
+                    "Aaron's hand",
+                    "A crown",
+                    "The ephod",
+                    "A linen cloth"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Which part of the sin offering was burned outside the camp?",
+            new String[]{
+                    "Only the horns",
+                    "The fat only",
+                    "The skin, flesh, head, legs, and inward parts",
+                    "Only the blood"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was forbidden to remain until the morning from certain sacrifices?",
+            new String[]{
+                    "The blood",
+                    "The meat",
+                    "The altar",
+                    "The grain"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What were Israelites commanded to leave for the poor during harvest?",
+            new String[]{
+                    "The first sheaf only",
+                    "The corners of their fields",
+                    "All their grain",
+                    "Their livestock"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was forbidden when planting a field?",
+            new String[]{
+                    "Planting two kinds of seed together",
+                    "Planting grain",
+                    "Planting vineyards",
+                    "Planting near a city"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What mixture was forbidden in a garment?",
+            new String[]{
+                    "Leather and cotton",
+                    "Wool and linen",
+                    "Linen and cotton",
+                    "Wool and leather"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What were Israelites commanded not to do with the blood of an animal?",
+            new String[]{
+                    "Eat it",
+                    "Pour it on the ground",
+                    "Wash it",
+                    "Carry it outside the camp"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why was Israel forbidden to eat blood?",
+            new String[]{
+                    "Because blood was expensive",
+                    "Because the life of the flesh is in the blood",
+                    "Because blood belonged to Moses",
+                    "Because blood was difficult to preserve"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "On the Day of Atonement, where did the high priest enter with blood?",
+            new String[]{
+                    "The outer court",
+                    "The Holy Place only",
+                    "The Most Holy Place",
+                    "The camp of Israel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Aaron place on the head of the live goat?",
+            new String[]{
+                    "His hands",
+                    "The names of the priests",
+                    "The blood of a bullock",
+                    "The sins of the people by confession"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "Where was the live goat sent?",
+            new String[]{
+                    "Into the wilderness",
+                    "To Egypt",
+                    "To Jerusalem",
+                    "Into the tabernacle"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the Day of Atonement require the Israelites to do?",
+            new String[]{
+                    "Celebrate with a feast",
+                    "Afflict their souls",
+                    "Travel to Egypt",
+                    "Harvest their fields"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was the punishment for eating blood?",
+            new String[]{
+                    "A fine",
+                    "Seven days outside the camp",
+                    "Being cut off from the people",
+                    "Serving as a priest"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did God command Israel concerning the practices of Egypt and Canaan?",
+            new String[]{
+                    "Follow some of them",
+                    "Do not walk in their statutes",
+                    "Study them carefully",
+                    "Adopt their customs"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the law say about sacrificing children to Molech?",
+            new String[]{
+                    "It was permitted privately",
+                    "It was forbidden",
+                    "Only priests could do it",
+                    "It was required once a year"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was the punishment for cursing one's father or mother?",
+            new String[]{
+                    "Death",
+                    "A fine",
+                    "Seven days outside the camp",
+                    "Exile"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to a person who blasphemed the name of the Lord?",
+            new String[]{
+                    "He was made a priest",
+                    "He was stoned",
+                    "He was sent to Egypt",
+                    "He paid a fine"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What animals could not be offered as sacrifices because of certain physical defects?",
+            new String[]{
+                    "Only birds",
+                    "Only goats",
+                    "Animals with defects",
+                    "Only cattle"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How long was a female child considered ceremonially unclean after giving birth?",
+            new String[]{
+                    "Seven days",
+                    "Fourteen days",
+                    "Thirty days",
+                    "Forty days"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was the priest required to examine when determining whether a person had leprosy?",
+            new String[]{
+                    "Their clothing only",
+                    "Their family history",
+                    "The affected area and its appearance",
+                    "Their age"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did a leper have to cry when approaching others?",
+            new String[]{
+                    "Unclean, unclean",
+                    "Holy, holy",
+                    "Depart from me",
+                    "The Lord is with me"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to the land every seventh year?",
+            new String[]{
+                    "It was sold",
+                    "It had a Sabbath rest",
+                    "It was burned",
+                    "It was given to Aaron"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was the fiftieth year called?",
+            new String[]{
+                    "The Sabbath Year",
+                    "The Harvest Year",
+                    "The Jubilee",
+                    "The Atonement Year"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was proclaimed throughout the land during the Jubilee?",
+            new String[]{
+                    "Liberty",
+                    "War",
+                    "A census",
+                    "A fast"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did God promise Israel if they obeyed His statutes and commandments?",
+            new String[]{
+                    "They would never experience hardship",
+                    "He would give rain in its season",
+                    "They would rule Egypt",
+                    "They would never need to work"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookNumbersQuestions(ArrayList<Question> questions, String difficulty) {
