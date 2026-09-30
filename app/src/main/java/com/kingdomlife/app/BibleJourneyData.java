@@ -13791,6 +13791,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What does Lamentations describe Jerusalem as being filled with?",
+            new String[]{
+                    "Joy",
+                    "Wealth",
+                    "Enemies",
+                    "Priests"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What had Jerusalem's princes become compared with their former appearance?",
+            new String[]{
+                    "Like gold",
+                    "Darker than black",
+                    "Brighter than silver",
+                    "White as snow"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations say happened to the precious stones of Zion?",
+            new String[]{
+                    "They were hidden in the temple",
+                    "They were carried to Egypt",
+                    "They were scattered at the head of every street",
+                    "They were given to the poor"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the people seek during the famine?",
+            new String[]{
+                    "Food",
+                    "Weapons",
+                    "Gold",
+                    "Horses"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who is described as having been more cruel than the sea monsters?",
+            new String[]{
+                    "The Babylonian soldiers",
+                    "The princes",
+                    "The women of Jerusalem",
+                    "The enemies of Judah"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to the tongue of the nursing child because of thirst?",
+            new String[]{
+                    "It became swollen",
+                    "It cleaved to the roof of its mouth",
+                    "It became dry and white",
+                    "It could no longer speak"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations say happened to those who once ate delicacies?",
+            new String[]{
+                    "They became rulers",
+                    "They were forced to flee",
+                    "They were desolate in the streets",
+                    "They joined the priests"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What had the hands of compassionate women done during the siege?",
+            new String[]{
+                    "Prepared food for soldiers",
+                    "Cooked their own children",
+                    "Built shelters",
+                    "Hidden gold"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which group is specifically mentioned as rejoicing over Jerusalem's downfall?",
+            new String[]{
+                    "Edomites",
+                    "Egyptians",
+                    "Philistines",
+                    "Moabites"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations say about the punishment of Jerusalem's iniquity?",
+            new String[]{
+                    "It would never end",
+                    "It had been completed",
+                    "It had not yet begun",
+                    "It was forgotten"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the writer remember as evidence of God's mercy?",
+            new String[]{
+                    "The temple treasures",
+                    "The king's army",
+                    "The LORD's mercies",
+                    "Jerusalem's walls"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations say about God's compassions?",
+            new String[]{
+                    "They fail not",
+                    "They belong only to priests",
+                    "They ended with Jerusalem",
+                    "They are hidden from Israel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What is said to be new every morning?",
+            new String[]{
+                    "Jerusalem's strength",
+                    "The LORD's mercies",
+                    "The people's wealth",
+                    "The king's authority"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the writer call the LORD in relation to his hope?",
+            new String[]{
+                    "My salvation",
+                    "My portion",
+                    "My king",
+                    "My shield"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the LORD give to those who wait for Him?",
+            new String[]{
+                    "A kingdom",
+                    "A new army",
+                    "Goodness",
+                    "Riches"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations say a person should do when bearing God's yoke?",
+            new String[]{
+                    "Sit alone in silence",
+                    "Fight against it",
+                    "Return to Egypt",
+                    "Seek the king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What should a person put his mouth in when bearing the yoke?",
+            new String[]{
+                    "The dust",
+                    "The water",
+                    "The temple",
+                    "The ground of Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the writer encourage people to examine?",
+            new String[]{
+                    "Their armies",
+                    "Their ways",
+                    "Their possessions",
+                    "Their enemies"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations encourage people to do after examining their ways?",
+            new String[]{
+                    "Return to the LORD",
+                    "Build another city",
+                    "Seek Babylon's king",
+                    "Gather an army"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the writer say has happened to his heart because of Jerusalem's condition?",
+            new String[]{
+                    "It is joyful",
+                    "It is lifted up",
+                    "It is troubled",
+                    "It is hardened"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the writer say his eyes are doing because of the destruction?",
+            new String[]{
+                    "They are lifted to the mountains",
+                    "They fail with tears",
+                    "They see visions",
+                    "They remain dry"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations say about the LORD's anger?",
+            new String[]{
+                    "It is everlasting",
+                    "It has no purpose",
+                    "It does not remain forever",
+                    "It cannot be turned away"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Lamentations say God does not willingly do?",
+            new String[]{
+                    "Afflict or grieve the children of men",
+                    "Judge nations",
+                    "Hear prayer",
+                    "Correct His people"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the writer ask God to do concerning the people of Judah?",
+            new String[]{
+                    "Forget them",
+                    "Turn them back to Him",
+                    "Give them wealth",
+                    "Make them rulers"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What is the overall setting of Lamentations?",
+            new String[]{
+                    "Israel's victory over Egypt",
+                    "The rebuilding of the temple",
+                    "Mourning over Jerusalem's destruction",
+                    "The coronation of a king"
+            },
+            2
+    ));
+        }
         }
 
         private static void addBookEzekielQuestions(ArrayList<Question> questions, String difficulty) {
@@ -14073,6 +14350,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "Where was Ezekiel when he received his first vision?",
+            new String[]{
+                    "By the River Chebar",
+                    "At Mount Sinai",
+                    "In Jerusalem",
+                    "At the Jordan River"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel see coming from the north in his opening vision?",
+            new String[]{
+                    "A great army",
+                    "A whirlwind and a great cloud",
+                    "A burning mountain",
+                    "A golden chariot"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How many living creatures did Ezekiel see in his first vision?",
+            new String[]{
+                    "Two",
+                    "Three",
+                    "Four",
+                    "Seven"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did each living creature have?",
+            new String[]{
+                    "Four faces",
+                    "Two faces",
+                    "One face",
+                    "Six faces"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel see beside the living creatures?",
+            new String[]{
+                    "Four wheels",
+                    "Seven lamps",
+                    "Two altars",
+                    "Twelve stones"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was distinctive about the wheels Ezekiel saw?",
+            new String[]{
+                    "They were made of gold",
+                    "They were full of eyes",
+                    "They were covered with fire only",
+                    "They had no rims"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel eat after receiving the scroll?",
+            new String[]{
+                    "Bread",
+                    "Fruit",
+                    "The scroll",
+                    "A piece of stone"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How did the scroll taste to Ezekiel?",
+            new String[]{
+                    "Like honey",
+                    "Like bitter herbs",
+                    "Like water",
+                    "Like oil"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was Ezekiel appointed to be for the house of Israel?",
+            new String[]{
+                    "A king",
+                    "A watchman",
+                    "A priest",
+                    "A commander"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel lie on as a sign concerning Israel?",
+            new String[]{
+                    "A wooden platform",
+                    "His right and left sides",
+                    "The temple floor",
+                    "A stone altar"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel use as fuel for cooking during one prophetic sign?",
+            new String[]{
+                    "Olive wood",
+                    "Coal",
+                    "Dried grass",
+                    "Dung"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel shave off as part of a prophetic sign?",
+            new String[]{
+                    "His head and beard",
+                    "His eyebrows",
+                    "His arms",
+                    "His clothes"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel see in a vision concerning the temple's entrance?",
+            new String[]{
+                    "The glory of the LORD",
+                    "Idolatrous images",
+                    "A new altar",
+                    "A royal throne"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the elders of Israel do while Ezekiel was sitting with them?",
+            new String[]{
+                    "They were praying",
+                    "They were eating",
+                    "They were sitting before him",
+                    "They were rebuilding Jerusalem"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel see women doing at the north gate of the temple?",
+            new String[]{
+                    "Weeping for Tammuz",
+                    "Offering sacrifices",
+                    "Reading the Law",
+                    "Preparing food"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel see men doing between the porch and the altar?",
+            new String[]{
+                    "Reading the Law",
+                    "Worshiping the sun",
+                    "Preparing sacrifices",
+                    "Building the temple"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the glory of the LORD eventually do in Ezekiel's temple vision?",
+            new String[]{
+                    "Returned immediately",
+                    "Remained inside forever",
+                    "Departed from the temple",
+                    "Moved into Babylon"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel's vision of dry bones represent?",
+            new String[]{
+                    "The rebuilding of Egypt",
+                    "The restoration of Israel",
+                    "The fall of Babylon",
+                    "The destruction of Assyria"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel see come upon the dry bones?",
+            new String[]{
+                    "Gold",
+                    "Water",
+                    "Tendons and flesh",
+                    "Clothing only"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the breath enter into the dry bones and cause them to do?",
+            new String[]{
+                    "Become living beings",
+                    "Become soldiers only",
+                    "Disappear",
+                    "Return to the ground"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Ezekiel join together as a sign of future unity?",
+            new String[]{
+                    "Two stones",
+                    "Two sticks",
+                    "Two crowns",
+                    "Two scrolls"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which two kingdoms were symbolized by the two sticks?",
+            new String[]{
+                    "Egypt and Assyria",
+                    "Judah and Babylon",
+                    "Judah and Israel",
+                    "Moab and Edom"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who was described as the prince of Tyre in Ezekiel's prophecy?",
+            new String[]{
+                    "A ruler boasting in his wisdom and riches",
+                    "A priest from Jerusalem",
+                    "A prophet from Judah",
+                    "A Babylonian soldier"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What river is associated with Ezekiel's temple vision?",
+            new String[]{
+                    "The Nile",
+                    "The Euphrates",
+                    "The river flowing from the temple",
+                    "The Jordan"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to the water of the temple river as it flowed farther?",
+            new String[]{
+                    "It became increasingly deep",
+                    "It became completely dry",
+                    "It turned to blood",
+                    "It stopped at the temple gate"
+            },
+            0
+    ));
+            }
         }
 
         private static void addBookDanielQuestions(ArrayList<Question> questions, String difficulty) {
