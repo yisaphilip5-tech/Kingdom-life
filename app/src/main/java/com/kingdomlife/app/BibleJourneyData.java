@@ -22246,6 +22246,283 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did the wise men see that led them to Jerusalem?",
+            new String[]{
+                    "A pillar of fire",
+                    "His star",
+                    "A cloud",
+                    "An angel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who warned Joseph in a dream to take Jesus into Egypt?",
+            new String[]{
+                    "An angel of the Lord",
+                    "A prophet",
+                    "A priest",
+                    "A wise man"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why did Joseph take Jesus to Egypt?",
+            new String[]{
+                    "To visit relatives",
+                    "To escape Herod",
+                    "To study the Law",
+                    "To find work"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did John the Baptist say the Pharisees and Sadducees should produce?",
+            new String[]{
+                    "More sacrifices",
+                    "Fruit worthy of repentance",
+                    "More prayers",
+                    "Gold and silver"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say would happen to those who hunger and thirst after righteousness?",
+            new String[]{
+                    "They shall be filled",
+                    "They shall become rulers",
+                    "They shall receive wealth",
+                    "They shall never suffer"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus compare His followers to when speaking about influence in the world?",
+            new String[]{
+                    "Gold and silver",
+                    "Salt and light",
+                    "Wheat and barley",
+                    "Sheep and goats"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say should be done before offering a gift at the altar if a brother has something against you?",
+            new String[]{
+                    "Leave the gift and be reconciled",
+                    "Give twice as much",
+                    "Ask the priest to decide",
+                    "Return home"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about storing treasures on earth?",
+            new String[]{
+                    "They should be increased",
+                    "They should be hidden",
+                    "They are subject to decay and theft",
+                    "They should be given to rulers"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about serving two masters?",
+            new String[]{
+                    "It is possible with wisdom",
+                    "No one can serve two masters",
+                    "Only priests can do it",
+                    "It is required for disciples"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus tell His disciples to seek first?",
+            new String[]{
+                    "The kingdom of God and His righteousness",
+                    "Political power",
+                    "Food and clothing",
+                    "The approval of people"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about judging others?",
+            new String[]{
+                    "Judge everyone carefully",
+                    "Judge only rulers",
+                    "Judge not, that ye be not judged",
+                    "Judgment belongs to priests"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus compare the person who hears His sayings and does them to?",
+            new String[]{
+                    "A wise man who built on a rock",
+                    "A farmer planting wheat",
+                    "A shepherd with sheep",
+                    "A merchant seeking treasure"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus do when He saw the faith of the centurion?",
+            new String[]{
+                    "He sent him to Jerusalem",
+                    "He marveled",
+                    "He asked him to become a disciple",
+                    "He healed everyone in Capernaum"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the disciples do when Jesus calmed the storm?",
+            new String[]{
+                    "They immediately slept",
+                    "They worshipped Him",
+                    "They returned to shore",
+                    "They left the boat"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the scribes accuse Jesus of when He forgave sins?",
+            new String[]{
+                    "Blasphemy",
+                    "Stealing",
+                    "Breaking the Sabbath",
+                    "False prophecy"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say was His purpose in calling Matthew?",
+            new String[]{
+                    "To teach the Romans",
+                    "To call sinners to repentance",
+                    "To collect temple taxes",
+                    "To become a priest"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus tell the twelve to do when entering a city that received them?",
+            new String[]{
+                    "Stay there until they left",
+                    "Build an altar",
+                    "Ask for money",
+                    "Choose a ruler"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say His disciples should be wise as?",
+            new String[]{
+                    "Lions",
+                    "Serpents",
+                    "Eagles",
+                    "Doves"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say His disciples should be harmless as?",
+            new String[]{
+                    "Sheep",
+                    "Doves",
+                    "Lambs",
+                    "Children"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did John send his disciples to ask Jesus?",
+            new String[]{
+                    "Whether He was the one who should come",
+                    "Whether Jerusalem would fall",
+                    "Whether Herod should repent",
+                    "Whether the temple should be rebuilt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about John the Baptist among those born of women?",
+            new String[]{
+                    "He was the greatest prophet",
+                    "There had not risen a greater",
+                    "He was the first disciple",
+                    "He was greater than Moses"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about the sign of Jonah?",
+            new String[]{
+                    "It would point to His resurrection",
+                    "It would destroy Nineveh",
+                    "It would signal the temple's rebuilding",
+                    "It would identify Herod"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Peter say Jesus was when Jesus asked who the disciples believed He was?",
+            new String[]{
+                    "The prophet Elijah",
+                    "The Christ, the Son of the living God",
+                    "A great teacher",
+                    "The king of Rome"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What appeared with Jesus during the Transfiguration?",
+            new String[]{
+                    "David and Solomon",
+                    "Moses and Elijah",
+                    "Abraham and Isaac",
+                    "John and Peter"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus use to pay the temple tax for Himself and Peter?",
+            new String[]{
+                    "A coin from the fish's mouth",
+                    "Gold from the wise men",
+                    "Money from Matthew",
+                    "A temple offering"
+            },
+            0
+    ));
+            }
         }
 
         private static void addBookMarkQuestions(ArrayList<Question> questions, String difficulty) {
@@ -22528,6 +22805,283 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What was John the Baptist's clothing made from?",
+            new String[]{
+                    "Wool",
+                    "Camel's hair",
+                    "Linen",
+                    "Goat's hair"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did John the Baptist eat?",
+            new String[]{
+                    "Bread and fish",
+                    "Manna and honey",
+                    "Locusts and wild honey",
+                    "Dates and figs"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened immediately after Jesus was baptized?",
+            new String[]{
+                    "He went to Jerusalem",
+                    "The Spirit drove Him into the wilderness",
+                    "He called the twelve",
+                    "He went to Nazareth"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who were the first two brothers Jesus called in Mark?",
+            new String[]{
+                    "James and John",
+                    "Peter and Andrew",
+                    "Philip and Nathanael",
+                    "Matthew and Thomas"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say to the four fishermen He first called?",
+            new String[]{
+                    "Follow me",
+                    "Go to Jerusalem",
+                    "Prepare the temple",
+                    "Repent and fast"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What amazed people about Jesus' teaching in the synagogue?",
+            new String[]{
+                    "He taught with authority",
+                    "He quoted every prophet",
+                    "He spoke three languages",
+                    "He wore priestly clothing"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus do for Simon Peter's mother-in-law?",
+            new String[]{
+                    "He gave her food",
+                    "He healed her fever",
+                    "He sent her to Jerusalem",
+                    "He taught her the Law"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the friends of the paralytic do to get him to Jesus?",
+            new String[]{
+                    "They lowered him through the roof",
+                    "They carried him through the crowd",
+                    "They brought him through a window",
+                    "They waited until evening"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus first say to the paralytic?",
+            new String[]{
+                    "Rise and walk",
+                    "Thy sins be forgiven thee",
+                    "Take up thy bed",
+                    "Your faith has healed you"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was Levi doing when Jesus called him?",
+            new String[]{
+                    "Fishing",
+                    "Collecting taxes",
+                    "Teaching",
+                    "Farming"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about the Sabbath?",
+            new String[]{
+                    "The Sabbath was made for man",
+                    "The Sabbath was only for priests",
+                    "The Sabbath had ended",
+                    "The Sabbath was created by Moses"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus do before choosing the twelve apostles?",
+            new String[]{
+                    "He fasted for seven days",
+                    "He prayed",
+                    "He went to Jerusalem",
+                    "He consulted the Pharisees"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which apostle was also called Boanerges with his brother?",
+            new String[]{
+                    "Peter",
+                    "Matthew",
+                    "James",
+                    "Thomas"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Boanerges mean?",
+            new String[]{
+                    "Sons of thunder",
+                    "Sons of peace",
+                    "Sons of wisdom",
+                    "Sons of promise"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about the unforgivable sin?",
+            new String[]{
+                    "Denying Caesar",
+                    "Blasphemy against the Holy Ghost",
+                    "Breaking a vow",
+                    "Refusing to fast"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "In the parable of the sower, what happened to seed among thorns?",
+            new String[]{
+                    "It produced much fruit",
+                    "It was eaten by birds",
+                    "The cares of the world choked it",
+                    "It fell on rocks"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say the mustard seed becomes?",
+            new String[]{
+                    "A great tree",
+                    "A large herb",
+                    "A vineyard",
+                    "A cedar"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus do when He was asleep during the storm?",
+            new String[]{
+                    "He slept on a pillow",
+                    "He slept on the shore",
+                    "He slept in the synagogue",
+                    "He slept in Peter's house"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What name did the demon give when Jesus asked its name?",
+            new String[]{
+                    "Abaddon",
+                    "Legion",
+                    "Beelzebub",
+                    "Mammon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus tell Jairus after his daughter was reported dead?",
+            new String[]{
+                    "Do not be afraid, only believe",
+                    "Return tomorrow",
+                    "Call the priests",
+                    "Go to the temple"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say to Jairus' daughter?",
+            new String[]{
+                    "Talitha cumi",
+                    "Ephphatha",
+                    "Hosanna",
+                    "Abba"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus tell the twelve to take on their journey?",
+            new String[]{
+                    "Gold and silver",
+                    "A staff",
+                    "Two coats",
+                    "Extra bread"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Herod think when he heard about Jesus?",
+            new String[]{
+                    "John the Baptist had risen from the dead",
+                    "Elijah had returned",
+                    "David had returned",
+                    "Moses had appeared"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus do before feeding the five thousand?",
+            new String[]{
+                    "He bought bread",
+                    "He blessed the loaves and fish",
+                    "He asked Herod for food",
+                    "He sent everyone away"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say to the disciples when they were afraid on the sea?",
+            new String[]{
+                    "Behold the kingdom",
+                    "Be of good cheer: it is I; be not afraid",
+                    "Return to shore",
+                    "Pray for the storm"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookLukeQuestions(ArrayList<Question> questions, String difficulty) {
@@ -22810,6 +23364,283 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "Who was the father of John the Baptist?",
+            new String[]{
+                    "Simeon",
+                    "Zacharias",
+                    "Cleopas",
+                    "Jairus"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was Zacharias' priestly division?",
+            new String[]{
+                    "The course of Abia",
+                    "The course of Levi",
+                    "The course of Zadok",
+                    "The course of Aaron"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Zacharias after he doubted the angel's message?",
+            new String[]{
+                    "He became blind",
+                    "He became unable to speak",
+                    "He was sent away",
+                    "He lost his priesthood"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Mary call herself when speaking to Gabriel?",
+            new String[]{
+                    "The servant of the Lord",
+                    "The daughter of David",
+                    "The queen of Israel",
+                    "The mother of the Messiah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was Mary's relative that she visited?",
+            new String[]{
+                    "Martha",
+                    "Elizabeth",
+                    "Anna",
+                    "Salome"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the baby in Elizabeth's womb when Mary greeted her?",
+            new String[]{
+                    "He slept",
+                    "He leaped",
+                    "He cried",
+                    "He became still"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Mary call God in her song?",
+            new String[]{
+                    "My Saviour",
+                    "My King of Rome",
+                    "My Judge only",
+                    "My Priest"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who ordered the census that brought Joseph and Mary to Bethlehem?",
+            new String[]{
+                    "Herod",
+                    "Caesar Augustus",
+                    "Pontius Pilate",
+                    "Quirinius"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did the shepherds find the baby Jesus?",
+            new String[]{
+                    "In a palace",
+                    "In the temple",
+                    "Lying in a manger",
+                    "In Joseph's house"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Simeon say he could now do after seeing Jesus?",
+            new String[]{
+                    "Depart in peace",
+                    "Return to Galilee",
+                    "Become a priest",
+                    "Go to Bethlehem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Anna the prophetess do after seeing Jesus?",
+            new String[]{
+                    "She left Jerusalem",
+                    "She spoke about Him to those waiting for redemption",
+                    "She became His disciple",
+                    "She went to Nazareth"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How old was Jesus when His parents found Him in the temple?",
+            new String[]{
+                    "Ten",
+                    "Twelve",
+                    "Thirteen",
+                    "Thirty"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was Jesus doing in the temple at that time?",
+            new String[]{
+                    "Offering sacrifices",
+                    "Sitting among the doctors, hearing and asking questions",
+                    "Teaching the priests",
+                    "Reading Isaiah aloud"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did John the Baptist tell the people to do?",
+            new String[]{
+                    "Bear fruits worthy of repentance",
+                    "Build a temple",
+                    "Move to Galilee",
+                    "Stop paying taxes"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did John tell tax collectors to do?",
+            new String[]{
+                    "Collect no taxes",
+                    "Collect no more than what was appointed",
+                    "Give all taxes to the poor",
+                    "Leave their jobs immediately"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did John tell soldiers to do?",
+            new String[]{
+                    "Leave the army",
+                    "Do violence to no one and be content with their wages",
+                    "Move to Jerusalem",
+                    "Fast every week"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus do before beginning His public ministry?",
+            new String[]{
+                    "He was baptized and then went into the wilderness",
+                    "He became a priest",
+                    "He moved to Jerusalem",
+                    "He chose the twelve"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus read in the synagogue at Nazareth?",
+            new String[]{
+                    "The Law of Moses",
+                    "A passage from Isaiah",
+                    "The Psalms",
+                    "The book of Malachi"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say had been fulfilled when He read Isaiah?",
+            new String[]{
+                    "The prophecy in their ears",
+                    "The temple law",
+                    "The census",
+                    "The Passover"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened when Jesus told Simon to launch into the deep?",
+            new String[]{
+                    "They caught a great number of fish",
+                    "The boat sank",
+                    "The storm began",
+                    "They caught nothing"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Peter say after the miraculous catch of fish?",
+            new String[]{
+                    "Depart from me; for I am a sinful man, O Lord",
+                    "Make me a king",
+                    "Give me another net",
+                    "Let us return to shore"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say the Son of man is Lord of?",
+            new String[]{
+                    "The temple",
+                    "The Sabbath",
+                    "The Law",
+                    "The synagogue"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which disciple did Jesus call from the receipt of custom?",
+            new String[]{
+                    "Levi",
+                    "Judas",
+                    "Philip",
+                    "James"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "In Luke's account, what did Jesus do before choosing the twelve apostles?",
+            new String[]{
+                    "He prayed all night",
+                    "He went to Bethlehem",
+                    "He fasted forty days",
+                    "He visited the temple"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "In the parable of the Good Samaritan, who helped the wounded man?",
+            new String[]{
+                    "A priest",
+                    "A Levite",
+                    "A Samaritan",
+                    "A Roman soldier"
+            },
+            2
+    ));
+            }
         }
 
         private static void addBookJohnQuestions(ArrayList<Question> questions, String difficulty) {
