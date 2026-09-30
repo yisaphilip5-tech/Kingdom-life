@@ -16027,6 +16027,282 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What does Joel call the invasion of locusts?",
+            new String[]{
+                    "A day of harvest",
+                    "A great and powerful army",
+                    "A peaceful gathering",
+                    "A royal procession"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the locusts do to the vines and fig trees?",
+            new String[]{
+                    "They protected them",
+                    "They watered them",
+                    "They stripped and damaged them",
+                    "They planted new ones"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Joel tell the priests to do because of the crisis?",
+            new String[]{
+                    "Leave Jerusalem",
+                    "Gather the people and call a solemn assembly",
+                    "Prepare for war",
+                    "Build a new palace"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Joel command the priests to do between the porch and the altar?",
+            new String[]{
+                    "Pray for the people",
+                    "Offer gold",
+                    "Read the genealogy",
+                    "Sound a trumpet for battle"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Joel say the LORD might leave behind after judgment?",
+            new String[]{
+                    "A blessing",
+                    "A new king",
+                    "A foreign army",
+                    "A rebuilt palace"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Joel command the people to do in response to the LORD's call?",
+            new String[]{
+                    "Tear their clothes only",
+                    "Return to the LORD with all their heart",
+                    "Flee to Egypt",
+                    "Gather weapons"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Joel say about the LORD's character?",
+            new String[]{
+                    "He is slow to anger and full of mercy",
+                    "He never forgives",
+                    "He changes with every generation",
+                    "He only helps kings"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Joel say the LORD would restore after the years of the locust?",
+            new String[]{
+                    "The years that the locust had eaten",
+                    "The throne of David",
+                    "The walls of Jericho",
+                    "The kingdom of Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Joel promise the people would have in abundance?",
+            new String[]{
+                    "Silver",
+                    "Grain, wine, and oil",
+                    "Horses",
+                    "Weapons"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What would the people know after the LORD restored them?",
+            new String[]{
+                    "That Egypt was powerful",
+                    "That the LORD was in the midst of Israel",
+                    "That Babylon was their friend",
+                    "That their kings were perfect"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Joel say God would pour out upon all flesh?",
+            new String[]{
+                    "Gold",
+                    "His Spirit",
+                    "Rain only",
+                    "Fire only"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who does Joel specifically mention receiving visions?",
+            new String[]{
+                    "Young men",
+                    "Old men",
+                    "Kings",
+                    "Priests"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who does Joel say will dream dreams?",
+            new String[]{
+                    "Kings",
+                    "Young men",
+                    "Old men",
+                    "Soldiers"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who does Joel say will prophesy?",
+            new String[]{
+                    "Sons and daughters",
+                    "Only priests",
+                    "Only kings",
+                    "Foreign rulers"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Joel say will happen to the sun?",
+            new String[]{
+                    "It will become brighter",
+                    "It will be turned to darkness",
+                    "It will disappear forever",
+                    "It will stand still"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Joel say will happen to the moon?",
+            new String[]{
+                    "It will become like blood",
+                    "It will become invisible forever",
+                    "It will shine like gold",
+                    "It will fall to earth"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Where does Joel say deliverance will be found?",
+            new String[]{
+                    "On Mount Zion and in Jerusalem",
+                    "In Egypt",
+                    "In Babylon",
+                    "At the gates of Samaria"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why does Joel say the nations will be gathered for judgment?",
+            new String[]{
+                    "Because they had attacked and scattered God's people",
+                    "Because they refused to trade",
+                    "Because they built cities",
+                    "Because they refused to pay taxes"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Tyre and Sidon do according to Joel?",
+            new String[]{
+                    "They sold God's people to the Greeks",
+                    "They protected Jerusalem",
+                    "They rebuilt the temple",
+                    "They helped Judah fight Babylon"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+        "What did Tyre and Sidon do with the people of Judah according to Joel?",
+        new String[]{
+                "They sold them to the Greeks",
+                "They protected them",
+                "They returned them to Jerusalem",
+                "They made them priests"
+        },
+        0
+));
+                questions.add(new Question(
+        "What does Joel say should be beaten into plowshares?",
+        new String[]{
+                "Spears",
+                "Swords",
+                "Shields",
+                "Bows"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What does Joel say should be made from agricultural tools?",
+        new String[]{
+                "Swords",
+                "Spears",
+                "Weapons",
+                "War equipment"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What does Joel describe the valley where the nations are judged as?",
+        new String[]{
+                "The Valley of Decision",
+                "The Valley of Kings",
+                "The Valley of Cedars",
+                "The Valley of Peace"
+        },
+        0
+));
+
+questions.add(new Question(
+        "What does Joel say will happen to Egypt and Edom?",
+        new String[]{
+                "They will become Israel's allies",
+                "They will become desolate",
+                "They will rule Jerusalem",
+                "They will rebuild Zion"
+        },
+        1
+));
+
+questions.add(new Question(
+        "What does Joel say will remain in Jerusalem?",
+        new String[]{
+                "Foreign armies",
+                "Desolation",
+                "Holiness",
+                "Babylonian rulers"
+        },
+        2
+));
+            }
         }
 
     }
@@ -16345,6 +16621,289 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What was Amos's occupation before becoming a prophet?",
+            new String[]{
+                    "Shepherd and dresser of sycamore trees",
+                    "Priest",
+                    "King's adviser",
+                    "Military commander"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Where was Amos from?",
+            new String[]{
+                    "Jerusalem",
+                    "Tekoa",
+                    "Samaria",
+                    "Bethel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "During whose reigns did Amos prophesy?",
+            new String[]{
+                    "David and Solomon",
+                    "Ahab and Jehu",
+                    "Uzziah of Judah and Jeroboam II of Israel",
+                    "Hezekiah and Josiah"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Amos repeatedly announce against surrounding nations?",
+            new String[]{
+                    "Their wealth will increase",
+                    "Judgment for their wrongdoing",
+                    "A new alliance with Israel",
+                    "Peace with Judah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What city is mentioned as having committed atrocities against Gilead?",
+            new String[]{
+                    "Damascus",
+                    "Tyre",
+                    "Gaza",
+                    "Edom"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the people of Tyre do that Amos condemned?",
+            new String[]{
+                    "They burned Jerusalem",
+                    "They delivered an entire population to Edom",
+                    "They destroyed the temple",
+                    "They attacked Samaria"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Edom pursue against his brother?",
+            new String[]{
+                    "Peace",
+                    "Military alliance",
+                    "His brother with the sword",
+                    "Trade"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Moab burn according to Amos?",
+            new String[]{
+                    "The king's palace",
+                    "The bones of the king of Edom",
+                    "The temple in Jerusalem",
+                    "The gates of Damascus"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did God say He would do to Israel because of their sins?",
+            new String[]{
+                    "Ignore them",
+                    "Send judgment upon them",
+                    "Make them rulers of Egypt",
+                    "Give them more land"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Israel sell the righteous for?",
+            new String[]{
+                    "Silver",
+                    "Gold",
+                    "Grain",
+                    "Land"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Israel sell the poor for?",
+            new String[]{
+                    "A pair of shoes",
+                    "A garment",
+                    "A loaf of bread",
+                    "A piece of land"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did God say He had done for Israel before their sin?",
+            new String[]{
+                    "Destroyed their enemies",
+                    "Brought them out of Egypt",
+                    "Made them kings",
+                    "Given them Babylon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Amos say God raised up among Israel?",
+            new String[]{
+                    "Prophets and Nazarites",
+                    "Kings and soldiers",
+                    "Foreign priests",
+                    "Merchants"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Israel do to the Nazarites?",
+            new String[]{
+                    "They honored them",
+                    "They commanded them not to drink wine",
+                    "They gave them land",
+                    "They made them kings"
+            },
+            new String[]{
+                    "They honored them",
+                    "They commanded them not to drink wine",
+                    "They gave them land",
+                    "They made them kings"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Amos say about two people walking together?",
+            new String[]{
+                    "They must first agree",
+                    "They must be related",
+                    "They must be wealthy",
+                    "They must be from the same city"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Amos compare Israel's coming judgment to?",
+            new String[]{
+                    "A lion's roar",
+                    "A gentle rain",
+                    "A harvest festival",
+                    "A peaceful journey"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Amos see in his vision involving locusts?",
+            new String[]{
+                    "Locusts eating the king's harvest",
+                    "Locusts attacking Egypt",
+                    "Locusts filling Jerusalem",
+                    "Locusts destroying the temple"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Amos see in his vision involving fire?",
+            new String[]{
+                    "A fire consuming the great deep",
+                    "A fire burning Babylon",
+                    "A fire on Mount Sinai",
+                    "A fire destroying Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What object did Amos see in one of his visions?",
+            new String[]{
+                    "A golden crown",
+                    "A plumb line",
+                    "A bronze serpent",
+                    "A broken altar"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the plumb line represent in Amos's vision?",
+            new String[]{
+                    "God measuring Israel",
+                    "The rebuilding of Jerusalem",
+                    "A new temple",
+                    "Israel's military strength"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who told Amos to leave Bethel and prophesy somewhere else?",
+            new String[]{
+                    "Amaziah the priest",
+                    "Jeroboam II",
+                    "Uzziah",
+                    "A foreign king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Amos say about the house of Jeroboam?",
+            new String[]{
+                    "It would prosper forever",
+                    "It would be destroyed",
+                    "It would rule Judah",
+                    "It would rebuild Samaria"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Amos see in his vision of the basket of summer fruit?",
+            new String[]{
+                    "The end had come for Israel",
+                    "A great harvest was beginning",
+                    "Israel would defeat Assyria",
+                    "Jerusalem would be rebuilt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Amos say would happen to the land because of judgment?",
+            new String[]{
+                    "It would rejoice",
+                    "It would mourn",
+                    "It would become larger",
+                    "It would be covered with gold"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Amos ultimately promise concerning David's fallen booth?",
+            new String[]{
+                    "It would remain destroyed",
+                    "It would be rebuilt",
+                    "It would be moved to Egypt",
+                    "It would become a foreign temple"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookObadiahQuestions(ArrayList<Question> questions, String difficulty) {
