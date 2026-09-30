@@ -20151,6 +20151,283 @@ public class BibleJourneyData {
             2
     ));
         }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "In Lamentations 1, what does Jerusalem say has happened to her lovers?",
+        new String[]{
+            "They have become her defenders",
+            "They have forgotten her",
+            "They have turned against her",
+            "They have gone to Egypt"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What does Lamentations 1 say Jerusalem's gates are doing?",
+        new String[]{
+            "They are broken",
+            "They are shut",
+            "They mourn",
+            "They are guarded"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "According to Lamentations 1, who has taken Jerusalem's precious things?",
+        new String[]{
+            "Her enemies",
+            "Her priests",
+            "Her merchants",
+            "Her kings"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Lamentations 1, what has Jerusalem's uncleanness touched?",
+        new String[]{
+            "Her garments",
+            "Her skirts",
+            "Her crown",
+            "Her temple"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Jerusalem remember in Lamentations 1?",
+        new String[]{
+            "Her former kings",
+            "Her former wealth",
+            "Her pleasant things from ancient days",
+            "Her victories over Egypt"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "According to Lamentations 2, what has the Lord cast down from heaven?",
+        new String[]{
+            "The beauty of Israel",
+            "The walls of Babylon",
+            "The throne of Egypt",
+            "The altar of Damascus"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What happened to the Lord's altar according to Lamentations 2?",
+        new String[]{
+            "It was rebuilt",
+            "He cast it off",
+            "It was moved",
+            "It was covered with gold"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Lamentations 2 say the Lord did to Israel's strongholds?",
+        new String[]{
+            "He strengthened them",
+            "He hid them",
+            "He threw them down",
+            "He rebuilt them"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "According to Lamentations 2, what did the elders of the daughter of Zion do?",
+        new String[]{
+            "They sat upon the ground",
+            "They fled to Egypt",
+            "They gathered an army",
+            "They entered the temple"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the young children ask for in Lamentations 2?",
+        new String[]{
+            "Gold and silver",
+            "Bread and wine",
+            "Food and drink",
+            "Their mothers"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "In Lamentations 3, what does the writer say is good for a man to do?",
+        new String[]{
+            "Wait and hope quietly for the salvation of the Lord",
+            "Seek revenge",
+            "Leave Jerusalem",
+            "Trust in princes"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Lamentations 3 say a person should put his mouth in?",
+        new String[]{
+            "The dust",
+            "The river",
+            "The temple",
+            "The ashes"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Lamentations 3, why should a person hope?",
+        new String[]{
+            "Because Israel has an army",
+            "Because the Lord's compassions fail not",
+            "Because Babylon will surrender",
+            "Because Jerusalem is strong"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "How often are the Lord's mercies described as being new?",
+        new String[]{
+            "Every Sabbath",
+            "Every evening",
+            "Every morning",
+            "Every year"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What does the writer say the Lord does not do willingly?",
+        new String[]{
+            "Afflict or grieve the children of men",
+            "Forgive sinners",
+            "Hear prayer",
+            "Restore cities"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Lamentations 3, what should a person examine?",
+        new String[]{
+            "His enemies",
+            "His ways",
+            "His possessions",
+            "His family"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does the writer say they should lift up with their hearts?",
+        new String[]{
+            "Their hands",
+            "Their eyes",
+            "Their voices",
+            "Their sacrifices"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Lamentations 4, what is described as darker than snow?",
+        new String[]{
+            "The streets",
+            "The Nazarites",
+            "The gold",
+            "The walls"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What happened to the Nazarites according to Lamentations 4?",
+        new String[]{
+            "They became kings",
+            "They became priests",
+            "They were purer than snow but became blacker than coal",
+            "They escaped Jerusalem"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "According to Lamentations 4, what were the hands of compassionate women doing?",
+        new String[]{
+            "Building walls",
+            "Boiling their own children",
+            "Preparing sacrifices",
+            "Helping soldiers"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Edom rejoice over according to Lamentations 4?",
+        new String[]{
+            "Jerusalem's destruction",
+            "Egypt's defeat",
+            "Israel's victory",
+            "Babylon's fall"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Lamentations 5 ask the Lord to remember?",
+        new String[]{
+            "The victories of Israel",
+            "What has happened to His people",
+            "The wealth of Jerusalem",
+            "The kings of Judah"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Lamentations 5, who bore the punishment of their fathers?",
+        new String[]{
+            "Their enemies",
+            "Their children",
+            "Their priests",
+            "Their kings"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What had become the possession of strangers according to Lamentations 5?",
+        new String[]{
+            "Their houses",
+            "Their vineyards",
+            "Their horses",
+            "Their weapons"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What final appeal is made in Lamentations 5?",
+        new String[]{
+            "Turn us back to You, O Lord",
+            "Give us wealth again",
+            "Destroy Babylon",
+            "Make us kings"
+        },
+        0
+    ));
+            }
         }
 
         private static void addBookEzekielQuestions(ArrayList<Question> questions, String difficulty) {
@@ -20710,6 +20987,283 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "In Ezekiel 1, what did the four living creatures each have?",
+        new String[]{
+            "Two faces",
+            "Four faces",
+            "Six faces",
+            "Eight faces"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Which face was among the four faces of each living creature?",
+        new String[]{
+            "Lion",
+            "Horse",
+            "Eagle",
+            "All of these"
+        },
+        3
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel's vision, what was above the heads of the living creatures?",
+        new String[]{
+            "A firmament like crystal",
+            "A mountain",
+            "A golden crown",
+            "A cloud of smoke"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Ezekiel eat when he was given the scroll?",
+        new String[]{
+            "Bread",
+            "Honey",
+            "The scroll",
+            "Manna"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "How did the scroll taste to Ezekiel?",
+        new String[]{
+            "Bitter",
+            "Sweet as honey",
+            "Sour",
+            "Like oil"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 8, what did Ezekiel see women doing at the entrance of the gate?",
+        new String[]{
+            "Weeping for Tammuz",
+            "Praying for Israel",
+            "Preparing offerings",
+            "Singing psalms"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Ezekiel see men doing toward the east in Ezekiel 8?",
+        new String[]{
+            "Building an altar",
+            "Worshiping the sun",
+            "Preparing for war",
+            "Reading the law"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Ezekiel do to demonstrate the coming exile?",
+        new String[]{
+            "Built an ark",
+            "Packed his belongings and dug through a wall",
+            "Destroyed the temple",
+            "Climbed the city wall"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Ezekiel use as a sign when he ate his bread?",
+        new String[]{
+            "Fear and trembling",
+            "Gold and silver",
+            "Joy and singing",
+            "Water and wine"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 18, what proverb does the Lord reject?",
+        new String[]{
+            "The fathers have eaten sour grapes, and the children's teeth are set on edge",
+            "A house divided cannot stand",
+            "The righteous shall live by faith",
+            "The fear of the Lord is wisdom"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ezekiel 18, what does the soul that sins do?",
+        new String[]{
+            "It is forgotten",
+            "It shall die",
+            "It becomes righteous",
+            "It returns to the fathers"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 24, what object did the Lord tell Ezekiel to set on the fire?",
+        new String[]{
+            "A bronze basin",
+            "A cooking pot",
+            "A wooden chest",
+            "A golden vessel"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What happened to Ezekiel's wife as a sign to Israel?",
+        new String[]{
+            "She died",
+            "She became ill",
+            "She was taken into exile",
+            "She disappeared"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What was Ezekiel told not to do when his wife died?",
+        new String[]{
+            "Eat",
+            "Sleep",
+            "Mourn publicly",
+            "Leave Jerusalem"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 26, which city is specifically prophesied against?",
+        new String[]{
+            "Nineveh",
+            "Tyre",
+            "Damascus",
+            "Jericho"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Ezekiel say Tyre's walls would be thrown into?",
+        new String[]{
+            "The sea",
+            "The desert",
+            "The valley",
+            "The river"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 28, what was the king of Tyre described as being full of?",
+        new String[]{
+            "Wisdom and beauty",
+            "Strength and courage",
+            "Gold and armies",
+            "Faith and mercy"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ezekiel 31, what great tree is used as a comparison for Assyria?",
+        new String[]{
+            "An olive tree",
+            "A cedar in Lebanon",
+            "A fig tree",
+            "A palm tree"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 34, whom does the Lord say He will search for?",
+        new String[]{
+            "The lost sheep",
+            "The kings of Babylon",
+            "The priests of Tyre",
+            "The merchants of Egypt"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Ezekiel 34 say the Lord will do for His sheep?",
+        new String[]{
+            "Give them weapons",
+            "Feed them",
+            "Send them to Egypt",
+            "Make them kings"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 37, what do the dry bones represent?",
+        new String[]{
+            "The army of Babylon",
+            "The house of Israel",
+            "The priests of Judah",
+            "The people of Egypt"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What do the two sticks in Ezekiel 37 represent?",
+        new String[]{
+            "Judah and Joseph/Ephraim",
+            "Egypt and Babylon",
+            "Assyria and Tyre",
+            "Moab and Edom"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 43, from which direction did the glory of the Lord come?",
+        new String[]{
+            "North",
+            "South",
+            "East",
+            "West"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "In Ezekiel 47, what happened to the river flowing from the temple?",
+        new String[]{
+            "It became narrower",
+            "It became deeper as it flowed",
+            "It dried up",
+            "It flowed backward"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Ezekiel 47, what happened wherever the river went?",
+        new String[]{
+            "Everything became barren",
+            "Living creatures multiplied and the waters were healed",
+            "The land became desert",
+            "The temple disappeared"
+        },
+        1
+    ));
+            }
         }
 
         private static void addBookDanielQuestions(ArrayList<Question> questions, String difficulty) {
@@ -21267,6 +21821,283 @@ public class BibleJourneyData {
                     "Israel must trust foreign kings"
             },
             1
+    ));
+            }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "What Babylonian name was given to Daniel?",
+        new String[]{
+            "Shadrach",
+            "Belteshazzar",
+            "Meshach",
+            "Abednego"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What Babylonian name was given to Hananiah?",
+        new String[]{
+            "Shadrach",
+            "Belteshazzar",
+            "Meshach",
+            "Abednego"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What Babylonian name was given to Mishael?",
+        new String[]{
+            "Shadrach",
+            "Belteshazzar",
+            "Meshach",
+            "Abednego"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What Babylonian name was given to Azariah?",
+        new String[]{
+            "Shadrach",
+            "Belteshazzar",
+            "Meshach",
+            "Abednego"
+        },
+        3
+    ));
+
+    questions.add(new Question(
+        "What did Daniel request instead of the king's food and wine?",
+        new String[]{
+            "Bread and water",
+            "Pulse and water",
+            "Fruit and milk",
+            "Grain and honey"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "How long was Daniel's food test carried out?",
+        new String[]{
+            "Seven days",
+            "Ten days",
+            "Fourteen days",
+            "Thirty days"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Who was Daniel's chief official in Babylon?",
+        new String[]{
+            "Ashpenaz",
+            "Arioch",
+            "Darius",
+            "Belshazzar"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Who was commanded to kill the wise men of Babylon?",
+        new String[]{
+            "Ashpenaz",
+            "Arioch",
+            "Nebuzaradan",
+            "Haman"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Daniel ask the king to give him before interpreting the dream?",
+        new String[]{
+            "More time",
+            "Gold",
+            "A new position",
+            "Permission to leave"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What material was the head of Nebuchadnezzar's dream image made of?",
+        new String[]{
+            "Silver",
+            "Gold",
+            "Bronze",
+            "Iron"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What destroyed the image in Nebuchadnezzar's dream?",
+        new String[]{
+            "A sword",
+            "A great army",
+            "A stone cut without hands",
+            "Fire from heaven"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "In Daniel 3, what did Nebuchadnezzar see walking in the fiery furnace?",
+        new String[]{
+            "Four men",
+            "Three men",
+            "Two angels",
+            "A single angel"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Nebuchadnezzar say about the fourth figure in the furnace?",
+        new String[]{
+            "He looked like the Son of God",
+            "He was dressed like a king",
+            "He carried a sword",
+            "He was the king of Babylon"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Daniel 4, what kind of tree appeared in Nebuchadnezzar's dream?",
+        new String[]{
+            "A cedar",
+            "A great tree reaching to heaven",
+            "An olive tree",
+            "A fig tree"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Who explained Nebuchadnezzar's second dream?",
+        new String[]{
+            "Arioch",
+            "Daniel",
+            "Belshazzar",
+            "Darius"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Nebuchadnezzar have to learn according to Daniel's interpretation?",
+        new String[]{
+            "That Babylon would conquer Egypt",
+            "That the Most High rules in the kingdom of men",
+            "That Israel would return immediately",
+            "That Daniel would become king"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What appeared on the wall during Belshazzar's feast?",
+        new String[]{
+            "A burning scroll",
+            "A hand writing",
+            "An angel",
+            "A sword"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the writing on the wall announce about Belshazzar?",
+        new String[]{
+            "His kingdom was divided and given to the Medes and Persians",
+            "His kingdom would last forever",
+            "He would defeat Persia",
+            "He would become king of Egypt"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "How many times a day did Daniel pray according to Daniel 6?",
+        new String[]{
+            "Once",
+            "Twice",
+            "Three times",
+            "Seven times"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "Toward what did Daniel pray?",
+        new String[]{
+            "Jerusalem",
+            "Babylon",
+            "The temple at Shiloh",
+            "Mount Sinai"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Darius do after Daniel was placed in the lions' den?",
+        new String[]{
+            "He celebrated",
+            "He fasted and spent the night without entertainment",
+            "He left Babylon",
+            "He ordered another feast"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Daniel say had happened to the lions?",
+        new String[]{
+            "They had been killed",
+            "God had sent an angel and shut their mouths",
+            "They had escaped",
+            "They had become tame"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Daniel 7, what did the Ancient of Days wear?",
+        new String[]{
+            "A robe white as snow",
+            "A crown of gold",
+            "A robe of purple",
+            "Armor of bronze"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Daniel 8, which animal represented the kingdom of Greece?",
+        new String[]{
+            "A ram",
+            "A goat",
+            "A leopard",
+            "A lion"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Daniel 9, how many weeks were determined concerning Daniel's people and holy city?",
+        new String[]{
+            "Seven weeks",
+            "Seventy weeks",
+            "Seventy years",
+            "Forty-nine weeks"
+        },
+        1
     ));
             }
         }
