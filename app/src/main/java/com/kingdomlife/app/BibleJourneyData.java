@@ -23923,6 +23923,230 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did John the Baptist call Jesus when he saw Him?",
+            new String[]{
+                    "The Lamb of God", "The King of Israel",
+                    "The Son of David", "The Light of the World"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was Jesus' first recorded miracle in John's Gospel?",
+            new String[]{
+                    "Healing a nobleman's son", "Turning water into wine",
+                    "Healing a blind man", "Feeding five thousand"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did Jesus perform His first miracle?",
+            new String[]{
+                    "Bethany", "Capernaum", "Cana of Galilee", "Jerusalem"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus tell Nicodemus a person must be born of?",
+            new String[]{
+                    "Water and the Spirit", "Fire and faith",
+                    "Blood and water", "The law and prophets"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the Samaritan woman come to draw from the well?",
+            new String[]{
+                    "Oil", "Water", "Wine", "Grain"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say He could give the Samaritan woman?",
+            new String[]{
+                    "Living water", "Hidden manna",
+                    "A new commandment", "The bread of heaven"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How long had the man at the pool of Bethesda been afflicted?",
+            new String[]{
+                    "Thirty-eight years", "Forty years",
+                    "Thirty years", "Thirty-seven years"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What pool did Jesus visit where sick people waited?",
+            new String[]{
+                    "Siloam", "Bethesda", "Gihon", "Kidron"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say was the work of God?",
+            new String[]{
+                    "Keeping the Sabbath", "Giving sacrifices",
+                    "Believing on Him whom God sent", "Giving to the poor"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus walk upon when His disciples saw Him?",
+            new String[]{
+                    "The shore", "The temple court", "The water", "The mountain"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did many disciples do after Jesus taught about eating His flesh and drinking His blood?",
+            new String[]{
+                    "They left and walked no more with Him",
+                    "They went to Jerusalem",
+                    "They asked for another miracle",
+                    "They followed Peter"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who confessed, 'Thou hast the words of eternal life'?",
+            new String[]{
+                    "Thomas", "Peter", "John", "Philip"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about the person who believed in Him?",
+            new String[]{
+                    "He would never face trouble",
+                    "He would become wealthy",
+                    "He would have everlasting life",
+                    "He would rule Israel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say He was during the Feast of Tabernacles?",
+            new String[]{
+                    "The good shepherd", "The bread of life",
+                    "The light of the world", "The true vine"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus use to heal the man born blind?",
+            new String[]{
+                    "Oil and water", "Clay made with saliva",
+                    "A garment", "The hem of His robe"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the man born blind do after Jesus healed him?",
+            new String[]{
+                    "He returned to his parents",
+                    "He worshipped Jesus",
+                    "He went to Galilee",
+                    "He became a priest"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say about His sheep?",
+            new String[]{
+                    "They know His voice", "They never leave Jerusalem",
+                    "They follow Moses", "They fear the wolves"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was the brother of Martha and Mary?",
+            new String[]{
+                    "Lazarus", "Jairus", "Nicodemus", "Zacchaeus"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jesus do before calling Lazarus from the tomb?",
+            new String[]{
+                    "He sang a hymn", "He prayed to the Father",
+                    "He washed His hands", "He called the disciples"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Mary use to anoint Jesus' feet?",
+            new String[]{
+                    "Myrrh", "Aloes", "Spikenard", "Olive oil"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus wash at the beginning of John 13?",
+            new String[]{
+                    "The disciples' hands", "The disciples' feet",
+                    "The temple vessels", "His own hands"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus call the commandment He gave His disciples?",
+            new String[]{
+                    "A new commandment", "The first commandment",
+                    "The royal commandment", "The ancient commandment"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who asked Jesus, 'Lord, shew us the Father, and it sufficeth us'?",
+            new String[]{
+                    "Thomas", "Philip", "Peter", "Andrew"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jesus say He was in relation to the vine?",
+            new String[]{
+                    "The root", "The branch", "The true vine", "The gardener"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jesus promise the disciples the Father would send in His name?",
+            new String[]{
+                    "Another prophet", "The Comforter",
+                    "A king", "A priest"
+            },
+            1
+    ));
+            }
         }
 
     }
@@ -24241,6 +24465,230 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "For how many days did Jesus appear to the apostles after His resurrection?",
+            new String[]{
+                    "Forty days", "Thirty days",
+                    "Fifty days", "Seven days"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was chosen to replace Judas Iscariot?",
+            new String[]{
+                    "Barsabas", "Matthias", "Stephen", "Silas"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the apostles on the Day of Pentecost?",
+            new String[]{
+                    "They received the Holy Spirit", "They entered the temple",
+                    "They travelled to Rome", "They chose seven deacons"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What appeared above the disciples at Pentecost?",
+            new String[]{
+                    "Stars", "Clouds", "Cloven tongues like as of fire", "A bright crown"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the disciples begin to speak with at Pentecost?",
+            new String[]{
+                    "New languages", "Parables", "Psalms only", "Hebrew only"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who preached to the crowd after the Holy Spirit came?",
+            new String[]{
+                    "John", "Peter", "James", "Stephen"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "About how many people were added to the church after Peter's Pentecost sermon?",
+            new String[]{
+                    "About one thousand", "About two thousand",
+                    "About three thousand", "About five thousand"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "At what place did Peter and John meet the lame man?",
+            new String[]{
+                    "The Beautiful gate of the temple",
+                    "The Damascus gate",
+                    "The Sheep gate",
+                    "The Golden gate"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Peter say he did not possess when the lame man asked for money?",
+            new String[]{
+                    "Silver and gold", "Food and clothing",
+                    "Bread and water", "Gold and jewels"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who lied about the money received from selling land?",
+            new String[]{
+                    "Ananias and Sapphira", "Philip and Stephen",
+                    "Barnabas and Silas", "Paul and Barnabas"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was one of the seven chosen to serve the church?",
+            new String[]{
+                    "Stephen", "Nicodemus", "Cornelius", "Gamaliel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who approved of Stephen's death?",
+            new String[]{
+                    "Peter", "Saul", "Barnabas", "Philip"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Stephen see before his death?",
+            new String[]{
+                    "An angel at the temple",
+                    "Jesus standing at the right hand of God",
+                    "Moses and Elijah",
+                    "A heavenly army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who preached Christ in Samaria?",
+            new String[]{
+                    "Philip", "Stephen", "Matthias", "Ananias"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was the Ethiopian official reading when Philip met him?",
+            new String[]{
+                    "Isaiah", "Jeremiah", "Psalms", "Daniel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Philip after baptizing the Ethiopian?",
+            new String[]{
+                    "He returned to Jerusalem",
+                    "The Spirit caught him away",
+                    "He travelled with the Ethiopian",
+                    "He went to Damascus"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to Saul while travelling to Damascus?",
+            new String[]{
+                    "He heard a trumpet",
+                    "A great light shone around him",
+                    "He was arrested",
+                    "He met Peter"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was sent to Saul in Damascus?",
+            new String[]{
+                    "Ananias", "Barnabas", "Silas", "Philip"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who introduced Saul to the apostles in Jerusalem?",
+            new String[]{
+                    "Peter", "Barnabas", "James", "Philip"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was raised from the dead by Peter at Joppa?",
+            new String[]{
+                    "Dorcas", "Lydia", "Priscilla", "Rhoda"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was Cornelius' occupation?",
+            new String[]{
+                    "Roman centurion", "Roman governor",
+                    "Jewish priest", "Greek merchant"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Peter see in his vision before visiting Cornelius?",
+            new String[]{
+                    "A ladder", "A sheet containing animals",
+                    "A burning bush", "A heavenly temple"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where were the disciples first called Christians?",
+            new String[]{
+                    "Jerusalem", "Antioch", "Damascus", "Ephesus"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was Paul's companion on his first missionary journey?",
+            new String[]{
+                    "Barnabas", "Timothy", "Luke", "Titus"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened when Paul and Silas prayed and sang in prison?",
+            new String[]{
+                    "The guards left",
+                    "An earthquake opened the doors",
+                    "The prison caught fire",
+                    "The prisoners were transferred"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookRomansQuestions(ArrayList<Question> questions, String difficulty) {
@@ -24523,6 +24971,234 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "According to Romans, what is the power of God unto salvation?",
+            new String[]{
+                    "The law", "The gospel of Christ",
+                    "Wisdom", "Good works"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the gospel reveal from faith to faith?",
+            new String[]{
+                    "The wisdom of men", "The righteousness of God",
+                    "The judgment of angels", "The law of Moses"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "According to Romans 3, who has sinned?",
+            new String[]{
+                    "Only Gentiles", "Only Jews",
+                    "All have sinned", "Only those under the law"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Paul say the law makes people conscious of?",
+            new String[]{
+                    "Sin", "Angels", "Prophecy", "Faith"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How is a person justified according to Romans 3?",
+            new String[]{
+                    "By works of the law", "By faith",
+                    "By wealth", "By keeping traditions"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Whose faith does Paul discuss as an example of righteousness?",
+            new String[]{
+                    "Moses", "David", "Abraham", "Joshua"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Abraham believe God was able to do?",
+            new String[]{
+                    "Raise the dead", "Make him king",
+                    "Destroy Rome", "Give him riches"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul say entered the world through one man?",
+            new String[]{
+                    "Grace", "Sin", "The law", "The gospel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Through whom does Romans say sin entered the world?",
+            new String[]{
+                    "Moses", "Adam", "Abraham", "Cain"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does baptism symbolize in Romans 6?",
+            new String[]{
+                    "Union with Christ's death and resurrection",
+                    "Becoming a priest",
+                    "Receiving earthly wealth",
+                    "Entering Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul say believers should present their bodies as?",
+            new String[]{
+                    "A living sacrifice", "A burnt offering",
+                    "A royal garment", "A temple treasure"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul call the renewal of the mind?",
+            new String[]{
+                    "A spiritual gift", "Transformation",
+                    "A new law", "A sacrifice"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Paul say are gifts according to grace?",
+            new String[]{
+                    "Spiritual gifts", "Earthly possessions",
+                    "Political offices", "Military positions"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul tell believers to do toward those who persecute them?",
+            new String[]{
+                    "Avoid them", "Bless them",
+                    "Judge them", "Defeat them"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Paul say believers should overcome evil with?",
+            new String[]{
+                    "Wisdom", "Strength", "Good", "Judgment"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What authority does Paul say is ordained by God?",
+            new String[]{
+                    "Governmental authority", "Military authority",
+                    "Temple authority", "Family authority"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul say fulfills the law?",
+            new String[]{
+                    "Knowledge", "Love", "Wealth", "Sacrifice"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should believers do instead of making provision for the flesh?",
+            new String[]{
+                    "Put on the Lord Jesus Christ",
+                    "Return to the law",
+                    "Avoid the Gentiles",
+                    "Leave the church"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What issue does Paul discuss concerning eating and special days?",
+            new String[]{
+                    "Believers should not despise or judge one another",
+                    "Only priests may eat meat",
+                    "Every believer must keep the Sabbath",
+                    "Gentiles must follow Jewish feasts"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul say the kingdom of God is not about?",
+            new String[]{
+                    "Meat and drink", "Prayer and fasting",
+                    "Faith and hope", "Righteousness and peace"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul say the kingdom of God is about?",
+            new String[]{
+                    "Earthly success", "Righteousness, peace, and joy in the Holy Ghost",
+                    "Political power", "Keeping traditions"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Paul want to do after visiting Rome?",
+            new String[]{
+                    "Travel to Spain", "Return to Jerusalem immediately",
+                    "Travel to Egypt", "Go to Antioch"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who does Paul describe as a servant of the church at Cenchrea?",
+            new String[]{
+                    "Phoebe", "Priscilla", "Junia", "Lydia"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who does Paul mention as having risked their lives for him?",
+            new String[]{
+                    "Priscilla and Aquila", "Peter and John",
+                    "Barnabas and Mark", "Silas and Timothy"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Paul say God will do to Satan under the believers' feet?",
+            new String[]{
+                    "Destroy him immediately",
+                    "Bruise him shortly",
+                    "Bind him for a thousand years",
+                    "Send him into the sea"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBook1CorinthiansQuestions(ArrayList<Question> questions, String difficulty) {
