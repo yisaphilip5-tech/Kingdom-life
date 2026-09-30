@@ -2513,6 +2513,283 @@ public class BibleJourneyData {
                             2
                     ));
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did Moses remind Israel to remember about their journey through the wilderness?",
+            new String[]{
+                    "They had been guided by the LORD",
+                    "They had conquered Egypt",
+                    "They had built a permanent city",
+                    "They had never faced hunger"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Moses say the LORD had done for Israel in the wilderness?",
+            new String[]{
+                    "He gave them horses",
+                    "He carried them like a father carries his son",
+                    "He made them kings",
+                    "He gave them the cities of Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses tell Israel to do when they appointed judges?",
+            new String[]{
+                    "Judge with partiality",
+                    "Judge the poor more strictly",
+                    "Judge righteously",
+                    "Judge only important people"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Moses say about showing partiality in judgment?",
+            new String[]{
+                    "It was acceptable for wealthy people",
+                    "They were not to show partiality",
+                    "It was required for leaders",
+                    "It was allowed during war"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which two men did Moses identify as faithful spies?",
+            new String[]{
+                    "Joshua and Caleb",
+                    "Aaron and Hur",
+                    "Eleazar and Phinehas",
+                    "Miriam and Deborah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Israel possess after defeating Sihon king of the Amorites?",
+            new String[]{
+                    "His land",
+                    "His palace in Egypt",
+                    "His army",
+                    "His throne in Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was the king of Bashan defeated by Israel?",
+            new String[]{
+                    "Balak",
+                    "Og",
+                    "Sihon",
+                    "Balaam"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses tell Joshua to do after becoming his successor?",
+            new String[]{
+                    "Return to Egypt",
+                    "Be strong and courageous",
+                    "Build a new ark",
+                    "Appoint Aaron as king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses warn Israel not to make for themselves?",
+            new String[]{
+                    "Musical instruments",
+                    "Idols or carved images",
+                    "Stone houses",
+                    "Wells"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses say Israel must teach its children?",
+            new String[]{
+                    "The laws and commandments of the LORD",
+                    "The military strategies of Egypt",
+                    "The customs of Moab",
+                    "The history of Assyria"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Moses command Israel to do with the words of God's commandments?",
+            new String[]{
+                    "Forget them after entering Canaan",
+                    "Keep them in their hearts",
+                    "Give them only to priests",
+                    "Write them only on gold"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses say the LORD would give Israel if they obeyed His commandments?",
+            new String[]{
+                    "Prosperity and blessing in the land",
+                    "The throne of Egypt",
+                    "Unlimited armies",
+                    "Control over every nation"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Moses warn Israel might happen if they forgot the LORD?",
+            new String[]{
+                    "They would become stronger",
+                    "They would turn to other gods",
+                    "They would receive more land",
+                    "They would become priests"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses say man does not live by bread alone?",
+            new String[]{
+                    "But by every word that proceeds from the mouth of the LORD",
+                    "But by military strength",
+                    "But by wealth",
+                    "But by the wisdom of kings"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Moses remind Israel about the land they were entering?",
+            new String[]{
+                    "It was completely empty",
+                    "It was a good land with abundant resources",
+                    "It belonged to Egypt",
+                    "It had no water"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Why did Moses say the LORD was giving Israel victory over the nations in Canaan?",
+            new String[]{
+                    "Because Israel was the strongest nation",
+                    "Because Israel had the largest army",
+                    "Because of the wickedness of those nations and God's promise",
+                    "Because Egypt commanded it"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Moses do after Israel sinned by making the golden calf?",
+            new String[]{
+                    "He broke the first tablets",
+                    "He became king",
+                    "He left the camp permanently",
+                    "He built another altar"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How long did Moses remain on the mountain the second time he received the tablets?",
+            new String[]{
+                    "7 days",
+                    "20 days",
+                    "40 days and 40 nights",
+                    "70 days"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was placed inside the Ark of the Covenant?",
+            new String[]{
+                    "The tablets of the covenant",
+                    "Aaron's crown",
+                    "The golden calf",
+                    "The staff of Joshua"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Moses say the LORD required of Israel?",
+            new String[]{
+                    "Only sacrifices",
+                    "To fear Him, walk in His ways, love Him, and serve Him",
+                    "To build a palace",
+                    "To conquer Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses command Israel to remember concerning strangers?",
+            new String[]{
+                    "They should never help them",
+                    "They should love the stranger",
+                    "They should send them away",
+                    "They should make them soldiers"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the manna in the wilderness?",
+            new String[]{
+                    "It was given to Egypt",
+                    "The LORD fed Israel with it",
+                    "It became water",
+                    "It stopped immediately after Sinai"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Moses say about the blessings and curses that would come upon Israel?",
+            new String[]{
+                    "Blessings would follow obedience and curses disobedience",
+                    "Both would happen randomly",
+                    "Only kings would receive them",
+                    "They applied only to Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Where did Moses give the people the choice between blessing and curse?",
+            new String[]{
+                    "Mount Gerizim and Mount Ebal",
+                    "Mount Sinai and Mount Horeb",
+                    "Jericho and Jerusalem",
+                    "Bethlehem and Hebron"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Moses tell Israel to choose?",
+            new String[]{
+                    "Wealth",
+                    "Power",
+                    "Life",
+                    "War"
+            },
+            2
+    ));
+        }
         }
 
         private static void addBookJoshuaQuestions(ArrayList<Question> questions, String difficulty) {
@@ -2795,6 +3072,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "Who became the leader of Israel after Moses died?",
+            new String[]{
+                    "Joshua",
+                    "Caleb",
+                    "Eleazar",
+                    "Phinehas"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did God repeatedly tell Joshua to be?",
+            new String[]{
+                    "Rich and powerful",
+                    "Strong and courageous",
+                    "Silent and patient",
+                    "Wise and wealthy"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What river did Israel cross to enter the Promised Land?",
+            new String[]{
+                    "Nile",
+                    "Euphrates",
+                    "Jordan",
+                    "Jabbok"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the priests carry when Israel crossed the Jordan?",
+            new String[]{
+                    "The Ark of the Covenant",
+                    "The golden calf",
+                    "The tablets of stone",
+                    "The tabernacle curtains"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to the Jordan River when the priests carrying the Ark entered it?",
+            new String[]{
+                    "It became deeper",
+                    "The waters stopped flowing",
+                    "It turned to blood",
+                    "It flooded the camp"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How many stones were taken from the Jordan as a memorial?",
+            new String[]{
+                    "7",
+                    "10",
+                    "12",
+                    "40"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Where did Israel set up the twelve memorial stones?",
+            new String[]{
+                    "Gilgal",
+                    "Jericho",
+                    "Ai",
+                    "Bethel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was the woman in Jericho who hid the Israelite spies?",
+            new String[]{
+                    "Ruth",
+                    "Rahab",
+                    "Deborah",
+                    "Jael"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was Rahab's occupation according to Joshua?",
+            new String[]{
+                    "She was a merchant",
+                    "She was a priestess",
+                    "She was a harlot",
+                    "She was a queen"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What unusual instruction did God give Israel concerning Jericho?",
+            new String[]{
+                    "March around the city",
+                    "Attack only at night",
+                    "Build a tower",
+                    "Wait seven months"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How many times did Israel march around Jericho on the seventh day?",
+            new String[]{
+                    "Once",
+                    "Three times",
+                    "Seven times",
+                    "Twelve times"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to the walls of Jericho?",
+            new String[]{
+                    "They caught fire",
+                    "They fell down",
+                    "They were rebuilt",
+                    "They disappeared overnight"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who took forbidden items from Jericho?",
+            new String[]{
+                    "Achan",
+                    "Korah",
+                    "Gehazi",
+                    "Abner"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why was Israel defeated at Ai?",
+            new String[]{
+                    "They had too few soldiers",
+                    "Achan had taken what was devoted to destruction",
+                    "Joshua was sick",
+                    "The Jordan had flooded"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Achan hide among his belongings?",
+            new String[]{
+                    "Silver, gold, and a Babylonian garment",
+                    "Only gold",
+                    "A sword and shield",
+                    "A crown and robe"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Achan after his sin was discovered?",
+            new String[]{
+                    "He was made king",
+                    "He was sent to Egypt",
+                    "He and his possessions were destroyed",
+                    "He became a priest"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Which city did Israel capture after their first defeat there?",
+            new String[]{
+                    "Ai",
+                    "Jericho",
+                    "Gibeon",
+                    "Hazor"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the people of Gibeon do to make Israel believe they had come from far away?",
+            new String[]{
+                    "They brought Egyptian soldiers",
+                    "They pretended their clothes and supplies were old",
+                    "They attacked Israel",
+                    "They offered gold to Joshua"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What mistake did Joshua and the leaders of Israel make concerning the Gibeonites?",
+            new String[]{
+                    "They attacked them immediately",
+                    "They made a covenant without seeking the LORD",
+                    "They gave them Jericho",
+                    "They appointed their king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Joshua command the sun and moon to do?",
+            new String[]{
+                    "Rise earlier",
+                    "Stand still",
+                    "Disappear",
+                    "Move backward"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did Joshua command the sun to stand still?",
+            new String[]{
+                    "Over Gibeon",
+                    "Over Jericho",
+                    "Over Jerusalem",
+                    "Over Hebron"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was the king of Jerusalem who formed an alliance against Gibeon?",
+            new String[]{
+                    "Jabin",
+                    "Adoni-zedek",
+                    "Og",
+                    "Sihon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which city became the headquarters of the northern kings against Israel?",
+            new String[]{
+                    "Hazor",
+                    "Ai",
+                    "Hebron",
+                    "Bethel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who received Hebron as an inheritance because he wholly followed the LORD?",
+            new String[]{
+                    "Joshua",
+                    "Eleazar",
+                    "Caleb",
+                    "Othniel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Joshua say near the end of his life that Israel must continue to do?",
+            new String[]{
+                    "Return to Egypt",
+                    "Serve the LORD faithfully",
+                    "Build another tabernacle",
+                    "Choose a new king"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookJudgesQuestions(ArrayList<Question> questions, String difficulty) {
