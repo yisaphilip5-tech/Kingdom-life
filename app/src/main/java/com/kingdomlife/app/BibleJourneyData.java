@@ -1399,6 +1399,283 @@ public class BibleJourneyData {
                     0
             ));
             }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "On which day was the Day of Atonement observed?",
+            new String[]{
+                    "The first day of the seventh month",
+                    "The tenth day of the seventh month",
+                    "The fifteenth day of the seventh month",
+                    "The tenth day of the first month"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was the high priest instructed to do with the live goat on the Day of Atonement?",
+            new String[]{
+                    "Send it into the wilderness",
+                    "Offer it on the altar",
+                    "Keep it in the tabernacle",
+                    "Give it to the Levites"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was placed on the head of the live goat?",
+            new String[]{
+                    "The priest's crown",
+                    "The blood of the sacrifice",
+                    "The sins of the people",
+                    "A scarlet ribbon"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the Israelites call the fiftieth year?",
+            new String[]{
+                    "The Year of Jubilee",
+                    "The Year of Release",
+                    "The Holy Year",
+                    "The Year of Trumpets"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "In the Year of Jubilee, what happened to land that had been sold?",
+            new String[]{
+                    "It was given to the priests",
+                    "It was returned to its original owner",
+                    "It was permanently given to the buyer",
+                    "It was divided among the tribes"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How often was the land to have a Sabbath rest?",
+            new String[]{
+                    "Every sixth year",
+                    "Every seventh year",
+                    "Every tenth year",
+                    "Every fiftieth year"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What were the Israelites commanded to do with the fruit of a tree during its fourth year?",
+            new String[]{
+                    "Burn it",
+                    "Give it to the king",
+                    "Praise the LORD with it",
+                    "Sell it outside Israel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was forbidden concerning blood?",
+            new String[]{
+                    "Drinking it",
+                    "Carrying it outside the camp",
+                    "Pouring it on the altar",
+                    "Using it for purification"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was the punishment for blaspheming the name of the LORD?",
+            new String[]{
+                    "Exile",
+                    "Fines",
+                    "Death by stoning",
+                    "Forty days of fasting"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What animal was permitted as a substitute when someone could not afford a lamb for a trespass offering?",
+            new String[]{
+                    "A goat or a lamb",
+                    "A bullock only",
+                    "A horse",
+                    "A camel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the LORD command Israel not to eat from an animal found dead?",
+            new String[]{
+                    "The fat",
+                    "The blood",
+                    "Its flesh",
+                    "Its heart"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was the purpose of the scapegoat?",
+            new String[]{
+                    "To carry the people's sins away into the wilderness",
+                    "To provide food for the priests",
+                    "To replace the high priest",
+                    "To begin the Year of Jubilee"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was permitted to enter the Most Holy Place on the Day of Atonement?",
+            new String[]{
+                    "Any Levite",
+                    "The high priest",
+                    "The oldest priest",
+                    "The king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the high priest wear when entering the Most Holy Place on the Day of Atonement?",
+            new String[]{
+                    "His ordinary garments",
+                    "Royal garments",
+                    "Holy linen garments",
+                    "A soldier's clothing"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was forbidden regarding a person's beard?",
+            new String[]{
+                    "Shaving the corners of it",
+                    "Washing it",
+                    "Covering it",
+                    "Trimming the center"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was the Israelites' response required when they heard the sound of the Jubilee trumpet?",
+            new String[]{
+                    "They were to leave the land",
+                    "They were to return to their property",
+                    "They were to gather at the tabernacle",
+                    "They were to offer a bullock"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the LORD promise would happen if Israel obeyed His statutes?",
+            new String[]{
+                    "They would become priests",
+                    "They would never fight again",
+                    "He would give rain in its season",
+                    "They would rule Egypt"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What would happen to the Israelites if they refused to obey the LORD?",
+            new String[]{
+                    "They would experience fear and defeat",
+                    "They would immediately leave Egypt",
+                    "They would become priests",
+                    "They would receive additional land"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Leviticus, what belonged to the LORD?",
+            new String[]{
+                    "Only the firstborn",
+                    "Every tenth animal that passed under the rod",
+                    "Only the animals offered by priests",
+                    "Only animals without blemish"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to a person who sold himself to an Israelite as a servant and remained unredeemed?",
+            new String[]{
+                    "He became a priest",
+                    "He remained a servant until the Year of Jubilee",
+                    "He was sent to Egypt",
+                    "He received land"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What were Israelites forbidden to make for themselves?",
+            new String[]{
+                    "Stone altars",
+                    "Images or idols",
+                    "Wooden houses",
+                    "Musical instruments"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the LORD promise to give Israel if they walked in His statutes and kept His commandments?",
+            new String[]{
+                    "Peace in the land",
+                    "A palace",
+                    "A second tabernacle",
+                    "Egypt as a possession"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to property that could not be redeemed before the Year of Jubilee?",
+            new String[]{
+                    "It was destroyed",
+                    "It was returned in the Jubilee",
+                    "It was given to the king",
+                    "It was permanently transferred"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was the purpose of the cities of refuge mentioned in relation to the Levites?",
+            new String[]{
+                    "To house kings",
+                    "To provide places for murderers to escape judgment",
+                    "To provide protection for someone who killed another unintentionally",
+                    "To store offerings"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How many cities were given to the Levites in total?",
+            new String[]{
+                    "12",
+                    "24",
+                    "48",
+                    "70"
+            },
+            2
+    ));
+            }
         }
 
         private static void addBookNumbersQuestions(ArrayList<Question> questions, String difficulty) {
