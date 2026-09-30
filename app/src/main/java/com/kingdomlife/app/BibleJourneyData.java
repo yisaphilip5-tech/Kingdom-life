@@ -14909,6 +14909,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What Babylonian name was given to Daniel?",
+            new String[]{
+                    "Shadrach",
+                    "Belteshazzar",
+                    "Meshach",
+                    "Abednego"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Why did Daniel resolve not to defile himself with the king's food?",
+            new String[]{
+                    "It was too expensive",
+                    "He did not like Babylonian food",
+                    "He did not want to defile himself",
+                    "He was fasting for seven days"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Daniel request instead of the king's food?",
+            new String[]{
+                    "Bread and water",
+                    "Vegetables and water",
+                    "Fruit and milk",
+                    "Grain and wine"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did God give Daniel concerning visions and dreams?",
+            new String[]{
+                    "Only courage",
+                    "Understanding in all visions and dreams",
+                    "The ability to predict every event",
+                    "Power over the Babylonian army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Nebuchadnezzar forget about his dream?",
+            new String[]{
+                    "The location of the dream",
+                    "The interpretation only",
+                    "The dream itself",
+                    "The person who told it"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Daniel ask his companions to do after hearing about the king's decree?",
+            new String[]{
+                    "Leave Babylon",
+                    "Pray for God's mercy",
+                    "Prepare for battle",
+                    "Hide from the king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Daniel reveal to Nebuchadnezzar about the king's dream?",
+            new String[]{
+                    "The dream and its interpretation",
+                    "Only the interpretation",
+                    "Only the meaning of the statue",
+                    "The history of Babylon"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What material was the head of Nebuchadnezzar's statue made of?",
+            new String[]{
+                    "Silver",
+                    "Bronze",
+                    "Gold",
+                    "Iron"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to the stone that struck the statue?",
+            new String[]{
+                    "It disappeared",
+                    "It became a great mountain",
+                    "It was placed in the temple",
+                    "It became part of Babylon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What accusation was made against Shadrach, Meshach, and Abednego?",
+            new String[]{
+                    "They refused to pay taxes",
+                    "They refused to worship the king's image",
+                    "They stole from the palace",
+                    "They attacked Babylonian soldiers"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Nebuchadnezzar see inside the fiery furnace?",
+            new String[]{
+                    "Three men only",
+                    "Four men",
+                    "Two angels",
+                    "A great army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was unusual about the three men after leaving the furnace?",
+            new String[]{
+                    "They had become stronger",
+                    "Their clothes were not burned",
+                    "They could not speak",
+                    "They were covered in gold"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to Nebuchadnezzar after boasting about Babylon?",
+            new String[]{
+                    "He became a prisoner in Egypt",
+                    "He lost his kingdom permanently",
+                    "He was driven from people and lived like an animal",
+                    "He was killed by his guards"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Nebuchadnezzar eventually acknowledge?",
+            new String[]{
+                    "Babylon was stronger than God",
+                    "The Most High rules in the kingdom of men",
+                    "His army could defeat every nation",
+                    "Daniel was king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Belshazzar use at his great feast?",
+            new String[]{
+                    "The ark of the covenant",
+                    "The vessels from the Jerusalem temple",
+                    "Daniel's scrolls",
+                    "Nebuchadnezzar's crown"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What appeared on the wall during Belshazzar's feast?",
+            new String[]{
+                    "A burning sword",
+                    "A writing hand",
+                    "A golden crown",
+                    "A strange animal"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who explained the writing on the wall to Belshazzar?",
+            new String[]{
+                    "Daniel",
+                    "Nebuchadnezzar",
+                    "Darius",
+                    "Cyrus"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the writing on the wall announce concerning Belshazzar?",
+            new String[]{
+                    "His kingdom had been given to the Medes and Persians",
+                    "He would become king of Egypt",
+                    "He would defeat Persia",
+                    "His reign would last forever"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What position did Darius consider giving Daniel?",
+            new String[]{
+                    "High position over the whole kingdom",
+                    "Commander of the army",
+                    "Chief priest",
+                    "Governor of Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Daniel continue doing despite the decree against prayer?",
+            new String[]{
+                    "Praying to God as before",
+                    "Praying only secretly",
+                    "Refusing to pray",
+                    "Praying to the king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How many times a day did Daniel pray?",
+            new String[]{
+                    "Once",
+                    "Twice",
+                    "Three times",
+                    "Seven times"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Daniel do with his windows when he prayed?",
+            new String[]{
+                    "Closed them",
+                    "Opened them toward Jerusalem",
+                    "Covered them with cloth",
+                    "Turned them toward Babylon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to Daniel when he was placed in the lions' den?",
+            new String[]{
+                    "An angel shut the lions' mouths",
+                    "The lions disappeared",
+                    "Daniel escaped before entering",
+                    "The king entered with him"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Daniel say God had done when he was brought out of the lions' den?",
+            new String[]{
+                    "Given him riches",
+                    "Sent His angel and shut the lions' mouths",
+                    "Destroyed Babylon",
+                    "Made him king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What is one major theme of Daniel's visions?",
+            new String[]{
+                    "Human kingdoms will rule forever",
+                    "God remains sovereign over earthly kingdoms",
+                    "Babylon will never fall",
+                    "Israel must trust foreign kings"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookHoseaQuestions(ArrayList<Question> questions, String difficulty) {
@@ -15191,6 +15468,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What was the name of Hosea's first son?",
+            new String[]{
+                    "Lo-ammi",
+                    "Jezreel",
+                    "Lo-ruhamah",
+                    "Ephraim"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the name Jezreel point toward?",
+            new String[]{
+                    "A coming judgment",
+                    "A new temple",
+                    "A peaceful kingdom",
+                    "The return from Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the name Lo-ruhamah mean?",
+            new String[]{
+                    "Not my people",
+                    "No mercy",
+                    "God is faithful",
+                    "The LORD saves"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the name Lo-ammi mean?",
+            new String[]{
+                    "Not my people",
+                    "No mercy",
+                    "God is king",
+                    "My people are strong"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Hosea's marriage symbolize?",
+            new String[]{
+                    "Israel's unfaithfulness to God",
+                    "Judah's military strength",
+                    "Egypt's friendship with Israel",
+                    "The rebuilding of Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Israel fail to recognize according to Hosea?",
+            new String[]{
+                    "Their wealth",
+                    "Their need for foreign alliances",
+                    "The LORD as their true God",
+                    "The strength of Assyria"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Israel turn to instead of relying on the LORD?",
+            new String[]{
+                    "Foreign nations and idols",
+                    "The priests of Jerusalem",
+                    "The tribe of Levi",
+                    "The prophets of Judah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Hosea say Israel sowed and would therefore reap?",
+            new String[]{
+                    "Peace",
+                    "The wind",
+                    "Wisdom",
+                    "Gold"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Israel make instead of trusting the LORD?",
+            new String[]{
+                    "A golden calf",
+                    "A stone temple",
+                    "A bronze serpent",
+                    "A new ark"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Hosea say the people had forgotten?",
+            new String[]{
+                    "Their enemies",
+                    "Their Maker",
+                    "Their kings",
+                    "Their land"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Israel's priests fail to do according to Hosea?",
+            new String[]{
+                    "Teach the people God's ways",
+                    "Build cities",
+                    "Fight enemies",
+                    "Collect taxes"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Hosea say the LORD desired rather than sacrifice?",
+            new String[]{
+                    "Knowledge of God",
+                    "Gold",
+                    "Political power",
+                    "Military strength"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Hosea say God desired alongside knowledge of God?",
+            new String[]{
+                    "Mercy",
+                    "Wealth",
+                    "Victory",
+                    "Fame"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Israel because they depended on Assyria?",
+            new String[]{
+                    "Assyria became their permanent ally",
+                    "They were eventually taken into captivity",
+                    "They conquered Judah",
+                    "They rebuilt Samaria"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Hosea compare Israel's early relationship with God to?",
+            new String[]{
+                    "A faithful bride",
+                    "A young vine",
+                    "A trained army",
+                    "A mighty city"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Israel do with the silver and gold God had given them?",
+            new String[]{
+                    "Built an altar to the LORD",
+                    "Made idols",
+                    "Gave it to the poor",
+                    "Sent it to Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Hosea compare Israel to when describing their instability?",
+            new String[]{
+                    "A cake not turned",
+                    "A broken sword",
+                    "A dying tree",
+                    "A cracked vessel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Hosea say Israel's glory will do?",
+            new String[]{
+                    "Increase greatly",
+                    "Fly away like a bird",
+                    "Remain forever",
+                    "Return to Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Hosea remember about Israel in the wilderness?",
+            new String[]{
+                    "They were found like grapes in the wilderness",
+                    "They built a temple",
+                    "They defeated Assyria",
+                    "They crowned a king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened at Baal-peor according to Hosea?",
+            new String[]{
+                    "Israel separated itself to shameful worship",
+                    "Israel defeated Moab",
+                    "Moses received the Law",
+                    "David became king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Hosea compare Ephraim's glory to?",
+            new String[]{
+                    "A bird",
+                    "A cloud",
+                    "A tree",
+                    "A mountain"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did God say Israel should do in order to return to Him?",
+            new String[]{
+                    "Seek the LORD",
+                    "Seek Egypt",
+                    "Seek Assyria",
+                    "Seek military power"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Hosea say should be taken away from the people when they return?",
+            new String[]{
+                    "The fruit of their lips",
+                    "The idols and their iniquity",
+                    "Their homes",
+                    "Their livestock"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Hosea compare God's restoration of Israel to?",
+            new String[]{
+                    "Rain and a flourishing plant",
+                    "A great army",
+                    "A rebuilt wall",
+                    "A golden crown"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What final choice does Hosea place before Israel?",
+            new String[]{
+                    "Return to the LORD or continue in rebellion",
+                    "Choose Egypt or Babylon",
+                    "Choose a king or priest",
+                    "Choose wealth or poverty"
+            },
+            0
+    ));
+            }
         }
 
         private static void addBookJoelQuestions(ArrayList<Question> questions, String difficulty) {
