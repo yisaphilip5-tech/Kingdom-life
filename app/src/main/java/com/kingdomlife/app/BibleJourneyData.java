@@ -5903,6 +5903,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did Adonijah do when David became old?",
+            new String[]{
+                    "He fled to Egypt",
+                    "He declared himself king",
+                    "He became a priest",
+                    "He surrendered to Solomon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who supported Adonijah's attempt to become king?",
+            new String[]{
+                    "Nathan and Zadok",
+                    "Benaiah and Nathan",
+                    "Joab and Abiathar",
+                    "Solomon and Zadok"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who told David about Adonijah's attempt to become king?",
+            new String[]{
+                    "Nathan the prophet",
+                    "Joab",
+                    "Zadok",
+                    "Benaiah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Where was Solomon taken to be anointed king?",
+            new String[]{
+                    "The temple",
+                    "The Gihon spring",
+                    "The Mount of Olives",
+                    "Bethlehem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the people do when Solomon was anointed king?",
+            new String[]{
+                    "They remained silent",
+                    "They fled Jerusalem",
+                    "They rejoiced greatly",
+                    "They mourned for David"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Adonijah do when he heard that Solomon had become king?",
+            new String[]{
+                    "He fled to Egypt",
+                    "He held onto the horns of the altar",
+                    "He attacked Jerusalem",
+                    "He asked Joab for an army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What condition did Solomon give Adonijah for allowing him to live?",
+            new String[]{
+                    "He must leave Israel",
+                    "He must become a priest",
+                    "He must show himself a worthy man",
+                    "He must join the army"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Adonijah ask Bathsheba to request from Solomon for him?",
+            new String[]{
+                    "Abishag the Shunammite",
+                    "Michal",
+                    "Tamar",
+                    "Abigail"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why did Solomon consider Adonijah's request dangerous?",
+            new String[]{
+                    "It involved taking the kingdom",
+                    "It involved the temple",
+                    "It involved the priesthood",
+                    "It involved Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who replaced Abiathar as priest after Solomon removed him?",
+            new String[]{
+                    "Zadok",
+                    "Nathan",
+                    "Benaiah",
+                    "Ahimaaz"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was appointed commander of the army in place of Joab?",
+            new String[]{
+                    "Zadok",
+                    "Benaiah",
+                    "Abiathar",
+                    "Shimei"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did Joab flee after hearing that Solomon had ordered him to be killed?",
+            new String[]{
+                    "The palace",
+                    "The tabernacle",
+                    "The altar",
+                    "The city gate"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Solomon do concerning Shimei after David's death?",
+            new String[]{
+                    "He immediately killed him",
+                    "He ordered him to remain in Jerusalem",
+                    "He sent him to Hebron",
+                    "He made him a governor"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Solomon ask God for when God appeared to him at Gibeon?",
+            new String[]{
+                    "Long life",
+                    "Riches",
+                    "An understanding heart to judge the people",
+                    "Victory over Egypt"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Solomon's request for wisdom please God?",
+            new String[]{
+                    "Yes",
+                    "No",
+                    "Only partly",
+                    "The Bible does not say"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What else did God promise Solomon because he had asked for wisdom?",
+            new String[]{
+                    "Only a longer life",
+                    "Riches and honour",
+                    "A larger army",
+                    "Egyptian territory"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Solomon propose to do when two women claimed the same living child?",
+            new String[]{
+                    "Send the child to Egypt",
+                    "Give the child to the priests",
+                    "Divide the living child in two",
+                    "Ask David to decide"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "How did the true mother respond when Solomon ordered the child to be divided?",
+            new String[]{
+                    "She agreed immediately",
+                    "She asked that the child be given to the other woman",
+                    "She left the courtroom",
+                    "She accused Solomon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was the father of Solomon's chief officer Azariah?",
+            new String[]{
+                    "Nathan",
+                    "Zadok",
+                    "David",
+                    "Benaiah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How many governors did Solomon appoint over Israel?",
+            new String[]{
+                    "Seven",
+                    "Ten",
+                    "Twelve",
+                    "Twenty"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Solomon build first after arranging the preparations for the temple?",
+            new String[]{
+                    "The temple itself",
+                    "His palace",
+                    "A wall around Jerusalem",
+                    "A military fortress"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who supplied Solomon with cedar and other materials for the temple?",
+            new String[]{
+                    "Hiram king of Tyre",
+                    "The king of Moab",
+                    "The king of Egypt",
+                    "The king of Edom"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How long did Solomon's temple take to build?",
+            new String[]{
+                    "Three years",
+                    "Seven years",
+                    "Ten years",
+                    "Twelve years"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was placed inside the Most Holy Place of the temple?",
+            new String[]{
+                    "The bronze altar",
+                    "The ark of the covenant",
+                    "The laver",
+                    "The table of shewbread"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened when the priests brought the ark into the Most Holy Place?",
+            new String[]{
+                    "Fire came down immediately",
+                    "The temple was filled with a cloud",
+                    "The altar broke apart",
+                    "The priests left the city"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBook2KingsQuestions(ArrayList<Question> questions, String difficulty) {
@@ -6185,6 +6462,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did Ahaziah ask Baal-zebub concerning his sickness?",
+            new String[]{
+                    "Whether he would recover",
+                    "Whether Israel would win a war",
+                    "Whether he should become king",
+                    "Whether Elijah was alive"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How many times did Ahaziah send a captain with fifty men to Elijah?",
+            new String[]{
+                    "Once",
+                    "Twice",
+                    "Three times",
+                    "Four times"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the first two captains and their groups of fifty?",
+            new String[]{
+                    "They captured Elijah",
+                    "They fled",
+                    "Fire came down and consumed them",
+                    "They joined Elisha"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Elisha ask the king of Israel to provide before he prophesied concerning Moab?",
+            new String[]{
+                    "A harp player",
+                    "A priest",
+                    "A sacrifice",
+                    "A trumpet"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What unusual thing filled the valley before the battle against Moab?",
+            new String[]{
+                    "Streams of water",
+                    "Blood",
+                    "Clouds of smoke",
+                    "Fire"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the king of Moab sacrifice when he saw that the battle was against him?",
+            new String[]{
+                    "His firstborn son",
+                    "A thousand sheep",
+                    "His chief captain",
+                    "A golden image"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the widow's two sons face because of her debt?",
+            new String[]{
+                    "They would be taken as servants",
+                    "They would be sent to Egypt",
+                    "They would become soldiers",
+                    "They would be imprisoned"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Elisha tell the widow to do with the little oil she had?",
+            new String[]{
+                    "Sell it immediately",
+                    "Pour it into borrowed vessels",
+                    "Give it to the priests",
+                    "Mix it with flour"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the Shunammite woman ask her husband to make for Elisha?",
+            new String[]{
+                    "A small chamber",
+                    "A large house",
+                    "A place in the palace",
+                    "A tent"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What food did Elisha instruct to be added to the pot containing poisonous stew?",
+            new String[]{
+                    "Salt",
+                    "Flour",
+                    "Oil",
+                    "Honey"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How many men did Elisha feed with twenty loaves of barley bread?",
+            new String[]{
+                    "One hundred",
+                    "Two hundred",
+                    "Three hundred",
+                    "Five hundred"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the man from Baal-shalisha bring to Elisha?",
+            new String[]{
+                    "Bread and ears of corn",
+                    "Gold and silver",
+                    "A lamb and wine",
+                    "Figs and dates"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who told Naaman about the prophet in Samaria who could heal him?",
+            new String[]{
+                    "A young Israelite maid",
+                    "The king of Syria",
+                    "Gehazi",
+                    "A Syrian priest"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Naaman initially do when Elisha sent a messenger instead of coming personally?",
+            new String[]{
+                    "He became angry",
+                    "He immediately obeyed",
+                    "He praised Elisha",
+                    "He returned to Syria"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Naaman say he would no longer offer to any god except the LORD?",
+            new String[]{
+                    "Gold",
+                    "Sacrifice",
+                    "Silver",
+                    "Incense"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the sons of the prophets say was too small for them at their meeting place?",
+            new String[]{
+                    "Their house",
+                    "Their school",
+                    "Their city",
+                    "Their field"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the king of Israel receive from Elisha concerning the movements of the Syrian army?",
+            new String[]{
+                    "Warnings about where the Syrians would camp",
+                    "A message to attack Damascus",
+                    "A command to surrender",
+                    "A promise of peace"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why did the Syrian king think someone was betraying his plans?",
+            new String[]{
+                    "His army kept losing supplies",
+                    "Israel knew the places where he planned to camp",
+                    "His soldiers refused to fight",
+                    "His servants left his army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened when Elisha prayed for his servant's eyes to be opened?",
+            new String[]{
+                    "He saw the king of Israel",
+                    "He saw the heavenly army surrounding them",
+                    "He saw the Syrian king",
+                    "He saw the temple"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the king of Israel ask Elisha to do with the Syrian soldiers captured at Samaria?",
+            new String[]{
+                    "Kill them",
+                    "Send them to Egypt",
+                    "Feed them and send them back to their master",
+                    "Make them servants"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What unusual event happened to four lepers when they approached the Syrian camp?",
+            new String[]{
+                    "They found the camp empty",
+                    "They were captured",
+                    "They found the king",
+                    "They became soldiers"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What had caused the Syrian army to abandon its camp?",
+            new String[]{
+                    "An earthquake",
+                    "The sound of chariots and horses",
+                    "A plague",
+                    "An attack by Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened to the officer who doubted Elisha's prophecy about the famine ending?",
+            new String[]{
+                    "He became king",
+                    "He was imprisoned",
+                    "The people trampled him at the gate",
+                    "He fled to Syria"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who was the king of Judah when Jehu killed Ahaziah?",
+            new String[]{
+                    "Jehoram",
+                    "Joash",
+                    "Amaziah",
+                    "Uzziah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jehu destroy in Samaria after becoming king?",
+            new String[]{
+                    "The temple of Baal",
+                    "The temple of the LORD",
+                    "The palace of David",
+                    "The city wall"
+            },
+            0
+    ));
+            }
         }
 
         private static void addBook1ChroniclesQuestions(ArrayList<Question> questions, String difficulty) {
