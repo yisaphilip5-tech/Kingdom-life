@@ -22659,6 +22659,283 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "What was the name of Hosea's first son?",
+        new String[]{
+            "Lo-ruhamah",
+            "Jezreel",
+            "Lo-ammi",
+            "Gomer"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the name Lo-ruhamah mean?",
+        new String[]{
+            "Not loved",
+            "God remembers",
+            "Not my people",
+            "God plants"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the name Lo-ammi mean?",
+        new String[]{
+            "Not loved",
+            "My people",
+            "Not my people",
+            "God's remnant"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did Hosea buy when commanded to take back his unfaithful wife?",
+        new String[]{
+            "A field",
+            "A house",
+            "A servant",
+            "Fifteen pieces of silver and barley"
+        },
+        3
+    ));
+
+    questions.add(new Question(
+        "For how much silver was Hosea's wife bought?",
+        new String[]{
+            "Ten pieces",
+            "Fifteen pieces",
+            "Twenty pieces",
+            "Thirty pieces"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What agricultural item was also given as part of the price?",
+        new String[]{
+            "One homer and a half of barley",
+            "Two ephahs of wheat",
+            "Three measures of flour",
+            "A bushel of grapes"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Hosea 4, what did the people lack?",
+        new String[]{
+            "Wealth",
+            "Knowledge",
+            "Military strength",
+            "Harvest"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the priests reject according to Hosea 4?",
+        new String[]{
+            "The law",
+            "The temple",
+            "The sacrifices",
+            "The monarchy"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the priests feed on according to Hosea 4?",
+        new String[]{
+            "The sin of the people",
+            "The grain offerings",
+            "The king's treasury",
+            "The temple treasury"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Israel ask Assyria to do according to Hosea 5?",
+        new String[]{
+            "Provide soldiers",
+            "Heal its wounds",
+            "Give them food",
+            "Destroy Judah"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Israel send as a gift to King Jareb?",
+        new String[]{
+            "Silver",
+            "Gold",
+            "A present",
+            "A crown"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "According to Hosea 6, what does God desire rather than sacrifice?",
+        new String[]{
+            "Mercy",
+            "Gold",
+            "Fasting",
+            "Victory"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Hosea compare Israel's goodness to?",
+        new String[]{
+            "A fading flower",
+            "A morning cloud and early dew",
+            "A broken branch",
+            "A dying tree"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Which city is specifically mentioned as a place where murderers lie in wait?",
+        new String[]{
+            "Shechem",
+            "Bethel",
+            "Jerusalem",
+            "Samaria"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Hosea 7, what is Ephraim compared to because of its lack of understanding?",
+        new String[]{
+            "A wild ox",
+            "A silly dove without heart",
+            "A stubborn sheep",
+            "A broken vessel"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Israel call Egypt for help according to Hosea 7?",
+        new String[]{
+            "Their refuge",
+            "The great eagle",
+            "Their father",
+            "Their protector"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Israel multiply according to Hosea 8?",
+        new String[]{
+            "Altars",
+            "Priests",
+            "Kings",
+            "Prophets"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Israel make according to Hosea 8 that was not God?",
+        new String[]{
+            "A golden calf",
+            "A silver idol",
+            "A bronze serpent",
+            "A stone image"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Hosea 9, what did Israel love?",
+        new String[]{
+            "The law",
+            "Wages upon every cornfloor",
+            "The temple",
+            "The prophets"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What happened to Israel's glory according to Hosea 9?",
+        new String[]{
+            "It became like a bird",
+            "It departed",
+            "It increased",
+            "It returned to Judah"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Hosea say Israel was like at Baal-peor?",
+        new String[]{
+            "A fruitful vine",
+            "A faithful bride",
+            "A people separated unto shame",
+            "A mighty army"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did Hosea compare Israel to in Hosea 10 because of its prosperity?",
+        new String[]{
+            "A luxuriant vine",
+            "A strong cedar",
+            "A flowing river",
+            "A golden field"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Israel say in Hosea 10 about having no king?",
+        new String[]{
+            "We need a new priest",
+            "We have no king because we feared not the LORD",
+            "Our king has gone to Egypt",
+            "Our king will save us"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Hosea tell Israel to sow?",
+        new String[]{
+            "Righteousness",
+            "Wheat",
+            "Mercy",
+            "Peace"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Hosea say Israel should seek until the LORD comes?",
+        new String[]{
+            "The temple",
+            "The king",
+            "The LORD",
+            "Jerusalem"
+        },
+        2
+    ));
+            }
         }
 
         private static void addBookJoelQuestions(ArrayList<Question> questions, String difficulty) {
@@ -23216,6 +23493,283 @@ questions.add(new Question(
         },
         2
 ));
+            }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "What does Joel tell the priests to put on?",
+        new String[]{
+            "Royal garments",
+            "White robes",
+            "Garments of mourning",
+            "Armor"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "Where were the priests told to spend the night in sackcloth?",
+        new String[]{
+            "The temple",
+            "The king's house",
+            "The city gate",
+            "The valley"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What offering had been cut off from the house of the LORD?",
+        new String[]{
+            "The meat offering and drink offering",
+            "The burnt offering only",
+            "The incense offering",
+            "The peace offering"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Joel call the locust invasion?",
+        new String[]{
+            "A day of celebration",
+            "A great and strong nation",
+            "A sign of prosperity",
+            "A harvest blessing"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Joel say the locusts had done to the fig tree?",
+        new String[]{
+            "Planted it",
+            "Covered it",
+            "Stripped its bark",
+            "Burned it"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did Joel tell the people to do with their hearts?",
+        new String[]{
+            "Return to the LORD",
+            "Hide their hearts",
+            "Trust their kings",
+            "Seek Egypt"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Joel say the LORD is gracious and what else?",
+        new String[]{
+            "Swift to anger",
+            "Merciful and slow to anger",
+            "Unchanging in judgment",
+            "Strong in battle"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Joel tell the people to blow in Zion?",
+        new String[]{
+            "A trumpet",
+            "A ram's horn",
+            "A horn",
+            "A flute"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What kind of assembly was Joel calling together?",
+        new String[]{
+            "A royal assembly",
+            "A solemn assembly",
+            "A military assembly",
+            "A harvest assembly"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Who were specifically told to gather in Joel 2?",
+        new String[]{
+            "Elders and children",
+            "Kings and soldiers",
+            "Merchants and farmers",
+            "Foreigners and priests"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Joel say would happen to the heavens after the outpouring of the Spirit?",
+        new String[]{
+            "The heavens would become silent",
+            "Wonders would appear",
+            "The stars would disappear",
+            "The moon would rise at noon"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What would the moon become according to Joel 2?",
+        new String[]{
+            "Like blood",
+            "Like fire",
+            "Like darkness",
+            "Like silver"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What would happen to the sun according to Joel 2?",
+        new String[]{
+            "It would become dark",
+            "It would stop moving",
+            "It would fall",
+            "It would become red"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Whoever calls on the name of the LORD shall be what?",
+        new String[]{
+            "Prosperous",
+            "Saved",
+            "Made king",
+            "Given riches"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Which valley is named as the place where nations will be judged?",
+        new String[]{
+            "Valley of Achor",
+            "Valley of Jehoshaphat",
+            "Valley of Elah",
+            "Valley of Hebron"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the nations sell the children of Judah for?",
+        new String[]{
+            "Silver and gold",
+            "Wine and bread",
+            "Weapons and horses",
+            "Land and cattle"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Tyre and Sidon do with the treasures of the LORD?",
+        new String[]{
+            "They hid them",
+            "They carried them into their temples",
+            "They sold them",
+            "They returned them"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did the LORD promise to pour out on His people?",
+        new String[]{
+            "His Spirit",
+            "Gold",
+            "Military strength",
+            "Wisdom only"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Who would prophesy according to Joel's prophecy?",
+        new String[]{
+            "Only priests",
+            "Sons and daughters",
+            "Only kings",
+            "Only elders"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What would old men dream according to Joel 2?",
+        new String[]{
+            "Dreams",
+            "Visions",
+            "Prophecies",
+            "Songs"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What would young men see according to Joel 2?",
+        new String[]{
+            "Dreams",
+            "Visions",
+            "Angels",
+            "Signs"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Joel say would happen to the mountains before the LORD?",
+        new String[]{
+            "They would blossom",
+            "They would tremble",
+            "They would disappear",
+            "They would become rivers"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What would happen to Egypt according to Joel 3?",
+        new String[]{
+            "It would become Judah",
+            "It would be desolate",
+            "It would conquer Tyre",
+            "It would rule Jerusalem"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Joel say about the LORD dwelling in Zion?",
+        new String[]{
+            "He will dwell there forever",
+            "He will leave after judgment",
+            "He will dwell there for seven years",
+            "He will dwell only in the temple"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What agricultural blessing is mentioned at the end of Joel?",
+        new String[]{
+            "The mountains shall drop down new wine",
+            "The fields shall produce gold",
+            "The deserts shall grow wheat",
+            "The rivers shall produce fish"
+        },
+        0
+    ));
             }
         }
 
@@ -23809,6 +24363,283 @@ questions.add(new Question(
                     "It would become a foreign temple"
             },
             1
+    ));
+            }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "What was Amos's occupation before becoming a prophet?",
+        new String[]{
+            "Priest",
+            "Shepherd and dresser of sycamore trees",
+            "Farmer",
+            "Merchant"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Where was Amos from?",
+        new String[]{
+            "Tekoa",
+            "Bethel",
+            "Samaria",
+            "Jerusalem"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Amos see in his first vision?",
+        new String[]{
+            "A plumb line",
+            "Locusts",
+            "A basket of summer fruit",
+            "A wall"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Amos see in his second vision?",
+        new String[]{
+            "Fire",
+            "A sword",
+            "A ladder",
+            "A river"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the LORD show Amos in Amos 7:7?",
+        new String[]{
+            "A plumb line",
+            "A golden altar",
+            "A burning bush",
+            "A scroll"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Who told Amos to flee to Judah?",
+        new String[]{
+            "King Jeroboam",
+            "Amaziah the priest of Bethel",
+            "The king of Judah",
+            "Isaiah"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Amaziah call Amos?",
+        new String[]{
+            "A prophet",
+            "A seer",
+            "A rebel",
+            "A priest"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did Amos say he was not?",
+        new String[]{
+            "A prophet's son",
+            "A king",
+            "A priest",
+            "A Levite"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Amos say the LORD took him from?",
+        new String[]{
+            "The temple",
+            "Following the flock",
+            "The king's court",
+            "The fields of Judah"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Amos see in the fourth vision?",
+        new String[]{
+            "A basket of summer fruit",
+            "A golden lampstand",
+            "A measuring rod",
+            "A burning mountain"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the basket of summer fruit symbolize?",
+        new String[]{
+            "Israel's harvest",
+            "The end of Israel",
+            "Judah's restoration",
+            "A coming feast"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the LORD say He would do to Israel's songs?",
+        new String[]{
+            "Turn them into victory songs",
+            "Turn them into mourning",
+            "Teach them new songs",
+            "Cause them to spread among nations"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the people desire to make smaller according to Amos 8?",
+        new String[]{
+            "The ephah",
+            "The shekel",
+            "The harvest",
+            "The Sabbath"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did dishonest merchants make larger?",
+        new String[]{
+            "The ephah",
+            "The shekel",
+            "The harvest",
+            "The temple"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the merchants sell according to Amos 8?",
+        new String[]{
+            "Silver and gold",
+            "The poor for silver and the needy for a pair of shoes",
+            "Grain to Egypt",
+            "Cattle to Judah"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Israel command the Nazarites to do?",
+        new String[]{
+            "Drink wine",
+            "Leave the land",
+            "Offer sacrifices",
+            "Become priests"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Israel command the prophets?",
+        new String[]{
+            "To prophesy only in Judah",
+            "Not to prophesy",
+            "To serve the king",
+            "To remain silent on the Sabbath"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Amos compare Israel's rejection of justice to?",
+        new String[]{
+            "Turning judgment into gall and righteousness into wormwood",
+            "Breaking a stone",
+            "Destroying a vineyard",
+            "Drying up a river"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did Amos say the LORD hated among Israel's religious gatherings?",
+        new String[]{
+            "Their sacrifices",
+            "Their solemn assemblies",
+            "Their music only",
+            "Their prayers only"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did the LORD say He would not accept from Israel?",
+        new String[]{
+            "Their feasts",
+            "Their offerings",
+            "Their songs",
+            "All of these"
+        },
+        3
+    ));
+
+    questions.add(new Question(
+        "What did Amos say should run down like waters?",
+        new String[]{
+            "Mercy",
+            "Justice",
+            "Peace",
+            "Wisdom"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Israel carry during the wilderness according to Amos 5?",
+        new String[]{
+            "The tabernacle of Moloch",
+            "The star of their god Remphan",
+            "Both A and B",
+            "The ark of Babylon"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "What did Amos say would happen to those longing for the day of the LORD?",
+        new String[]{
+            "It would be light for them",
+            "It would be darkness, not light",
+            "They would receive wealth",
+            "They would escape judgment"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Amos see the LORD standing beside in Amos 9?",
+        new String[]{
+            "An altar",
+            "A river",
+            "A golden lampstand",
+            "A throne"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the LORD promise to raise up at the end of Amos?",
+        new String[]{
+            "The fallen tabernacle of David",
+            "The walls of Jericho",
+            "The throne of Saul",
+            "The temple of Solomon"
+        },
+        0
     ));
             }
         }
