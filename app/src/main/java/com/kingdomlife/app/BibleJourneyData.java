@@ -19415,6 +19415,283 @@ questions.add(new Question(
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What problem does Habakkuk first complain about?",
+            new String[]{
+                    "Violence and injustice",
+                    "Lack of food",
+                    "Foreign trade",
+                    "A shortage of priests"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say the law has become?",
+            new String[]{
+                    "Very powerful",
+                    "Loosened or ineffective",
+                    "Perfectly obeyed",
+                    "Unknown to Judah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say is going forth from justice?",
+            new String[]{
+                    "A blessing",
+                    "A new king",
+                    "Perverted judgment",
+                    "A military victory"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Which nation does the LORD say He is raising up?",
+            new String[]{
+                    "Egypt",
+                    "Babylon",
+                    "Moab",
+                    "Philistia"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How are the Chaldeans described?",
+            new String[]{
+                    "Weak and peaceful",
+                    "Slow and fearful",
+                    "Bitter and hasty",
+                    "Poor and scattered"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say the Chaldeans make their own judgment?",
+            new String[]{
+                    "Their god",
+                    "Their king",
+                    "Their priests",
+                    "Their army"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk question about God's eyes?",
+            new String[]{
+                    "Why they cannot see Israel",
+                    "Why they behold evil without approving it",
+                    "Why they are closed",
+                    "Why they judge only Judah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say he will do while waiting for God's answer?",
+            new String[]{
+                    "Stand upon his watch",
+                    "Leave Jerusalem",
+                    "Gather an army",
+                    "Build an altar"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Where does Habakkuk say he will stand while watching?",
+            new String[]{
+                    "On the temple roof",
+                    "On the tower",
+                    "At the city gate",
+                    "On Mount Carmel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What was Habakkuk instructed to do with the vision?",
+            new String[]{
+                    "Hide it",
+                    "Destroy it",
+                    "Write it plainly",
+                    "Give it only to the king"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the LORD say about the vision's appointed time?",
+            new String[]{
+                    "It will never come",
+                    "It will speak at the appointed time",
+                    "It has already ended",
+                    "It belongs only to the past"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should the righteous live by?",
+            new String[]{
+                    "His wealth",
+                    "His strength",
+                    "His faith",
+                    "His wisdom"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk pronounce against the one who increases what is not his?",
+            new String[]{
+                    "A woe",
+                    "A blessing",
+                    "A reward",
+                    "A crown"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the proud man's soul do?",
+            new String[]{
+                    "It rejoices",
+                    "It is not upright in him",
+                    "It becomes wise",
+                    "It becomes peaceful"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What fills the earth according to Habakkuk 2?",
+            new String[]{
+                    "The knowledge of the glory of the LORD",
+                    "The armies of Babylon",
+                    "The riches of Judah",
+                    "The songs of Israel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the LORD say about violence done to Lebanon?",
+            new String[]{
+                    "It will be forgotten",
+                    "It will be rewarded",
+                    "It will overwhelm the offender",
+                    "It will strengthen Babylon"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say about idols?",
+            new String[]{
+                    "They teach wisdom",
+                    "They can speak clearly",
+                    "They are made of gold only",
+                    "They cannot teach"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "What should every person do before the LORD who is in His holy temple?",
+            new String[]{
+                    "Sing loudly",
+                    "Keep silence",
+                    "Bring an army",
+                    "Offer gold"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk ask the LORD to revive?",
+            new String[]{
+                    "His work",
+                    "The Babylonian army",
+                    "The walls of Jerusalem",
+                    "The royal palace"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk ask God to remember in wrath?",
+            new String[]{
+                    "His enemies",
+                    "Mercy",
+                    "His wealth",
+                    "His army"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happens to the mountains at the presence of the LORD?",
+            new String[]{
+                    "They rejoice",
+                    "They melt",
+                    "They become cities",
+                    "They produce armies"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say about the fig tree?",
+            new String[]{
+                    "It always produces fruit",
+                    "It may not blossom",
+                    "It becomes a cedar",
+                    "It produces olives"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say about the vines?",
+            new String[]{
+                    "They may not yield fruit",
+                    "They always flourish",
+                    "They cover Jerusalem",
+                    "They are planted by Babylon"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Habakkuk say about the absence of food and livestock?",
+            new String[]{
+                    "He will deny God",
+                    "He will still rejoice in the LORD",
+                    "He will leave Judah",
+                    "He will seek Babylon"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who does Habakkuk call the source of his strength?",
+            new String[]{
+                    "The king of Judah",
+                    "The LORD God",
+                    "The army of Israel",
+                    "The priests"
+            },
+            1
+    ));
+                }
         }
 
         private static void addBookZephaniahQuestions(ArrayList<Question> questions, String difficulty) {
@@ -19696,6 +19973,283 @@ questions.add(new Question(
                             0
                     ));
 
+                }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "During whose reign did Zephaniah prophesy?",
+            new String[]{
+                    "Josiah",
+                    "Hezekiah",
+                    "Manasseh",
+                    "Zedekiah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Zephaniah repeatedly emphasize?",
+            new String[]{
+                    "The day of the LORD",
+                    "The building of the temple",
+                    "The reign of Solomon",
+                    "The journey through the wilderness"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the LORD say He will consume from the earth?",
+            new String[]{
+                    "Only the kings",
+                    "Everything from the face of the earth",
+                    "Only foreign nations",
+                    "Only Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which groups in Judah are specifically mentioned among those facing judgment?",
+            new String[]{
+                    "Baal worshippers and those who swear by the LORD and by another god",
+                    "Only priests",
+                    "Only soldiers",
+                    "Only merchants"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did some people do who turned back from following the LORD?",
+            new String[]{
+                    "They became priests",
+                    "They did not seek the LORD or inquire of Him",
+                    "They rebuilt Jerusalem",
+                    "They moved to Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Zephaniah call the coming day of the LORD?",
+            new String[]{
+                    "A day of celebration only",
+                    "A day of wrath and distress",
+                    "A day of harvest",
+                    "A day of rebuilding"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What will the LORD search Jerusalem with?",
+            new String[]{
+                    "Lamps",
+                    "Torches",
+                    "Fire",
+                    "Clouds"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What do the people who are settled on their lees say in their hearts?",
+            new String[]{
+                    "The LORD will bless us",
+                    "The LORD will not do good, neither will He do evil",
+                    "The LORD will make us kings",
+                    "The LORD has forgotten us"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Zephaniah tell the people to do before the day of the LORD?",
+            new String[]{
+                    "Gather yourselves together",
+                    "Build a fortress",
+                    "Leave Judah",
+                    "Prepare for trade"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Zephaniah tell the meek of the earth to seek?",
+            new String[]{
+                    "Wealth",
+                    "The LORD",
+                    "Military power",
+                    "Political influence"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What should the meek seek along with the LORD?",
+            new String[]{
+                    "Righteousness and meekness",
+                    "Gold and silver",
+                    "Fame and power",
+                    "Land and livestock"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Which nations near Judah are specifically addressed in chapter 2?",
+            new String[]{
+                    "Philistia, Moab, Ammon, and others",
+                    "Egypt and Babylon only",
+                    "Israel and Judah only",
+                    "Rome and Greece"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Zephaniah say will happen to Moab and Ammon?",
+            new String[]{
+                    "They will become priests",
+                    "They will be like Sodom and Gomorrah",
+                    "They will rule Jerusalem",
+                    "They will rebuild the temple"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the LORD say about the remnant of His people?",
+            new String[]{
+                    "They will possess the land",
+                    "They will leave forever",
+                    "They will serve Babylon",
+                    "They will become Egyptians"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What city is described as rebellious and polluted?",
+            new String[]{
+                    "Nineveh",
+                    "Jerusalem",
+                    "Bethlehem",
+                    "Hebron"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jerusalem's princes become compared to?",
+            new String[]{
+                    "Lions",
+                    "Roaring lions",
+                    "Eagles",
+                    "Shepherds"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Jerusalem's prophets become described as?",
+            new String[]{
+                    "Faithful servants",
+                    "Light-bringers",
+                    "Light and treacherous persons",
+                    "Kings"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Zephaniah say the LORD is righteous in the midst of Jerusalem?",
+            new String[]{
+                    "He will not do iniquity",
+                    "He will destroy everyone",
+                    "He will abandon the city",
+                    "He will remove His law"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the LORD promise to leave among the people?",
+            new String[]{
+                    "A poor and afflicted people",
+                    "A wealthy army",
+                    "A royal dynasty",
+                    "A foreign government"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What will the remnant of Israel do?",
+            new String[]{
+                    "They will speak lies",
+                    "They will do no iniquity and speak no lies",
+                    "They will build idols",
+                    "They will seek foreign gods"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Zephaniah tell the daughter of Zion to do?",
+            new String[]{
+                    "Fear not",
+                    "Leave Jerusalem",
+                    "Build walls",
+                    "Hide in the mountains"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the LORD promise to be in the midst of His people?",
+            new String[]{
+                    "A mighty king",
+                    "A silent observer",
+                    "A distant judge",
+                    "A foreign ruler"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What will the LORD rejoice over His people with?",
+            new String[]{
+                    "Singing",
+                    "Silence",
+                    "Sacrifice",
+                    "Fire"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the LORD promise to gather?",
+            new String[]{
+                    "Those who are sorrowful for the solemn assembly",
+                    "Only the wealthy",
+                    "Only the priests",
+                    "Foreign armies"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the LORD promise to make His people a name and a praise?",
+            new String[]{
+                    "Among all people of the earth",
+                    "Only in Jerusalem",
+                    "Only among Judah's kings",
+                    "Only among the priests"
+            },
+            0
+    ));
                 }
         }
 
