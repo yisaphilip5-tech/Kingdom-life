@@ -15109,6 +15109,283 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "In Psalm 18, what did David say God had become to him?",
+        new String[]{
+            "His shield and strong tower",
+            "His temple and altar",
+            "His priest and prophet",
+            "His king and judge"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Psalm 18, what did God use to scatter David's enemies?",
+        new String[]{
+            "A mighty army",
+            "His arrows",
+            "His angels only",
+            "A flood"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Psalm 34, what does the psalmist say the angel of the LORD does?",
+        new String[]{
+            "Teaches the Law",
+            "Leads Israel",
+            "Encamps around those who fear Him",
+            "Destroys every nation"
+        },
+        2
+    ));
+
+    questions.add(new Question(
+        "According to Psalm 34, what should a person do to see good days?",
+        new String[]{
+            "Keep his tongue from evil",
+            "Build an altar",
+            "Offer gold",
+            "Travel to Jerusalem"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Psalm 42, what animal image is used to describe the soul's longing for God?",
+        new String[]{
+            "A deer panting for water",
+            "An eagle seeking the heights",
+            "A sheep seeking pasture",
+            "A dove seeking shelter"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Psalm 51, what does David ask God to create within him?",
+        new String[]{
+            "A new heart",
+            "A clean heart",
+            "A new kingdom",
+            "A righteous throne"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Psalm 68, what does God do for the fatherless?",
+        new String[]{
+            "Makes them kings",
+            "Becomes their father",
+            "Defends their enemies",
+            "Gives them armies"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Psalm 68 describes God as a father to whom?",
+        new String[]{
+            "The fatherless",
+            "The kings",
+            "The priests",
+            "The warriors"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Psalm 78, what did Israel repeatedly forget despite seeing God's works?",
+        new String[]{
+            "The Law of Moses",
+            "His covenant and His works",
+            "The temple sacrifices",
+            "The priesthood"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Psalm 78, what did the Israelites test in their hearts?",
+        new String[]{
+            "Whether God could provide food",
+            "Whether David was king",
+            "Whether Moses could lead",
+            "Whether Jerusalem was safe"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Psalm 81, what did God say He had removed from Israel's shoulder?",
+        new String[]{
+            "The burden of slavery",
+            "The basket",
+            "The crown",
+            "The sword"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Psalm 84 says one day in God's courts is better than what?",
+        new String[]{
+            "A thousand elsewhere",
+            "A year in Jerusalem",
+            "Ten thousand sacrifices",
+            "A lifetime of riches"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Psalm 84, what is the Lord described as?",
+        new String[]{
+            "A shepherd and king",
+            "A sun and shield",
+            "A priest and prophet",
+            "A fortress and judge"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Which Psalm contains the statement about darkness being as light?",
+        new String[]{
+            "Psalm 139",
+            "Psalm 107",
+            "Psalm 88",
+            "Psalm 144"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Psalm 88, where does the psalmist say he has cried out to God?",
+        new String[]{
+            "At the temple",
+            "Day and night",
+            "Only at night",
+            "Before the king"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Psalm 101 say David will set before his eyes?",
+        new String[]{
+            "The ways of the Lord",
+            "No wicked thing",
+            "The law of Moses",
+            "The throne of Israel"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Psalm 104, what does God stretch out like a curtain?",
+        new String[]{
+            "The heavens",
+            "The clouds",
+            "The earth",
+            "The waters"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Psalm 105, what did Joseph's feet suffer before his word came?",
+        new String[]{
+            "They were wounded",
+            "They were hurt with fetters",
+            "They were burned",
+            "They were broken"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Psalm 107, which people are described as wandering in a wilderness?",
+        new String[]{
+            "The hungry and thirsty",
+            "The redeemed",
+            "The sailors",
+            "The prisoners"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What happened to the storm in Psalm 107 when the people cried to the LORD?",
+        new String[]{
+            "It became stronger",
+            "He made the storm calm",
+            "It moved toward Egypt",
+            "The sailors abandoned the ship"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "Psalm 110 says the LORD's people would be willing in what?",
+        new String[]{
+            "The day of His power",
+            "The day of judgment",
+            "The day of battle",
+            "The day of sacrifice"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Psalm 118, what stone became the head of the corner?",
+        new String[]{
+            "The stone rejected by the builders",
+            "The stone from Zion",
+            "The foundation stone",
+            "The stone of David"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "In Psalm 122, what did David say he was glad about?",
+        new String[]{
+            "Going into the house of the LORD",
+            "Seeing the king",
+            "Winning a battle",
+            "Building Jerusalem"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Psalm 127 compares children to what?",
+        new String[]{
+            "Arrows in the hand of a mighty man",
+            "Sheep in a pasture",
+            "Stars in heaven",
+            "Branches on a vine"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Psalm 144, what does David ask God to send down?",
+        new String[]{
+            "Fire from heaven",
+            "Lightning and rain",
+            "His angels",
+            "His wisdom"
+        },
+        1
+    ));
+            }
         }
 
         private static void addBookProverbsQuestions(ArrayList<Question> questions, String difficulty) {
@@ -15669,6 +15946,283 @@ public class BibleJourneyData {
             0
     ));
                 }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "In Proverbs 6, what insect is given as an example of diligence?",
+        new String[]{
+            "Bee",
+            "Ant",
+            "Locust",
+            "Grasshopper"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 6 say a man should do after becoming surety for another?",
+        new String[]{
+            "Sleep on it",
+            "Go and humble himself",
+            "Ask for payment",
+            "Tell the king"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 7, what did the young man lack?",
+        new String[]{
+            "Money",
+            "Understanding",
+            "Strength",
+            "Friends"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Proverbs 8, where does wisdom say she stands?",
+        new String[]{
+            "By the gates and entrances",
+            "Inside the temple",
+            "On Mount Zion",
+            "Beside the throne"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 8 say existed before the ancient mountains?",
+        new String[]{
+            "Wisdom",
+            "The temple",
+            "Jerusalem",
+            "The kings of Israel"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 9, what does the foolish woman do?",
+        new String[]{
+            "Builds a palace",
+            "Sits at the door of her house",
+            "Goes to the temple",
+            "Calls the elders"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 10 say happens to the memory of the just?",
+        new String[]{
+            "It fades quickly",
+            "It is blessed",
+            "It is forgotten",
+            "It becomes a proverb"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 11, what happens to riches in the day of wrath?",
+        new String[]{
+            "They save a person",
+            "They become worthless",
+            "They are given to the poor",
+            "They increase"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 12 say about a faithful witness?",
+        new String[]{
+            "He tells lies",
+            "He speaks truth",
+            "He avoids judgment",
+            "He keeps silent"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 13, what does a person who spares the rod hate?",
+        new String[]{
+            "His neighbor",
+            "His son",
+            "His servant",
+            "His brother"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 14 say is in the heart of him who has understanding?",
+        new String[]{
+            "Wisdom",
+            "Peace",
+            "Knowledge",
+            "Strength"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 15, what answer turns away wrath?",
+        new String[]{
+            "A truthful answer",
+            "A soft answer",
+            "A quick answer",
+            "A long answer"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 16 say is better than great riches?",
+        new String[]{
+            "A good name",
+            "A little with righteousness",
+            "A strong army",
+            "Many friends"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 17, what does a friend do at all times?",
+        new String[]{
+            "Corrects his friend",
+            "Loves",
+            "Gives money",
+            "Speaks wisdom"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 18 say death and life are in the power of?",
+        new String[]{
+            "The heart",
+            "The tongue",
+            "The mind",
+            "The hand"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 19, what is better than great riches?",
+        new String[]{
+            "A good name",
+            "A poor person who walks in integrity",
+            "A wise king",
+            "A large household"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 20 say belongs to the LORD?",
+        new String[]{
+            "The battle",
+            "The preparation of the heart",
+            "The victory",
+            "The king's throne"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 21, what is more acceptable to the LORD than sacrifice?",
+        new String[]{
+            "Justice and judgment",
+            "Gold and silver",
+            "Long prayers",
+            "Fasting"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 22 compare a good name to?",
+        new String[]{
+            "Great riches",
+            "Wisdom",
+            "Long life",
+            "A strong tower"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 23, what should a person not do when sitting to eat with a ruler?",
+        new String[]{
+            "Speak",
+            "Desire his delicacies",
+            "Drink water",
+            "Ask questions"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 24 say happens when a righteous man falls?",
+        new String[]{
+            "He remains fallen",
+            "He rises again",
+            "He loses everything",
+            "He becomes king"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 25, what is the glory of God?",
+        new String[]{
+            "To conceal a matter",
+            "To reveal every secret",
+            "To punish kings",
+            "To judge nations"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 26 compare a fool returning to his folly to?",
+        new String[]{
+            "A bird returning home",
+            "A dog returning to its vomit",
+            "A sheep returning to its shepherd",
+            "A lion returning to its den"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Proverbs 27, what should iron do to iron?",
+        new String[]{
+            "Destroy it",
+            "Sharpen it",
+            "Cover it",
+            "Weaken it"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Proverbs 30 say about the way of an eagle in the air?",
+        new String[]{
+            "It is difficult to understand",
+            "It is hidden from God",
+            "It is written in the Law",
+            "It is known to kings"
+        },
+        0
+    ));
+            }
         }
 
         private static void addBookEcclesiastesQuestions(ArrayList<Question> questions, String difficulty) {
@@ -16215,6 +16769,283 @@ public class BibleJourneyData {
                     "War versus military strength"
             },
             1
+    ));
+            }
+            if (difficulty.equals("Hard")) {
+
+    questions.add(new Question(
+        "According to Ecclesiastes 1, what does the eye never become satisfied with seeing?",
+        new String[]{
+            "Light",
+            "Seeing",
+            "The temple",
+            "The heavens"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes say about the rivers that run into the sea?",
+        new String[]{
+            "They never return",
+            "They return to the place from which they came",
+            "They dry up",
+            "They become springs"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "In Ecclesiastes 2, what did the writer make for himself?",
+        new String[]{
+            "Gardens and orchards",
+            "A military camp",
+            "A temple",
+            "A city wall"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the writer plant in Ecclesiastes 2?",
+        new String[]{
+            "Vineyards",
+            "Olive trees only",
+            "Cedars",
+            "Wheat fields"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What did the writer conclude about wisdom compared with folly?",
+        new String[]{
+            "Wisdom is better than folly",
+            "They are completely equal",
+            "Folly is better",
+            "Neither has any difference"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 3, what is there a time to do?",
+        new String[]{
+            "Speak only",
+            "Plant and uproot",
+            "Build only",
+            "Travel"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes say God has placed in the human heart?",
+        new String[]{
+            "Eternity",
+            "Fear",
+            "Wisdom",
+            "Knowledge of every mystery"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 4, what did the writer see under the sun?",
+        new String[]{
+            "The tears of the oppressed",
+            "A peaceful kingdom",
+            "A new temple",
+            "A great army"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "Why did the oppressed have no comforter?",
+        new String[]{
+            "Their enemies were too powerful",
+            "They were alone",
+            "The king had abandoned them",
+            "The priests refused to help"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What did Ecclesiastes say about the labor of the fool who does not know how to eat?",
+        new String[]{
+            "It is useless",
+            "It makes him rich",
+            "It gives him wisdom",
+            "It pleases God"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 5, what should a person be when approaching God's house?",
+        new String[]{
+            "Ready to hear",
+            "Ready to argue",
+            "Ready to boast",
+            "Ready to make promises"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes warn about making a vow to God?",
+        new String[]{
+            "Do not delay in fulfilling it",
+            "Make as many as possible",
+            "Never fulfill it",
+            "Make it publicly"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 5, what does the laboring person find sweet?",
+        new String[]{
+            "His sleep",
+            "His wealth",
+            "His fame",
+            "His food"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What problem does Ecclesiastes describe concerning a person who possesses riches but cannot enjoy them?",
+        new String[]{
+            "A stranger enjoys them",
+            "His children destroy them",
+            "The king takes them",
+            "They disappear overnight"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 6, what is said to be better than great riches?",
+        new String[]{
+            "A long life",
+            "A good name",
+            "Wisdom",
+            "A large family"
+        },
+        3
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes 7 say is better than the day of birth?",
+        new String[]{
+            "The day of death",
+            "The day of marriage",
+            "The day of harvest",
+            "The day of victory"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 7, what can make the heart better?",
+        new String[]{
+            "Sorrow",
+            "Wealth",
+            "Fame",
+            "Pleasure"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes say about the person who fears God?",
+        new String[]{
+            "He shall come out of them all",
+            "He will never suffer",
+            "He will become wealthy",
+            "He will never die"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 8, whose word is powerful?",
+        new String[]{
+            "The king's",
+            "The priest's",
+            "The prophet's",
+            "The servant's"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes say about the timing of God's work?",
+        new String[]{
+            "It is always immediately visible",
+            "A person's heart may not know the proper time",
+            "It can be predicted by kings",
+            "It is controlled by wealth"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 9, what event is common to the righteous and wicked?",
+        new String[]{
+            "They both become kings",
+            "They both eventually face death",
+            "They both become wealthy",
+            "They both become priests"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes 9 say is better than weapons of war?",
+        new String[]{
+            "Wisdom",
+            "Gold",
+            "Strength",
+            "A large army"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "What happened to a poor wise man in the city described in Ecclesiastes 9?",
+        new String[]{
+            "He delivered the city",
+            "He became king",
+            "He destroyed the city",
+            "He fled from the city"
+        },
+        0
+    ));
+
+    questions.add(new Question(
+        "According to Ecclesiastes 10, what happens when dead flies enter the apothecary's ointment?",
+        new String[]{
+            "The ointment becomes more valuable",
+            "The ointment gives off a bad odor",
+            "The flies are destroyed",
+            "The ointment becomes medicine"
+        },
+        1
+    ));
+
+    questions.add(new Question(
+        "What does Ecclesiastes 10 say about the words of a wise man's mouth?",
+        new String[]{
+            "They consume him",
+            "They are gracious",
+            "They make him poor",
+            "They cause confusion"
+        },
+        1
     ));
             }
         }
