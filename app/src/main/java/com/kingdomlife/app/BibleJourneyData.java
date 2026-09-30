@@ -11530,6 +11530,272 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What does Ecclesiastes say there is a time for?",
+            new String[]{
+                    "Every purpose under heaven",
+                    "Only work",
+                    "Only celebration",
+                    "Only judgment"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Ecclesiastes, what happens to one generation after another?",
+            new String[]{
+                    "Each remains forever",
+                    "One generation goes and another comes",
+                    "They all become kings",
+                    "They return to Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the Preacher say about the sea?",
+            new String[]{
+                    "It never moves",
+                    "It becomes dry",
+                    "It is never full",
+                    "It covers the earth"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did the Preacher discover about increasing wisdom?",
+            new String[]{
+                    "It can also increase sorrow",
+                    "It always produces wealth",
+                    "It removes every problem",
+                    "It makes a person king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the Preacher conclude about pleasure?",
+            new String[]{
+                    "It can satisfy a person permanently",
+                    "It does not provide lasting meaning",
+                    "It is better than wisdom",
+                    "It should always be avoided"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say about wealth that is accumulated but not enjoyed?",
+            new String[]{
+                    "It guarantees wisdom",
+                    "It makes a person powerful",
+                    "It can become meaningless",
+                    "It prevents death"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "According to Ecclesiastes, what is better than the day of one's birth?",
+            new String[]{
+                    "The day of one's death",
+                    "The day of becoming wealthy",
+                    "The day of becoming king",
+                    "The day of marriage"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say is better than going to a house of feasting?",
+            new String[]{
+                    "Going to a house of mourning",
+                    "Going to a palace",
+                    "Going to a marketplace",
+                    "Going to a battlefield"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Ecclesiastes, why can sorrow sometimes be useful?",
+            new String[]{
+                    "It makes people wealthy",
+                    "It can improve the heart",
+                    "It guarantees success",
+                    "It removes responsibility"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes teach about the end of a matter?",
+            new String[]{
+                    "It is always worse than the beginning",
+                    "The beginning is always more important",
+                    "The end can be better than the beginning",
+                    "There is no difference"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say about patience?",
+            new String[]{
+                    "It is better than pride",
+                    "It is a sign of weakness",
+                    "It is only useful for rulers",
+                    "It should be avoided"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Ecclesiastes, what should a person remember when considering prosperity and adversity?",
+            new String[]{
+                    "Both come from human effort alone",
+                    "God has appointed both in their proper times",
+                    "Only prosperity matters",
+                    "Adversity can always be avoided"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say about human beings knowing everything God has done?",
+            new String[]{
+                    "They can understand everything",
+                    "Kings understand everything",
+                    "They cannot fully discover all God's work",
+                    "Wisdom makes everything obvious"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes observe about righteous people and wicked people?",
+            new String[]{
+                    "Both can experience things that seem contrary to what people expect",
+                    "Only wicked people suffer",
+                    "Only righteous people prosper",
+                    "Neither ever dies"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say about wisdom compared with weapons?",
+            new String[]{
+                    "Weapons are always stronger",
+                    "Wisdom is better than weapons of war",
+                    "They are exactly equal",
+                    "Wisdom has no practical value"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say about throwing bread upon the waters?",
+            new String[]{
+                    "It represents avoiding work",
+                    "It represents storing wealth",
+                    "It is connected with eventually finding a return",
+                    "It refers to building a boat"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "According to Ecclesiastes, what should a person do while they are young?",
+            new String[]{
+                    "Remember their Creator",
+                    "Avoid all work",
+                    "Seek political power",
+                    "Leave their family"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes compare the days of youth to?",
+            new String[]{
+                    "A permanent season",
+                    "A time that eventually gives way to old age",
+                    "A period without responsibility",
+                    "A time of guaranteed prosperity"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes warn about excessive study?",
+            new String[]{
+                    "It makes everyone wealthy",
+                    "It guarantees wisdom",
+                    "Much study can be wearisome to the body",
+                    "It should never be attempted"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the Preacher conclude about the whole duty of humanity?",
+            new String[]{
+                    "Fear God and keep His commandments",
+                    "Gain as much wealth as possible",
+                    "Become politically powerful",
+                    "Avoid all pleasure"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say God will bring into judgment?",
+            new String[]{
+                    "Only public actions",
+                    "Every work, including hidden things",
+                    "Only the actions of kings",
+                    "Only acts done in Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes say about the race and the battle?",
+            new String[]{
+                    "The fastest always wins",
+                    "The strongest always wins",
+                    "The outcome is not always determined simply by speed or strength",
+                    "Only kings can participate"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Ecclesiastes recommend concerning enjoying the good things God gives?",
+            new String[]{
+                    "Receive them as gifts from God",
+                    "Reject them completely",
+                    "Save everything for old age",
+                    "Give everything to rulers"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What is one major tension explored throughout Ecclesiastes?",
+            new String[]{
+                    "Human efforts versus the limits of life under the sun",
+                    "Israel versus Egypt",
+                    "Priests versus kings",
+                    "War versus military strength"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookSongofSolomonQuestions(ArrayList<Question> questions, String difficulty) {
@@ -11812,6 +12078,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What does the woman compare her beloved's name to?",
+            new String[]{
+                    "Oil poured forth",
+                    "A crown of gold",
+                    "A cedar tree",
+                    "A flowing river"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the woman say about herself when comparing herself to the daughters of Jerusalem?",
+            new String[]{
+                    "She is the richest among them",
+                    "She is dark but lovely",
+                    "She is their queen",
+                    "She is their servant"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the beloved compare the woman's eyes to?",
+            new String[]{
+                    "Stars",
+                    "Rivers",
+                    "Doves",
+                    "Jewels"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the woman say about the winter being past?",
+            new String[]{
+                    "The time of singing has come",
+                    "The time of war has come",
+                    "The time of harvest has ended",
+                    "The time of mourning has begun"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the beloved compare the woman to when calling her away with him?",
+            new String[]{
+                    "A strong fortress",
+                    "A beautiful garden",
+                    "A royal palace",
+                    "A fruitful field"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the woman ask the daughters of Jerusalem not to stir up?",
+            new String[]{
+                    "Their anger",
+                    "Their wisdom",
+                    "Love until the appropriate time",
+                    "Their wealth"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the beloved compare the woman's hair to?",
+            new String[]{
+                    "A flock of goats coming down from Gilead",
+                    "A field of wheat",
+                    "A river in Lebanon",
+                    "A crown of flowers"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the beloved say about the woman's teeth?",
+            new String[]{
+                    "They are like pearls",
+                    "They are like a flock of newly shorn sheep",
+                    "They are like stones",
+                    "They are like ivory towers"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the woman call her beloved when describing their relationship?",
+            new String[]{
+                    "Her king only",
+                    "Her brother only",
+                    "Her beloved",
+                    "Her master"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What kind of garden imagery appears repeatedly in Song of Solomon?",
+            new String[]{
+                    "A garden representing beauty and fruitfulness",
+                    "A battlefield",
+                    "A wilderness camp",
+                    "A royal treasury"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the woman say her beloved is among other men?",
+            new String[]{
+                    "A mighty warrior",
+                    "The chief among ten thousand",
+                    "A powerful king",
+                    "A famous prophet"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the woman describe as coming up from the wilderness like pillars of smoke?",
+            new String[]{
+                    "An army",
+                    "A storm",
+                    "A procession",
+                    "A fire from heaven"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was Solomon's carriage described as being made from?",
+            new String[]{
+                    "Wood from Lebanon",
+                    "Gold from Ophir",
+                    "Silver from Persia",
+                    "Cedar from Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the woman say about the love between her and her beloved?",
+            new String[]{
+                    "It is temporary",
+                    "It is stronger than death",
+                    "It is based on wealth",
+                    "It should remain hidden forever"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the woman ask the daughters of Jerusalem to do if they find her beloved?",
+            new String[]{
+                    "Take him to the king",
+                    "Give him a message",
+                    "Tell him she is lovesick",
+                    "Bring him to Jerusalem"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the beloved say about the woman's lips?",
+            new String[]{
+                    "They drop sweetness like honey",
+                    "They are silent",
+                    "They are like a trumpet",
+                    "They are like a sword"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the woman compare her beloved's appearance to when describing his head?",
+            new String[]{
+                    "A mountain",
+                    "Fine gold",
+                    "A cedar",
+                    "A crown of silver"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the beloved call the woman when praising her beauty?",
+            new String[]{
+                    "A warrior",
+                    "A prophet",
+                    "Beautiful",
+                    "A queen of Israel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the woman say about the love that cannot be bought with wealth?",
+            new String[]{
+                    "Love cannot simply be purchased with riches",
+                    "Love belongs only to kings",
+                    "Love always requires wealth",
+                    "Love disappears when people become poor"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the beloved compare the woman's neck to?",
+            new String[]{
+                    "A river",
+                    "The tower of David",
+                    "A mountain",
+                    "A cedar tree"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the woman compare her beloved's voice to when he approaches?",
+            new String[]{
+                    "Thunder",
+                    "A trumpet",
+                    "The sound of a gazelle or young hart",
+                    "A rushing river"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does the beloved invite the woman to do when spring arrives?",
+            new String[]{
+                    "Rise and come away",
+                    "Go to war",
+                    "Build a house",
+                    "Travel to Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does the woman say about her beloved's left hand?",
+            new String[]{
+                    "It holds a crown",
+                    "It is under her head",
+                    "It carries a sword",
+                    "It holds flowers"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does the woman compare her beloved's legs to?",
+            new String[]{
+                    "Strong trees",
+                    "Pillars of marble set on bases of fine gold",
+                    "Rivers of Lebanon",
+                    "Walls of Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What central theme is strongly emphasized in Song of Solomon?",
+            new String[]{
+                    "Military victory",
+                    "Royal succession",
+                    "The beauty, devotion, and strength of love",
+                    "The history of Israel's kings"
+            },
+            2
+    ));
+            }
         }
 
     }
