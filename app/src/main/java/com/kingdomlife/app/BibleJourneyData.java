@@ -7021,6 +7021,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "Who was the father of Jesse?",
+            new String[]{
+                    "Obed",
+                    "Boaz",
+                    "Nahshon",
+                    "Salmon"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Which son of Jacob is listed first among the descendants of Israel in 1 Chronicles?",
+            new String[]{
+                    "Judah",
+                    "Reuben",
+                    "Simeon",
+                    "Levi"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which tribe received special attention in the genealogies because of its priestly and temple responsibilities?",
+            new String[]{
+                    "Dan",
+                    "Levi",
+                    "Benjamin",
+                    "Issachar"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was the firstborn son of Israel?",
+            new String[]{
+                    "Judah",
+                    "Joseph",
+                    "Reuben",
+                    "Simeon"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Why did Reuben lose his rights as firstborn?",
+            new String[]{
+                    "He rebelled against Moses",
+                    "He defiled his father's bed",
+                    "He sold Joseph",
+                    "He left Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was the mother of Jabez?",
+            new String[]{
+                    "Hannah",
+                    "Sheerah",
+                    "His mother is not named",
+                    "Bathsheba"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What did Jabez ask God to enlarge?",
+            new String[]{
+                    "His kingdom",
+                    "His coast or territory",
+                    "His army",
+                    "His household"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which tribe was known for its skilled warriors who could use both right hand and left hand?",
+            new String[]{
+                    "Benjamin",
+                    "Judah",
+                    "Dan",
+                    "Asher"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was Saul's son whose descendants were recorded in the genealogies?",
+            new String[]{
+                    "Jonathan",
+                    "Ish-bosheth",
+                    "Abner",
+                    "Shimei"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was Jonathan's son who was lame in his feet?",
+            new String[]{
+                    "Mephibosheth",
+                    "Micaiah",
+                    "Merib-baal",
+                    "Abinadab"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to Saul and his sons in the battle against the Philistines?",
+            new String[]{
+                    "They were captured",
+                    "They fled to Jerusalem",
+                    "They were killed",
+                    "They surrendered"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Why did the LORD put Saul to death according to 1 Chronicles?",
+            new String[]{
+                    "Because he refused to build the temple",
+                    "Because he transgressed against the LORD",
+                    "Because he lost Jerusalem",
+                    "Because he abandoned Israel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was the first group of people specifically mentioned as coming to David at Ziklag?",
+            new String[]{
+                    "The Benjamites",
+                    "The Egyptians",
+                    "The priests",
+                    "The Moabites"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the men of Issachar understand according to the account of those who joined David?",
+            new String[]{
+                    "How to build the temple",
+                    "The times, to know what Israel ought to do",
+                    "How to defeat Egypt",
+                    "How to interpret dreams"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How long did David reign in Hebron before becoming king over all Israel?",
+            new String[]{
+                    "Five years",
+                    "Seven years and six months",
+                    "Ten years",
+                    "Twelve years"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who struck down the Jebusites when David and his army went against Jerusalem?",
+            new String[]{
+                    "Joab",
+                    "Abishai",
+                    "Benaiah",
+                    "Asahel"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was the name of the place where David defeated the Philistines after asking God for direction?",
+            new String[]{
+                    "Baal-perazim",
+                    "Gibeon",
+                    "Ziklag",
+                    "Mizpeh"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did David do when the Philistines came against him again?",
+            new String[]{
+                    "He immediately attacked",
+                    "He asked God for guidance",
+                    "He sent Joab alone",
+                    "He fled to Hebron"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What happened when Uzza put out his hand to hold the ark?",
+            new String[]{
+                    "He was promoted",
+                    "He was struck dead",
+                    "He became a priest",
+                    "He dropped the ark and fled"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Where did David prepare a place for the ark after the first attempt to move it?",
+            new String[]{
+                    "The house of Obed-edom",
+                    "The tabernacle at Gibeon",
+                    "The City of David",
+                    "The house of Zadok"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Which family was appointed to minister with singing before the ark?",
+            new String[]{
+                    "The family of Asaph",
+                    "The family of Saul",
+                    "The family of Joab",
+                    "The family of Caleb"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was appointed chief musician when David organized the service of song?",
+            new String[]{
+                    "Heman",
+                    "Asaph",
+                    "Jeduthun",
+                    "Zadok"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did David say he wanted to do for the ark of God?",
+            new String[]{
+                    "Build a house for it",
+                    "Take it to Egypt",
+                    "Hide it in a cave",
+                    "Place it outside Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why was David not permitted to build the temple?",
+            new String[]{
+                    "He had not gathered enough gold",
+                    "He had shed much blood and fought many wars",
+                    "He was too old",
+                    "He was not from Judah"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did David give Solomon in preparation for building the temple?",
+            new String[]{
+                    "Only his crown",
+                    "Plans and materials",
+                    "Only the ark",
+                    "A military army"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBook2ChroniclesQuestions(ArrayList<Question> questions, String difficulty) {
@@ -7303,6 +7580,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "What did Solomon request from God when He appeared to him at Gibeon?",
+            new String[]{
+                    "An understanding heart",
+                    "A larger army",
+                    "Longer life",
+                    "Victory over Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Solomon make in addition to the bronze altar?",
+            new String[]{
+                    "A golden throne",
+                    "A bronze platform",
+                    "A second ark",
+                    "A stone wall"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How many years did Solomon spend building the temple?",
+            new String[]{
+                    "Five",
+                    "Seven",
+                    "Ten",
+                    "Twelve"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What filled the temple when the priests came out after the ark was placed inside?",
+            new String[]{
+                    "Fire",
+                    "A cloud",
+                    "Rain",
+                    "Smoke from the altar"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Solomon do when he finished his prayer at the temple dedication?",
+            new String[]{
+                    "He left Jerusalem",
+                    "He blessed the congregation",
+                    "He dismissed the priests",
+                    "He built another altar"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did God say He would do if His people humbled themselves, prayed, sought Him, and turned from their wicked ways?",
+            new String[]{
+                    "Give them a new king",
+                    "Hear from heaven, forgive their sin, and heal their land",
+                    "Make them wealthy",
+                    "Give them victory over every nation"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who was the queen who came to test Solomon with difficult questions?",
+            new String[]{
+                    "Queen of Sheba",
+                    "Queen of Egypt",
+                    "Queen of Moab",
+                    "Queen of Tyre"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the queen of Sheba bring Solomon?",
+            new String[]{
+                    "Gold, spices, and precious stones",
+                    "Chariots and horses",
+                    "Silver and weapons",
+                    "Cedar wood and bronze"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Which king of Judah strengthened the kingdom by fortifying cities?",
+            new String[]{
+                    "Rehoboam",
+                    "Jehoshaphat",
+                    "Uzziah",
+                    "Hezekiah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Rehoboam do when the priests and Levites left Israel and came to Judah?",
+            new String[]{
+                    "He rejected them",
+                    "He welcomed them",
+                    "He sent them to Egypt",
+                    "He made them soldiers"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who attacked Jerusalem during Rehoboam's reign?",
+            new String[]{
+                    "Shishak king of Egypt",
+                    "Ben-hadad king of Syria",
+                    "Sennacherib king of Assyria",
+                    "Nebuchadnezzar king of Babylon"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the leaders of Israel do when Shishak attacked?",
+            new String[]{
+                    "They fled to Samaria",
+                    "They humbled themselves",
+                    "They attacked Egypt",
+                    "They destroyed the temple"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Abijah tell Jeroboam before the battle?",
+            new String[]{
+                    "Judah had abandoned God",
+                    "The LORD was with Judah because they had not forsaken Him",
+                    "Israel would capture Jerusalem",
+                    "He wanted peace"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How did Asa respond when Zerah the Ethiopian came against Judah?",
+            new String[]{
+                    "He fled to Jerusalem",
+                    "He relied on the LORD",
+                    "He asked Egypt for help",
+                    "He surrendered"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Asa do to the idols and high places during his reforms?",
+            new String[]{
+                    "He increased them",
+                    "He removed them",
+                    "He ignored them",
+                    "He moved them to Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which king sent teachers throughout Judah to teach the people the Law of the LORD?",
+            new String[]{
+                    "Jehoshaphat",
+                    "Jehoram",
+                    "Joash",
+                    "Amaziah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Jehoshaphat do before Judah went out against the great army from Moab and Ammon?",
+            new String[]{
+                    "He called for a fast",
+                    "He hired Syrian soldiers",
+                    "He fled Jerusalem",
+                    "He destroyed the temple"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did the prophet Jahaziel tell Judah about the battle?",
+            new String[]{
+                    "Judah would need to fight alone",
+                    "The battle belonged to God",
+                    "They should surrender",
+                    "They should retreat to Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Judah find when they came to the place overlooking the wilderness?",
+            new String[]{
+                    "The enemy had fled",
+                    "The enemy armies were destroying one another",
+                    "Egypt had arrived",
+                    "Jerusalem had been captured"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which king of Judah was struck with leprosy after becoming proud and attempting to burn incense?",
+            new String[]{
+                    "Uzziah",
+                    "Ahaz",
+                    "Manasseh",
+                    "Amon"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who opposed Uzziah when he tried to burn incense in the temple?",
+            new String[]{
+                    "The Levites",
+                    "Azariah the priest and eighty priests",
+                    "The king of Israel",
+                    "The prophet Isaiah alone"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Hezekiah do concerning the Passover after beginning his reforms?",
+            new String[]{
+                    "He abolished it",
+                    "He invited all Israel and Judah to keep it",
+                    "He celebrated it only with priests",
+                    "He moved it to another month permanently"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Hezekiah and the people do when they received the threatening message from Sennacherib?",
+            new String[]{
+                    "They prayed to the LORD",
+                    "They surrendered immediately",
+                    "They fled to Egypt",
+                    "They attacked Assyria"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Manasseh do after he was taken captive to Babylon?",
+            new String[]{
+                    "He refused to pray",
+                    "He humbled himself greatly before God",
+                    "He became king of Babylon",
+                    "He destroyed Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did Josiah do when the Book of the Law was found during the temple repairs?",
+            new String[]{
+                    "He hid it",
+                    "He tore his clothes",
+                    "He burned it",
+                    "He sent it to Egypt"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookEzraQuestions(ArrayList<Question> questions, String difficulty) {
