@@ -1956,6 +1956,283 @@ public class BibleJourneyData {
                             1
                     ));
                             }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "How old did the LORD say the men of Israel must be to serve in the army?",
+            new String[]{
+                    "18 years old",
+                    "20 years old",
+                    "25 years old",
+                    "30 years old"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which tribe was not counted with the other tribes for military service?",
+            new String[]{
+                    "Levi",
+                    "Judah",
+                    "Benjamin",
+                    "Ephraim"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was the father of Eleazar the priest?",
+            new String[]{
+                    "Moses",
+                    "Aaron",
+                    "Joshua",
+                    "Phinehas"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which tribe camped on the east side of the tabernacle?",
+            new String[]{
+                    "Judah",
+                    "Dan",
+                    "Reuben",
+                    "Ephraim"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was chosen to assist Moses and Aaron with the tabernacle?",
+            new String[]{
+                    "The Levites",
+                    "The Amalekites",
+                    "The Egyptians",
+                    "The Midianites"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What was the Levites' main responsibility concerning the tabernacle?",
+            new String[]{
+                    "To lead Israel into battle",
+                    "To care for and transport the tabernacle",
+                    "To collect taxes",
+                    "To govern the tribes"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Which Levite family was responsible for carrying the holy things?",
+            new String[]{
+                    "The Gershonites",
+                    "The Kohathites",
+                    "The Merarites",
+                    "The Aaronites"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What covered the ark when the Israelites prepared to travel?",
+            new String[]{
+                    "A blue cloth",
+                    "A scarlet cloth",
+                    "A purple cloth",
+                    "A white linen cloth"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Who was responsible for carrying the boards and pillars of the tabernacle?",
+            new String[]{
+                    "The Kohathites",
+                    "The Gershonites",
+                    "The Merarites",
+                    "The priests"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What happened to Miriam after she spoke against Moses?",
+            new String[]{
+                    "She became blind",
+                    "She became leprous",
+                    "She was imprisoned",
+                    "She was sent to Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How long was Miriam shut outside the camp?",
+            new String[]{
+                    "Three days",
+                    "Seven days",
+                    "Ten days",
+                    "Forty days"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How many spies were sent to explore Canaan?",
+            new String[]{
+                    "10",
+                    "12",
+                    "24",
+                    "40"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who were the two spies who gave a faithful report about Canaan?",
+            new String[]{
+                    "Moses and Aaron",
+                    "Joshua and Caleb",
+                    "Eleazar and Phinehas",
+                    "Gershon and Merari"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "How long did the spies explore the land of Canaan?",
+            new String[]{
+                    "7 days",
+                    "12 days",
+                    "30 days",
+                    "40 days"
+            },
+            3
+    ));
+
+    questions.add(new Question(
+            "What did the Israelites want to do after hearing the spies' report?",
+            new String[]{
+                    "Return to Egypt",
+                    "Build a new tabernacle",
+                    "Attack Moab",
+                    "Choose Aaron as king"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What punishment did God pronounce because of Israel's unbelief?",
+            new String[]{
+                    "They would wander in the wilderness",
+                    "They would lose the tabernacle",
+                    "They would become slaves in Egypt",
+                    "They would be scattered among the nations immediately"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "How many years did God say Israel would bear its iniquities in the wilderness?",
+            new String[]{
+                    "20 years",
+                    "30 years",
+                    "40 years",
+                    "70 years"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "Who challenged Moses and Aaron's leadership?",
+            new String[]{
+                    "Korah, Dathan, and Abiram",
+                    "Joshua, Caleb, and Eleazar",
+                    "Balaam, Balak, and Phinehas",
+                    "Gershon, Kohath, and Merari"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What happened to Korah, Dathan, and Abiram?",
+            new String[]{
+                    "They were sent to Egypt",
+                    "The earth opened and swallowed them",
+                    "They became priests",
+                    "They were appointed judges"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What sign did God give involving Aaron's rod?",
+            new String[]{
+                    "It became a sword",
+                    "It produced water",
+                    "It budded, blossomed, and produced almonds",
+                    "It turned into gold"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What was Moses commanded to speak to in order to bring out water?",
+            new String[]{
+                    "The rock",
+                    "The bronze serpent",
+                    "The tabernacle",
+                    "The cloud"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "Why was Moses not permitted to enter the Promised Land?",
+            new String[]{
+                    "He refused to lead Israel",
+                    "He disobeyed God's command concerning the rock",
+                    "He returned to Egypt",
+                    "He worshipped an idol"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What did the Israelites look at to live after being bitten by fiery serpents?",
+            new String[]{
+                    "A golden calf",
+                    "A bronze serpent",
+                    "The ark of the covenant",
+                    "The pillar of fire"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "Who hired Balaam to curse Israel?",
+            new String[]{
+                    "Balak king of Moab",
+                    "Sihon king of the Amorites",
+                    "Og king of Bashan",
+                    "Pharaoh king of Egypt"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What did Balaam's donkey see that Balaam did not initially see?",
+            new String[]{
+                    "A lion",
+                    "An angel of the LORD",
+                    "A large army",
+                    "A pillar of fire"
+            },
+            1
+    ));
+            }
         }
 
         private static void addBookDeuteronomyQuestions(ArrayList<Question> questions, String difficulty) {
