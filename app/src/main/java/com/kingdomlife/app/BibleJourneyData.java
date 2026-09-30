@@ -10411,6 +10411,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "In Psalm 1, what is the righteous person compared to?",
+            new String[]{
+                    "A tree planted by streams of water",
+                    "A strong mountain",
+                    "A mighty lion",
+                    "A shining star"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Psalm 1, what happens to the way of the wicked?",
+            new String[]{
+                    "It becomes prosperous",
+                    "It shall perish",
+                    "It becomes hidden",
+                    "It leads to Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "In Psalm 2, what do the nations and rulers do against the LORD and His Anointed?",
+            new String[]{
+                    "They worship Him",
+                    "They build an altar",
+                    "They plot together",
+                    "They flee into the wilderness"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Psalm 8 say God has placed under man's feet?",
+            new String[]{
+                    "The works of His hands",
+                    "The armies of Israel",
+                    "The nations of Egypt",
+                    "The mountains of Zion"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "In Psalm 19, what is said to declare the glory of God?",
+            new String[]{
+                    "The temple",
+                    "The heavens",
+                    "The priests",
+                    "The kings of Israel"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Psalm 23 say the LORD does for His sheep beside still waters?",
+            new String[]{
+                    "He makes them fight",
+                    "He gives them riches",
+                    "He leads them",
+                    "He hides them"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "In Psalm 24, who is described as being able to stand in God's holy place?",
+            new String[]{
+                    "One with clean hands and a pure heart",
+                    "A wealthy king",
+                    "A military commander",
+                    "A priest from Judah"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Psalm 27, what does David desire to dwell in all the days of his life?",
+            new String[]{
+                    "The palace of the king",
+                    "The house of the LORD",
+                    "The city of Bethlehem",
+                    "The land of Egypt"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does David ask God to teach him in Psalm 27?",
+            new String[]{
+                    "How to defeat his enemies",
+                    "How to become king",
+                    "His way",
+                    "How to build the temple"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "In Psalm 32, what kind of person is described as blessed?",
+            new String[]{
+                    "The one whose transgression is forgiven",
+                    "The one who has great wealth",
+                    "The one who defeats his enemies",
+                    "The one who rules many nations"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Psalm 34, what does the LORD do for those who are brokenhearted?",
+            new String[]{
+                    "He makes them rulers",
+                    "He is near to them",
+                    "He gives them armies",
+                    "He sends them into exile"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Psalm 37 tell God's people to do instead of becoming angry because of evildoers?",
+            new String[]{
+                    "Take revenge",
+                    "Leave their homes",
+                    "Trust in the LORD and do good",
+                    "Gather an army"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "In Psalm 42, what does the psalmist compare his longing for God to?",
+            new String[]{
+                    "A deer longing for water",
+                    "A bird seeking shelter",
+                    "A lion seeking prey",
+                    "A tree seeking sunlight"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Psalm 46 call God in relation to trouble?",
+            new String[]{
+                    "A distant king",
+                    "A very present help",
+                    "A hidden judge",
+                    "A mighty warrior only"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "In Psalm 51, what does David ask God to create within him?",
+            new String[]{
+                    "A new kingdom",
+                    "A stronger army",
+                    "A clean heart",
+                    "A greater reputation"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does David ask God not to take away from him in Psalm 51?",
+            new String[]{
+                    "His Holy Spirit",
+                    "His throne",
+                    "His possessions",
+                    "His family"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "In Psalm 63, what does David say his soul thirsts for?",
+            new String[]{
+                    "Water from the Jordan",
+                    "God",
+                    "Victory over his enemies",
+                    "The riches of Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "According to Psalm 73, what initially troubled the psalmist?",
+            new String[]{
+                    "The destruction of Jerusalem",
+                    "The absence of priests",
+                    "The apparent prosperity of the wicked",
+                    "The loss of his family"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What changed the psalmist's understanding in Psalm 73?",
+            new String[]{
+                    "Entering the sanctuary of God",
+                    "Winning a battle",
+                    "Speaking with the king",
+                    "Leaving Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "In Psalm 84, what does the psalmist call the dwelling places of the LORD?",
+            new String[]{
+                    "Hidden",
+                    "Lovely",
+                    "Fearful",
+                    "Temporary"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Psalm 91 say God will be for the person who trusts in Him?",
+            new String[]{
+                    "A military commander",
+                    "A wealthy provider only",
+                    "A refuge and fortress",
+                    "A king over Israel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "In Psalm 103, what does David tell his soul not to forget?",
+            new String[]{
+                    "All God's benefits",
+                    "The victories of Israel",
+                    "The laws of Persia",
+                    "The wealth of Jerusalem"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Psalm 119 repeatedly emphasize?",
+            new String[]{
+                    "Military victory",
+                    "Love for God's word and commandments",
+                    "The history of Israel's kings",
+                    "The building of Jerusalem"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "According to Psalm 121, where does the psalmist say his help comes from?",
+            new String[]{
+                    "Jerusalem",
+                    "The mountains",
+                    "The LORD, who made heaven and earth",
+                    "The army of Israel"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What is the main focus of Psalm 150?",
+            new String[]{
+                    "Calling everything that has breath to praise the LORD",
+                    "Warning Israel about its enemies",
+                    "Describing David's childhood",
+                    "Explaining the priesthood"
+            },
+            0
+    ));
+            }
         }
 
         private static void addBookProverbsQuestions(ArrayList<Question> questions, String difficulty) {
@@ -10693,6 +10970,283 @@ public class BibleJourneyData {
                     ));
 
                 }
+            if (difficulty.equals("Medium")) {
+
+    questions.add(new Question(
+            "According to Proverbs, what should a person do when walking with wisdom?",
+            new String[]{
+                    "Avoid the path of evil people",
+                    "Seek political power",
+                    "Collect great wealth",
+                    "Become famous"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about the path of the righteous?",
+            new String[]{
+                    "It becomes darker with time",
+                    "It shines brighter like the morning light",
+                    "It always leads to wealth",
+                    "It avoids every difficulty"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what should a person do concerning the adulterous woman?",
+            new String[]{
+                    "Argue with her",
+                    "Follow her advice",
+                    "Keep far away from her path",
+                    "Invite her into the household"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs use the example of the ant to teach?",
+            new String[]{
+                    "Diligence and preparation",
+                    "Strength in battle",
+                    "How to become wealthy quickly",
+                    "How to avoid responsibility"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what happens to someone who constantly pursues worthless things?",
+            new String[]{
+                    "They gain wisdom",
+                    "They come to poverty",
+                    "They become respected",
+                    "They become a ruler"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about a person who gives a trustworthy answer?",
+            new String[]{
+                    "They become wealthy",
+                    "They gain political power",
+                    "They bring joy to others",
+                    "They avoid every conflict"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what can excessive talk often produce?",
+            new String[]{
+                    "Sin",
+                    "Riches",
+                    "Long life",
+                    "Political influence"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about someone who hides hatred with deceptive speech?",
+            new String[]{
+                    "They become wise",
+                    "Their wickedness will eventually be exposed",
+                    "They become respected",
+                    "They gain many friends"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what does the diligent hand tend to bring?",
+            new String[]{
+                    "Fear",
+                    "Confusion",
+                    "Riches",
+                    "Exile"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs teach about dishonest scales?",
+            new String[]{
+                    "They are an abomination to the LORD",
+                    "They are useful for merchants",
+                    "They are acceptable when used by kings",
+                    "They increase wisdom"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what should a person do when someone gives them a secret?",
+            new String[]{
+                    "Tell their closest friends",
+                    "Keep it confidential",
+                    "Publish it publicly",
+                    "Use it for personal gain"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about someone who repeats a matter that should remain private?",
+            new String[]{
+                    "They become respected",
+                    "They become wealthy",
+                    "They can separate close friends",
+                    "They gain wisdom"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what is the effect of a trustworthy messenger?",
+            new String[]{
+                    "They refresh those who sent them",
+                    "They become kings",
+                    "They receive a military position",
+                    "They gain control of a city"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs teach about accepting a bribe?",
+            new String[]{
+                    "It always produces justice",
+                    "It perverts the course of judgment",
+                    "It makes a ruler wise",
+                    "It should be accepted secretly"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what can excessive sleep contribute to?",
+            new String[]{
+                    "Greater wisdom",
+                    "Political success",
+                    "Poverty",
+                    "Longer life"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about someone who isolates themselves from others?",
+            new String[]{
+                    "They seek their own desire and reject sound judgment",
+                    "They automatically become wise",
+                    "They become respected leaders",
+                    "They gain many friends"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what should a person do before answering a matter?",
+            new String[]{
+                    "Speak quickly",
+                    "Hear the matter first",
+                    "Ask for money",
+                    "Consult a king"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about finding a good wife?",
+            new String[]{
+                    "It is mainly a source of wealth",
+                    "It is a matter of political advantage",
+                    "It is a good thing and a favor from the LORD",
+                    "It guarantees an easy life"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what can a person's words do?",
+            new String[]{
+                    "Bring death or life",
+                    "Guarantee wealth",
+                    "Make them king",
+                    "Remove every enemy"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about someone who is slow to anger?",
+            new String[]{
+                    "They are weak",
+                    "They are better than a mighty warrior",
+                    "They avoid all responsibility",
+                    "They cannot lead others"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what happens when people walk with wise companions?",
+            new String[]{
+                    "They become wealthy",
+                    "They avoid every mistake",
+                    "They become wise",
+                    "They become rulers"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about a person who refuses to hear instruction?",
+            new String[]{
+                    "They will eventually come to poverty and shame",
+                    "They will become powerful",
+                    "They will become famous",
+                    "They will receive great riches"
+            },
+            0
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what should a person do with an enemy's hunger?",
+            new String[]{
+                    "Ignore it",
+                    "Give the enemy food",
+                    "Take advantage of it",
+                    "Ask the king to intervene"
+            },
+            1
+    ));
+
+    questions.add(new Question(
+            "What does Proverbs say about someone who is dependable when others need help?",
+            new String[]{
+                    "They will always become wealthy",
+                    "They will never suffer",
+                    "They are like a trustworthy friend",
+                    "They should become a ruler"
+            },
+            2
+    ));
+
+    questions.add(new Question(
+            "According to Proverbs, what is especially valuable when making important decisions?",
+            new String[]{
+                    "Wise counsel",
+                    "Personal fame",
+                    "Great wealth",
+                    "Political connections"
+            },
+            0
+    ));
+            }
         }
 
         private static void addBookEcclesiastesQuestions(ArrayList<Question> questions, String difficulty) {
