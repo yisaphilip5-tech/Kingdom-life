@@ -25798,6 +25798,108 @@ public class BibleJourneyData {
         2
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was Hosea's father?",
+            new String[]{"Amoz", "Beeri", "Pethuel", "Hilkiah"},
+            1));
+    questions.add(new Question(
+            "Who was Hosea's wife?",
+            new String[]{"Gomer", "Deborah", "Jezebel", "Athaliah"},
+            0));
+    questions.add(new Question(
+            "What was the name of Hosea's first son?",
+            new String[]{"Lo-ammi", "Jezreel", "Lo-ruhamah", "Shear-jashub"},
+            1));
+    questions.add(new Question(
+            "What did the name Lo-ruhamah signify?",
+            new String[]{"The LORD is my strength", "God remembers", "She has not obtained mercy", "The LORD is peace"},
+            2));
+    questions.add(new Question(
+            "What did the name Lo-ammi signify?",
+            new String[]{"Not my people", "The LORD has heard", "God is gracious", "The people are restored"},
+            0));
+    questions.add(new Question(
+            "Which place is associated with the naming of Hosea's first son?",
+            new String[]{"Bethel", "Jezreel", "Gilgal", "Samaria"},
+            1));
+    questions.add(new Question(
+            "What did God tell Hosea to do to illustrate Israel's unfaithfulness?",
+            new String[]{"Build a new altar", "Become a king", "Marry a woman of whoredoms", "Leave the land"},
+            2));
+    questions.add(new Question(
+            "What agricultural image does Hosea use to describe Israel's faithfulness?",
+            new String[]{"A cedar of Lebanon", "A mighty oak", "A fruitful vine", "A morning cloud and early dew"},
+            3));
+    questions.add(new Question(
+            "In Hosea 4, what does God say the land lacks?",
+            new String[]{"Truth, mercy, and knowledge of God", "Gold and silver", "Warriors and horses", "Rain and harvest"},
+            0));
+    questions.add(new Question(
+            "Which priests does Hosea accuse of rejecting knowledge?",
+            new String[]{"The priests of Egypt", "The priests of Israel", "The priests of Babylon", "The priests of Midian"},
+            1));
+    questions.add(new Question(
+            "What does Hosea compare Israel's heart to in Hosea 7?",
+            new String[]{"A broken vessel", "A burning lamp", "An oven", "A sealed scroll"},
+            2));
+    questions.add(new Question(
+            "Which bird is used to describe Ephraim's lack of understanding in Hosea 7?",
+            new String[]{"An eagle", "A raven", "A dove", "A peacock"},
+            2));
+    questions.add(new Question(
+            "What did Israel sow according to Hosea 8?",
+            new String[]{"Righteousness", "Peace", "Mercy", "The wind"},
+            3));
+    questions.add(new Question(
+            "What would Israel reap after sowing the wind?",
+            new String[]{"The whirlwind", "A great harvest", "A peaceful kingdom", "A plentiful vineyard"},
+            0));
+    questions.add(new Question(
+            "Which nation is described as a wild ass alone by himself in Hosea 8?",
+            new String[]{"Judah", "Ephraim", "Moab", "Egypt"},
+            1));
+    questions.add(new Question(
+            "What did Hosea say Israel had forgotten?",
+            new String[]{"Its kings", "Its borders", "Its Maker", "Its harvest"},
+            2));
+    questions.add(new Question(
+            "Which valley is mentioned in Hosea 2 as a door of hope?",
+            new String[]{"Valley of Hinnom", "Valley of Elah", "Valley of Kidron", "Valley of Achor"},
+            3));
+    questions.add(new Question(
+            "What name does God say Israel will call him in Hosea 2?",
+            new String[]{"Ishi", "Baal", "Elohim", "Adonai"},
+            0));
+    questions.add(new Question(
+            "What does the name Ishi mean in Hosea's symbolic message?",
+            new String[]{"My king", "My husband", "My father", "My redeemer"},
+            1));
+    questions.add(new Question(
+            "What does Hosea 6 say God desires rather than sacrifice?",
+            new String[]{"Gold", "Fasting", "Mercy", "Burnt offerings"},
+            2));
+    questions.add(new Question(
+            "What does Hosea 6 say God desires more than burnt offerings?",
+            new String[]{"Knowledge of God", "Royal honour", "Military strength", "Temple wealth"},
+            0));
+    questions.add(new Question(
+            "What did Hosea purchase for fifteen pieces of silver and measures of barley?",
+            new String[]{"A vineyard", "A field", "A servant", "A woman"},
+            3));
+    questions.add(new Question(
+            "How long was Israel to abide without king, prince, sacrifice, or image?",
+            new String[]{"Seven days", "Many days", "One year", "Forty years"},
+            1));
+    questions.add(new Question(
+            "Which tree is used in Hosea 14 to describe Israel's beauty?",
+            new String[]{"Fig tree", "Olive tree", "Cypress tree", "Palm tree"},
+            2));
+    questions.add(new Question(
+            "What does Hosea 14 say the people should take with them when returning to God?",
+            new String[]{"Their weapons", "Their offerings only", "Their royal garments", "Words of repentance"},
+            3));
+            }
         }
 
         private static void addBookJoelQuestions(ArrayList<Question> questions, String difficulty) {
@@ -26632,6 +26734,108 @@ questions.add(new Question(
         },
         0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was Joel's father?",
+            new String[]{"Pethuel", "Beeri", "Amoz", "Hilkiah"},
+            0));
+    questions.add(new Question(
+            "Which creatures are named in Joel's description of devastation?",
+            new String[]{"Lions, bears, and wolves", "Palmerworm, locust, cankerworm, and caterpillar", "Horses, camels, and oxen", "Eagles, ravens, and doves"},
+            1));
+    questions.add(new Question(
+            "What did Joel call the people to proclaim in the land?",
+            new String[]{"A royal celebration", "A military census", "A fast and solemn assembly", "A journey to Egypt"},
+            2));
+    questions.add(new Question(
+            "Where were the priests instructed to weep between?",
+            new String[]{"The city gate and the market", "The Jordan and the sea", "The king's house and the temple", "The porch and the altar"},
+            3));
+    questions.add(new Question(
+            "What did Joel say the LORD would restore after the years eaten by the locust?",
+            new String[]{"The years", "The royal throne", "The walls of Jerusalem", "The army of Judah"},
+            0));
+    questions.add(new Question(
+            "What would happen to the old men, young men, and servants when God's Spirit was poured out?",
+            new String[]{"They would become kings", "They would prophesy, dream dreams, and see visions", "They would leave the land", "They would become priests"},
+            1));
+    questions.add(new Question(
+            "Which heavenly signs does Joel mention before the great and terrible day of the LORD?",
+            new String[]{"Snow and hail", "Earthquakes only", "Blood, fire, and pillars of smoke", "Thunder and wind only"},
+            2));
+    questions.add(new Question(
+            "What is promised to everyone who calls on the name of the LORD?",
+            new String[]{"Wealth", "Long life", "Victory in every battle", "Deliverance"},
+            3));
+    questions.add(new Question(
+            "Which valley is named as the place of judgment among the nations?",
+            new String[]{"The valley of Jehoshaphat", "The valley of Elah", "The valley of Achor", "The valley of Siddim"},
+            0));
+    questions.add(new Question(
+            "What does the name Jehoshaphat mean?",
+            new String[]{"The LORD remembers", "The LORD judges", "The LORD saves", "The LORD provides"},
+            1));
+    questions.add(new Question(
+            "Which nations are specifically named in Joel 3 as being summoned for judgment?",
+            new String[]{"Assyria and Babylon", "Egypt and Edom", "Tyre, Sidon, and Philistia", "Moab and Ammon only"},
+            2));
+    questions.add(new Question(
+            "What did the nations do to God's people and their land according to Joel 3?",
+            new String[]{"They built a temple", "They returned their captives", "They planted vineyards", "They scattered them and divided the land"},
+            3));
+    questions.add(new Question(
+            "What agricultural image describes the abundance of the restored land?",
+            new String[]{"Mountains dripping with new wine", "Rivers turning to oil", "Fields covered in silver", "Trees bearing gold"},
+            0));
+    questions.add(new Question(
+            "What does Joel say will happen to the threshing floors and winepresses?",
+            new String[]{"They will be destroyed", "They will overflow with grain and wine", "They will be abandoned", "They will be turned into fortresses"},
+            1));
+    questions.add(new Question(
+            "Which mountain is described as being holy in Joel 2?",
+            new String[]{"Mount Carmel", "Mount Nebo", "Mount Zion", "Mount Gerizim"},
+            2));
+    questions.add(new Question(
+            "What does Joel say the LORD will be for his people?",
+            new String[]{"A merchant", "A foreign ruler", "A distant observer", "A refuge and stronghold"},
+            3));
+    questions.add(new Question(
+            "What musical instrument does Joel mention in the call to repentance?",
+            new String[]{"Trumpet", "Harp", "Flute", "Cymbal"},
+            0));
+    questions.add(new Question(
+            "What does Joel instruct the people to rend rather than their garments?",
+            new String[]{"Their tents", "Their heart", "Their offerings", "Their scrolls"},
+            1));
+    questions.add(new Question(
+            "Which description is used for the LORD in Joel 2:13?",
+            new String[]{"Slow to hear and quick to anger", "Mighty in battle only", "Gracious, merciful, slow to anger, and of great kindness", "A judge without mercy"},
+            2));
+    questions.add(new Question(
+            "What does Joel say the LORD will do for the northern army?",
+            new String[]{"Make it ruler over Judah", "Give it Jerusalem", "Send it to Egypt", "Remove it far away"},
+            3));
+    questions.add(new Question(
+            "What will happen to the sun and moon in Joel's prophecy?",
+            new String[]{"The sun will be turned into darkness and the moon into blood", "They will disappear permanently", "They will shine brighter than ever", "They will fall to the earth"},
+            0));
+    questions.add(new Question(
+            "What does Joel say will happen to the mountains and hills in the time of restoration?",
+            new String[]{"They will be levelled", "They will flow with new wine and milk", "They will become deserts", "They will be covered in snow"},
+            1));
+    questions.add(new Question(
+            "What will flow from the house of the LORD in Joel 3?",
+            new String[]{"A river of oil", "A spring of water", "A river of fire", "A stream of blood"},
+            2));
+    questions.add(new Question(
+            "Which valley is said to become desolate in Joel 3?",
+            new String[]{"Valley of Jezreel", "Valley of Hinnom", "Valley of Kidron", "Valley of Shittim"},
+            3));
+    questions.add(new Question(
+            "What does Joel say the LORD will dwell in Zion?",
+            new String[]{"His holy mountain", "The king's palace", "The gates of Samaria", "The valley of Achor"},
+            0));
             }
         }
 
@@ -27503,6 +27707,108 @@ questions.add(new Question(
         },
         0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Where was Amos from?",
+            new String[]{"Tekoa", "Bethel", "Samaria", "Gilgal"},
+            0));
+    questions.add(new Question(
+            "What was Amos's occupation before his prophetic ministry?",
+            new String[]{"A royal scribe", "A herdsman and gatherer of sycomore fruit", "A temple musician", "A military commander"},
+            1));
+    questions.add(new Question(
+            "During whose reign did Amos prophesy?",
+            new String[]{"David and Solomon", "Hezekiah and Manasseh", "Uzziah of Judah and Jeroboam II of Israel", "Josiah and Jehoiakim"},
+            2));
+    questions.add(new Question(
+            "Which place was the centre of worship where Amaziah confronted Amos?",
+            new String[]{"Jerusalem", "Shiloh", "Dan", "Bethel"},
+            3));
+    questions.add(new Question(
+            "Who was the priest of Bethel who opposed Amos?",
+            new String[]{"Amaziah", "Hilkiah", "Pashur", "Zadok"},
+            0));
+    questions.add(new Question(
+            "What did Amos see in his vision of summer fruit?",
+            new String[]{"A basket of grain", "A basket of summer fruit", "A golden lampstand", "A plumb line"},
+            1));
+    questions.add(new Question(
+            "What did the basket of summer fruit symbolize?",
+            new String[]{"A coming harvest of blessing", "The rebuilding of the temple", "The end of Israel's patience and coming judgment", "A new covenant with Egypt"},
+            2));
+    questions.add(new Question(
+            "Which object did Amos see in a vision that symbolized God's standard of judgment?",
+            new String[]{"A golden crown", "A scroll", "A sword", "A plumb line"},
+            3));
+    questions.add(new Question(
+            "Which river is mentioned in Amos 5 in the call for justice to roll down?",
+            new String[]{"A mighty stream", "The Nile", "The Jordan", "The Euphrates"},
+            0));
+    questions.add(new Question(
+            "Which star and constellation are mentioned in Amos 5?",
+            new String[]{"Pleiades and Orion", "Arcturus and Sirius", "The Bear and the Eagle", "Venus and Mars"},
+            0));
+    questions.add(new Question(
+            "Which nation does Amos say God brought up from Egypt?",
+            new String[]{"Moab", "Israel", "Philistia", "Assyria"},
+            1));
+    questions.add(new Question(
+            "What did Amos say God hated among Israel's religious gatherings?",
+            new String[]{"Their songs and feasts because of injustice", "Their use of musical instruments", "Their building of houses", "Their planting of vineyards"},
+            0));
+    questions.add(new Question(
+            "Which two cities are used as examples of divine judgment in Amos 1?",
+            new String[]{"Jericho and Ai", "Tyre and Sidon", "Damascus and Gaza", "Nineveh and Babylon"},
+            2));
+    questions.add(new Question(
+            "What did Amos say the people sold for silver and a pair of shoes?",
+            new String[]{"Their land", "Their livestock", "Their weapons", "The righteous and the poor"},
+            3));
+    questions.add(new Question(
+            "What kind of famine did Amos predict?",
+            new String[]{"A famine of hearing the words of the LORD", "A famine of bread only", "A famine of water only", "A famine of livestock"},
+            0));
+    questions.add(new Question(
+            "Which location is mentioned in Amos 7 as the place where Amos was told to prophesy?",
+            new String[]{"Tekoa", "Bethel", "Jerusalem", "Damascus"},
+            1));
+    questions.add(new Question(
+            "What was Amos's response to Amaziah's instruction to leave Bethel?",
+            new String[]{"He agreed to become a royal priest", "He returned to Egypt", "He explained that he was a herdsman called by God", "He stopped prophesying"},
+            2));
+    questions.add(new Question(
+            "Which king is named as ruling Israel during Amos's ministry?",
+            new String[]{"Ahab", "Jehu", "Hoshea", "Jeroboam son of Joash"},
+            3));
+    questions.add(new Question(
+            "What did Amos see in his vision of the Lord standing beside the altar?",
+            new String[]{"The LORD commanding judgment", "A new temple being built", "A heavenly choir", "A river flowing from Zion"},
+            0));
+    questions.add(new Question(
+            "Which people does Amos say God brought from Caphtor?",
+            new String[]{"The Syrians", "The Philistines", "The Moabites", "The Edomites"},
+            1));
+    questions.add(new Question(
+            "Which people does Amos say God brought from Kir?",
+            new String[]{"The Egyptians", "The Philistines", "The Syrians", "The Assyrians"},
+            2));
+    questions.add(new Question(
+            "What does Amos say God will raise up from the fallen tabernacle of David?",
+            new String[]{"A new army", "A palace in Samaria", "A fortified wall", "Its ruins and repair its breaches"},
+            3));
+    questions.add(new Question(
+            "What agricultural image is used to describe the abundance of restoration in Amos 9?",
+            new String[]{"The plowman overtaking the reaper", "The sea becoming dry", "The mountains covered in snow", "The vineyards producing no fruit"},
+            0));
+    questions.add(new Question(
+            "Which city does Amos identify as the place where Israel worshipped the golden calf?",
+            new String[]{"Jerusalem", "Bethel", "Hebron", "Beersheba"},
+            1));
+    questions.add(new Question(
+            "What does Amos say the LORD will do to the house of Israel?",
+            new String[]{"Destroy every nation", "Forget the covenant", "Sift the house of Israel among the nations", "Move the sea away from the land"},
+            2));
             }
         }
 
