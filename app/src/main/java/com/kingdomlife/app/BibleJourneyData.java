@@ -49327,6 +49327,132 @@ if (difficulty.equals("Hard")) {
             1
     ));
             }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "Who was the recipient of John's letter?",
+            new String[]{"Gaius", "Diotrephes", "Demetrius", "Aristarchus"},
+            0));
+
+    questions.add(new Question(
+            "How did John describe Gaius?",
+            new String[]{"A fellow prisoner", "The beloved, whom he loved in the truth", "A fellow apostle", "A servant of Caesar"},
+            1));
+
+    questions.add(new Question(
+            "What did John say he wished above all things for Gaius?",
+            new String[]{"That he would become rich", "That he would travel", "That he might prosper and be in health", "That he would become an elder"},
+            2));
+
+    questions.add(new Question(
+            "What brought John great joy concerning Gaius?",
+            new String[]{"His wealth", "His position", "His journeys", "His children walking in truth"},
+            3));
+
+    questions.add(new Question(
+            "What had the brethren testified about Gaius?",
+            new String[]{"His truth", "His possessions", "His knowledge of the law", "His political influence"},
+            0));
+
+    questions.add(new Question(
+            "What did Gaius do for brethren and strangers?",
+            new String[]{"He opposed them", "He helped them financially only", "He brought them before rulers", "He received them"},
+            3));
+
+    questions.add(new Question(
+            "What did the brethren testify before the church about Gaius?",
+            new String[]{"His charity", "His love", "His faith", "His hospitality"},
+            1));
+
+    questions.add(new Question(
+            "How did John say believers should help travelling brethren?",
+            new String[]{"That they might continue their journey after a godly sort", "By keeping them permanently", "By sending them to Jerusalem", "By refusing them assistance"},
+            0));
+
+    questions.add(new Question(
+            "For whose sake did the brethren go forth?",
+            new String[]{"For the sake of the law", "For his name's sake", "For the sake of the apostles", "For the sake of Rome"},
+            1));
+
+    questions.add(new Question(
+            "From whom had the brethren taken nothing?",
+            new String[]{"The Jews", "The Romans", "The Gentiles", "The priests"},
+            2));
+
+    questions.add(new Question(
+            "What did John say believers ought to do for such people?",
+            new String[]{"Support them", "Avoid them", "Test them for seven days", "Send them to Paul"},
+            0));
+
+    questions.add(new Question(
+            "What did Diotrephes love?",
+            new String[]{"The brethren", "The first place among them", "The truth", "The Scriptures"},
+            1));
+
+    questions.add(new Question(
+            "What did Diotrephes not receive?",
+            new String[]{"The poor", "The elders", "John and his brethren", "The strangers"},
+            2));
+
+    questions.add(new Question(
+            "What did Diotrephes do with malicious words against John?",
+            new String[]{"He ignored them", "He corrected them", "He wrote them down", "He prated against them"},
+            3));
+
+    questions.add(new Question(
+            "Whom did Diotrephes refuse to receive?",
+            new String[]{"The brethren", "The apostles", "The elders", "The strangers"},
+            0));
+
+    questions.add(new Question(
+            "What did Diotrephes do to those who would receive the brethren?",
+            new String[]{"He praised them", "He cast them out of the church", "He appointed them elders", "He sent them away peacefully"},
+            1));
+
+    questions.add(new Question(
+            "What did John say he would remember concerning Diotrephes?",
+            new String[]{"His good works", "His generosity", "His deeds", "His preaching"},
+            2));
+
+    questions.add(new Question(
+            "Who had a good report of all men and of the truth itself?",
+            new String[]{"Gaius", "Diotrephes", "Demetrius", "John"},
+            2));
+
+    questions.add(new Question(
+            "Who also bore witness of Demetrius?",
+            new String[]{"The church", "The Romans", "The elders only", "John alone"},
+            0));
+
+    questions.add(new Question(
+            "What did John say he had many things to write?",
+            new String[]{"With ink and paper", "With pen and ink", "On a scroll", "With a stylus only"},
+            1));
+
+    questions.add(new Question(
+            "Why did John prefer not to write these things with ink?",
+            new String[]{"He had no ink", "He was forbidden", "He hoped to see Gaius shortly", "He wanted secrecy"},
+            2));
+
+    questions.add(new Question(
+            "What did John hope to do when he came?",
+            new String[]{"Speak face to face", "Appoint elders", "Travel to Rome", "Meet Diotrephes alone"},
+            0));
+
+    questions.add(new Question(
+            "What did John wish Gaius to have?",
+            new String[]{"Peace only", "Prosperity only", "Good health only", "Peace"},
+            3));
+
+    questions.add(new Question(
+            "Who sent greetings to Gaius?",
+            new String[]{"The friends", "The elders", "The church", "The strangers"},
+            0));
+
+    questions.add(new Question(
+            "What did John ask Gaius to do concerning the friends?",
+            new String[]{"Greet them by name", "Send them away", "Test their doctrine", "Write to their churches"},
+            0));
+            }
             }
         private static void addBookJudeQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -49884,6 +50010,127 @@ if (difficulty.equals("Hard")) {
             1
     ));
         }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "How does Jude identify himself?",
+            new String[]{"Jude, the servant of Jesus Christ, and brother of James", "Jude, an apostle of Peter", "Jude, bishop of Jerusalem", "Jude, the son of Zebedee"},
+            0));
+
+    questions.add(new Question(
+            "To whom does Jude address his letter?",
+            new String[]{"The twelve tribes", "Them that are sanctified by God the Father, preserved in Jesus Christ, and called", "The seven churches", "The elders of Jerusalem"},
+            1));
+
+    questions.add(new Question(
+            "What did Jude find it necessary to exhort believers to do?",
+            new String[]{"Seek earthly wisdom", "Fast for forty days", "Contend for the faith which was once delivered unto the saints", "Return to Jerusalem"},
+            2));
+
+    questions.add(new Question(
+            "What had certain men crept in unnoticed to do?",
+            new String[]{"Teach the law", "Build new churches", "Defend the apostles", "Turn the grace of God into lasciviousness"},
+            3));
+
+    questions.add(new Question(
+            "What does Jude call the Lord who saved the people out of Egypt?",
+            new String[]{"Jesus", "Moses", "Michael", "Gabriel"},
+            0));
+
+    questions.add(new Question(
+            "What happened to those who afterward believed not?",
+            new String[]{"They became priests", "God destroyed them", "They entered Canaan", "They became prophets"},
+            1));
+
+    questions.add(new Question(
+            "What did the angels who kept not their first estate do?",
+            new String[]{"Returned to heaven", "Guarded Israel", "Left their own habitation", "Served Moses"},
+            2));
+
+    questions.add(new Question(
+            "What is reserved for those angels?",
+            new String[]{"A place in Jerusalem", "An earthly prison", "A new kingdom", "Everlasting chains under darkness unto the judgment of the great day"},
+            3));
+
+    questions.add(new Question(
+            "Which city is mentioned alongside Sodom as suffering eternal fire?",
+            new String[]{"Gomorrha", "Jericho", "Nineveh", "Babylon"},
+            0));
+
+    questions.add(new Question(
+            "What did Michael the archangel dispute with the devil about?",
+            new String[]{"Moses' rod", "The body of Moses", "The temple", "The throne of David"},
+            1));
+
+    questions.add(new Question(
+            "What did Michael say instead of bringing a railing accusation?",
+            new String[]{"The Lord rebuke thee", "God destroy thee", "Be silent forever", "Depart from Israel"},
+            0));
+
+    questions.add(new Question(
+            "What three Old Testament examples does Jude give of ungodly conduct?",
+            new String[]{"Cain, Balaam, and Core", "Abraham, Isaac, and Jacob", "Moses, Aaron, and Miriam", "David, Saul, and Solomon"},
+            0));
+
+    questions.add(new Question(
+            "Whose way did the ungodly men run greedily into?",
+            new String[]{"Moses'", "Balaam's", "Joshua's", "Samuel's"},
+            1));
+
+    questions.add(new Question(
+            "What did Balaam love according to Jude?",
+            new String[]{"Wisdom", "Honour", "The wages of unrighteousness", "The law"},
+            2));
+
+    questions.add(new Question(
+            "What did Core do according to Jude?",
+            new String[]{"Rejected Rome", "Built an altar", "Fled Egypt", "Perished in the gainsaying of Core"},
+            3));
+
+    questions.add(new Question(
+            "What does Jude compare the false teachers to when speaking of their feasts?",
+            new String[]{"Rocks in your feasts of charity", "Lions among sheep", "Trees by rivers", "Stars in heaven"},
+            0));
+
+    questions.add(new Question(
+            "What kind of clouds does Jude mention?",
+            new String[]{"Clouds full of rain", "Clouds without water", "Clouds of glory", "Clouds of fire"},
+            1));
+
+    questions.add(new Question(
+            "What kind of trees does Jude mention?",
+            new String[]{"Trees bearing much fruit", "Trees planted by rivers", "Trees whose fruit withers", "Trees of righteousness"},
+            2));
+
+    questions.add(new Question(
+            "What does Jude say the ungodly men are like when described as wandering stars?",
+            new String[]{"Stars that guide sailors", "Stars of heaven", "Stars that shine forever", "To whom is reserved the blackness of darkness for ever"},
+            3));
+
+    questions.add(new Question(
+            "Who prophesied about the Lord coming with ten thousands of his saints?",
+            new String[]{"Enoch", "Elijah", "Isaiah", "Moses"},
+            0));
+
+    questions.add(new Question(
+            "What did Enoch say the Lord would execute upon the ungodly?",
+            new String[]{"A blessing", "Judgment", "A covenant", "A new kingdom"},
+            1));
+
+    questions.add(new Question(
+            "What should believers do concerning those who doubt?",
+            new String[]{"Ignore them", "Judge them immediately", "Have compassion, making a difference", "Cast them out"},
+            2));
+
+    questions.add(new Question(
+            "How should believers save some?",
+            new String[]{"By teaching the law", "By sending them away", "By giving them wealth", "By pulling them out of the fire"},
+            3));
+
+    questions.add(new Question(
+            "What does Jude say believers should do while building themselves up on their most holy faith?",
+            new String[]{"Praying in the Holy Ghost", "Keeping genealogies", "Avoiding strangers", "Seeking earthly honour"},
+            0));
+            }
         }
         private static void addBookRevelationQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -50441,6 +50688,132 @@ if (difficulty.equals("Hard")) {
             1
     ));
                 }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "To whom was the Revelation given to show things which must shortly come to pass?",
+            new String[]{"Paul", "John", "Peter", "James"},
+            1));
+
+    questions.add(new Question(
+            "What did John see in the midst of the seven golden candlesticks?",
+            new String[]{"A lion", "A throne", "One like unto the Son of man", "A great eagle"},
+            2));
+
+    questions.add(new Question(
+            "What did the Son of man have in his right hand?",
+            new String[]{"Seven stars", "A golden censer", "A book", "A sword"},
+            0));
+
+    questions.add(new Question(
+            "What came out of his mouth?",
+            new String[]{"Fire", "A sharp twoedged sword", "Smoke", "Living water"},
+            1));
+
+    questions.add(new Question(
+            "What were the seven stars?",
+            new String[]{"Seven angels", "Seven churches", "The angels of the seven churches", "Seven prophets"},
+            2));
+
+    questions.add(new Question(
+            "What did the church at Ephesus have against it?",
+            new String[]{"It denied Christ", "It had no faith", "It refused baptism", "It had left its first love"},
+            3));
+
+    questions.add(new Question(
+            "What did the church at Smyrna have tribulation for?",
+            new String[]{"Ten days", "Ten years", "Forty days", "Seven years"},
+            0));
+
+    questions.add(new Question(
+            "What did the church at Pergamos have among them?",
+            new String[]{"The throne of Satan", "The temple of Solomon", "The ark of the covenant", "The seat of Moses"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the faithful martyr at Pergamos?",
+            new String[]{"Antipas", "Nicolas", "Diotrephes", "Demetrius"},
+            0));
+
+    questions.add(new Question(
+            "What did the church at Thyatira suffer by allowing?",
+            new String[]{"A false prophetess called Jezebel", "A Roman governor", "A false apostle named Demas", "A false king"},
+            0));
+
+    questions.add(new Question(
+            "What did the church at Sardis have that was about to die?",
+            new String[]{"Its temple", "The things which remained", "Its leaders", "Its wealth"},
+            1));
+
+    questions.add(new Question(
+            "What did the church at Philadelphia have that no man could shut?",
+            new String[]{"A golden gate", "A heavenly temple", "An open door", "A sealed book"},
+            2));
+
+    questions.add(new Question(
+            "What did the church at Laodicea say it was rich in?",
+            new String[]{"Gold and silver", "Wisdom", "Good works", "Goods"},
+            3));
+
+    questions.add(new Question(
+            "What did John see around the throne in Revelation 4?",
+            new String[]{"Twenty-four elders", "Seventy elders", "Twelve priests", "Four kings"},
+            0));
+
+    questions.add(new Question(
+            "How many living creatures were around the throne?",
+            new String[]{"Two", "Four", "Seven", "Twelve"},
+            1));
+
+    questions.add(new Question(
+            "What did the four living creatures continually say?",
+            new String[]{"Worthy is the Lamb", "Holy, holy, holy, Lord God Almighty", "Alleluia forever", "Glory to the King"},
+            1));
+
+    questions.add(new Question(
+            "How many seals were on the book in the right hand of him that sat upon the throne?",
+            new String[]{"Four", "Five", "Seven", "Twelve"},
+            2));
+
+    questions.add(new Question(
+            "Who was found worthy to open the book and loose its seals?",
+            new String[]{"A mighty angel", "One of the elders", "John", "The Lion of the tribe of Judah, the Root of David"},
+            3));
+
+    questions.add(new Question(
+            "What appeared when the third seal was opened?",
+            new String[]{"A black horse", "A white horse", "A red horse", "A pale horse"},
+            0));
+
+    questions.add(new Question(
+            "What did the rider of the black horse have in his hand?",
+            new String[]{"A sword", "A pair of balances", "A bow", "A crown"},
+            1));
+
+    questions.add(new Question(
+            "What followed the opening of the fourth seal?",
+            new String[]{"A white horse", "A red horse", "A pale horse", "A black horse"},
+            2));
+
+    questions.add(new Question(
+            "What name was given to the rider of the pale horse?",
+            new String[]{"Death", "Abaddon", "Armageddon", "Famine"},
+            0));
+
+    questions.add(new Question(
+            "How many servants of God were sealed in Revelation 7?",
+            new String[]{"12,000", "144,000", "70,000", "1,000,000"},
+            1));
+
+    questions.add(new Question(
+            "How many were sealed from each tribe of the children of Israel?",
+            new String[]{"1,000", "10,000", "12,000", "24,000"},
+            2));
+
+    questions.add(new Question(
+            "What did John see coming down from God out of heaven at the end of Revelation?",
+            new String[]{"A new temple", "A new mountain", "A new throne", "The holy city, new Jerusalem"},
+            3));
+        }
             }
 
 
