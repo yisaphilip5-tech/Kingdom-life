@@ -28646,6 +28646,108 @@ questions.add(new Question(
         0
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Which prophet's vision forms the entire book of Obadiah?",
+            new String[]{"Nahum", "Obadiah", "Habakkuk", "Zephaniah"},
+            1));
+    questions.add(new Question(
+            "Against which nation is Obadiah's prophecy primarily directed?",
+            new String[]{"Moab", "Ammon", "Edom", "Philistia"},
+            2));
+    questions.add(new Question(
+            "What reason is given for Edom's downfall in Obadiah 1:3?",
+            new String[]{"Its pride", "Its lack of armies", "Its famine", "Its refusal to trade"},
+            0));
+    questions.add(new Question(
+            "Where did Edom symbolically make its dwelling?",
+            new String[]{"Beside the Nile", "In the plains of Moab", "On Mount Carmel", "In the clefts of the rock"},
+            3));
+    questions.add(new Question(
+            "What bird-like height does Edom say it will make its nest above?",
+            new String[]{"The dove", "The eagle", "The raven", "The stork"},
+            1));
+    questions.add(new Question(
+            "What would thieves leave behind, unlike Edom's coming judgment?",
+            new String[]{"A crown", "A fortress", "Something remaining", "A written record"},
+            2));
+    questions.add(new Question(
+            "In Obadiah 1:7, what do Edom's allies do to it?",
+            new String[]{"Drive it to the border", "Make it their king", "Give it more land", "Build its cities"},
+            0));
+    questions.add(new Question(
+            "Which group is specifically said to deceive Edom?",
+            new String[]{"Its priests", "Its farmers", "Its soldiers", "Its confederates"},
+            3));
+    questions.add(new Question(
+            "What would happen to Edom's wise men?",
+            new String[]{"They would rule Jerusalem", "They would be destroyed", "They would escape to Egypt", "They would rebuild Bozrah"},
+            1));
+    questions.add(new Question(
+            "What would be cut off from Mount Esau?",
+            new String[]{"Its vineyards", "Its wells", "Its understanding", "Its flocks"},
+            2));
+    questions.add(new Question(
+            "Against whom did Edom commit violence, according to Obadiah 1:10?",
+            new String[]{"Jacob, its brother", "The Philistines", "The Egyptians", "The Assyrians"},
+            0));
+    questions.add(new Question(
+            "What did Edom do when strangers carried away Jerusalem's wealth?",
+            new String[]{"Sent food to Judah", "Protected the temple", "Negotiated a treaty", "Stood on the other side"},
+            3));
+    questions.add(new Question(
+            "What did Edom do on the day strangers entered Jerusalem's gates?",
+            new String[]{"Mourned with Judah", "Cast lots upon Jerusalem", "Fled to Egypt", "Sent messengers to Babylon"},
+            1));
+    questions.add(new Question(
+            "What warning is given to Edom concerning the day of its brother's calamity?",
+            new String[]{"Do not enter the land", "Do not build a wall", "Do not rejoice over him", "Do not gather grain"},
+            2));
+    questions.add(new Question(
+            "What should Edom not have done when Judah's people were taken captive?",
+            new String[]{"Delivered up those who remained", "Repaired Jerusalem's walls", "Sought help from Egypt", "Returned its stolen goods"},
+            0));
+    questions.add(new Question(
+            "According to Obadiah 1:15, the day of the LORD is near upon whom?",
+            new String[]{"Judah alone", "Edom alone", "The house of Israel", "All the heathen"},
+            3));
+    questions.add(new Question(
+            "How would the nations drink on Mount Zion, according to Obadiah 1:16?",
+            new String[]{"From a river of life", "Continually, as they had swallowed judgment", "From the wells of Edom", "Only during the feast"},
+            1));
+    questions.add(new Question(
+            "What would the house of Jacob become to the house of Esau?",
+            new String[]{"A refuge", "A shepherd", "A fire", "A marketplace"},
+            2));
+    questions.add(new Question(
+            "What would the house of Joseph become in the prophecy?",
+            new String[]{"A flame", "A wall", "A crown", "A river"},
+            0));
+    questions.add(new Question(
+            "What image describes the house of Esau after the fire and flame?",
+            new String[]{"A cedar tree", "A mountain stream", "A field of wheat", "Stubble"},
+            3));
+    questions.add(new Question(
+            "What does Obadiah say would remain of the house of Esau?",
+            new String[]{"A small remnant", "No survivor", "Seven princes", "A fortified city"},
+            1));
+    questions.add(new Question(
+            "Which territory is mentioned as being possessed by those of the south?",
+            new String[]{"Lebanon", "Bashan", "Mount Esau", "Gilead"},
+            2));
+    questions.add(new Question(
+            "Which place is named among the areas possessed by the captives of Jerusalem?",
+            new String[]{"Zarephath", "Damascus", "Nineveh", "Shiloh"},
+            0));
+    questions.add(new Question(
+            "Where would deliverers come up to judge Mount Esau?",
+            new String[]{"Mount Sinai", "Mount Carmel", "Mount Nebo", "Mount Zion"},
+            3));
+    questions.add(new Question(
+            "What final declaration concludes Obadiah?",
+            new String[]{"Edom shall be restored", "The kingdom shall be the LORD's", "Judah shall rule Egypt", "The nations shall build Edom"},
+            1));
+            }
         }
 
         private static void addBookJonahQuestions(ArrayList<Question> questions, String difficulty) {
@@ -29482,6 +29584,108 @@ questions.add(new Question(
         1
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who is identified as Jonah's father?",
+            new String[]{"Elisha", "Joel", "Amittai", "Hilkiah"},
+            2));
+    questions.add(new Question(
+            "To which city was Jonah first commanded to go?",
+            new String[]{"Nineveh", "Joppa", "Tarshish", "Damascus"},
+            0));
+    questions.add(new Question(
+            "From which port did Jonah board a ship to flee?",
+            new String[]{"Caesarea", "Tyre", "Sidon", "Joppa"},
+            3));
+    questions.add(new Question(
+            "Which destination did Jonah seek when fleeing from the LORD?",
+            new String[]{"Nineveh", "Tarshish", "Bethel", "Samaria"},
+            1));
+    questions.add(new Question(
+            "What did Jonah pay when he boarded the ship?",
+            new String[]{"A sacrifice", "A tax to Nineveh", "The fare", "A sack of grain"},
+            2));
+    questions.add(new Question(
+            "What did the LORD send upon the sea?",
+            new String[]{"A great wind", "A thick fog", "A drought", "A hailstorm"},
+            0));
+    questions.add(new Question(
+            "What did the shipmaster urge Jonah to do during the storm?",
+            new String[]{"Take command", "Abandon the ship", "Throw the cargo overboard", "Call upon his God"},
+            3));
+    questions.add(new Question(
+            "How did the sailors determine who was responsible for the trouble?",
+            new String[]{"By consulting a scroll", "By casting lots", "By questioning the king", "By reading the stars"},
+            1));
+    questions.add(new Question(
+            "What did Jonah tell the sailors to do to calm the sea?",
+            new String[]{"Return to Joppa", "Offer him food", "Cast him into the sea", "Sail toward Nineveh"},
+            2));
+    questions.add(new Question(
+            "What did the LORD prepare to swallow Jonah?",
+            new String[]{"A great fish", "A whale named Leviathan", "A sea serpent", "A large bird"},
+            0));
+    questions.add(new Question(
+            "How long was Jonah in the belly of the fish?",
+            new String[]{"One day and one night", "Seven days", "Forty days", "Three days and three nights"},
+            3));
+    questions.add(new Question(
+            "What did Jonah say he would do again when looking toward God's holy temple?",
+            new String[]{"Build an altar", "Look", "Offer a lamb", "Return to Jerusalem"},
+            1));
+    questions.add(new Question(
+            "What did the fish do after the LORD spoke to it?",
+            new String[]{"Swam to Joppa", "Circled Nineveh", "Vomited Jonah onto dry land", "Carried Jonah to Tarshish"},
+            2));
+    questions.add(new Question(
+            "How does Jonah describe Nineveh's size in Jonah 3:3?",
+            new String[]{"An exceeding great city of three days' journey", "A city of seven hills", "A city beside the Jordan", "A small fortified town"},
+            0));
+    questions.add(new Question(
+            "What period did Jonah proclaim before Nineveh would be overthrown?",
+            new String[]{"Seven days", "Twelve days", "One year", "Forty days"},
+            3));
+    questions.add(new Question(
+            "What did Nineveh's king lay aside when he sat in ashes?",
+            new String[]{"His sword", "His robe", "His crown of gold", "His signet ring"},
+            1));
+    questions.add(new Question(
+            "Who was included in Nineveh's fast, according to the king's decree?",
+            new String[]{"Only the soldiers", "Only the royal household", "Both people and beasts", "Only the priests"},
+            2));
+    questions.add(new Question(
+            "What did God see that led Him to withhold the threatened destruction?",
+            new String[]{"Their works, that they turned from their evil way", "Their city's walls", "Their wealth", "Their military strength"},
+            0));
+    questions.add(new Question(
+            "Toward which direction of the city did Jonah make a booth?",
+            new String[]{"North", "West", "South", "East"},
+            3));
+    questions.add(new Question(
+            "What plant did the LORD prepare to provide Jonah shade?",
+            new String[]{"A cedar", "A gourd", "An olive tree", "A palm"},
+            1));
+    questions.add(new Question(
+            "What did the LORD prepare to damage the gourd?",
+            new String[]{"A locust swarm", "A flood", "A worm", "A fire"},
+            2));
+    questions.add(new Question(
+            "What kind of wind did God prepare after the gourd withered?",
+            new String[]{"A vehement east wind", "A cool west wind", "A strong north wind", "A gentle south breeze"},
+            0));
+    questions.add(new Question(
+            "Which divine quality does Jonah cite when explaining why he fled?",
+            new String[]{"God's silence", "God's distance", "God's inability to judge", "God's graciousness and mercy"},
+            3));
+    questions.add(new Question(
+            "How many persons in Nineveh are described as unable to discern between their right hand and left?",
+            new String[]{"Twelve thousand", "More than sixscore thousand", "Thirty thousand", "Seven thousand"},
+            1));
+    questions.add(new Question(
+            "What question does the LORD ask Jonah at the book's close?",
+            new String[]{"Why did you flee to Tarshish?", "Where is your brother?", "Should I not spare Nineveh, that great city?", "Who made the heavens?"},
+            2));
+            }
         }
 
         private static void addBookMicahQuestions(ArrayList<Question> questions, String difficulty) {
@@ -30317,6 +30521,108 @@ questions.add(new Question(
         },
         0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "From which town was Micah, according to Micah 1:1?",
+            new String[]{"Moresheth", "Anathoth", "Tekoa", "Bethlehem"},
+            0));
+    questions.add(new Question(
+            "During the reigns of which kings of Judah did Micah prophesy?",
+            new String[]{"David, Solomon, and Rehoboam", "Uzziah, Jotham, and Ahaz", "Jotham, Ahaz, and Hezekiah", "Josiah, Jehoiakim, and Zedekiah"},
+            2));
+    questions.add(new Question(
+            "Which two cities are specifically named as centres of judgment in Micah 1?",
+            new String[]{"Jericho and Ai", "Samaria and Jerusalem", "Bethel and Dan", "Gaza and Ashkelon"},
+            1));
+    questions.add(new Question(
+            "What does Micah say will happen to Samaria?",
+            new String[]{"It will become a royal palace", "It will be spared", "It will become a harbour", "It will be made a heap of the field"},
+            3));
+    questions.add(new Question(
+            "According to Micah 2:1, when do some people devise iniquity?",
+            new String[]{"Upon their beds", "At the city gate", "During the harvest", "At the altar"},
+            0));
+    questions.add(new Question(
+            "What do the wicked covet and take by violence in Micah 2:2?",
+            new String[]{"Only livestock", "Only temple vessels", "Fields and houses", "Wells and ships"},
+            2));
+    questions.add(new Question(
+            "What did the false prophets tell the people not to prophesy about?",
+            new String[]{"The coming harvest", "Such things as judgment", "The rebuilding of Samaria", "The reign of David"},
+            1));
+    questions.add(new Question(
+            "What did Micah say the prophets would do for those who fed them?",
+            new String[]{"Declare peace", "Call them to repentance", "Refuse to speak", "Announce a famine"},
+            0));
+    questions.add(new Question(
+            "What comparison does Micah use for the rulers who hate good and love evil?",
+            new String[]{"Shepherds gathering lambs", "Builders raising a wall", "Fishermen casting nets", "Those who pluck the skin from the people"},
+            3));
+    questions.add(new Question(
+            "What would happen to Zion because of its rulers' injustice?",
+            new String[]{"It would become a garden", "It would be moved to the sea", "It would be plowed as a field", "It would become a fortress"},
+            2));
+    questions.add(new Question(
+            "From which place would a ruler in Israel come, according to Micah 5:2?",
+            new String[]{"Bethlehem Ephratah", "Shiloh", "Hebron", "Mizpah"},
+            0));
+    questions.add(new Question(
+            "What does Micah 5:2 say about the ruler's goings forth?",
+            new String[]{"They begin in Babylon", "They are from of old, from everlasting", "They begin with Saul", "They are from the days of Moses"},
+            1));
+    questions.add(new Question(
+            "In Micah 5:7, what is the remnant of Jacob compared to among many people?",
+            new String[]{"A cedar in Lebanon", "A lion in a cave", "A river in the desert", "Dew from the LORD"},
+            3));
+    questions.add(new Question(
+            "In Micah 5:8, what animal is the remnant of Jacob compared to among the nations?",
+            new String[]{"A lamb", "A dove", "A young lion", "A horse"},
+            2));
+    questions.add(new Question(
+            "Which two cities are mentioned in Micah 5:6 in connection with the land of Nimrod?",
+            new String[]{"Nineveh and Calah", "Assyria and the land of Nimrod", "Babylon and Shushan", "Damascus and Hamath"},
+            1));
+    questions.add(new Question(
+            "What does Micah 6:6 ask about bringing before the LORD?",
+            new String[]{"Burnt offerings and calves of a year old", "A golden image", "A royal crown", "A chariot and horses"},
+            0));
+    questions.add(new Question(
+            "What extravagant offering is mentioned in Micah 6:7?",
+            new String[]{"A thousand doves", "Seven bulls", "Ten thousand lambs", "Thousands of rams and ten thousands of rivers of oil"},
+            3));
+    questions.add(new Question(
+            "Which child does Micah 6:7 mention as a possible offering for transgression?",
+            new String[]{"A firstborn", "A youngest son", "An only daughter", "A servant's child"},
+            0));
+    questions.add(new Question(
+            "Which three actions does Micah 6:8 say the LORD requires?",
+            new String[]{"Fast, give alms, and build an altar", "Offer, sing, and sacrifice", "Do justly, love mercy, and walk humbly with God", "Pray, travel, and keep silence"},
+            2));
+    questions.add(new Question(
+            "Which king of Moab is named in Micah 6:5?",
+            new String[]{"Eglon", "Balak", "Sihon", "Balaam"},
+            1));
+    questions.add(new Question(
+            "Which prophet is recalled in Micah 6:5 as answering Balak?",
+            new String[]{"Elijah", "Elisha", "Nathan", "Balaam"},
+            3));
+    questions.add(new Question(
+            "Between which two places does Micah 6:5 recall Israel's journey?",
+            new String[]{"Shittim and Gilgal", "Bethel and Jericho", "Egypt and Sinai", "Dan and Beersheba"},
+            0));
+    questions.add(new Question(
+            "Which two rulers' statutes are condemned in Micah 6:16?",
+            new String[]{"David and Solomon", "Saul and David", "Omri and Ahab", "Hezekiah and Josiah"},
+            2));
+    questions.add(new Question(
+            "What does Micah 6:11 condemn in dishonest trade?",
+            new String[]{"Large marketplaces", "False balances and a bag of deceitful weights", "Imported cloth", "High taxes alone"},
+            1));
+    questions.add(new Question(
+            "What does Micah say God will cast into the depths of the sea?",
+            new String[]{"The nations", "The idols of Samaria", "The treasures of Zion", "All their sins"},
+            3));
             }
         }
 
