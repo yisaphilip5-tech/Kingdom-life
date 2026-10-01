@@ -45229,6 +45229,132 @@ if (difficulty.equals("Hard")) {
             0
     ));
             }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "Through whom did God make the worlds, according to Hebrews 1?",
+            new String[]{"Moses", "The prophets", "The Son", "The angels"},
+            2));
+
+    questions.add(new Question(
+            "What did the Son uphold by the word of his power?",
+            new String[]{"All things", "The law of Moses", "The throne of David", "The temple"},
+            0));
+
+    questions.add(new Question(
+            "Which angel is specifically named in Hebrews 1?",
+            new String[]{"Gabriel", "Michael", "Uriel", "None is named"},
+            3));
+
+    questions.add(new Question(
+            "According to Hebrews 2, what was the world to come not subjected to?",
+            new String[]{"The prophets", "The angels", "The priests", "The kings"},
+            1));
+
+    questions.add(new Question(
+            "Who testified that Jesus was made a little lower than the angels?",
+            new String[]{"Isaiah", "Moses", "David", "Jeremiah"},
+            2));
+
+    questions.add(new Question(
+            "According to Hebrews 2, why did Jesus partake of flesh and blood?",
+            new String[]{"To destroy him that had the power of death and deliver those in bondage", "To become an earthly king", "To replace the prophets", "To establish the Levitical priesthood"},
+            0));
+
+    questions.add(new Question(
+            "What was Moses faithful as in all his house?",
+            new String[]{"A king", "A priest", "A servant", "A judge"},
+            2));
+
+    questions.add(new Question(
+            "What did the writer say the house of Christ was, if believers held fast?",
+            new String[]{"The temple in Jerusalem", "The church at Rome", "The family of Aaron", "Whose house are we"},
+            3));
+
+    questions.add(new Question(
+            "How many years did God say he was grieved with that generation in the wilderness?",
+            new String[]{"Thirty years", "Forty years", "Fifty years", "Seventy years"},
+            1));
+
+    questions.add(new Question(
+            "What did the Israelites fail to enter because of unbelief?",
+            new String[]{"The promised rest", "The land of Egypt", "The city of Babylon", "The temple"},
+            0));
+
+    questions.add(new Question(
+            "What is the word of God described as in Hebrews 4?",
+            new String[]{"A lamp to the nations", "A shield of brass", "Quick, and powerful, and sharper than any twoedged sword", "A book of genealogies"},
+            2));
+
+    questions.add(new Question(
+            "To whom must all things be opened and laid bare?",
+            new String[]{"The high priest", "Moses", "The angels", "Him with whom we have to do"},
+            3));
+
+    questions.add(new Question(
+            "From which tribe did Jesus descend, according to Hebrews 7?",
+            new String[]{"Levi", "Judah", "Benjamin", "Ephraim"},
+            1));
+
+    questions.add(new Question(
+            "Who met Abraham and blessed him after Abraham returned from the slaughter of the kings?",
+            new String[]{"Melchisedec", "Aaron", "Joshua", "Samuel"},
+            0));
+
+    questions.add(new Question(
+            "What portion did Abraham give to Melchisedec?",
+            new String[]{"A third of the spoils", "Half of his possessions", "Tithes of all", "A tenth of his land"},
+            2));
+
+    questions.add(new Question(
+            "What does Hebrews say about Melchisedec's genealogy?",
+            new String[]{"It was recorded by Moses", "It was preserved in the temple", "It was known to Abraham", "Without father, without mother, without descent"},
+            3));
+
+    questions.add(new Question(
+            "What was the name of the covenant mediator mentioned in Hebrews 8?",
+            new String[]{"Aaron", "Jesus", "Moses", "Melchisedec"},
+            1));
+
+    questions.add(new Question(
+            "How many candlesticks were in the first tabernacle, as described in Hebrews 9?",
+            new String[]{"One", "Two", "Seven", "Twelve"},
+            0));
+
+    questions.add(new Question(
+            "What was kept in the ark of the covenant according to Hebrews 9?",
+            new String[]{"Aaron's rod only", "The tables of the covenant", "The golden candlestick", "The altar of incense"},
+            1));
+
+    questions.add(new Question(
+            "How often did the high priest enter the second tabernacle in the year?",
+            new String[]{"Once", "Twice", "Three times", "Every Sabbath"},
+            0));
+
+    questions.add(new Question(
+            "What did the high priest offer for himself and for the errors of the people?",
+            new String[]{"Incense only", "Grain offerings", "The blood of animals", "Oil and wine"},
+            2));
+
+    questions.add(new Question(
+            "What did the writer say it was impossible for the blood of bulls and goats to do?",
+            new String[]{"Cleanse the temple", "Sanctify the priests", "Make a covenant", "Take away sins"},
+            3));
+
+    questions.add(new Question(
+            "Which Old Testament figure is mentioned as having obtained a good report through faith, though he had not received the promise?",
+            new String[]{"Enoch", "Abraham", "Isaac", "Jacob"},
+            0));
+
+    questions.add(new Question(
+            "Which two people are specifically mentioned as having escaped the edge of the sword through faith?",
+            new String[]{"Abraham and Isaac", "David and Samuel", "Moses and Aaron", "Gideon and Barak"},
+            1));
+
+    questions.add(new Question(
+            "What did the writer say believers had come to, in Hebrews 12?",
+            new String[]{"Mount Sinai only", "The earthly Jerusalem", "Mount Sion and the city of the living God, the heavenly Jerusalem", "The tabernacle in the wilderness"},
+            2));
+            }
         }
         private static void addBookJamesQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -45786,6 +45912,132 @@ if (difficulty.equals("Hard")) {
             0
     ));
         }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "To whom did James address his epistle?",
+            new String[]{"The twelve tribes scattered abroad", "The priests in Jerusalem", "The church at Rome", "The elders of Ephesus"},
+            0));
+
+    questions.add(new Question(
+            "What should a person who lacks wisdom ask of God?",
+            new String[]{"A sign", "A teacher", "A friend", "God, who gives to all men liberally"},
+            3));
+
+    questions.add(new Question(
+            "What is the person who doubts compared to?",
+            new String[]{"A tree without fruit", "A wave of the sea driven with the wind and tossed", "A house built on sand", "A cloud without rain"},
+            1));
+
+    questions.add(new Question(
+            "What does James say the rich man will pass away like?",
+            new String[]{"A fading flower of the grass", "A falling star", "A broken vessel", "A burnt offering"},
+            0));
+
+    questions.add(new Question(
+            "What does James say temptation does not come from?",
+            new String[]{"The world", "Other people", "God", "The desires of the flesh"},
+            2));
+
+    questions.add(new Question(
+            "What does lust bring forth when it has conceived?",
+            new String[]{"Faith", "Patience", "Wisdom", "Sin"},
+            3));
+
+    questions.add(new Question(
+            "What is every good gift and every perfect gift said to be from?",
+            new String[]{"The Father of lights", "The elders of the church", "The law of Moses", "The wisdom of men"},
+            0));
+
+    questions.add(new Question(
+            "With what should believers receive the engrafted word?",
+            new String[]{"Pride", "Meekness", "Anger", "Fear of men"},
+            1));
+
+    questions.add(new Question(
+            "What does James compare a hearer who is not a doer of the word to?",
+            new String[]{"A man building a tower", "A shepherd without sheep", "A man beholding his natural face in a glass", "A farmer who does not sow"},
+            2));
+
+    questions.add(new Question(
+            "What kind of religion is described as pure and undefiled before God?",
+            new String[]{"One focused on ceremonies", "One that seeks public honour", "One that avoids strangers", "To visit the fatherless and widows in their affliction, and keep oneself unspotted from the world"},
+            3));
+
+    questions.add(new Question(
+            "Which example does James use to warn against showing respect of persons?",
+            new String[]{"A rich man with a gold ring and a poor man in vile raiment", "A king and a soldier", "A priest and a Levite", "A farmer and a merchant"},
+            0));
+
+    questions.add(new Question(
+            "What does James call the royal law according to the scripture?",
+            new String[]{"Honour thy father and mother", "Thou shalt love thy neighbour as thyself", "Thou shalt not steal", "Remember the sabbath day"},
+            1));
+
+    questions.add(new Question(
+            "What does James say about faith without works?",
+            new String[]{"It is hidden", "It is greater than hope", "It is dead", "It is sufficient"},
+            2));
+
+    questions.add(new Question(
+            "Which woman is named as being justified by works when she received the messengers?",
+            new String[]{"Sarah", "Deborah", "Ruth", "Rahab"},
+            3));
+
+    questions.add(new Question(
+            "What does James say about the tongue?",
+            new String[]{"It is a little member, and boasteth great things", "It cannot cause harm", "It is easily controlled by everyone", "It is less powerful than the hand"},
+            0));
+
+    questions.add(new Question(
+            "What does James compare the tongue to when it boasts great things?",
+            new String[]{"A large ship", "A little fire that kindleth a great matter", "A mighty river", "A strong tower"},
+            1));
+
+    questions.add(new Question(
+            "Which animals does James mention as being tamed by mankind?",
+            new String[]{"Only horses and oxen", "Only birds and fish", "Beasts, birds, serpents, and things in the sea", "Only wild beasts"},
+            2));
+
+    questions.add(new Question(
+            "What does James say cannot come from the same fountain?",
+            new String[]{"Rain and dew", "Oil and water", "Salt and fresh water", "Sweet water and bitter water"},
+            3));
+
+    questions.add(new Question(
+            "What does James say earthly wisdom is?",
+            new String[]{"Earthly, sensual, and devilish", "Pure and peaceable", "Full of mercy and good fruits", "Gentle and easy to be intreated"},
+            0));
+
+    questions.add(new Question(
+            "What is the first quality of the wisdom from above listed in James 3?",
+            new String[]{"Boldness", "Pure", "Wealth", "Authority"},
+            1));
+
+    questions.add(new Question(
+            "What does James say friendship with the world is?",
+            new String[]{"A sign of maturity", "A path to wisdom", "Enmity with God", "A necessary duty"},
+            2));
+
+    questions.add(new Question(
+            "What does James tell believers to do when they draw nigh to God?",
+            new String[]{"Seek wealth", "Boast of their works", "Judge their neighbours", "He will draw nigh to them"},
+            3));
+
+    questions.add(new Question(
+            "What example does James give of patience in suffering?",
+            new String[]{"The husbandman waiting for the precious fruit of the earth", "The king waiting for a messenger", "The soldier waiting for battle", "The merchant waiting for a ship"},
+            0));
+
+    questions.add(new Question(
+            "Which prophet does James mention as an example of suffering and patience?",
+            new String[]{"Elijah", "The prophets who have spoken in the name of the Lord", "Isaiah alone", "Jonah"},
+            1));
+
+    questions.add(new Question(
+            "What did Elijah do when he prayed earnestly that it might not rain?",
+            new String[]{"He fasted for forty days", "He went to Jerusalem", "It rained for three days", "It rained not on the earth by the space of three years and six months"},
+            3));
+            }
         }
         private static void addBook1PeterQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -46342,6 +46594,132 @@ if (difficulty.equals("Hard")) {
             },
             0
     ));
+            }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "From which two regions did Peter address believers, among others, in his opening greeting?",
+            new String[]{"Galatia and Bithynia", "Egypt and Libya", "Rome and Greece", "Judea and Samaria"},
+            0));
+
+    questions.add(new Question(
+            "According to 1 Peter 1, what is reserved in heaven for believers?",
+            new String[]{"Earthly riches", "An inheritance incorruptible, and undefiled, and that fadeth not away", "A place among earthly rulers", "A crown of silver"},
+            1));
+
+    questions.add(new Question(
+            "Through what are believers kept by the power of God?",
+            new String[]{"Their own strength", "The law of Moses", "Faith unto salvation ready to be revealed in the last time", "The authority of angels"},
+            2));
+
+    questions.add(new Question(
+            "What is more precious than gold that perisheth, according to Peter?",
+            new String[]{"Wisdom", "Knowledge", "Good works", "The trial of faith"},
+            3));
+
+    questions.add(new Question(
+            "What did the prophets search diligently concerning?",
+            new String[]{"The grace that should come unto believers", "The location of the temple", "The names of future kings", "The number of Israel's armies"},
+            0));
+
+    questions.add(new Question(
+            "What did the Spirit of Christ in the prophets signify beforehand?",
+            new String[]{"The rebuilding of Jerusalem", "The sufferings of Christ and the glory that should follow", "The fall of Babylon", "The reign of David"},
+            1));
+
+    questions.add(new Question(
+            "What were believers instructed to gird up the loins of their mind with?",
+            new String[]{"Fear", "Earthly wisdom", "Hope", "Anger"},
+            2));
+
+    questions.add(new Question(
+            "What were believers redeemed from according to 1 Peter 1?",
+            new String[]{"Roman citizenship", "The service of the temple", "The traditions of the prophets", "Their vain conversation received by tradition from their fathers"},
+            3));
+
+    questions.add(new Question(
+            "By what were believers born again, according to Peter?",
+            new String[]{"The word of God, which liveth and abideth for ever", "The works of the law", "The traditions of elders", "The wisdom of rulers"},
+            0));
+
+    questions.add(new Question(
+            "Which Old Testament passage does Peter quote about all flesh being as grass?",
+            new String[]{"Psalm 23", "Isaiah 40", "Jeremiah 29", "Ezekiel 37"},
+            1));
+
+    questions.add(new Question(
+            "What spiritual food does Peter tell believers to desire?",
+            new String[]{"Strong meat", "Honey and milk", "The sincere milk of the word", "The bread of angels"},
+            2));
+
+    questions.add(new Question(
+            "What did Peter call believers who are built up as a spiritual house?",
+            new String[]{"A royal army", "A holy nation only", "A kingdom of priests", "An holy priesthood"},
+            3));
+
+    questions.add(new Question(
+            "Which title does Peter use for believers in 1 Peter 2?",
+            new String[]{"A chosen generation", "A royal generation", "A generation of kings", "A generation of prophets"},
+            0));
+
+    questions.add(new Question(
+            "What were believers called out of, according to 1 Peter 2?",
+            new String[]{"The wilderness into Canaan", "Darkness into his marvellous light", "Babylon into Egypt", "The temple into the world"},
+            1));
+
+    questions.add(new Question(
+            "What does Peter say believers were as sheep before returning to the Shepherd?",
+            new String[]{"Without a king", "Without a temple", "Going astray", "Without a prophet"},
+            2));
+
+    questions.add(new Question(
+            "What does Peter call Christ in relation to the souls of believers?",
+            new String[]{"The chief cornerstone", "The high priest of Aaron", "The judge of Israel", "The Shepherd and Bishop of your souls"},
+            3));
+
+    questions.add(new Question(
+            "What did Peter say Sarah called Abraham?",
+            new String[]{"Lord", "Master", "Father", "King"},
+            0));
+
+    questions.add(new Question(
+            "What did Peter say should adorn a woman's inner self?",
+            new String[]{"Gold and costly apparel", "The ornament of a meek and quiet spirit", "Public recognition", "Fine braided hair"},
+            1));
+
+    questions.add(new Question(
+            "What did Peter say husbands should give to their wives?",
+            new String[]{"Strict commands", "Material gifts only", "Honour, as unto the weaker vessel", "Complete silence"},
+            2));
+
+    questions.add(new Question(
+            "What does Peter say believers should always be ready to give?",
+            new String[]{"A defence of their wealth", "An answer to every political question", "A list of their achievements", "An answer to every man that asketh a reason of the hope that is in them"},
+            3));
+
+    questions.add(new Question(
+            "How many people were saved in the ark through water, according to 1 Peter 3?",
+            new String[]{"Eight souls", "Seven souls", "Twelve souls", "Forty souls"},
+            0));
+
+    questions.add(new Question(
+            "What does Peter say baptism is not the putting away of?",
+            new String[]{"The old covenant", "The filth of the flesh", "The traditions of men", "The law of Moses"},
+            1));
+
+    questions.add(new Question(
+            "What should believers use to minister to one another?",
+            new String[]{"Their personal influence", "Their worldly wisdom", "The gift they have received", "Their wealth alone"},
+            2));
+
+    questions.add(new Question(
+            "What did Peter say the adversary, the devil, does?",
+            new String[]{"Builds a temple", "Rules over all nations", "Appears only in dreams", "Walketh about, seeking whom he may devour"},
+            3));
+
+    questions.add(new Question(
+            "From where did Peter write his closing greeting, referring to the place as Babylon?",
+            new String[]{"Babylon", "Antioch", "Jerusalem", "Rome"},
+            0));
             }
             }
         private static void addBook2PeterQuestions(ArrayList<Question> questions, String difficulty) {
