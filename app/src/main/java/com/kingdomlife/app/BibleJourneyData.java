@@ -2913,6 +2913,132 @@ public class BibleJourneyData {
             1
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What does the name 'Numbers' reflect in the book?",
+            new String[]{"Its many genealogies and censuses", "Its many songs", "Its list of kings", "Its collection of proverbs"},
+            0));
+
+    questions.add(new Question(
+            "Which two sons of Aaron survived after Nadab and Abihu died?",
+            new String[]{"Eleazar and Ithamar", "Gershom and Eliezer", "Kohath and Merari", "Hophni and Phinehas"},
+            0));
+
+    questions.add(new Question(
+            "What object did Aaron's rod do that identified his divinely chosen priestly family?",
+            new String[]{"It produced water", "It blossomed, budded, and produced almonds", "It turned into a serpent", "It split the Jordan"},
+            1));
+
+    questions.add(new Question(
+            "Which tribe's rod was placed before the LORD along with the others?",
+            new String[]{"Judah", "Ephraim", "Levi", "Benjamin"},
+            2));
+
+    questions.add(new Question(
+            "What did the bronze serpent provide when an Israelite looked upon it?",
+            new String[]{"Protection from enemies", "Healing from the serpent bites", "Food for the journey", "Strength for battle"},
+            1));
+
+    questions.add(new Question(
+            "Who was the father of Balaam?",
+            new String[]{"Beor", "Balak", "Zippor", "Chemosh"},
+            0));
+
+    questions.add(new Question(
+            "Who was Balak's father?",
+            new String[]{"Beor", "Zippor", "Og", "Sihon"},
+            1));
+
+    questions.add(new Question(
+            "What did Balaam's donkey see before Balaam did?",
+            new String[]{"A burning bush", "An angel of the LORD", "The pillar of fire", "The ark of the covenant"},
+            1));
+
+    questions.add(new Question(
+            "How many times did Balaam strike his donkey before the LORD opened his eyes?",
+            new String[]{"Two", "Three", "Four", "Seven"},
+            1));
+
+    questions.add(new Question(
+            "From what place did Balak take Balaam to view Israel?",
+            new String[]{"Mount Nebo", "Kirjath-jearim", "Bamoth-baal", "Shiloh"},
+            2));
+
+    questions.add(new Question(
+            "Who advised Israel to sin with the Moabite women?",
+            new String[]{"Joshua", "Balaam", "Eleazar", "Korah"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of the Israelite man killed with the Midianite woman?",
+            new String[]{"Zimri", "Kozbi", "Zur", "Dathan"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the Midianite woman involved with Zimri?",
+            new String[]{"Keziah", "Kozbi", "Milcah", "Tirzah"},
+            1));
+
+    questions.add(new Question(
+            "Who killed Zimri and Kozbi?",
+            new String[]{"Eleazar", "Joshua", "Phinehas", "Moses"},
+            2));
+
+    questions.add(new Question(
+            "What was notable about Phinehas's action regarding the plague?",
+            new String[]{"It stopped the plague", "It opened the Jordan", "It caused manna to appear", "It defeated Midian immediately"},
+            0));
+
+    questions.add(new Question(
+            "Which daughters asked Moses for an inheritance because their father had died without sons?",
+            new String[]{"The daughters of Zelophehad", "The daughters of Korah", "The daughters of Aaron", "The daughters of Zur"},
+            0));
+
+    questions.add(new Question(
+            "How many daughters did Zelophehad have?",
+            new String[]{"Three", "Four", "Five", "Six"},
+            2));
+
+    questions.add(new Question(
+            "Which of Zelophehad's daughters was named Tirzah?",
+            new String[]{"One of the five daughters", "Moses' daughter", "Caleb's daughter", "Aaron's daughter"},
+            0));
+
+    questions.add(new Question(
+            "Who was appointed to succeed Moses as leader of Israel?",
+            new String[]{"Caleb", "Eleazar", "Joshua", "Phinehas"},
+            2));
+
+    questions.add(new Question(
+            "Before Joshua was appointed, where was he presented before the congregation?",
+            new String[]{"At the door of the tabernacle", "Before Eleazar the priest and all the congregation", "At Mount Sinai", "At the Jordan River"},
+            1));
+
+    questions.add(new Question(
+            "Which tribes requested land east of Jordan because they had many cattle?",
+            new String[]{"Judah and Benjamin", "Reuben and Gad", "Dan and Asher", "Ephraim and Manasseh"},
+            1));
+
+    questions.add(new Question(
+            "Which half-tribe also received territory east of Jordan?",
+            new String[]{"Half of Manasseh", "Half of Judah", "Half of Benjamin", "Half of Levi"},
+            0));
+
+    questions.add(new Question(
+            "How many cities of refuge were appointed in the land?",
+            new String[]{"3", "6", "9", "12"},
+            1));
+
+    questions.add(new Question(
+            "How many cities of refuge were on the east side of Jordan?",
+            new String[]{"1", "2", "3", "6"},
+            2));
+
+    questions.add(new Question(
+            "What happened to the land if the inheritance of a daughter passed to another tribe through marriage?",
+            new String[]{"It became Levitical land", "The inheritance was transferred between tribes", "The land became a city of refuge", "The land returned to Egypt"},
+            1));
+            }
         }
 
         private static void addBookDeuteronomyQuestions(ArrayList<Question> questions, String difficulty) {
@@ -3747,6 +3873,132 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What does the name Deuteronomy commonly mean?",
+            new String[]{"Second law", "Book of kings", "Words of Moses", "Journey of Israel"},
+            0));
+
+    questions.add(new Question(
+            "What does the Hebrew phrase 'Shema Yisrael' begin?",
+            new String[]{"Hear, O Israel", "Blessed are Israel", "Remember, O Israel", "Obey, O Israel"},
+            0));
+
+    questions.add(new Question(
+            "How often was the Law to be read before all Israel at the Feast of Tabernacles?",
+            new String[]{"Every year", "Every seven years", "Every ten years", "Every fifty years"},
+            1));
+
+    questions.add(new Question(
+            "Who was specifically told to write a copy of the law for himself if he became king?",
+            new String[]{"The high priest", "The judge", "The king", "The eldest son of Moses"},
+            2));
+
+    questions.add(new Question(
+            "What was the king instructed not to multiply excessively?",
+            new String[]{"Horses", "Fields", "Priests", "Cities"},
+            0));
+
+    questions.add(new Question(
+            "What was the king forbidden to cause Israel to return to?",
+            new String[]{"Egypt", "Moab", "Edom", "Babylon"},
+            0));
+
+    questions.add(new Question(
+            "What was the king instructed to read all the days of his life?",
+            new String[]{"The book of the law", "The book of Joshua", "The priestly records", "The songs of Miriam"},
+            0));
+
+    questions.add(new Question(
+            "Which tribe was told it would have no inheritance like the other tribes?",
+            new String[]{"Levi", "Benjamin", "Dan", "Simeon"},
+            0));
+
+    questions.add(new Question(
+            "What were the Levites' inheritance and portion described as?",
+            new String[]{"The firstfruits of Israel", "The LORD", "The cities of refuge", "The tabernacle vessels"},
+            1));
+
+    questions.add(new Question(
+            "Which prophet-like figure did Moses say the LORD would raise up from among Israel?",
+            new String[]{"A prophet like Moses", "A king like David", "A priest like Aaron", "A judge like Samuel"},
+            0));
+
+    questions.add(new Question(
+            "What did Moses say Israel should do with a prophet who spoke presumptuously in the LORD's name?",
+            new String[]{"Make him king", "Ignore him", "Not fear him", "Stone him immediately"},
+            2));
+
+    questions.add(new Question(
+            "Which mountain did Moses ascend to view the Promised Land before his death?",
+            new String[]{"Mount Carmel", "Mount Nebo", "Mount Tabor", "Mount Gilboa"},
+            1));
+
+    questions.add(new Question(
+            "From which region did Moses view the Promised Land from Mount Nebo?",
+            new String[]{"The land of Moab", "The land of Edom", "The plains of Philistia", "The wilderness of Paran"},
+            0));
+
+    questions.add(new Question(
+            "Who buried Moses?",
+            new String[]{"Joshua", "Eleazar", "The elders of Israel", "The LORD"},
+            3));
+
+    questions.add(new Question(
+            "What is unusual about the account of Moses' burial?",
+            new String[]{"His burial place was unknown", "He was buried in Egypt", "He was buried by Joshua", "He was buried in Jerusalem"},
+            0));
+
+    questions.add(new Question(
+            "How old was Moses when he died?",
+            new String[]{"100", "110", "120", "130"},
+            2));
+
+    questions.add(new Question(
+            "How long did Israel mourn for Moses?",
+            new String[]{"7 days", "30 days", "40 days", "70 days"},
+            1));
+
+    questions.add(new Question(
+            "What physical condition is specifically mentioned about Moses at his death?",
+            new String[]{"His eyes were dim", "His natural force was not abated", "He had lost his voice", "His feet were swollen"},
+            1));
+
+    questions.add(new Question(
+            "What did Moses place before Israel as a choice?",
+            new String[]{"Wisdom and knowledge", "Life and death, blessing and cursing", "War and peace", "Riches and poverty"},
+            1));
+
+    questions.add(new Question(
+            "What did Moses command Israel to choose?",
+            new String[]{"Riches", "Long life", "Life", "Victory"},
+            2));
+
+    questions.add(new Question(
+            "Which two mountains were associated with blessing and cursing?",
+            new String[]{"Sinai and Horeb", "Gerizim and Ebal", "Nebo and Carmel", "Tabor and Gilboa"},
+            1));
+
+    questions.add(new Question(
+            "Which mountain was associated with the blessings?",
+            new String[]{"Ebal", "Gerizim", "Nebo", "Horeb"},
+            1));
+
+    questions.add(new Question(
+            "Which mountain was associated with the curses?",
+            new String[]{"Gerizim", "Sinai", "Ebal", "Carmel"},
+            2));
+
+    questions.add(new Question(
+            "What did Moses command Israel to do when they crossed into the land concerning the Law?",
+            new String[]{"Write it upon stones", "Hide it in the ark", "Burn it", "Give it to Egypt"},
+            0));
+
+    questions.add(new Question(
+            "What did Moses call heaven and earth to witness against Israel?",
+            new String[]{"The covenant", "The genealogy", "The census", "The tabernacle"},
+            0));
+        }
         }
 
         private static void addBookJoshuaQuestions(ArrayList<Question> questions, String difficulty) {
@@ -4583,6 +4835,132 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What does the name Joshua mean in Hebrew?",
+            new String[]{"The LORD is salvation", "God is strength", "The LORD remembers", "Gift of God"},
+            0));
+
+    questions.add(new Question(
+            "What was Joshua's name before Moses gave him the name Joshua?",
+            new String[]{"Hoshea", "Hosea", "Othniel", "Elidad"},
+            0));
+
+    questions.add(new Question(
+            "Who was the father of Joshua?",
+            new String[]{"Nun", "Jephunneh", "Caleb", "Eleazar"},
+            0));
+
+    questions.add(new Question(
+            "Which two spies had previously believed Israel could take Canaan?",
+            new String[]{"Joshua and Caleb", "Joshua and Eleazar", "Caleb and Phinehas", "Moses and Joshua"},
+            0));
+
+    questions.add(new Question(
+            "What did Rahab hide from the king of Jericho?",
+            new String[]{"Two Israelite spies", "Three priests", "Joshua's soldiers", "Two Levites"},
+            0));
+
+    questions.add(new Question(
+            "Where did Rahab hide the spies?",
+            new String[]{"Under the flax stalks on her roof", "Inside the city gate", "In a cave", "Behind the city wall"},
+            0));
+
+    questions.add(new Question(
+            "What sign did Rahab agree to place in her window?",
+            new String[]{"A scarlet thread", "A blue cloth", "A golden cord", "A white flag"},
+            0));
+
+    questions.add(new Question(
+            "What did Rahab ask the spies to spare when Jericho was taken?",
+            new String[]{"Her father, mother, brethren, and household", "Only her father", "Only her children", "The elders of Jericho"},
+            0));
+
+    questions.add(new Question(
+            "What happened when the priests bearing the ark stepped into the Jordan?",
+            new String[]{"The waters stopped and stood in a heap", "The river became blood", "The river dried permanently", "The ark floated away"},
+            0));
+
+    questions.add(new Question(
+            "How many stones were taken from the Jordan as a memorial?",
+            new String[]{"7", "10", "12", "40"},
+            2));
+
+    questions.add(new Question(
+            "Where were the twelve memorial stones set up?",
+            new String[]{"Gilgal", "Jericho", "Shiloh", "Mount Ebal"},
+            0));
+
+    questions.add(new Question(
+            "What did Joshua call the memorial stones intended to teach future generations?",
+            new String[]{"A sign", "A crown", "An altar", "A sanctuary"},
+            0));
+
+    questions.add(new Question(
+            "What did the man Joshua encountered near Jericho identify himself as?",
+            new String[]{"The captain of the host of the LORD", "The king of Jericho", "The high priest", "The captain of Israel"},
+            0));
+
+    questions.add(new Question(
+            "What unusual military command was given concerning Jericho?",
+            new String[]{"Israel was to march around the city", "Israel was to build a siege tower", "Israel was to dig beneath the walls", "Israel was to attack only at night"},
+            0));
+
+    questions.add(new Question(
+            "How many times did Israel march around Jericho on the seventh day?",
+            new String[]{"3", "5", "7", "12"},
+            2));
+
+    questions.add(new Question(
+            "Who secretly took items from Jericho despite the command concerning the devoted things?",
+            new String[]{"Achan", "Korah", "Adonijah", "Gershom"},
+            0));
+
+    questions.add(new Question(
+            "What was Achan's father's name?",
+            new String[]{"Carmi", "Zerah", "Zabdi", "Caleb"},
+            0));
+
+    questions.add(new Question(
+            "What tribe was Achan from?",
+            new String[]{"Judah", "Benjamin", "Ephraim", "Reuben"},
+            0));
+
+    questions.add(new Question(
+            "What items did Achan confess to taking?",
+            new String[]{"A Babylonish garment, silver, and a wedge of gold", "Only silver", "A priestly robe and bronze", "Gold and incense only"},
+            0));
+
+    questions.add(new Question(
+            "Which city defeated Israel after the victory at Jericho?",
+            new String[]{"Ai", "Hazor", "Gibeon", "Hebron"},
+            0));
+
+    questions.add(new Question(
+            "How did the Gibeonites deceive Israel into making a covenant with them?",
+            new String[]{"They pretended to have come from a far country", "They attacked Israel first", "They disguised themselves as priests", "They offered Jericho's treasures"},
+            0));
+
+    questions.add(new Question(
+            "What did the Gibeonites use as evidence that they had supposedly travelled a long distance?",
+            new String[]{"Old sacks, worn garments, and moldy bread", "Broken weapons", "Empty water jars", "Old tents and sandals only"},
+            0));
+
+    questions.add(new Question(
+            "What unusual event occurred during Joshua's battle against the Amorites?",
+            new String[]{"The sun stood still", "The Jordan flooded", "The walls of Hebron fell", "Manna returned"},
+            0));
+
+    questions.add(new Question(
+            "Which king was captured in the cave at Makkedah?",
+            new String[]{"The king of Jerusalem", "The king of Jericho", "The king of Ai", "The king of Gibeon"},
+            0));
+
+    questions.add(new Question(
+            "Which city became Joshua's inheritance after Israel gave him an inheritance?",
+            new String[]{"Timnath-serah", "Hebron", "Shiloh", "Gilgal"},
+            0));
+                         }
         }
 
         private static void addBookJudgesQuestions(ArrayList<Question> questions, String difficulty) {
