@@ -14516,6 +14516,108 @@ public class BibleJourneyData {
         2
     ));
         }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was Nehemiah's father?",
+            new String[]{"Hachaliah", "Hilkiah", "Joiakim", "Shelemiah"},
+            0));
+    questions.add(new Question(
+            "What was the name of Nehemiah's brother who brought him news from Judah?",
+            new String[]{"Hananiah", "Ezra", "Hanani", "Mordecai"},
+            2));
+    questions.add(new Question(
+            "In which month did Nehemiah hear about Jerusalem's condition?",
+            new String[]{"Nisan", "Tishri", "Adar", "Chisleu"},
+            3));
+    questions.add(new Question(
+            "What position did Nehemiah hold in the Persian king's court?",
+            new String[]{"Scribe", "Cupbearer", "Commander", "Treasurer"},
+            1));
+    questions.add(new Question(
+            "Who was sitting beside King Artaxerxes when Nehemiah requested permission to go to Judah?",
+            new String[]{"The high priest", "The queen", "The governor", "The king's son"},
+            1));
+    questions.add(new Question(
+            "Who was the keeper of the king's forest from whom Nehemiah requested timber?",
+            new String[]{"Sanballat", "Tobiah", "Geshem", "Asaph"},
+            3));
+    questions.add(new Question(
+            "Sanballat was identified as a Horonite. What was Tobiah identified as?",
+            new String[]{"An Ammonite", "A Moabite", "An Edomite", "A Philistine"},
+            0));
+    questions.add(new Question(
+            "Which official opposed Nehemiah alongside Sanballat?",
+            new String[]{"Geshem", "Eliashib", "Tobiah", "Hanani"},
+            2));
+    questions.add(new Question(
+            "What was Geshem's regional identity?",
+            new String[]{"Horonite", "Arab", "Ammonite", "Persian"},
+            1));
+    questions.add(new Question(
+            "Who was the high priest involved in rebuilding the Sheep Gate?",
+            new String[]{"Ezra", "Joiada", "Meremoth", "Eliashib"},
+            3));
+    questions.add(new Question(
+            "Which gate did the high priest and other priests rebuild first in the account?",
+            new String[]{"Sheep Gate", "Fish Gate", "Old Gate", "Valley Gate"},
+            0));
+    questions.add(new Question(
+            "Which group of workers had nobles who would not help with the wall repairs?",
+            new String[]{"The priests", "The goldsmiths", "The Tekoites", "The merchants"},
+            2));
+    questions.add(new Question(
+            "How long did it take to complete the rebuilding of Jerusalem's wall?",
+            new String[]{"40 days", "52 days", "70 days", "90 days"},
+            1));
+    questions.add(new Question(
+            "On which day of Elul was the wall completed?",
+            new String[]{"First", "Tenth", "Seventeenth", "Twenty-fifth"},
+            3));
+    questions.add(new Question(
+            "Where did the people gather when Ezra read the Law?",
+            new String[]{"The Water Gate", "The Sheep Gate", "The Valley Gate", "The Horse Gate"},
+            0));
+    questions.add(new Question(
+            "Who read the Book of the Law to the assembled people?",
+            new String[]{"Nehemiah", "Ezra", "Eliashib", "Hanani"},
+            1));
+    questions.add(new Question(
+            "Who helped the people understand the Law as it was read?",
+            new String[]{"The Persian officials", "The gatekeepers alone", "The nobles of Tekoa", "The Levites"},
+            3));
+    questions.add(new Question(
+            "What did Nehemiah refuse to take during his time as governor?",
+            new String[]{"A royal letter", "Permission to rebuild", "The governor's food allowance", "Timber for the gates"},
+            2));
+    questions.add(new Question(
+            "Which two men did Nehemiah appoint to take charge of Jerusalem?",
+            new String[]{"Hanani and Hananiah", "Ezra and Eliashib", "Sanballat and Tobiah", "Joiada and Meremoth"},
+            0));
+    questions.add(new Question(
+            "Who had been given a room in the temple courts by Eliashib?",
+            new String[]{"Geshem", "Tobiah", "Sanballat", "Artaxerxes"},
+            1));
+    questions.add(new Question(
+            "What did Nehemiah do when merchants camped outside Jerusalem on the Sabbath?",
+            new String[]{"He invited them inside", "He bought their goods", "He opened the gates", "He ordered the gates shut"},
+            3));
+    questions.add(new Question(
+            "Whose instructions were followed in organizing singers and gatekeepers?",
+            new String[]{"Moses and Aaron", "Samuel and Saul", "David and Solomon", "Ezra and Zerubbabel"},
+            2));
+    questions.add(new Question(
+            "What did the people do after hearing the Law concerning foreign marriages?",
+            new String[]{"They separated themselves from the mixed multitude", "They left Jerusalem", "They stopped observing the Sabbath", "They appointed a new king"},
+            0));
+    questions.add(new Question(
+            "How many great companies took part in the dedication procession of the wall?",
+            new String[]{"One", "Two", "Three", "Four"},
+            1));
+    questions.add(new Question(
+            "What arrangement was made to increase Jerusalem's population?",
+            new String[]{"Every family moved away", "The priests alone relocated", "The king chose all residents", "One out of ten was chosen by lot to live there"},
+            3));
+            }
         }
 
         private static void addBookEstherQuestions(ArrayList<Question> questions, String difficulty) {
@@ -15352,6 +15454,108 @@ public class BibleJourneyData {
         0
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What was Esther's Hebrew name?",
+            new String[]{"Vashti", "Hadassah", "Zeresh", "Hegai"},
+            1));
+    questions.add(new Question(
+            "Mordecai belonged to which tribe?",
+            new String[]{"Judah", "Levi", "Benjamin", "Ephraim"},
+            2));
+    questions.add(new Question(
+            "Who was Esther's cousin who raised her as his own daughter?",
+            new String[]{"Mordecai", "Haman", "Hathach", "Memucan"},
+            0));
+    questions.add(new Question(
+            "Who was responsible for the women in the king's house and helped Esther prepare?",
+            new String[]{"Harbonah", "Bigthan", "Teresh", "Hegai"},
+            3));
+    questions.add(new Question(
+            "How long was the preparation period for the women before they went to the king?",
+            new String[]{"Six months", "Twelve months", "Three months", "Two years"},
+            1));
+    questions.add(new Question(
+            "Which substance was used during the first six months of the women's purification?",
+            new String[]{"Olive oil", "Cedar oil", "Oil of myrrh", "Frankincense"},
+            2));
+    questions.add(new Question(
+            "In which month was Esther taken to King Ahasuerus?",
+            new String[]{"Tebeth", "Nisan", "Adar", "Sivan"},
+            0));
+    questions.add(new Question(
+            "What was Haman's title or ancestry description in Esther?",
+            new String[]{"A Horonite", "An Ammonite", "A Benjamite", "An Agagite"},
+            3));
+    questions.add(new Question(
+            "What was the name given to the lot Haman cast to choose a day?",
+            new String[]{"Urim", "Pur", "Ephod", "Teraphim"},
+            1));
+    questions.add(new Question(
+            "How many provinces were under King Ahasuerus?",
+            new String[]{"70", "100", "127", "150"},
+            2));
+    questions.add(new Question(
+            "Who advised the king to remove Queen Vashti?",
+            new String[]{"Memucan", "Hegai", "Hathach", "Harbonah"},
+            0));
+    questions.add(new Question(
+            "Which two royal chamberlains plotted against King Ahasuerus?",
+            new String[]{"Haman and Zeresh", "Hegai and Hathach", "Memucan and Harbonah", "Bigthan and Teresh"},
+            3));
+    questions.add(new Question(
+            "Who informed Esther about the plot against the king?",
+            new String[]{"Haman", "Mordecai", "Hathach", "Hegai"},
+            1));
+    questions.add(new Question(
+            "What was Esther's response when Mordecai first urged her to approach the king?",
+            new String[]{"She immediately entered the throne room", "She asked Haman to intervene", "She explained the danger of approaching without being summoned", "She left the palace"},
+            2));
+    questions.add(new Question(
+            "How many days did Esther ask the Jews in Shushan to fast?",
+            new String[]{"Three days", "One day", "Seven days", "Twelve days"},
+            0));
+    questions.add(new Question(
+            "What did the king extend toward Esther when she entered uninvited?",
+            new String[]{"A royal crown", "A sealed letter", "A golden cup", "The golden sceptre"},
+            3));
+    questions.add(new Question(
+            "At which gathering did Esther first invite the king and Haman to a banquet?",
+            new String[]{"A public feast", "A banquet she prepared", "A court hearing", "A royal parade"},
+            1));
+    questions.add(new Question(
+            "Whose advice led Haman to prepare a gallows for Mordecai?",
+            new String[]{"Memucan and Hegai", "Bigthan and Teresh", "Zeresh and his friends", "Mordecai and Hathach"},
+            2));
+    questions.add(new Question(
+            "Who suggested honouring Mordecai with the king's robe and horse?",
+            new String[]{"The king himself", "Haman", "Harbonah", "Esther"},
+            0));
+    questions.add(new Question(
+            "Who pointed out the gallows Haman had prepared for Mordecai?",
+            new String[]{"Hegai", "Hathach", "Memucan", "Harbonah"},
+            3));
+    questions.add(new Question(
+            "To whom did the king give Haman's house after Haman's death?",
+            new String[]{"Mordecai", "Esther", "Hegai", "Zeresh"},
+            1));
+    questions.add(new Question(
+            "Who received the king's signet ring after Haman was removed?",
+            new String[]{"Hathach", "Harbonah", "Mordecai", "Hegai"},
+            2));
+    questions.add(new Question(
+            "On which date of Adar were the Jews permitted to defend themselves?",
+            new String[]{"Thirteenth", "Tenth", "Fourteenth", "Twenty-third"},
+            0));
+    questions.add(new Question(
+            "How many sons of Haman are named in Esther?",
+            new String[]{"Seven", "Eight", "Twelve", "Ten"},
+            3));
+    questions.add(new Question(
+            "What annual observance commemorated the Jews' deliverance in Esther?",
+            new String[]{"Passover", "Purim", "Pentecost", "Tabernacles"},
+            1));
+            }
         }
 
         private static void addBookJobQuestions(ArrayList<Question> questions, String difficulty) {
@@ -16187,6 +16391,108 @@ public class BibleJourneyData {
         },
         0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "In which land did Job live?",
+            new String[]{"Uz", "Midian", "Gilead", "Edom"},
+            0));
+    questions.add(new Question(
+            "How does the Book of Job describe Job's character?",
+            new String[]{"A mighty warrior", "A king of Israel", "Blameless and upright", "A priest in Jerusalem"},
+            2));
+    questions.add(new Question(
+            "How many sons and daughters did Job have before his trials?",
+            new String[]{"Three sons and seven daughters", "Seven sons and three daughters", "Five sons and five daughters", "Twelve sons and two daughters"},
+            1));
+    questions.add(new Question(
+            "Which animal was the largest in number among Job's listed livestock?",
+            new String[]{"Oxen", "Donkeys", "Camels", "Sheep"},
+            3));
+    questions.add(new Question(
+            "What was the name of Job's friend from Teman?",
+            new String[]{"Eliphaz", "Bildad", "Zophar", "Elihu"},
+            0));
+    questions.add(new Question(
+            "Bildad was described as a Shuhite. Which friend was called a Naamathite?",
+            new String[]{"Eliphaz", "Elihu", "Zophar", "Barachel"},
+            2));
+    questions.add(new Question(
+            "Who was the youngest of the friends who spoke after the three older companions?",
+            new String[]{"Eliphaz", "Bildad", "Zophar", "Elihu"},
+            3));
+    questions.add(new Question(
+            "Elihu was the son of whom?",
+            new String[]{"Job", "Barachel", "Eliphaz", "Bildad"},
+            1));
+    questions.add(new Question(
+            "What did Job's friends do when they first saw him in distress?",
+            new String[]{"They sat with him in silence for seven days and nights", "They immediately left him", "They built him a new house", "They took him to Jerusalem"},
+            0));
+    questions.add(new Question(
+            "Which friend described a night vision in which a spirit passed before his face?",
+            new String[]{"Bildad", "Zophar", "Eliphaz", "Elihu"},
+            2));
+    questions.add(new Question(
+            "What did Job use to scrape himself while sitting among the ashes?",
+            new String[]{"A piece of wood", "A potsherd", "A bronze blade", "A stone bowl"},
+            1));
+    questions.add(new Question(
+            "What did Job's wife tell him to do during his suffering?",
+            new String[]{"Return to his fields", "Leave the land of Uz", "Call for the king", "Curse God and die"},
+            3));
+    questions.add(new Question(
+            "Which creature is described in God's speech as having strength in its loins and power in its belly?",
+            new String[]{"Behemoth", "Leviathan", "A unicorn", "A horse"},
+            0));
+    questions.add(new Question(
+            "Which creature is described in Job as difficult to capture with a hook?",
+            new String[]{"Behemoth", "A great fish", "Leviathan", "A wild ox"},
+            2));
+    questions.add(new Question(
+            "What did God instruct Job's three friends to offer as a sacrifice?",
+            new String[]{"Seven lambs and seven goats", "Seven bulls and seven rams", "Three bulls and three rams", "Twelve oxen"},
+            1));
+    questions.add(new Question(
+            "For whom was Job instructed to pray?",
+            new String[]{"His children only", "The people of Uz", "The king's household", "His three friends"},
+            3));
+    questions.add(new Question(
+            "How many more years did Job live after his restoration?",
+            new String[]{"140 years", "70 years", "100 years", "200 years"},
+            0));
+    questions.add(new Question(
+            "Which of Job's daughters was named Jemimah?",
+            new String[]{"His eldest son", "His wife", "One of his daughters born after his restoration", "His sister"},
+            2));
+    questions.add(new Question(
+            "Which daughter of Job was named Keziah?",
+            new String[]{"His first wife", "One of his daughters born after his restoration", "His eldest son", "His friend’s daughter"},
+            1));
+    questions.add(new Question(
+            "What was the name of Job's third daughter born after his restoration?",
+            new String[]{"Jemimah", "Keziah", "Naamah", "Keren-happuch"},
+            3));
+    questions.add(new Question(
+            "What unusual inheritance detail is recorded about Job's daughters?",
+            new String[]{"They received an inheritance among their brothers", "They were sent to another land", "They inherited only livestock", "They were excluded from the family inheritance"},
+            0));
+    questions.add(new Question(
+            "Which friend was from the region of Teman?",
+            new String[]{"Bildad", "Zophar", "Eliphaz", "Elihu"},
+            2));
+    questions.add(new Question(
+            "What did Job do regularly for his children before his trials?",
+            new String[]{"Sent them to the king", "Offered burnt offerings for them", "Made them fast for a month", "Built an altar in every city"},
+            1));
+    questions.add(new Question(
+            "What did God say about Job's words after Job prayed for his friends?",
+            new String[]{"Job had spoken no words at all", "Job had accused his friends correctly", "Job's friends were already forgiven without prayer", "Job had spoken rightly concerning God"},
+            3));
+    questions.add(new Question(
+            "How many additional sons and daughters did Job have after his restoration?",
+            new String[]{"Seven sons and three daughters", "Three sons and seven daughters", "Four sons and four daughters", "Ten sons and ten daughters"},
+            0));
             }
         }
 
