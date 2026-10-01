@@ -37150,6 +37150,134 @@ questions.add(new Question(
             2
     ));
             }
+            
+if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "Whose household informed Paul about the divisions among the Corinthians?",
+            new String[]{"The household of Chloe", "The household of Stephanas", "The household of Crispus", "The household of Gaius"},
+            0));
+
+    questions.add(new Question(
+            "Who did Paul baptize at Corinth, besides Crispus and Gaius?",
+            new String[]{"Titus", "The household of Stephanas", "Sosthenes", "Fortunatus"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say he had determined not to know among the Corinthians?",
+            new String[]{"The law and the prophets", "The traditions of the elders", "Jesus Christ, and him crucified", "The wisdom of the Greeks"},
+            2));
+
+    questions.add(new Question(
+            "Who did Paul say planted, while Apollos watered?",
+            new String[]{"Apollos", "The Corinthians", "Cephas", "Paul"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say should happen to the man who had his father's wife?",
+            new String[]{"He should be delivered unto Satan for the destruction of the flesh", "He should be made a church elder", "He should be sent to Jerusalem", "He should be publicly crowned"},
+            0));
+
+    questions.add(new Question(
+            "Which two kinds of wrongdoers did Paul say would not inherit the kingdom of God?",
+            new String[]{"Kings and rulers", "Fornicators and idolaters", "Tax collectors and soldiers", "Teachers and scribes"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say the body of a believer is?",
+            new String[]{"A temple made by human hands", "A vessel of the law", "The temple of the Holy Ghost", "A place of sacrifice in Jerusalem"},
+            2));
+
+    questions.add(new Question(
+            "According to Paul, what should a husband render to his wife?",
+            new String[]{"A yearly offering", "A written certificate", "A public promise", "Due benevolence"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say an unbelieving spouse is sanctified by?",
+            new String[]{"The believing spouse", "The law of Moses", "The elders of the church", "The children"},
+            0));
+
+    questions.add(new Question(
+            "How many years did Paul say a person should remain in the calling in which they were called?",
+            new String[]{"Seven years", "As they were called, so let them walk", "Until they were ordained", "Until they moved to Jerusalem"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say an athlete must do to receive a corruptible crown?",
+            new String[]{"Run only once", "Be chosen by a judge", "Strive lawfully", "Fast for forty days"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say happened to some Israelites after they sat down to eat and drink?",
+            new String[]{"They crossed the Jordan", "They built an altar", "They received manna", "They rose up to play"},
+            3));
+
+    questions.add(new Question(
+            "Who did Paul say was the rock that followed the Israelites?",
+            new String[]{"Christ", "Moses", "Aaron", "Joshua"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say the Israelites drank from the spiritual Rock?",
+            new String[]{"The water of Jordan", "Spiritual drink", "The wine of Canaan", "The water of the Red Sea"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say should be done when a woman prayed or prophesied with her head uncovered?",
+            new String[]{"She should leave the assembly", "She should be silent forever", "Her head was dishonoured", "She should be appointed as a teacher"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say was the purpose of spiritual gifts in the church?",
+            new String[]{"To make one person superior", "To replace the Scriptures", "To establish political authority", "For the edifying of the church"},
+            3));
+
+    questions.add(new Question(
+            "Which gift did Paul say was greater than speaking in tongues without interpretation?",
+            new String[]{"Prophesying", "Healing", "Giving", "Working miracles"},
+            0));
+
+    questions.add(new Question(
+            "How many witnesses did Paul mention as having seen Jesus after his resurrection at one time?",
+            new String[]{"About seventy", "Above five hundred brethren", "About one hundred and twenty", "Exactly three hundred"},
+            1));
+
+    questions.add(new Question(
+            "Who did Paul say was the last person to whom Christ appeared, as one born out of due time?",
+            new String[]{"Peter", "James", "Paul", "John"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say is the last enemy that shall be destroyed?",
+            new String[]{"Death", "Sin", "The devil", "The grave"},
+            0));
+
+    questions.add(new Question(
+            "On what day did Paul instruct the Corinthians to lay by in store for the collection?",
+            new String[]{"The Sabbath", "The first day of the week", "The day of the new moon", "The feast of Pentecost"},
+            1));
+
+    questions.add(new Question(
+            "Who did Paul say had addicted themselves to the ministry of the saints?",
+            new String[]{"The household of Chloe", "The household of Crispus", "The household of Stephanas", "The household of Sosthenes"},
+            2));
+
+    questions.add(new Question(
+            "Which two men did Paul mention as having refreshed his spirit and that of the Corinthians?",
+            new String[]{"Timothy and Titus", "Paul and Apollos", "Aquila and Priscilla", "Stephanas and Fortunatus"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say should be done with the gift of tongues in the church if there was no interpreter?",
+            new String[]{"Keep silence in the church", "Speak louder", "Repeat the message", "Ask the congregation to interpret together"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say would remain when prophecies, tongues, and knowledge had passed away?",
+            new String[]{"Faith alone", "Charity", "Knowledge", "Miracles"},
+            1));
+}
+            
         }
 
         private static void addBook2CorinthiansQuestions(ArrayList<Question> questions, String difficulty) {
@@ -37670,6 +37798,134 @@ questions.add(new Question(
             0
     ));
                 }
+            
+if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "Who was the brother whose praise in the gospel was throughout all the churches?",
+            new String[]{"Titus", "Timothy", "The unnamed brother", "Sosthenes"},
+            2));
+
+    questions.add(new Question(
+            "Where did Paul say he found no rest for his flesh, but was troubled on every side?",
+            new String[]{"Jerusalem", "Corinth", "Ephesus", "Macedonia"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say God had made him and his fellow workers?",
+            new String[]{"Able ministers of the new testament", "Rulers over the churches", "Teachers of the law", "Judges of the nations"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul compare the treasure of the gospel to?",
+            new String[]{"Gold in a royal palace", "Treasure in earthen vessels", "A crown of silver", "A sealed book"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say he had in his flesh, while his inward man was renewed day by day?",
+            new String[]{"A thorn in his side", "A mark of the law", "A light affliction", "A crown of glory"},
+            2));
+
+    questions.add(new Question(
+            "To what did Paul compare the earthly house of our tabernacle?",
+            new String[]{"A city made with hands", "A tent in the wilderness", "A temple of stone", "A building of God, an house not made with hands"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say believers must all appear before?",
+            new String[]{"The judgment seat of Christ", "The throne of David", "The council of elders", "The judgment seat of Moses"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say God made Christ to be for us, who knew no sin?",
+            new String[]{"A king over Israel", "Sin for us", "A prophet like Moses", "A high priest of Levi"},
+            1));
+
+    questions.add(new Question(
+            "How many times did Paul say he received forty stripes save one?",
+            new String[]{"Once", "Twice", "Five times", "Seven times"},
+            2));
+
+    questions.add(new Question(
+            "How many times was Paul beaten with rods?",
+            new String[]{"Once", "Five times", "Four times", "Thrice"},
+            3));
+
+    questions.add(new Question(
+            "How many times did Paul suffer shipwreck?",
+            new String[]{"Three times", "Once", "Twice", "Five times"},
+            0));
+
+    questions.add(new Question(
+            "How long did Paul say he spent in the deep after a shipwreck?",
+            new String[]{"One night and one day", "A night and a day", "Three days", "Seven days"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of the man Paul said was caught up to the third heaven?",
+            new String[]{"Titus", "Timothy", "Paul referred to himself indirectly", "Barnabas"},
+            2));
+
+    questions.add(new Question(
+            "How many times did Paul say he besought the Lord concerning the thorn in his flesh?",
+            new String[]{"Once", "Twice", "Seven times", "Thrice"},
+            3));
+
+    questions.add(new Question(
+            "What answer did the Lord give Paul concerning his weakness?",
+            new String[]{"My grace is sufficient for thee", "Thou shalt never suffer again", "Thy enemies shall be destroyed", "Thou shalt be made king"},
+            0));
+
+    questions.add(new Question(
+            "Who did Paul say had been careful for the Corinthians and had the same earnest care?",
+            new String[]{"Timothy", "Titus", "Silas", "Luke"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say the Macedonian churches gave, despite their deep poverty?",
+            new String[]{"Only their prayers", "Their lands and houses", "A rich liberality", "Their temple offerings"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say God loves?",
+            new String[]{"A cheerful giver", "A wealthy giver", "A silent giver", "A giver who gives under pressure"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say the weapons of his warfare were not?",
+            new String[]{"Of the law", "Carnal", "Made of iron", "For public display"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say these weapons were mighty through God to the pulling down of?",
+            new String[]{"The Roman empire", "The temple", "Strong holds", "The cities of the Gentiles"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say Satan himself is transformed into?",
+            new String[]{"A king of the earth", "An angel of judgment", "A servant of righteousness", "An angel of light"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say the false apostles transformed themselves into?",
+            new String[]{"The apostles of Christ", "Prophets of Israel", "Teachers of Moses", "Angels of God"},
+            0));
+
+    questions.add(new Question(
+            "Who did Paul say was let down through a window in a basket at Damascus?",
+            new String[]{"Barnabas", "Paul", "Titus", "Silas"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say he feared might happen when he came to the Corinthians?",
+            new String[]{"They would reject his letters", "They would abandon the faith", "There would be debates, envyings, wraths, strifes, and other sins", "They would move to Macedonia"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say he would not do concerning the churches?",
+            new String[]{"Visit them again", "Preach to the Gentiles", "Receive any offerings", "Be burdensome to them"},
+            3));
+}
+            
         }
 
         private static void addBookGalatiansQuestions(ArrayList<Question> questions, String difficulty) {
@@ -38185,6 +38441,134 @@ questions.add(new Question(
             0
     ));
             }
+            
+if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "To which region did Paul go after his conversion before returning to Damascus?",
+            new String[]{"Arabia", "Macedonia", "Achaia", "Crete"},
+            0));
+
+    questions.add(new Question(
+            "How many years passed before Paul went up to Jerusalem to see Peter after his conversion?",
+            new String[]{"Seven years", "Three years", "Fourteen years", "Five years"},
+            1));
+
+    questions.add(new Question(
+            "How many days did Paul stay with Peter in Jerusalem?",
+            new String[]{"Seven days", "Ten days", "Fifteen days", "Thirty days"},
+            2));
+
+    questions.add(new Question(
+            "Which apostle did Paul say he saw in Jerusalem besides Peter?",
+            new String[]{"Andrew", "John", "Thomas", "James, the Lord's brother"},
+            3));
+
+    questions.add(new Question(
+            "Who accompanied Paul and Barnabas to Jerusalem and was not compelled to be circumcised?",
+            new String[]{"Titus", "Timothy", "Silas", "Luke"},
+            0));
+
+    questions.add(new Question(
+            "Which three men were described as pillars of the church in Jerusalem?",
+            new String[]{"Peter, Andrew, and John", "James, Cephas, and John", "Paul, Barnabas, and Titus", "James, Thomas, and Philip"},
+            1));
+
+    questions.add(new Question(
+            "In which city did Paul withstand Peter to the face?",
+            new String[]{"Jerusalem", "Ephesus", "Antioch", "Rome"},
+            2));
+
+    questions.add(new Question(
+            "Who did Paul say was carried away with Peter's dissimulation?",
+            new String[]{"Titus", "Silas", "Timothy", "Barnabas"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say the law was added because of?",
+            new String[]{"Transgressions", "The promises", "The faith of Abraham", "The coming of the Gentiles"},
+            0));
+
+    questions.add(new Question(
+            "How many years after the promise to Abraham was the law given?",
+            new String[]{"Four hundred years", "Four hundred and thirty years", "Three hundred years", "Five hundred years"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul compare the law to, which brought people to Christ?",
+            new String[]{"A royal decree", "A covenant of kings", "A schoolmaster", "A priestly garment"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say believers are, through faith in Christ Jesus?",
+            new String[]{"Servants only", "Heirs of Moses", "Children of angels", "The children of God"},
+            3));
+
+    questions.add(new Question(
+            "Which two women did Paul use as an allegory of the two covenants?",
+            new String[]{"Hagar and Sarah", "Rachel and Leah", "Ruth and Naomi", "Eve and Rebekah"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Hagar's son?",
+            new String[]{"Isaac", "Ishmael", "Jacob", "Esau"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say Jerusalem which is above is?",
+            new String[]{"The city of David", "The temple of Solomon", "Free, which is the mother of us all", "The place of the earthly covenant"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say Christ had made believers free from?",
+            new String[]{"The Roman empire", "Every earthly authority", "All forms of suffering", "The yoke of bondage"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say a little leaven leaveneth?",
+            new String[]{"The whole lump", "The whole vineyard", "The whole congregation", "The whole offering"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say the flesh lusteth against?",
+            new String[]{"The law", "The Spirit", "The prophets", "The conscience"},
+            1));
+
+    questions.add(new Question(
+            "Which fruit of the Spirit is listed first in Galatians 5?",
+            new String[]{"Joy", "Peace", "Love", "Longsuffering"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say believers should bear one another's burdens to fulfil?",
+            new String[]{"The law of Moses", "The will of rulers", "The words of the prophets", "The law of Christ"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say a man shall reap if he sows to the Spirit?",
+            new String[]{"Life everlasting", "Earthly riches", "Power over others", "Freedom from all trials"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say should be done to a man overtaken in a fault?",
+            new String[]{"Cast him out immediately", "Restore such an one in the spirit of meekness", "Make him a ruler", "Require him to leave the region"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say he bore in his body?",
+            new String[]{"The crown of David", "The tablets of the law", "The marks of the Lord Jesus", "The sign of circumcision"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say counted for anything in Christ Jesus?",
+            new String[]{"Circumcision alone", "Keeping feast days", "Ancestry from Abraham", "A new creature"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say he gloried in, rather than in circumcision?",
+            new String[]{"The cross of our Lord Jesus Christ", "The temple in Jerusalem", "The traditions of the elders", "His own righteousness"},
+            0));
+}
+            
         }
 
         private static void addBookEphesiansQuestions(ArrayList<Question> questions, String difficulty) {
