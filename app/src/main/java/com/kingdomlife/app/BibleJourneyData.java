@@ -8719,6 +8719,132 @@ public class BibleJourneyData {
             1
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What was the name of Jonathan's son who was lame in both feet?",
+            new String[]{"Mephibosheth", "Ish-bosheth", "Micaiah", "Eliab"},
+            0));
+
+    questions.add(new Question(
+            "How old was Mephibosheth when he became lame?",
+            new String[]{"Three years", "Five years", "Seven years", "Ten years"},
+            1));
+
+    questions.add(new Question(
+            "Who was Mephibosheth's son?",
+            new String[]{"Micah", "Micaiah", "Machir", "Ziba"},
+            0));
+
+    questions.add(new Question(
+            "In which place was Mephibosheth living when David sent for him?",
+            new String[]{"Hebron", "Lo-debar", "Mahanaim", "Rogelim"},
+            1));
+
+    questions.add(new Question(
+            "Who had cared for Mephibosheth before David brought him to Jerusalem?",
+            new String[]{"His mother", "His nurse", "His sister", "A priest"},
+            1));
+
+    questions.add(new Question(
+            "Who was the servant of Saul's house who helped David locate Mephibosheth?",
+            new String[]{"Ziba", "Shimei", "Machir", "Barzillai"},
+            0));
+
+    questions.add(new Question(
+            "Who was Machir, who supported David during Absalom's rebellion?",
+            new String[]{"Son of Ammiel", "Son of Gera", "Son of Zeruiah", "Son of Ahithophel"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the woman who was violated by Amnon?",
+            new String[]{"Abigail", "Tamar", "Michal", "Rizpah"},
+            1));
+
+    questions.add(new Question(
+            "Who was Tamar's full brother?",
+            new String[]{"Adonijah", "Absalom", "Solomon", "Amnon"},
+            1));
+
+    questions.add(new Question(
+            "How many sons and daughters did Absalom have, according to 2 Samuel 14?",
+            new String[]{"Two sons and one daughter", "Three sons and one daughter", "Four sons and two daughters", "One son and three daughters"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of Absalom's daughter?",
+            new String[]{"Tamar", "Maacah", "Haggith", "Bath-sheba"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Absalom's counsellor who later advised David?",
+            new String[]{"Hushai", "Ahithophel", "Zadok", "Abiathar"},
+            1));
+
+    questions.add(new Question(
+            "Who was David's friend that pretended to support Absalom?",
+            new String[]{"Hushai", "Joab", "Ittai", "Benaiah"},
+            0));
+
+    questions.add(new Question(
+            "Who was the father of Joab, Abishai and Asahel?",
+            new String[]{"Jesse", "Zeruiah", "Ner", "Ammiel"},
+            1));
+
+    questions.add(new Question(
+            "Which of David's mighty men killed Asahel?",
+            new String[]{"Abner", "Joab", "Abishai", "Benaiah"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Abner's cousin, who was also a commander?",
+            new String[]{"Amasa", "Joab", "Ishmaiah", "Abishai"},
+            1));
+
+    questions.add(new Question(
+            "Who killed Absalom despite David's instruction to deal gently with him?",
+            new String[]{"Joab", "Ittai", "Abishai", "Benaiah"},
+            0));
+
+    questions.add(new Question(
+            "What did Absalom use to make a monument for himself?",
+            new String[]{"A pillar", "A bronze altar", "A carved image", "A cedar throne"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the place where Absalom's monument stood?",
+            new String[]{"The king's dale", "The king's valley", "The valley of Rephaim", "The brook Kidron"},
+            1));
+
+    questions.add(new Question(
+            "Who was the Cushite messenger who brought news of Absalom's death?",
+            new String[]{"Ahimaaz", "A Cushite whose name is not given", "Hushai", "Ittai"},
+            1));
+
+    questions.add(new Question(
+            "How old was Barzillai when David invited him to Jerusalem?",
+            new String[]{"70 years", "75 years", "80 years", "90 years"},
+            2));
+
+    questions.add(new Question(
+            "From which place did Barzillai come?",
+            new String[]{"Rogelim", "Mahanaim", "Gibeah", "Bahurim"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the man who cursed David as he fled Jerusalem?",
+            new String[]{"Shimei son of Gera", "Ziba son of Saul", "Amasa son of Ithra", "Sheba son of Bichri"},
+            0));
+
+    questions.add(new Question(
+            "What did David buy from Araunah the Jebusite?",
+            new String[]{"A vineyard", "A threshing floor and oxen", "A field of barley", "A cedar house"},
+            1));
+
+    questions.add(new Question(
+            "How much did David pay for the threshing floor and oxen, according to 2 Samuel 24?",
+            new String[]{"Six hundred shekels of gold", "Fifty shekels of silver", "One hundred shekels of silver", "Thirty pieces of silver"},
+            1));
+            }
         }
 
         private static void addBook1KingsQuestions(ArrayList<Question> questions, String difficulty) {
@@ -9543,6 +9669,132 @@ public class BibleJourneyData {
             },
             0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What was the name of David's wife who became Solomon's mother?",
+            new String[]{"Abigail", "Bath-sheba", "Haggith", "Maacah"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of Solomon's older brother who tried to become king?",
+            new String[]{"Adonijah", "Absalom", "Amnon", "Chileab"},
+            0));
+
+    questions.add(new Question(
+            "Who was Adonijah's mother?",
+            new String[]{"Bath-sheba", "Haggith", "Abigail", "Ahinoam"},
+            1));
+
+    questions.add(new Question(
+            "Which priest supported Adonijah's attempt to take the throne?",
+            new String[]{"Zadok", "Abiathar", "Jehoiada", "Ahimelech"},
+            1));
+
+    questions.add(new Question(
+            "Who was the prophet that informed Bath-sheba of Adonijah's actions?",
+            new String[]{"Nathan", "Gad", "Ahijah", "Shemaiah"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the priest who anointed Solomon king?",
+            new String[]{"Abiathar", "Zadok", "Ahimelech", "Azariah"},
+            1));
+
+    questions.add(new Question(
+            "What did Solomon ask God for when God appeared to him in a dream?",
+            new String[]{"Long life", "Riches", "An understanding heart", "Victory over Egypt"},
+            2));
+
+    questions.add(new Question(
+            "At which high place did Solomon offer sacrifices before the temple was built?",
+            new String[]{"Gibeon", "Bethel", "Shiloh", "Gilgal"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the official over Solomon's household?",
+            new String[]{"Ahishar", "Adoniram", "Azariah", "Benaiah"},
+            0));
+
+    questions.add(new Question(
+            "Who was over the officers that provided food for Solomon's household?",
+            new String[]{"Azariah son of Nathan", "Zadok son of Ahitub", "Benaiah son of Jehoiada", "Adoniram son of Abda"},
+            0));
+
+    questions.add(new Question(
+            "Which of Solomon's officers was over the levy?",
+            new String[]{"Adoniram", "Ahishar", "Jehoshaphat", "Elihoreph"},
+            0));
+
+    questions.add(new Question(
+            "Which king sent cedar trees and carpenters to Solomon?",
+            new String[]{"Hiram king of Tyre", "Hadadezer king of Zobah", "Pharaoh king of Egypt", "Ben-hadad king of Syria"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the skilled craftsman sent by Hiram to assist Solomon?",
+            new String[]{"Huram", "Hiram", "Bezaleel", "Aholiab"},
+            0));
+
+    questions.add(new Question(
+            "How many years did Solomon take to build the house of the LORD?",
+            new String[]{"5", "7", "10", "13"},
+            1));
+
+    questions.add(new Question(
+            "How many years did Solomon take to build his own house?",
+            new String[]{"7", "10", "13", "20"},
+            2));
+
+    questions.add(new Question(
+            "What was the name of the sea-like vessel made by Solomon for the temple?",
+            new String[]{"The molten sea", "The bronze laver", "The great basin", "The brazen altar"},
+            0));
+
+    questions.add(new Question(
+            "How many oxen supported the molten sea?",
+            new String[]{"10", "12", "14", "24"},
+            1));
+
+    questions.add(new Question(
+            "What did Solomon place inside the temple's most holy place?",
+            new String[]{"The ark of the covenant", "The golden candlestick", "The altar of incense", "The brazen sea"},
+            0));
+
+    questions.add(new Question(
+            "Which queen came to test Solomon with hard questions?",
+            new String[]{"Queen of Sheba", "Queen of Egypt", "Queen of Tyre", "Queen of Moab"},
+            0));
+
+    questions.add(new Question(
+            "What did the Queen of Sheba bring to Solomon?",
+            new String[]{"Gold, spices, and precious stones", "Silver, horses, and iron", "Cedar, bronze, and linen", "Oil, wheat, and sheep"},
+            0));
+
+    questions.add(new Question(
+            "Which prophet told Jeroboam he would rule over ten tribes?",
+            new String[]{"Ahijah the Shilonite", "Nathan the prophet", "Elijah the Tishbite", "Micaiah son of Imlah"},
+            0));
+
+    questions.add(new Question(
+            "What did Ahijah tear into twelve pieces to illustrate the division of the kingdom?",
+            new String[]{"A new garment", "A scroll", "A veil", "A linen ephod"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Jeroboam's son who became ill?",
+            new String[]{"Abijah", "Nadab", "Rehoboam", "Asa"},
+            0));
+
+    questions.add(new Question(
+            "Which king of Judah was Asa's father?",
+            new String[]{"Abijam", "Rehoboam", "Jehoshaphat", "Uzziah"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Elijah's home region?",
+            new String[]{"Tishbe in Gilead", "Anathoth in Benjamin", "Tekoa in Judah", "Shiloh in Ephraim"},
+            0));
             }
         }
 
@@ -10379,6 +10631,132 @@ public class BibleJourneyData {
             },
             0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was the father of the prophet Elisha?",
+            new String[]{"Shaphat", "Ahijah", "Hilkiah", "Jehoiada"},
+            0));
+
+    questions.add(new Question(
+            "From which town was Elisha?",
+            new String[]{"Abel-meholah", "Anathoth", "Tishbe", "Ramah"},
+            0));
+
+    questions.add(new Question(
+            "What did Elijah leave behind when he was taken up?",
+            new String[]{"His mantle", "His staff", "His girdle", "His sandals"},
+            0));
+
+    questions.add(new Question(
+            "What did Elisha use to make the waters of Jericho wholesome?",
+            new String[]{"Salt in a new cruse", "Oil in a golden vessel", "A branch of cedar", "A handful of flour"},
+            0));
+
+    questions.add(new Question(
+            "How many children came out of the city and mocked Elisha near Bethel?",
+            new String[]{"Forty-two", "Forty", "Twenty-four", "Fifty"},
+            0));
+
+    questions.add(new Question(
+            "What did Elisha ask the Shunammite woman to prepare for him?",
+            new String[]{"A little chamber with a bed, table, stool, and candlestick", "A tent outside the city", "A room beside the altar", "A house near the Jordan"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the Shunammite woman's husband?",
+            new String[]{"His name is not recorded", "Gehazi", "Shaphat", "Obadiah"},
+            0));
+
+    questions.add(new Question(
+            "What did Elisha instruct the woman to do when her son died?",
+            new String[]{"Go to Mount Carmel", "Go to Samaria", "Go to Jerusalem", "Go to Gilgal"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the Syrian captain healed of leprosy?",
+            new String[]{"Naaman", "Hazael", "Ben-hadad", "Rezin"},
+            0));
+
+    questions.add(new Question(
+            "Which river did Naaman initially expect to be told to wash in?",
+            new String[]{"Abana and Pharpar", "Jordan and Kishon", "Euphrates and Tigris", "Arnon and Jabbok"},
+            0));
+
+    questions.add(new Question(
+            "How many times was Naaman told to wash in the Jordan?",
+            new String[]{"Seven", "Three", "Five", "Twelve"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Elisha's servant who greedily pursued Naaman's gifts?",
+            new String[]{"Gehazi", "Gershom", "Gideon", "Hazael"},
+            0));
+
+    questions.add(new Question(
+            "What happened to Gehazi after he deceived Naaman and Elisha?",
+            new String[]{"He became leprous", "He was made a priest", "He was sent to Damascus", "He became king"},
+            0));
+
+    questions.add(new Question(
+            "What did the sons of the prophets lose in the Jordan while cutting wood?",
+            new String[]{"An axe head", "A sword", "A hammer", "A sickle"},
+            0));
+
+    questions.add(new Question(
+            "What material did Elisha throw into the water to make the axe head float?",
+            new String[]{"A stick", "A stone", "A piece of iron", "A branch of hyssop"},
+            0));
+
+    questions.add(new Question(
+            "Which king of Israel was reigning during the siege of Samaria by Ben-hadad?",
+            new String[]{"Jehoram", "Jehu", "Ahab", "Joash"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the Syrian captain who later became king?",
+            new String[]{"Hazael", "Naaman", "Rezin", "Ben-hadad"},
+            0));
+
+    questions.add(new Question(
+            "Which prophet anointed Jehu as king through a young prophet?",
+            new String[]{"Elisha", "Elijah", "Isaiah", "Micaiah"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Jehu's son who succeeded him?",
+            new String[]{"Jehoahaz", "Jehoash", "Jeroboam", "Zechariah"},
+            0));
+
+    questions.add(new Question(
+            "Which woman seized the throne of Judah after the death of her son Ahaziah?",
+            new String[]{"Athaliah", "Jezebel", "Maacah", "Athar"},
+            0));
+
+    questions.add(new Question(
+            "Who hid Joash from Athaliah for six years?",
+            new String[]{"Jehosheba", "Huldah", "Jehoaddan", "Zibiah"},
+            0));
+
+    questions.add(new Question(
+            "Who was Joash's guardian and the priest who helped restore him to the throne?",
+            new String[]{"Jehoiada", "Hilkiah", "Azariah", "Zechariah"},
+            0));
+
+    questions.add(new Question(
+            "Which king of Judah was healed after praying when Isaiah told him to set his house in order?",
+            new String[]{"Hezekiah", "Josiah", "Manasseh", "Uzziah"},
+            0));
+
+    questions.add(new Question(
+            "What did the prophet Isaiah instruct to be applied to Hezekiah's boil?",
+            new String[]{"A lump of figs", "Olive oil", "Salt", "Hyssop"},
+            0));
+
+    questions.add(new Question(
+            "Which priest found the book of the law during the reign of Josiah?",
+            new String[]{"Hilkiah", "Jehoiada", "Abiathar", "Azariah"},
+            0));
             }
         }
 
