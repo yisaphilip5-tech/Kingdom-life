@@ -20134,6 +20134,108 @@ public class BibleJourneyData {
         3
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who is traditionally identified as the author of the Song of Solomon?",
+            new String[]{"David", "Solomon", "Asaph", "Moses"},
+            1));
+    questions.add(new Question(
+            "Which title is also used for the Song of Solomon?",
+            new String[]{"The Book of the Covenant", "The Song of Moses", "The Song of Songs", "The Proverbs of David"},
+            2));
+    questions.add(new Question(
+            "What name is used to describe the female speaker in Song of Solomon 6:13?",
+            new String[]{"The Shulamite", "The Jezreelite", "The Moabitess", "The Ephraimite"},
+            0));
+    questions.add(new Question(
+            "To which place does the beloved compare the woman's beauty in Song of Solomon 6:4?",
+            new String[]{"Bethel", "Jericho", "Hebron", "Tirzah"},
+            3));
+    questions.add(new Question(
+            "Which two cities are compared in the description of the woman's beauty?",
+            new String[]{"Jerusalem and Bethlehem", "Tirzah and Jerusalem", "Samaria and Bethel", "Tyre and Sidon"},
+            1));
+    questions.add(new Question(
+            "What small animals are described as spoiling the vineyards?",
+            new String[]{"Young lions", "Wild goats", "Little foxes", "Young bears"},
+            2));
+    questions.add(new Question(
+            "To what does the beloved compare the woman's hair in Song of Solomon 4?",
+            new String[]{"A flock of goats", "A field of wheat", "A cluster of grapes", "A cedar forest"},
+            0));
+    questions.add(new Question(
+            "Which mountain is mentioned alongside Lebanon, Amana, and Hermon?",
+            new String[]{"Carmel", "Zion", "Sinai", "Shenir"},
+            3));
+    questions.add(new Question(
+            "What precious stone is mentioned in the description of the woman's neck?",
+            new String[]{"Jasper", "A tower of ivory", "Onyx", "Sapphire"},
+            1));
+    questions.add(new Question(
+            "Which location is used to describe the beloved's appearance in Song of Solomon 1:14?",
+            new String[]{"The vineyards of Engedi", "The gardens of Shiloh", "The fields of Bethel", "The plains of Moab"},
+            0));
+    questions.add(new Question(
+            "What flower is mentioned in the description, 'I am the rose of Sharon'?",
+            new String[]{"Cedar", "Lily", "Rose", "Hyssop"},
+            2));
+    questions.add(new Question(
+            "Which animal is repeatedly used in poetic appeals to the daughters of Jerusalem?",
+            new String[]{"The lion and the bear", "The horse and the mule", "The eagle and the dove", "The roes and hinds of the field"},
+            3));
+    questions.add(new Question(
+            "How many mighty men are described as surrounding Solomon's bed in Song of Solomon 3?",
+            new String[]{"Sixty", "Forty", "Eighty", "One hundred"},
+            0));
+    questions.add(new Question(
+            "What material is specifically mentioned as part of Solomon's palanquin?",
+            new String[]{"Bronze", "Gold", "Iron", "Clay"},
+            1));
+    questions.add(new Question(
+            "What is mentioned as the covering of Solomon's palanquin?",
+            new String[]{"Fine linen", "Purple wool", "Silver plates", "Love by the daughters of Jerusalem"},
+            3));
+    questions.add(new Question(
+            "How many queens and concubines are mentioned in Song of Solomon 6:8?",
+            new String[]{"Forty queens and sixty concubines", "Sixty queens and eighty concubines", "Seventy queens and ninety concubines", "Eighty queens and one hundred concubines"},
+            1));
+    questions.add(new Question(
+            "What is the name of the place associated with the vineyard belonging to Solomon?",
+            new String[]{"Baal-hamon", "En-rogel", "Beth-el", "Gibeah"},
+            0));
+    questions.add(new Question(
+            "What does the beloved say his vineyard at Baal-hamon was entrusted to?",
+            new String[]{"Priests", "Soldiers", "Keepers", "Merchants"},
+            2));
+    questions.add(new Question(
+            "How much silver was each keeper of the vineyard to bring for its fruit?",
+            new String[]{"One hundred pieces", "Fifty pieces", "Two hundred pieces", "A thousand pieces"},
+            0));
+    questions.add(new Question(
+            "Which tree is mentioned as the place where the beloved's mother conceived him?",
+            new String[]{"A cedar", "An apple tree", "An olive tree", "A palm tree"},
+            1));
+    questions.add(new Question(
+            "Which place is associated with the pools mentioned in the description of the beloved's eyes?",
+            new String[]{"Heshbon", "Jericho", "Bethlehem", "Shiloh"},
+            0));
+    questions.add(new Question(
+            "What is compared to a garden enclosed in Song of Solomon 4:12?",
+            new String[]{"The king's palace", "The vineyard of Solomon", "The beloved's sister", "The beloved's sister and spouse"},
+            3));
+    questions.add(new Question(
+            "Which spice is named among the plants of the garden in Song of Solomon 4:14?",
+            new String[]{"Wormwood", "Saffron", "Cumin", "Mustard"},
+            1));
+    questions.add(new Question(
+            "Which city is named in the phrase describing the beloved's appearance as terrible as an army with banners?",
+            new String[]{"Jericho", "Samaria", "Tirzah", "Damascus"},
+            2));
+    questions.add(new Question(
+            "What does the Song of Solomon say is as strong as death?",
+            new String[]{"Love", "Jealousy", "Wisdom", "Beauty"},
+            0));
+            }
         }
 
     }
@@ -21006,6 +21108,108 @@ public class BibleJourneyData {
         0
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was Isaiah's father?",
+            new String[]{"Hilkiah", "Amoz", "Baruch", "Jotham"},
+            1));
+    questions.add(new Question(
+            "During whose reign did Isaiah receive the vision recorded in Isaiah 6?",
+            new String[]{"Hezekiah", "Ahaz", "Uzziah", "Manasseh"},
+            2));
+    questions.add(new Question(
+            "What was the name of Isaiah's son whose name signified that a remnant would return?",
+            new String[]{"Shear-jashub", "Maher-shalal-hash-baz", "Immanuel", "Eliakim"},
+            0));
+    questions.add(new Question(
+            "What was the name of Isaiah's son whose name related to swift spoil and speedy prey?",
+            new String[]{"Shear-jashub", "Jezreel", "Lo-ammi", "Maher-shalal-hash-baz"},
+            3));
+    questions.add(new Question(
+            "Which symbolic object did Isaiah use to write the name Maher-shalal-hash-baz?",
+            new String[]{"A clay tablet", "A great roll", "A linen scroll", "A bronze plate"},
+            1));
+    questions.add(new Question(
+            "Which water source is mentioned in Isaiah 8 as a symbol of the people's rejected trust?",
+            new String[]{"The waters of Jordan", "The river Euphrates", "The waters of Shiloah", "The brook Cherith"},
+            2));
+    questions.add(new Question(
+            "What did Isaiah see surrounding the throne in his vision?",
+            new String[]{"Seraphim", "Cherubim with flaming swords", "Twenty-four elders", "Four horsemen"},
+            0));
+    questions.add(new Question(
+            "What did one of the seraphim use to touch Isaiah's lips?",
+            new String[]{"A golden spoon", "A branch of hyssop", "A scroll", "A live coal from the altar"},
+            3));
+    questions.add(new Question(
+            "Which phrase did the seraphim call to one another in Isaiah's vision?",
+            new String[]{"Holy, holy, holy, is the LORD of hosts", "The earth is full of his armies", "Blessed is the king of Israel", "Glory to the house of David"},
+            0));
+    questions.add(new Question(
+            "Which king was ruling Judah when Isaiah gave the sign concerning Immanuel?",
+            new String[]{"Hezekiah", "Ahaz", "Uzziah", "Josiah"},
+            1));
+    questions.add(new Question(
+            "What does the name Immanuel mean?",
+            new String[]{"The LORD remembers", "The LORD saves", "God with us", "The mighty one"},
+            2));
+    questions.add(new Question(
+            "Which king of Assyria sent Rabshakeh to Jerusalem?",
+            new String[]{"Sargon", "Tiglath-pileser", "Shalmaneser", "Sennacherib"},
+            3));
+    questions.add(new Question(
+            "Who was the king of Judah during the Assyrian threat against Jerusalem in Isaiah 36?",
+            new String[]{"Hezekiah", "Ahaz", "Manasseh", "Josiah"},
+            0));
+    questions.add(new Question(
+            "Which official spoke to Rabshakeh on behalf of King Hezekiah?",
+            new String[]{"Shebna", "Eliakim", "Baruch", "Hilkiah"},
+            1));
+    questions.add(new Question(
+            "What illness did Hezekiah suffer from in Isaiah 38?",
+            new String[]{"Blindness", "Leprosy", "A deadly sickness", "A broken leg"},
+            2));
+    questions.add(new Question(
+            "What sign was given to Hezekiah concerning the shadow on the sundial?",
+            new String[]{"It disappeared", "It remained fixed", "It moved forward ten degrees", "It went backward ten degrees"},
+            3));
+    questions.add(new Question(
+            "Which foreign king is specifically named in Isaiah 44 as God's anointed instrument?",
+            new String[]{"Cyrus", "Nebuchadnezzar", "Darius", "Artaxerxes"},
+            0));
+    questions.add(new Question(
+            "Which prophet is told to walk naked and barefoot as a sign against Egypt and Ethiopia?",
+            new String[]{"Jeremiah", "Isaiah", "Ezekiel", "Hosea"},
+            1));
+    questions.add(new Question(
+            "For how many years was Isaiah instructed to walk as a sign?",
+            new String[]{"One year", "Two years", "Three years", "Seven years"},
+            2));
+    questions.add(new Question(
+            "Which official did Isaiah describe as being replaced by Eliakim, son of Hilkiah?",
+            new String[]{"Rabshakeh", "Tartan", "Shebna", "Sennacherib"},
+            2));
+    questions.add(new Question(
+            "Which location is mentioned in Isaiah 7 as the route where Isaiah met Ahaz?",
+            new String[]{"The highway of the fuller's field", "The valley of Jehoshaphat", "The road to Bethel", "The pool of Gibeon"},
+            0));
+    questions.add(new Question(
+            "What phrase in Isaiah 40 describes the enduring contrast between human life and God's word?",
+            new String[]{"The mountains shall melt", "The grass withereth, the flower fadeth, but God's word stands", "The rivers shall run dry", "The heavens shall be silent"},
+            1));
+    questions.add(new Question(
+            "Which place is named in Isaiah 63 as the location from which the divine figure comes with dyed garments?",
+            new String[]{"Jericho", "Bethel", "Bozrah", "Nineveh"},
+            2));
+    questions.add(new Question(
+            "What does Isaiah 55 call the covenant promises associated with David?",
+            new String[]{"The sure mercies of David", "The throne of Jesse", "The blessings of Aaron", "The law of Moses"},
+            0));
+    questions.add(new Question(
+            "Which phrase in Isaiah 1 describes the people's sins as becoming white as snow?",
+            new String[]{"Though your sins be as scarlet", "Though your hands be clean", "Though your cities be empty", "Though your enemies be many"},
+            0));
+            }
         }
 
         private static void addBookJeremiahQuestions(ArrayList<Question> questions, String difficulty) {
@@ -21842,6 +22046,108 @@ public class BibleJourneyData {
         0
     ));
         }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was Jeremiah's father?",
+            new String[]{"Baruch", "Hilkiah", "Seraiah", "Gemariah"},
+            1));
+    questions.add(new Question(
+            "From which town did Jeremiah come?",
+            new String[]{"Bethlehem", "Shiloh", "Anathoth", "Bethel"},
+            2));
+    questions.add(new Question(
+            "During whose reign did the word of the LORD first come to Jeremiah?",
+            new String[]{"Josiah", "Jehoiakim", "Zedekiah", "Manasseh"},
+            0));
+    questions.add(new Question(
+            "What did Jeremiah see in his first vision?",
+            new String[]{"A burning bush", "A valley of dry bones", "A flying scroll", "A rod of an almond tree"},
+            3));
+    questions.add(new Question(
+            "What did the boiling pot in Jeremiah's vision represent?",
+            new String[]{"Judgment coming from the north", "A famine in Egypt", "A plague in Philistia", "A drought in Moab"},
+            0));
+    questions.add(new Question(
+            "Who served as Jeremiah's scribe and wrote down his prophecies?",
+            new String[]{"Ebed-melech", "Baruch", "Gedaliah", "Pashur"},
+            1));
+    questions.add(new Question(
+            "Which king cut and burned Jeremiah's scroll as it was read to him?",
+            new String[]{"Zedekiah", "Josiah", "Jehoiakim", "Jehoiachin"},
+            2));
+    questions.add(new Question(
+            "Who was the father of the prophet Hananiah, who opposed Jeremiah?",
+            new String[]{"Immer", "Hilkiah", "Shaphan", "Azzur"},
+            3));
+    questions.add(new Question(
+            "What did Jeremiah wear as a symbolic sign of Judah's coming submission?",
+            new String[]{"A wooden yoke", "A crown of thorns", "A priestly ephod", "A sack of grain"},
+            0));
+    questions.add(new Question(
+            "Which king was ruling when Jerusalem fell to the Babylonians?",
+            new String[]{"Jehoiakim", "Zedekiah", "Josiah", "Ahaz"},
+            1));
+    questions.add(new Question(
+            "Who was appointed governor over the people left in Judah after Jerusalem's fall?",
+            new String[]{"Baruch", "Ebed-melech", "Gedaliah", "Pashur"},
+            2));
+    questions.add(new Question(
+            "Where was Gedaliah appointed governor?",
+            new String[]{"Jericho", "Bethel", "Anathoth", "Mizpah"},
+            3));
+    questions.add(new Question(
+            "Who rescued Jeremiah from the dungeon by appealing to the king?",
+            new String[]{"Ebed-melech the Ethiopian", "Baruch the scribe", "Gedaliah the governor", "Hananiah the prophet"},
+            0));
+    questions.add(new Question(
+            "What occupation did the Rechabites follow as part of their ancestral tradition?",
+            new String[]{"They were temple singers", "They abstained from wine and lived in tents", "They served as Babylonian officials", "They were royal armour-bearers"},
+            1));
+    questions.add(new Question(
+            "Who was the father of the Rechabites mentioned in Jeremiah 35?",
+            new String[]{"Jonadab", "Baruch", "Hilkiah", "Shallum"},
+            0));
+    questions.add(new Question(
+            "What did Jeremiah buy from his cousin Hanameel?",
+            new String[]{"A vineyard in Anathoth", "A house in Jerusalem", "A field in Anathoth", "A flock of sheep"},
+            2));
+    questions.add(new Question(
+            "What was the purpose of Jeremiah's purchase of the field?",
+            new String[]{"To provide land for the king", "To fulfil a tax obligation", "To build a temple", "To signify that houses and fields would again be possessed in the land"},
+            3));
+    questions.add(new Question(
+            "What object did Jeremiah observe at the potter's house?",
+            new String[]{"A vessel being reshaped on the wheel", "A bronze altar", "A broken stone tablet", "A golden lampstand"},
+            0));
+    questions.add(new Question(
+            "Which priestly official had Jeremiah beaten and put in stocks?",
+            new String[]{"Hananiah", "Pashur son of Immer", "Gedaliah", "Ebed-melech"},
+            1));
+    questions.add(new Question(
+            "What name did Jeremiah give to Pashur after his confrontation with him?",
+            new String[]{"Maher-shalal-hash-baz", "Lo-ammi", "Magor-missabib", "Shear-jashub"},
+            2));
+    questions.add(new Question(
+            "How long did Jeremiah say the Babylonian captivity would last?",
+            new String[]{"Forty years", "Fifty years", "Sixty years", "Seventy years"},
+            3));
+    questions.add(new Question(
+            "Which woman is named in Jeremiah's prophecy as weeping for her children?",
+            new String[]{"Rachel", "Deborah", "Miriam", "Hannah"},
+            0));
+    questions.add(new Question(
+            "What kind of covenant does Jeremiah 31 promise God will make with the house of Israel and Judah?",
+            new String[]{"A covenant of kingship", "A new covenant", "A covenant of military alliance", "A covenant of tribute"},
+            1));
+    questions.add(new Question(
+            "Where was Jeremiah told to hide a linen girdle as a symbolic act?",
+            new String[]{"At the Jordan River", "Near the Red Sea", "By the Euphrates", "In the valley of Hinnom"},
+            2));
+    questions.add(new Question(
+            "What did Jeremiah instruct the exiles in Babylon to do in his letter?",
+            new String[]{"Prepare for an immediate return", "Avoid building homes", "Stop praying for the city", "Build houses, plant gardens, and seek the city's peace"},
+            3));
+            }
         }
 
         private static void addBookLamentationsQuestions(ArrayList<Question> questions, String difficulty) {
