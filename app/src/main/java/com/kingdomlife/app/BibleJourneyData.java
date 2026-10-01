@@ -34310,6 +34310,108 @@ questions.add(new Question(
         1
     ));
         }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was the governor of Judah when Haggai prophesied?",
+            new String[]{"Zerubbabel", "Nehemiah", "Ezra", "Sheshbazzar"},
+            0));
+    questions.add(new Question(
+            "Who was the high priest during Haggai's ministry?",
+            new String[]{"Ezra", "Joshua son of Josedech", "Jeshua son of Nun", "Seraiah"},
+            1));
+    questions.add(new Question(
+            "In which month and year of Darius did Haggai first receive the word of the LORD?",
+            new String[]{"Second month, first year", "Sixth month, first year", "Sixth month, second year", "Seventh month, second year"},
+            2));
+    questions.add(new Question(
+            "What did the people say about the time to rebuild the LORD's house?",
+            new String[]{"The work was impossible", "The king had forbidden it", "The materials were lost", "The time had not come"},
+            3));
+    questions.add(new Question(
+            "What did the LORD tell the people to consider in Haggai 1:5?",
+            new String[]{"Their ways", "Their enemies", "Their riches", "Their ancestors"},
+            0));
+    questions.add(new Question(
+            "What did the people earn, yet put into a bag with holes?",
+            new String[]{"Silver", "Wages", "Grain", "Oil"},
+            1));
+    questions.add(new Question(
+            "What did the LORD call upon the people to bring from the mountain?",
+            new String[]{"Gold and silver", "Cedar and stone", "Wood", "Fine linen"},
+            2));
+    questions.add(new Question(
+            "What had happened to the heavens and the earth because of the people's neglect?",
+            new String[]{"They were filled with rain", "They produced abundant crops", "They were covered in darkness", "The heavens withheld dew and the earth withheld fruit"},
+            3));
+    questions.add(new Question(
+            "Who stirred up the spirit of Zerubbabel to begin the work?",
+            new String[]{"The LORD", "The king of Persia", "The high priest", "The elders of Judah"},
+            0));
+    questions.add(new Question(
+            "On what day did the people come and work on the house of the LORD?",
+            new String[]{"First day of the sixth month", "Four and twentieth day of the sixth month", "Twenty-first day of the seventh month", "Twenty-fourth day of the ninth month"},
+            1));
+    questions.add(new Question(
+            "Which group was told that the latter glory of the house would be greater?",
+            new String[]{"The priests only", "The elders of Samaria", "The remnant of the people", "The Persian officials"},
+            2));
+    questions.add(new Question(
+            "What did the LORD promise to give in the rebuilt house?",
+            new String[]{"A throne of ivory", "A river of oil", "A new ark", "Peace"},
+            3));
+    questions.add(new Question(
+            "What question did Haggai ask the priests about holy flesh carried in a garment?",
+            new String[]{"Could the garment make other food holy by contact?", "Could it heal the sick?", "Could it cleanse the altar?", "Could it bless the whole city?"},
+            0));
+    questions.add(new Question(
+            "According to the priests' answer, what happens when something unclean touches food?",
+            new String[]{"It becomes holy", "It becomes unclean", "It remains unchanged", "It becomes a sacrifice"},
+            1));
+    questions.add(new Question(
+            "What did Haggai say the people's offerings had been before they laid the foundation?",
+            new String[]{"Accepted and plentiful", "Greater than Solomon's", "Unclean", "Stored in the temple"},
+            2));
+    questions.add(new Question(
+            "On which day did Haggai receive the message about the foundation of the LORD's temple?",
+            new String[]{"First day of the seventh month", "Tenth day of the seventh month", "Twenty-first day of the eighth month", "Twenty-fourth day of the ninth month"},
+            3));
+    questions.add(new Question(
+            "What agricultural signs did Haggai mention as having occurred before the people returned to the work?",
+            new String[]{"Blight, mildew, and hail", "Locusts and drought only", "Floods and earthquakes", "Frost and wildfires"},
+            0));
+    questions.add(new Question(
+            "What did the LORD promise from that day onward?",
+            new String[]{"A new king", "He would bless them", "An end to all their enemies", "A return to Egypt"},
+            1));
+    questions.add(new Question(
+            "Which celestial bodies are mentioned as being shaken in Haggai 2:21?",
+            new String[]{"The sun and moon", "The stars and planets", "The heavens and the earth", "The clouds and winds"},
+            2));
+    questions.add(new Question(
+            "What would the LORD overthrow among the kingdoms?",
+            new String[]{"The priesthood", "The temple service", "The harvest fields", "The throne of kingdoms"},
+            3));
+    questions.add(new Question(
+            "What would happen to the horses and their riders?",
+            new String[]{"They would fall, each by the sword of his brother", "They would flee into Egypt", "They would enter Jerusalem", "They would be given to Judah"},
+            0));
+    questions.add(new Question(
+            "Who is addressed as the LORD's servant and chosen one in Haggai 2:23?",
+            new String[]{"Joshua", "Zerubbabel", "Haggai", "Darius"},
+            1));
+    questions.add(new Question(
+            "What royal object does the LORD say He will make Zerubbabel like?",
+            new String[]{"A golden crown", "A royal robe", "A signet", "A sceptre"},
+            2));
+    questions.add(new Question(
+            "What does Haggai identify as the reason the people were to be strong and work?",
+            new String[]{"The Persian army was arriving", "The harvest was complete", "The temple treasures had returned", "The LORD was with them"},
+            3));
+    questions.add(new Question(
+            "Which feast period was underway when Haggai delivered the message in Haggai 2:1?",
+            new String[]{"The seventh-month gathering", "The Passover", "The Feast of Weeks", "The new moon of the first month"},
+            0));
+                  }
         }
 
         private static void addBookZechariahQuestions(ArrayList<Question> questions, String difficulty) {
@@ -35146,6 +35248,108 @@ questions.add(new Question(
         1
     ));
                   }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who was Zechariah's father?",
+            new String[]{"Berechiah", "Iddo", "Joiada", "Berekiah"},
+            0));
+    questions.add(new Question(
+            "In which month did the word of the LORD first come to Zechariah?",
+            new String[]{"Nisan", "The eighth month", "The tenth month", "The twelfth month"},
+            1));
+    questions.add(new Question(
+            "Which two leaders are named alongside each other in Zechariah 4:6?",
+            new String[]{"Ezra and Nehemiah", "Haggai and Malachi", "Zerubbabel and Joshua", "Darius and Cyrus"},
+            2));
+    questions.add(new Question(
+            "What did Zechariah see among the myrtle trees in his first vision?",
+            new String[]{"A flying roll", "A golden candlestick", "Four horns", "A man riding a red horse"},
+            3));
+    questions.add(new Question(
+            "How many horses are described in the first vision?",
+            new String[]{"Red, speckled, and white horses", "Two black horses", "Seven white horses", "Four chariots"},
+            0));
+    questions.add(new Question(
+            "What did the angel say the horsemen had done?",
+            new String[]{"Conquered Babylon", "Walked to and fro through the earth", "Built Jerusalem's walls", "Destroyed the temple"},
+            1));
+    questions.add(new Question(
+            "How many horns did Zechariah see in the second vision?",
+            new String[]{"Two", "Three", "Four", "Seven"},
+            2));
+    questions.add(new Question(
+            "What did the four horns represent?",
+            new String[]{"Four rivers", "Four priests", "Four kingdoms of Judah", "The powers that scattered Judah, Israel, and Jerusalem"},
+            3));
+    questions.add(new Question(
+            "What did the man in Zechariah 2 carry in his hand?",
+            new String[]{"A measuring line", "A sword", "A trumpet", "A scroll"},
+            0));
+    questions.add(new Question(
+            "What did the LORD promise to be around Jerusalem?",
+            new String[]{"A river of fire", "A wall of fire", "A wall of stone", "A host of angels"},
+            1));
+    questions.add(new Question(
+            "What was removed from Joshua the high priest in the fourth vision?",
+            new String[]{"His crown", "His priestly breastplate", "His filthy garments", "His sandals"},
+            2));
+    questions.add(new Question(
+            "What was placed upon Joshua's head after his garments were changed?",
+            new String[]{"A golden helmet", "A royal diadem", "A linen turban", "A silver crown"},
+            3));
+    questions.add(new Question(
+            "What did the LORD say He would bring forth?",
+            new String[]{"His servant the Branch", "A new prophet", "A mighty angel", "A new king from Egypt"},
+            0));
+    questions.add(new Question(
+            "What was shown in Zechariah's fifth vision?",
+            new String[]{"A flying roll", "A golden candlestick and two olive trees", "Four chariots", "A basket of fruit"},
+            1));
+    questions.add(new Question(
+            "What did the two olive trees represent in the vision?",
+            new String[]{"Two kings of Persia", "Two prophets of Israel", "The two anointed ones", "Two tribes of Judah"},
+            2));
+    questions.add(new Question(
+            "What was the flying roll in Zechariah 5 described as?",
+            new String[]{"A scroll of peace", "A book of genealogy", "A royal decree", "A curse going forth over the face of the whole earth"},
+            3));
+    questions.add(new Question(
+            "What was inside the ephah in Zechariah's vision?",
+            new String[]{"A woman called Wickedness", "A golden lamp", "A stone tablet", "A bundle of grain"},
+            0));
+    questions.add(new Question(
+            "Where was the ephah carried in the vision?",
+            new String[]{"Babylon", "The land of Shinar", "Egypt", "Nineveh"},
+            1));
+    questions.add(new Question(
+            "How many chariots came out from between two mountains in Zechariah 6?",
+            new String[]{"Two", "Three", "Four", "Seven"},
+            2));
+    questions.add(new Question(
+            "What were the mountains in the chariot vision described as?",
+            new String[]{"Olive trees", "Mountains of brass", "Mountains of Lebanon", "Mountains of fire"},
+            1));
+    questions.add(new Question(
+            "Which chariot went toward the south country?",
+            new String[]{"The red horses", "The white horses", "The grisled horses", "The black horses"},
+            2));
+    questions.add(new Question(
+            "What was the crown in Zechariah 6 made from?",
+            new String[]{"Gold only", "Silver only", "Bronze and iron", "Silver and gold"},
+            3));
+    questions.add(new Question(
+            "Who was the man named as the Branch in Zechariah 6:12?",
+            new String[]{"The man whose name is The Branch", "Zerubbabel", "Joshua", "Darius"},
+            0));
+    questions.add(new Question(
+            "What question did the people ask about fasting in Zechariah 7?",
+            new String[]{"Should they rebuild the city?", "Should they continue to weep and fast in the fifth month?", "Should they bring more sacrifices?", "Should they return to Egypt?"},
+            1));
+    questions.add(new Question(
+            "What did the LORD require in Zechariah 7:9?",
+            new String[]{"More offerings and incense", "Strict separation from foreigners", "Execute true judgment and show mercy and compassion", "Build a larger altar"},
+            2));
+            }
         }
 
         private static void addBookMalachiQuestions(ArrayList<Question> questions, String difficulty) {
@@ -35981,6 +36185,108 @@ questions.add(new Question(
         },
         0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "How does Malachi 1:1 describe the message delivered?",
+            new String[]{"The vision of Malachi", "The burden of the prophet", "The prophecy of Israel", "The burden of the word of the LORD to Israel"},
+            3));
+    questions.add(new Question(
+            "Which two brothers are contrasted in Malachi 1:2–3?",
+            new String[]{"Jacob and Esau", "Moses and Aaron", "Cain and Abel", "Ephraim and Manasseh"},
+            0));
+    questions.add(new Question(
+            "What did the priests offer upon the LORD's altar?",
+            new String[]{"Perfect sacrifices", "Polluted bread", "Only incense", "Silver vessels"},
+            1));
+    questions.add(new Question(
+            "What did the priests say about the LORD's table?",
+            new String[]{"It was holy", "It was restored", "It was contemptible", "It was covered in gold"},
+            2));
+    questions.add(new Question(
+            "What kind of animal did the priests offer despite the law's requirement?",
+            new String[]{"A firstborn lamb", "A spotless bullock", "A perfect goat", "The blind, lame, and sick"},
+            3));
+    questions.add(new Question(
+            "What does Malachi say would be offered to the LORD among the Gentiles?",
+            new String[]{"A pure offering", "A golden image", "A royal tribute", "A new covenant scroll"},
+            0));
+    questions.add(new Question(
+            "What had the priests caused many to do by their instruction?",
+            new String[]{"Become kings", "Stumble at the law", "Leave their cities", "Build new altars"},
+            1));
+    questions.add(new Question(
+            "What does Malachi 2:5 say the covenant with Levi was?",
+            new String[]{"A covenant of kingship", "A covenant of wealth", "A covenant of life and peace", "A covenant of land"},
+            2));
+    questions.add(new Question(
+            "What was iniquity found in the mouth of Levi's descendants?",
+            new String[]{"Always", "Only during war", "Only in exile", "Not found"},
+            3));
+    questions.add(new Question(
+            "What does Malachi say the priest's lips should keep?",
+            new String[]{"Knowledge", "Gold", "The king's command", "The names of the tribes"},
+            0));
+    questions.add(new Question(
+            "What does Malachi 2:10 ask about the one God who created us?",
+            new String[]{"Why did He destroy the temple?", "Why do we deal treacherously every man against his brother?", "Why did He scatter the nations?", "Why did He withhold the harvest?"},
+            1));
+    questions.add(new Question(
+            "What does Malachi say Judah had profaned by marrying the daughter of a strange god?",
+            new String[]{"The royal throne", "The city gates", "The holiness of the LORD", "The altar of incense"},
+            2));
+    questions.add(new Question(
+            "What did the people cover the LORD's altar with, according to Malachi 2:13?",
+            new String[]{"Gold and silver", "Oil and wine", "Fine linen", "Tears, weeping, and crying"},
+            3));
+    questions.add(new Question(
+            "What does Malachi call the wife of one's youth?",
+            new String[]{"A companion and the wife of thy covenant", "A servant of the house", "A daughter of Zion", "A witness before the king"},
+            0));
+    questions.add(new Question(
+            "Who is said to prepare the way before the LORD in Malachi 3:1?",
+            new String[]{"Elijah", "The messenger", "Moses", "The high priest"},
+            1));
+    questions.add(new Question(
+            "What is the coming messenger of the covenant compared to in Malachi 3:2?",
+            new String[]{"A mighty warrior", "A shepherd's staff", "A refiner's fire and fullers' soap", "A river in the wilderness"},
+            2));
+    questions.add(new Question(
+            "What metal is used as an image of refining in Malachi 3:3?",
+            new String[]{"Iron", "Copper", "Tin", "Silver"},
+            3));
+    questions.add(new Question(
+            "Which groups are named among those against whom the LORD will be a swift witness?",
+            new String[]{"Sorcerers, adulterers, and false swearers", "Kings and soldiers only", "Foreign merchants only", "The temple singers"},
+            0));
+    questions.add(new Question(
+            "What does Malachi say the people had robbed God of?",
+            new String[]{"Their firstborn", "Tithes and offerings", "The ark of the covenant", "The priestly garments"},
+            1));
+    questions.add(new Question(
+            "What does Malachi 3:10 invite the people to bring into the storehouse?",
+            new String[]{"Their gold", "Their first fruits only", "All the tithes", "Their royal tribute"},
+            2));
+    questions.add(new Question(
+            "What would the LORD rebuke for the people's sake?",
+            new String[]{"The enemy king", "The drought", "The locusts", "The devourer"},
+            3));
+    questions.add(new Question(
+            "What does Malachi 3:16 say was written before the LORD?",
+            new String[]{"A book of remembrance", "A book of the law", "A list of kings", "A scroll of judgment"},
+            0));
+    questions.add(new Question(
+            "What does Malachi call those who fear the LORD and think upon His name?",
+            new String[]{"The mighty men", "His jewels", "The remnant of Levi", "The first fruits"},
+            1));
+    questions.add(new Question(
+            "What is promised to those who fear the LORD's name in Malachi 4:2?",
+            new String[]{"A crown of gold", "A new temple", "The Sun of righteousness with healing in his wings", "A river of living water"},
+            2));
+    questions.add(new Question(
+            "Which prophet is promised to be sent before the great and dreadful day of the LORD?",
+            new String[]{"Jeremiah", "Isaiah", "Elisha", "Elijah"},
+            3));
             }
         }
 
