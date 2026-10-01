@@ -43135,6 +43135,132 @@ if (difficulty.equals("Hard")) {
             0
     ));
         }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "Who was Timothy's grandmother?",
+            new String[]{"Eunice", "Lois", "Priscilla", "Lydia"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of Timothy's mother?",
+            new String[]{"Lois", "Lydia", "Eunice", "Dorcas"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul remind Timothy to stir up?",
+            new String[]{"The gift of God", "The gift of prophecy", "The spirit of wisdom", "The gift of healing"},
+            0));
+
+    questions.add(new Question(
+            "What three qualities are named as God's gift instead of fear?",
+            new String[]{"Wisdom, patience, and peace", "Faith, hope, and joy", "Strength, knowledge, and humility", "Power, love, and a sound mind"},
+            3));
+
+    questions.add(new Question(
+            "Who had turned away from Paul in Asia?",
+            new String[]{"Tychicus and Onesiphorus", "Phygellus and Hermogenes", "Hymenaeus and Philetus", "Crescens and Titus"},
+            1));
+
+    questions.add(new Question(
+            "Where did Onesiphorus diligently seek Paul and find him?",
+            new String[]{"Antioch", "Ephesus", "Rome", "Troas"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul say Onesiphorus had often done for him?",
+            new String[]{"Refreshed him", "Taken him to Jerusalem", "Provided him with a ship", "Written letters for him"},
+            0));
+
+    questions.add(new Question(
+            "To whom was Timothy instructed to commit the things he had heard from Paul?",
+            new String[]{"New believers only", "The elders in Jerusalem", "Roman officials", "Faithful men who could teach others also"},
+            3));
+
+    questions.add(new Question(
+            "Which three examples did Paul use to teach Timothy about diligence?",
+            new String[]{"A king, a priest, and a prophet", "A soldier, an athlete, and a husbandman", "A shepherd, a builder, and a judge", "A merchant, a fisherman, and a scribe"},
+            1));
+
+    questions.add(new Question(
+            "What must an athlete do to receive the crown?",
+            new String[]{"Defeat every opponent", "Train for many years", "Strive lawfully", "Be approved by a king"},
+            2));
+
+    questions.add(new Question(
+            "For whose sake did Paul endure all things?",
+            new String[]{"The elect", "The rulers of Rome", "The elders of Jerusalem", "The people of Macedonia"},
+            0));
+
+    questions.add(new Question(
+            "Which two men did Paul identify as having erred concerning the truth?",
+            new String[]{"Jannes and Jambres", "Phygellus and Hermogenes", "Alexander and Demas", "Hymenaeus and Philetus"},
+            3));
+
+    questions.add(new Question(
+            "What false teaching were Hymenaeus and Philetus spreading?",
+            new String[]{"The law had been abolished", "The resurrection was past already", "Jesus had not risen", "Angels should be worshipped"},
+            1));
+
+    questions.add(new Question(
+            "What should a servant of the Lord avoid?",
+            new String[]{"All discussions", "Teaching those who disagree", "Foolish and unlearned questions", "Correcting people with meekness"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul tell Timothy to flee?",
+            new String[]{"Youthful lusts", "Every unfamiliar city", "The company of elders", "All public gatherings"},
+            0));
+
+    questions.add(new Question(
+            "In which three places did Paul mention suffering persecutions?",
+            new String[]{"Rome, Corinth, and Athens", "Ephesus, Troas, and Miletus", "Jerusalem, Jericho, and Bethlehem", "Antioch, Iconium, and Lystra"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say all who live godly in Christ Jesus would suffer?",
+            new String[]{"Poverty", "Persecution", "Imprisonment", "Exile"},
+            1));
+
+    questions.add(new Question(
+            "What is Scripture profitable for, according to 2 Timothy 3?",
+            new String[]{"Only doctrine and prophecy", "Only correction and history", "Doctrine, reproof, correction, and instruction in righteousness", "Only prayer and worship"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul charge Timothy to preach?",
+            new String[]{"The word", "The traditions of the elders", "The laws of the nations", "The writings of philosophers"},
+            0));
+
+    questions.add(new Question(
+            "What would people turn away from and turn toward, according to Paul?",
+            new String[]{"The law and traditions", "The prophets and psalms", "The apostles and elders", "The truth and fables"},
+            3));
+
+    questions.add(new Question(
+            "Which fellow worker had departed to Galatia?",
+            new String[]{"Titus", "Crescens", "Tychicus", "Luke"},
+            1));
+
+    questions.add(new Question(
+            "Where had Titus gone, according to Paul's closing remarks?",
+            new String[]{"Ephesus", "Rome", "Dalmatia", "Crete"},
+            2));
+
+    questions.add(new Question(
+            "Where did Paul leave his cloke with Carpus?",
+            new String[]{"Troas", "Corinth", "Miletus", "Philippi"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul ask Timothy to bring from Troas, especially?",
+            new String[]{"His travelling staff", "His scrolls of prophecy", "His letters to the churches", "The parchments"},
+            3));
+
+    questions.add(new Question(
+            "Who did Paul say had done him much evil and greatly withstood his words?",
+            new String[]{"Demas", "Alexander the coppersmith", "Philetus", "Hermogenes"},
+            1));
+            }
         }
 
         private static void addBookTitusQuestions(ArrayList<Question> questions, String difficulty) {
@@ -43693,6 +43819,132 @@ if (difficulty.equals("Hard")) {
             0
     ));
         }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "What did Paul tell Titus to speak concerning sound doctrine?",
+            new String[]{"Things that become sound doctrine", "Things that please the crowd", "Things concerning Roman laws", "Things concerning worldly riches"},
+            0));
+
+    questions.add(new Question(
+            "How should aged men be in their behaviour?",
+            new String[]{"Boastful and strict", "Sober, grave, temperate, sound in faith, charity, and patience", "Quiet and withdrawn", "Fearful and uncertain"},
+            1));
+
+    questions.add(new Question(
+            "What were aged women instructed not to be?",
+            new String[]{"Teachers of good things", "Teachers of young women", "False accusers and given to much wine", "Discreet and chaste"},
+            2));
+
+    questions.add(new Question(
+            "What were young women taught to love?",
+            new String[]{"Their husbands and children", "Their possessions and status", "Their teachers above all", "Their own ambitions"},
+            0));
+
+    questions.add(new Question(
+            "What quality were young men specifically urged to show?",
+            new String[]{"Cleverness", "Sobriety", "Wealth", "Influence"},
+            1));
+
+    questions.add(new Question(
+            "What was Titus to show himself as a pattern of?",
+            new String[]{"Political leadership", "Public speaking", "Good works", "Military discipline"},
+            2));
+
+    questions.add(new Question(
+            "What should sound speech be, so that an opponent may be ashamed?",
+            new String[]{"Unanswerable by force", "Without controversy", "Full of signs", "That cannot be condemned"},
+            3));
+
+    questions.add(new Question(
+            "What were servants instructed not to do?",
+            new String[]{"Please their masters in all things", "Answer again or purloin", "Show all good fidelity", "Be obedient to their masters"},
+            1));
+
+    questions.add(new Question(
+            "What does the grace of God teach believers to deny?",
+            new String[]{"Ungodliness and worldly lusts", "All earthly work", "Every form of leadership", "All human relationships"},
+            0));
+
+    questions.add(new Question(
+            "In what manner should believers live in this present world?",
+            new String[]{"With riches and honour", "With strict separation from everyone", "Soberly, righteously, and godly", "Without duties or responsibilities"},
+            2));
+
+    questions.add(new Question(
+            "What are believers described as looking for?",
+            new String[]{"A new earthly kingdom", "The blessed hope and glorious appearing of Jesus Christ", "A return to the law of Moses", "The praise of men"},
+            1));
+
+    questions.add(new Question(
+            "Why did Christ give himself for us?",
+            new String[]{"To make us wealthy", "To free us from all service", "To establish an earthly throne", "To redeem us from all iniquity and purify a peculiar people"},
+            3));
+
+    questions.add(new Question(
+            "What was Titus instructed to speak, exhort, and rebuke with?",
+            new String[]{"All authority", "Personal opinion", "Gentleness only", "The traditions of elders"},
+            0));
+
+    questions.add(new Question(
+            "What were believers to be ready for?",
+            new String[]{"Debating genealogies", "Every good work", "Seeking public recognition", "Avoiding all civic duties"},
+            1));
+
+    questions.add(new Question(
+            "What should believers speak evil of no one?",
+            new String[]{"Only fellow believers", "Only rulers", "No one", "Only strangers"},
+            2));
+
+    questions.add(new Question(
+            "What attitude should believers show toward all men?",
+            new String[]{"Strife and rivalry", "Suspicion and fear", "Harsh correction", "Meekness"},
+            3));
+
+    questions.add(new Question(
+            "According to Titus 3, what had believers once been?",
+            new String[]{"Foolish, disobedient, deceived, and serving divers lusts and pleasures", "Perfect in knowledge", "Rulers over many nations", "Teachers of the law"},
+            0));
+
+    questions.add(new Question(
+            "What appeared to bring salvation?",
+            new String[]{"The works of the law", "The kindness and love of God our Saviour toward man", "The wisdom of philosophers", "The power of rulers"},
+            1));
+
+    questions.add(new Question(
+            "According to Titus 3:5, by what were believers saved?",
+            new String[]{"Their righteous deeds", "Their family heritage", "The washing of regeneration and renewing of the Holy Ghost", "Their strict observance of ceremonies"},
+            2));
+
+    questions.add(new Question(
+            "How did God shed the Holy Ghost upon believers?",
+            new String[]{"By the keeping of genealogies", "Through the works of the flesh", "By the authority of earthly rulers", "Abundantly through Jesus Christ our Saviour"},
+            3));
+
+    questions.add(new Question(
+            "Being justified by grace, what are believers made?",
+            new String[]{"Heirs according to the hope of eternal life", "Judges over all nations", "Rulers of the temple", "Teachers of angels"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say about foolish questions and genealogies?",
+            new String[]{"They should be studied endlessly", "They are unprofitable and vain", "They are necessary for salvation", "They should replace good works"},
+            1));
+
+    questions.add(new Question(
+            "What was Titus instructed to do with a divisive person after the first and second admonition?",
+            new String[]{"Appoint him as an elder", "Ignore the matter entirely", "Reject him", "Send him to Jerusalem"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul ask Titus to bring to him from Nicopolis?",
+            new String[]{"The books of the law", "A collection of letters", "The elders of Crete", "Zenas the lawyer and Apollos, and to help them on their journey"},
+            3));
+
+    questions.add(new Question(
+            "What final instruction did Paul give concerning those who had believed in God?",
+            new String[]{"Let them be careful to maintain good works", "Let them avoid all public service", "Let them seek honour from rulers", "Let them focus only on genealogies"},
+            0));
+            }
         }
 
         private static void addBookPhilemonQuestions(ArrayList<Question> questions, String difficulty) {
@@ -44251,6 +44503,132 @@ if (difficulty.equals("Hard")) {
             0
     ));
                 }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "Who was the recipient of Paul's letter to Philemon?",
+            new String[]{"Archippus", "Philemon", "Onesimus", "Epaphroditus"},
+            1));
+
+    questions.add(new Question(
+            "How did Paul describe Philemon in the opening greeting?",
+            new String[]{"A fellow soldier", "A faithful elder", "A dearly beloved and fellowlabourer", "A servant of Caesar"},
+            2));
+
+    questions.add(new Question(
+            "Who was mentioned alongside Philemon as a sister?",
+            new String[]{"Apphia", "Euodia", "Syntyche", "Lydia"},
+            0));
+
+    questions.add(new Question(
+            "What title did Paul use for Archippus?",
+            new String[]{"A fellow apostle", "A bishop of Crete", "A faithful witness", "Our fellowsoldier"},
+            3));
+
+    questions.add(new Question(
+            "Where was the church mentioned in Philemon's greeting meeting?",
+            new String[]{"In the temple", "In Philemon's house", "By the river", "In Caesar's palace"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say he heard about Philemon?",
+            new String[]{"His wealth and influence", "His journeys and victories", "His love and faith toward the Lord Jesus and all saints", "His knowledge of the law"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul pray would become effectual through Philemon's faith?",
+            new String[]{"The communication of his faith", "His authority over the church", "His public reputation", "His ability to teach"},
+            0));
+
+    questions.add(new Question(
+            "How did Paul describe himself at the beginning of his appeal?",
+            new String[]{"A king in exile", "A teacher in Jerusalem", "A free citizen", "Paul the aged, and now also a prisoner of Jesus Christ"},
+            3));
+
+    questions.add(new Question(
+            "Whom did Paul call his son, whom he had begotten in his bonds?",
+            new String[]{"Timothy", "Onesimus", "Titus", "Mark"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say Onesimus had formerly been to Philemon?",
+            new String[]{"A faithful servant", "A fellow prisoner", "Unprofitable", "A teacher"},
+            2));
+
+    questions.add(new Question(
+            "How did Paul describe Onesimus after his conversion?",
+            new String[]{"Profitable to both Paul and Philemon", "A leader of the church", "A Roman official", "A travelling preacher"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say he would have liked to do concerning Onesimus?",
+            new String[]{"Send him to Rome", "Make him a church elder", "Keep him permanently", "Keep him with himself to minister to him in his bonds"},
+            3));
+
+    questions.add(new Question(
+            "Why did Paul say he would not act without Philemon's consent?",
+            new String[]{"He feared Roman law", "That Philemon's benefit should not be as it were of necessity, but willingly", "He had no authority to write", "Onesimus had refused to return"},
+            1));
+
+    questions.add(new Question(
+            "How did Paul suggest Onesimus might have departed for a time?",
+            new String[]{"To escape imprisonment", "To seek a new master", "That Philemon might receive him for ever", "To travel with Paul"},
+            2));
+
+    questions.add(new Question(
+            "How did Paul ask Philemon to receive Onesimus?",
+            new String[]{"As himself", "As a hired worker", "As a stranger", "As a prisoner"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul ask Philemon to do if Onesimus had wronged him or owed him anything?",
+            new String[]{"Forgive the debt without discussion", "Send the matter to Caesar", "Ask Onesimus to work it off", "Put that on Paul's account"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say he had written with his own hand?",
+            new String[]{"A list of Onesimus's duties", "That he would repay Philemon", "A command to release all servants", "A new church rule"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul remind Philemon that he owed him?",
+            new String[]{"His freedom", "His house", "Even his own self besides", "His position in the church"},
+            2));
+
+    questions.add(new Question(
+            "What did Paul ask Philemon to prepare for him?",
+            new String[]{"A lodging", "A ship", "A place in the synagogue", "A position of authority"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul hope would happen through the prayers of the believers?",
+            new String[]{"Onesimus would become wealthy", "Philemon would travel to Rome", "The church would move to Ephesus", "He would be given to them"},
+            3));
+
+    questions.add(new Question(
+            "Who was named as Paul's fellowprisoner in the closing greetings?",
+            new String[]{"Demas", "Epaphras", "Aristarchus", "Luke"},
+            1));
+
+    questions.add(new Question(
+            "Which fellowlabourer was mentioned after Mark in the closing greetings?",
+            new String[]{"Tychicus", "Trophimus", "Demas", "Justus"},
+            2));
+
+    questions.add(new Question(
+            "Who was identified as a fellowlabourer with Paul in the closing greetings?",
+            new String[]{"Luke", "Silas", "Timothy", "Epaphras"},
+            0));
+
+    questions.add(new Question(
+            "What blessing did Paul give in the final verse?",
+            new String[]{"Grace of our Lord Jesus Christ be with your spirit", "Peace from the rulers of Rome", "Strength through the law", "Joy in earthly riches"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul call Philemon in his closing appeal?",
+            new String[]{"A faithful servant", "A brother", "A fellow apostle", "A beloved fellowlabourer"},
+            3));
+            }
         }
     }
         private static class DataPart9 {
