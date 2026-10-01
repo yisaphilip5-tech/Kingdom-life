@@ -17330,6 +17330,108 @@ public class BibleJourneyData {
         1
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who is named as the author of Psalm 90?",
+            new String[]{"David", "Asaph", "Moses", "Solomon"},
+            2));
+    questions.add(new Question(
+            "Which Psalm is specifically described as a prayer of Moses?",
+            new String[]{"Psalm 90", "Psalm 23", "Psalm 72", "Psalm 150"},
+            0));
+    questions.add(new Question(
+            "Who is named in the title of Psalm 88 as its writer?",
+            new String[]{"David", "Heman the Ezrahite", "Asaph", "Ethan"},
+            1));
+    questions.add(new Question(
+            "Which Psalm is attributed to Ethan the Ezrahite?",
+            new String[]{"Psalm 89", "Psalm 91", "Psalm 78", "Psalm 46"},
+            0));
+    questions.add(new Question(
+            "What does the Hebrew term 'Selah' most likely indicate in the Psalms?",
+            new String[]{"A type of sacrifice", "A musical or liturgical pause", "A priestly garment", "A place of worship"},
+            1));
+    questions.add(new Question(
+            "Which Psalm begins with the words, 'The LORD is my shepherd'?",
+            new String[]{"Psalm 1", "Psalm 19", "Psalm 23", "Psalm 27"},
+            2));
+    questions.add(new Question(
+            "In Psalm 42, what animal is described as panting after water brooks?",
+            new String[]{"A deer", "A lion", "A dove", "An eagle"},
+            0));
+    questions.add(new Question(
+            "Which Psalm speaks of the 'beauty of holiness' in worship?",
+            new String[]{"Psalm 8", "Psalm 29", "Psalm 51", "Psalm 96"},
+            3));
+    questions.add(new Question(
+            "According to Psalm 84, what bird is mentioned as finding a home near God's altars?",
+            new String[]{"Raven", "Sparrow", "Owl", "Peacock"},
+            1));
+    questions.add(new Question(
+            "Which Psalm describes God's word as a lamp unto the feet?",
+            new String[]{"Psalm 119", "Psalm 100", "Psalm 37", "Psalm 121"},
+            0));
+    questions.add(new Question(
+            "In Psalm 119, which Hebrew letter begins the section containing 'Thy word is a lamp unto my feet'?",
+            new String[]{"Aleph", "Beth", "Nun", "Gimel"},
+            2));
+    questions.add(new Question(
+            "Which Psalm is traditionally associated with David's confession after his sin involving Bathsheba?",
+            new String[]{"Psalm 32", "Psalm 51", "Psalm 63", "Psalm 103"},
+            1));
+    questions.add(new Question(
+            "Which Psalm contains the phrase, 'Create in me a clean heart, O God'?",
+            new String[]{"Psalm 19", "Psalm 24", "Psalm 51", "Psalm 86"},
+            2));
+    questions.add(new Question(
+            "Who is named in the title of Psalm 73?",
+            new String[]{"Asaph", "Moses", "David", "Heman"},
+            0));
+    questions.add(new Question(
+            "Which Psalm refers to the people as 'the sheep of his pasture'?",
+            new String[]{"Psalm 2", "Psalm 46", "Psalm 100", "Psalm 137"},
+            2));
+    questions.add(new Question(
+            "In Psalm 74, which creature is poetically described as having heads crushed in the waters?",
+            new String[]{"Behemoth", "Leviathan", "A great eagle", "A wild ox"},
+            1));
+    questions.add(new Question(
+            "Which Psalm asks, 'What is man, that thou art mindful of him?'",
+            new String[]{"Psalm 8", "Psalm 15", "Psalm 40", "Psalm 110"},
+            0));
+    questions.add(new Question(
+            "In Psalm 133, what precious substance is used to describe unity among brethren?",
+            new String[]{"Myrrh", "Frankincense", "Oil upon the head", "Fine flour"},
+            2));
+    questions.add(new Question(
+            "Which Psalm describes the righteous as a tree planted by rivers of water?",
+            new String[]{"Psalm 1", "Psalm 14", "Psalm 34", "Psalm 90"},
+            0));
+    questions.add(new Question(
+            "Which Psalm contains the words, 'Weeping may endure for a night, but joy cometh in the morning'?",
+            new String[]{"Psalm 16", "Psalm 30", "Psalm 45", "Psalm 67"},
+            1));
+    questions.add(new Question(
+            "Which Psalm begins, 'The fool hath said in his heart, There is no God'?",
+            new String[]{"Psalm 5", "Psalm 10", "Psalm 14", "Psalm 25"},
+            2));
+    questions.add(new Question(
+            "Which Psalm is titled as a song at the dedication of the house of David?",
+            new String[]{"Psalm 30", "Psalm 42", "Psalm 72", "Psalm 122"},
+            0));
+    questions.add(new Question(
+            "According to Psalm 150, where should the LORD be praised?",
+            new String[]{"Only in the temple", "Only in the heavens", "In the sanctuary and firmament of his power", "Only on the mountains"},
+            2));
+    questions.add(new Question(
+            "Which Psalm speaks of the king being given the nations as an inheritance?",
+            new String[]{"Psalm 2", "Psalm 20", "Psalm 51", "Psalm 100"},
+            0));
+    questions.add(new Question(
+            "Which Psalm includes the expression, 'The LORD said unto my Lord'?",
+            new String[]{"Psalm 23", "Psalm 72", "Psalm 89", "Psalm 110"},
+            3));
+            }
         }
 
         private static void addBookProverbsQuestions(ArrayList<Question> questions, String difficulty) {
@@ -18167,6 +18269,108 @@ public class BibleJourneyData {
         0
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who is identified as the main author of many of the proverbs?",
+            new String[]{"David", "Solomon", "Moses", "Samuel"},
+            1));
+    questions.add(new Question(
+            "Who is named as the mother of King Lemuel in Proverbs 31?",
+            new String[]{"Bathsheba", "Abigail", "His mother, whose name is not given", "Naamah"},
+            2));
+    questions.add(new Question(
+            "Which two men are named as authors of sayings collected in Proverbs 30?",
+            new String[]{"Agur and Jakeh", "Heman and Ethan", "Nathan and Gad", "Joab and Benaiah"},
+            0));
+    questions.add(new Question(
+            "Which king's servants copied out the proverbs found in Proverbs 25?",
+            new String[]{"Hezekiah", "Josiah", "Rehoboam", "Uzziah"},
+            0));
+    questions.add(new Question(
+            "What is the beginning of knowledge according to Proverbs 1:7?",
+            new String[]{"Great wealth", "The fear of the LORD", "Long life", "Public honour"},
+            1));
+    questions.add(new Question(
+            "What Hebrew word is commonly used for wisdom in Proverbs?",
+            new String[]{"Shalom", "Chesed", "Chokmah", "Ruach"},
+            2));
+    questions.add(new Question(
+            "In Proverbs, what does the word 'prudence' most closely relate to?",
+            new String[]{"Careful judgment and foresight", "Physical strength", "Musical ability", "Priestly service"},
+            0));
+    questions.add(new Question(
+            "Which insect is used in Proverbs 6 as an example of diligence?",
+            new String[]{"Locust", "Bee", "Ant", "蝗虫"},
+            2));
+    questions.add(new Question(
+            "According to Proverbs 30, what small creature prepares its food in the summer?",
+            new String[]{"The lion", "The ant", "The horse", "The eagle"},
+            1));
+    questions.add(new Question(
+            "Which animal is described in Proverbs 30 as exceeding wise despite being a small people?",
+            new String[]{"The conies", "The lions", "The horses", "The oxen"},
+            0));
+    questions.add(new Question(
+            "In Proverbs 30, which creature is described as having no king yet going forth in bands?",
+            new String[]{"The ant", "The locusts", "The conies", "The spider"},
+            1));
+    questions.add(new Question(
+            "Which item does Proverbs 25 compare to a word fitly spoken?",
+            new String[]{"A golden apple in a picture of silver", "A cedar tree in Lebanon", "A silver trumpet", "A precious stone in a crown"},
+            0));
+    questions.add(new Question(
+            "What does Proverbs 27 compare to iron sharpening iron?",
+            new String[]{"A ruler guiding a nation", "One man sharpening another", "A father correcting a child", "A shepherd guarding sheep"},
+            1));
+    questions.add(new Question(
+            "Which type of person is described in Proverbs 26 as repeating folly?",
+            new String[]{"A faithful messenger", "A wise ruler", "A fool returning to his folly", "A diligent farmer"},
+            2));
+    questions.add(new Question(
+            "What does Proverbs 16 say is better than great riches?",
+            new String[]{"A good name", "A long journey", "A large household", "A royal position"},
+            0));
+    questions.add(new Question(
+            "According to Proverbs 18:10, what is the name of the LORD compared to?",
+            new String[]{"A high tower", "A strong tower", "A city gate", "A shield of bronze"},
+            1));
+    questions.add(new Question(
+            "Which chapter describes the virtuous woman whose worth is far above rubies?",
+            new String[]{"Proverbs 3", "Proverbs 8", "Proverbs 21", "Proverbs 31"},
+            3));
+    questions.add(new Question(
+            "In Proverbs 31, what material is mentioned as something the virtuous woman seeks?",
+            new String[]{"Wool and flax", "Gold and silver", "Cedar and olive wood", "Silk and purple only"},
+            0));
+    questions.add(new Question(
+            "Which proverb says that a soft answer turneth away wrath?",
+            new String[]{"Proverbs 10:12", "Proverbs 15:1", "Proverbs 18:24", "Proverbs 27:17"},
+            1));
+    questions.add(new Question(
+            "What does Proverbs 22:1 say is more desirable than great riches?",
+            new String[]{"A large inheritance", "A position of authority", "A good name", "A long life"},
+            2));
+    questions.add(new Question(
+            "Which chapter contains the saying about the horse being prepared against the day of battle?",
+            new String[]{"Proverbs 21", "Proverbs 11", "Proverbs 4", "Proverbs 30"},
+            0));
+    questions.add(new Question(
+            "What does Proverbs 25 say a faithful messenger is like to those who send him?",
+            new String[]{"A broken tooth", "Cold water to a thirsty soul", "A thorn in the hand", "A cloud without rain"},
+            1));
+    questions.add(new Question(
+            "Which phrase in Proverbs 27 describes the effect of a cheerful heart?",
+            new String[]{"It maketh the face to shine", "It drieth up the bones", "It bringeth riches quickly", "It removeth all trouble"},
+            0));
+    questions.add(new Question(
+            "According to Proverbs 30, what is never satisfied?",
+            new String[]{"The grave", "A fruitful vine", "A peaceful household", "A wise counsellor"},
+            0));
+    questions.add(new Question(
+            "What does Proverbs 9:10 identify as the beginning of wisdom?",
+            new String[]{"The fear of the LORD", "The counsel of kings", "The study of nature", "The gathering of wealth"},
+            0));
+            }
         }
 
         private static void addBookEcclesiastesQuestions(ArrayList<Question> questions, String difficulty) {
@@ -18991,6 +19195,108 @@ public class BibleJourneyData {
         },
         1
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "How does the Preacher identify himself at the beginning of Ecclesiastes?",
+            new String[]{"The son of David, king in Jerusalem", "A priest of the tribe of Levi", "A prophet from Judah", "A scribe from Babylon"},
+            0));
+    questions.add(new Question(
+            "What Hebrew term is translated as 'vanity' in the KJV of Ecclesiastes?",
+            new String[]{"Chokmah", "Hevel", "Shalom", "Ruach"},
+            1));
+    questions.add(new Question(
+            "What phrase is repeatedly used to describe the fleeting nature of earthly pursuits?",
+            new String[]{"A crown of glory", "A city of refuge", "Vanity of vanities", "A river of life"},
+            2));
+    questions.add(new Question(
+            "According to Ecclesiastes 1, what continues in its course while generations come and go?",
+            new String[]{"The sun", "The temple", "The king's throne", "The harvest"},
+            0));
+    questions.add(new Question(
+            "Which natural feature is described as flowing into the sea, yet the sea is not full?",
+            new String[]{"The wind", "The rivers", "The clouds", "The springs"},
+            1));
+    questions.add(new Question(
+            "What did the Preacher say about much wisdom and much grief?",
+            new String[]{"They are unrelated", "Wisdom removes all sorrow", "Increased wisdom can bring increased grief", "Grief always produces wealth"},
+            2));
+    questions.add(new Question(
+            "Which kingly pursuit does the Preacher describe as testing pleasure and mirth?",
+            new String[]{"Building a temple", "Leading an army", "Writing laws", "Seeking enjoyment and laughter"},
+            3));
+    questions.add(new Question(
+            "What did the Preacher plant for himself in Ecclesiastes 2?",
+            new String[]{"Vineyards", "Olive groves only", "Cedar forests", "Wheat fields"},
+            0));
+    questions.add(new Question(
+            "Which building project is mentioned among the Preacher's works?",
+            new String[]{"The walls of Jericho", "Pools of water", "The tower of Babel", "The city of Nineveh"},
+            1));
+    questions.add(new Question(
+            "What conclusion does Ecclesiastes 3 draw about everything?",
+            new String[]{"All things happen without purpose", "Only the wealthy have a season", "To every thing there is a season", "Time belongs only to rulers"},
+            2));
+    questions.add(new Question(
+            "What has God set in the hearts of people, according to Ecclesiastes 3:11?",
+            new String[]{"A desire for riches", "A fear of kings", "A knowledge of every future event", "The world"},
+            3));
+    questions.add(new Question(
+            "What does Ecclesiastes say is better than envy and striving after wind?",
+            new String[]{"A handful with quietness", "A house full of silver", "A position among princes", "A field without labour"},
+            0));
+    questions.add(new Question(
+            "According to Ecclesiastes 4, what is better than being alone in labour?",
+            new String[]{"Owning more land", "Two are better than one", "Living without friends", "Having many servants"},
+            1));
+    questions.add(new Question(
+            "What does Ecclesiastes 4 say about a threefold cord?",
+            new String[]{"It is easily broken", "It is a sign of royalty", "It is not quickly broken", "It cannot be tied"},
+            2));
+    questions.add(new Question(
+            "What does Ecclesiastes 5 advise a person to do when entering the house of God?",
+            new String[]{"Speak many words", "Make promises quickly", "Bring a royal gift", "Keep their foot and be more ready to hear"},
+            3));
+    questions.add(new Question(
+            "What does Ecclesiastes 5 say about the love of money?",
+            new String[]{"It is never satisfied with money", "It always brings peace", "It guarantees wisdom", "It removes every worry"},
+            0));
+    questions.add(new Question(
+            "What does Ecclesiastes 7 say is better than the day of one's birth?",
+            new String[]{"The day of a feast", "The day of one's death", "The day of coronation", "The day of harvest"},
+            1));
+    questions.add(new Question(
+            "According to Ecclesiastes 7, what is better than the house of feasting?",
+            new String[]{"The king's palace", "The marketplace", "The house of mourning", "The place of judgement"},
+            2));
+    questions.add(new Question(
+            "What does Ecclesiastes 7 warn against being overly?",
+            new String[]{"Generous", "Patient", "Humble", "Righteous or wise"},
+            3));
+    questions.add(new Question(
+            "What does Ecclesiastes 9 say is common to all people?",
+            new String[]{"One event comes to all", "Everyone becomes king", "All people gain riches", "No one experiences sorrow"},
+            0));
+    questions.add(new Question(
+            "Which creature is used in Ecclesiastes 10 to illustrate how a little folly can affect something valuable?",
+            new String[]{"A locust", "Dead flies", "A scorpion", "A raven"},
+            1));
+    questions.add(new Question(
+            "What does Ecclesiastes 10 say happens when the iron is blunt?",
+            new String[]{"The work becomes easier", "The tool becomes lighter", "More strength is needed", "The task is completed immediately"},
+            2));
+    questions.add(new Question(
+            "What advice does Ecclesiastes 11 give concerning casting bread upon the waters?",
+            new String[]{"Avoid giving to others", "Store everything for yourself", "Wait until there is no risk", "Cast thy bread upon the waters"},
+            3));
+    questions.add(new Question(
+            "What does Ecclesiastes 12 compare the days of old age to?",
+            new String[]{"Evil days", "Days of harvest", "Days of great riches", "Days without labour"},
+            0));
+    questions.add(new Question(
+            "What is identified as the whole duty of man in Ecclesiastes 12:13?",
+            new String[]{"To gain wisdom and honour", "To fear God and keep his commandments", "To seek pleasure and riches", "To become known among nations"},
+            1));
             }
         }
 
