@@ -1953,6 +1953,132 @@ public class BibleJourneyData {
             1
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What does the Hebrew name Aaron traditionally mean?",
+            new String[]{"Mountain of strength", "High mountain", "God is gracious", "Gift of God"},
+            1));
+
+    questions.add(new Question(
+            "Which two sons of Aaron offered strange fire before the LORD?",
+            new String[]{"Eleazar and Ithamar", "Nadab and Abihu", "Korah and Zichri", "Hophni and Phinehas"},
+            1));
+
+    questions.add(new Question(
+            "What happened to Nadab and Abihu after offering strange fire?",
+            new String[]{"They were exiled", "They became priests elsewhere", "Fire went out from the LORD and consumed them", "They were struck with leprosy"},
+            2));
+
+    questions.add(new Question(
+            "What was the name of the daughter of Dibri?",
+            new String[]{"Shelomith", "Miriam", "Zipporah", "Hoglah"},
+            0));
+
+    questions.add(new Question(
+            "Shelomith's son was punished after blaspheming the name of the LORD. What was his father's nationality?",
+            new String[]{"Egyptian", "Amorite", "Midianite", "Edomite"},
+            0));
+
+    questions.add(new Question(
+            "What was placed on the forehead of the high priest's mitre?",
+            new String[]{"A golden bell", "A plate of pure gold", "An onyx stone", "A scarlet ribbon"},
+            1));
+
+    questions.add(new Question(
+            "What words were engraved on the golden plate of the high priest?",
+            new String[]{"Holy unto the LORD", "The LORD is holy", "Holiness belongs to Israel", "Blessed be the LORD"},
+            0));
+
+    questions.add(new Question(
+            "How many stones were on the breastplate of judgment?",
+            new String[]{"10", "14", "12", "7"},
+            2));
+
+    questions.add(new Question(
+            "What did the two onyx stones on the ephod represent?",
+            new String[]{"The twelve tribes", "The two divisions of Israel", "The priestly families", "The two cherubim"},
+            0));
+
+    questions.add(new Question(
+            "What were the Urim and Thummim associated with?",
+            new String[]{"Preparing incense", "Seeking divine judgment or guidance", "Measuring the altar", "Purifying lepers"},
+            1));
+
+    questions.add(new Question(
+            "On which day was the Day of Atonement observed?",
+            new String[]{"First day of the seventh month", "Tenth day of the seventh month", "Fifteenth day of the seventh month", "Twenty-third day of the seventh month"},
+            1));
+
+    questions.add(new Question(
+            "How often was the Day of Atonement to be observed?",
+            new String[]{"Every month", "Twice each year", "Once each year", "Every seven years"},
+            2));
+
+    questions.add(new Question(
+            "What was placed upon the head of the live goat on the Day of Atonement?",
+            new String[]{"The priest's crown", "The blood of the bullock", "The sins of the people confessed over it", "The golden plate"},
+            2));
+
+    questions.add(new Question(
+            "Where was the live goat sent after the sins of Israel were confessed over it?",
+            new String[]{"Into the wilderness", "To the Jordan", "To Mount Sinai", "Outside the east gate only"},
+            0));
+
+    questions.add(new Question(
+            "What does the Hebrew term 'Yom Kippur' refer to?",
+            new String[]{"Day of Assembly", "Day of Atonement", "Day of Trumpets", "Day of Rest"},
+            1));
+
+    questions.add(new Question(
+            "How many years made up the cycle before the Year of Jubilee?",
+            new String[]{"6", "7", "49", "50"},
+            2));
+
+    questions.add(new Question(
+            "In which year was the Year of Jubilee proclaimed?",
+            new String[]{"The 40th year", "The 49th year", "The 50th year", "The 70th year"},
+            2));
+
+    questions.add(new Question(
+            "What happened to Hebrew servants in the Year of Jubilee?",
+            new String[]{"They became priests", "They returned to their families", "They were permanently enslaved", "They moved to the sanctuary"},
+            1));
+
+    questions.add(new Question(
+            "What was Israel forbidden to eat according to Leviticus 17?",
+            new String[]{"Honey", "Blood", "Fish", "Olives"},
+            1));
+
+    questions.add(new Question(
+            "Why was Israel forbidden to eat blood?",
+            new String[]{"It was reserved for the king", "It was considered unclean water", "The life of the flesh is in the blood", "It belonged only to the Levites"},
+            2));
+
+    questions.add(new Question(
+            "What was the penalty for a person who blasphemed the name of the LORD?",
+            new String[]{"Exile", "Fines", "Death by stoning", "Permanent servitude"},
+            2));
+
+    questions.add(new Question(
+            "What was the name of the man who blasphemed the LORD in Leviticus 24?",
+            new String[]{"His name was not given", "Shelomith", "Dibri", "Eleazar"},
+            0));
+
+    questions.add(new Question(
+            "Which animal could be eaten according to the land-animal rule in Leviticus 11?",
+            new String[]{"Camel", "Hare", "Pig", "Ox"},
+            3));
+
+    questions.add(new Question(
+            "Which creature was considered unclean because it had fins but no scales?",
+            new String[]{"Locust", "Fish without scales", "Lizard", "Bat"},
+            1));
+
+    questions.add(new Question(
+            "What was the special purpose of the seventh year for the land?",
+            new String[]{"The land was to have a Sabbath rest", "The land was sold to the priests", "All crops were doubled", "Every field was burned"},
+            0));
+            }
         }
 
         private static void addBookNumbersQuestions(ArrayList<Question> questions, String difficulty) {
