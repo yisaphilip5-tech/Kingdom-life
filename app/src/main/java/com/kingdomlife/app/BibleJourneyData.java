@@ -5797,6 +5797,132 @@ public class BibleJourneyData {
             0
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What does the name Othniel mean?",
+            new String[]{"Lion of God", "God is my strength", "Gift of God", "God has remembered"},
+            0));
+
+    questions.add(new Question(
+            "Who was Othniel's father?",
+            new String[]{"Kenaz", "Jephunneh", "Nun", "Manoah"},
+            0));
+
+    questions.add(new Question(
+            "What was Othniel's relationship to Caleb?",
+            new String[]{"Brother", "Nephew", "Son-in-law", "Cousin"},
+            2));
+
+    questions.add(new Question(
+            "Which judge was left-handed?",
+            new String[]{"Ehud", "Shamgar", "Tola", "Jair"},
+            0));
+
+    questions.add(new Question(
+            "Which king did Ehud assassinate?",
+            new String[]{"Jabin", "Eglon", "Sisera", "Zebah"},
+            1));
+
+    questions.add(new Question(
+            "What was notable about Eglon's physical condition?",
+            new String[]{"He was blind", "He was very old", "He was a very fat man", "He was lame"},
+            2));
+
+    questions.add(new Question(
+            "What weapon did Ehud make for himself?",
+            new String[]{"A spear", "A dagger with two edges", "A sling", "A short sword"},
+            1));
+
+    questions.add(new Question(
+            "How long did Israel have rest after Ehud's victory?",
+            new String[]{"40 years", "60 years", "80 years", "20 years"},
+            2));
+
+    questions.add(new Question(
+            "Who killed 600 Philistines with an ox goad?",
+            new String[]{"Shamgar", "Tola", "Jair", "Abdon"},
+            0));
+
+    questions.add(new Question(
+            "Which woman judged Israel during the time of Barak?",
+            new String[]{"Jael", "Deborah", "Delilah", "Achshah"},
+            1));
+
+    questions.add(new Question(
+            "What was Deborah's husband's name?",
+            new String[]{"Lapidoth", "Heber", "Manoah", "Barak"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the Kenite who sheltered Sisera?",
+            new String[]{"Heber", "Hobab", "Jethro", "Kenaz"},
+            0));
+
+    questions.add(new Question(
+            "What object did Jael use to kill Sisera?",
+            new String[]{"A sword", "A tent peg", "A spear", "A hammer only"},
+            1));
+
+    questions.add(new Question(
+            "What does the name Gideon mean?",
+            new String[]{"Hewer or one who cuts down", "Peaceful one", "Strong man", "Gift of the LORD"},
+            0));
+
+    questions.add(new Question(
+            "What other name was Gideon given after destroying Baal's altar?",
+            new String[]{"Jerubbaal", "Abimelech", "Jether", "Bedan"},
+            0));
+
+    questions.add(new Question(
+            "What did Gideon's father do when the men wanted Gideon killed?",
+            new String[]{"He hid Gideon", "He defended Baal", "He said Baal should defend himself", "He fled the city"},
+            2));
+
+    questions.add(new Question(
+            "How many men remained with Gideon after the first reduction of his army?",
+            new String[]{"10,000", "7,000", "1,000", "300"},
+            0));
+
+    questions.add(new Question(
+            "What sign did Gideon request involving a fleece?",
+            new String[]{"Dew on the fleece but not the ground", "Fire on the fleece", "Rain on the fleece", "The fleece becoming gold"},
+            0));
+
+    questions.add(new Question(
+            "Which judge made a vow concerning whatever came out of his house?",
+            new String[]{"Jephthah", "Gideon", "Samson", "Abimelech"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Jephthah's daughter?",
+            new String[]{"Her name is not given", "Mahlah", "Noah", "Tirzah"},
+            0));
+
+    questions.add(new Question(
+            "What word did the Gileadites use to identify Ephraimites at the Jordan?",
+            new String[]{"Shibboleth", "Sibboleth", "Shema", "Shalom"},
+            0));
+
+    questions.add(new Question(
+            "What happened when some Ephraimites pronounced the word incorrectly?",
+            new String[]{"They were allowed to pass", "They were recognized and killed", "They were sent to Shiloh", "They became Gileadites"},
+            1));
+
+    questions.add(new Question(
+            "Which judge had thirty sons who rode on thirty ass colts?",
+            new String[]{"Jair", "Ibzan", "Abdon", "Tola"},
+            0));
+
+    questions.add(new Question(
+            "Which judge had forty sons and thirty grandsons who rode on seventy ass colts?",
+            new String[]{"Jair", "Ibzan", "Abdon", "Samson"},
+            2));
+
+    questions.add(new Question(
+            "What was the name of Samson's father?",
+            new String[]{"Manoah", "Micaiah", "Abdon", "Zorah"},
+            0));
+            }
         }
 
         private static void addBookRuthQuestions(ArrayList<Question> questions, String difficulty) {
@@ -6632,6 +6758,132 @@ public class BibleJourneyData {
             },
             1
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What does the name Ruth traditionally mean?",
+            new String[]{"Friend or companion", "Beautiful", "Grace", "Joy"},
+            0));
+
+    questions.add(new Question(
+            "What was Naomi's husband's name?",
+            new String[]{"Elimelech", "Boaz", "Mahlon", "Chilion"},
+            0));
+
+    questions.add(new Question(
+            "What does the name Naomi mean?",
+            new String[]{"Pleasant", "Bitter", "Faithful", "Beautiful"},
+            0));
+
+    questions.add(new Question(
+            "What name did Naomi ask the women of Bethlehem to call her?",
+            new String[]{"Mara", "Ruth", "Hannah", "Orpah"},
+            0));
+
+    questions.add(new Question(
+            "What does the name Mara mean?",
+            new String[]{"Bitter", "Blessed", "Faithful", "Restored"},
+            0));
+
+    questions.add(new Question(
+            "Which of Naomi's daughters-in-law returned to her own people?",
+            new String[]{"Ruth", "Orpah", "Both of them", "Neither"},
+            1));
+
+    questions.add(new Question(
+            "From which people was Ruth descended?",
+            new String[]{"Edomites", "Moabites", "Ammonites", "Philistines"},
+            1));
+
+    questions.add(new Question(
+            "What did Ruth do to provide food for herself and Naomi?",
+            new String[]{"Gathered leftover grain", "Sold livestock", "Worked as a merchant", "Collected olives"},
+            0));
+
+    questions.add(new Question(
+            "In whose field did Ruth happen to glean?",
+            new String[]{"Boaz", "Elimelech", "Mahlon", "Jesse"},
+            0));
+
+    questions.add(new Question(
+            "What relationship did Boaz have to Elimelech?",
+            new String[]{"He was his brother", "He was a near kinsman", "He was his son", "He was his servant"},
+            1));
+
+    questions.add(new Question(
+            "What did Boaz command his young men concerning Ruth?",
+            new String[]{"They should send her away", "They should not rebuke her", "They should hide the grain", "They should test her"},
+            1));
+
+    questions.add(new Question(
+            "What did Boaz tell his servants to intentionally leave for Ruth?",
+            new String[]{"Extra grain from the sheaves", "Silver coins", "Olive oil", "Sheep"},
+            0));
+
+    questions.add(new Question(
+            "What did Ruth receive from Boaz at mealtime?",
+            new String[]{"Bread and parched corn", "Wine and honey", "Milk and dates", "Meat and figs"},
+            0));
+
+    questions.add(new Question(
+            "What did Ruth glean in Boaz's field for approximately how long?",
+            new String[]{"One day", "Two weeks", "The barley and wheat harvests", "Seven years"},
+            2));
+
+    questions.add(new Question(
+            "What did Naomi instruct Ruth to do at the threshing floor?",
+            new String[]{"Lie at Boaz's feet", "Hide among the grain", "Take his sandals", "Call the elders"},
+            0));
+
+    questions.add(new Question(
+            "What did Ruth ask Boaz to spread over her?",
+            new String[]{"His garment", "His cloak", "His mantle only", "His robe of office"},
+            1));
+
+    questions.add(new Question(
+            "What reason did Boaz give for not immediately becoming Ruth's redeemer?",
+            new String[]{"Another kinsman was nearer", "Naomi refused", "Ruth was a Moabite", "The elders refused"},
+            0));
+
+    questions.add(new Question(
+            "What item was used to confirm the redemption transaction at the city gate?",
+            new String[]{"A sandal", "A staff", "A ring", "A cloak"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Boaz and Ruth's son?",
+            new String[]{"Obed", "Jesse", "David", "Mahlon"},
+            0));
+
+    questions.add(new Question(
+            "Who was Obed's son?",
+            new String[]{"Jesse", "David", "Boaz", "Nahshon"},
+            0));
+
+    questions.add(new Question(
+            "Who was Ruth's famous great-grandson?",
+            new String[]{"Solomon", "David", "Saul", "Samuel"},
+            1));
+
+    questions.add(new Question(
+            "Who was Boaz's mother according to the genealogy in Matthew?",
+            new String[]{"Rahab", "Tamar", "Ruth", "Naomi"},
+            0));
+
+    questions.add(new Question(
+            "Which tribe did Boaz belong to?",
+            new String[]{"Judah", "Benjamin", "Levi", "Ephraim"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Boaz's closer kinsman?",
+            new String[]{"His name is not recorded", "Elimelech", "Obed", "Chilion"},
+            0));
+
+    questions.add(new Question(
+            "Where did Boaz conduct the legal transaction concerning Ruth?",
+            new String[]{"At the city gate", "At the threshing floor", "At the tabernacle", "At Naomi's house"},
+            0));
             }
         }
 
@@ -7504,6 +7756,132 @@ public class BibleJourneyData {
             },
             0
     ));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What does the name Samuel commonly mean?",
+            new String[]{"Asked of God", "God is gracious", "God has strengthened", "Gift of God"},
+            0));
+
+    questions.add(new Question(
+            "What was Samuel's father's name?",
+            new String[]{"Elkanah", "Eli", "Kish", "Abinadab"},
+            0));
+
+    questions.add(new Question(
+            "What was Samuel's mother's name?",
+            new String[]{"Hannah", "Peninnah", "Michal", "Abigail"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of Elkanah's other wife?",
+            new String[]{"Peninnah", "Hannah", "Michal", "Merab"},
+            0));
+
+    questions.add(new Question(
+            "What did Hannah promise to do if the LORD gave her a son?",
+            new String[]{"Give him to the LORD all the days of his life", "Make him a soldier", "Send him to Egypt", "Make him king"},
+            0));
+
+    questions.add(new Question(
+            "What did Eli initially think Hannah was doing while praying?",
+            new String[]{"She was drunk", "She was asleep", "She was angry", "She was ill"},
+            0));
+
+    questions.add(new Question(
+            "What did Hannah name her son because she had asked him of the LORD?",
+            new String[]{"Samuel", "Ichabod", "Joel", "Abijah"},
+            0));
+
+    questions.add(new Question(
+            "Which two sons of Eli were priests known for their wickedness?",
+            new String[]{"Hophni and Phinehas", "Joel and Abijah", "Nadab and Abihu", "Gershom and Eliezer"},
+            0));
+
+    questions.add(new Question(
+            "What happened to the sons of Eli when Israel fought the Philistines?",
+            new String[]{"They were killed", "They fled to Shiloh", "They became captives in Egypt", "They surrendered the ark willingly"},
+            0));
+
+    questions.add(new Question(
+            "What happened to the ark when Hophni and Phinehas died?",
+            new String[]{"It was captured by the Philistines", "It was destroyed", "It was hidden by Samuel", "It was taken to Jerusalem"},
+            0));
+
+    questions.add(new Question(
+            "What did Eli do when he heard that the ark had been captured?",
+            new String[]{"He fell from his seat and died", "He fled to Ramah", "He attacked the Philistines", "He tore down the tabernacle"},
+            0));
+
+    questions.add(new Question(
+            "What did Eli's daughter-in-law name her son after hearing the ark had been captured?",
+            new String[]{"Ichabod", "Samuel", "Benoni", "Abner"},
+            0));
+
+    questions.add(new Question(
+            "What does the name Ichabod refer to?",
+            new String[]{"The glory has departed", "God is salvation", "God remembers", "The LORD is king"},
+            0));
+
+    questions.add(new Question(
+            "Which Philistine city suffered a plague after receiving the ark?",
+            new String[]{"Ashdod", "Gath", "Ekron", "Gaza"},
+            0));
+
+    questions.add(new Question(
+            "What image fell before the ark in the temple of Dagon?",
+            new String[]{"The image of Dagon", "A statue of Baal", "A golden calf", "A cherub"},
+            0));
+
+    questions.add(new Question(
+            "What happened to Dagon's hands after the second fall?",
+            new String[]{"They were broken off", "They became gold", "They were restored", "They disappeared completely"},
+            0));
+
+    questions.add(new Question(
+            "What animals pulled the cart carrying the ark when the Philistines returned it?",
+            new String[]{"Two milk cows", "Two oxen", "Two donkeys", "Two sheep"},
+            0));
+
+    questions.add(new Question(
+            "What unusual test did the Philistines use with the cows?",
+            new String[]{"They separated the calves from them", "They covered their eyes", "They tied them to oxen", "They released them at night"},
+            0));
+
+    questions.add(new Question(
+            "Which town received the ark after it returned from the Philistines?",
+            new String[]{"Beth-shemesh", "Ramah", "Shiloh", "Mizpeh"},
+            0));
+
+    questions.add(new Question(
+            "What did the men of Beth-shemesh do that brought judgment upon them?",
+            new String[]{"They looked into the ark", "They sold the ark", "They burned the ark", "They hid the ark"},
+            0));
+
+    questions.add(new Question(
+            "Who was Samuel's father-in-law?",
+            new String[]{"There is no father-in-law named in 1 Samuel", "Jesse", "Kish", "Ahimelech"},
+            0));
+
+    questions.add(new Question(
+            "What was Saul's father's name?",
+            new String[]{"Kish", "Ner", "Jesse", "Abner"},
+            0));
+
+    questions.add(new Question(
+            "What tribe was Saul from?",
+            new String[]{"Benjamin", "Judah", "Ephraim", "Dan"},
+            0));
+
+    questions.add(new Question(
+            "Who was Saul's commander of the army?",
+            new String[]{"Abner", "Joab", "Jonathan", "Ahimelech"},
+            0));
+
+    questions.add(new Question(
+            "What did Samuel use to demonstrate God's rejection of Saul after the Amalekite campaign?",
+            new String[]{"He tore the edge of Samuel's robe", "He broke Saul's sword", "He removed Saul's crown", "He poured out Saul's oil"},
+            0));
             }
         }
 
