@@ -35216,6 +35216,132 @@ questions.add(new Question(
             1
     ));
             }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "At which place beyond Jordan did John baptize?",
+            new String[]{"Bethany", "Bethabara", "Bethsaida", "Capernaum"},
+            1));
+
+    questions.add(new Question(
+            "How many waterpots of stone were at the marriage in Cana?",
+            new String[]{"Four", "Seven", "Six", "Five"},
+            2));
+
+    questions.add(new Question(
+            "At what time of day did Nicodemus first come to Jesus?",
+            new String[]{"At night", "At noon", "In the morning", "At sunset"},
+            0));
+
+    questions.add(new Question(
+            "How long had the man at the pool of Bethesda been infirm?",
+            new String[]{"Twelve years", "Thirty years", "Forty years", "Thirty-eight years"},
+            3));
+
+    questions.add(new Question(
+            "What was the name of the pool where Jesus told the blind man to wash?",
+            new String[]{"Bethesda", "Siloam", "Gennesaret", "Cedron"},
+            1));
+
+    questions.add(new Question(
+            "What does the name Siloam mean, as explained in John?",
+            new String[]{"Healing", "Peace", "Sent", "Living water"},
+            2));
+
+    questions.add(new Question(
+            "How many barley loaves did the lad have?",
+            new String[]{"Five", "Three", "Seven", "Two"},
+            0));
+
+    questions.add(new Question(
+            "How many baskets of fragments were gathered after the feeding of the five thousand?",
+            new String[]{"Seven", "Ten", "Five", "Twelve"},
+            3));
+
+    questions.add(new Question(
+            "Near which market was the pool of Bethesda located?",
+            new String[]{"Fish market", "Sheep market", "Horse market", "Olive market"},
+            1));
+
+    questions.add(new Question(
+            "Where did Jesus say he had seen Nathanael before Philip called him?",
+            new String[]{"Beside the sea", "In the temple", "Under the fig tree", "At the well"},
+            2));
+
+    questions.add(new Question(
+            "Which feast was being celebrated when Jesus went up to Jerusalem in John 7?",
+            new String[]{"The feast of tabernacles", "The feast of trumpets", "The passover", "The feast of dedication"},
+            0));
+
+    questions.add(new Question(
+            "Why were the parents of the man born blind afraid to answer the Pharisees?",
+            new String[]{"They feared imprisonment", "They feared losing their home", "They feared the rulers", "They feared being put out of the synagogue"},
+            3));
+
+    questions.add(new Question(
+            "What did Caiaphas say was expedient for the people?",
+            new String[]{"That Jesus should leave Judea", "That one man should die for the people", "That the temple should be closed", "That the people should flee"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of the servant whose ear Peter cut off?",
+            new String[]{"Barabbas", "Judas", "Malchus", "Gamaliel"},
+            2));
+
+    questions.add(new Question(
+            "To whom was Jesus first taken after his arrest, before being brought to Caiaphas?",
+            new String[]{"Annas", "Pilate", "Herod", "Felix"},
+            0));
+
+    questions.add(new Question(
+            "In which three languages was the inscription on Jesus' cross written?",
+            new String[]{"Greek, Latin, and Egyptian", "Hebrew, Greek, and Syriac", "Latin, Aramaic, and Greek", "Hebrew, Greek, and Latin"},
+            3));
+
+    questions.add(new Question(
+            "What was unusual about the coat Jesus wore before his crucifixion?",
+            new String[]{"It was made of purple silk", "It was without seam, woven from the top throughout", "It had golden embroidery", "It belonged to a priest"},
+            1));
+
+    questions.add(new Question(
+            "What was used to lift the sponge of vinegar to Jesus on the cross?",
+            new String[]{"A reed of hyssop", "A wooden staff", "A branch of olive", "A spear"},
+            0));
+
+    questions.add(new Question(
+            "What did the soldiers do with Jesus' coat that was without seam?",
+            new String[]{"They tore it into four pieces", "They gave it to the chief priest", "They cast lots for it", "They buried it with him"},
+            2));
+
+    questions.add(new Question(
+            "What did Mary Magdalene see sitting where Jesus' body had lain?",
+            new String[]{"Three elders", "Two angels", "Two soldiers", "The disciples"},
+            1));
+
+    questions.add(new Question(
+            "Where were the two angels sitting in the sepulchre?",
+            new String[]{"At the entrance and the door", "Beside the stone", "At the foot of the tomb", "One at the head and the other at the feet"},
+            3));
+
+    questions.add(new Question(
+            "What name is given to Thomas in John 11:16?",
+            new String[]{"Didymus", "Barsabas", "Boanerges", "Cephas"},
+            0));
+
+    questions.add(new Question(
+            "What did Thomas say to Jesus when he saw him after the resurrection?",
+            new String[]{"Thou art the King of Israel", "I believe thou art the Christ", "My Lord and my God", "Rabbi, where dwellest thou?"},
+            2));
+
+    questions.add(new Question(
+            "How many great fishes did the disciples draw to shore in John 21?",
+            new String[]{"120", "153", "144", "200"},
+            1));
+
+    questions.add(new Question(
+            "According to John 21, how many times had Jesus shown himself to his disciples after rising from the dead at that point?",
+            new String[]{"Twice", "Four times", "Five times", "Three times"},
+            3));
+            }
         }
 
     }
@@ -35758,6 +35884,132 @@ questions.add(new Question(
             1
     ));
             }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "How many people were gathered together when Peter stood up before the choosing of Matthias?",
+            new String[]{"About an hundred and twenty", "About three hundred", "About five hundred", "About seventy"},
+            0));
+
+    questions.add(new Question(
+            "What was the name of the gate where the lame man was laid daily?",
+            new String[]{"Eastern Gate", "Beautiful Gate", "Sheep Gate", "Golden Gate"},
+            1));
+
+    questions.add(new Question(
+            "How many souls were added to the believers on the day of Pentecost?",
+            new String[]{"One thousand", "Five thousand", "About three thousand", "About seven thousand"},
+            2));
+
+    questions.add(new Question(
+            "What was the name of the high priest's kindred whose ear Peter's companion cut off?",
+            new String[]{"Alexander", "Ananias", "Sceva", "Malchus"},
+            3));
+
+    questions.add(new Question(
+            "What was the name of the sorcerer who tried to buy the power to give the Holy Ghost?",
+            new String[]{"Simon", "Elymas", "Bar-Jesus", "Sceva"},
+            0));
+
+    questions.add(new Question(
+            "Which prophet's writing was the Ethiopian eunuch reading when Philip met him?",
+            new String[]{"Jeremiah", "Isaiah", "Ezekiel", "Daniel"},
+            1));
+
+    questions.add(new Question(
+            "On what road did Philip meet the Ethiopian eunuch?",
+            new String[]{"Road to Damascus", "Road to Jericho", "Road from Jerusalem to Gaza", "Road to Joppa"},
+            2));
+
+    questions.add(new Question(
+            "What was Cornelius' position in the Roman army?",
+            new String[]{"Captain of the temple guard", "Tribune of the palace", "Commander of the Jerusalem cohort", "Centurion of the band called the Italian band"},
+            3));
+
+    questions.add(new Question(
+            "How many times did Peter see the sheet descend from heaven in his vision?",
+            new String[]{"Three times", "Twice", "Four times", "Seven times"},
+            0));
+
+    questions.add(new Question(
+            "In which city was Peter staying when he received the vision of the sheet?",
+            new String[]{"Caesarea", "Joppa", "Antioch", "Lydda"},
+            1));
+
+    questions.add(new Question(
+            "What happened to Herod after he accepted the people's praise as a god?",
+            new String[]{"He was imprisoned", "He was driven from Judea", "He was smitten by an angel and eaten of worms", "He lost his voice"},
+            2));
+
+    questions.add(new Question(
+            "In which city were the disciples first called Christians?",
+            new String[]{"Jerusalem", "Ephesus", "Tarsus", "Antioch"},
+            3));
+
+    questions.add(new Question(
+            "Which prophet foretold a great dearth throughout the world during the days of Claudius Caesar?",
+            new String[]{"Agabus", "Silas", "Judas Barsabas", "Barnabas"},
+            0));
+
+    questions.add(new Question(
+            "What was the other name of Elymas the sorcerer?",
+            new String[]{"Simon", "Bar-Jesus", "Sosthenes", "Apollos"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of the deputy of Paphos who desired to hear the word of God?",
+            new String[]{"Gallio", "Felix", "Sergius Paulus", "Festus"},
+            2));
+
+    questions.add(new Question(
+            "At Lystra, whom did the people call Barnabas and Paul?",
+            new String[]{"Mercury and Apollo", "Castor and Pollux", "Moses and Elijah", "Jupiter and Mercurius"},
+            3));
+
+    questions.add(new Question(
+            "What caused the prison doors to open while Paul and Silas were praying?",
+            new String[]{"A great earthquake", "A fire in the prison", "A Roman order", "A storm and flood"},
+            0));
+
+    questions.add(new Question(
+            "What did the Bereans do after hearing Paul's teaching?",
+            new String[]{"They immediately left the city", "They searched the scriptures daily", "They called the Roman governor", "They asked the priests to arrest him"},
+            1));
+
+    questions.add(new Question(
+            "On which hill did Paul speak to the people of Athens?",
+            new String[]{"Mount Zion", "Mount Carmel", "Areopagus", "Mount Olivet"},
+            2));
+
+    questions.add(new Question(
+            "From which city was Apollos originally?",
+            new String[]{"Tarsus", "Antioch", "Jerusalem", "Alexandria"},
+            3));
+
+    questions.add(new Question(
+            "What was the name of the young man who fell from the third loft while Paul was preaching?",
+            new String[]{"Eutychus", "Tychicus", "Titus", "Timothy"},
+            0));
+
+    questions.add(new Question(
+            "Whose girdle did Agabus take to bind his own hands and feet as a prophecy?",
+            new String[]{"Barnabas'", "Paul's", "Silas'", "Luke's"},
+            1));
+
+    questions.add(new Question(
+            "What was the name of the Ephesian man who accompanied Paul but was left sick at Miletum?",
+            new String[]{"Trophimus", "Tychicus", "Aristarchus", "Gaius"},
+            0));
+
+    questions.add(new Question(
+            "How many men bound themselves with an oath not to eat or drink until they had killed Paul?",
+            new String[]{"Twenty", "Thirty", "More than forty", "Seventy"},
+            2));
+
+    questions.add(new Question(
+            "On which island was Paul shipwrecked on his way to Rome?",
+            new String[]{"Crete", "Cyprus", "Rhodes", "Melita"},
+            3));
+            }
         }
 
         private static void addBookRomansQuestions(ArrayList<Question> questions, String difficulty) {
@@ -36267,6 +36519,132 @@ questions.add(new Question(
             },
             1
     ));
+            }
+            if (difficulty.equals("Hard")) {
+    questions.add(new Question(
+            "What was the name of the woman Paul commended as a servant of the church at Cenchrea?",
+            new String[]{"Phoebe", "Priscilla", "Persis", "Junia"},
+            0));
+
+    questions.add(new Question(
+            "Who did Paul describe as the firstfruits of Achaia unto Christ?",
+            new String[]{"Andronicus", "Epaenetus", "Urbanus", "Apelles"},
+            1));
+
+    questions.add(new Question(
+            "Which two people did Paul describe as his kinsmen and fellow prisoners?",
+            new String[]{"Aquila and Priscilla", "Gaius and Erastus", "Andronicus and Junia", "Timothy and Tertius"},
+            2));
+
+    questions.add(new Question(
+            "Who did Paul say had bestowed much labour on him and the others?",
+            new String[]{"Tryphena", "Persis", "Rufus", "Mary"},
+            3));
+
+    questions.add(new Question(
+            "Whose mother did Paul say had also been a mother to him?",
+            new String[]{"Rufus", "Timothy", "Gaius", "Apelles"},
+            0));
+
+    questions.add(new Question(
+            "Who was described as Paul's host and the host of the whole church?",
+            new String[]{"Erastus", "Gaius", "Tertius", "Sosthenes"},
+            1));
+
+    questions.add(new Question(
+            "Who wrote down the Epistle to the Romans as Paul's scribe?",
+            new String[]{"Timothy", "Silas", "Tertius", "Lucius"},
+            2));
+
+    questions.add(new Question(
+            "Who was the treasurer of the city mentioned by Paul in Romans 16?",
+            new String[]{"Gaius", "Tertius", "Sosthenes", "Erastus"},
+            3));
+
+    questions.add(new Question(
+            "What word did believers receive by which they cry, 'Abba, Father'?",
+            new String[]{"The Spirit of adoption", "The spirit of fear", "The law of Moses", "The word of prophecy"},
+            0));
+
+    questions.add(new Question(
+            "According to Romans 8, what does the Spirit do for believers when they know not what to pray for?",
+            new String[]{"Speaks through prophets", "Makes intercession with groanings which cannot be uttered", "Removes all trials", "Gives them new commandments"},
+            1));
+
+    questions.add(new Question(
+            "How many were said to have been reserved in Israel who had not bowed the knee to Baal?",
+            new String[]{"Three thousand", "Five thousand", "Seven thousand", "Ten thousand"},
+            2));
+
+    questions.add(new Question(
+            "In Paul's olive tree illustration, what kind of branches were grafted in?",
+            new String[]{"Fruitless branches", "Dead branches", "Natural branches", "Wild olive branches"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say the Gentiles had obtained, though they had not followed after it?",
+            new String[]{"Righteousness", "The priesthood", "The land of Israel", "The promises to Abraham"},
+            0));
+
+    questions.add(new Question(
+            "What did Paul say was near to believers in Romans 10?",
+            new String[]{"The kingdom of David", "The word, in their mouth and heart", "The temple in Jerusalem", "The law written on stone"},
+            1));
+
+    questions.add(new Question(
+            "Which prophet did Paul quote when speaking of the remnant?",
+            new String[]{"Jeremiah", "Ezekiel", "Esaias", "Daniel"},
+            2));
+
+    questions.add(new Question(
+            "What image did Paul use to describe God's authority over nations and people in Romans 9?",
+            new String[]{"A shepherd and sheep", "A vine and branches", "A builder and stones", "A potter and clay"},
+            3));
+
+    questions.add(new Question(
+            "Which woman did Paul describe as a servant of the church at Cenchrea?",
+            new String[]{"Phoebe", "Priscilla", "Mary", "Julia"},
+            0));
+
+    questions.add(new Question(
+            "Who did Paul say was approved in Christ?",
+            new String[]{"Ampliatus", "Apelles", "Herodion", "Narcissus"},
+            1));
+
+    questions.add(new Question(
+            "Which pair of women did Paul greet in Romans 16:12?",
+            new String[]{"Mary and Julia", "Phoebe and Persis", "Tryphena and Tryphosa", "Priscilla and Junia"},
+            2));
+
+    questions.add(new Question(
+            "Whom did Paul identify as the brother of Quartus?",
+            new String[]{"Gaius", "Erastus", "Tertius", "Quartus is not identified as anyone's brother"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say believers should present their bodies as?",
+            new String[]{"A living sacrifice, holy, acceptable unto God", "A burnt offering in Jerusalem", "A sacrifice for the sins of others", "A sign of their authority"},
+            0));
+
+    questions.add(new Question(
+            "According to Romans 12, what should believers do with those who persecute them?",
+            new String[]{"Avoid them always", "Bless them and curse not", "Repay them immediately", "Refuse to speak to them"},
+            1));
+
+    questions.add(new Question(
+            "What did Paul say love is the fulfilling of?",
+            new String[]{"The prophets", "The promises", "The law", "The traditions"},
+            2));
+
+    questions.add(new Question(
+            "Who did Paul say was a minister of God for good, bearing the sword as an authority?",
+            new String[]{"The priest", "The prophet", "The elder", "The ruler"},
+            3));
+
+    questions.add(new Question(
+            "What did Paul say the kingdom of God is not, in Romans 14?",
+            new String[]{"Meat and drink", "Prayer and fasting", "Gold and silver", "Signs and wonders"},
+            0));
             }
         }
 
