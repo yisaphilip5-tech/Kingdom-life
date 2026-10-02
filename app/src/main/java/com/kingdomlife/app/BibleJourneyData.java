@@ -53632,6 +53632,108 @@ if (difficulty.equals("Hard")) {
             new String[]{"Diligent, that ye may be found of him in peace, without spot, and blameless", "Seeking earthly honour", "Waiting without doing good", "Arguing over genealogies"},
             0));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who identifies himself as a servant and apostle of Jesus Christ?",
+            new String[]{"Jude", "Peter", "John", "Paul"},
+            1));
+    questions.add(new Question(
+            "What does Peter say believers have been given through God's divine power?",
+            new String[]{"Earthly authority", "The law of Moses", "All things that pertain unto life and godliness", "The riches of Solomon"},
+            2));
+    questions.add(new Question(
+            "Which virtue does Peter list after faith?",
+            new String[]{"Virtue", "Knowledge", "Temperance", "Patience"},
+            0));
+    questions.add(new Question(
+            "Which quality is listed after godliness in Peter's sequence of virtues?",
+            new String[]{"Faith", "Knowledge", "Temperance", "Brotherly kindness"},
+            3));
+    questions.add(new Question(
+            "What does Peter say will happen to those who lack these virtues?",
+            new String[]{"They become rulers", "They are blind and cannot see afar off", "They will lose their earthly possessions", "They will forget their names"},
+            1));
+    questions.add(new Question(
+            "Which event does Peter say he witnessed on the holy mount?",
+            new String[]{"The giving of the Ten Commandments", "Elijah calling down fire", "The majesty of Jesus Christ", "The crossing of the Red Sea"},
+            2));
+    questions.add(new Question(
+            "Whose voice did Peter say he heard from heaven declaring Jesus to be the beloved Son?",
+            new String[]{"God the Father", "Moses", "Elijah", "An angel"},
+            0));
+    questions.add(new Question(
+            "How does Peter describe prophecy in Scripture?",
+            new String[]{"A matter of private interpretation", "A product of human will", "A collection of fables", "Not of any private interpretation"},
+            3));
+    questions.add(new Question(
+            "By what were holy men of God moved when they spoke?",
+            new String[]{"Their own ambition", "The Holy Ghost", "The traditions of elders", "The rulers of Israel"},
+            1));
+    questions.add(new Question(
+            "What does Peter say false teachers will secretly bring in?",
+            new String[]{"New commandments", "A new temple", "Damnable heresies", "A different priesthood"},
+            2));
+    questions.add(new Question(
+            "Which Old Testament group does Peter mention as an example of God's judgment?",
+            new String[]{"The angels that sinned", "The builders of Babel", "The sons of Eli", "The kings of Judah"},
+            0));
+    questions.add(new Question(
+            "Which city does Peter mention as being turned into ashes?",
+            new String[]{"Jerusalem", "Nineveh", "Jericho", "Sodom and Gomorrha"},
+            3));
+    questions.add(new Question(
+            "Who was delivered from the destruction of Sodom, according to Peter?",
+            new String[]{"Abraham", "Just Lot", "Isaac", "Melchizedek"},
+            1));
+    questions.add(new Question(
+            "What does Peter say the Lord knows how to do?",
+            new String[]{"Make every person wealthy", "Prevent all suffering", "Deliver the godly out of temptations", "End all earthly governments"},
+            2));
+    questions.add(new Question(
+            "What does Peter compare false teachers to when describing their speech?",
+            new String[]{"Wells without water", "Trees of righteousness", "Pillars of fire", "Fountains of living water"},
+            0));
+    questions.add(new Question(
+            "What do false teachers promise, according to 2 Peter 2?",
+            new String[]{"Wisdom without study", "Freedom", "Earthly kingdoms", "Long life"},
+            1));
+    questions.add(new Question(
+            "Which animals are used in Peter's proverb about returning to former ways?",
+            new String[]{"A lion and a bear", "A dove and a raven", "A dog and a sow", "A lamb and a goat"},
+            2));
+    questions.add(new Question(
+            "What does Peter say will come in the last days?",
+            new String[]{"Only faithful rulers", "A new earthly kingdom", "An end to all questions", "Scoffers walking after their own lusts"},
+            3));
+    questions.add(new Question(
+            "What do the scoffers question concerning Christ's promise?",
+            new String[]{"The promise of his coming", "The existence of Jerusalem", "The words of Moses", "The reign of David"},
+            0));
+    questions.add(new Question(
+            "How does Peter explain the Lord's seeming delay?",
+            new String[]{"God has forgotten his promise", "The Lord is longsuffering and not willing that any should perish", "The apostles misunderstood the prophecy", "The world has become eternal"},
+            1));
+    questions.add(new Question(
+            "What does Peter say will happen to the heavens in the day of the Lord?",
+            new String[]{"They will become a new sea", "They will remain unchanged", "They will pass away with a great noise", "They will be ruled by earthly kings"},
+            2));
+    questions.add(new Question(
+            "What does Peter say believers should be looking for?",
+            new String[]{"A return to the old covenant", "An earthly throne", "The rebuilding of Babylon", "New heavens and a new earth"},
+            3));
+    questions.add(new Question(
+            "Which apostle's epistles does Peter refer to?",
+            new String[]{"Paul", "James", "John", "Andrew"},
+            0));
+    questions.add(new Question(
+            "What does Peter say some people do with Paul's writings?",
+            new String[]{"Translate them into Hebrew", "Wrest them to their own destruction", "Keep them from the churches", "Use them as political laws"},
+            1));
+    questions.add(new Question(
+            "What does Peter instruct believers to grow in?",
+            new String[]{"Earthly wisdom and riches", "The traditions of the elders", "Grace and knowledge of Jesus Christ", "The power of rulers"},
+            2));
+            }
         }
         private static void addBook1JohnQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -54315,6 +54417,108 @@ if (difficulty.equals("Hard")) {
             new String[]{"Eternal life", "Earthly authority", "Freedom from all hardship", "The secrets of angels"},
             0));
                   }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "How does John describe the message he declares about God?",
+            new String[]{"God is light", "God is a consuming fire", "God is a king only", "God is a hidden spirit"},
+            0));
+    questions.add(new Question(
+            "What does John say believers have with the Father and His Son?",
+            new String[]{"A legal agreement", "Fellowship", "An earthly inheritance", "A royal position"},
+            1));
+    questions.add(new Question(
+            "What does the blood of Jesus Christ cleanse believers from?",
+            new String[]{"Ceremonial uncleanness", "Earthly weakness", "All sin", "Every physical illness"},
+            2));
+    questions.add(new Question(
+            "Who does John say is our advocate with the Father?",
+            new String[]{"Moses", "Elijah", "The high priest of Jerusalem", "Jesus Christ the righteous"},
+            3));
+    questions.add(new Question(
+            "What does John call the propitiation for the sins of the whole world?",
+            new String[]{"Jesus Christ", "The temple altar", "The blood of bulls", "The law of Moses"},
+            0));
+    questions.add(new Question(
+            "What does John say is passing away?",
+            new String[]{"The word of God", "The world and its lust", "The love of God", "The promise of Christ"},
+            1));
+    questions.add(new Question(
+            "What does John say the anointing teaches believers about?",
+            new String[]{"Earthly government", "The traditions of men", "All things", "The wisdom of kings"},
+            2));
+    questions.add(new Question(
+            "Who does John say is a liar?",
+            new String[]{"One who keeps the commandments", "One who loves his brother", "One who confesses the Son", "He that denies that Jesus is the Christ"},
+            3));
+    questions.add(new Question(
+            "What does John say believers shall be when Christ appears?",
+            new String[]{"Like him", "Greater than angels", "Rulers over the nations", "Free from all responsibility"},
+            0));
+    questions.add(new Question(
+            "Whom does John identify as the first murderer?",
+            new String[]{"Abel", "Cain", "Lamech", "Esau"},
+            1));
+    questions.add(new Question(
+            "How does John say God's love was manifested toward us?",
+            new String[]{"Through the law alone", "By sending prophets", "God sent his only begotten Son into the world", "By giving Israel an earthly king"},
+            2));
+    questions.add(new Question(
+            "What does John say perfect love does?",
+            new String[]{"Removes every trial", "Makes a person wealthy", "Guarantees earthly success", "Casts out fear"},
+            3));
+    questions.add(new Question(
+            "What does John say is the victory that overcomes the world?",
+            new String[]{"Our faith", "Our strength", "Our knowledge of history", "Our wealth"},
+            0));
+    questions.add(new Question(
+            "What three bear record in heaven in the KJV text of 1 John 5:7?",
+            new String[]{"Faith, hope, and charity", "The Father, the Word, and the Holy Ghost", "Peter, James, and John", "The law, prophets, and psalms"},
+            1));
+    questions.add(new Question(
+            "What does John say is the record God gave of His Son?",
+            new String[]{"That He would rule Rome", "That He would build a temple", "That God hath given us eternal life, and this life is in his Son", "That He would restore the throne of David"},
+            2));
+    questions.add(new Question(
+            "What does John say believers should keep themselves from?",
+            new String[]{"All friendships", "Every kind of work", "All study", "Idols"},
+            3));
+    questions.add(new Question(
+            "What does John say God is greater than?",
+            new String[]{"Our heart", "The world", "The angels", "The prophets"},
+            0));
+    questions.add(new Question(
+            "What does John say believers should test?",
+            new String[]{"Every prophecy in the Old Testament", "The spirits, whether they are of God", "Every person in the church", "The teachings of Moses only"},
+            1));
+    questions.add(new Question(
+            "What does John say every spirit that confesses Jesus Christ come in the flesh is?",
+            new String[]{"A spirit of error", "A false prophet", "Of God", "A spirit of the world"},
+            2));
+    questions.add(new Question(
+            "What does John say the world does not know?",
+            new String[]{"The names of the apostles", "The history of Israel", "The number of angels", "Us, because it knew him not"},
+            3));
+    questions.add(new Question(
+            "What does John say is the confidence believers have toward God?",
+            new String[]{"If we ask anything according to his will, he heareth us", "We shall receive every request exactly as spoken", "We will never face hardship", "We can command the angels"},
+            0));
+    questions.add(new Question(
+            "What does John say is the whole duty of believers regarding sin?",
+            new String[]{"Ignore it if unintentional", "Keep themselves from sin", "Rely only on ceremonial offerings", "Avoid confessing it"},
+            1));
+    questions.add(new Question(
+            "Who does John say has the Son and therefore has life?",
+            new String[]{"Only the apostles", "Only the prophets", "He that hath the Son of God", "Only the elders"},
+            2));
+    questions.add(new Question(
+            "What does John say perfect love casts out?",
+            new String[]{"Doubt about history", "All human weakness", "Every earthly concern", "Fear"},
+            3));
+    questions.add(new Question(
+            "What does John say is the true God and eternal life?",
+            new String[]{"Jesus Christ", "The law of Moses", "The temple in Jerusalem", "The prophets"},
+            0));
+            }
             }
         private static void addBook2JohnQuestions(ArrayList<Question> questions, String difficulty) {
 
@@ -54997,6 +55201,108 @@ if (difficulty.equals("Hard")) {
             "What final greeting does John convey from the children of the elect sister?",
             new String[]{"Peace be unto you", "The children of thy elect sister greet thee", "Grace be with all the churches", "The elders send their love"},
             1));
+        }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "How does the writer identify himself in 2 John?",
+            new String[]{"The apostle of Galilee", "The elder", "The servant of Jerusalem", "The prophet"},
+            1));
+    questions.add(new Question(
+            "To whom is 2 John addressed?",
+            new String[]{"The church at Corinth", "The seven churches of Asia", "The elect lady and her children", "The elders of Jerusalem"},
+            2));
+    questions.add(new Question(
+            "What does the elder say he loves the elect lady and her children in?",
+            new String[]{"Truth", "The law", "Wisdom", "Peace"},
+            0));
+    questions.add(new Question(
+            "What does the elder say shall be with believers in truth and love?",
+            new String[]{"Power and riches", "Honour and glory", "Strength and courage", "Grace, mercy, and peace"},
+            3));
+    questions.add(new Question(
+            "What commandment does the elder say believers have had from the beginning?",
+            new String[]{"To build a temple", "That we love one another", "To avoid all strangers", "To seek earthly power"},
+            1));
+    questions.add(new Question(
+            "How does 2 John describe love?",
+            new String[]{"Following every new teaching", "Avoiding all correction", "Walking after his commandments", "Seeking public praise"},
+            2));
+    questions.add(new Question(
+            "Who does the elder describe as deceivers?",
+            new String[]{"Those who confess Christ come in the flesh", "Those who keep the commandments", "Those who love one another", "Those who confess not that Jesus Christ is come in the flesh"},
+            3));
+    questions.add(new Question(
+            "What does the elder say such a deceiver is?",
+            new String[]{"A deceiver and an antichrist", "A faithful elder", "A prophet of the church", "A teacher of the law"},
+            0));
+    questions.add(new Question(
+            "What does the elder warn believers to watch that they do not lose?",
+            new String[]{"Their earthly possessions", "Those things which they have wrought", "Their family names", "Their place of birth"},
+            1));
+    questions.add(new Question(
+            "What does the elder say the one who transgresses and abides not in Christ's doctrine has not?",
+            new String[]{"Wisdom", "An earthly inheritance", "God", "A place in Jerusalem"},
+            2));
+    questions.add(new Question(
+            "Who does the elder say has both the Father and the Son?",
+            new String[]{"Anyone who claims to be a teacher", "Anyone who keeps a tradition", "Anyone who has seen an apostle", "He that abideth in the doctrine of Christ"},
+            3));
+    questions.add(new Question(
+            "What should believers not do with someone who brings not the doctrine of Christ?",
+            new String[]{"Receive him into their house or bid him God speed", "Pray for him", "Speak truth to him", "Test his teaching"},
+            0));
+    questions.add(new Question(
+            "What does the elder say a person who bids a false teacher God speed becomes?",
+            new String[]{"A witness only", "A partaker of his evil deeds", "A judge of the church", "A messenger of peace"},
+            1));
+    questions.add(new Question(
+            "Why does the elder say he did not write with paper and ink?",
+            new String[]{"He had no access to writing", "The message was secret", "He hoped to come and speak face to face", "The letter was too long"},
+            2));
+    questions.add(new Question(
+            "What does the elder hope their joy will be?",
+            new String[]{"Temporary", "Known to all nations", "A reward of wealth", "Full"},
+            3));
+    questions.add(new Question(
+            "What does the elder say he found among the elect lady's children?",
+            new String[]{"Some walking in truth", "All rejecting the commandments", "Some teaching false doctrine", "None believing in Christ"},
+            0));
+    questions.add(new Question(
+            "According to the elder, how many commandments are believers given in this letter?",
+            new String[]{"Seven", "One new commandment, that we love one another", "Ten new commandments", "No commandments"},
+            1));
+    questions.add(new Question(
+            "What does the elder say is the commandment believers have heard from the beginning?",
+            new String[]{"To keep silent", "To travel to Jerusalem", "To walk in love", "To reject all visitors"},
+            2));
+    questions.add(new Question(
+            "What does the elder say has entered into the world?",
+            new String[]{"A new covenant", "A new priesthood", "A new temple", "Many deceivers"},
+            3));
+    questions.add(new Question(
+            "What does the elder call the teaching that denies Christ's coming in the flesh?",
+            new String[]{"The doctrine of Christ", "The commandment of love", "The word of truth", "The doctrine of a deceiver and antichrist"},
+            3));
+    questions.add(new Question(
+            "What should believers do if someone comes to them without bringing Christ's doctrine?",
+            new String[]{"Not receive him into their house or bid him God speed", "Accept all his teaching", "Appoint him as an elder", "Give him authority over the church"},
+            0));
+    questions.add(new Question(
+            "What does the elder say he has many things to write?",
+            new String[]{"Only about the elect lady", "But he would not write with paper and ink", "Only about the apostles", "Nothing further"},
+            1));
+    questions.add(new Question(
+            "What does the elder prefer instead of writing further?",
+            new String[]{"Sending another apostle", "Holding a public debate", "Speaking face to face", "Writing a longer scroll"},
+            2));
+    questions.add(new Question(
+            "Who sends greetings to the elect lady's children?",
+            new String[]{"The elders of Jerusalem", "The church at Corinth", "The apostles in Galilee", "The children of thy elect sister"},
+            3));
+    questions.add(new Question(
+            "What does the elder say should not be lost through disobedience?",
+            new String[]{"A full reward", "The history of the church", "The traditions of elders", "The favour of earthly rulers"},
+            0));
         }
         }
         private static void addBook3JohnQuestions(ArrayList<Question> questions, String difficulty) {
