@@ -39734,6 +39734,108 @@ questions.add(new Question(
             new String[]{"Twice", "Four times", "Five times", "Three times"},
             3));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What name did Jesus use when addressing Nathanael?",
+            new String[]{"Simon", "Rabbi", "Son of David", "An Israelite indeed"},
+            3));
+    questions.add(new Question(
+            "How many waterpots of stone were at the wedding in Cana?",
+            new String[]{"Four", "Six", "Seven", "Twelve"},
+            1));
+    questions.add(new Question(
+            "What was Nicodemus's position among the Jews?",
+            new String[]{"A chief priest", "A Roman officer", "A ruler of the Jews", "A temple guard"},
+            2));
+    questions.add(new Question(
+            "How many porches did the pool of Bethesda have?",
+            new String[]{"Five", "Three", "Seven", "Four"},
+            0));
+    questions.add(new Question(
+            "How long had the man at the pool of Bethesda been infirm?",
+            new String[]{"Twelve years", "Thirty-eight years", "Forty years", "Eighteen years"},
+            1));
+    questions.add(new Question(
+            "What was the name of the pool where the blind man washed?",
+            new String[]{"Bethesda", "Bethsaida", "Siloam", "Kidron"},
+            2));
+    questions.add(new Question(
+            "Why were the parents of the man born blind afraid to answer?",
+            new String[]{"They feared the Romans", "They feared the disciples", "They feared being arrested", "They feared being put out of the synagogue"},
+            3));
+    questions.add(new Question(
+            "How many days had Lazarus been in the tomb when Jesus arrived?",
+            new String[]{"Four", "Three", "Two", "Seven"},
+            0));
+    questions.add(new Question(
+            "What does the name Didymus mean, as used for Thomas?",
+            new String[]{"Beloved", "Twin", "Faithful", "Servant"},
+            1));
+    questions.add(new Question(
+            "What did Mary use to anoint Jesus's feet in Bethany?",
+            new String[]{"Myrrh", "Frankincense", "A pound of ointment of spikenard", "Olive oil"},
+            2));
+    questions.add(new Question(
+            "Who was Judas Iscariot's father, according to John?",
+            new String[]{"Zebedee", "Alphaeus", "Joseph", "Simon"},
+            3));
+    questions.add(new Question(
+            "What illustration did Jesus use to describe His death bringing forth life?",
+            new String[]{"A grain of wheat falling into the ground", "A vine being pruned", "A lamp being lit", "A seed kept in a vessel"},
+            0));
+    questions.add(new Question(
+            "What did Jesus use to wash the disciples' feet?",
+            new String[]{"A golden basin", "A towel and a basin of water", "A clay jar only", "A linen robe"},
+            1));
+    questions.add(new Question(
+            "What was the name of the high priest's servant whose ear Peter cut off?",
+            new String[]{"Barabbas", "Malchus", "Joseph", "Nicodemus"},
+            1));
+    questions.add(new Question(
+            "Who was Caiaphas's father-in-law?",
+            new String[]{"Annas", "Gamaliel", "Zacharias", "Simeon"},
+            0));
+    questions.add(new Question(
+            "What was unusual about the garment Jesus wore at the crucifixion?",
+            new String[]{"It was purple", "It had golden threads", "It was seamless, woven from the top throughout", "It was made of camel's hair"},
+            2));
+    questions.add(new Question(
+            "What plant was mentioned when the sponge was lifted to Jesus?",
+            new String[]{"Hyssop", "Cedar", "Olive", "Fig"},
+            0));
+    questions.add(new Question(
+            "How many angels did Mary Magdalene see in the tomb?",
+            new String[]{"One", "Two", "Three", "Four"},
+            1));
+    questions.add(new Question(
+            "How many great fishes did the disciples catch after Jesus instructed them?",
+            new String[]{"120", "100", "153", "200"},
+            2));
+    questions.add(new Question(
+            "What kind of fire was burning when Jesus appeared to the disciples by the sea?",
+            new String[]{"A wood oven", "A lamp flame", "A furnace", "A fire of coals"},
+            3));
+    questions.add(new Question(
+            "Where was the disciple whom Jesus loved positioned at supper?",
+            new String[]{"Leaning on Jesus's bosom", "Standing by the door", "Beside Peter", "At the far end of the table"},
+            0));
+    questions.add(new Question(
+            "Which disciple asked Jesus, 'Lord, we know not whither thou goest; and how can we know the way?'",
+            new String[]{"Philip", "Thomas", "Andrew", "Judas (not Iscariot)"},
+            1));
+    questions.add(new Question(
+            "What was the second miracle Jesus did after coming out of Judaea into Galilee?",
+            new String[]{"Healing the man at Bethesda", "Feeding the five thousand", "Healing the nobleman's son", "Raising Lazarus"},
+            2));
+    questions.add(new Question(
+            "Where was John baptizing when Jesus first met two of John's disciples, according to John 1?",
+            new String[]{"Cana", "Bethany beyond Jordan", "Jerusalem", "Capernaum"},
+            1));
+    questions.add(new Question(
+            "Which disciple first told Nathanael that they had found the Messiah?",
+            new String[]{"Philip", "Peter", "John", "Andrew"},
+            0));
+            }
         }
 
     }
@@ -40402,6 +40504,108 @@ questions.add(new Question(
             new String[]{"Crete", "Cyprus", "Rhodes", "Melita"},
             3));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "To whom is the book of Acts addressed?",
+            new String[]{"Timothy", "Theophilus", "Titus", "Cornelius"},
+            1));
+    questions.add(new Question(
+            "Who was chosen to replace Judas Iscariot among the apostles?",
+            new String[]{"Barsabas", "Silas", "Matthias", "Stephen"},
+            2));
+    questions.add(new Question(
+            "What appeared to the believers at Pentecost, divided like tongues of fire?",
+            new String[]{"Flames of fire", "A bright cloud", "A pillar of smoke", "Cloven tongues"},
+            3));
+    questions.add(new Question(
+            "At which gate of the temple was the lame man sitting when Peter healed him?",
+            new String[]{"Beautiful", "Sheep", "Eastern", "Nicanor"},
+            0));
+    questions.add(new Question(
+            "Who lied about the price of the land they sold?",
+            new String[]{"Aquila and Priscilla", "Ananias and Sapphira", "Simon and Elymas", "Alexander and Rufus"},
+            1));
+    questions.add(new Question(
+            "Which respected Pharisee advised the council to be careful in dealing with the apostles?",
+            new String[]{"Nicodemus", "Caiaphas", "Gamaliel", "Annas"},
+            2));
+    questions.add(new Question(
+            "What did the members of the council see on Stephen's face?",
+            new String[]{"A look of fear", "A sign of illness", "A face like stone", "His face as it had been the face of an angel"},
+            3));
+    questions.add(new Question(
+            "From which city was Saul originally?",
+            new String[]{"Tarsus", "Jericho", "Damascus", "Antioch"},
+            0));
+    questions.add(new Question(
+            "On which street was Saul staying in Damascus when Ananias visited him?",
+            new String[]{"King's Street", "Straight", "Broad", "Temple Street"},
+            1));
+    questions.add(new Question(
+            "What was Cornelius's military position?",
+            new String[]{"A captain of the temple", "A chief tax collector", "A centurion", "A governor"},
+            2));
+    questions.add(new Question(
+            "What was another name for Tabitha?",
+            new String[]{"Martha", "Lydia", "Damaris", "Dorcas"},
+            3));
+    questions.add(new Question(
+            "Which prophet foretold a great famine during the reign of Claudius?",
+            new String[]{"Agabus", "Silas", "Judas Barsabas", "Philip"},
+            0));
+    questions.add(new Question(
+            "In which city were the disciples first called Christians?",
+            new String[]{"Jerusalem", "Antioch", "Ephesus", "Rome"},
+            1));
+    questions.add(new Question(
+            "What was the name of the sorcerer who opposed Paul in Cyprus?",
+            new String[]{"Simon Magus", "Alexander", "Bar-Jesus, also called Elymas", "Demetrius"},
+            2));
+    questions.add(new Question(
+            "What was the name of the Roman proconsul who believed Paul's teaching in Cyprus?",
+            new String[]{"Felix", "Festus", "Gallio", "Sergius Paulus"},
+            3));
+    questions.add(new Question(
+            "Which gods did the people of Lystra associate with Barnabas and Paul?",
+            new String[]{"Jupiter and Mercurius", "Mars and Apollo", "Zeus and Hera", "Jupiter and Neptune"},
+            0));
+    questions.add(new Question(
+            "What was Lydia's hometown?",
+            new String[]{"Ephesus", "Thyatira", "Philippi", "Corinth"},
+            1));
+    questions.add(new Question(
+            "What was the occupation of Lydia?",
+            new String[]{"A tentmaker", "A seller of spices", "A seller of purple", "A silversmith"},
+            2));
+    questions.add(new Question(
+            "What did the Philippian jailer ask Paul and Silas?",
+            new String[]{"Where are you from?", "Why are you preaching?", "Who sent you?", "What must I do to be saved?"},
+            3));
+    questions.add(new Question(
+            "What distinguished the people of Berea when they heard Paul's message?",
+            new String[]{"They searched the Scriptures daily", "They immediately left the city", "They refused to listen", "They demanded a sign"},
+            0));
+    questions.add(new Question(
+            "Who fell from the third loft while Paul was preaching at Troas?",
+            new String[]{"Tychicus", "Eutychus", "Trophimus", "Aristarchus"},
+            1));
+    questions.add(new Question(
+            "Who was the Ephesian that accompanied Paul and was later left sick at Miletum?",
+            new String[]{"Tychicus", "Timothy", "Trophimus", "Titus"},
+            2));
+    questions.add(new Question(
+            "On which island did Paul and the others find refuge after the shipwreck?",
+            new String[]{"Crete", "Cyprus", "Rhodes", "Melita"},
+            3));
+    questions.add(new Question(
+            "How many people were aboard the ship during Paul's voyage to Rome?",
+            new String[]{"Two hundred and seventy-six", "One hundred and twenty", "Three hundred", "Four hundred"},
+            0));
+    questions.add(new Question(
+            "Who was the Alexandrian Jew, eloquent and mighty in the Scriptures, who taught about Jesus?",
+            new String[]{"Sosthenes", "Apollos", "Crispus", "Jason"},
+            1));
+            }
         }
 
         private static void addBookRomansQuestions(ArrayList<Question> questions, String difficulty) {
@@ -41037,6 +41241,108 @@ questions.add(new Question(
             "What did Paul say the kingdom of God is not, in Romans 14?",
             new String[]{"Meat and drink", "Prayer and fasting", "Gold and silver", "Signs and wonders"},
             0));
+            }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who is described as a servant of the church at Cenchrea?",
+            new String[]{"Priscilla", "Junia", "Phoebe", "Persis"},
+            2));
+    questions.add(new Question(
+            "Who is named as the writer of the letter to the Romans in Romans 16?",
+            new String[]{"Paul", "Timothy", "Tertius", "Silvanus"},
+            2));
+    questions.add(new Question(
+            "Which two people are described as Paul's helpers in Christ who risked their own necks?",
+            new String[]{"Andronicus and Junia", "Aquila and Priscilla", "Rufus and his mother", "Urbanus and Stachys"},
+            1));
+    questions.add(new Question(
+            "Who is described as the firstfruits of Achaia unto Christ?",
+            new String[]{"Epaenetus", "Erastus", "Gaius", "Apelles"},
+            0));
+    questions.add(new Question(
+            "Who is described as the brother of Quartus?",
+            new String[]{"Tertius", "Gaius", "Erastus", "Quartus himself is called a brother"},
+            3));
+    questions.add(new Question(
+            "Who is called the host of Paul and of the whole church in Romans 16?",
+            new String[]{"Gaius", "Jason", "Titus", "Crispus"},
+            0));
+    questions.add(new Question(
+            "Who is mentioned as the city treasurer in Romans 16?",
+            new String[]{"Tertius", "Erastus", "Timothy", "Lucius"},
+            1));
+    questions.add(new Question(
+            "Which woman is described as having laboured much in the Lord?",
+            new String[]{"Phoebe", "Mary", "Tryphena", "Persis"},
+            3));
+    questions.add(new Question(
+            "Who is described as Paul's kinsman and fellow prisoner?",
+            new String[]{"Rufus", "Apelles", "Andronicus", "Herodion"},
+            2));
+    questions.add(new Question(
+            "What does Paul say Abraham's faith was counted to him for?",
+            new String[]{"Wisdom", "Righteousness", "Courage", "Obedience"},
+            1));
+    questions.add(new Question(
+            "According to Romans 4, when was Abraham counted righteous by faith?",
+            new String[]{"Before he was circumcised", "After the Exodus", "After Isaac was born", "After the offering of Isaac"},
+            0));
+    questions.add(new Question(
+            "Who is described as a figure of Him that was to come?",
+            new String[]{"Moses", "Abraham", "Adam", "David"},
+            2));
+    questions.add(new Question(
+            "What does Romans 6 say is the wages of sin?",
+            new String[]{"Sorrow", "Judgment", "Separation", "Death"},
+            3));
+    questions.add(new Question(
+            "What word does Paul use to describe the Spirit of adoption by which believers cry?",
+            new String[]{"Maranatha", "Abba", "Hosanna", "Eloi"},
+            1));
+    questions.add(new Question(
+            "According to Romans 8, what does creation do while waiting for deliverance?",
+            new String[]{"Groaneth and travaileth in pain", "Rejoices continually", "Remains unchanged", "Cries out in anger"},
+            0));
+    questions.add(new Question(
+            "What are believers said to have as the firstfruits of the Spirit?",
+            new String[]{"A new law", "The gift of prophecy", "The Spirit's firstfruits", "The crown of life"},
+            2));
+    questions.add(new Question(
+            "In Paul's illustration of the olive tree, what kind of branches are grafted in?",
+            new String[]{"Natural branches", "Dead branches", "Fruitless branches", "Wild olive branches"},
+            3));
+    questions.add(new Question(
+            "What does Paul warn the grafted-in branches not to do?",
+            new String[]{"Boast against the natural branches", "Produce fruit", "Remain in the tree", "Receive nourishment"},
+            0));
+    questions.add(new Question(
+            "According to Romans 14, what should a person who eats only herbs avoid doing?",
+            new String[]{"Praying publicly", "Judging the one who eats", "Giving thanks", "Reading the law"},
+            1));
+    questions.add(new Question(
+            "What does Paul say the kingdom of God is not?",
+            new String[]{"Righteousness", "Peace", "Meat and drink", "Joy in the Holy Ghost"},
+            2));
+    questions.add(new Question(
+            "Who is described as notable among the apostles in Romans 16?",
+            new String[]{"Aquila", "Tertius", "Erastus", "Andronicus and Junia"},
+            3));
+    questions.add(new Question(
+            "Who is described as Paul's beloved in the Lord and a chosen person?",
+            new String[]{"Rufus", "Apelles", "Urbanus", "Stachys"},
+            0));
+    questions.add(new Question(
+            "Which two women are greeted together in Romans 16:12?",
+            new String[]{"Mary and Phoebe", "Tryphena and Tryphosa", "Priscilla and Persis", "Julia and Junia"},
+            1));
+    questions.add(new Question(
+            "Who is named as the mother of Rufus, whom Paul also calls his mother?",
+            new String[]{"Mary", "Phoebe", "Rufus's mother, whose name is not given", "Persis"},
+            2));
+    questions.add(new Question(
+            "According to Romans 16, how long had the mystery been kept secret?",
+            new String[]{"Since the time of Moses", "For a thousand years", "Since the prophets began", "Since the world began"},
+            3));
             }
         }
 
