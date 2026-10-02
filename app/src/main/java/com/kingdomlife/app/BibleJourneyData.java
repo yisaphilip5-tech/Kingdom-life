@@ -37124,6 +37124,108 @@ questions.add(new Question(
         1
     ));
             }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "Who is named as Joseph's father in Matthew's genealogy?",
+            new String[]{"Heli", "Jacob", "Matthan", "Eleazar"},
+            1));
+    questions.add(new Question(
+            "From which direction did the wise men come?",
+            new String[]{"The north", "The west", "The south", "The east"},
+            3));
+    questions.add(new Question(
+            "Which ruler governed Judaea after Herod the Great?",
+            new String[]{"Archelaus", "Philip", "Herod Antipas", "Agrippa"},
+            0));
+    questions.add(new Question(
+            "In which town did Joseph settle after returning from Egypt?",
+            new String[]{"Bethlehem", "Jerusalem", "Nazareth", "Capernaum"},
+            2));
+    questions.add(new Question(
+            "What material was John the Baptist's garment made from?",
+            new String[]{"Fine linen", "Camel's hair", "Wool", "Goat's skin"},
+            1));
+    questions.add(new Question(
+            "How long did Jesus fast in the wilderness?",
+            new String[]{"Seven days", "Twenty days", "Thirty days", "Forty days and nights"},
+            3));
+    questions.add(new Question(
+            "Where did the devil tell Jesus to cast Himself down?",
+            new String[]{"From the pinnacle of the temple", "From Mount Carmel", "From a city wall", "From a ship"},
+            0));
+    questions.add(new Question(
+            "Which two brothers were fishing when Jesus called them?",
+            new String[]{"James and John", "Philip and Nathanael", "Simon Peter and Andrew", "Thomas and Matthew"},
+            2));
+    questions.add(new Question(
+            "Where was Matthew sitting when Jesus called him?",
+            new String[]{"At the synagogue", "At the receipt of custom", "At the temple gate", "By the sea"},
+            1));
+    questions.add(new Question(
+            "In which region did Jesus meet two men possessed by devils?",
+            new String[]{"Decapolis", "Galilee", "Judaea", "The country of the Gergesenes"},
+            3));
+    questions.add(new Question(
+            "How long had the woman with the issue of blood suffered?",
+            new String[]{"Twelve years", "Seven years", "Eighteen years", "Thirty-eight years"},
+            0));
+    questions.add(new Question(
+            "What title did two blind men use when calling out to Jesus?",
+            new String[]{"Son of Abraham", "King of Israel", "Son of David", "Son of Joseph"},
+            2));
+    questions.add(new Question(
+            "From which region did the woman come whose daughter was vexed with a devil?",
+            new String[]{"Samaria", "Canaan", "Idumaea", "Decapolis"},
+            1));
+    questions.add(new Question(
+            "What was found in the fish's mouth to pay the temple tribute?",
+            new String[]{"A denarius", "A drachma", "A talent", "A piece of money"},
+            3));
+    questions.add(new Question(
+            "Who appeared with Jesus at the Transfiguration?",
+            new String[]{"Moses and Elias", "Elijah and Elisha", "Abraham and Isaac", "David and Solomon"},
+            0));
+    questions.add(new Question(
+            "What did Jesus place among His disciples to teach them about humility?",
+            new String[]{"A basket of bread", "A scroll", "A little child", "A lamp"},
+            2));
+    questions.add(new Question(
+            "How many times did Jesus say forgiveness should be extended in Matthew 18:22?",
+            new String[]{"Seven times", "Seventy times seven", "Forty times", "Twelve times"},
+            1));
+    questions.add(new Question(
+            "What wage did the householder agree to pay the labourers in the vineyard?",
+            new String[]{"A talent", "Two drachmas", "A shekel", "A penny a day"},
+            3));
+    questions.add(new Question(
+            "Who made the request for the sons of Zebedee to sit beside Jesus in His kingdom?",
+            new String[]{"Their mother", "Peter", "James", "John"},
+            0));
+    questions.add(new Question(
+            "What happened to the fig tree Jesus cursed?",
+            new String[]{"It bore fruit", "It was uprooted by wind", "It withered away immediately", "It was struck by lightning"},
+            2));
+    questions.add(new Question(
+            "For how many pieces of silver did Judas agree to betray Jesus?",
+            new String[]{"Twenty", "Thirty", "Forty", "Fifty"},
+            1));
+    questions.add(new Question(
+            "What was purchased with the money returned by Judas?",
+            new String[]{"A burial cave", "A vineyard", "A field near Bethany", "The potter's field"},
+            3));
+    questions.add(new Question(
+            "What had Pilate's wife suffered in a dream concerning Jesus?",
+            new String[]{"Many things", "A journey through Egypt", "A vision of the temple", "A warning about Herod"},
+            0));
+    questions.add(new Question(
+            "What did the chief priests give the soldiers to spread a false report about the tomb?",
+            new String[]{"New garments", "A promise of freedom", "A large sum of money", "A position in the temple"},
+            2));
+    questions.add(new Question(
+            "Which women are named as coming to see the sepulchre after the Sabbath?",
+            new String[]{"Joanna and Susanna", "Mary Magdalene and the other Mary", "Mary and Martha", "Salome and Joanna"},
+            1));
+            }
         }
 
         private static void addBookMarkQuestions(ArrayList<Question> questions, String difficulty) {
@@ -37960,6 +38062,108 @@ questions.add(new Question(
         1
     ));
         }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "What material was John the Baptist's garment made from?",
+            new String[]{"Camel's hair", "Fine linen", "Wool", "Leather"},
+            0));
+    questions.add(new Question(
+            "Which two disciples were surnamed Boanerges?",
+            new String[]{"Peter and Andrew", "Philip and Thomas", "James and John", "Matthew and James"},
+            2));
+    questions.add(new Question(
+            "What does the name Boanerges mean?",
+            new String[]{"Sons of the covenant", "Sons of thunder", "Sons of the kingdom", "Sons of peace"},
+            1));
+    questions.add(new Question(
+            "Who was the ruler of the synagogue whose daughter Jesus raised?",
+            new String[]{"Bartimaeus", "Nicodemus", "Zacchaeus", "Jairus"},
+            3));
+    questions.add(new Question(
+            "What name did the unclean spirit give when Jesus asked its name?",
+            new String[]{"Legion", "Beelzebub", "Abaddon", "Mammon"},
+            0));
+    questions.add(new Question(
+            "How many years had the woman with the issue of blood suffered?",
+            new String[]{"Seven", "Eighteen", "Twelve", "Thirty-eight"},
+            2));
+    questions.add(new Question(
+            "What did Jesus say the word 'Corban' meant?",
+            new String[]{"A ceremonial washing", "A gift devoted to God", "A temple tax", "A sin offering"},
+            1));
+    questions.add(new Question(
+            "What Aramaic word did Jesus use when healing the deaf man?",
+            new String[]{"Eloi", "Abba", "Maranatha", "Ephphatha"},
+            3));
+    questions.add(new Question(
+            "What was the name of the blind man healed near Jericho?",
+            new String[]{"Bartimaeus", "Malchus", "Jairus", "Zebedee"},
+            0));
+    questions.add(new Question(
+            "What was Bartimaeus's father's name?",
+            new String[]{"Jairus", "Timaeus", "Alphaeus", "Zebedee"},
+            1));
+    questions.add(new Question(
+            "How much did the poor widow cast into the treasury?",
+            new String[]{"One denarius", "One shekel", "Two mites", "Two drachmas"},
+            2));
+    questions.add(new Question(
+            "What costly substance did the woman pour on Jesus at Bethany?",
+            new String[]{"Frankincense", "Myrrh", "Cinnamon", "Spikenard"},
+            3));
+    questions.add(new Question(
+            "What word did Jesus use in prayer at Gethsemane when addressing the Father?",
+            new String[]{"Abba", "Elohim", "Rabboni", "Hosanna"},
+            0));
+    questions.add(new Question(
+            "What did the young man leave behind when he fled at Jesus' arrest?",
+            new String[]{"His sandals", "His linen cloth", "His cloak", "His belt"},
+            1));
+    questions.add(new Question(
+            "What was the name of the high priest's servant whose ear was cut off?",
+            new String[]{"Alexander", "Rufus", "The servant is not named in Mark", "Malchus"},
+            2));
+    questions.add(new Question(
+            "Who was compelled to carry Jesus' cross?",
+            new String[]{"Joseph of Arimathaea", "Simon Peter", "Judas Iscariot", "Simon of Cyrene"},
+            3));
+    questions.add(new Question(
+            "Which two sons of Simon of Cyrene are mentioned in Mark?",
+            new String[]{"Alexander and Rufus", "James and John", "Philip and Andrew", "Joses and Judas"},
+            0));
+    questions.add(new Question(
+            "What did the centurion say when Jesus died?",
+            new String[]{"He was a prophet", "Truly this man was the Son of God", "He was the King of the Jews", "He was innocent"},
+            1));
+    questions.add(new Question(
+            "Who asked Pilate for the body of Jesus?",
+            new String[]{"Nicodemus", "Simon of Cyrene", "Joseph of Arimathaea", "Jairus"},
+            2));
+    questions.add(new Question(
+            "Which women are named as watching the crucifixion from afar?",
+            new String[]{"Mary and Martha", "Joanna and Susanna", "Elizabeth and Anna", "Mary Magdalene, Mary the mother of James the less and of Joses, and Salome"},
+            3));
+    questions.add(new Question(
+            "Where did the women see the young man after entering the sepulchre?",
+            new String[]{"Sitting on the right side", "Standing outside the tomb", "At the entrance", "Beside the stone"},
+            0));
+    questions.add(new Question(
+            "What was the young man's clothing in the sepulchre described as?",
+            new String[]{"A purple robe", "A long white garment", "A priestly ephod", "A linen apron"},
+            1));
+    questions.add(new Question(
+            "To which region were the disciples told Jesus would go before them?",
+            new String[]{"Judaea", "Samaria", "Galilee", "Perea"},
+            2));
+    questions.add(new Question(
+            "What was the name of the place where Jesus and His disciples ate the Passover?",
+            new String[]{"Bethany", "Gethsemane", "Bethphage", "An upper room"},
+            3));
+    questions.add(new Question(
+            "What did the people cry out when Jesus entered Jerusalem?",
+            new String[]{"Hosanna", "Ephphatha", "Talitha cumi", "Abba"},
+            0));
+            }
         }
 
         private static void addBookLukeQuestions(ArrayList<Question> questions, String difficulty) {
@@ -38796,6 +39000,108 @@ questions.add(new Question(
         1
     ));
         }
+            if (difficulty.equals("Scholar")) {
+    questions.add(new Question(
+            "To whom is the Gospel of Luke addressed?",
+            new String[]{"Cornelius", "Theophilus", "Felix", "Festus"},
+            1));
+    questions.add(new Question(
+            "To which priestly course did Zacharias belong?",
+            new String[]{"The course of Zadok", "The course of Eleazar", "The course of Abia", "The course of Ithamar"},
+            2));
+    questions.add(new Question(
+            "Of which priestly family was Elisabeth a descendant?",
+            new String[]{"The house of David", "The tribe of Judah", "The house of Benjamin", "The daughters of Aaron"},
+            3));
+    questions.add(new Question(
+            "What was the name of the prophetess who saw the infant Jesus in the temple?",
+            new String[]{"Anna", "Huldah", "Deborah", "Miriam"},
+            0));
+    questions.add(new Question(
+            "Of which tribe was Anna the prophetess?",
+            new String[]{"Judah", "Asher", "Levi", "Benjamin"},
+            1));
+    questions.add(new Question(
+            "Who was governing Syria when the census mentioned in Luke 2 took place?",
+            new String[]{"Herod Antipas", "Pontius Pilate", "Cyrenius", "Felix"},
+            2));
+    questions.add(new Question(
+            "How old was Jesus when He remained behind in Jerusalem after the feast?",
+            new String[]{"Seven", "Ten", "Thirteen", "Twelve"},
+            3));
+    questions.add(new Question(
+            "Which two Old Testament figures did Jesus mention when speaking at Nazareth?",
+            new String[]{"The widow of Sarepta and Naaman the Syrian", "Moses and Aaron", "Elijah and Elisha at Mount Carmel", "David and Solomon"},
+            0));
+    questions.add(new Question(
+            "Which prophet's widow in Sarepta did Jesus refer to?",
+            new String[]{"Elisha", "Elijah", "Isaiah", "Jeremiah"},
+            1));
+    questions.add(new Question(
+            "Which Syrian commander was cleansed of leprosy in Jesus' example?",
+            new String[]{"Hazael", "Ben-hadad", "Naaman", "Rezin"},
+            2));
+    questions.add(new Question(
+            "What was the name of the village where Jesus raised a widow's son?",
+            new String[]{"Bethany", "Cana", "Nain", "Emmaus"},
+            2));
+    questions.add(new Question(
+            "What was the name of the Pharisee who invited Jesus to eat in Luke 7?",
+            new String[]{"Gamaliel", "Nicodemus", "Joseph", "Simon"},
+            3));
+    questions.add(new Question(
+            "How many years had the woman with a spirit of infirmity been bowed down?",
+            new String[]{"Eighteen", "Twelve", "Seven", "Thirty-eight"},
+            0));
+    questions.add(new Question(
+            "How many lepers returned to give thanks after being healed?",
+            new String[]{"Two", "One", "Five", "All ten"},
+            1));
+    questions.add(new Question(
+            "What nationality was the leper who returned to thank Jesus?",
+            new String[]{"Roman", "Galilean", "Samaritan", "Syrian"},
+            2));
+    questions.add(new Question(
+            "What position did Zacchaeus hold in Jericho?",
+            new String[]{"A synagogue ruler", "A Roman centurion", "A temple priest", "Chief among the publicans"},
+            3));
+    questions.add(new Question(
+            "What did Zacchaeus climb in order to see Jesus?",
+            new String[]{"A sycomore tree", "An olive tree", "A cedar tree", "A fig tree"},
+            0));
+    questions.add(new Question(
+            "What was the name of the rich man in the parable of the rich man and Lazarus?",
+            new String[]{"Lazarus", "He is not named", "Dives", "Simon"},
+            1));
+    questions.add(new Question(
+            "What was the beggar named in that parable?",
+            new String[]{"Bartimaeus", "Jairus", "Lazarus", "Cleopas"},
+            2));
+    questions.add(new Question(
+            "Which ruler did Pilate send Jesus to when he learned Jesus was a Galilean?",
+            new String[]{"Felix", "Festus", "Agrippa", "Herod"},
+            3));
+    questions.add(new Question(
+            "What did Jesus call Herod in Luke 13:32?",
+            new String[]{"That fox", "A roaring lion", "A ravenous wolf", "A blind guide"},
+            0));
+    questions.add(new Question(
+            "What was the name of one of the two disciples travelling to Emmaus?",
+            new String[]{"Cleopas", "Matthias", "Barsabas", "Silas"},
+            0));
+    questions.add(new Question(
+            "How far was Emmaus from Jerusalem according to Luke 24:13?",
+            new String[]{"Thirty furlongs", "Threescore furlongs", "A hundred furlongs", "Two hundred furlongs"},
+            1));
+    questions.add(new Question(
+            "Near which place did Jesus lead His disciples before His ascension?",
+            new String[]{"Jericho", "Bethlehem", "Bethany", "Capernaum"},
+            2));
+    questions.add(new Question(
+            "Which women are named among those who reported the empty tomb in Luke 24?",
+            new String[]{"Martha, Mary, and Elisabeth", "Salome, Susanna, and Huldah", "Anna, Joanna, and Deborah", "Mary Magdalene, Joanna, and Mary the mother of James"},
+            3));
+            }
         }
 
         private static void addBookJohnQuestions(ArrayList<Question> questions, String difficulty) {
