@@ -4080,8 +4080,12 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
         button1.setTextSize(15);
         button1.setAllCaps(false);
 
-        button1.setOnClickListener(v -> showBookDifficulty(book1));
-
+        if (isBibleJourneyBookUnlocked(book1)) {
+    button1.setOnClickListener(v -> showBookDifficulty(book1));
+} else {
+    button1.setText("🔒 " + book1);
+    button1.setOnClickListener(v -> {});
+        }
         row.addView(button1, new LinearLayout.LayoutParams(
                 0,
                 LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -4097,8 +4101,12 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             button2.setTextSize(15);
             button2.setAllCaps(false);
 
-            button2.setOnClickListener(v -> showBookDifficulty(book2));
-
+            if (isBibleJourneyBookUnlocked(book2)) {
+    button2.setOnClickListener(v -> showBookDifficulty(book2));
+} else {
+    button2.setText("🔒 " + book2);
+    button2.setOnClickListener(v -> {});
+            }
             row.addView(button2, new LinearLayout.LayoutParams(
                     0,
                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -4551,7 +4559,47 @@ if (currentBibleDifficulty.equals("Easy")) {
             currentBibleBook,
             "Scholar"
     );
-}
+    } else if (currentBibleDifficulty.equals("Scholar")) {
+
+    String[] oldTestamentBooks = {
+            "Genesis", "Exodus",
+            "Leviticus", "Numbers",
+            "Deuteronomy", "Joshua",
+            "Judges", "Ruth",
+            "1 Samuel", "2 Samuel",
+            "1 Kings", "2 Kings",
+            "1 Chronicles", "2 Chronicles",
+            "Ezra", "Nehemiah",
+            "Esther", "Job",
+            "Psalms", "Proverbs",
+            "Ecclesiastes", "Song of Solomon",
+            "Isaiah", "Jeremiah",
+            "Lamentations", "Ezekiel",
+            "Daniel", "Hosea",
+            "Joel", "Amos",
+            "Obadiah", "Jonah",
+            "Micah", "Nahum",
+            "Habakkuk", "Zephaniah",
+            "Haggai", "Zechariah",
+            "Malachi"
+    };
+
+    for (int i = 0; i < oldTestamentBooks.length - 1; i++) {
+
+        if (currentBibleBook.equals(oldTestamentBooks[i])) {
+
+            String nextBook = oldTestamentBooks[i + 1];
+
+            prefs.edit()
+                    .putBoolean(
+                            "bibleJourney_" + nextBook + "_book_unlocked",
+                            true
+                    )
+                    .apply();
+
+            break;
+        }
+    }
     TextView scoreText = new TextView(this);
     scoreText.setText(
             "⭐ Score: " +
