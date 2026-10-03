@@ -55987,6 +55987,10 @@ if (difficulty.equals("Hard")) {
             new String[]{"Greet them by name", "Send them away", "Test their doctrine", "Write to their churches"},
             0));
             }
+            if (difficulty.equals("Scholar")) {
+             BibleJourneyScholarData.add3JohnScholarQuestions(questions);   
+                }
+            }
             }
         private static void addBookJudeQuestions(ArrayList<Question> questions, String difficulty) {
 
