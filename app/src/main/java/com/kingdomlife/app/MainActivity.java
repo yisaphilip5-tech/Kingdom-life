@@ -4221,6 +4221,39 @@ void unlockBibleJourneyDifficulty(
             .putBoolean(key, true)
             .apply();
 }
+    boolean isBibleJourneyBookUnlocked(String book) {
+    if (book.equals("Genesis")) {
+        return true;
+    }
+
+    String[] oldTestamentBooks = {
+            "Genesis", "Exodus",
+            "Leviticus", "Numbers",
+            "Deuteronomy", "Joshua",
+            "Judges", "Ruth",
+            "1 Samuel", "2 Samuel",
+            "1 Kings", "2 Kings",
+            "1 Chronicles", "2 Chronicles",
+            "Ezra", "Nehemiah",
+            "Esther", "Job",
+            "Psalms", "Proverbs",
+            "Ecclesiastes", "Song of Solomon",
+            "Isaiah", "Jeremiah",
+            "Lamentations", "Ezekiel",
+            "Daniel", "Hosea",
+            "Joel", "Amos",
+            "Obadiah", "Jonah",
+            "Micah", "Nahum",
+            "Habakkuk", "Zephaniah",
+            "Haggai", "Zechariah",
+            "Malachi"
+    };
+
+    return prefs.getBoolean(
+            "bibleJourney_" + book + "_book_unlocked",
+            false
+    );
+    }
     void showBookDifficulty(String book) {
     stopTimer();
     content.removeAllViews();
