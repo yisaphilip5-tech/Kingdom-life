@@ -1,5 +1,4 @@
-]633;E;echo 'package com.kingdomlife.app\x3b';6343c551-9017-4feb-b747-00ae7c132db9]633;Cpackage com.kingdomlife.app;
-
+package com.kingdomlife.app;
 import java.util.ArrayList;
 
 public class BibleJourneyScholarData {
