@@ -55991,7 +55991,7 @@ if (difficulty.equals("Hard")) {
              BibleJourneyScholarData.add3JohnScholarQuestions(questions);   
                 }
             }
-            }
+}
         private static void addBookJudeQuestions(ArrayList<Question> questions, String difficulty) {
 
     if (difficulty.equals("Easy")) {
@@ -56018,7 +56018,7 @@ if (difficulty.equals("Hard")) {
                 0
         ));
 
-        questions.add(new Question(
+         questions.add(new Question(
                 "To whom is Jude's letter written?",
                 new String[]{
                         "The kings of Israel",
