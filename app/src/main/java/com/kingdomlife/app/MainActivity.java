@@ -4600,6 +4600,7 @@ if (currentBibleDifficulty.equals("Easy")) {
             break;
         }
     }
+}
     TextView scoreText = new TextView(this);
     scoreText.setText(
             "⭐ Score: " +
