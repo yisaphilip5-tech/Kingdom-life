@@ -34,7 +34,7 @@ public class DailyVerseData {
 "Psalm 119:105 — Thy word is a lamp unto my feet, and a light unto my path.",
 "Proverbs 3:5 — Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
 "Proverbs 16:3 — Commit thy works unto the LORD, and thy thoughts shall be established.",
-"Ecclesiastes 3:1 — To every thing there is a season, and a time to every purpose under the heaven."
+"Ecclesiastes 3:1 — To every thing there is a season, and a time to every purpose under the heaven.",
           "Song of Solomon 2:4 — He brought me to the banqueting house, and his banner over me was love.",
 "Isaiah 26:3 — Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.",
 "Isaiah 40:31 — But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles.",
@@ -64,7 +64,7 @@ public class DailyVerseData {
 "Mark 10:27 — With men it is impossible, but not with God: for with God all things are possible.",
 "Luke 1:37 — For with God nothing shall be impossible.",
 "Luke 6:31 — And as ye would that men should do to you, do ye also to them likewise.",
-"John 3:16 — For God so loved the world, that he gave his only begotten Son."
+"John 3:16 — For God so loved the world, that he gave his only begotten Son.",
     "John 8:12 — I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.",
 "John 14:6 — I am the way, the truth, and the life: no man cometh unto the Father, but by me.",
 "John 14:27 — Peace I leave with you, my peace I give unto you.",
@@ -94,7 +94,7 @@ public class DailyVerseData {
 "2 Timothy 3:16 — All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction.",
 "Hebrews 11:1 — Now faith is the substance of things hoped for, the evidence of things not seen.",
 "James 1:5 — If any of you lack wisdom, let him ask of God, that giveth to all men liberally.",
-"1 Peter 5:7 — Casting all your care upon him; for he careth for you."
+"1 Peter 5:7 — Casting all your care upon him; for he careth for you.",
     "1 Peter 5:8 — Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about.",
 "2 Peter 3:18 — But grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ.",
 "1 John 1:9 — If we confess our sins, he is faithful and just to forgive us our sins.",
