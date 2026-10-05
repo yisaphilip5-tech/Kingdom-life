@@ -3975,45 +3975,9 @@ addButton("⬅️ Back to Home", v -> showHome());
         instruction.setPadding(0, 0, 0, 15);
 
         content.addView(instruction);
-        TextView gameName = new TextView(this);
-gameName.setText("🧠 Bible Challenge");
-gameName.setTextSize(22);
-gameName.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-gameName.setTextColor(darkText);
-gameName.setPadding(0, 10, 0, 5);
+        
 
-content.addView(gameName);
-
-TextView gameDescription = new TextView(this);
-gameDescription.setText("Test your Bible knowledge against the clock!");
-gameDescription.setTextSize(16);
-gameDescription.setTextColor(darkText);
-gameDescription.setPadding(0, 0, 0, 15);
-
-content.addView(gameDescription);
-
-        addButton("🟢 Level 1 — Easy", v -> {
-    currentLevel = 1;
-    startGame(30000);
-});
-
-        if (highestLevelUnlocked >= 2) {
-    addButton("🟡 Level 2 — Medium", v -> {
-        currentLevel = 2;
-        startGame(20000);
-    });
-} else {
-    addButton("🔒 Level 2 — Locked", v -> {});
-                  }
-
-        if (highestLevelUnlocked >= 3) {
-    addButton("🔴 Level 3 — Hard", v -> {
-        currentLevel = 3;
-        startGame(10000);
-    });
-} else {
-    addButton("🔒 Level 3 — Locked", v -> {});
-        }
+        addButton("🧠 Bible Challenge", v -> showBibleChallenge());
 addButton("🧩 Bible Scramble", v -> showBibleScramble());
         addButton("🔤 Missing Word", v -> showMissingWord());
         addButton("📖 Bible Journey", v -> showBibleJourney());
@@ -4923,6 +4887,48 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
         addButton("⬅️ Back to Games", v -> showGameMenu());
 
         addButton("🏠 Back to Home", v -> showHome());
+    }
+    void showBibleChallenge() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🧠 Bible Challenge");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 10);
+    content.addView(title);
+
+    TextView description = new TextView(this);
+    description.setText("Test your Bible knowledge against the clock!");
+    description.setTextSize(17);
+    description.setTextColor(darkText);
+    description.setPadding(0, 0, 0, 20);
+    content.addView(description);
+        addButton("🟢 Level 1 — Easy", v -> {
+    currentLevel = 1;
+    startGame(30000);
+});
+
+        if (highestLevelUnlocked >= 2) {
+    addButton("🟡 Level 2 — Medium", v -> {
+        currentLevel = 2;
+        startGame(20000);
+    });
+} else {
+    addButton("🔒 Level 2 — Locked", v -> {});
+                  }
+
+        if (highestLevelUnlocked >= 3) {
+    addButton("🔴 Level 3 — Hard", v -> {
+        currentLevel = 3;
+        startGame(10000);
+    });
+} else {
+    addButton("🔒 Level 3 — Locked", v -> {});
+        }
+        addButton("⬅️ Back", v -> showGameMenu());
     }
 void showBibleScramble() {
     stopTimer();
