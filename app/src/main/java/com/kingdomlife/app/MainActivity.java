@@ -2450,29 +2450,8 @@ prefs.edit()
 
     String word = query.toLowerCase();
 
-    String meaning = null;
-
-    if (word.equals("faith")) {
-        meaning = "Trust and confidence in God and His promises.";
-    } else if (word.equals("grace")) {
-        meaning = "God's undeserved favor and kindness toward people.";
-    } else if (word.equals("prayer")) {
-        meaning = "Communication with God through speaking, asking, thanking, and worship.";
-    } else if (word.equals("love")) {
-        meaning = "Selfless care, affection, and devotion toward God and others.";
-    } else if (word.equals("sin")) {
-        meaning = "Disobedience or wrongdoing against God's will.";
-    } else if (word.equals("salvation")) {
-        meaning = "Deliverance from sin and reconciliation with God.";
-    } else if (word.equals("wisdom")) {
-        meaning = "The ability to understand and apply what is right according to God.";
-    } else if (word.equals("forgiveness")) {
-        meaning = "Choosing to release someone from the debt of their wrongdoing.";
-    } else if (word.equals("hope")) {
-        meaning = "Confident expectation and trust in God's promises.";
-    } else if (word.equals("peace")) {
-        meaning = "A state of calm, reconciliation, and trust in God.";
-    }
+String meaning =
+        BibleDictionaryData.getMeaning(word);
 
     if (meaning != null) {
 
