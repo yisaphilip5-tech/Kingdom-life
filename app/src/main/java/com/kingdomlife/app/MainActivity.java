@@ -4872,6 +4872,13 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
     void showResults() {
         stopTimer();
         content.removeAllViews();
+        if (currentLevel == 1) {
+    prefs.edit().putBoolean("challenge_level_1_completed", true).apply();
+} else if (currentLevel == 2) {
+    prefs.edit().putBoolean("challenge_level_2_completed", true).apply();
+} else if (currentLevel == 3) {
+    prefs.edit().putBoolean("challenge_level_3_completed", true).apply();
+        }
         if (currentLevel == highestLevelUnlocked && highestLevelUnlocked < 3) {
     highestLevelUnlocked++;
 
