@@ -1349,17 +1349,100 @@ prefs.edit()
     }
   void showPrayer() {
     String[] dailyPrayers =
-        DailyPrayerData.getPrayers();
+            DailyPrayerData.getPrayers();
 
-int prayerIndex = (int) (
-        System.currentTimeMillis()
-        / (1000L * 60 * 60 * 24)
-        % dailyPrayers.length
-);
-    
+    java.util.Calendar calendar =
+            java.util.Calendar.getInstance();
+
+    int month = calendar.get(java.util.Calendar.MONTH) + 1;
+    int day = calendar.get(java.util.Calendar.DAY_OF_MONTH);
+
+    String specialPrayer = null;
+    String specialTitle = null;
+
+    // January 1 — New Year + New Month
+    if (month == 1 && day == 1) {
+        String newYearPrayer = null;
+        String newMonthPrayer = null;
+
+        for (String prayer : dailyPrayers) {
+            String lower = prayer.toLowerCase();
+
+            if (lower.contains("new year")) {
+                newYearPrayer = prayer;
+            }
+
+            if (lower.contains("new month")) {
+                newMonthPrayer = prayer;
+            }
+        }
+
+        if (newYearPrayer != null && newMonthPrayer != null) {
+            specialTitle = "🙏 New Year & New Month";
+            specialPrayer =
+                    newYearPrayer + "\n\n" + newMonthPrayer;
+        }
+    }
+
+    // May 27 — Children's Day
+    else if (month == 5 && day == 27) {
+        for (String prayer : dailyPrayers) {
+            if (prayer.toLowerCase().contains("children's day")) {
+                specialTitle = "🙏 Children's Day";
+                specialPrayer = prayer;
+                break;
+            }
+        }
+    }
+
+    // December 25 — Christmas / Festive Season
+    else if (month == 12 && day == 25) {
+        for (String prayer : dailyPrayers) {
+            if (prayer.toLowerCase().contains("christmas")) {
+                specialTitle = "🙏 Christmas Prayer";
+                specialPrayer = prayer;
+                break;
+            }
+        }
+    }
+
+    // December 31 — End of Year
+    else if (month == 12 && day == 31) {
+        for (String prayer : dailyPrayers) {
+            if (prayer.toLowerCase().contains("end of year")) {
+                specialTitle = "🙏 End of Year Prayer";
+                specialPrayer = prayer;
+                break;
+            }
+        }
+    }
+
+    // Other first days of the month — New Month
+    else if (day == 1) {
+        for (String prayer : dailyPrayers) {
+            if (prayer.toLowerCase().contains("new month")) {
+                specialTitle = "🙏 Prayer for the New Month";
+                specialPrayer = prayer;
+                break;
+            }
+        }
+    }
+
+    // Normal 183-day rotation
+    if (specialPrayer == null) {
+        int prayerIndex = (int) (
+                System.currentTimeMillis()
+                / (1000L * 60 * 60 * 24)
+                % dailyPrayers.length
+        );
+
+        specialTitle = "🙏 Prayer for the Day";
+        specialPrayer = dailyPrayers[prayerIndex];
+    }
+
     showMessage(
-            "🙏 Prayer for the Day",
-            dailyPrayers[prayerIndex]
+            specialTitle,
+            specialPrayer
     );
   }
 
