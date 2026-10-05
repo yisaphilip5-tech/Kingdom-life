@@ -3975,6 +3975,22 @@ addButton("⬅️ Back to Home", v -> showHome());
         instruction.setPadding(0, 0, 0, 15);
 
         content.addView(instruction);
+        TextView gameName = new TextView(this);
+gameName.setText("🧠 Bible Challenge");
+gameName.setTextSize(22);
+gameName.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+gameName.setTextColor(darkText);
+gameName.setPadding(0, 10, 0, 5);
+
+content.addView(gameName);
+
+TextView gameDescription = new TextView(this);
+gameDescription.setText("Test your Bible knowledge against the clock!");
+gameDescription.setTextSize(16);
+gameDescription.setTextColor(darkText);
+gameDescription.setPadding(0, 0, 0, 15);
+
+content.addView(gameDescription);
 
         addButton("🟢 Level 1 — Easy", v -> {
     currentLevel = 1;
