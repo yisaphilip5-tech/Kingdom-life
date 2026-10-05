@@ -1082,11 +1082,10 @@ content.addView(welcome);
 
 
         addCard(
-                "📖 Verse of the Day",
-                "Jeremiah 29:11 — KJV\n\nFor I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
-                v -> showVerse()
-        );
-
+        "📖 Verse of the Day",
+        "What is the Word of God saying about you today?",
+        v -> showVerse()
+);
         addCard(
                 "🙏 Prayer for the Day",
                 "Take a moment to pray for guidance, strength, wisdom, and peace today.",
