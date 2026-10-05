@@ -1,1 +1,71 @@
+package com.kingdomlife.app;
 
+public class DailyVerseData {
+
+    public static String[] getVerses() {
+        return new String[] {
+
+          "Genesis 1:1 — In the beginning God created the heaven and the earth.",
+"Genesis 15:1 — Fear not, Abram: I am thy shield, and thy exceeding great reward.",
+"Exodus 14:14 — The LORD shall fight for you, and ye shall hold your peace.",
+"Deuteronomy 31:8 — And the LORD, he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not, neither be dismayed.",
+"Joshua 1:9 — Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.",
+"Judges 6:12 — The LORD is with thee, thou mighty man of valour.",
+"Ruth 2:12 — The LORD recompense thy work, and a full reward be given thee of the LORD God of Israel, under whose wings thou art come to trust.",
+"1 Samuel 16:7 — For man looketh on the outward appearance, but the LORD looketh on the heart.",
+"2 Samuel 22:31 — As for God, his way is perfect; the word of the LORD is tried: he is a buckler to all them that trust in him.",
+"1 Kings 8:61 — Let your heart therefore be perfect with the LORD our God, to walk in his statutes, and to keep his commandments, as at this day.",
+"2 Kings 20:5 — I have heard thy prayer, I have seen thy tears: behold, I will heal thee.",
+"1 Chronicles 16:11 — Seek the LORD and his strength, seek his face continually.",
+"2 Chronicles 7:14 — If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land.",
+"Ezra 7:10 — For Ezra had prepared his heart to seek the law of the LORD, and to do it, and to teach in Israel statutes and judgments.",
+"Nehemiah 8:10 — The joy of the LORD is your strength.",
+"Esther 4:14 — And who knoweth whether thou art come to the kingdom for such a time as this?",
+"Job 19:25 — For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth.",
+"Psalm 23:1 — The LORD is my shepherd; I shall not want.",
+"Psalm 27:1 — The LORD is my light and my salvation; whom shall I fear?",
+"Psalm 34:8 — O taste and see that the LORD is good: blessed is the man that trusteth in him.",
+"Psalm 37:4 — Delight thyself also in the LORD; and he shall give thee the desires of thine heart.",
+"Psalm 46:10 — Be still, and know that I am God.",
+"Psalm 55:22 — Cast thy burden upon the LORD, and he shall sustain thee: he shall never suffer the righteous to be moved.",
+"Psalm 56:3 — What time I am afraid, I will trust in thee.",
+"Psalm 91:1 — He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty.",
+"Psalm 100:5 — For the LORD is good; his mercy is everlasting; and his truth endureth to all generations.",
+"Psalm 119:105 — Thy word is a lamp unto my feet, and a light unto my path.",
+"Proverbs 3:5 — Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+"Proverbs 16:3 — Commit thy works unto the LORD, and thy thoughts shall be established.",
+"Ecclesiastes 3:1 — To every thing there is a season, and a time to every purpose under the heaven."
+          "Song of Solomon 2:4 — He brought me to the banqueting house, and his banner over me was love.",
+"Isaiah 26:3 — Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.",
+"Isaiah 40:31 — But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles.",
+"Isaiah 41:10 — Fear thou not; for I am with thee: be not dismayed; for I am thy God.",
+"Isaiah 43:2 — When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee.",
+"Isaiah 53:5 — But he was wounded for our transgressions, he was bruised for our iniquities.",
+"Isaiah 55:8 — For my thoughts are not your thoughts, neither are your ways my ways, saith the LORD.",
+"Jeremiah 17:7 — Blessed is the man that trusteth in the LORD, and whose hope the LORD is.",
+"Jeremiah 29:11 — For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil.",
+"Lamentations 3:23 — They are new every morning: great is thy faithfulness.",
+"Ezekiel 36:26 — A new heart also will I give you, and a new spirit will I put within you.",
+"Daniel 6:27 — He delivereth and rescueth, and he worketh signs and wonders in heaven and in earth.",
+"Hosea 6:3 — Then shall we know, if we follow on to know the LORD.",
+"Joel 2:13 — And rend your heart, and not your garments, and turn unto the LORD your God.",
+"Amos 5:14 — Seek good, and not evil, that ye may live.",
+"Micah 6:8 — He hath shewed thee, O man, what is good; and what doth the LORD require of thee.",
+"Nahum 1:7 — The LORD is good, a strong hold in the day of trouble; and he knoweth them that trust in him.",
+"Habakkuk 2:4 — But the just shall live by his faith.",
+"Zephaniah 3:17 — The LORD thy God in the midst of thee is mighty; he will save.",
+"Haggai 2:9 — The glory of this latter house shall be greater than of the former.",
+"Zechariah 4:6 — Not by might, nor by power, but by my spirit, saith the LORD of hosts.",
+"Malachi 3:10 — Prove me now herewith, saith the LORD of hosts, if I will not open you the windows of heaven.",
+"Matthew 5:14 — Ye are the light of the world. A city that is set on an hill cannot be hid.",
+"Matthew 6:33 — But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.",
+"Matthew 11:28 — Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+"Matthew 22:37 — Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind.",
+"Mark 10:27 — With men it is impossible, but not with God: for with God all things are possible.",
+"Luke 1:37 — For with God nothing shall be impossible.",
+"Luke 6:31 — And as ye would that men should do to you, do ye also to them likewise.",
+"John 3:16 — For God so loved the world, that he gave his only begotten Son."
+
+        };
+    }
+}
