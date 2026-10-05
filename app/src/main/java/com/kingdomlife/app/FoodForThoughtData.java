@@ -477,8 +477,257 @@ public class FoodForThoughtData {
 
 "💭 Food for Thought\n\n" +
 "Sometimes the answer to a problem begins with asking a better question. Instead of only asking, 'Why is this happening?' consider asking, 'What can I learn and what should I do next?'\n\n" +
-"Reflection:\nWhat better question should I be asking about my situation?"
+"Reflection:\nWhat better question should I be asking about my situation?",
+            "💭 Food for Thought\n\n" +
+"Sometimes we focus so much on reaching the destination that we forget to learn from the journey. The process can shape us just as much as the result.\n\n" +
+"Reflection:\nWhat is this season of my life teaching me?",
 
+"💭 Food for Thought\n\n" +
+"A person's true strength is not shown only when everything is going well. It can also be seen in how they respond when plans change or difficulties appear.\n\n" +
+"Reflection:\nHow do I respond when things do not go according to plan?",
+
+"💭 Food for Thought\n\n" +
+"Patience and preparation can work together. Waiting does not have to be wasted time when you use it to learn, serve, practise, and prepare.\n\n" +
+"Reflection:\nHow can I make this waiting season productive?",
+
+"💭 Food for Thought\n\n" +
+"Not every thought deserves to become an action. Wisdom includes examining our thoughts and deciding which ones agree with truth and should guide us.\n\n" +
+"Reflection:\nWhich thoughts do I need to challenge instead of automatically believing?",
+
+"💭 Food for Thought\n\n" +
+"Your emotions are real, but they do not have to make every decision for you. Wisdom allows feelings to be acknowledged while still choosing what is right.\n\n" +
+"Reflection:\nAm I allowing my emotions to control decisions that need wisdom?",
+
+"💭 Food for Thought\n\n" +
+"Fear can make a problem appear larger than it really is. Looking at a situation honestly and taking one wise step at a time can help restore perspective.\n\n" +
+"Reflection:\nWhat is one practical step I can take instead of allowing fear to control me?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes the most important progress is invisible. Becoming more patient, honest, disciplined, kind, or wise may not receive applause, but it is still growth.\n\n" +
+"Reflection:\nWhat inner change in me deserves to be celebrated?",
+
+"💭 Food for Thought\n\n" +
+"God's timing can require trust. We may not understand why something is taking longer than expected, but we can continue doing what is right while we wait.\n\n" +
+"Reflection:\nWhat am I waiting for that I need to trust God with?",
+
+"💭 Food for Thought\n\n" +
+"People are more important than possessions. Achievements can be valuable, but they should never cause us to neglect the people God has placed around us.\n\n" +
+"Reflection:\nHave my goals caused me to neglect someone important?",
+
+"💭 Food for Thought\n\n" +
+"Success becomes more meaningful when it is used to serve rather than simply to impress. What we accomplish can become an opportunity to help others.\n\n" +
+"Reflection:\nHow can I use my success or abilities to benefit someone else?",
+
+"💭 Food for Thought\n\n" +
+"Apologizing sincerely takes humility. A real apology does not make excuses; it acknowledges the wrong and seeks to make things right where possible.\n\n" +
+"Reflection:\nIs there someone I need to sincerely apologize to?",
+
+"💭 Food for Thought\n\n" +
+"Receiving forgiveness should make us more willing to forgive others. Remembering our own need for mercy can soften the way we respond to someone who has wronged us.\n\n" +
+"Reflection:\nHow can remembering God's mercy change the way I treat others?",
+
+"💭 Food for Thought\n\n" +
+"Some opportunities disappear because we keep waiting for perfect conditions. Wisdom knows when preparation is enough and it is time to begin.\n\n" +
+"Reflection:\nWhat good thing have I delayed because I am waiting for everything to be perfect?",
+
+"💭 Food for Thought\n\n" +
+"Your words can become seeds in another person's life. Choose words that build people up rather than words that unnecessarily tear them down.\n\n" +
+"Reflection:\nWhat kind of seeds am I planting through my conversations?",
+
+"💭 Food for Thought\n\n" +
+"Listening to God's Word regularly can keep our priorities from being shaped entirely by the noise around us. What we repeatedly hear can influence how we think.\n\n" +
+"Reflection:\nWhat voices are shaping my thinking the most?",
+
+"💭 Food for Thought\n\n" +
+"Restoring a broken relationship may take time and may require wisdom and healthy boundaries. Peace does not always mean pretending that nothing happened.\n\n" +
+"Reflection:\nIs there a relationship where I need wisdom about reconciliation or boundaries?",
+
+"💭 Food for Thought\n\n" +
+"Being dependable is a form of love. People feel valued when they can trust that you will take your responsibilities seriously.\n\n" +
+"Reflection:\nCan the people around me depend on me?",
+
+"💭 Food for Thought\n\n" +
+"Do not underestimate the value of consistency. A small good action repeated over time can become more powerful than one impressive action done only once.\n\n" +
+"Reflection:\nWhat good practice do I need to become consistent in?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes we need to pause before making a decision. A short moment of reflection can prevent a long period of regret.\n\n" +
+"Reflection:\nWhere would slowing down help me make a wiser decision?",
+
+"💭 Food for Thought\n\n" +
+"Your life is more than your achievements. Your character, relationships, faith, and the way you treat people are also part of the legacy you are building.\n\n" +
+"Reflection:\nWhat do I want people to remember about my character?",
+
+            "💭 Food for Thought\n\n" +
+"Sometimes we ask for change around us when God may be inviting us to change something within us first. Personal growth can change the way we experience the same circumstances.\n\n" +
+"Reflection:\nWhat change can begin with me?",
+
+"💭 Food for Thought\n\n" +
+"Your attitude can influence how you approach a responsibility. The same task can feel very different when it is approached with gratitude instead of constant complaint.\n\n" +
+"Reflection:\nWhat attitude do I need to change toward one of my responsibilities?",
+
+"💭 Food for Thought\n\n" +
+"Being gifted does not remove the need for discipline. Talent can open a door, but consistent effort helps develop that ability responsibly.\n\n" +
+"Reflection:\nAm I developing the gifts and abilities I have been given?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes wisdom means asking for help. You do not have to know everything or solve every problem alone.\n\n" +
+"Reflection:\nWhere would asking for wise help improve my situation?",
+
+"💭 Food for Thought\n\n" +
+"People may notice your achievements, but God also cares about the heart behind them. Doing something good for recognition is different from doing it from genuine love.\n\n" +
+"Reflection:\nWhy am I doing the good things I do?",
+
+"💭 Food for Thought\n\n" +
+"Small compromises can gradually change our direction. What begins as something we consider harmless can become a pattern if we stop paying attention.\n\n" +
+"Reflection:\nIs there a small compromise I need to address before it grows?",
+
+"💭 Food for Thought\n\n" +
+"Hope does not require pretending that problems do not exist. Biblical hope allows us to face reality while still believing that God is present and faithful.\n\n" +
+"Reflection:\nCan I face my current reality while still holding on to hope in God?",
+
+"💭 Food for Thought\n\n" +
+"Peace can grow when we stop trying to solve tomorrow's problems today. Give today's responsibilities your attention and trust God with what has not arrived yet.\n\n" +
+"Reflection:\nAm I worrying about things that belong to tomorrow?",
+
+"💭 Food for Thought\n\n" +
+"A thankful person can find reasons to praise God even in ordinary circumstances. Gratitude does not deny difficulties; it helps us notice blessings alongside them.\n\n" +
+"Reflection:\nWhat blessing can I recognize even in today's ordinary moments?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes the person you disagree with can still teach you something. Listening carefully can reveal a useful point even when you do not accept every part of someone's opinion.\n\n" +
+"Reflection:\nCan I listen respectfully even when I disagree?",
+
+"💭 Food for Thought\n\n" +
+"True confidence does not require putting other people down. You can recognize your own strengths while respecting the value and abilities of others.\n\n" +
+"Reflection:\nDoes my confidence make room for other people's strengths?",
+
+"💭 Food for Thought\n\n" +
+"Learning to say, 'I was wrong,' is an important part of maturity. Admitting a mistake can open the door to correction and restoration.\n\n" +
+"Reflection:\nWhen was the last time I honestly admitted I was wrong?",
+
+"💭 Food for Thought\n\n" +
+"Your future self will live with many of the choices you make today. Think beyond immediate pleasure and consider where repeated choices are taking you.\n\n" +
+"Reflection:\nWill my current habits help the person I want to become?",
+
+"💭 Food for Thought\n\n" +
+"Doing the right thing may not always bring an immediate reward. Faithfulness is valuable even when nobody applauds or notices.\n\n" +
+"Reflection:\nWill I continue doing what is right when there is no recognition?",
+
+"💭 Food for Thought\n\n" +
+"People can remember a moment of kindness for a long time. Never assume that a small encouragement is too insignificant to matter.\n\n" +
+"Reflection:\nWhat small act of kindness can I offer today?",
+
+"💭 Food for Thought\n\n" +
+"Some lessons are only understood after experience. When a difficult experience teaches you something valuable, do not waste the lesson.\n\n" +
+"Reflection:\nWhat lesson from my past should I carry into my future?",
+
+"💭 Food for Thought\n\n" +
+"God's work in a person's life may not always be visible immediately. Do not judge your spiritual growth only by what you can see on the surface.\n\n" +
+"Reflection:\nAm I giving myself room to grow patiently?",
+
+"💭 Food for Thought\n\n" +
+"Your priorities are revealed by what repeatedly receives your time, energy, and attention. What we call important should eventually appear in our daily choices.\n\n" +
+"Reflection:\nDo my daily habits match the things I say are important?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes the best way to overcome distraction is to return to the purpose of the task. Knowing why something matters can help us remain focused.\n\n" +
+"Reflection:\nWhat purpose should I remember when I feel distracted?",
+
+"💭 Food for Thought\n\n" +
+"God can use a person's story, including difficult chapters, to encourage others. Your experiences may eventually help someone who is facing a similar challenge.\n\n" +
+"Reflection:\nHow could something I have learned help another person?",
+            "💭 Food for Thought\n\n" +
+"Sometimes growth means learning to wait without becoming discouraged. A delayed result does not automatically mean that your effort has been wasted.\n\n" +
+"Reflection:\nWhat can I continue doing faithfully while I wait?",
+
+"💭 Food for Thought\n\n" +
+"God's faithfulness gives us a reason to keep going when our own strength feels limited. We can bring our weakness to Him instead of pretending to have everything together.\n\n" +
+"Reflection:\nWhere do I need to depend on God more?",
+
+"💭 Food for Thought\n\n" +
+"Every person you meet carries experiences you may know nothing about. Kindness is wise because you never know what someone may be quietly facing.\n\n" +
+"Reflection:\nHow can I become more considerate toward people today?",
+
+"💭 Food for Thought\n\n" +
+"Success without character can become dangerous. The ability to achieve something is valuable, but the character to use that ability wisely matters just as much.\n\n" +
+"Reflection:\nWhat kind of person am I becoming while pursuing success?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes we need to stop asking what we can gain and start asking what we can contribute. A life focused only on receiving can miss the joy of serving.\n\n" +
+"Reflection:\nWhat can I contribute to someone else's life today?",
+
+"💭 Food for Thought\n\n" +
+"Your mistakes do not have to become your identity. A mistake can be acknowledged, corrected, learned from, and left behind as you continue growing.\n\n" +
+"Reflection:\nAm I allowing an old mistake to define me?",
+
+"💭 Food for Thought\n\n" +
+"Faithfulness is often demonstrated through ordinary things: keeping promises, completing responsibilities, speaking truth, and treating people well.\n\n" +
+"Reflection:\nWhich ordinary responsibility can I handle more faithfully?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes we want a dramatic answer when the next step is actually simple. Do the good that is already clear instead of waiting for a perfect sign.\n\n" +
+"Reflection:\nWhat right action is already clear to me?",
+
+"💭 Food for Thought\n\n" +
+"A wise person considers consequences before acting. Ask not only, 'Can I do this?' but also, 'Where could this choice lead?'\n\n" +
+"Reflection:\nWhat consequence should I consider before making my next decision?",
+
+"💭 Food for Thought\n\n" +
+"Your words can become either a bridge or a wall. Speaking with patience and respect can make difficult conversations more productive.\n\n" +
+"Reflection:\nAre my words helping people understand me or pushing them away?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes we need to celebrate progress instead of waiting until everything is perfect. Growth is still growth even when there is more work ahead.\n\n" +
+"Reflection:\nWhat positive progress can I thank God for today?",
+
+"💭 Food for Thought\n\n" +
+"A person's value is not determined by popularity. Being known by many people is not the same as living a meaningful life.\n\n" +
+"Reflection:\nAm I pursuing genuine purpose or simply seeking attention?",
+
+"💭 Food for Thought\n\n" +
+"Prayer can change the way we face a situation even when the situation itself does not immediately change. Bringing our concerns to God can help us respond with greater trust.\n\n" +
+"Reflection:\nWhat situation should I stop carrying alone and bring to God?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes the answer to discouragement is remembering how far you have already come. Previous victories can remind you that today's challenge is not the whole story.\n\n" +
+"Reflection:\nWhat past experience reminds me that I can keep going?",
+
+"💭 Food for Thought\n\n" +
+"Good leadership begins with responsibility, not just authority. A person who wants to influence others should first be willing to serve and take responsibility.\n\n" +
+"Reflection:\nAm I willing to serve before asking to lead?",
+
+"💭 Food for Thought\n\n" +
+"The way we treat people who cannot benefit us reveals something important about our character. Genuine kindness does not require a reward.\n\n" +
+"Reflection:\nHow do I treat people when I have nothing to gain from them?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes we need to protect our peace by refusing unnecessary arguments. Not every disagreement deserves our time and emotional energy.\n\n" +
+"Reflection:\nWhat argument do I need to stop giving unnecessary attention to?",
+
+"💭 Food for Thought\n\n" +
+"God's Word can give direction when many voices compete for our attention. Returning to Scripture can help us examine our choices through a deeper standard.\n\n" +
+"Reflection:\nWhat decision should I examine in light of God's Word?",
+
+"💭 Food for Thought\n\n" +
+"Gratitude and ambition can exist together. You can be thankful for where you are while still working faithfully toward greater growth and responsibility.\n\n" +
+"Reflection:\nCan I pursue growth without becoming ungrateful?",
+
+"💭 Food for Thought\n\n" +
+"Sometimes the greatest improvement begins with one honest conversation, one corrected habit, or one decision to begin again.\n\n" +
+"Reflection:\nWhat is one change I can begin today?",
+
+"💭 Food for Thought\n\n" +
+"Do not despise small beginnings. Many meaningful accomplishments begin with something simple that is repeated faithfully over time.\n\n" +
+"Reflection:\nWhat small beginning should I stop underestimating?",
+
+"💭 Food for Thought\n\n" +
+"Your life can become an answer to someone's prayer through a kind action, wise advice, practical help, or simple encouragement. Be available to do good when the opportunity comes.\n\n" +
+"Reflection:\nWho might God be giving me an opportunity to help?",
+
+"💭 Food for Thought\n\n" +
+"At the end of a busy day, it is worth asking not only what you accomplished but also who you encouraged, helped, respected, or loved.\n\n" +
+"Reflection:\nWhat good did my life produce today?"
         };
     }
 }
