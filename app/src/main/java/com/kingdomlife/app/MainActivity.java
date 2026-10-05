@@ -4551,6 +4551,17 @@ if (currentBibleDifficulty.equals("Easy")) {
             "Scholar"
     );
     } else if (currentBibleDifficulty.equals("Scholar")) {
+    int completedJourneyBooks =
+        prefs.getInt("bibleJourney_books_completed", 0);
+
+completedJourneyBooks++;
+
+prefs.edit()
+        .putInt(
+                "bibleJourney_books_completed",
+                completedJourneyBooks
+        )
+        .apply();
 
     String[] oldTestamentBooks = {
             "Genesis", "Exodus",
