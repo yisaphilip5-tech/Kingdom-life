@@ -162,6 +162,164 @@ public class FoodForThoughtData {
 "💭 Food for Thought\n\n" +
 "Love is central to the Christian life. Christlike love is more than words; it is shown through patience, kindness, forgiveness, truth, and practical care for others.\n\n" +
 "Reflection:\nHow can I express Christlike love through my actions today?",
+            "💭 Food for Thought\n\n" +
+"Jesus taught that loving our neighbour is closely connected to loving God. Love becomes meaningful when it moves beyond words and becomes visible in how we treat people.\n\n" +
+"Reflection:\nWho can I show genuine love to today?",
+
+"💭 Food for Thought\n\n" +
+"A joyful heart can change the way we face an ordinary day. Joy does not mean every situation is easy; it means we can still find reasons to rejoice in God.\n\n" +
+"Reflection:\nWhat can I thank God for today?",
+
+"💭 Food for Thought\n\n" +
+"Christ is called the Prince of Peace. His peace does not mean we will never face trouble, but it gives us somewhere to turn when trouble comes.\n\n" +
+"Reflection:\nAm I taking my worries to Christ or carrying them alone?",
+
+"💭 Food for Thought\n\n" +
+"Studying God's Word should lead beyond simply knowing information. Understanding becomes valuable when it changes the way we think, live, and treat others.\n\n" +
+"Reflection:\nWhat truth have I learned that I still need to apply?",
+
+"💭 Food for Thought\n\n" +
+"Study is not limited to the Bible. Learning about people, skills, history, science, and the world around us can help us become more capable of serving others.\n\n" +
+"Reflection:\nWhat useful subject or skill should I spend more time learning?",
+
+"💭 Food for Thought\n\n" +
+"Wisdom is more than knowing what is right. Wisdom includes recognizing the right time and the right way to act on what you know.\n\n" +
+"Reflection:\nWhere do I need to turn knowledge into wise action?",
+
+"💭 Food for Thought\n\n" +
+"Contentment does not mean refusing to grow. It means being thankful for what you have while working faithfully toward what God is calling you to become.\n\n" +
+"Reflection:\nAm I grateful for what I have, or am I always comparing myself with others?",
+
+"💭 Food for Thought\n\n" +
+"Your personality may influence your tendencies, but it does not remove your responsibility for your choices. Growth begins when we honestly take responsibility for our actions.\n\n" +
+"Reflection:\nIs there an unhealthy behaviour I need to stop making excuses for?",
+
+"💭 Food for Thought\n\n" +
+"Holiness should not be confused with poverty. A life devoted to God can be rich in purpose, wisdom, generosity, relationships, and spiritual fruit without making material wealth the measure of success.\n\n" +
+"Reflection:\nWhat kind of riches am I really pursuing?",
+
+"💭 Food for Thought\n\n" +
+"Faith is more than something we mention during difficult moments. It shapes how we think, choose, persevere, and trust God throughout everyday life.\n\n" +
+"Reflection:\nWhat does my daily life reveal about what I truly believe?",
+
+"💭 Food for Thought\n\n" +
+"Spiritual authority should never become an excuse for pride. God's Word calls us to obedience, humility, and faithful action rather than simply claiming power.\n\n" +
+"Reflection:\nHow am I putting God's Word into practice?",
+
+"💭 Food for Thought\n\n" +
+"Gratitude changes the way we see what we already have. A thankful heart notices blessings that a constantly dissatisfied heart may overlook.\n\n" +
+"Reflection:\nWho is one person I should sincerely thank today?",
+
+"💭 Food for Thought\n\n" +
+"God's guidance may require patience. Moving too quickly can cause us to overlook lessons, people, or opportunities that matter along the journey.\n\n" +
+"Reflection:\nWhere might I need to slow down and seek God's direction?",
+
+"💭 Food for Thought\n\n" +
+"Scripture repeatedly calls people to choose the path of life, obedience, and wisdom. Our choices today can influence the direction of tomorrow.\n\n" +
+"Reflection:\nWhich direction are my daily choices taking me?",
+
+"💭 Food for Thought\n\n" +
+"Jehoshaphat's story shows the power of turning attention toward God through praise during a frightening situation. Praise can help us remember who God is when circumstances feel overwhelming.\n\n" +
+"Reflection:\nCan I praise God even before I know how a difficult situation will turn out?",
+
+"💭 Food for Thought\n\n" +
+"Giving is one way to express love and generosity. It does not have to be large to be meaningful; sometimes a small gift, kind action, or helping hand can make a real difference.\n\n" +
+"Reflection:\nWhat can I give or do for someone who needs encouragement?",
+
+"💭 Food for Thought\n\n" +
+"Fasting is presented in Scripture as a way of seeking God with humility and devotion. It should never become a competition or a measure of spiritual superiority.\n\n" +
+"Reflection:\nHow can I make more room in my life for prayer, Scripture, and seeking God?",
+
+"💭 Food for Thought\n\n" +
+"Prayer is an invitation to bring our needs, questions, gratitude, and concerns before God. We can ask boldly while still trusting His wisdom and timing.\n\n" +
+"Reflection:\nWhat have I been carrying that I need to bring honestly to God in prayer?",
+
+"💭 Food for Thought\n\n" +
+"Some prayers are answered differently from what we expected. Trusting God includes believing that His wisdom is greater than our limited view of a situation.\n\n" +
+"Reflection:\nCan I trust God even when His answer is different from the one I expected?",
+
+"💭 Food for Thought\n\n" +
+"A life of purpose is built through many ordinary decisions. You do not need to change everything at once; faithful choices made consistently can gradually shape your character.\n\n" +
+"Reflection:\nWhat small faithful decision can I make today?",
+            "💭 Food for Thought\n\n" +
+"Sometimes the greatest battles are not against other people but against our own impatience, pride, anger, or distractions. Growth begins when we are willing to examine ourselves honestly.\n\n" +
+"Reflection:\nWhat attitude in me needs the most attention right now?",
+
+"💭 Food for Thought\n\n" +
+"Being busy does not automatically mean being productive. We can fill our schedules with many activities while neglecting the things that matter most.\n\n" +
+"Reflection:\nAm I busy with what matters, or simply busy?",
+
+"💭 Food for Thought\n\n" +
+"Your attention is valuable. What repeatedly captures your attention can eventually influence your thoughts, desires, and decisions.\n\n" +
+"Reflection:\nWhat has been taking too much of my attention lately?",
+
+"💭 Food for Thought\n\n" +
+"Comparison can make us overlook the unique work God is doing in our own lives. Someone else's journey does not have to become the measurement of yours.\n\n" +
+"Reflection:\nWhat would change if I stopped comparing my journey with someone else's?",
+
+"💭 Food for Thought\n\n" +
+"Humility is not thinking that you have no value. It is recognizing that you still have something to learn and that other people can teach you.\n\n" +
+"Reflection:\nAm I willing to learn from people around me?",
+
+"💭 Food for Thought\n\n" +
+"Correction can feel uncomfortable, but wise correction can protect us from repeating the same mistake. A teachable heart becomes stronger through instruction.\n\n" +
+"Reflection:\nHow do I respond when someone gives me useful correction?",
+
+"💭 Food for Thought\n\n" +
+"Character is built when nobody is applauding. The decisions we make when there is no audience can reveal what we truly value.\n\n" +
+"Reflection:\nWhat does my private life say about my character?",
+
+"💭 Food for Thought\n\n" +
+"Patience is not weakness. Sometimes patience is the strength to remain faithful while waiting for something that cannot be rushed.\n\n" +
+"Reflection:\nWhere do I need to replace impatience with patience?",
+
+"💭 Food for Thought\n\n" +
+"Envy focuses on what someone else has and can make us forget what God has already placed in our hands. Gratitude helps redirect our attention.\n\n" +
+"Reflection:\nWhat blessing in my own life have I been overlooking?",
+
+"💭 Food for Thought\n\n" +
+"A good reputation takes time to build but can be damaged quickly by careless choices. Let your actions consistently support the kind of person you want to become.\n\n" +
+"Reflection:\nWhat kind of reputation am I building through my choices?",
+
+"💭 Food for Thought\n\n" +
+"Listening is part of wisdom. Sometimes people do not need an immediate answer; they simply need someone willing to understand them.\n\n" +
+"Reflection:\nDo I listen to understand, or do I listen only to respond?",
+
+"💭 Food for Thought\n\n" +
+"Kindness is powerful because it can reach people who may never hear a sermon from you. The way you treat someone can become a picture of God's love.\n\n" +
+"Reflection:\nWho can experience kindness from me today?",
+
+"💭 Food for Thought\n\n" +
+"Forgiveness does not mean pretending that wrong actions were acceptable. It means refusing to let bitterness control the direction of your heart while seeking wisdom about what should happen next.\n\n" +
+"Reflection:\nIs bitterness taking up space in my heart that I should surrender to God?",
+
+"💭 Food for Thought\n\n" +
+"Being trusted with something small can prepare you for greater responsibility. Faithfulness in ordinary tasks matters because character grows through practice.\n\n" +
+"Reflection:\nAm I faithful with the responsibilities I already have?",
+
+"💭 Food for Thought\n\n" +
+"Not every opportunity is the right opportunity. Wisdom includes knowing when to say yes and when to say no so that your priorities remain clear.\n\n" +
+"Reflection:\nIs there something I need to say no to so I can focus on what matters?",
+
+"💭 Food for Thought\n\n" +
+"Knowledge can make you informed, but wisdom helps you use what you know properly. The goal is not simply to know more but to live wisely.\n\n" +
+"Reflection:\nHow can I use what I know to help someone else?",
+
+"💭 Food for Thought\n\n" +
+"A person's influence can spread farther than they realize. One decision can encourage someone else to make a good decision, just as one careless choice can influence others negatively.\n\n" +
+"Reflection:\nWhat kind of influence am I spreading?",
+
+"💭 Food for Thought\n\n" +
+"Peace is not always found by controlling every circumstance. Sometimes peace comes from accepting what you cannot control and trusting God with it.\n\n" +
+"Reflection:\nWhat situation am I trying to control that I need to place in God's hands?",
+
+"💭 Food for Thought\n\n" +
+"Preparation often looks ordinary before the opportunity arrives. Learning, practising, saving, planning, and developing character can prepare you for moments you cannot yet see.\n\n" +
+"Reflection:\nWhat should I be preparing for now?",
+
+"💭 Food for Thought\n\n" +
+"Your future is influenced by what you repeatedly do today. Small habits may seem insignificant, but repeated choices can become powerful patterns.\n\n" +
+"Reflection:\nWhat habit should I start building today?"
 
         };
     }
