@@ -3734,6 +3734,83 @@ addCard(
                 : "Complete Levels 1, 2 and 3.",
         v -> {}
 );
+        int journeyQuestions =
+        prefs.getInt("bibleJourney_questions_completed", 0);
+
+int journeyBooks =
+        prefs.getInt("bibleJourney_books_completed", 0);
+
+addCard(
+        journeyQuestions >= 100 ? "✅ 100 Questions" : "🔒 100 Questions",
+        journeyQuestions >= 100
+                ? "You completed 100 Bible Journey questions!"
+                : "Complete 100 Bible Journey questions.",
+        v -> {}
+);
+
+addCard(
+        journeyQuestions >= 250 ? "✅ 250 Questions" : "🔒 250 Questions",
+        journeyQuestions >= 250
+                ? "You completed 250 Bible Journey questions!"
+                : "Complete 250 Bible Journey questions.",
+        v -> {}
+);
+
+addCard(
+        journeyQuestions >= 500 ? "✅ 500 Questions" : "🔒 500 Questions",
+        journeyQuestions >= 500
+                ? "You completed 500 Bible Journey questions!"
+                : "Complete 500 Bible Journey questions.",
+        v -> {}
+);
+
+addCard(
+        journeyQuestions >= 1000 ? "🏆 1,000 Questions" : "🔒 1,000 Questions",
+        journeyQuestions >= 1000
+                ? "You completed 1,000 Bible Journey questions!"
+                : "Complete 1,000 Bible Journey questions.",
+        v -> {}
+);
+
+addCard(
+        journeyBooks >= 5 ? "✅ 5 Books" : "🔒 5 Books",
+        journeyBooks >= 5
+                ? "You completed 5 Bible Journey books!"
+                : "Complete 5 Bible Journey books.",
+        v -> {}
+);
+
+addCard(
+        journeyBooks >= 10 ? "✅ 10 Books" : "🔒 10 Books",
+        journeyBooks >= 10
+                ? "You completed 10 Bible Journey books!"
+                : "Complete 10 Bible Journey books.",
+        v -> {}
+);
+
+addCard(
+        journeyBooks >= 25 ? "🏆 25 Books" : "🔒 25 Books",
+        journeyBooks >= 25
+                ? "You completed 25 Bible Journey books!"
+                : "Complete 25 Bible Journey books.",
+        v -> {}
+);
+
+addCard(
+        journeyBooks >= 50 ? "🏆 50 Books" : "🔒 50 Books",
+        journeyBooks >= 50
+                ? "You completed 50 Bible Journey books!"
+                : "Complete 50 Bible Journey books.",
+        v -> {}
+);
+
+addCard(
+        journeyBooks >= 66 ? "👑 66 Books" : "🔒 66 Books",
+        journeyBooks >= 66
+                ? "You completed all 66 Bible Journey books!"
+                : "Complete all 66 Bible Journey books.",
+        v -> {}
+);
 
     addButton("⬅️ Back to Progress", v -> showProgress());
     }
