@@ -129,6 +129,124 @@ public class DailyPrayerData {
 "Lord, bless every nation represented in Your creation. Give the peoples of the world peace, wisdom, compassion, and a desire to live together in harmony.\n\nAmen.",
 
 "Lord, help me remember that my life can make a difference. Give me opportunities to encourage someone, help someone, or bring hope to someone today.\n\nAmen.",
+            "Lord, bless every mother with strength, wisdom, patience, and joy. Help mothers feel appreciated and give them grace for every responsibility they carry.\n\nAmen.",
+
+"Lord, bless every father with wisdom, strength, patience, and courage. Help fathers lead their families with love, integrity, and compassion.\n\nAmen.",
+
+"Lord, on Mother's Day, we thank You for mothers and mother figures. Bless them for their care, sacrifices, encouragement, and love, and give them renewed strength.\n\nAmen.",
+
+"Lord, on Father's Day, we thank You for fathers and father figures. Bless them with wisdom, strength, patience, and the ability to guide those entrusted to their care.\n\nAmen.",
+
+"Lord, as a new month begins, give me fresh strength, fresh wisdom, and fresh opportunities. Help me enter this month with faith and a heart ready to follow You.\n\nAmen.",
+
+"Lord, as this month begins, guide my plans and decisions. Help me use every day wisely and make choices that honour You.\n\nAmen.",
+
+"Lord, as the year comes to an end, help me reflect with gratitude. Thank You for carrying me through every challenge, lesson, opportunity, and blessing.\n\nAmen.",
+
+"Lord, as I approach a new year, help me leave behind what needs to be left behind and move forward with wisdom, hope, faith, and purpose.\n\nAmen.",
+
+"Lord, bless the coming year with opportunities to grow in wisdom and character. Help me remain faithful to You through every season that lies ahead.\n\nAmen.",
+
+"Lord, during this festive season, help me remember the love and hope represented by the birth of Jesus Christ. Fill my heart with gratitude, peace, and kindness.\n\nAmen.",
+
+"Lord, during Christmas, bless families and communities with peace and joy. Help us remember to share kindness and care with people who may feel alone.\n\nAmen.",
+
+"Lord, as we remember the resurrection of Jesus, let resurrection power bring renewed hope, strength, and spiritual life into every area of my life.\n\nAmen.",
+
+"Lord, help me understand the hope of the resurrection. Strengthen my faith and help me live each day with confidence in Your promises.\n\nAmen.",
+
+"Lord, help me keep my heart focused on You during busy seasons. Do not let celebrations, responsibilities, or distractions make me forget what truly matters.\n\nAmen.",
+
+"Lord, give me wisdom when choosing my friends. Help me value friendships that encourage good character, honesty, growth, and faithfulness.\n\nAmen.",
+
+"Lord, help me be a source of peace at home. Teach me to listen carefully, speak kindly, forgive quickly, and show patience to my family.\n\nAmen.",
+
+"Lord, strengthen every family facing difficulties. Give them wisdom to solve problems, courage to keep going, and love that brings them closer together.\n\nAmen.",
+
+"Lord, help students everywhere succeed in their learning. Give them understanding, concentration, discipline, and the confidence to keep learning when subjects are difficult.\n\nAmen.",
+
+"Lord, help me remember what I learn. Give me understanding rather than simply knowledge, and teach me to use what I learn wisely.\n\nAmen.",
+
+"Lord, give teachers wisdom and patience as they educate others. Help them recognize the potential in every student and encourage them with kindness.\n\nAmen.",
+
+"Lord, give me wisdom when opportunities come. Help me recognize the doors that align with Your purpose and have patience when a door needs to remain closed.\n\nAmen.",
+
+"Lord, help me not compare my journey with someone else's. Teach me to appreciate the path You have given me and remain faithful to my own responsibilities.\n\nAmen.",
+
+"Lord, remove fear that keeps me from doing what is right. Give me courage to take good opportunities and wisdom to act responsibly.\n\nAmen.",
+
+"Lord, help me remain humble when I succeed. Let every achievement remind me to be grateful rather than proud, and help me use success to bless others.\n\nAmen.",
+
+"Lord, help me remain hopeful when things do not happen as quickly as I expect. Teach me to trust Your timing and continue doing what is right.\n\nAmen.",
+
+"Lord, give comfort to anyone who feels lonely today. Remind them that they are valuable and help them find caring people who will encourage and support them.\n\nAmen.",
+
+"Lord, strengthen people who are facing financial difficulties. Provide wisdom, opportunities, support, and the strength to make responsible decisions.\n\nAmen.",
+
+"Lord, give wisdom to those caring for elderly people. Help them show patience, honour, compassion, and love to those who have cared for others throughout their lives.\n\nAmen.",
+
+"Lord, help me use my gifts wisely. Teach me not to hide my abilities through fear, but to develop them patiently and use them for good.\n\nAmen.",
+
+"Lord, give me a heart that is willing to serve. Help me notice opportunities to help others without always expecting recognition in return.\n\nAmen.",
+            "Lord, help me guard my heart and thoughts. Fill my mind with things that are true, good, peaceful, and worthy of Your attention.\n\nAmen.",
+
+"Lord, give me wisdom to use social media and technology responsibly. Help me avoid harmful distractions and use technology in ways that benefit myself and others.\n\nAmen.",
+
+"Lord, help me remain honest even when telling the truth is difficult. Give me courage to choose integrity over convenience.\n\nAmen.",
+
+"Lord, teach me humility. Help me accept correction, learn from my mistakes, and recognize that I still have much to learn.\n\nAmen.",
+
+"Lord, help me overcome jealousy and comparison. Teach me to celebrate the good in others while being grateful for what You are doing in my own life.\n\nAmen.",
+
+"Lord, give me patience with people who think differently from me. Help me listen carefully, speak respectfully, and respond with wisdom.\n\nAmen.",
+
+"Lord, help me become dependable. Give me the discipline to keep my promises, complete my responsibilities, and treat other people's trust with respect.\n\nAmen.",
+
+"Lord, give me wisdom when I face conflict. Help me seek peace without compromising what is right, and teach me when to speak and when to remain quiet.\n\nAmen.",
+
+"Lord, help me overcome discouragement. Remind me of the progress I have made and give me strength to continue moving forward.\n\nAmen.",
+
+"Lord, help me learn from my mistakes instead of being controlled by them. Give me wisdom to make better choices and courage to begin again.\n\nAmen.",
+
+"Lord, help me forgive myself for past mistakes while still learning from them. Lead me toward growth, wisdom, and better choices.\n\nAmen.",
+
+"Lord, give me discernment when I hear advice from others. Help me recognize wise counsel and avoid advice that could lead me away from what is right.\n\nAmen.",
+
+"Lord, help me keep good priorities. Teach me to give proper attention to You, my responsibilities, my family, and the people who need my care.\n\nAmen.",
+
+"Lord, give me strength when I feel tired. Help me rest wisely, recover my strength, and continue my responsibilities with renewed energy.\n\nAmen.",
+
+"Lord, help me appreciate the people who encourage me. Give me opportunities to thank them and to become an encouragement to someone else.\n\nAmen.",
+
+"Lord, bless those who are grieving. Comfort their hearts, surround them with caring people, and give them strength for each day.\n\nAmen.",
+
+"Lord, protect people who are travelling today. Give them safe journeys, wise decisions, and safe arrival at their destinations.\n\nAmen.",
+
+"Lord, help communities affected by conflict and hardship. Bring peace where there is unrest, wisdom where there is confusion, and compassion where people are suffering.\n\nAmen.",
+
+"Lord, bless those who work to help others. Give doctors, nurses, teachers, caregivers, volunteers, and other helpers strength and wisdom in their work.\n\nAmen.",
+
+"Lord, help leaders serve with wisdom, honesty, humility, and concern for the people entrusted to their care. Give them courage to make responsible decisions.\n\nAmen.",
+
+"Lord, bless the nation of Canada and its people. Give families peace, communities unity, and the nation wisdom as it faces its responsibilities.\n\nAmen.",
+
+"Lord, bless Australia and its people. Protect families, strengthen communities, and give wisdom and compassion to those who serve the nation.\n\nAmen.",
+
+"Lord, bless Japan and its people. Give families peace, protect children, and strengthen communities with wisdom, kindness, and hope.\n\nAmen.",
+
+"Lord, bless Germany and its people. Give the nation wisdom, protect families, and help communities live with peace and mutual respect.\n\nAmen.",
+
+"Lord, bless France and its people. Give families peace, communities compassion, and leaders wisdom in their responsibilities.\n\nAmen.",
+
+"Lord, bless Egypt and its people. Protect families, strengthen communities, and give the nation wisdom and peace.\n\nAmen.",
+
+"Lord, bless Ethiopia and its people. Give families hope, communities peace, and the nation strength to overcome difficulties.\n\nAmen.",
+
+"Lord, bless South Korea and its people. Protect families, guide young people, and give communities wisdom, peace, and hope.\n\nAmen.",
+
+"Lord, bless every child who is facing hardship. Provide caring adults, safe places, good opportunities, and hope for their future.\n\nAmen.",
+
+"Lord, bless children who are preparing for examinations. Give them calm hearts, clear understanding, good memory, and confidence to do their best.\n\nAmen.",
         };
     }
 }
