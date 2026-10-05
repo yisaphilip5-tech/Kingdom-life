@@ -3692,6 +3692,48 @@ addButton("⬅️ Back to Home", v -> showHome());
                     : "Complete today's challenge to unlock this achievement.",
             v -> {}
     );
+        boolean level1Completed =
+        prefs.getBoolean("challenge_level_1_completed", false);
+
+boolean level2Completed =
+        prefs.getBoolean("challenge_level_2_completed", false);
+
+boolean level3Completed =
+        prefs.getBoolean("challenge_level_3_completed", false);
+
+addCard(
+        level1Completed ? "✅ Easy Challenger" : "🔒 Easy Challenger",
+        level1Completed
+                ? "You completed Level 1!"
+                : "Complete Bible Challenge Level 1.",
+        v -> {}
+);
+
+addCard(
+        level2Completed ? "✅ Medium Challenger" : "🔒 Medium Challenger",
+        level2Completed
+                ? "You completed Level 2!"
+                : "Complete Bible Challenge Level 2.",
+        v -> {}
+);
+
+addCard(
+        level3Completed ? "✅ Hard Challenger" : "🔒 Hard Challenger",
+        level3Completed
+                ? "You completed Level 3!"
+                : "Complete Bible Challenge Level 3.",
+        v -> {}
+);
+
+addCard(
+        level1Completed && level2Completed && level3Completed
+                ? "🏆 Challenge Master"
+                : "🔒 Challenge Master",
+        level1Completed && level2Completed && level3Completed
+                ? "You completed all three Challenge levels!"
+                : "Complete Levels 1, 2 and 3.",
+        v -> {}
+);
 
     addButton("⬅️ Back to Progress", v -> showProgress());
     }
