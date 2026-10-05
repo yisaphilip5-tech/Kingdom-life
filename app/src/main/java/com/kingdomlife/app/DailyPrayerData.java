@@ -247,6 +247,130 @@ public class DailyPrayerData {
 "Lord, bless every child who is facing hardship. Provide caring adults, safe places, good opportunities, and hope for their future.\n\nAmen.",
 
 "Lord, bless children who are preparing for examinations. Give them calm hearts, clear understanding, good memory, and confidence to do their best.\n\nAmen.",
+            "Lord, help me begin each morning with gratitude. Remind me that every new day is an opportunity to grow, learn, serve, and walk closer with You.\n\nAmen.",
+
+"Lord, help me end each day with a thankful heart. Show me what I can learn from today and give me peaceful rest for tomorrow.\n\nAmen.",
+
+"Lord, help me keep my promises and commitments. Give me discipline to finish what I begin and wisdom to know what responsibilities deserve my attention.\n\nAmen.",
+
+"Lord, help me resist giving up when something is difficult. Give me patience to learn, courage to try again, and wisdom to seek help when I need it.\n\nAmen.",
+
+"Lord, give me a heart that is quick to encourage others. Help me notice someone's effort, speak words of hope, and make someone's day better.\n\nAmen.",
+
+"Lord, help me show kindness to people who may be different from me. Teach me to respect others and treat every person with dignity.\n\nAmen.",
+
+"Lord, give me wisdom when making plans for my future. Help me prepare diligently while trusting You with things that are beyond my control.\n\nAmen.",
+
+"Lord, help me recognize opportunities to learn from people around me. Give me humility to listen and wisdom to apply good advice.\n\nAmen.",
+
+"Lord, give me a heart that seeks truth. Help me avoid being easily deceived and teach me to examine what I hear with wisdom and understanding.\n\nAmen.",
+
+"Lord, help me choose courage over fear when I need to do what is right. Remind me that difficult decisions can still be good decisions.\n\nAmen.",
+
+"Lord, help me remain peaceful when plans change unexpectedly. Give me flexibility, wisdom, and trust in You when things do not go as I expected.\n\nAmen.",
+
+"Lord, bless the work of my hands. Help me work diligently, honestly, and responsibly, and let my efforts produce results that can benefit others.\n\nAmen.",
+
+"Lord, give me wisdom in handling money and possessions. Teach me contentment, responsibility, generosity, and good judgment.\n\nAmen.",
+
+"Lord, help me avoid wasting the opportunities You give me. Teach me to use my time, abilities, and resources wisely.\n\nAmen.",
+
+"Lord, help me become more responsible each day. Give me the discipline to take care of my duties without always needing someone to remind me.\n\nAmen.",
+
+"Lord, give me peace when I have to wait for an answer. Help me remain patient and avoid making rushed decisions because I am anxious.\n\nAmen.",
+
+"Lord, help me trust You when I do not understand what is happening. Give me enough faith to take the next right step even when I cannot see the whole journey.\n\nAmen.",
+
+"Lord, help me recognize the good things You have already placed in my life. Keep me from overlooking today's blessings while waiting for tomorrow's.\n\nAmen.",
+
+"Lord, give me a generous heart. Help me share what I can, encourage people who are struggling, and remember that small acts of kindness can matter greatly.\n\nAmen.",
+
+"Lord, help me become a person of integrity. May my private choices agree with the values I show publicly, and help me remain honest when nobody is watching.\n\nAmen.",
+
+"Lord, give me wisdom to know when to speak and when to listen. Help me understand others before rushing to give my own opinion.\n\nAmen.",
+
+"Lord, help me handle criticism with maturity. Show me what I can learn from correction and give me humility without allowing discouragement to control me.\n\nAmen.",
+
+"Lord, help me celebrate the success of others without comparing myself to them. Teach me to be grateful for their achievements and faithful with my own journey.\n\nAmen.",
+
+"Lord, give me strength when I feel overwhelmed by responsibilities. Help me organize my priorities, take one step at a time, and trust You throughout the process.\n\nAmen.",
+
+"Lord, help me develop healthy habits that strengthen my mind, character, and spiritual life. Give me discipline to choose what is beneficial rather than what is merely easy.\n\nAmen.",
+
+"Lord, help me be a good example to younger people. Let my words, choices, and actions encourage them toward wisdom, kindness, courage, and faith.\n\nAmen.",
+
+"Lord, help me honour those who have invested time and effort into my life. Give me opportunities to show appreciation through my words and actions.\n\nAmen.",
+
+"Lord, bless those who feel forgotten today. Bring caring people into their lives and remind them that their presence and story have value.\n\nAmen.",
+
+"Lord, help me carry hope into places where people feel discouraged. Give me the right words, the right attitude, and opportunities to bring encouragement.\n\nAmen.",
+
+"Lord, let my life reflect Your goodness. Help me grow in character so that the way I live becomes a positive example to the people around me.\n\nAmen.",
+            "Lord, help me keep my heart close to You when life becomes busy. Teach me to make time for prayer, Your Word, and quiet moments with You.\n\nAmen.",
+
+"Lord, give me a deeper hunger for Your Word. Help me read it with understanding, remember what I learn, and allow it to shape the way I live.\n\nAmen.",
+
+"Lord, strengthen my prayer life. Help me pray with faith, patience, honesty, and persistence, trusting You even when answers do not come immediately.\n\nAmen.",
+
+"Lord, help me recognize Your goodness even during difficult seasons. Give me the faith to believe that hardship does not mean You have abandoned me.\n\nAmen.",
+
+"Lord, give me wisdom to handle success well. Keep me humble when things go well and remind me to use every opportunity to encourage and help others.\n\nAmen.",
+
+"Lord, help me remain faithful when nobody notices my efforts. Teach me to do what is right because it is right, not simply because I will receive recognition.\n\nAmen.",
+
+"Lord, help me overcome habits that are holding me back. Give me discipline, wisdom, and perseverance to replace them with choices that lead to growth.\n\nAmen.",
+
+"Lord, give me grace to apologize when I am wrong. Help me take responsibility for my actions and have the courage to make things right.\n\nAmen.",
+
+"Lord, help me receive forgiveness with humility and extend forgiveness to others. Teach me not to hold onto resentment and bitterness.\n\nAmen.",
+
+"Lord, bless everyone preparing for an important examination or opportunity. Give them peace, understanding, good preparation, and confidence to do their best.\n\nAmen.",
+
+"Lord, guide young people as they make decisions about their future. Give them wisdom to choose good paths and people who will encourage them toward positive goals.\n\nAmen.",
+
+"Lord, protect young people from influences that could harm their character or future. Give them wisdom to recognize unhealthy choices and courage to walk away from them.\n\nAmen.",
+
+"Lord, help parents know how to guide their children with patience and wisdom. Give families understanding and strengthen the bonds between parents and children.\n\nAmen.",
+
+"Lord, bless children who do not have the support they need. Provide caring people, safe environments, education, and opportunities that help them grow and flourish.\n\nAmen.",
+
+"Lord, bring healing and comfort to people living with illness. Give them strength for each day and surround them with people who will care for and encourage them.\n\nAmen.",
+
+"Lord, give wisdom and compassion to healthcare workers. Strengthen them as they care for others and help them make thoughtful decisions.\n\nAmen.",
+
+"Lord, have mercy on those facing difficult circumstances. Provide help where it is needed, open good opportunities, and give them strength to keep going.\n\nAmen.",
+
+"Lord, order my steps when I face important choices. Help me seek wisdom before acting and give me peace when I know I am following the right path.\n\nAmen.",
+
+"Lord, let Your favour accompany me in the responsibilities You have given me. Help me work diligently and treat every opportunity as something to steward wisely.\n\nAmen.",
+
+"Lord, help me fulfill my destiny according to Your purpose. Develop my character, guide my choices, and lead me into the good works You have prepared for me.\n\nAmen.",
+
+"Lord, let Your light shine through my life. May my words and actions point people toward goodness, hope, truth, and love.\n\nAmen.",
+
+"Lord, give me victory over discouragement, fear, and doubt. Help me face each challenge with courage and continue moving forward in faith.\n\nAmen.",
+
+"Lord, set my heart on fire for You. Renew my passion for prayer, worship, Scripture, service, and a life that honours You.\n\nAmen.",
+
+"Lord, order my steps in Your Word. When my feelings and Your instruction seem to conflict, give me wisdom and courage to follow what is right.\n\nAmen.",
+
+"Lord, let Your loving-kindness be evident in my life. Make me more patient, compassionate, generous, and willing to forgive others.\n\nAmen.",
+
+"Lord, show me mercy in my weaknesses and help me learn from my failures. Give me grace to rise again and continue growing.\n\nAmen.",
+
+"Lord, guide me into the new opportunities You have prepared for me. Give me discernment so that I recognize what is good and wisdom to avoid what is harmful.\n\nAmen.",
+
+"Lord, help me finish this season well. Give me strength to complete my responsibilities, wisdom to learn from my experiences, and gratitude for everything You have taught me.\n\nAmen.",
+
+"Lord, prepare my heart for a new beginning. Help me release unnecessary fear, learn from the past, and step into the future with faith and wisdom.\n\nAmen.",
+
+"Lord, help me remember the meaning of Easter and the hope found in the resurrection of Jesus Christ. Renew my faith and help me live with that hope every day.\n\nAmen.",
+
+"Lord, help me remember the joy of Christmas and the message of hope and love surrounding the birth of Jesus. Teach me to share that joy with others.\n\nAmen.",
+
+"Lord, as another year comes to an end, help me thank You for carrying me through it. Give me wisdom to learn from the past and faith for what lies ahead.\n\nAmen.",
+
+"Lord, as a new year begins, guide my steps and help me place my plans in Your hands. May this year bring growth in wisdom, character, faith, and purpose.\n\nAmen."
         };
     }
 }
