@@ -4519,6 +4519,17 @@ if (isBibleJourneyDifficultyUnlocked(book, "Scholar")) {
     book.setPadding(0, 0, 0, 20);
     content.addView(book);
         
+        int completedJourneyQuestions =
+        prefs.getInt("bibleJourney_questions_completed", 0);
+
+completedJourneyQuestions += 25;
+
+prefs.edit()
+        .putInt(
+                "bibleJourney_questions_completed",
+                completedJourneyQuestions
+        )
+        .apply();
 if (currentBibleDifficulty.equals("Easy")) {
 
     unlockBibleJourneyDifficulty(
