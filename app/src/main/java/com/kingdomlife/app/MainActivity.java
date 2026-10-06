@@ -27,6 +27,8 @@ import org.json.JSONObject;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.view.Gravity;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -1830,7 +1832,20 @@ backButton.setContentDescription("Back to Bible");
 
 backButton.setOnClickListener(v -> showBible());
 
-content.addView(backButton);
+FrameLayout.LayoutParams backParams =
+        new FrameLayout.LayoutParams(
+                70,
+                70
+        );
+
+backParams.gravity = Gravity.TOP | Gravity.LEFT;
+backParams.leftMargin = 5;
+backParams.topMargin = 5;
+
+addContentView(
+        backButton,
+        backParams
+);
     }
         void showNewTestament() {
     stopTimer();
