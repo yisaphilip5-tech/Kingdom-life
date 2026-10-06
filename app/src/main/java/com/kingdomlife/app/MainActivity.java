@@ -1446,43 +1446,166 @@ prefs.edit()
     stopTimer();
     content.removeAllViews();
 
+    SharedPreferences biblePrefs =
+            getSharedPreferences(
+                    "KingdomLifePrefs",
+                    MODE_PRIVATE
+            );
+
+    String translation =
+            biblePrefs.getString(
+                    "bible_translation",
+                    "KJV"
+            );
+
     TextView title = new TextView(this);
-    title.setText("📖 Holy Bible — KJV");
+
+    title.setText(
+            "📖 Holy Bible — " + translation
+    );
+
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
+
     content.addView(title);
 
     TextView message = new TextView(this);
+
     message.setText(
-            "King James Version\n\n" +
-            "The complete Bible will be organized here by:\n\n" +
+            "Choose where you want to read:\n\n" +
             "📚 Old Testament\n" +
-            "📚 New Testament\n\n" +
-            "Choose a book and chapter to begin reading."
+            "📚 New Testament"
     );
+
     message.setTextSize(18);
     message.setTextColor(darkText);
-    message.setPadding(0, 10, 0, 20);
+    message.setPadding(
+            0,
+            10,
+            0,
+            20
+    );
+
     content.addView(message);
 
     addButton(
-        "📚 Old Testament",
-        v -> showOldTestament()
-);
-        addButton(
-        "🔎 Search Bible",
-        v -> showBibleSearch()
-);
+            "🌍 View Translations",
+            v -> showBibleTranslations()
+    );
 
     addButton(
-        "📚 New Testament",
-        v -> showNewTestament()
-);
+            "📚 Old Testament",
+            v -> showOldTestament()
+    );
 
-    addButton("⬅️ Back to Home", v -> showHome());
+    addButton(
+            "🔎 Search Bible",
+            v -> showBibleSearch()
+    );
+
+    addButton(
+            "📚 New Testament",
+            v -> showNewTestament()
+    );
+
+    addButton(
+            "⬅️ Back to Home",
+            v -> showHome()
+    );
     }
+    void showBibleTranslations() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+
+    title.setText(
+            "🌍 Bible Translations"
+    );
+
+    title.setTextSize(24);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    title.setTextColor(darkText);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
+
+    content.addView(title);
+
+    TextView message = new TextView(this);
+
+    message.setText(
+            "Choose a Bible translation:"
+    );
+
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(
+            0,
+            10,
+            0,
+            20
+    );
+
+    content.addView(message);
+
+    addButton(
+            "📖 King James Version (KJV)",
+            v -> {
+
+                getSharedPreferences(
+                        "KingdomLifePrefs",
+                        MODE_PRIVATE
+                ).edit()
+                        .putString(
+                                "bible_translation",
+                                "KJV"
+                        )
+                        .apply();
+
+                showBible();
+            }
+    );
+
+    addButton(
+            "🌍 World English Bible (WEB)",
+            v -> {
+
+                getSharedPreferences(
+                        "KingdomLifePrefs",
+                        MODE_PRIVATE
+                ).edit()
+                        .putString(
+                                "bible_translation",
+                                "WEB"
+                        )
+                        .apply();
+
+                showBible();
+            }
+    );
+
+    addButton(
+            "⬅️ Back to Bible",
+            v -> showBible()
+    );
+                    }
     void showOldTestament() {
     stopTimer();
     content.removeAllViews();
