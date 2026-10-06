@@ -23,9 +23,13 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Prepare WEB Bible
+        run: |
+          mkdir -p app/src/main/assets/web
+          unzip -o web_json.zip -d app/src/main/assets/web
       - name: Build APK
         run: gradle :app:assembleDebug --no-daemon
-
+        
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
