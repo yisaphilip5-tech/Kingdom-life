@@ -452,7 +452,60 @@ ArrayList<Integer> bibleJourneyAnswers = new ArrayList<>();
             "Rachel", "Leah", "Zilpah", "Dinah"
     });
     bibleJourneyAnswers.add(0);
-   
+        
+       bibleJourneyQuestions.add("What was the sign of God's covenant with Abraham?");
+    bibleJourneyOptions.add(new String[]{
+            "The rainbow", "The Sabbath", "Circumcision", "The Passover"
+    });
+    bibleJourneyAnswers.add(2);
+
+    bibleJourneyQuestions.add("Who was the king of Salem who blessed Abram?");
+    bibleJourneyOptions.add(new String[]{
+            "Abimelech", "Melchizedek", "Pharaoh", "Bera"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("How many trained servants did Abram take to rescue Lot?");
+    bibleJourneyOptions.add(new String[]{
+            "120", "300", "318", "400"
+    });
+    bibleJourneyAnswers.add(2);
+
+    bibleJourneyQuestions.add("What did God promise Abraham would be as numerous as the stars?");
+    bibleJourneyOptions.add(new String[]{
+            "His descendants", "His servants", "His possessions", "His cattle"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("What was the name of Isaac's mother?");
+    bibleJourneyOptions.add(new String[]{
+            "Rebekah", "Hagar", "Sarah", "Keturah"
+    });
+    bibleJourneyAnswers.add(2);
+
+    bibleJourneyQuestions.add("Where did Abraham send his servant to find a wife for Isaac?");
+    bibleJourneyOptions.add(new String[]{
+            "Egypt", "The land of his kindred", "Sodom", "Canaan"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What did Jacob see in his dream at Bethel?");
+    bibleJourneyOptions.add(new String[]{
+            "A burning bush", "A ladder reaching to heaven", "A great river", "A heavenly army"
+    });
+    bibleJourneyAnswers.add(1);
+
+    bibleJourneyQuestions.add("What new name did God give Jacob?");
+    bibleJourneyOptions.add(new String[]{
+            "Israel", "Ephraim", "Judah", "Benjamin"
+    });
+    bibleJourneyAnswers.add(0);
+
+    bibleJourneyQuestions.add("What did Joseph's brothers dip his coat in?");
+    bibleJourneyOptions.add(new String[]{
+            "Oil", "Water", "Blood", "Wine"
+    });
+    bibleJourneyAnswers.add(2);
 
     } else if (difficulty.equals("Hard")) {
 
