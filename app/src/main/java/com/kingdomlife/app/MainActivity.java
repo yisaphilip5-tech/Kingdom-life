@@ -186,6 +186,7 @@ int timeLimit = 30000;
 // Bible Journey
 String currentBibleBook = "";
 String currentBibleDifficulty = "";
+    float bibleJourneyTouchX;
 
 int bibleJourneyQuestion = 0;
 int bibleJourneyScore = 0;
@@ -4312,26 +4313,120 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     TextView title = new TextView(this);
     title.setText("📖 Bible Journey");
     title.setTextSize(26);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
     title.setGravity(Gravity.CENTER);
     title.setPadding(0, 20, 0, 10);
     content.addView(title);
 
     TextView instruction = new TextView(this);
-    instruction.setText("Swipe between the Old Testament and New Testament");
+    instruction.setText(
+            "Swipe left or right to switch between\n" +
+            "the Old Testament and New Testament"
+    );
     instruction.setTextSize(17);
     instruction.setTextColor(darkText);
     instruction.setGravity(Gravity.CENTER);
     instruction.setPadding(0, 0, 0, 20);
     content.addView(instruction);
 
-    addButton("📜 Old Testament", v -> showBibleJourneyOldTestament());
+    LinearLayout swipeArea =
+            new LinearLayout(this);
 
-    addButton("✝️ New Testament", v -> showBibleJourneyNewTestament());
+    swipeArea.setOrientation(
+            LinearLayout.VERTICAL
+    );
 
-    addButton("⬅️ Back to Games", v -> showGameMenu());
-    }
+    swipeArea.setGravity(
+            Gravity.CENTER
+    );
+
+    TextView currentSection =
+            new TextView(this);
+
+    currentSection.setText(
+            "📜 Old Testament"
+    );
+    currentSection.setTextSize(22);
+    currentSection.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    currentSection.setTextColor(darkText);
+    currentSection.setGravity(Gravity.CENTER);
+    currentSection.setPadding(
+            0,
+            20,
+            0,
+            20
+    );
+
+    swipeArea.addView(currentSection);
+
+    swipeArea.setOnTouchListener(
+            (v, event) -> {
+
+                switch (event.getAction()) {
+
+                    case MotionEvent.ACTION_DOWN:
+
+                        bibleJourneyTouchX =
+                                event.getX();
+
+                        return true;
+
+                    case MotionEvent.ACTION_UP:
+
+                        float difference =
+                                event.getX()
+                                - bibleJourneyTouchX;
+
+                        if (Math.abs(difference) > 100) {
+
+                            if (difference < 0) {
+
+                                showBibleJourneyNewTestament();
+
+                            } else {
+
+                                showBibleJourneyOldTestament();
+                            }
+
+                        }
+
+                        return true;
+                }
+
+                return true;
+            }
+    );
+
+    content.addView(
+            swipeArea,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    250
+            )
+    );
+
+    addButton(
+            "📜 Open Old Testament",
+            v -> showBibleJourneyOldTestament()
+    );
+
+    addButton(
+            "✝️ Open New Testament",
+            v -> showBibleJourneyNewTestament()
+    );
+
+    addButton(
+            "⬅️ Back to Games",
+            v -> showGameMenu()
+    );
+                            }
     void showBibleJourneyOldTestament() {
     stopTimer();
     content.removeAllViews();
