@@ -3027,7 +3027,8 @@ if (savedHighlight != null) {
 
             verseLayout.addView(verse);
 
-            LinearLayout actionRow = new LinearLayout(this);
+            LinearLayout actionRow =
+        new LinearLayout(this);
 
 actionRow.setOrientation(
         LinearLayout.HORIZONTAL
@@ -3037,17 +3038,30 @@ actionRow.setGravity(
         Gravity.LEFT | Gravity.CENTER_VERTICAL
 );
 
-actionRow.setPadding(0, 0, 0, 5);
+actionRow.setPadding(
+        0,
+        0,
+        0,
+        5
+);
 
 // ⭐ Save Verse
-Button saveButton = new Button(this);
+Button saveButton =
+        new Button(this);
 
 saveButton.setText("⭐");
-saveButton.setTextSize(18);
+saveButton.setTextSize(15);
 saveButton.setAllCaps(false);
 saveButton.setTextColor(darkText);
-saveButton.setBackgroundColor(Color.TRANSPARENT);
-saveButton.setPadding(5, 0, 5, 0);
+saveButton.setBackgroundColor(
+        Color.TRANSPARENT
+);
+saveButton.setPadding(
+        0,
+        0,
+        0,
+        0
+);
 
 saveButton.setOnClickListener(
         v -> saveVerse(
@@ -3056,17 +3070,31 @@ saveButton.setOnClickListener(
         )
 );
 
-actionRow.addView(saveButton);
+actionRow.addView(
+        saveButton,
+        new LinearLayout.LayoutParams(
+                45,
+                45
+        )
+);
 
 // 🔖 Bookmark
-Button bookmarkButton = new Button(this);
+Button bookmarkButton =
+        new Button(this);
 
 bookmarkButton.setText("🔖");
-bookmarkButton.setTextSize(18);
+bookmarkButton.setTextSize(15);
 bookmarkButton.setAllCaps(false);
 bookmarkButton.setTextColor(darkText);
-bookmarkButton.setBackgroundColor(Color.TRANSPARENT);
-bookmarkButton.setPadding(5, 0, 5, 0);
+bookmarkButton.setBackgroundColor(
+        Color.TRANSPARENT
+);
+bookmarkButton.setPadding(
+        0,
+        0,
+        0,
+        0
+);
 
 bookmarkButton.setOnClickListener(v -> {
 
@@ -3078,7 +3106,8 @@ bookmarkButton.setOnClickListener(v -> {
 
         showMessage(
                 "🔖 Bookmark Removed",
-                reference + " was removed from bookmarks."
+                reference +
+                " was removed from bookmarks."
         );
 
     } else {
@@ -3087,17 +3116,31 @@ bookmarkButton.setOnClickListener(v -> {
     }
 });
 
-actionRow.addView(bookmarkButton);
+actionRow.addView(
+        bookmarkButton,
+        new LinearLayout.LayoutParams(
+                45,
+                45
+        )
+);
 
 // 🖍️ Highlight
-Button highlightButton = new Button(this);
+Button highlightButton =
+        new Button(this);
 
 highlightButton.setText("🖍️");
-highlightButton.setTextSize(18);
+highlightButton.setTextSize(15);
 highlightButton.setAllCaps(false);
 highlightButton.setTextColor(darkText);
-highlightButton.setBackgroundColor(Color.TRANSPARENT);
-highlightButton.setPadding(5, 0, 5, 0);
+highlightButton.setBackgroundColor(
+        Color.TRANSPARENT
+);
+highlightButton.setPadding(
+        0,
+        0,
+        0,
+        0
+);
 
 highlightButton.setOnClickListener(
         v -> showHighlightColors(
@@ -3106,9 +3149,17 @@ highlightButton.setOnClickListener(
         )
 );
 
-actionRow.addView(highlightButton);
+actionRow.addView(
+        highlightButton,
+        new LinearLayout.LayoutParams(
+                45,
+                45
+        )
+);
 
 verseLayout.addView(actionRow);
+
+
 
             content.addView(verseLayout);
         }
