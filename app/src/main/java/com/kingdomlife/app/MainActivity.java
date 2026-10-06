@@ -4366,8 +4366,15 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     );
 
     swipeArea.addView(currentSection);
+            content.addView(
+            swipeArea,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    250
+            )
+    );
 
-    swipeArea.setOnTouchListener(
+    content.setOnTouchListener(
             (v, event) -> {
 
                 switch (event.getAction()) {
@@ -4396,21 +4403,14 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
                                 showBibleJourneyOldTestament();
                             }
 
+                            return true;
                         }
 
-                        return true;
+                        return false;
                 }
 
                 return true;
             }
-    );
-
-    content.addView(
-            swipeArea,
-            new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    250
-            )
     );
 
     addButton(
@@ -4427,7 +4427,9 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             "⬅️ Back to Games",
             v -> showGameMenu()
     );
-                            }
+    }
+
+    
     void showBibleJourneyOldTestament() {
     stopTimer();
     content.removeAllViews();
