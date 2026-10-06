@@ -2776,19 +2776,83 @@ String meaning =
     stopTimer();
     content.removeAllViews();
 
+    SharedPreferences biblePrefs =
+            getSharedPreferences(
+                    "KingdomLifePrefs",
+                    MODE_PRIVATE
+            );
+
+    String translation =
+            biblePrefs.getString(
+                    "bible_translation",
+                    "KJV"
+            );
+
     TextView title = new TextView(this);
-    title.setText("📖 " + book + " " + chapter + " — KJV");
+
+    title.setText(
+            "📖 " + book + " " + chapter +
+            " — " + translation
+    );
+
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
+    Button translationButton =
+            new Button(this);
+
+    if (translation.equals("KJV")) {
+        translationButton.setText(
+                "🌍 Switch to WEB"
+        );
+    } else {
+        translationButton.setText(
+                "📖 Switch to KJV"
+        );
+    }
+
+    translationButton.setOnClickListener(v -> {
+
+        String newTranslation;
+
+        if (translation.equals("KJV")) {
+            newTranslation = "WEB";
+        } else {
+            newTranslation = "KJV";
+        }
+
+        biblePrefs.edit()
+                .putString(
+                        "bible_translation",
+                        newTranslation
+                )
+                .apply();
+
+        showBibleChapter(
+                book,
+                chapter
+        );
+    });
+
+    content.addView(
+            translationButton
+    );
+
     try {
 
         InputStream inputStream =
-                getAssets().open("kjv/" + book + ".json");
-
+                getAssets().open(
+                        (translation.equals("KJV")
+                                ? "kjv/"
+                                : "web/")
+                        + book + ".json"
+                );
         BufferedReader reader =
                 new BufferedReader(
                         new InputStreamReader(inputStream)
