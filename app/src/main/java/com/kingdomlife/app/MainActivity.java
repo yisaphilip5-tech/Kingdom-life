@@ -3008,45 +3008,6 @@ String meaning =
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    Button translationButton =
-            new Button(this);
-
-    if (translation.equals("KJV")) {
-        translationButton.setText(
-                "🌍 Switch to WEB"
-        );
-    } else {
-        translationButton.setText(
-                "📖 Switch to KJV"
-        );
-    }
-
-    translationButton.setOnClickListener(v -> {
-
-        String newTranslation;
-
-        if (translation.equals("KJV")) {
-            newTranslation = "WEB";
-        } else {
-            newTranslation = "KJV";
-        }
-
-        biblePrefs.edit()
-                .putString(
-                        "bible_translation",
-                        newTranslation
-                )
-                .apply();
-
-        showBibleChapter(
-                book,
-                chapter
-        );
-    });
-
-    content.addView(
-            translationButton
-    );
 
     try {
 
