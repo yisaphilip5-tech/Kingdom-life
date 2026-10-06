@@ -1660,292 +1660,84 @@ prefs.edit()
             "Malachi"
     };
 
-    for (String book : books) {
+    LinearLayout bookGrid =
+        new LinearLayout(this);
 
-    if (book.equals("Genesis")) {
+bookGrid.setOrientation(
+        LinearLayout.VERTICAL
+);
 
-        addButton(
-                "📖 " + book,
-                v -> showBookChapters("Genesis", 50)
-        );
+for (int i = 0; i < books.length; i += 2) {
 
-    } else if (book.equals("Exodus")) {
+    LinearLayout row =
+            new LinearLayout(this);
 
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Exodus", 40)
+    row.setOrientation(
+            LinearLayout.HORIZONTAL
     );
 
-} else if (book.equals("Leviticus")) {
+    row.setWeightSum(2);
 
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Leviticus", 27)
+    String firstBook = books[i];
+
+    Button firstButton =
+            new Button(this);
+
+    firstButton.setText(
+            "📖 " + firstBook
     );
 
-} else if (book.equals("Numbers")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Numbers", 36)
-    );
-
-} else if (book.equals("Deuteronomy")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Deuteronomy", 34)
-    );
-
-} else if (book.equals("Joshua")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Joshua", 24)
-    );
-
-} else if (book.equals("Judges")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Judges", 21)
-    );
-
-} else if (book.equals("Ruth")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Ruth", 4)
-    );
-
-} else if (book.equals("1 Samuel")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("1 Samuel", 31)
-    );
-
-} else if (book.equals("2 Samuel")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("2 Samuel", 24)
-    );
-
-} else if (book.equals("1 Kings")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("1 Kings", 22)
-    );
-
-    }else if (book.equals("2 Kings")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("2 Kings", 25)
-    );
-
-} else if (book.equals("1 Chronicles")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("1 Chronicles", 29)
-    );
-
-} else if (book.equals("2 Chronicles")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("2 Chronicles", 36)
-    );
-
-} else if (book.equals("Ezra")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Ezra", 10)
-    );
-
-} else if (book.equals("Nehemiah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Nehemiah", 13)
-    );
-
-} else if (book.equals("Esther")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Esther", 10)
-    );
-
-} else if (book.equals("Job")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Job", 42)
-    );
-        
-} else if (book.equals("Psalms")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Psalms", 150)
-    );
-
-} else if (book.equals("Proverbs")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Proverbs", 31)
-    );
-
-} else if (book.equals("Ecclesiastes")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Ecclesiastes", 12)
-    );
-
-} else if (book.equals("Song of Solomon")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Song of Solomon", 8)
-    );
-
-} else if (book.equals("Isaiah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Isaiah", 66)
-    );
-
-} else if (book.equals("Jeremiah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Jeremiah", 52)
-    );
-
-} else if (book.equals("Lamentations")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Lamentations", 5)
-    );
-
-} else if (book.equals("Ezekiel")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Ezekiel", 48)
-    );
-
-} else if (book.equals("Daniel")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Daniel", 12)
-    );
-
-} else if (book.equals("Hosea")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Hosea", 14)
-    );
-
-} else if (book.equals("Joel")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Joel", 3)
-    );
-
-} else if (book.equals("Amos")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Amos", 9)
-    );
-
-} else if (book.equals("Obadiah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Obadiah", 1)
-    );
-
-} else if (book.equals("Jonah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Jonah", 4)
-    );
-
-} else if (book.equals("Micah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Micah", 7)
-    );
-
-} else if (book.equals("Nahum")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Nahum", 3)
-    );
-
-} else if (book.equals("Habakkuk")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Habakkuk", 3)
-    );
-
-} else if (book.equals("Zephaniah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Zephaniah", 3)
-    );
-
-} else if (book.equals("Haggai")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Haggai", 2)
-    );
-
-} else if (book.equals("Zechariah")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Zechariah", 14)
-    );
-
-} else if (book.equals("Malachi")) {
-
-    addButton(
-            "📖 " + book,
-            v -> showBookChapters("Malachi", 4)
-    );
-
-
-} else {
-
-    addButton(
-            "📖 " + book,
-            v -> showMessage(
-                    "📖 " + book,
-                    "Chapters for " + book + " will be added next."
+    firstButton.setOnClickListener(
+            v -> showBookChapters(
+                    firstBook,
+                    getChapterCount(firstBook)
             )
     );
+
+    row.addView(
+            firstButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    if (i + 1 < books.length) {
+
+        String secondBook =
+                books[i + 1];
+
+        Button secondButton =
+                new Button(this);
+
+        secondButton.setText(
+                "📖 " + secondBook
+        );
+
+        secondButton.setOnClickListener(
+                v -> showBookChapters(
+                        secondBook,
+                        getChapterCount(secondBook)
+                )
+        );
+
+        row.addView(
+                secondButton,
+                new LinearLayout.LayoutParams(
+                        0,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        1
+                )
+        );
     }
+
+    bookGrid.addView(row);
+}
+
+content.addView(bookGrid);
+
+
     }
         LinearLayout topBar =
         new LinearLayout(this);
