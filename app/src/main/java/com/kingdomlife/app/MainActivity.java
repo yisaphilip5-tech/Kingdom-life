@@ -447,10 +447,11 @@ ArrayList<Integer> bibleJourneyAnswers = new ArrayList<>();
     });
     bibleJourneyAnswers.add(0);
 
-    bibleJourneyQuestions.add("Who was Jacob's second wife?");
+        bibleJourneyQuestions.add("Who was Jacob's second wife?");
     bibleJourneyOptions.add(new String[]{
             "Rachel", "Leah", "Zilpah", "Dinah"
     });
+    bibleJourneyAnswers.add(0);
    
 
     } else if (difficulty.equals("Hard")) {
