@@ -4766,9 +4766,12 @@ if (isBibleJourneyDifficultyUnlocked(book, "Scholar")) {
     content.addView(progress);
 
     TextView question = new TextView(this);
-    question.setText(
-            bibleJourneyQuestions.get(bibleJourneyQuestion)
-    );
+
+answered = false;
+
+question.setText(
+        bibleJourneyQuestions.get(bibleJourneyQuestion)
+);
     question.setTextSize(21);
     question.setTypeface(
             Typeface.DEFAULT,
@@ -4799,9 +4802,14 @@ if (isBibleJourneyDifficultyUnlocked(book, "Scholar")) {
         }
     void checkBibleJourneyAnswer(int selectedAnswer) {
 
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
     int correctAnswer =
             bibleJourneyAnswers.get(bibleJourneyQuestion);
-
     if (selectedAnswer == correctAnswer) {
 
         bibleJourneyScore += 5;
