@@ -2987,12 +2987,55 @@ String meaning =
             );
 
     String translation =
-            biblePrefs.getString(
-                    "bible_translation",
-                    "KJV"
-            );
+        biblePrefs.getString(
+                "bible_translation",
+                "KJV"
+        );
 
-    TextView title = new TextView(this);
+LinearLayout topBar =
+        new LinearLayout(this);
+
+topBar.setOrientation(
+        LinearLayout.HORIZONTAL
+);
+
+topBar.setGravity(
+        Gravity.LEFT | Gravity.CENTER_VERTICAL
+);
+
+ImageButton backButton =
+        new ImageButton(this);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+
+backButton.setBackgroundColor(
+        Color.TRANSPARENT
+);
+
+backButton.setContentDescription(
+        "Back to chapters"
+);
+
+backButton.setOnClickListener(
+        v -> showBookChapters(
+                book,
+                getChapterCount(book)
+        )
+);
+
+topBar.addView(
+        backButton,
+        new LinearLayout.LayoutParams(
+                70,
+                70
+        )
+);
+
+content.addView(topBar);
+
+TextView title = new TextView(this);
 
     title.setText(
             "📖 " + book + " " + chapter +
@@ -3262,14 +3305,6 @@ verseLayout.addView(actionRow);
 
         content.addView(error);
     }
-
-    addButton(
-            "⬅️ Back to Chapters",
-            v -> showBookChapters(
-                    book,
-                    getChapterCount(book)
-            )
-    );
         }
     int getChapterCount(String book) {
 
