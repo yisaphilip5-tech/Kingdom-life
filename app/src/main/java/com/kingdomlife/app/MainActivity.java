@@ -4334,23 +4334,17 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     instruction.setPadding(0, 0, 0, 20);
     content.addView(instruction);
 
-    LinearLayout swipeArea =
-            new LinearLayout(this);
-
-    swipeArea.setOrientation(
-            LinearLayout.VERTICAL
-    );
-
-    swipeArea.setGravity(
-            Gravity.CENTER
-    );
+    FrameLayout swipeContainer =
+            new FrameLayout(this);
 
     TextView currentSection =
             new TextView(this);
 
     currentSection.setText(
-            "📜 Old Testament"
+            "📜 Old Testament\n\n" +
+            "👈 Swipe left for New Testament"
     );
+
     currentSection.setTextSize(22);
     currentSection.setTypeface(
             Typeface.DEFAULT,
@@ -4358,23 +4352,16 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     );
     currentSection.setTextColor(darkText);
     currentSection.setGravity(Gravity.CENTER);
-    currentSection.setPadding(
-            0,
-            20,
-            0,
-            20
-    );
 
-    swipeArea.addView(currentSection);
-            content.addView(
-            swipeArea,
-            new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    250
+    swipeContainer.addView(
+            currentSection,
+            new FrameLayout.LayoutParams(
+                    FrameLayout.LayoutParams.MATCH_PARENT,
+                    FrameLayout.LayoutParams.MATCH_PARENT
             )
     );
 
-    content.setOnTouchListener(
+    swipeContainer.setOnTouchListener(
             (v, event) -> {
 
                 switch (event.getAction()) {
@@ -4406,11 +4393,19 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
                             return true;
                         }
 
-                        return false;
+                        return true;
                 }
 
                 return true;
             }
+    );
+
+    content.addView(
+            swipeContainer,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    300
+            )
     );
 
     addButton(
@@ -4429,6 +4424,7 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     );
     }
 
+    
     
     void showBibleJourneyOldTestament() {
     stopTimer();
