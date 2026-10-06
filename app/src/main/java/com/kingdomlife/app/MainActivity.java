@@ -1824,7 +1824,19 @@ prefs.edit()
     );
     }
     }
-        ImageButton backButton = new ImageButton(this);
+        LinearLayout topBar =
+        new LinearLayout(this);
+
+topBar.setOrientation(
+        LinearLayout.HORIZONTAL
+);
+
+topBar.setGravity(
+        Gravity.LEFT | Gravity.CENTER_VERTICAL
+);
+
+ImageButton backButton =
+        new ImageButton(this);
 
 backButton.setImageResource(
         android.R.drawable.ic_media_previous
@@ -1842,17 +1854,6 @@ backButton.setOnClickListener(
         v -> showBible()
 );
 
-LinearLayout topBar =
-        new LinearLayout(this);
-
-topBar.setOrientation(
-        LinearLayout.HORIZONTAL
-);
-
-topBar.setGravity(
-        Gravity.LEFT | Gravity.CENTER_VERTICAL
-);
-
 topBar.addView(
         backButton,
         new LinearLayout.LayoutParams(
@@ -1861,7 +1862,10 @@ topBar.addView(
         )
 );
 
-content.addView(topBar);
+content.addView(
+        topBar,
+        0
+);
     }
         void showNewTestament() {
     stopTimer();
