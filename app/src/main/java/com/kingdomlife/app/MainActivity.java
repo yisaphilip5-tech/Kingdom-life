@@ -1295,10 +1295,10 @@ prefs.edit()
         .putInt("totalPoints", totalPoints)
         .apply();
         showMessage(
-                "✅ Verse Learned",
-                "Jeremiah 29:11 has been marked as learned.\n\n" +
-                "+5 points"
-        );
+        "✅ Verse Learned",
+        "Today's verse has been marked as learned.\n\n" +
+        "+5 points"
+);
     });
 
     addButton("⬅️ Back to Home", v -> showHome());
