@@ -1616,7 +1616,7 @@ prefs.edit()
             v -> showBookChapters("1 Kings", 22)
     );
 
-} else if (book.equals("2 Kings")) {
+    }else if (book.equals("2 Kings")) {
 
     addButton(
             "📖 " + book,
@@ -1840,8 +1840,7 @@ FrameLayout.LayoutParams backParams =
 
 backParams.gravity = Gravity.TOP | Gravity.LEFT;
 backParams.leftMargin = 5;
-backParams.topMargin = 5;
-
+backParams.topMargin = 45;
 addContentView(
         backButton,
         backParams
@@ -3213,36 +3212,205 @@ verseLayout.addView(actionRow);
     stopTimer();
     content.removeAllViews();
 
+    ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setContentDescription(
+            "Back to books"
+    );
+
+    backButton.setOnClickListener(v -> {
+
+        if (book.equals("Genesis") ||
+            book.equals("Exodus") ||
+            book.equals("Leviticus") ||
+            book.equals("Numbers") ||
+            book.equals("Deuteronomy") ||
+            book.equals("Joshua") ||
+            book.equals("Judges") ||
+            book.equals("Ruth") ||
+            book.equals("1 Samuel") ||
+            book.equals("2 Samuel") ||
+            book.equals("1 Kings") ||
+            book.equals("2 Kings") ||
+            book.equals("1 Chronicles") ||
+            book.equals("2 Chronicles") ||
+            book.equals("Ezra") ||
+            book.equals("Nehemiah") ||
+            book.equals("Esther") ||
+            book.equals("Job") ||
+            book.equals("Psalms") ||
+            book.equals("Proverbs") ||
+            book.equals("Ecclesiastes") ||
+            book.equals("Song of Solomon") ||
+            book.equals("Isaiah") ||
+            book.equals("Jeremiah") ||
+            book.equals("Lamentations") ||
+            book.equals("Ezekiel") ||
+            book.equals("Daniel") ||
+            book.equals("Hosea") ||
+            book.equals("Joel") ||
+            book.equals("Amos") ||
+            book.equals("Obadiah") ||
+            book.equals("Jonah") ||
+            book.equals("Micah") ||
+            book.equals("Nahum") ||
+            book.equals("Habakkuk") ||
+            book.equals("Zephaniah") ||
+            book.equals("Haggai") ||
+            book.equals("Zechariah") ||
+            book.equals("Malachi")) {
+
+            showOldTestament();
+
+        } else {
+
+            showNewTestament();
+
+        }
+    });
+
+    FrameLayout.LayoutParams backParams =
+            new FrameLayout.LayoutParams(
+                    70,
+                    70
+            );
+
+    backParams.gravity =
+            Gravity.TOP | Gravity.LEFT;
+
+    backParams.leftMargin = 5;
+    backParams.topMargin = 45;
+
+    addContentView(
+            backButton,
+            backParams
+    );
+
     TextView title = new TextView(this);
-    title.setText("📖 " + book);
+
+    title.setText(
+            "📖 " + book
+    );
+
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
+
     content.addView(title);
 
     TextView instruction = new TextView(this);
-    instruction.setText("Choose a chapter:");
+
+    instruction.setText(
+            "Choose a chapter:"
+    );
+
     instruction.setTextSize(18);
     instruction.setTextColor(darkText);
-    instruction.setPadding(0, 0, 0, 15);
+    instruction.setPadding(
+            0,
+            0,
+            0,
+            15
+    );
+
     content.addView(instruction);
 
-    for (int chapter = 1; chapter <= chapterCount; chapter++) {
+    LinearLayout chapterGrid =
+            new LinearLayout(this);
 
-        final int selectedChapter = chapter;
-
-        addButton(
-                "📜 Chapter " + chapter,
-                v -> showBibleChapter(book, selectedChapter)
-        );
-    }
-
-    addButton(
-            "⬅️ Back",
-            v -> showBible()
+    chapterGrid.setOrientation(
+            LinearLayout.VERTICAL
     );
+
+    for (int chapter = 1;
+         chapter <= chapterCount;
+         chapter += 2) {
+
+        LinearLayout row =
+                new LinearLayout(this);
+
+        row.setOrientation(
+                LinearLayout.HORIZONTAL
+        );
+
+        row.setWeightSum(2);
+
+        final int firstChapter = chapter;
+
+        Button firstButton =
+                new Button(this);
+
+        firstButton.setText(
+                "📜 " + firstChapter
+        );
+
+        firstButton.setOnClickListener(
+                v -> showBibleChapter(
+                        book,
+                        firstChapter
+                )
+        );
+
+        row.addView(
+                firstButton,
+                new LinearLayout.LayoutParams(
+                        0,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        1
+                )
+        );
+
+        if (chapter + 1 <= chapterCount) {
+
+            final int secondChapter =
+                    chapter + 1;
+
+            Button secondButton =
+                    new Button(this);
+
+            secondButton.setText(
+                    "📜 " + secondChapter
+            );
+
+            secondButton.setOnClickListener(
+                    v -> showBibleChapter(
+                            book,
+                            secondChapter
+                    )
+            );
+
+            row.addView(
+                    secondButton,
+                    new LinearLayout.LayoutParams(
+                            0,
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            1
+                    )
+            );
+        }
+
+        chapterGrid.addView(row);
     }
+
+    content.addView(chapterGrid);
+            }
     void showGenesisChapter1() {
     stopTimer();
     content.removeAllViews();
