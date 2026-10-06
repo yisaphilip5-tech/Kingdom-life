@@ -4314,6 +4314,12 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             "Malachi"
     };
 
+    int completedBooks =
+            prefs.getInt(
+                    "bibleJourney_books_completed",
+                    0
+            );
+
     for (int i = 0; i < books.length; i += 2) {
 
         LinearLayout row = new LinearLayout(this);
@@ -4329,16 +4335,31 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
         button1.setAllCaps(false);
 
         if (isBibleJourneyBookUnlocked(book1)) {
-    button1.setOnClickListener(v -> showBookDifficulty(book1));
-} else {
-    button1.setText("🔒 " + book1);
-    button1.setOnClickListener(v -> {});
+
+            if (i == completedBooks) {
+                button1.setBackgroundColor(
+                        Color.rgb(255, 152, 0)
+                );
+            }
+
+            button1.setOnClickListener(
+                    v -> showBookDifficulty(book1)
+            );
+
+        } else {
+
+            button1.setText("🔒 " + book1);
+            button1.setOnClickListener(v -> {});
         }
-        row.addView(button1, new LinearLayout.LayoutParams(
-                0,
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                1
-        ));
+
+        row.addView(
+                button1,
+                new LinearLayout.LayoutParams(
+                        0,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        1
+                )
+        );
 
         if (i + 1 < books.length) {
 
@@ -4350,24 +4371,47 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             button2.setAllCaps(false);
 
             if (isBibleJourneyBookUnlocked(book2)) {
-    button2.setOnClickListener(v -> showBookDifficulty(book2));
-} else {
-    button2.setText("🔒 " + book2);
-    button2.setOnClickListener(v -> {});
+
+                if (i + 1 == completedBooks) {
+                    button2.setBackgroundColor(
+                            Color.rgb(255, 152, 0)
+                    );
+                }
+
+                button2.setOnClickListener(
+                        v -> showBookDifficulty(book2)
+                );
+
+            } else {
+
+                button2.setText("🔒 " + book2);
+                button2.setOnClickListener(v -> {});
             }
-            row.addView(button2, new LinearLayout.LayoutParams(
-                    0,
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    1
-            ));
+
+            row.addView(
+                    button2,
+                    new LinearLayout.LayoutParams(
+                            0,
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            1
+                    )
+            );
         }
 
         content.addView(row);
     }
 
-    addButton("✝️ New Testament →", v -> showBibleJourneyNewTestament());
-    addButton("⬅️ Back to Bible Journey", v -> showBibleJourney());
-    }
+    addButton(
+            "✝️ New Testament →",
+            v -> showBibleJourneyNewTestament()
+    );
+
+    addButton(
+            "⬅️ Back to Bible Journey",
+            v -> showBibleJourney()
+    );
+        }
+    
     void showBibleJourneyNewTestament() {
     stopTimer();
     content.removeAllViews();
