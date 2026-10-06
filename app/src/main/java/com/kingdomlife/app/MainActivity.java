@@ -4576,10 +4576,7 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
         content.addView(row);
     }
 
-    addButton(
-            "← Old Testament",
-            v -> showBibleJourneyOldTestament()
-    );
+    
 
     addButton(
             "⬅️ Back to Bible Journey",
