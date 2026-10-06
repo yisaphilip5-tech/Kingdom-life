@@ -4310,7 +4310,42 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     void showBibleJourney() {
     showBibleJourneyOldTestament();
     }
-    
+    private boolean handleBibleJourneySwipe(
+        View v,
+        MotionEvent event
+) {
+    switch (event.getAction()) {
+
+        case MotionEvent.ACTION_DOWN:
+
+            bibleJourneyTouchX =
+                    event.getX();
+
+            return true;
+
+        case MotionEvent.ACTION_UP:
+
+            float difference =
+                    event.getX()
+                    - bibleJourneyTouchX;
+
+            if (Math.abs(difference) > 100) {
+
+                if (difference < 0) {
+                    showBibleJourneyNewTestament();
+                } else {
+                    showBibleJourneyOldTestament();
+                }
+
+                return true;
+            }
+
+            v.performClick();
+            return true;
+    }
+
+    return true;
+    }
     void showBibleJourneyOldTestament() {
     stopTimer();
     content.removeAllViews();
@@ -4378,6 +4413,9 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             button1.setOnClickListener(
                     v -> showBookDifficulty(book1)
             );
+            button1.setOnTouchListener(
+        this::handleBibleJourneySwipe
+);
 
         } else {
 
@@ -4414,6 +4452,9 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
                 button2.setOnClickListener(
                         v -> showBookDifficulty(book2)
                 );
+                button2.setOnTouchListener(
+        this::handleBibleJourneySwipe
+);
 
             } else {
 
@@ -4439,6 +4480,7 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             v -> showGameMenu()
     );
     }
+    
     
                     void showBibleJourneyNewTestament() {
     stopTimer();
@@ -4492,6 +4534,9 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
         button1.setOnClickListener(
                 v -> showBookDifficulty(book1)
         );
+        button1.setOnTouchListener(
+        this::handleBibleJourneySwipe
+);
 
         row.addView(
                 button1,
@@ -4514,6 +4559,9 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             button2.setOnClickListener(
                     v -> showBookDifficulty(book2)
             );
+            button2.setOnTouchListener(
+        this::handleBibleJourneySwipe
+);
 
             row.addView(
                     button2,
