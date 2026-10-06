@@ -1826,29 +1826,86 @@ prefs.edit()
     }
         ImageButton backButton = new ImageButton(this);
 
-backButton.setImageResource(android.R.drawable.ic_media_previous);
-backButton.setBackgroundColor(Color.TRANSPARENT);
-backButton.setContentDescription("Back to Bible");
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
 
-backButton.setOnClickListener(v -> showBible());
+backButton.setBackgroundColor(
+        Color.TRANSPARENT
+);
 
-FrameLayout.LayoutParams backParams =
-        new FrameLayout.LayoutParams(
+backButton.setContentDescription(
+        "Back to Bible"
+);
+
+backButton.setOnClickListener(
+        v -> showBible()
+);
+
+LinearLayout topBar =
+        new LinearLayout(this);
+
+topBar.setOrientation(
+        LinearLayout.HORIZONTAL
+);
+
+topBar.setGravity(
+        Gravity.LEFT | Gravity.CENTER_VERTICAL
+);
+
+topBar.addView(
+        backButton,
+        new LinearLayout.LayoutParams(
                 70,
                 70
-        );
-
-backParams.gravity = Gravity.TOP | Gravity.LEFT;
-backParams.leftMargin = 5;
-backParams.topMargin = 45;
-addContentView(
-        backButton,
-        backParams
+        )
 );
+
+content.addView(topBar);
     }
         void showNewTestament() {
     stopTimer();
     content.removeAllViews();
+
+    LinearLayout topBar =
+            new LinearLayout(this);
+
+    topBar.setOrientation(
+            LinearLayout.HORIZONTAL
+    );
+
+    topBar.setGravity(
+            Gravity.LEFT | Gravity.CENTER_VERTICAL
+    );
+
+    ImageButton backButton =
+            new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setContentDescription(
+            "Back to Bible"
+    );
+
+    backButton.setOnClickListener(
+            v -> showBible()
+    );
+
+    topBar.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    70,
+                    70
+            )
+    );
+
+    content.addView(topBar);
 
     TextView title = new TextView(this);
     title.setText("📚 New Testament");
