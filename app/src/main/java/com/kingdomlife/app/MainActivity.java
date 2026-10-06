@@ -4431,45 +4431,14 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             );
         }
 
-        content.addView(row);
+            content.addView(row);
     }
-
-        content.setOnTouchListener(
-            (v, event) -> {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-
-                    bibleJourneyTouchX =
-                            event.getX();
-
-                    return true;
-                }
-
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-
-                    float difference =
-                            event.getX()
-                            - bibleJourneyTouchX;
-
-                    if (Math.abs(difference) > 100) {
-
-                        if (difference < 0) {
-                            showBibleJourneyNewTestament();
-                        }
-
-                        return true;
-                    }
-                }
-
-                return true;
-            }
-    );
 
     addButton(
             "⬅️ Back to Bible Journey",
             v -> showGameMenu()
     );
-        }
+    }
     
                     void showBibleJourneyNewTestament() {
     stopTimer();
