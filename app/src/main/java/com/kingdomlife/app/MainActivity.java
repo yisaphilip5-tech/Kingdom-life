@@ -1738,7 +1738,6 @@ for (int i = 0; i < books.length; i += 2) {
 content.addView(bookGrid);
 
 
-    }
         LinearLayout topBar =
         new LinearLayout(this);
 
