@@ -1821,10 +1821,15 @@ prefs.edit()
     );
     }
     }
-        addButton(
-            "⬅️ Back to Bible",
-            v -> showBible()
-    );
+        ImageButton backButton = new ImageButton(this);
+
+backButton.setImageResource(android.R.drawable.ic_media_previous);
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setContentDescription("Back to Bible");
+
+backButton.setOnClickListener(v -> showBible());
+
+content.addView(backButton);
     }
         void showNewTestament() {
     stopTimer();
