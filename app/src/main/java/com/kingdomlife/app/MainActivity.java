@@ -3212,87 +3212,95 @@ verseLayout.addView(actionRow);
     stopTimer();
     content.removeAllViews();
 
-    ImageButton backButton = new ImageButton(this);
+    LinearLayout topBar =
+        new LinearLayout(this);
 
-    backButton.setImageResource(
-            android.R.drawable.ic_media_previous
-    );
+topBar.setOrientation(
+        LinearLayout.HORIZONTAL
+);
 
-    backButton.setBackgroundColor(
-            Color.TRANSPARENT
-    );
+topBar.setGravity(
+        Gravity.LEFT | Gravity.CENTER_VERTICAL
+);
 
-    backButton.setContentDescription(
-            "Back to books"
-    );
+ImageButton backButton =
+        new ImageButton(this);
 
-    backButton.setOnClickListener(v -> {
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
 
-        if (book.equals("Genesis") ||
-            book.equals("Exodus") ||
-            book.equals("Leviticus") ||
-            book.equals("Numbers") ||
-            book.equals("Deuteronomy") ||
-            book.equals("Joshua") ||
-            book.equals("Judges") ||
-            book.equals("Ruth") ||
-            book.equals("1 Samuel") ||
-            book.equals("2 Samuel") ||
-            book.equals("1 Kings") ||
-            book.equals("2 Kings") ||
-            book.equals("1 Chronicles") ||
-            book.equals("2 Chronicles") ||
-            book.equals("Ezra") ||
-            book.equals("Nehemiah") ||
-            book.equals("Esther") ||
-            book.equals("Job") ||
-            book.equals("Psalms") ||
-            book.equals("Proverbs") ||
-            book.equals("Ecclesiastes") ||
-            book.equals("Song of Solomon") ||
-            book.equals("Isaiah") ||
-            book.equals("Jeremiah") ||
-            book.equals("Lamentations") ||
-            book.equals("Ezekiel") ||
-            book.equals("Daniel") ||
-            book.equals("Hosea") ||
-            book.equals("Joel") ||
-            book.equals("Amos") ||
-            book.equals("Obadiah") ||
-            book.equals("Jonah") ||
-            book.equals("Micah") ||
-            book.equals("Nahum") ||
-            book.equals("Habakkuk") ||
-            book.equals("Zephaniah") ||
-            book.equals("Haggai") ||
-            book.equals("Zechariah") ||
-            book.equals("Malachi")) {
+backButton.setBackgroundColor(
+        Color.TRANSPARENT
+);
 
-            showOldTestament();
+backButton.setContentDescription(
+        "Back to books"
+);
 
-        } else {
+backButton.setOnClickListener(v -> {
 
-            showNewTestament();
+    if (book.equals("Genesis") ||
+        book.equals("Exodus") ||
+        book.equals("Leviticus") ||
+        book.equals("Numbers") ||
+        book.equals("Deuteronomy") ||
+        book.equals("Joshua") ||
+        book.equals("Judges") ||
+        book.equals("Ruth") ||
+        book.equals("1 Samuel") ||
+        book.equals("2 Samuel") ||
+        book.equals("1 Kings") ||
+        book.equals("2 Kings") ||
+        book.equals("1 Chronicles") ||
+        book.equals("2 Chronicles") ||
+        book.equals("Ezra") ||
+        book.equals("Nehemiah") ||
+        book.equals("Esther") ||
+        book.equals("Job") ||
+        book.equals("Psalms") ||
+        book.equals("Proverbs") ||
+        book.equals("Ecclesiastes") ||
+        book.equals("Song of Solomon") ||
+        book.equals("Isaiah") ||
+        book.equals("Jeremiah") ||
+        book.equals("Lamentations") ||
+        book.equals("Ezekiel") ||
+        book.equals("Daniel") ||
+        book.equals("Hosea") ||
+        book.equals("Joel") ||
+        book.equals("Amos") ||
+        book.equals("Obadiah") ||
+        book.equals("Jonah") ||
+        book.equals("Micah") ||
+        book.equals("Nahum") ||
+        book.equals("Habakkuk") ||
+        book.equals("Zephaniah") ||
+        book.equals("Haggai") ||
+        book.equals("Zechariah") ||
+        book.equals("Malachi")) {
 
-        }
-    });
+        showOldTestament();
 
-    FrameLayout.LayoutParams backParams =
-            new FrameLayout.LayoutParams(
-                    70,
-                    70
-            );
+    } else {
 
-    backParams.gravity =
-            Gravity.TOP | Gravity.LEFT;
+        showNewTestament();
 
-    backParams.leftMargin = 5;
-    backParams.topMargin = 45;
+    }
+});
 
-    addContentView(
-            backButton,
-            backParams
-    );
+topBar.addView(
+        backButton,
+        new LinearLayout.LayoutParams(
+                70,
+                70
+        )
+);
+
+content.addView(topBar);
+        
+
+        
 
     TextView title = new TextView(this);
 
