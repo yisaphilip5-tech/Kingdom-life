@@ -6299,12 +6299,42 @@ void showMissingWordQuestion(String[][] questions, int questionIndex) {
     stopTimer();
     content.removeAllViews();
 
+    ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showNotesHighlights()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
+
     TextView title = new TextView(this);
     title.setText("🖍️ Highlights");
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
     content.addView(title);
 
     if (highlightsPrefs.getAll().isEmpty()) {
@@ -6316,27 +6346,41 @@ void showMissingWordQuestion(String[][] questions, int questionIndex) {
         );
         message.setTextSize(18);
         message.setTextColor(darkText);
-        message.setPadding(10, 10, 10, 20);
+        message.setPadding(
+                10,
+                10,
+                10,
+                20
+        );
         content.addView(message);
 
     } else {
 
-        for (java.util.Map.Entry<String, ?> entry :
-                highlightsPrefs.getAll().entrySet()) {
+        for (
+                java.util.Map.Entry<String, ?> entry :
+                highlightsPrefs.getAll().entrySet()
+        ) {
 
             String reference = entry.getKey();
+
             String savedHighlight =
                     entry.getValue().toString();
 
-            String verseText = savedHighlight;
+            String verseText =
+                    savedHighlight;
 
             try {
+
                 String[] parts =
-                        savedHighlight.split("\\|", 2);
+                        savedHighlight.split(
+                                "\\|",
+                                2
+                        );
 
                 if (parts.length == 2) {
                     verseText = parts[1];
                 }
+
             } catch (Exception ignored) {
             }
 
@@ -6347,11 +6391,6 @@ void showMissingWordQuestion(String[][] questions, int questionIndex) {
             );
         }
     }
-
-    addButton(
-            "⬅️ Back to Notes & Highlights",
-            v -> showNotesHighlights()
-    );
     }
     void saveBookmark(String reference) {
 
@@ -6386,12 +6425,42 @@ void showBookmarks() {
     stopTimer();
     content.removeAllViews();
 
+    ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showMoreMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
+
     TextView title = new TextView(this);
     title.setText("🔖 Bible Bookmarks");
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
     content.addView(title);
 
     if (bookmarksPrefs.getAll().isEmpty()) {
@@ -6403,13 +6472,20 @@ void showBookmarks() {
         );
         message.setTextSize(18);
         message.setTextColor(darkText);
-        message.setPadding(10, 10, 10, 20);
+        message.setPadding(
+                10,
+                10,
+                10,
+                20
+        );
         content.addView(message);
 
     } else {
 
-        for (java.util.Map.Entry<String, ?> entry :
-                bookmarksPrefs.getAll().entrySet()) {
+        for (
+                java.util.Map.Entry<String, ?> entry :
+                bookmarksPrefs.getAll().entrySet()
+        ) {
 
             String reference = entry.getKey();
 
@@ -6426,8 +6502,10 @@ void showBookmarks() {
                             int spaceIndex =
                                     reference.lastIndexOf(" ");
 
-                            if (colonIndex > spaceIndex &&
-                                spaceIndex > 0) {
+                            if (
+                                    colonIndex > spaceIndex &&
+                                    spaceIndex > 0
+                            ) {
 
                                 String book =
                                         reference.substring(
@@ -6460,12 +6538,8 @@ void showBookmarks() {
             );
         }
     }
-
-    addButton(
-            "⬅️ Back to More",
-            v -> showMoreMenu()
-    );
-    }
+                                }
+                            
     void showDailyChallenge() {
     stopTimer();
     content.removeAllViews();
