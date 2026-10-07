@@ -17,6 +17,10 @@ public class MemoryVerseGameActivity extends Activity {
 
     private String gameType;
     private int level;
+    private MemoryVerseData.MemoryVerse[] activeQuestions;
+
+private int questionIndex = 0;
+private int score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -328,18 +332,658 @@ public class MemoryVerseGameActivity extends Activity {
     }
 
     private void startGame(
-            String type,
-            int selectedLevel
-    ) {
+        String type,
+        int selectedLevel
+) {
 
-        // Game question system will be connected next.
-        showMessage(
-                "Memory Verse",
-                "Game: " + type +
-                "\nLevel: " + selectedLevel +
-                "\n\nQuestions will be connected next."
+    gameType = type;
+    level = selectedLevel;
+
+    questionIndex = 0;
+    score = 0;
+
+    if ("guess".equals(type)) {
+
+        if (selectedLevel == 1) {
+            activeQuestions =
+                    MemoryVerseData.GUESS_VERSE_LEVEL_1;
+        } else if (selectedLevel == 2) {
+            activeQuestions =
+                    MemoryVerseData.GUESS_VERSE_LEVEL_2;
+        } else {
+            activeQuestions =
+                    MemoryVerseData.GUESS_VERSE_LEVEL_3;
+        }
+
+    } else if ("complete".equals(type)) {
+
+        if (selectedLevel == 1) {
+            activeQuestions =
+                    MemoryVerseData.COMPLETE_VERSE_LEVEL_1;
+        } else if (selectedLevel == 2) {
+            activeQuestions =
+                    MemoryVerseData.COMPLETE_VERSE_LEVEL_2;
+        } else {
+            activeQuestions =
+                    MemoryVerseData.COMPLETE_VERSE_LEVEL_3;
+        }
+
+    } else {
+
+        if (selectedLevel == 1) {
+            activeQuestions =
+                    MemoryVerseData.GUESS_REFERENCE_LEVEL_1;
+        } else if (selectedLevel == 2) {
+            activeQuestions =
+                    MemoryVerseData.GUESS_REFERENCE_LEVEL_2;
+        } else {
+            activeQuestions =
+                    MemoryVerseData.GUESS_REFERENCE_LEVEL_3;
+        }
+    }
+
+    showQuestion();
+    }
+    private void showQuestion() {
+
+    content.removeAllViews();
+
+    if (activeQuestions == null ||
+            questionIndex >= activeQuestions.length) {
+
+        showFinalResult();
+        return;
+    }
+
+    MemoryVerseData.MemoryVerse current =
+            activeQuestions[questionIndex];
+
+    ImageButton backButton =
+            new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showLevels(gameType)
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
+
+    TextView title =
+            new TextView(this);
+
+    if ("guess".equals(gameType)) {
+
+        title.setText(
+                "📖 Guess the Verse"
+        );
+
+    } else if ("complete".equals(gameType)) {
+
+        title.setText(
+                "✍️ Complete the Verse"
+        );
+
+    } else {
+
+        title.setText(
+                "🔄 Guess the Reference"
         );
     }
+
+    title.setTextSize(23);
+
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+
+    title.setTextColor(Color.BLACK);
+
+    title.setGravity(Gravity.CENTER);
+
+    content.addView(title);
+
+    TextView progress =
+            new TextView(this);
+
+    progress.setText(
+            "Level " + level +
+            "   •   Question " +
+            (questionIndex + 1) +
+            " of " +
+            activeQuestions.length +
+            "\nScore: " +
+            score
+    );
+
+    progress.setTextSize(16);
+
+    progress.setTextColor(Color.DKGRAY);
+
+    progress.setGravity(Gravity.CENTER);
+
+    progress.setPadding(
+            0,
+            10,
+            0,
+            20
+    );
+
+    content.addView(progress);
+
+    if ("guess".equals(gameType)) {
+
+        showGuessVerseQuestion(current);
+
+    } else if ("complete".equals(gameType)) {
+
+        showCompleteVerseQuestion(current);
+
+    } else {
+
+        showGuessReferenceQuestion(current);
+    }
+}
+
+
+private void showGuessVerseQuestion(
+        MemoryVerseData.MemoryVerse current
+) {
+
+    TextView question =
+            new TextView(this);
+
+    question.setText(
+            "Which verse matches\n" +
+            current.reference +
+            "?"
+    );
+
+    question.setTextSize(19);
+
+    question.setTextColor(Color.BLACK);
+
+    question.setGravity(Gravity.CENTER);
+
+    question.setPadding(
+            0,
+            10,
+            0,
+            20
+    );
+
+    content.addView(question);
+
+    java.util.ArrayList<String> answers =
+            new java.util.ArrayList<>();
+
+    answers.add(current.verse);
+
+    while (answers.size() < 4) {
+
+        MemoryVerseData.MemoryVerse other =
+                activeQuestions[
+                        new java.util.Random().nextInt(
+                                activeQuestions.length
+                        )
+                ];
+
+        if (!answers.contains(other.verse)) {
+            answers.add(other.verse);
+        }
+    }
+
+    java.util.Collections.shuffle(answers);
+
+    for (String answer : answers) {
+
+        addAnswerButton(
+                answer,
+                answer.equals(current.verse)
+        );
+    }
+}
+
+
+private void showCompleteVerseQuestion(
+        MemoryVerseData.MemoryVerse current
+) {
+
+    String[] words =
+            current.verse.split("\\s+");
+
+    if (words.length < 4) {
+
+        showGuessVerseQuestion(current);
+        return;
+    }
+
+    int missingIndex =
+            words.length / 2;
+
+    String correctWord =
+            words[missingIndex]
+                    .replaceAll(
+                            "[^A-Za-z']",
+                            ""
+                    );
+
+    if (correctWord.isEmpty()) {
+
+        correctWord =
+                words[missingIndex];
+    }
+
+    StringBuilder display =
+            new StringBuilder();
+
+    for (int i = 0;
+            i < words.length;
+            i++) {
+
+        if (i == missingIndex) {
+
+            display.append("_____ ");
+
+        } else {
+
+            display.append(
+                    words[i]
+            );
+
+            display.append(" ");
+        }
+    }
+
+    TextView question =
+            new TextView(this);
+
+    question.setText(
+            "Complete the verse:\n\n" +
+            display.toString().trim() +
+            "\n\n" +
+            current.reference
+    );
+
+    question.setTextSize(18);
+
+    question.setTextColor(Color.BLACK);
+
+    question.setGravity(Gravity.CENTER);
+
+    question.setPadding(
+            0,
+            10,
+            0,
+            20
+    );
+
+    content.addView(question);
+
+    java.util.ArrayList<String> answers =
+            new java.util.ArrayList<>();
+
+    answers.add(correctWord);
+
+    while (answers.size() < 4) {
+
+        MemoryVerseData.MemoryVerse other =
+                activeQuestions[
+                        new java.util.Random().nextInt(
+                                activeQuestions.length
+                        )
+                ];
+
+        String[] otherWords =
+                other.verse.split("\\s+");
+
+        if (otherWords.length > 0) {
+
+            String otherWord =
+                    otherWords[
+                            new java.util.Random().nextInt(
+                                    otherWords.length
+                            )
+                    ].replaceAll(
+                            "[^A-Za-z']",
+                            ""
+                    );
+
+            if (!otherWord.isEmpty() &&
+                    !answers.contains(
+                            otherWord
+                    )) {
+
+                answers.add(otherWord);
+            }
+        }
+    }
+
+    java.util.Collections.shuffle(answers);
+
+    for (String answer : answers) {
+
+        addAnswerButton(
+                answer,
+                answer.equals(correctWord)
+        );
+    }
+}
+
+
+private void showGuessReferenceQuestion(
+        MemoryVerseData.MemoryVerse current
+) {
+
+    TextView question =
+            new TextView(this);
+
+    question.setText(
+            "Which reference matches\n\n" +
+            current.verse +
+            "?"
+    );
+
+    question.setTextSize(18);
+
+    question.setTextColor(Color.BLACK);
+
+    question.setGravity(Gravity.CENTER);
+
+    question.setPadding(
+            0,
+            10,
+            0,
+            20
+    );
+
+    content.addView(question);
+
+    java.util.ArrayList<String> answers =
+            new java.util.ArrayList<>();
+
+    answers.add(current.reference);
+
+    while (answers.size() < 4) {
+
+        MemoryVerseData.MemoryVerse other =
+                activeQuestions[
+                        new java.util.Random().nextInt(
+                                activeQuestions.length
+                        )
+                ];
+
+        if (!answers.contains(
+                other.reference
+        )) {
+
+            answers.add(
+                    other.reference
+            );
+        }
+    }
+
+    java.util.Collections.shuffle(answers);
+
+    for (String answer : answers) {
+
+        addAnswerButton(
+                answer,
+                answer.equals(
+                        current.reference
+                )
+        );
+    }
+}
+
+
+private void addAnswerButton(
+        String answer,
+        boolean correct
+) {
+
+    Button button =
+            new Button(this);
+
+    button.setText(answer);
+
+    button.setTextSize(15);
+
+    button.setAllCaps(false);
+
+    button.setOnClickListener(
+            v -> handleAnswer(
+                    button,
+                    correct
+            )
+    );
+
+    content.addView(
+            button,
+            new LinearLayout.LayoutParams(
+                    -1,
+                    -2
+            )
+    );
+}
+
+
+private void handleAnswer(
+        Button selectedButton,
+        boolean correct
+) {
+
+    for (int i = 0;
+            i < content.getChildCount();
+            i++) {
+
+        View child =
+                content.getChildAt(i);
+
+        if (child instanceof Button) {
+
+            child.setEnabled(false);
+        }
+    }
+
+    if (correct) {
+
+        score += 10;
+
+        selectedButton.setText(
+                "✅ " +
+                selectedButton.getText()
+        );
+
+    } else {
+
+        selectedButton.setText(
+                "❌ " +
+                selectedButton.getText()
+        );
+    }
+
+    Button nextButton =
+            new Button(this);
+
+    if (questionIndex + 1 <
+            activeQuestions.length) {
+
+        nextButton.setText(
+                "➡️ Next Question"
+        );
+
+    } else {
+
+        nextButton.setText(
+                "🏆 See Results"
+        );
+    }
+
+    nextButton.setTextSize(17);
+
+    nextButton.setAllCaps(false);
+
+    nextButton.setOnClickListener(
+            v -> {
+
+                questionIndex++;
+
+                showQuestion();
+            }
+    );
+
+    content.addView(
+            nextButton,
+            new LinearLayout.LayoutParams(
+                    -1,
+                    70
+            )
+    );
+}
+
+
+private void showFinalResult() {
+
+    content.removeAllViews();
+
+    TextView title =
+            new TextView(this);
+
+    title.setText(
+            "🏆 Level Complete!"
+    );
+
+    title.setTextSize(26);
+
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+
+    title.setTextColor(Color.BLACK);
+
+    title.setGravity(Gravity.CENTER);
+
+    title.setPadding(
+            0,
+            30,
+            0,
+            25
+    );
+
+    content.addView(title);
+
+    TextView result =
+            new TextView(this);
+
+    result.setText(
+            "Level " +
+            level +
+            " completed!\n\n" +
+            "Score: " +
+            score +
+            " / " +
+            (activeQuestions.length * 10)
+    );
+
+    result.setTextSize(20);
+
+    result.setTextColor(Color.BLACK);
+
+    result.setGravity(Gravity.CENTER);
+
+    result.setPadding(
+            0,
+            10,
+            0,
+            30
+    );
+
+    content.addView(result);
+
+    Button retryButton =
+            new Button(this);
+
+    retryButton.setText(
+            "🔄 Play Again"
+    );
+
+    retryButton.setAllCaps(false);
+
+    retryButton.setOnClickListener(
+            v -> {
+
+                questionIndex = 0;
+                score = 0;
+
+                showQuestion();
+            }
+    );
+
+    content.addView(
+            retryButton,
+            new LinearLayout.LayoutParams(
+                    -1,
+                    70
+            )
+    );
+
+    Button levelsButton =
+            new Button(this);
+
+    levelsButton.setText(
+            "📚 Choose Another Level"
+    );
+
+    levelsButton.setAllCaps(false);
+
+    levelsButton.setOnClickListener(
+            v -> showLevels(gameType)
+    );
+
+    content.addView(
+            levelsButton,
+            new LinearLayout.LayoutParams(
+                    -1,
+                    70
+            )
+    );
+
+    Button gamesButton =
+            new Button(this);
+
+    gamesButton.setText(
+            "🧠 Choose Another Game"
+    );
+
+    gamesButton.setAllCaps(false);
+
+    gamesButton.setOnClickListener(
+            v -> showGameMenu()
+    );
+
+    content.addView(
+            gamesButton,
+            new LinearLayout.LayoutParams(
+                    -1,
+                    70
+            )
+    );
+        }
 
     private void showMessage(
             String titleText,
