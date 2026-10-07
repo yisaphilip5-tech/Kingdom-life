@@ -5508,6 +5508,27 @@ void showBibleScramble() {
 }
     void showScrambleQuestion() {
     content.removeAllViews();
+            ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showGameMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     String word = scrambleWords[scrambleQuestion];
 
@@ -5590,7 +5611,7 @@ content.addView(answerInput);
         }
     });
 
-    addButton("⬅️ Back to Games", v -> showGameMenu());
+    
     }
     String scrambleWord(String word) {
     char[] letters = word.toCharArray();
