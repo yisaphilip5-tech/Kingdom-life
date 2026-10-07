@@ -2598,6 +2598,27 @@ String meaning =
     void showSpiritualBooks() {
     stopTimer();
     content.removeAllViews();
+            ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showLearnMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     TextView title = new TextView(this);
     title.setText("📚 Spiritual Growth Books");
@@ -2643,14 +2664,32 @@ String meaning =
             )
     );
 
-    addButton(
-            "⬅️ Back to Learn",
-            v -> showLearnMenu()
-    );
+    
     }
     void showSermons() {
     stopTimer();
     content.removeAllViews();
+            ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showLearnMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     TextView title = new TextView(this);
     title.setText("🎙️ Sermons");
@@ -2696,10 +2735,7 @@ String meaning =
             )
     );
 
-    addButton(
-            "⬅️ Back to Learn",
-            v -> showLearnMenu()
-    );
+    
     }
     void showBibleChapter(String book, int chapter) {
     stopTimer();
