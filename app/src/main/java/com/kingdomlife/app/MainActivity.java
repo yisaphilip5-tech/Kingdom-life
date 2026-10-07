@@ -2565,6 +2565,11 @@ String meaning =
             "Read books and resources that help you grow in faith.",
             v -> showSpiritualBooks()
     );
+        addCard(
+        "📚 Story Books",
+        "Read inspiring Bible-based stories and lessons.",
+        v -> showStoryBooks()
+);
 
     addCard(
             "🎙️ Sermons",
@@ -2665,6 +2670,85 @@ String meaning =
     );
 
     
+    }
+    void showStoryBooks() {
+    stopTimer();
+    content.removeAllViews();
+
+    ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showLearnMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
+
+    TextView title = new TextView(this);
+
+    title.setText("📚 Story Books");
+    title.setTextSize(24);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    title.setTextColor(darkText);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
+
+    content.addView(title);
+
+    TextView message = new TextView(this);
+
+    message.setText(
+            "Explore inspiring stories and original Christian fiction."
+    );
+
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(
+            0,
+            10,
+            0,
+            20
+    );
+
+    content.addView(message);
+
+    addCard(
+            "📖 Descendants of Good",
+            "An original Christian story. Coming soon.",
+            v -> showMessage(
+                    "📖 Descendants of Good",
+                    "This story will be added when the book is complete."
+            )
+    );
+
+    addCard(
+            "📚 More Stories Coming Soon",
+            "New stories can be added to the Story Books library.",
+            v -> showMessage(
+                    "📚 More Stories",
+                    "More stories will be added here in the future."
+            )
+    );
     }
     void showSermons() {
     stopTimer();
