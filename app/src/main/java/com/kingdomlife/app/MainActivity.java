@@ -2284,45 +2284,79 @@ content.addView(bookGrid);
     stopTimer();
     content.removeAllViews();
 
+    ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showMoreMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
+
     TextView title = new TextView(this);
     title.setText("⭐ Saved Verses");
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
     content.addView(title);
 
     if (savedVersesPrefs.getAll().isEmpty()) {
 
-    TextView message = new TextView(this);
-    message.setText(
-            "No saved verses yet.\n\n" +
-            "Save a verse from the Bible reader and it will appear here."
-    );
-    message.setTextSize(18);
-    message.setTextColor(darkText);
-    message.setPadding(10, 10, 10, 20);
-    content.addView(message);
-
-} else {
-
-    for (java.util.Map.Entry<String, ?> entry :
-            savedVersesPrefs.getAll().entrySet()) {
-
-        String reference = entry.getKey();
-        String verseText = entry.getValue().toString();
-
-        addCard(
-                "⭐ " + reference,
-                verseText,
-                v -> {}
+        TextView message = new TextView(this);
+        message.setText(
+                "No saved verses yet.\n\n" +
+                "Save a verse from the Bible reader and it will appear here."
         );
+        message.setTextSize(18);
+        message.setTextColor(darkText);
+        message.setPadding(
+                10,
+                10,
+                10,
+                20
+        );
+        content.addView(message);
+
+    } else {
+
+        for (
+                java.util.Map.Entry<String, ?> entry :
+                savedVersesPrefs.getAll().entrySet()
+        ) {
+
+            String reference = entry.getKey();
+            String verseText =
+                    entry.getValue().toString();
+
+            addCard(
+                    "⭐ " + reference,
+                    verseText,
+                    v -> {}
+            );
+        }
     }
-    }
-    addButton(
-            "⬅️ Back to More",
-            v -> showMoreMenu()
-    );
     }
     void showBibleDictionary() {
     stopTimer();
