@@ -5881,7 +5881,28 @@ button.setElevation(4);
 
 void showMissingWordQuestion(String[][] questions, int questionIndex) {
     content.removeAllViews();
+    
+    ImageButton backButton = new ImageButton(this);
 
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showGameMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
     String[] q = questions[questionIndex];
     final boolean[] answered = {false};
 
@@ -5992,7 +6013,7 @@ void showMissingWordQuestion(String[][] questions, int questionIndex) {
         });
     }
 
-    addButton("⬅️ Back to Games", v -> showGameMenu());
+    
             }
     void showHighlights() {
     stopTimer();
