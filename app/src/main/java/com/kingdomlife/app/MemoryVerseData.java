@@ -171,4 +171,82 @@ public static final MemoryVerse[] GUESS_VERSE_LEVEL_2 = {
             "Let all your things be done with charity."
     )
 };
+    // Guess the Verse — Level 3
+public static final MemoryVerse[] GUESS_VERSE_LEVEL_3 = {
+
+    new MemoryVerse(
+            "Psalm 51:10",
+            "Create in me a clean heart, O God; and renew a right spirit within me."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 43:2",
+            "When thou passest through the waters, I will be with thee."
+    ),
+
+    new MemoryVerse(
+            "Matthew 22:37",
+            "Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind."
+    ),
+
+    new MemoryVerse(
+            "John 14:6",
+            "I am the way, the truth, and the life: no man cometh unto the Father, but by me."
+    ),
+
+    new MemoryVerse(
+            "Romans 5:8",
+            "But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us."
+    ),
+
+    new MemoryVerse(
+            "2 Corinthians 5:17",
+            "Therefore if any man be in Christ, he is a new creature."
+    ),
+
+    new MemoryVerse(
+            "Galatians 2:20",
+            "I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me."
+    ),
+
+    new MemoryVerse(
+            "Ephesians 6:11",
+            "Put on the whole armour of God, that ye may be able to stand against the wiles of the devil."
+    ),
+
+    new MemoryVerse(
+            "Philippians 1:6",
+            "He which hath begun a good work in you will perform it until the day of Jesus Christ."
+    ),
+
+    new MemoryVerse(
+            "Colossians 3:2",
+            "Set your affection on things above, not on things on the earth."
+    ),
+
+    new MemoryVerse(
+            "1 Thessalonians 5:16",
+            "Rejoice evermore."
+    ),
+
+    new MemoryVerse(
+            "2 Timothy 3:16",
+            "All scripture is given by inspiration of God, and is profitable for doctrine."
+    ),
+
+    new MemoryVerse(
+            "Hebrews 13:8",
+            "Jesus Christ the same yesterday, and to day, and for ever."
+    ),
+
+    new MemoryVerse(
+            "James 4:8",
+            "Draw nigh to God, and he will draw nigh to you."
+    ),
+
+    new MemoryVerse(
+            "1 John 4:19",
+            "We love him, because he first loved us."
+    )
+};
 }
