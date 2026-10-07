@@ -44,11 +44,11 @@ private int score = 0;
         );
 
         content.setPadding(
-                20,
-                10,
-                20,
-                20
-        );
+        20,
+        35,
+        20,
+        40
+);
 
         setContentView(content);
 
@@ -169,19 +169,37 @@ private int score = 0;
 
         button.setTextSize(16);
 
-        button.setAllCaps(false);
+button.setAllCaps(false);
 
+button.setMinHeight(100);
+
+button.setPadding(
+        15,
+        12,
+        15,
+        12
+);
         button.setOnClickListener(
                 v -> showLevels(type)
         );
 
-        content.addView(
-                button,
-                new LinearLayout.LayoutParams(
-                        -1,
-                        90
-                )
+        LinearLayout.LayoutParams params =
+        new LinearLayout.LayoutParams(
+                -1,
+                -2
         );
+
+params.setMargins(
+        0,
+        8,
+        0,
+        8
+);
+
+content.addView(
+        button,
+        params
+);
     }
 
     private void showLevels(
