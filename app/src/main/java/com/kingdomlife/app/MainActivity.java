@@ -5437,6 +5437,27 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
     void showBibleChallenge() {
     stopTimer();
     content.removeAllViews();
+            ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showGameMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     TextView title = new TextView(this);
     title.setText("🧠 Bible Challenge");
@@ -5474,7 +5495,7 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
 } else {
     addButton("🔒 Level 3 — Locked", v -> {});
         }
-        addButton("⬅️ Back", v -> showGameMenu());
+        
     }
 void showBibleScramble() {
     stopTimer();
