@@ -405,4 +405,82 @@ public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_2 = {
             "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."
     )
 };
+    // Complete the Verse — Level 3
+public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_3 = {
+
+    new MemoryVerse(
+            "Psalm 34:18",
+            "The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit."
+    ),
+
+    new MemoryVerse(
+            "Psalm 63:1",
+            "O God, thou art my God; early will I seek thee: my soul thirsteth for thee."
+    ),
+
+    new MemoryVerse(
+            "Psalm 91:1",
+            "He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty."
+    ),
+
+    new MemoryVerse(
+            "Psalm 121:7",
+            "The LORD shall preserve thee from all evil: he shall preserve thy soul."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 11:25",
+            "The liberal soul shall be made fat: and he that watereth shall be watered also himself."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 22:6",
+            "Train up a child in the way he should go: and when he is old, he will not depart from it."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 55:8",
+            "For my thoughts are not your thoughts, neither are your ways my ways, saith the LORD."
+    ),
+
+    new MemoryVerse(
+            "Jeremiah 17:7",
+            "Blessed is the man that trusteth in the LORD, and whose hope the LORD is."
+    ),
+
+    new MemoryVerse(
+            "Matthew 11:29",
+            "Take my yoke upon you, and learn of me; for I am meek and lowly in heart."
+    ),
+
+    new MemoryVerse(
+            "Luke 6:31",
+            "And as ye would that men should do to you, do ye also to them likewise."
+    ),
+
+    new MemoryVerse(
+            "John 10:10",
+            "I am come that they might have life, and that they might have it more abundantly."
+    ),
+
+    new MemoryVerse(
+            "Romans 8:1",
+            "There is therefore now no condemnation to them which are in Christ Jesus."
+    ),
+
+    new MemoryVerse(
+            "2 Corinthians 12:9",
+            "My grace is sufficient for thee: for my strength is made perfect in weakness."
+    ),
+
+    new MemoryVerse(
+            "Philippians 4:8",
+            "Whatsoever things are true, whatsoever things are honest, whatsoever things are just, think on these things."
+    ),
+
+    new MemoryVerse(
+            "1 Peter 2:9",
+            "But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people."
+    )
+};
 }
