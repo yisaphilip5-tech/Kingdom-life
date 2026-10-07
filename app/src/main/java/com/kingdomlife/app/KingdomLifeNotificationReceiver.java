@@ -8,14 +8,33 @@ import android.content.Intent;
 import android.app.Notification;
 import android.os.Build;
 
-
-public class KingdomLifeNotificationReceiver extends BroadcastReceiver {
+public class KingdomLifeNotificationReceiver
+        extends BroadcastReceiver {
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(
+            Context context,
+            Intent intent
+    ) {
+
+        boolean notificationsEnabled =
+                context.getSharedPreferences(
+                        "KingdomLifePrefs",
+                        Context.MODE_PRIVATE
+                ).getBoolean(
+                        "notifications_enabled",
+                        false
+                );
+
+        // Do not show anything when notifications are OFF.
+        if (!notificationsEnabled) {
+            return;
+        }
 
         String type =
-                intent.getStringExtra("notification_type");
+                intent.getStringExtra(
+                        "notification_type"
+                );
 
         String title;
         String message;
@@ -40,7 +59,10 @@ public class KingdomLifeNotificationReceiver extends BroadcastReceiver {
         }
 
         Intent openApp =
-                new Intent(context, MainActivity.class);
+                new Intent(
+                        context,
+                        MainActivity.class
+                );
 
         openApp.setFlags(
                 Intent.FLAG_ACTIVITY_NEW_TASK |
@@ -60,20 +82,28 @@ public class KingdomLifeNotificationReceiver extends BroadcastReceiver {
 
         Notification.Builder builder;
 
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-    builder = new Notification.Builder(
-            context,
-            "kingdom_life_reminders"
-    );
-} else {
-    builder = new Notification.Builder(context);
-}
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
-builder.setSmallIcon(R.drawable.kingdom_life_icon)
+            builder = new Notification.Builder(
+                    context,
+                    "kingdom_life_reminders"
+            );
+
+        } else {
+
+            builder = new Notification.Builder(
+                    context
+            );
+        }
+
+        builder.setSmallIcon(
+                R.drawable.kingdom_life_icon
+        )
         .setContentTitle(title)
         .setContentText(message)
         .setAutoCancel(true)
         .setContentIntent(pendingIntent);
+
         NotificationManager manager =
                 (NotificationManager)
                         context.getSystemService(
@@ -91,4 +121,4 @@ builder.setSmallIcon(R.drawable.kingdom_life_icon)
             );
         }
     }
-}
+        }
