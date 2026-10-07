@@ -6650,6 +6650,26 @@ void showBookmarks() {
                     ""
             );
 
+    // Prevent an invalid future completion date
+    if (!lastDate.isEmpty() &&
+            lastDate.compareTo(today) > 0) {
+
+        lastDate = "";
+        dailyStreak = 0;
+
+        prefs.edit()
+                .putString(
+                        "lastChallengeDate",
+                        ""
+                )
+                .putInt(
+                        "dailyStreak",
+                        0
+                )
+                .apply();
+    }
+
+    // Already completed today's challenge
     if (today.equals(lastDate)) {
         showDailyChallenge();
         return;
