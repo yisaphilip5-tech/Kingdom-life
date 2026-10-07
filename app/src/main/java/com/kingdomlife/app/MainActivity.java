@@ -3835,81 +3835,159 @@ addButton("⬅️ Back to Home", v -> showHome());
     stopTimer();
     content.removeAllViews();
 
+    ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showSettings()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
+
     TextView title = new TextView(this);
     title.setText("🔔 Notifications");
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
     content.addView(title);
 
-    addCard(
-            "🎯 Daily Challenge Reminder",
-            "Get a daily reminder to complete your challenge.",
-            v -> {
+    TextView message = new TextView(this);
+    message.setText(
+            "Control your Kingdom Life reminders."
+    );
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(
+            0,
+            0,
+            0,
+            20
+    );
+    content.addView(message);
 
-                scheduleKingdomLifeNotification(
-                        "daily",
-                        18,
-                        0
-                );
+    final android.widget.Switch notificationSwitch =
+            new android.widget.Switch(this);
 
-                showMessage(
-                        "🔔 Reminder Enabled",
-                        "Daily Challenge reminder set for 6:00 PM."
-                );
+    notificationSwitch.setText(
+            "🔔 Notifications"
+    );
+
+    notificationSwitch.setTextSize(18);
+    notificationSwitch.setTextColor(darkText);
+
+    boolean notificationsEnabled =
+            getSharedPreferences(
+                    "KingdomLifePrefs",
+                    MODE_PRIVATE
+            ).getBoolean(
+                    "notifications_enabled",
+                    false
+            );
+
+    notificationSwitch.setChecked(
+            notificationsEnabled
+    );
+
+    content.addView(
+            notificationSwitch,
+            new LinearLayout.LayoutParams(
+                    -1,
+                    60
+            )
+    );
+
+    notificationSwitch.setOnCheckedChangeListener(
+            (buttonView, isChecked) -> {
+
+                android.content.SharedPreferences
+                        notificationPrefs =
+                        getSharedPreferences(
+                                "KingdomLifePrefs",
+                                MODE_PRIVATE
+                        );
+
+                notificationPrefs.edit()
+                        .putBoolean(
+                                "notifications_enabled",
+                                isChecked
+                        )
+                        .apply();
+
+                if (isChecked) {
+
+                    scheduleKingdomLifeNotification(
+                            "daily",
+                            18,
+                            0
+                    );
+
+                    scheduleKingdomLifeNotification(
+                            "bible",
+                            8,
+                            0
+                    );
+
+                    scheduleKingdomLifeNotification(
+                            "memory",
+                            20,
+                            0
+                    );
+
+                    showMessage(
+                            "🔔 Notifications On",
+                            "Kingdom Life reminders are now enabled."
+                    );
+
+                } else {
+
+                    cancelKingdomLifeNotification(
+                            "daily"
+                    );
+
+                    cancelKingdomLifeNotification(
+                            "bible"
+                    );
+
+                    cancelKingdomLifeNotification(
+                            "memory"
+                    );
+
+                    showMessage(
+                            "🔕 Notifications Off",
+                            "All Kingdom Life reminders are now disabled."
+                    );
+                }
             }
     );
 
     addCard(
-            "📖 Bible Reading Reminder",
-            "Get a daily reminder to spend time reading the Bible.",
-            v -> {
-
-                scheduleKingdomLifeNotification(
-                        "bible",
-                        8,
-                        0
-                );
-
-                showMessage(
-                        "🔔 Reminder Enabled",
-                        "Bible Reading reminder set for 8:00 AM."
-                );
-            }
-    );
-
-    addCard(
-            "🧠 Memory Verse Reminder",
-            "Get a daily reminder to practice your Memory Verse.",
-            v -> {
-
-                scheduleKingdomLifeNotification(
-                        "memory",
-                        20,
-                        0
-                );
-
-                showMessage(
-                        "🔔 Reminder Enabled",
-                        "Memory Verse reminder set for 8:00 PM."
-                );
-            }
-    );
-
-    addButton(
-            "🔕 Turn Off All Reminders",
-            v -> {
-
-                cancelKingdomLifeNotification("daily");
-                cancelKingdomLifeNotification("bible");
-                cancelKingdomLifeNotification("memory");
-
-                showMessage(
-                        "🔕 Reminders Disabled",
-                        "All Kingdom Life reminders have been turned off."
-                );
-            }
+            "⏰ Reminder Times",
+            "🎯 Daily Challenge — 6:00 PM\n" +
+            "📖 Bible Reading — 8:00 AM\n" +
+            "🧠 Memory Verse — 8:00 PM",
+            v -> {}
     );
 
     addButton(
@@ -3917,6 +3995,7 @@ addButton("⬅️ Back to Home", v -> showHome());
             v -> showSettings()
     );
     }
+                
     void scheduleKingdomLifeNotification(
         String type,
         int hour,
