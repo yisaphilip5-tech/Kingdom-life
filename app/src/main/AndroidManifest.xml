@@ -12,9 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <activity
-    android:name=".MemoryVerseGameActivity"
-    android:exported="false" />
+            
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +20,9 @@
             </intent-filter>
 
         </activity>
+        <activity
+    android:name=".MemoryVerseGameActivity"
+    android:exported="false" />
         <receiver
     android:name=".KingdomLifeNotificationReceiver"
     android:exported="false" />
