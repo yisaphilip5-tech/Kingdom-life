@@ -6614,23 +6614,58 @@ void showBookmarks() {
     TextView title = new TextView(this);
     title.setText("🔎 Explore Results");
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
     content.addView(title);
 
     boolean found = false;
 
-    if (query.contains("bible")) {
+    if (query.contains("bible") ||
+            query.contains("kjv")) {
+
         addCard(
-                "📖 Holy Bible",
+                "📖 Holy Bible — KJV",
                 "Read the King James Version of the Bible.",
                 v -> showBible()
         );
         found = true;
     }
 
-    if (query.contains("memory") || query.contains("verse")) {
+    if (query.contains("web") ||
+            query.contains("world english")) {
+
+        addCard(
+                "🌍 Holy Bible — WEB",
+                "Read the World English Bible translation.",
+                v -> {
+                    getSharedPreferences(
+                            "KingdomLifePrefs",
+                            MODE_PRIVATE
+                    ).edit()
+                            .putString(
+                                    "bible_translation",
+                                    "WEB"
+                            )
+                            .apply();
+
+                    showBible();
+                }
+        );
+        found = true;
+    }
+
+    if (query.contains("memory") ||
+            query.contains("verse")) {
+
         addCard(
                 "🧠 Memory Verse",
                 "Practice and learn Bible verses.",
@@ -6639,7 +6674,9 @@ void showBookmarks() {
         found = true;
     }
 
-    if (query.contains("quiz") || query.contains("game")) {
+    if (query.contains("quiz") ||
+            query.contains("game")) {
+
         addCard(
                 "🎮 Bible Games",
                 "Test your Bible knowledge with different challenges.",
@@ -6648,7 +6685,9 @@ void showBookmarks() {
         found = true;
     }
 
-    if (query.contains("puzzle") || query.contains("scramble")) {
+    if (query.contains("puzzle") ||
+            query.contains("scramble")) {
+
         addCard(
                 "🧩 Bible Puzzle",
                 "Try Bible puzzle challenges.",
@@ -6657,7 +6696,61 @@ void showBookmarks() {
         found = true;
     }
 
+    if (query.contains("bible challenge")) {
+
+        addCard(
+                "🧠 Bible Challenge",
+                "Test your Bible knowledge with different challenge levels.",
+                v -> showBibleChallenge()
+        );
+        found = true;
+    }
+
+    if (query.contains("journey")) {
+
+        addCard(
+                "📖 Bible Journey",
+                "Travel through the 66 books of the Bible and test your knowledge.",
+                v -> showBibleJourney()
+        );
+        found = true;
+    }
+
+    if (query.contains("story") ||
+            query.contains("stories")) {
+
+        addCard(
+                "📚 Story Books",
+                "Read inspiring stories and original Christian fiction.",
+                v -> showStoryBooks()
+        );
+        found = true;
+    }
+
+    if (query.contains("spiritual") ||
+            query.contains("growth")) {
+
+        addCard(
+                "📚 Spiritual Growth Books",
+                "Read books and resources that help you grow in faith.",
+                v -> showSpiritualBooks()
+        );
+        found = true;
+    }
+
+    if (query.contains("sermon") ||
+            query.contains("sermons")) {
+
+        addCard(
+                "🎙️ Sermons",
+                "Listen to sermons and messages for spiritual encouragement.",
+                v -> showSermons()
+        );
+        found = true;
+    }
+
     if (query.contains("dictionary")) {
+
         addCard(
                 "📚 Bible Dictionary",
                 "Search Bible words and their meanings.",
@@ -6667,6 +6760,7 @@ void showBookmarks() {
     }
 
     if (query.contains("bookmark")) {
+
         addCard(
                 "🔖 Bookmarks",
                 "Return quickly to saved Bible locations.",
@@ -6686,7 +6780,19 @@ void showBookmarks() {
         found = true;
     }
 
-    if (query.contains("challenge")) {
+    if (query.contains("saved") ||
+            query.contains("saved verse")) {
+
+        addCard(
+                "⭐ Saved Verses",
+                "View your saved Bible verses.",
+                v -> showMore()
+        );
+        found = true;
+    }
+
+    if (query.contains("daily challenge")) {
+
         addCard(
                 "🎯 Daily Challenge",
                 "Complete today's faith-building challenge.",
@@ -6708,10 +6814,22 @@ void showBookmarks() {
     }
 
     if (query.contains("achievement")) {
+
         addCard(
                 "🏆 Achievements",
                 "View your unlocked and locked achievements.",
                 v -> showAchievements()
+        );
+        found = true;
+    }
+
+    if (query.contains("notification") ||
+            query.contains("notifications")) {
+
+        addCard(
+                "🔔 Notifications",
+                "Manage your notification settings.",
+                v -> showSettings()
         );
         found = true;
     }
@@ -6745,5 +6863,7 @@ void showBookmarks() {
             "⬅️ Back to Home",
             v -> showHome()
     );
-        }
+    }
+
+    
   }
