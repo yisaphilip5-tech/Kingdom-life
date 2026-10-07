@@ -2503,85 +2503,128 @@ String meaning =
     stopTimer();
     content.removeAllViews();
 
+    ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showMoreMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
+
     TextView title = new TextView(this);
     title.setText("📝 Notes & Highlights");
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
     content.addView(title);
 
     if (notesPrefs.getAll().isEmpty()) {
 
-    TextView message = new TextView(this);
-    message.setText(
-            "No notes saved yet.\n\n" +
-            "Add a note and it will appear here."
-    );
-    message.setTextSize(18);
-    message.setTextColor(darkText);
-    message.setPadding(10, 10, 10, 20);
-    content.addView(message);
-
-} else {
-
-    for (java.util.Map.Entry<String, ?> entry :
-            notesPrefs.getAll().entrySet()) {
-
-        String noteText =
-                entry.getValue().toString();
-
-        addCard(
-                "📝 Note",
-                noteText,
-                v -> {}
+        TextView message = new TextView(this);
+        message.setText(
+                "No notes saved yet.\n\n" +
+                "Add a note and it will appear here."
         );
-    }
-    }
-    addButton(
-        "📝 Add Note",
-        v -> {
+        message.setTextSize(18);
+        message.setTextColor(darkText);
+        message.setPadding(
+                10,
+                10,
+                10,
+                20
+        );
+        content.addView(message);
 
-            EditText noteInput = new EditText(this);
+    } else {
 
-            noteInput.setHint("Write your note here");
-            noteInput.setTextSize(18);
+        for (
+                java.util.Map.Entry<String, ?> entry :
+                notesPrefs.getAll().entrySet()
+        ) {
 
-            content.addView(noteInput);
+            String noteText =
+                    entry.getValue().toString();
 
-            addButton(
-                    "💾 Save Note",
-                    saveView -> {
-
-                        String noteText =
-                                noteInput.getText().toString().trim();
-
-                        if (noteText.isEmpty()) {
-                            showMessage(
-                                    "📝 Add Note",
-                                    "Please write a note first."
-                            );
-                            return;
-                        }
-
-                        saveNote(
-                                "General Note",
-                                noteText
-                        );
-                    }
+            addCard(
+                    "📝 Note",
+                    noteText,
+                    v -> {}
             );
         }
-);
+    }
 
     addButton(
-        "🖍️ Highlights",
-        v -> showHighlights()
-);
-    addButton(
-            "⬅️ Back to More",
-            v -> showMoreMenu()
+            "📝 Add Note",
+            v -> {
+
+                EditText noteInput =
+                        new EditText(this);
+
+                noteInput.setHint(
+                        "Write your note here"
+                );
+
+                noteInput.setTextSize(18);
+
+                content.addView(noteInput);
+
+                addButton(
+                        "💾 Save Note",
+                        saveView -> {
+
+                            String noteText =
+                                    noteInput.getText()
+                                            .toString()
+                                            .trim();
+
+                            if (noteText.isEmpty()) {
+
+                                showMessage(
+                                        "📝 Add Note",
+                                        "Please write a note first."
+                                );
+
+                                return;
+                            }
+
+                            saveNote(
+                                    "General Note",
+                                    noteText
+                            );
+                        }
+                );
+            }
     );
-    }
+
+    addButton(
+            "🖍️ Highlights",
+            v -> showHighlights()
+    );
+            }
+            
     void showLearnMenu() {
     stopTimer();
     content.removeAllViews();
