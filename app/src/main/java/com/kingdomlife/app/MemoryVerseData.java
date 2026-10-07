@@ -249,4 +249,82 @@ public static final MemoryVerse[] GUESS_VERSE_LEVEL_3 = {
             "We love him, because he first loved us."
     )
 };
+    // Complete the Verse — Level 1
+public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_1 = {
+
+    new MemoryVerse(
+            "Psalm 1:1",
+            "Blessed is the man that walketh not in the counsel of the ungodly."
+    ),
+
+    new MemoryVerse(
+            "Psalm 19:1",
+            "The heavens declare the glory of God; and the firmament sheweth his handywork."
+    ),
+
+    new MemoryVerse(
+            "Psalm 37:5",
+            "Commit thy way unto the LORD; trust also in him; and he shall bring it to pass."
+    ),
+
+    new MemoryVerse(
+            "Psalm 56:3",
+            "What time I am afraid, I will trust in thee."
+    ),
+
+    new MemoryVerse(
+            "Psalm 118:24",
+            "This is the day which the LORD hath made; we will rejoice and be glad in it."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 4:23",
+            "Keep thy heart with all diligence; for out of it are the issues of life."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 16:3",
+            "Commit thy works unto the LORD, and thy thoughts shall be established."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 26:3",
+            "Thou wilt keep him in perfect peace, whose mind is stayed on thee."
+    ),
+
+    new MemoryVerse(
+            "Matthew 5:9",
+            "Blessed are the peacemakers: for they shall be called the children of God."
+    ),
+
+    new MemoryVerse(
+            "Matthew 7:7",
+            "Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."
+    ),
+
+    new MemoryVerse(
+            "John 8:12",
+            "I am the light of the world: he that followeth me shall not walk in darkness."
+    ),
+
+    new MemoryVerse(
+            "John 15:5",
+            "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit."
+    ),
+
+    new MemoryVerse(
+            "Romans 10:9",
+            "If thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved."
+    ),
+
+    new MemoryVerse(
+            "1 Corinthians 10:13",
+            "God is faithful, who will not suffer you to be tempted above that ye are able."
+    ),
+
+    new MemoryVerse(
+            "Ephesians 4:32",
+            "And be ye kind one to another, tenderhearted, forgiving one another."
+    )
+};
 }
