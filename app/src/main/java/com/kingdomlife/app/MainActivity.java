@@ -6786,7 +6786,7 @@ void showBookmarks() {
         addCard(
                 "⭐ Saved Verses",
                 "View your saved Bible verses.",
-                v -> showMore()
+                v -> showSavedVerses()
         );
         found = true;
     }
