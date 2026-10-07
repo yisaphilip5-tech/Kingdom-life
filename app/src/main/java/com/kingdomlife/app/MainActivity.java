@@ -3802,15 +3802,7 @@ addButton("⬅️ Back to Home", v -> showHome());
             )
     );
 
-    addCard(
-            "🌅 Day & Night Background",
-            "Kingdom Life automatically changes the home background based on the time.",
-            v -> showMessage(
-                    "🌅 Day & Night",
-                    "Day background: 6:00 AM – 5:59 PM\n" +
-                    "Night background: 6:00 PM – 5:59 AM"
-            )
-    );
+    
 
     addCard(
             "📊 Progress",
@@ -3818,11 +3810,7 @@ addButton("⬅️ Back to Home", v -> showHome());
             v -> showProgress()
     );
 
-    addCard(
-            "🏆 Achievements",
-            "View your unlocked and locked achievements.",
-            v -> showAchievements()
-    );
+    
         addCard(
         "🔔 Notifications",
         "Manage reminders for your Kingdom Life activities.",
