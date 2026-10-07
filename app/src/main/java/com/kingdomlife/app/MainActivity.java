@@ -4688,7 +4688,62 @@ void unlockBibleJourneyDifficulty(
     void showBookDifficulty(String book) {
     stopTimer();
     content.removeAllViews();
+        
+    ImageButton backButton = new ImageButton(this);
 
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> {
+
+                String[] newTestamentBooks = {
+                        "Matthew", "Mark",
+                        "Luke", "John",
+                        "Acts", "Romans",
+                        "1 Corinthians", "2 Corinthians",
+                        "Galatians", "Ephesians",
+                        "Philippians", "Colossians",
+                        "1 Thessalonians", "2 Thessalonians",
+                        "1 Timothy", "2 Timothy",
+                        "Titus", "Philemon",
+                        "Hebrews", "James",
+                        "1 Peter", "2 Peter",
+                        "1 John", "2 John",
+                        "3 John", "Jude",
+                        "Revelation"
+                };
+
+                boolean isNewTestament = false;
+
+                for (String ntBook : newTestamentBooks) {
+
+                    if (book.equals(ntBook)) {
+                        isNewTestament = true;
+                        break;
+                    }
+                }
+
+                if (isNewTestament) {
+                    showBibleJourneyNewTestament();
+                } else {
+                    showBibleJourneyOldTestament();
+                }
+            }
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
     TextView title = new TextView(this);
     title.setText("📖 " + book);
     title.setTextSize(26);
@@ -4697,7 +4752,8 @@ void unlockBibleJourneyDifficulty(
     title.setGravity(Gravity.CENTER);
     title.setPadding(0, 20, 0, 10);
     content.addView(title);
-
+        
+    
     TextView info = new TextView(this);
     info.setText("Choose your difficulty");
     info.setTextSize(18);
@@ -4741,40 +4797,7 @@ if (isBibleJourneyDifficultyUnlocked(book, "Scholar")) {
 } else {
     addButton("🔒 Scholar", v -> {});
 }
-    addButton("⬅️ Back", v -> {
-
-    String[] newTestamentBooks = {
-            "Matthew", "Mark",
-            "Luke", "John",
-            "Acts", "Romans",
-            "1 Corinthians", "2 Corinthians",
-            "Galatians", "Ephesians",
-            "Philippians", "Colossians",
-            "1 Thessalonians", "2 Thessalonians",
-            "1 Timothy", "2 Timothy",
-            "Titus", "Philemon",
-            "Hebrews", "James",
-            "1 Peter", "2 Peter",
-            "1 John", "2 John",
-            "3 John", "Jude",
-            "Revelation"
-    };
-
-    boolean isNewTestament = false;
-
-    for (String ntBook : newTestamentBooks) {
-        if (book.equals(ntBook)) {
-            isNewTestament = true;
-            break;
-        }
-    }
-
-    if (isNewTestament) {
-        showBibleJourneyNewTestament();
-    } else {
-        showBibleJourneyOldTestament();
-    }
-});
+    
     }
     void startBibleJourney(String book, String difficulty) {
     stopTimer();
