@@ -4030,6 +4030,27 @@ addCard(
     void showGuessVerse() {
     stopTimer();
     content.removeAllViews();
+            ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showMemoryVerse()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     TextView title = new TextView(this);
     title.setText("📖 Guess the Verse");
@@ -4106,13 +4127,34 @@ addCard(
 
     content.addView(feedback);
 
-    addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
+
     }
        
 
     void showCompleteVerse() {
     stopTimer();
     content.removeAllViews();
+            ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showMemoryVerse()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     TextView title = new TextView(this);
     title.setText("✍️ Complete the Verse");
@@ -4193,11 +4235,32 @@ addCard(
 
     content.addView(feedback);
 
-    addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
+    
     }
   void showGuessReference() {
     stopTimer();
     content.removeAllViews();
+          ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showMemoryVerse()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     TextView title = new TextView(this);
     title.setText("🔄 Guess the Reference");
@@ -4277,7 +4340,7 @@ addCard(
 
     content.addView(feedback);
 
-    addButton("⬅️ Back to Memory Verse", v -> showMemoryVerse());
+    
                                   }
     void showGameMenu() {
         stopTimer();
