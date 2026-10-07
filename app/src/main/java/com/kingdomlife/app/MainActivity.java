@@ -2632,9 +2632,17 @@ String meaning =
     TextView title = new TextView(this);
     title.setText("📖 Learn & Grow");
     title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
     title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
+    title.setPadding(
+            0,
+            15,
+            0,
+            20
+    );
     content.addView(title);
 
     addCard(
@@ -2642,11 +2650,12 @@ String meaning =
             "Read books and resources that help you grow in faith.",
             v -> showSpiritualBooks()
     );
-        addCard(
-        "📚 Story Books",
-        "Read inspiring Bible-based stories and lessons.",
-        v -> showStoryBooks()
-);
+
+    addCard(
+            "📚 Story Books",
+            "Read inspiring Bible-based stories and lessons.",
+            v -> showStoryBooks()
+    );
 
     addCard(
             "🎙️ Sermons",
@@ -2658,18 +2667,6 @@ String meaning =
             "📖 Bible Study",
             "Explore the Bible and deepen your understanding of Scripture.",
             v -> showBible()
-    );
-
-    addCard(
-            "🧠 Memory Verse",
-            "Practice Scripture and strengthen your Bible memory.",
-            v -> showMemoryVerse()
-    );
-
-    addCard(
-            "🎯 Daily Challenge",
-            "Complete a daily faith-building challenge.",
-            v -> showDailyChallenge()
     );
 
     addButton(
