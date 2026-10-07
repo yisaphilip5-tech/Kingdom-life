@@ -327,4 +327,82 @@ public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_1 = {
             "And be ye kind one to another, tenderhearted, forgiving one another."
     )
 };
+    // Complete the Verse — Level 2
+public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_2 = {
+
+    new MemoryVerse(
+            "Psalm 25:4",
+            "Shew me thy ways, O LORD; teach me thy paths."
+    ),
+
+    new MemoryVerse(
+            "Psalm 32:8",
+            "I will instruct thee and teach thee in the way which thou shalt go."
+    ),
+
+    new MemoryVerse(
+            "Psalm 84:11",
+            "For the LORD God is a sun and shield: the LORD will give grace and glory."
+    ),
+
+    new MemoryVerse(
+            "Psalm 90:12",
+            "So teach us to number our days, that we may apply our hearts unto wisdom."
+    ),
+
+    new MemoryVerse(
+            "Psalm 103:2",
+            "Bless the LORD, O my soul, and forget not all his benefits."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 15:1",
+            "A soft answer turneth away wrath: but grievous words stir up anger."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 27:17",
+            "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 53:5",
+            "But he was wounded for our transgressions, he was bruised for our iniquities."
+    ),
+
+    new MemoryVerse(
+            "Matthew 5:14",
+            "Ye are the light of the world. A city that is set on an hill cannot be hid."
+    ),
+
+    new MemoryVerse(
+            "Matthew 6:34",
+            "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself."
+    ),
+
+    new MemoryVerse(
+            "Mark 10:27",
+            "With men it is impossible, but not with God: for with God all things are possible."
+    ),
+
+    new MemoryVerse(
+            "John 13:34",
+            "A new commandment I give unto you, That ye love one another; as I have loved you."
+    ),
+
+    new MemoryVerse(
+            "Romans 12:12",
+            "Rejoicing in hope; patient in tribulation; continuing instant in prayer."
+    ),
+
+    new MemoryVerse(
+            "Galatians 6:9",
+            "And let us not be weary in well doing: for in due season we shall reap."
+    ),
+
+    new MemoryVerse(
+            "Philippians 4:6",
+            "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."
+    )
+};
 }
