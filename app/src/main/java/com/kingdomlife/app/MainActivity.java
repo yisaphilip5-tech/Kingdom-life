@@ -4993,7 +4993,28 @@ question.setText(
 
     stopTimer();
     content.removeAllViews();
+        
+    ImageButton backButton = new ImageButton(this);
 
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showBookDifficulty(currentBibleBook)
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
     TextView title = new TextView(this);
     title.setText("🏆 Bible Journey Complete!");
     title.setTextSize(26);
