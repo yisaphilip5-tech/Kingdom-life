@@ -4349,7 +4349,28 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     void showBibleJourneyOldTestament() {
     stopTimer();
     content.removeAllViews();
+        
+    ImageButton backButton = new ImageButton(this);
 
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showGameMenu()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
     TextView title = new TextView(this);
     title.setText("📜 Old Testament");
     title.setTextSize(26);
@@ -4475,10 +4496,7 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             content.addView(row);
     }
 
-    addButton(
-            "⬅️ Back to Bible Journey",
-            v -> showGameMenu()
-    );
+    
     }
     
     
