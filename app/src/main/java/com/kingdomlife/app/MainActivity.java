@@ -1472,31 +1472,21 @@ prefs.edit()
   }
 
     void showMemoryVerse() {
+
     stopTimer();
-    content.removeAllViews();
 
-    TextView title = new TextView(this);
-    title.setText("🧠 Memory Verse");
-    title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
-    content.addView(title);
+    Intent intent =
+            new Intent(
+                    this,
+                    MemoryVerseGameActivity.class
+            );
 
-    TextView instruction = new TextView(this);
-    instruction.setText("Choose a Memory Verse challenge:");
-    instruction.setTextSize(18);
-    instruction.setTextColor(darkText);
-    instruction.setPadding(0, 0, 0, 20);
-    content.addView(instruction);
+    intent.putExtra(
+            "memory_game_type",
+            "menu"
+    );
 
-    addButton("📖 Guess the Verse", v -> showGuessVerse());
-
-    addButton("✍️ Complete the Verse", v -> showCompleteVerse());
-
-    addButton("🔄 Guess the Reference", v -> showGuessReference());
-
-    addButton("⬅️ Back to Home", v -> showHome());
+    startActivity(intent);
     }
     void showBible() {
     stopTimer();
