@@ -5151,10 +5151,7 @@ prefs.edit()
             v -> showBibleJourney()
     );
 
-    addButton(
-            "⬅️ Back to Games",
-            v -> showGameMenu()
-    );
+    
     }
 
     void startGame(int milliseconds) {
