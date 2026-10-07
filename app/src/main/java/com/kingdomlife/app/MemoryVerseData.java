@@ -93,4 +93,82 @@ public static final MemoryVerse[] GUESS_VERSE_LEVEL_1 = {
             "Delight thyself also in the LORD; and he shall give thee the desires of thine heart."
     )
 };
+    // Guess the Verse — Level 2
+public static final MemoryVerse[] GUESS_VERSE_LEVEL_2 = {
+
+    new MemoryVerse(
+            "Psalm 27:1",
+            "The LORD is my light and my salvation; whom shall I fear?"
+    ),
+
+    new MemoryVerse(
+            "Isaiah 40:31",
+            "But they that wait upon the LORD shall renew their strength."
+    ),
+
+    new MemoryVerse(
+            "Matthew 5:16",
+            "Let your light so shine before men, that they may see your good works."
+    ),
+
+    new MemoryVerse(
+            "Colossians 3:23",
+            "And whatsoever ye do, do it heartily, as to the Lord, and not unto men."
+    ),
+
+    new MemoryVerse(
+            "Psalm 121:1",
+            "I will lift up mine eyes unto the hills, from whence cometh my help."
+    ),
+
+    new MemoryVerse(
+            "Romans 12:2",
+            "And be not conformed to this world: but be ye transformed by the renewing of your mind."
+    ),
+
+    new MemoryVerse(
+            "Ephesians 2:8",
+            "For by grace are ye saved through faith; and that not of yourselves: it is the gift of God."
+    ),
+
+    new MemoryVerse(
+            "Galatians 5:22",
+            "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith."
+    ),
+
+    new MemoryVerse(
+            "Psalm 19:14",
+            "Let the words of my mouth, and the meditation of my heart, be acceptable in thy sight."
+    ),
+
+    new MemoryVerse(
+            "Micah 6:8",
+            "He hath shewed thee, O man, what is good; and what doth the LORD require of thee."
+    ),
+
+    new MemoryVerse(
+            "1 Peter 5:7",
+            "Casting all your care upon him; for he careth for you."
+    ),
+
+    new MemoryVerse(
+            "Hebrews 11:1",
+            "Now faith is the substance of things hoped for, the evidence of things not seen."
+    ),
+
+    new MemoryVerse(
+            "Psalm 100:4",
+            "Enter into his gates with thanksgiving, and into his courts with praise."
+    ),
+
+    new MemoryVerse(
+            "James 1:5",
+            "If any of you lack wisdom, let him ask of God, that giveth to all men liberally."
+    ),
+
+    new MemoryVerse(
+            "1 Corinthians 16:14",
+            "Let all your things be done with charity."
+    )
+};
 }
