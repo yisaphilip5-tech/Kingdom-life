@@ -3847,6 +3847,27 @@ addButton("⬅️ Back to Home", v -> showHome());
     void showAchievements() {
     stopTimer();
     content.removeAllViews();
+            ImageButton backButton = new ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(
+            Color.TRANSPARENT
+    );
+
+    backButton.setOnClickListener(
+            v -> showProgress()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(
+                    60,
+                    60
+            )
+    );
 
     TextView title = new TextView(this);
     title.setText("🏆 Achievements");
@@ -4017,7 +4038,6 @@ addCard(
         v -> {}
 );
 
-    addButton("⬅️ Back to Progress", v -> showProgress());
     }
     void showAbout() {
         showMessage(
@@ -6252,7 +6272,7 @@ void showBookmarks() {
     void showDailyChallenge() {
     stopTimer();
     content.removeAllViews();
-
+    
     String today =
             new java.text.SimpleDateFormat(
                     "yyyy-MM-dd",
