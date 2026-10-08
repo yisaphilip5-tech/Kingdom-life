@@ -48,54 +48,57 @@ private int score = 0;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        gameType =
-                getIntent().getStringExtra(
-                        "memory_game_type"
-                );
+    gameType =
+            getIntent().getStringExtra(
+                    "memory_game_type"
+            );
 
-        level =
-                getIntent().getIntExtra(
-                        "memory_level",
-                        1
-                );
+    level =
+            getIntent().getIntExtra(
+                    "memory_level",
+                    1
+            );
 
-        content = new LinearLayout(this);
+    content = new LinearLayout(this);
 
-        content.setOrientation(
-                LinearLayout.VERTICAL
+    content.setOrientation(
+            LinearLayout.VERTICAL
+    );
+
+    content.setPadding(
+            12,
+            0,
+            12,
+            12
+    );
+
+    int hour =
+            java.util.Calendar
+                    .getInstance()
+                    .get(
+                            java.util.Calendar.HOUR_OF_DAY
+                    );
+
+    if (hour >= 6 && hour < 18) {
+
+        content.setBackgroundResource(
+                R.drawable.kingdom_home_bg
         );
 
-        content.setPadding(
-        20,
-        35,
-        20,
-        40
-);
-java.util.Calendar calendar =
-        java.util.Calendar.getInstance();
+    } else {
 
-int hour =
-        calendar.get(
-                java.util.Calendar.HOUR_OF_DAY
+        content.setBackgroundResource(
+                R.drawable.kingdom_night_bg
         );
-
-if (hour >= 6 && hour < 18) {
-    content.setBackgroundResource(
-            R.drawable.kingdom_home_bg
-    );
-} else {
-    content.setBackgroundResource(
-            R.drawable.kingdom_night_bg
-    );
-}
-        setContentView(content);
-
-        showGameMenu();
     }
 
+    setContentView(content);
+
+    showGameMenu();
+}
     private void showGameMenu() {
 
         content.removeAllViews();
