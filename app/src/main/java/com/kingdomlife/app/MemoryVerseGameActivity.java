@@ -118,28 +118,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
         content.removeAllViews();
 
-        ImageButton backButton =
-                new ImageButton(this);
-
-        backButton.setImageResource(
-                android.R.drawable.ic_media_previous
-        );
-
-        backButton.setBackgroundColor(
-                Color.TRANSPARENT
-        );
-
-        backButton.setOnClickListener(
-                v -> finish()
-        );
-
-        content.addView(
-                backButton,
-                new LinearLayout.LayoutParams(
-                        60,
-                        60
-                )
-        );
 
         TextView title =
                 new TextView(this);
@@ -211,6 +189,10 @@ protected void onCreate(Bundle savedInstanceState) {
                 "Identify the correct Bible reference.",
                 "reference"
         );
+        addButton(
+        "⬅️ Back to Home",
+        v -> finish()
+);
     }
 
     private void addGameButton(
