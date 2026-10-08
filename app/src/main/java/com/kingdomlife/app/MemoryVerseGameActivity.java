@@ -386,18 +386,25 @@ content.addView(
     button.setAllCaps(false);
 
     LinearLayout.LayoutParams params =
-            new LinearLayout.LayoutParams(
-                    -1,
-                    70
-            );
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
 
-    params.setMargins(
-            0,
-            8,
-            0,
-            8
-    );
+params.setMargins(
+        0,
+        5,
+        0,
+        5
+);
 
+button.setMinHeight(70);
+button.setPadding(
+        20,
+        12,
+        20,
+        12
+);
     content.addView(
             button,
             params
@@ -919,13 +926,31 @@ private void handleAnswer(
             }
     );
 
-    content.addView(
-            nextButton,
-            new LinearLayout.LayoutParams(
-                    -1,
-                    70
-            )
-    );
+    LinearLayout.LayoutParams nextParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+nextParams.setMargins(
+        0,
+        10,
+        0,
+        10
+);
+
+nextButton.setMinHeight(70);
+nextButton.setPadding(
+        20,
+        12,
+        20,
+        12
+);
+
+content.addView(
+        nextButton,
+        nextParams
+);
 }
 
 
