@@ -189,9 +189,37 @@ protected void onCreate(Bundle savedInstanceState) {
                 "Identify the correct Bible reference.",
                 "reference"
         );
-        addButton(
-        "⬅️ Back to Home",
+        Button backHomeButton =
+        new Button(this);
+
+backHomeButton.setText(
+        "⬅️ Back to Home"
+);
+
+backHomeButton.setTextSize(17);
+
+backHomeButton.setAllCaps(false);
+
+backHomeButton.setOnClickListener(
         v -> finish()
+);
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+backParams.setMargins(
+        0,
+        12,
+        0,
+        10
+);
+
+content.addView(
+        backHomeButton,
+        backParams
 );
     }
 
