@@ -62,7 +62,13 @@ protected void onCreate(Bundle savedInstanceState) {
                     1
             );
 
-    content = new LinearLayout(this);
+    ScrollView scrollView =
+            new ScrollView(this);
+
+    scrollView.setFillViewport(false);
+
+    content =
+            new LinearLayout(this);
 
     content.setOrientation(
             LinearLayout.VERTICAL
@@ -70,9 +76,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
     content.setPadding(
             12,
-            0,
+            35,
             12,
-            12
+            25
     );
 
     int hour =
@@ -95,7 +101,15 @@ protected void onCreate(Bundle savedInstanceState) {
         );
     }
 
-    setContentView(content);
+    scrollView.addView(
+            content,
+            new ScrollView.LayoutParams(
+                    ScrollView.LayoutParams.MATCH_PARENT,
+                    ScrollView.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    setContentView(scrollView);
 
     showGameMenu();
 }
