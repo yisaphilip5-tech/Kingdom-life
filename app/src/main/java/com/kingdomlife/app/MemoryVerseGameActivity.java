@@ -21,6 +21,30 @@ public class MemoryVerseGameActivity extends Activity {
 
 private int questionIndex = 0;
 private int score = 0;
+    private boolean isLevelUnlocked(
+        String type,
+        int selectedLevel
+) {
+
+    if (selectedLevel == 1) {
+        return true;
+    }
+
+    String key =
+            "memory_" +
+            type +
+            "_level_" +
+            selectedLevel +
+            "_unlocked";
+
+    return getSharedPreferences(
+            "KingdomLifePrefs",
+            MODE_PRIVATE
+    ).getBoolean(
+            key,
+            false
+    );
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +73,9 @@ private int score = 0;
         20,
         40
 );
-
+content.setBackgroundResource(
+        R.drawable.kingdom_home_bg
+);
         setContentView(content);
 
         showGameMenu();
@@ -319,19 +345,25 @@ content.addView(
     }
 
     private void addLevelButton(
-            String text,
-            String type,
-            int selectedLevel
-    ) {
+        String text,
+        String type,
+        int selectedLevel
+) {
 
-        Button button =
-                new Button(this);
+    Button button =
+            new Button(this);
+
+    boolean unlocked =
+            isLevelUnlocked(
+                    type,
+                    selectedLevel
+            );
+
+    if (unlocked) {
 
         button.setText(text);
 
-        button.setTextSize(18);
-
-        button.setAllCaps(false);
+        button.setEnabled(true);
 
         button.setOnClickListener(
                 v -> startGame(
@@ -340,13 +372,36 @@ content.addView(
                 )
         );
 
-        content.addView(
-                button,
-                new LinearLayout.LayoutParams(
-                        -1,
-                        70
-                )
+    } else {
+
+        button.setText(
+                text + " 🔒"
         );
+
+        button.setEnabled(false);
+    }
+
+    button.setTextSize(18);
+
+    button.setAllCaps(false);
+
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    -1,
+                    70
+            );
+
+    params.setMargins(
+            0,
+            8,
+            0,
+            8
+    );
+
+    content.addView(
+            button,
+            params
+    );
     }
 
     private void startGame(
@@ -877,6 +932,34 @@ private void handleAnswer(
 private void showFinalResult() {
 
     content.removeAllViews();
+    if (level == 1) {
+
+    getSharedPreferences(
+            "KingdomLifePrefs",
+            MODE_PRIVATE
+    ).edit()
+            .putBoolean(
+                    "memory_" +
+                    gameType +
+                    "_level_2_unlocked",
+                    true
+            )
+            .apply();
+
+} else if (level == 2) {
+
+    getSharedPreferences(
+            "KingdomLifePrefs",
+            MODE_PRIVATE
+    ).edit()
+            .putBoolean(
+                    "memory_" +
+                    gameType +
+                    "_level_3_unlocked",
+                    true
+            )
+            .apply();
+    }
 
     TextView title =
             new TextView(this);
