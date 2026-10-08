@@ -73,9 +73,23 @@ private int score = 0;
         20,
         40
 );
-content.setBackgroundResource(
-        R.drawable.kingdom_home_bg
-);
+java.util.Calendar calendar =
+        java.util.Calendar.getInstance();
+
+int hour =
+        calendar.get(
+                java.util.Calendar.HOUR_OF_DAY
+        );
+
+if (hour >= 6 && hour < 18) {
+    content.setBackgroundResource(
+            R.drawable.kingdom_home_bg
+    );
+} else {
+    content.setBackgroundResource(
+            R.drawable.kingdom_night_bg
+    );
+}
         setContentView(content);
 
         showGameMenu();
