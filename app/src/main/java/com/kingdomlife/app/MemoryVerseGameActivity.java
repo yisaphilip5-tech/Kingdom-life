@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.graphics.drawable.GradientDrawable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -210,6 +211,29 @@ if (hour >= 6 && hour < 18) {
         button.setTextSize(16);
 
 button.setAllCaps(false);
+        button.setMinHeight(85);
+
+button.setPadding(
+        20,
+        15,
+        20,
+        15
+);
+
+GradientDrawable buttonBackground =
+        new GradientDrawable();
+
+buttonBackground.setColor(
+        Color.WHITE
+);
+
+buttonBackground.setCornerRadius(
+        28
+);
+
+button.setBackground(
+        buttonBackground
+);
 
 button.setMinHeight(100);
 
@@ -398,6 +422,29 @@ content.addView(
     button.setTextSize(18);
 
     button.setAllCaps(false);
+        button.setMinHeight(80);
+
+button.setPadding(
+        20,
+        15,
+        20,
+        15
+);
+
+GradientDrawable levelBackground =
+        new GradientDrawable();
+
+levelBackground.setColor(
+        Color.WHITE
+);
+
+levelBackground.setCornerRadius(
+        28
+);
+
+button.setBackground(
+        levelBackground
+);
 
     LinearLayout.LayoutParams params =
         new LinearLayout.LayoutParams(
