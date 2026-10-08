@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.ImageButton;
 import android.graphics.drawable.GradientDrawable;
 import android.widget.LinearLayout;
