@@ -2821,6 +2821,11 @@ String meaning =
             }
         }
 );
+        addCard(
+"🔖 My Bookmarks",
+"Revisit your saved story passages.",
+v -> showDescendantsBookmarks()
+);
 
     addCard(
             "📚 More Stories Coming Soon",
@@ -2880,7 +2885,132 @@ String meaning =
         );
     }
     }
+    void showDescendantsBookmarks() {
+stopTimer();
+content.removeAllViews();
+
+ImageButton backButton = new ImageButton(this);
+backButton.setImageResource(android.R.drawable.ic_media_previous);
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setOnClickListener(v -> showStoryBooks());
+
+content.addView(
+        backButton,
+        new LinearLayout.LayoutParams(60, 60)
+);
+
+TextView title = new TextView(this);
+title.setText("🔖 My Bookmarks");
+title.setTextSize(24);
+title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+title.setTextColor(darkText);
+title.setPadding(0, 15, 0, 10);
+content.addView(title);
+
+android.content.SharedPreferences bookmarkPrefs =
+        getSharedPreferences("DescendantsBookmarks", MODE_PRIVATE);
+
+java.util.List<DescendantsOfGoodLibrary.Chapter> chapters =
+        DescendantsOfGoodLibrary.getChapters();
+
+boolean foundBookmark = false;
+
+for (int i = 0; i < chapters.size(); i++) {
+    final int chapterIndex = i;
+    DescendantsOfGoodLibrary.Chapter chapter = chapters.get(i);
+
+    for (int pageIndex = 0; pageIndex < chapter.pages.size(); pageIndex++) {
+        final int savedPageIndex = pageIndex;
+        String bookmarkKey = chapterIndex + "_" + pageIndex;
+
+        if (bookmarkPrefs.getBoolean(bookmarkKey, false)) {
+            foundBookmark = true;
+
+            LinearLayout bookmarkRow = new LinearLayout(this);
+            bookmarkRow.setOrientation(LinearLayout.HORIZONTAL);
+            bookmarkRow.setGravity(android.view.Gravity.CENTER_VERTICAL);
+
+            android.widget.Button openButton =
+                    new android.widget.Button(this);
+            openButton.setText(
+                    chapter.title + " — Page " + (pageIndex + 1)
+            );
+            openButton.setOnClickListener(v -> {
+                android.content.SharedPreferences storyPrefs =
+                        getSharedPreferences(
+                                "DescendantsReadingProgress",
+                                MODE_PRIVATE
+                        );
+
+                storyPrefs.edit()
+                        .putInt("lastChapter", chapterIndex)
+                        .putInt("lastPage", savedPageIndex)
+                        .apply();
+
+                showDescendantsBookmarkedPage(chapterIndex, savedPageIndex);
+            });
+
+            android.widget.Button removeButton =
+                    new android.widget.Button(this);
+            removeButton.setText("Remove");
+            removeButton.setOnClickListener(v -> {
+                bookmarkPrefs.edit()
+                        .remove(bookmarkKey)
+                        .apply();
+
+                showDescendantsBookmarks();
+            });
+
+            bookmarkRow.addView(
+                    openButton,
+                    new LinearLayout.LayoutParams(
+                            0,
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            1
+                    )
+            );
+
+            bookmarkRow.addView(removeButton);
+
+            content.addView(
+                    bookmarkRow,
+                    new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+            );
+        }
+    }
+}
+
+if (!foundBookmark) {
+    TextView emptyMessage = new TextView(this);
+    emptyMessage.setText(
+            "You haven't bookmarked any passages yet.\n\n"
+                    + "Open a chapter and tap 🔖 to save a page."
+    );
+    emptyMessage.setTextSize(16);
+    emptyMessage.setTextColor(darkText);
+    emptyMessage.setPadding(0, 20, 0, 20);
+    content.addView(emptyMessage);
+}
+
+    }
+    void showDescendantsBookmarkedPage(int chapterIndex, int pageIndex) {
+    android.content.SharedPreferences storyPrefs =
+            getSharedPreferences("DescendantsReadingProgress", MODE_PRIVATE);
+
+    storyPrefs.edit()
+            .putInt("lastChapter", chapterIndex)
+            .putInt("lastPage", pageIndex)
+            .apply();
+
+    showDescendantsOfGoodChapter(chapterIndex, pageIndex);
+    }
     void showDescendantsOfGoodChapter(int chapterIndex) {
+    showDescendantsOfGoodChapter(chapterIndex, -1);
+    }
+    void showDescendantsOfGoodChapter(int chapterIndex, int startingPage) {
     stopTimer();
     content.removeAllViews();
 
@@ -2943,7 +3073,34 @@ String meaning =
                     LinearLayout.LayoutParams.WRAP_CONTENT
             )
     );
+LinearLayout bookmarkRow = new LinearLayout(this);
+bookmarkRow.setOrientation(LinearLayout.HORIZONTAL);
+bookmarkRow.setGravity(android.view.Gravity.LEFT);
 
+android.widget.TextView bookmarkButton = new android.widget.TextView(this);
+bookmarkButton.setText("🔖");
+bookmarkButton.setTextSize(28);
+bookmarkButton.setPadding(8, 8, 8, 8);
+bookmarkButton.setContentDescription("Bookmark this page");
+
+bookmarkRow.addView(bookmarkButton);
+        bookmarkButton.setOnClickListener(v -> {
+    android.content.SharedPreferences bookmarkPrefs =
+            getSharedPreferences("DescendantsBookmarks", MODE_PRIVATE);
+
+    String bookmarkKey = chapterIndex + "_" + currentPage[0];
+
+    bookmarkPrefs.edit()
+            .putBoolean(bookmarkKey, true)
+            .apply();
+
+    android.widget.Toast.makeText(
+            this,
+            "Page bookmarked!",
+            android.widget.Toast.LENGTH_SHORT
+    ).show();
+});
+content.addView(bookmarkRow);
     LinearLayout navigation = new LinearLayout(this);
     navigation.setOrientation(LinearLayout.HORIZONTAL);
     navigation.setGravity(android.view.Gravity.CENTER);
@@ -2977,16 +3134,24 @@ String meaning =
     content.addView(navigation);
 
     final int[] currentPage = {0};
-        android.content.SharedPreferences storyPrefs =
+
+android.content.SharedPreferences storyPrefs =
         getSharedPreferences("DescendantsReadingProgress", MODE_PRIVATE);
 
 int savedChapter = storyPrefs.getInt("lastChapter", 0);
 int savedPage = storyPrefs.getInt("lastPage", 0);
 
-if (savedChapter == chapterIndex) {
-    currentPage[0] = Math.max(0, Math.min(savedPage, chapter.pages.size() - 1));
+if (startingPage >= 0) {
+    currentPage[0] = Math.max(
+            0,
+            Math.min(startingPage, chapter.pages.size() - 1)
+    );
+} else if (savedChapter == chapterIndex) {
+    currentPage[0] = Math.max(
+            0,
+            Math.min(savedPage, chapter.pages.size() - 1)
+    );
 }
-
     Runnable updatePage = () -> {
         pageText.setText(chapter.pages.get(currentPage[0]));
         storyPrefs.edit()
