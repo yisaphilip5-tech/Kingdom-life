@@ -5024,6 +5024,14 @@ void unlockBibleJourneyDifficulty(
         String difficulty
 ) {
     String key = "bibleJourney_" + book + "_" + difficulty + "_completed";
+
+    return prefs.getBoolean(key, false);
+    }
+    boolean isBibleJourneyDifficultyCompleted(
+        String book,
+        String difficulty
+) {
+    String key = "bibleJourney_" + book + "_" + difficulty + "_completed";
     return prefs.getBoolean(key, false);
     }
     void showBookDifficulty(String book) {
