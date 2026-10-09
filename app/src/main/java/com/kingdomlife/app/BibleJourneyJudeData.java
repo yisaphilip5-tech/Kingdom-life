@@ -2,6 +2,8 @@ package com.kingdomlife.app;
 
 import java.util.ArrayList;
 
+public class BibleJourneyJudeData {
+
 public static void addJudeQuestions(ArrayList<BibleJourneyData.Question> questions, String difficulty) {
     if (difficulty.equals("Easy")) {
 
