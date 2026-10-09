@@ -2860,6 +2860,130 @@ String meaning =
         );
     }
     }
+    void showDescendantsOfGoodChapter(int chapterIndex) {
+    stopTimer();
+    content.removeAllViews();
+
+    java.util.List<DescendantsOfGoodLibrary.Chapter> chapters =
+            DescendantsOfGoodLibrary.getChapters();
+
+    if (chapterIndex < 0 || chapterIndex >= chapters.size()) {
+        showDescendantsOfGoodChapters();
+        return;
+    }
+
+    DescendantsOfGoodLibrary.Chapter chapter =
+            chapters.get(chapterIndex);
+
+    ImageButton backButton = new ImageButton(this);
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(
+            v -> showDescendantsOfGoodChapters()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(60, 60)
+    );
+
+    TextView chapterTitle = new TextView(this);
+    chapterTitle.setText(chapter.title);
+    chapterTitle.setTextSize(26);
+    chapterTitle.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    chapterTitle.setTextColor(darkText);
+    chapterTitle.setPadding(0, 15, 0, 10);
+
+    content.addView(chapterTitle);
+
+    TextView chapterSubtitle = new TextView(this);
+    chapterSubtitle.setText(chapter.subtitle);
+    chapterSubtitle.setTextSize(16);
+    chapterSubtitle.setTextColor(darkText);
+    chapterSubtitle.setPadding(0, 0, 0, 20);
+
+    content.addView(chapterSubtitle);
+
+    TextView pageText = new TextView(this);
+    pageText.setTextSize(18);
+    pageText.setTextColor(darkText);
+    pageText.setLineSpacing(8, 1.0f);
+    pageText.setPadding(0, 10, 0, 20);
+    pageText.setTextIsSelectable(true);
+
+    content.addView(
+            pageText,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    LinearLayout navigation = new LinearLayout(this);
+    navigation.setOrientation(LinearLayout.HORIZONTAL);
+    navigation.setGravity(android.view.Gravity.CENTER);
+
+    android.widget.Button previousButton =
+            new android.widget.Button(this);
+    previousButton.setText("← Previous");
+
+    android.widget.Button nextButton =
+            new android.widget.Button(this);
+    nextButton.setText("Next →");
+
+    navigation.addView(
+            previousButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    navigation.addView(
+            nextButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    content.addView(navigation);
+
+    final int[] currentPage = {0};
+
+    Runnable updatePage = () -> {
+        pageText.setText(chapter.pages.get(currentPage[0]));
+
+        previousButton.setEnabled(currentPage[0] > 0);
+
+        nextButton.setEnabled(
+                currentPage[0] < chapter.pages.size() - 1
+        );
+    };
+
+    previousButton.setOnClickListener(v -> {
+        if (currentPage[0] > 0) {
+            currentPage[0]--;
+            updatePage.run();
+        }
+    });
+
+    nextButton.setOnClickListener(v -> {
+        if (currentPage[0] < chapter.pages.size() - 1) {
+            currentPage[0]++;
+            updatePage.run();
+        }
+    });
+
+    updatePage.run();
+    }
     void showSermons() {
     stopTimer();
     content.removeAllViews();
