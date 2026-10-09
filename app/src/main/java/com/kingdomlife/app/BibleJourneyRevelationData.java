@@ -8,8 +8,7 @@ public class BibleJourneyRevelationData {
             ArrayList<BibleJourneyData.Question> questions,
             String difficulty
     ) {
-        private static void addBookRevelationQuestions(ArrayList<Question> questions, String difficulty) {
-
+    
     if (difficulty.equals("Easy")) {
 
         questions.add(new BibleJourneyData.Question(
@@ -689,9 +688,6 @@ public class BibleJourneyRevelationData {
             "What did John see coming down from God out of heaven at the end of Revelation?",
             new String[]{"A new temple", "A new mountain", "A new throne", "The holy city, new Jerusalem"},
             3));
-        }
-            }
-
-
+                }
     }
 }
