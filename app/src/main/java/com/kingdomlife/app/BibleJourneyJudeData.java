@@ -2,9 +2,7 @@ package com.kingdomlife.app;
 
 import java.util.ArrayList;
 
-public class BibleJourneyJudeData {
-]633;E;cat /tmp/jude_method.txt;b5e18f54-1181-44ee-ada4-8525a4a03a46]633;C        public static void addJudeQuestions(ArrayList<Question> questions, String difficulty) {
-
+public static void addJudeQuestions(ArrayList<BibleJourneyData.Question> questions, String difficulty) {
     if (difficulty.equals("Easy")) {
 
         questions.add(new BibleJourneyData.Question(
