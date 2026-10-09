@@ -685,9 +685,11 @@ public class BibleJourneyRevelationData {
             2));
 
     questions.add(new BibleJourneyData.Question(
-            "What did John see coming down from God out of heaven at the end of Revelation?",
+                        "What did John see coming down from God out of heaven at the end of Revelation?",
             new String[]{"A new temple", "A new mountain", "A new throne", "The holy city, new Jerusalem"},
             3));
-                }
+        } else if (difficulty.equals("Scholar")) {
+            BibleJourneyScholarData.addRevelationScholarQuestions(questions);
+        }
     }
 }
