@@ -411,4 +411,132 @@ public static void addJudeScholarQuestions(
             new String[]{"The only wise God our Saviour", "The ruler of Jerusalem alone", "The judge of Israel only", "The keeper of earthly treasures"},
             0));
       }
+  public static void addRevelationScholarQuestions(
+        ArrayList<BibleJourneyData.Question> questions
+) {
+    questions.add(new BibleJourneyData.Question(
+            "In Revelation 9:11, what are the Hebrew and Greek names of the angel of the bottomless pit?",
+            new String[]{"Wormwood and Armageddon", "Abaddon and Apollyon", "Gog and Magog", "Michael and Gabriel"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "How many months were the locusts permitted to torment those who had not the seal of God?",
+            new String[]{"Three months", "Seven months", "Five months", "Twelve months"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "In John's vision, what did the mighty angel set his right foot upon?",
+            new String[]{"The sea", "The earth", "The altar", "The temple"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did the angel swear by when declaring that there should be time no longer?",
+            new String[]{"The seven stars", "The Lamb alone", "The throne of David", "Him that liveth for ever and ever, who created all things"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "After John ate the little book, what happened to his belly?",
+            new String[]{"It became sweet", "It was bitter", "It became numb", "It was filled with water"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "For how many days do the two witnesses prophesy?",
+            new String[]{"1,000 days", "1,290 days", "1,260 days", "1,335 days"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "According to Revelation 11, how long do the witnesses' dead bodies remain unburied?",
+            new String[]{"Three days and an half", "Seven days", "Forty days", "Three months"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "What are the two witnesses called in Revelation 11:4?",
+            new String[]{"Two cherubims", "Two mighty angels", "Two prophets of Israel", "The two olive trees and the two candlesticks standing before the God of the earth"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did the dragon cast out of his mouth after being cast to the earth?",
+            new String[]{"Fire and smoke", "Water as a flood after the woman", "Seven stars", "A great chain"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "How long is the woman nourished in the wilderness in Revelation 12:6?",
+            new String[]{"Seven days", "Forty days", "A thousand years", "1,260 days"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did the beast from the earth have like a lamb?",
+            new String[]{"Two horns", "Seven heads", "Ten crowns", "A sword"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did the second beast cause people to make in honour of the first beast?",
+            new String[]{"A golden altar", "A new temple", "An image of the beast", "A brazen sea"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "What number is given as the number of the beast?",
+            new String[]{"616", "666", "777", "144,000"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did John see standing on Mount Sion with the Lamb?",
+            new String[]{"The 144,000, having his Father's name written in their foreheads", "The twenty-four elders only", "The seven angels with vials", "The two witnesses"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did the angel flying in the midst of heaven have to preach to them that dwell on the earth?",
+            new String[]{"The fall of Jerusalem", "The building of the temple", "The destruction of Babylon only", "The everlasting gospel"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What was the great winepress of the wrath of God trodden outside the city?",
+            new String[]{"For seven days", "For forty days", "And blood came out of the winepress unto the horse bridles, by the space of a thousand and six hundred furlongs", "Until the temple was rebuilt"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did those who had gotten victory over the beast stand upon?",
+            new String[]{"Mount Sion", "The sea of glass, having the harps of God", "The altar of incense", "The river Euphrates"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "What happened when the fifth angel poured out his vial upon the seat of the beast?",
+            new String[]{"His kingdom was full of darkness", "The Euphrates dried up", "The sea became blood", "The sun became black"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "What came out of the mouths of the dragon, the beast, and the false prophet?",
+            new String[]{"Three golden crowns", "Seven seals", "Three books", "Three unclean spirits like frogs"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What is the name of the place where the kings are gathered for battle?",
+            new String[]{"Babylon", "Armageddon", "Patmos", "Pergamos"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "How many kings are described as having received no kingdom as yet in Revelation 17?",
+            new String[]{"Seven", "Twelve", "Ten", "Twenty-four"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "According to Revelation 17, what do the ten horns and the beast do to the Lamb?",
+            new String[]{"They make war with the Lamb", "They worship the Lamb", "They build a temple for the Lamb", "They give the Lamb their crowns"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "What measurements are given for the wall of the holy city?",
+            new String[]{"One hundred cubits high", "Seven hundred furlongs long", "One thousand cubits thick", "An hundred and forty and four cubits, according to the measure of a man, that is, of the angel"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What is not seen in the holy city because the Lord God Almighty and the Lamb are its temple?",
+            new String[]{"The river of life", "A temple", "The tree of life", "The throne of God"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "In Revelation 22, what does the tree of life yield?",
+            new String[]{"Fruit once a year", "Seven kinds of fruit", "Twelve manner of fruits, yielding her fruit every month", "Fruit only in the summer"},
+            2));
+      }
 }
