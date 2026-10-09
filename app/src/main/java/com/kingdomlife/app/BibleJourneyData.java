@@ -55989,6 +55989,8 @@ if (difficulty.equals("Hard")) {
             "What did John ask Gaius to do concerning the friends?",
             new String[]{"Greet them by name", "Send them away", "Test their doctrine", "Write to their churches"},
             0));
+                        } else if (difficulty.equals("Scholar")) {
+                BibleJourneyScholarData.add3JohnScholarQuestions(questions);
             }
-            }
+        }
 }
