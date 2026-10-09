@@ -286,7 +286,129 @@ public class BibleJourneyScholarData {
 public static void addJudeScholarQuestions(
         ArrayList<BibleJourneyData.Question> questions
 ) {
-    // Jude Scholar questions will go here
-}
+    questions.add(new BibleJourneyData.Question(
+            "According to Jude, what did Michael the archangel dispute with the devil about?",
+            new String[]{"The throne of heaven", "The body of Moses", "The kingdom of Israel", "The bones of Elijah"},
+            1));
 
+    questions.add(new BibleJourneyData.Question(
+            "What did Michael say when he disputed with the devil?",
+            new String[]{"The Lord rebuke thee", "Depart from heaven", "God has forgotten thee", "Judgment is finished"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "According to Jude, who is described as the brother of James?",
+            new String[]{"Peter", "Silas", "Jude", "Barnabas"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "Which three groups does Jude use as examples of those who faced judgment?",
+            new String[]{"Egypt, Babylon, and Rome", "Cain, Balaam, and Korah", "Sodom, Gomorrah, and Nineveh", "Israel after leaving Egypt, angels who kept not their first estate, and Sodom and Gomorrah"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did the angels mentioned by Jude fail to keep?",
+            new String[]{"Their first estate", "The temple treasures", "The books of Moses", "The gates of Jerusalem"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "Where are the angels who kept not their first estate reserved for judgment?",
+            new String[]{"Under the earth", "In the temple", "In everlasting chains under darkness", "In the wilderness"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "Which Old Testament city is specifically mentioned alongside Gomorrah?",
+            new String[]{"Jericho", "Sodom", "Bethel", "Shiloh"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "What punishment did Sodom, Gomorrah, and the surrounding cities suffer?",
+            new String[]{"Forty years of famine", "Captivity in Babylon", "Destruction by an army", "The vengeance of eternal fire"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What three things does Jude say certain people speak evil of?",
+            new String[]{"Things they know not", "Things written by Moses", "The laws of Rome", "The promises to Abraham"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "To what does Jude compare those who corrupt themselves in what they know naturally?",
+            new String[]{"Wise builders", "Faithful servants", "Brute beasts", "Priests of the temple"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "Which three figures are named in Jude's warning about the way of error?",
+            new String[]{"Moses, Aaron, and Miriam", "Cain, Balaam, and Core", "Saul, David, and Solomon", "Peter, James, and John"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did Balaam do for reward, according to Jude?",
+            new String[]{"Built an altar", "Fled to Egypt", "Refused to prophesy", "Ran greedily after error"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What does Jude call certain people who have crept in unnoticed?",
+            new String[]{"Ungodly men", "Faithful prophets", "Righteous judges", "Heavenly messengers"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "What had been ordained of old for the ungodly people described by Jude?",
+            new String[]{"A place among the apostles", "A kingdom on earth", "This condemnation", "A new covenant"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "What does Jude say these ungodly people turn the grace of God into?",
+            new String[]{"A command to fast", "Lasciviousness", "A new law", "A political kingdom"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "Which title of Jesus does Jude use when warning about denying him?",
+            new String[]{"The Prince of Egypt", "The Son of David only", "The King of Tyre", "Our only Lord God, and our Lord Jesus Christ"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What did Jude say the Lord did to the people after saving them out of Egypt?",
+            new String[]{"Afterward destroyed them that believed not", "Made them all kings", "Sent them directly to Babylon", "Turned them into priests"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "How does Jude describe the people who are spots in the believers' feasts of charity?",
+            new String[]{"They serve faithfully", "They teach wisdom", "They feast with the believers without fear", "They refuse all fellowship"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "What are the clouds mentioned by Jude described as lacking?",
+            new String[]{"Light", "Water", "Wind", "Stars"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "What happens to the trees described by Jude as having no fruit?",
+            new String[]{"They grow taller", "They bear fruit twice yearly", "They become olive trees", "They are twice dead, plucked up by the roots"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "What does Jude say the wandering stars are reserved for?",
+            new String[]{"The blackness of darkness for ever", "A place among the twelve tribes", "A new heaven", "A crown of glory"},
+            0));
+
+    questions.add(new BibleJourneyData.Question(
+            "According to Jude's quotation of Enoch, with how many of his saints does the Lord come?",
+            new String[]{"Seven thousand", "Twelve thousand", "Ten thousands", "One hundred thousand"},
+            2));
+
+    questions.add(new BibleJourneyData.Question(
+            "What does Jude instruct believers to keep themselves in?",
+            new String[]{"The traditions of men", "The love of God", "The courts of the temple", "The favour of rulers"},
+            1));
+
+    questions.add(new BibleJourneyData.Question(
+            "What are believers told to look for while keeping themselves in the love of God?",
+            new String[]{"The riches of Solomon", "A sign from the stars", "A new earthly king", "The mercy of our Lord Jesus Christ unto eternal life"},
+            3));
+
+    questions.add(new BibleJourneyData.Question(
+            "How does Jude describe God in the closing doxology?",
+            new String[]{"The only wise God our Saviour", "The ruler of Jerusalem alone", "The judge of Israel only", "The keeper of earthly treasures"},
+            0));
+      }
 }
