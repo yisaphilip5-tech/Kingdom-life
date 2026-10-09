@@ -5388,17 +5388,36 @@ question.setText(
     book.setPadding(0, 0, 0, 20);
     content.addView(book);
         
-        int completedJourneyQuestions =
-        prefs.getInt("bibleJourney_questions_completed", 0);
+        
+    // Record this difficulty as completed only once.
+String completedKey =
+        "bibleJourney_" + currentBibleBook + "_"
+        + currentBibleDifficulty + "_completed";
 
-completedJourneyQuestions += 25;
+boolean alreadyCompleted =
+        prefs.getBoolean(completedKey, false);
 
-prefs.edit()
-        .putInt(
-                "bibleJourney_questions_completed",
-                completedJourneyQuestions
-        )
-        .apply();
+if (!alreadyCompleted) {
+
+    prefs.edit()
+            .putBoolean(completedKey, true)
+            .apply();
+
+    // Count completed questions only once per difficulty.
+    int completedJourneyQuestions =
+            prefs.getInt("bibleJourney_questions_completed", 0);
+
+    completedJourneyQuestions += 25;
+
+    prefs.edit()
+            .putInt(
+                    "bibleJourney_questions_completed",
+                    completedJourneyQuestions
+            )
+            .apply();
+}
+
+// Unlock the next difficulty.
 if (currentBibleDifficulty.equals("Easy")) {
 
     unlockBibleJourneyDifficulty(
@@ -5419,18 +5438,27 @@ if (currentBibleDifficulty.equals("Easy")) {
             currentBibleBook,
             "Scholar"
     );
-    } else if (currentBibleDifficulty.equals("Scholar")) {
-    int completedJourneyBooks =
-        prefs.getInt("bibleJourney_books_completed", 0);
+}
 
-completedJourneyBooks++;
+// Check whether all four difficulties are completed.
+String[] difficulties = {
+        "Easy", "Medium", "Hard", "Scholar"
+};
 
-prefs.edit()
-        .putInt(
-                "bibleJourney_books_completed",
-                completedJourneyBooks
-        )
-        .apply();
+boolean allDifficultiesCompleted = true;
+
+for (String difficulty : difficulties) {
+
+    if (!isBibleJourneyDifficultyCompleted(
+            currentBibleBook,
+            difficulty
+    )) {
+        allDifficultiesCompleted = false;
+        break;
+    }
+}
+
+if (allDifficultiesCompleted) {
 
     String[] oldTestamentBooks = {
             "Genesis", "Exodus",
@@ -5455,23 +5483,109 @@ prefs.edit()
             "Malachi"
     };
 
-    for (int i = 0; i < oldTestamentBooks.length - 1; i++) {
+    int bookIndex = -1;
 
+    for (int i = 0; i < oldTestamentBooks.length; i++) {
         if (currentBibleBook.equals(oldTestamentBooks[i])) {
-
-            String nextBook = oldTestamentBooks[i + 1];
-
-            prefs.edit()
-                    .putBoolean(
-                            "bibleJourney_" + nextBook + "_book_unlocked",
-                            true
-                    )
-                    .apply();
-
+            bookIndex = i;
             break;
         }
     }
+
+    // Unlock the next Old Testament book.
+    if (bookIndex >= 0
+            && bookIndex < oldTestamentBooks.length - 1) {
+
+        String nextBook = oldTestamentBooks[bookIndex + 1];
+
+        prefs.edit()
+                .putBoolean(
+                        "bibleJourney_" + nextBook + "_book_unlocked",
+                        true
+                )
+                .apply();
+    }
+
+    // If all 39 Old Testament books are complete,
+    // unlock all 27 New Testament books.
+    boolean allOldTestamentCompleted = true;
+
+    for (String oldBook : oldTestamentBooks) {
+
+        for (String difficulty : difficulties) {
+
+            if (!isBibleJourneyDifficultyCompleted(
+                    oldBook,
+                    difficulty
+            )) {
+                allOldTestamentCompleted = false;
+                break;
+            }
+        }
+
+        if (!allOldTestamentCompleted) {
+            break;
+        }
+    }
+
+    if (allOldTestamentCompleted) {
+
+        String[] newTestamentBooks = {
+                "Matthew", "Mark", "Luke", "John",
+                "Acts", "Romans", "1 Corinthians",
+                "2 Corinthians", "Galatians", "Ephesians",
+                "Philippians", "Colossians",
+                "1 Thessalonians", "2 Thessalonians",
+                "1 Timothy", "2 Timothy", "Titus",
+                "Philemon", "Hebrews", "James",
+                "1 Peter", "2 Peter", "1 John",
+                "2 John", "3 John", "Jude", "Revelation"
+        };
+
+        android.content.SharedPreferences.Editor editor =
+                prefs.edit();
+
+        for (String newBook : newTestamentBooks) {
+            editor.putBoolean(
+                    "bibleJourney_" + newBook + "_book_unlocked",
+                    true
+            );
+        }
+
+        editor.apply();
+    }
+
+    // Update the completed-book count without duplicates.
+    int completedJourneyBooks = 0;
+
+    for (String oldBook : oldTestamentBooks) {
+
+        boolean bookComplete = true;
+
+        for (String difficulty : difficulties) {
+
+            if (!isBibleJourneyDifficultyCompleted(
+                    oldBook,
+                    difficulty
+            )) {
+                bookComplete = false;
+                break;
+            }
+        }
+
+        if (bookComplete) {
+            completedJourneyBooks++;
+        }
+    }
+
+    prefs.edit()
+            .putInt(
+                    "bibleJourney_books_completed",
+                    completedJourneyBooks
+            )
+            .apply();
 }
+    
     TextView scoreText = new TextView(this);
     scoreText.setText(
             "⭐ Score: " +
