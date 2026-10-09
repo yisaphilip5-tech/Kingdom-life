@@ -278,7 +278,15 @@ public class BibleJourneyScholarData {
                     "The friends",
                     "The brethren"
             },
-            2
+                        2
     ));
+
 }
+
+public static void addJudeScholarQuestions(
+        ArrayList<BibleJourneyData.Question> questions
+) {
+    // Jude Scholar questions will go here
+}
+
 }
