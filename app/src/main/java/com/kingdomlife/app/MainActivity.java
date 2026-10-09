@@ -3088,7 +3088,11 @@ bookmarkRow.addView(bookmarkButton);
     android.content.SharedPreferences bookmarkPrefs =
             getSharedPreferences("DescendantsBookmarks", MODE_PRIVATE);
 
-    String bookmarkKey = chapterIndex + "_" + currentPage[0];
+    android.content.SharedPreferences storyPrefs =
+        getSharedPreferences("DescendantsReadingProgress", MODE_PRIVATE);
+
+int bookmarkPage = storyPrefs.getInt("lastPage", 0);
+String bookmarkKey = chapterIndex + "_" + bookmarkPage;
 
     bookmarkPrefs.edit()
             .putBoolean(bookmarkKey, true)
