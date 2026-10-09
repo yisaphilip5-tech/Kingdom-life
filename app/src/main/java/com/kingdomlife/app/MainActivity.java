@@ -4837,35 +4837,23 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
                     void showBibleJourneyNewTestament() {
     stopTimer();
     content.removeAllViews();
-                        
-    ImageButton backButton = new ImageButton(this);
 
+    ImageButton backButton = new ImageButton(this);
     backButton.setImageResource(
             android.R.drawable.ic_media_previous
     );
-
-    backButton.setBackgroundColor(
-            Color.TRANSPARENT
-    );
-
-    backButton.setOnClickListener(
-            v -> showGameMenu()
-    );
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(v -> showGameMenu());
 
     content.addView(
             backButton,
-            new LinearLayout.LayoutParams(
-                    60,
-                    60
-            )
+            new LinearLayout.LayoutParams(60, 60)
     );
+
     TextView title = new TextView(this);
     title.setText("✝️ New Testament");
     title.setTextSize(26);
-    title.setTypeface(
-            Typeface.DEFAULT,
-            Typeface.BOLD
-    );
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
     title.setGravity(Gravity.CENTER);
     title.setPadding(0, 20, 0, 20);
@@ -4891,25 +4879,30 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
     for (int i = 0; i < books.length; i += 2) {
 
         LinearLayout row = new LinearLayout(this);
-        row.setOrientation(
-                LinearLayout.HORIZONTAL
-        );
+        row.setOrientation(LinearLayout.HORIZONTAL);
         row.setGravity(Gravity.CENTER);
         row.setPadding(0, 5, 0, 5);
 
         String book1 = books[i];
 
         Button button1 = new Button(this);
-        button1.setText(book1);
+        boolean unlocked1 = isBibleJourneyBookUnlocked(book1);
+
+        button1.setText(
+                unlocked1 ? book1 : "🔒 " + book1
+        );
         button1.setTextSize(15);
         button1.setAllCaps(false);
+        button1.setEnabled(unlocked1);
 
-        button1.setOnClickListener(
-                v -> showBookDifficulty(book1)
-        );
-        button1.setOnTouchListener(
-        this::handleBibleJourneySwipe
-);
+        if (unlocked1) {
+            button1.setOnClickListener(
+                    v -> showBookDifficulty(book1)
+            );
+            button1.setOnTouchListener(
+                    this::handleBibleJourneySwipe
+            );
+        }
 
         row.addView(
                 button1,
@@ -4925,16 +4918,23 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             String book2 = books[i + 1];
 
             Button button2 = new Button(this);
-            button2.setText(book2);
+            boolean unlocked2 = isBibleJourneyBookUnlocked(book2);
+
+            button2.setText(
+                    unlocked2 ? book2 : "🔒 " + book2
+            );
             button2.setTextSize(15);
             button2.setAllCaps(false);
+            button2.setEnabled(unlocked2);
 
-            button2.setOnClickListener(
-                    v -> showBookDifficulty(book2)
-            );
-            button2.setOnTouchListener(
-        this::handleBibleJourneySwipe
-);
+            if (unlocked2) {
+                button2.setOnClickListener(
+                        v -> showBookDifficulty(book2)
+                );
+                button2.setOnTouchListener(
+                        this::handleBibleJourneySwipe
+                );
+            }
 
             row.addView(
                     button2,
@@ -4948,11 +4948,9 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
 
         content.addView(row);
     }
-
-    
-
-    
                     }
+
+    
     boolean isBibleJourneyDifficultyUnlocked(
         String book,
         String difficulty
