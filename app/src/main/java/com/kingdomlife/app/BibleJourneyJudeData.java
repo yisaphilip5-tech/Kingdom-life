@@ -679,7 +679,9 @@ public static void addJudeQuestions(ArrayList<BibleJourneyData.Question> questio
             "What does Jude say believers should do while building themselves up on their most holy faith?",
             new String[]{"Praying in the Holy Ghost", "Keeping genealogies", "Avoiding strangers", "Seeking earthly honour"},
             0));
-            }
+                        }
+        } else if (difficulty.equals("Scholar")) {
+            BibleJourneyScholarData.addJudeScholarQuestions(questions);
         }
-
+    }
 }
