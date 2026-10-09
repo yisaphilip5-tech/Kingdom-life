@@ -2811,6 +2811,55 @@ String meaning =
             )
     );
     }
+    void showDescendantsOfGoodChapters() {
+    stopTimer();
+    content.removeAllViews();
+
+    ImageButton backButton = new ImageButton(this);
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(v -> showStoryBooks());
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(60, 60)
+    );
+
+    TextView title = new TextView(this);
+    title.setText("📖 Descendants of Good");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 10);
+    content.addView(title);
+
+    TextView subtitle = new TextView(this);
+    subtitle.setText(
+            "Choose a chapter to begin reading."
+    );
+    subtitle.setTextSize(16);
+    subtitle.setTextColor(darkText);
+    subtitle.setPadding(0, 0, 0, 20);
+    content.addView(subtitle);
+
+    java.util.List<DescendantsOfGoodLibrary.Chapter> chapters =
+            DescendantsOfGoodLibrary.getChapters();
+
+    for (int i = 0; i < chapters.size(); i++) {
+        final int chapterIndex = i;
+
+        DescendantsOfGoodLibrary.Chapter chapter =
+                chapters.get(i);
+
+        addCard(
+                "Chapter " + (i + 1) + ": " + chapter.title,
+                chapter.subtitle,
+                v -> showDescendantsOfGoodChapter(chapterIndex)
+        );
+    }
+    }
     void showSermons() {
     stopTimer();
     content.removeAllViews();
