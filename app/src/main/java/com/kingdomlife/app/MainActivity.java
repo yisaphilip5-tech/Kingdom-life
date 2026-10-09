@@ -2797,13 +2797,10 @@ String meaning =
     content.addView(message);
 
     addCard(
-            "📖 Descendants of Good",
-            "An original Christian story. Coming soon.",
-            v -> showMessage(
-                    "📖 Descendants of Good",
-                    "This story will be added when the book is complete."
-            )
-    );
+        "📖 Descendants of Good",
+        "An original Christian story. Read the chapters.",
+        v -> showDescendantsOfGoodChapters()
+);
 
     addCard(
             "📚 More Stories Coming Soon",
