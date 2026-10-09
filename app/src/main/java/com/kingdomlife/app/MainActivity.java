@@ -2802,6 +2802,25 @@ String meaning =
         "An original Christian story. Read the chapters.",
         v -> showDescendantsOfGoodChapters()
 );
+        addCard(
+        "⏩ Continue Reading",
+        "Return to where you last stopped reading.",
+        v -> {
+            android.content.SharedPreferences storyPrefs =
+                    getSharedPreferences("DescendantsReadingProgress", MODE_PRIVATE);
+
+            int lastChapter = storyPrefs.getInt("lastChapter", 0);
+
+            java.util.List<DescendantsOfGoodLibrary.Chapter> chapters =
+                    DescendantsOfGoodLibrary.getChapters();
+
+            if (lastChapter >= 0 && lastChapter < chapters.size()) {
+                showDescendantsOfGoodChapter(lastChapter);
+            } else {
+                showDescendantsOfGoodChapters();
+            }
+        }
+);
 
     addCard(
             "📚 More Stories Coming Soon",
@@ -2958,9 +2977,22 @@ String meaning =
     content.addView(navigation);
 
     final int[] currentPage = {0};
+        android.content.SharedPreferences storyPrefs =
+        getSharedPreferences("DescendantsReadingProgress", MODE_PRIVATE);
+
+int savedChapter = storyPrefs.getInt("lastChapter", 0);
+int savedPage = storyPrefs.getInt("lastPage", 0);
+
+if (savedChapter == chapterIndex) {
+    currentPage[0] = Math.max(0, Math.min(savedPage, chapter.pages.size() - 1));
+}
 
     Runnable updatePage = () -> {
         pageText.setText(chapter.pages.get(currentPage[0]));
+        storyPrefs.edit()
+        .putInt("lastChapter", chapterIndex)
+        .putInt("lastPage", currentPage[0])
+        .apply();
 
         previousButton.setEnabled(currentPage[0] > 0);
 
