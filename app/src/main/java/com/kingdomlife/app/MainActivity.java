@@ -32,6 +32,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.view.Gravity;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.EditText;
@@ -2797,11 +2798,24 @@ String meaning =
 
     content.addView(message);
 
-    addCard(
-        "📖 Descendants of Good",
-        "An original Christian story. Read the chapters.",
-        v -> showDescendantsOfGoodChapters()
+    ImageView descendantsCover = new ImageView(this);
+descendantsCover.setImageResource(R.drawable.descendants_of_good_cover);
+descendantsCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+descendantsCover.setAdjustViewBounds(true);
+descendantsCover.setContentDescription("Descendants of Good book cover");
+
+descendantsCover.setOnClickListener(v ->
+        showDescendantsOfGoodChapters()
 );
+
+LinearLayout.LayoutParams coverParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+coverParams.setMargins(0, 10, 0, 20);
+content.addView(descendantsCover, coverParams);
         addCard(
         "⏩ Continue Reading",
         "Return to where you last stopped reading.",
