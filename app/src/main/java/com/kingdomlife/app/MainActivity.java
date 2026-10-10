@@ -3421,6 +3421,22 @@ TextView title = new TextView(this);
             verseLayout.setOrientation(
                     LinearLayout.VERTICAL
             );
+            android.content.SharedPreferences textPrefs =
+        getSharedPreferences(
+                "TextAppearancePrefs",
+                MODE_PRIVATE
+        );
+
+int savedTextSize =
+        textPrefs.getInt("textSize", 18);
+
+String savedTextMode =
+        textPrefs.getString("textMode", "Light");
+
+int selectedTextColor =
+        savedTextMode.equals("Dark")
+                ? android.graphics.Color.WHITE
+                : android.graphics.Color.BLACK;
 
             TextView verse = new TextView(this);
 
@@ -3432,8 +3448,8 @@ TextView title = new TextView(this);
         chapter + ":" +
         verseNumber;
 
-            verse.setTextSize(18);
-            verse.setTextColor(darkText);
+            verse.setTextSize(savedTextSize);
+verse.setTextColor(selectedTextColor);
             verse.setPadding(5, 10, 5, 5);
             String savedHighlight =
         highlightsPrefs.getString(
