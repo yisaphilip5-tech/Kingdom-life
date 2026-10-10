@@ -924,15 +924,7 @@ highestLevelUnlocked = prefs.getInt("highestLevelUnlocked", 1);
         main.setPadding(0, 0, 0, 80);
         main.setBackgroundColor(Color.WHITE);
 
-        TextView title = new TextView(this);
-        title.setText("Kingdom Life");
-        title.setTextSize(28);
-        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        title.setTextColor(darkText);
-        title.setGravity(Gravity.CENTER);
-        title.setPadding(0, 30, 0, 15);
-
-        main.addView(title);
+        
 
         ScrollView scrollView = new ScrollView(this);
 
