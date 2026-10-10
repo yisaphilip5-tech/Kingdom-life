@@ -4273,16 +4273,27 @@ modeLabel.setTextColor(darkText);
 modeLabel.setPadding(0, 20, 0, 10);
 content.addView(modeLabel);
 
-addButton("☀️ Light Text Mode", v -> {
-    prefs.edit().putString("textMode", "Light").apply();
-    showTextAppearanceSettings();
-});
+Switch textColorSwitch = new Switch(this);
 
-addButton("🌙 Dark Text Mode", v -> {
-    prefs.edit().putString("textMode", "Dark").apply();
-    showTextAppearanceSettings();
-});
+textColorSwitch.setText("Dark Text Mode");
+textColorSwitch.setTextSize(18);
 
+textColorSwitch.setChecked(
+        savedMode.equals("Dark")
+);
+
+textColorSwitch.setOnCheckedChangeListener(
+        (buttonView, isChecked) -> {
+            prefs.edit()
+                    .putString(
+                            "textMode",
+                            isChecked ? "Dark" : "Light"
+                    )
+                    .apply();
+        }
+);
+
+content.addView(textColorSwitch);
 addButton("⬅️ Back to Settings", v -> showSettings());
 
     }
