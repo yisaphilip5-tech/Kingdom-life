@@ -4243,29 +4243,56 @@ android.content.SharedPreferences prefs =
 int savedSize = prefs.getInt("textSize", 18);
 String savedMode = prefs.getString("textMode", "Light");
 
-TextView sizeLabel = new TextView(this);
-sizeLabel.setText("Text Size: " + savedSize);
-sizeLabel.setTextSize(18);
-sizeLabel.setTextColor(darkText);
-content.addView(sizeLabel);
 
-addButton("A− Decrease Text", v -> {
+
+LinearLayout textSizeRow = new LinearLayout(this);
+
+textSizeRow.setOrientation(LinearLayout.HORIZONTAL);
+textSizeRow.setGravity(Gravity.CENTER);
+textSizeRow.setPadding(0, 10, 0, 10);
+
+Button decreaseTextButton = new Button(this);
+decreaseTextButton.setText("−");
+decreaseTextButton.setTextSize(22);
+decreaseTextButton.setAllCaps(false);
+
+TextView textSizeValue = new TextView(this);
+textSizeValue.setText("(" + savedSize + ")");
+textSizeValue.setTextSize(20);
+textSizeValue.setTextColor(darkText);
+textSizeValue.setGravity(Gravity.CENTER);
+textSizeValue.setPadding(20, 0, 20, 0);
+
+Button increaseTextButton = new Button(this);
+increaseTextButton.setText("+");
+increaseTextButton.setTextSize(22);
+increaseTextButton.setAllCaps(false);
+
+decreaseTextButton.setOnClickListener(v -> {
     int size = prefs.getInt("textSize", 18);
-    if (size > 12) {
+
+    if (size > 13) {
         size--;
         prefs.edit().putInt("textSize", size).apply();
         showTextAppearanceSettings();
     }
 });
 
-addButton("A+ Increase Text", v -> {
+increaseTextButton.setOnClickListener(v -> {
     int size = prefs.getInt("textSize", 18);
+
     if (size < 30) {
         size++;
         prefs.edit().putInt("textSize", size).apply();
         showTextAppearanceSettings();
     }
 });
+
+textSizeRow.addView(decreaseTextButton);
+textSizeRow.addView(textSizeValue);
+textSizeRow.addView(increaseTextButton);
+
+content.addView(textSizeRow);
 
 TextView modeLabel = new TextView(this);
 modeLabel.setText("Text Colour Mode: " + savedMode);
