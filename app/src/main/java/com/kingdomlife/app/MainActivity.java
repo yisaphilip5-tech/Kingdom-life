@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.view.WindowInsets;
 import android.graphics.drawable.GradientDrawable;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -1019,6 +1020,31 @@ for (String item : navItems) {
 
 main.addView(bottomNav);
     setContentView(main);
+        final int baseLeft = main.getPaddingLeft();
+final int baseTop = main.getPaddingTop();
+final int baseRight = main.getPaddingRight();
+final int baseBottom = main.getPaddingBottom();
+
+main.setOnApplyWindowInsetsListener((v, insets) -> {
+    int topInset;
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        topInset = insets.getInsets(WindowInsets.Type.statusBars()).top;
+    } else {
+        topInset = insets.getSystemWindowInsetTop();
+    }
+
+    v.setPadding(
+            baseLeft,
+            baseTop + topInset,
+            baseRight,
+            baseBottom
+    );
+
+    return insets;
+});
+
+main.requestApplyInsets();
 
 content.removeAllViews();
 
