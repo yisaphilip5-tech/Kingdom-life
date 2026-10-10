@@ -35,6 +35,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.EditText;
 import android.widget.ScrollView;
@@ -1021,16 +1022,43 @@ main.addView(bottomNav);
 
 content.removeAllViews();
 
-TextView loading = new TextView(this);
-loading.setText("✝️\n\nKingdom Life\n\nLoading...");
-loading.setTextSize(24);
-loading.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-loading.setTextColor(darkText);
-loading.setGravity(Gravity.CENTER);
-loading.setPadding(0, 80, 0, 80);
+ImageView loadingIcon = new ImageView(this);
+loadingIcon.setImageResource(R.drawable.kingdom_life_icon);
+loadingIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
-content.addView(loading);
+LinearLayout loadingScreen = new LinearLayout(this);
+loadingScreen.setOrientation(LinearLayout.VERTICAL);
+loadingScreen.setGravity(Gravity.CENTER);
+loadingScreen.setPadding(20, 30, 20, 30);
+loadingScreen.setBackgroundColor(Color.WHITE);
 
+LinearLayout.LayoutParams iconParams =
+        new LinearLayout.LayoutParams(180, 180);
+iconParams.gravity = Gravity.CENTER;
+loadingScreen.addView(loadingIcon, iconParams);
+
+TextView loadingTitle = new TextView(this);
+loadingTitle.setText("Kingdom Life");
+loadingTitle.setTextSize(28);
+loadingTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+loadingTitle.setTextColor(Color.rgb(106, 75, 188));
+loadingTitle.setGravity(Gravity.CENTER);
+loadingTitle.setPadding(0, 20, 0, 8);
+loadingScreen.addView(loadingTitle);
+
+TextView loadingSubtitle = new TextView(this);
+loadingSubtitle.setText("Grow in faith. Live with purpose.");
+loadingSubtitle.setTextSize(16);
+loadingSubtitle.setTextColor(Color.DKGRAY);
+loadingSubtitle.setGravity(Gravity.CENTER);
+loadingSubtitle.setPadding(0, 0, 0, 25);
+loadingScreen.addView(loadingSubtitle);
+
+ProgressBar loadingProgress = new ProgressBar(this);
+loadingProgress.setIndeterminate(true);
+loadingScreen.addView(loadingProgress);
+
+content.addView(loadingScreen);
 new Handler().postDelayed(() -> {
     showHome();
 }, 1200);
