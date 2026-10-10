@@ -3038,30 +3038,40 @@ if (!foundBookmark) {
             backButton,
             new LinearLayout.LayoutParams(60, 60)
     );
+android.content.SharedPreferences textPrefs =
+        getSharedPreferences("TextAppearancePrefs", MODE_PRIVATE);
 
+int savedTextSize = textPrefs.getInt("textSize", 18);
+
+String savedTextMode =
+        textPrefs.getString("textMode", "Light");
+
+int selectedTextColor = savedTextMode.equals("Dark")
+        ? android.graphics.Color.WHITE
+        : android.graphics.Color.BLACK;
     TextView chapterTitle = new TextView(this);
     chapterTitle.setText(chapter.title);
-    chapterTitle.setTextSize(26);
+    chapterTitle.setTextSize(savedTextSize + 8);
     chapterTitle.setTypeface(
             Typeface.DEFAULT,
             Typeface.BOLD
     );
-    chapterTitle.setTextColor(darkText);
+    chapterTitle.setTextColor(selectedTextColor);
     chapterTitle.setPadding(0, 15, 0, 10);
 
     content.addView(chapterTitle);
 
     TextView chapterSubtitle = new TextView(this);
     chapterSubtitle.setText(chapter.subtitle);
-    chapterSubtitle.setTextSize(16);
-    chapterSubtitle.setTextColor(darkText);
+    chapterSubtitle.setTextSize(Math.max(12, savedTextSize - 2));
+    chapterSubtitle.setTextColor(selectedTextColor);
     chapterSubtitle.setPadding(0, 0, 0, 20);
 
     content.addView(chapterSubtitle);
 
     TextView pageText = new TextView(this);
-    pageText.setTextSize(18);
-    pageText.setTextColor(darkText);
+    pageText.setTextSize(savedTextSize);
+    pageText.setTextColor(selectedTextColor);
     pageText.setLineSpacing(8, 1.0f);
     pageText.setPadding(0, 10, 0, 20);
     pageText.setTextIsSelectable(true);
@@ -4175,8 +4185,74 @@ addButton("⬅️ Back to Home", v -> showHome());
         "Manage reminders for your Kingdom Life activities.",
         v -> showNotificationSettings()
 );
-
+addCard(
+        "🔤 Text Appearance",
+        "Adjust text size and text colour.",
+        v -> showTextAppearanceSettings()
+);
     addButton("⬅️ Back to Home", v -> showHome());
+    }
+    void showTextAppearanceSettings() {
+stopTimer();
+content.removeAllViews();
+
+TextView title = new TextView(this);
+title.setText("🔤 Text Appearance");
+title.setTextSize(24);
+title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+title.setTextColor(darkText);
+title.setPadding(0, 15, 0, 15);
+content.addView(title);
+
+android.content.SharedPreferences prefs =
+        getSharedPreferences("TextAppearancePrefs", MODE_PRIVATE);
+
+int savedSize = prefs.getInt("textSize", 18);
+String savedMode = prefs.getString("textMode", "Light");
+
+TextView sizeLabel = new TextView(this);
+sizeLabel.setText("Text Size: " + savedSize);
+sizeLabel.setTextSize(18);
+sizeLabel.setTextColor(darkText);
+content.addView(sizeLabel);
+
+addButton("A− Decrease Text", v -> {
+    int size = prefs.getInt("textSize", 18);
+    if (size > 12) {
+        size--;
+        prefs.edit().putInt("textSize", size).apply();
+        showTextAppearanceSettings();
+    }
+});
+
+addButton("A+ Increase Text", v -> {
+    int size = prefs.getInt("textSize", 18);
+    if (size < 30) {
+        size++;
+        prefs.edit().putInt("textSize", size).apply();
+        showTextAppearanceSettings();
+    }
+});
+
+TextView modeLabel = new TextView(this);
+modeLabel.setText("Text Colour Mode: " + savedMode);
+modeLabel.setTextSize(18);
+modeLabel.setTextColor(darkText);
+modeLabel.setPadding(0, 20, 0, 10);
+content.addView(modeLabel);
+
+addButton("☀️ Light Text Mode", v -> {
+    prefs.edit().putString("textMode", "Light").apply();
+    showTextAppearanceSettings();
+});
+
+addButton("🌙 Dark Text Mode", v -> {
+    prefs.edit().putString("textMode", "Dark").apply();
+    showTextAppearanceSettings();
+});
+
+addButton("⬅️ Back to Settings", v -> showSettings());
+
     }
     void showNotificationSettings() {
     stopTimer();
