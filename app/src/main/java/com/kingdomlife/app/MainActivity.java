@@ -2810,9 +2810,11 @@ descendantsCover.setOnClickListener(v ->
 
 LinearLayout.LayoutParams coverParams =
         new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+                (int) (getResources().getDisplayMetrics().widthPixels * 0.45),
+                (int) (getResources().getDisplayMetrics().widthPixels * 0.50)
         );
+
+coverParams.gravity = android.view.Gravity.CENTER_HORIZONTAL;
 
 coverParams.setMargins(0, 10, 0, 20);
 content.addView(descendantsCover, coverParams);
