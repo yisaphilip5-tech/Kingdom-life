@@ -1053,7 +1053,7 @@ if (hour >= 6 && hour < 18) {
 LinearLayout header = new LinearLayout(this);
 header.setOrientation(LinearLayout.HORIZONTAL);
 header.setGravity(Gravity.CENTER_VERTICAL);
-header.setPadding(5, 25, 5, 5);
+header.setPadding(5, 40, 5, 5);
 
 LinearLayout titleArea = new LinearLayout(this);
 titleArea.setOrientation(LinearLayout.VERTICAL);
