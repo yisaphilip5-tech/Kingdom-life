@@ -5357,6 +5357,14 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
         );
         button1.setTextSize(15);
         button1.setAllCaps(false);
+        button1.setTextColor(android.graphics.Color.BLACK);
+button1.setBackgroundTintList(
+        android.content.res.ColorStateList.valueOf(
+                unlocked1
+                        ? android.graphics.Color.rgb(255, 152, 0)
+                        : android.graphics.Color.LTGRAY
+        )
+);
         button1.setEnabled(unlocked1);
 
         if (unlocked1) {
@@ -5389,6 +5397,14 @@ addButton("🧩 Bible Scramble", v -> showBibleScramble());
             );
             button2.setTextSize(15);
             button2.setAllCaps(false);
+            button2.setTextColor(android.graphics.Color.BLACK);
+button2.setBackgroundTintList(
+        android.content.res.ColorStateList.valueOf(
+                unlocked2
+                        ? android.graphics.Color.rgb(255, 152, 0)
+                        : android.graphics.Color.LTGRAY
+        )
+);
             button2.setEnabled(unlocked2);
 
             if (unlocked2) {
