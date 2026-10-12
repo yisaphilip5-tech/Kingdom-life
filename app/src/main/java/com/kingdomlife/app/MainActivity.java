@@ -8017,8 +8017,7 @@ protected void onSizeChanged(
                     / columns;
 
     float maxCellHeight =
-            (h - 24f) / (rows + trayRows);
-
+        (h * 0.78f - 24f) / rows;
     cell = Math.min(maxCellWidth, maxCellHeight);
 
     boardLeft = (w - columns * cell) / 2f;
