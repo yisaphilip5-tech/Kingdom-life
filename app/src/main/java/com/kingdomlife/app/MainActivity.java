@@ -33,6 +33,12 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.view.Gravity;
 import android.widget.ImageButton;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -5179,32 +5185,93 @@ addCard(
     
                                   }
     void showGameMenu() {
-        stopTimer();
-        content.removeAllViews();
+    stopTimer();
+    content.removeAllViews();
 
-        TextView title = new TextView(this);
-        title.setText("🎮 Bible Games");
-        title.setTextSize(24);
-        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        title.setTextColor(darkText);
-        title.setPadding(0, 15, 0, 20);
+    TextView title = new TextView(this);
+    title.setText("🎮 Bible Games");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
 
-        content.addView(title);
+    TextView instruction = new TextView(this);
+    instruction.setText("Choose a game category:");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
 
-        TextView instruction = new TextView(this);
-        instruction.setText("Choose a difficulty level:");
-        instruction.setTextSize(18);
-        instruction.setTextColor(darkText);
-        instruction.setPadding(0, 0, 0, 15);
+    addButton("🧩 Puzzle", v -> showPuzzleMenu());
+    addButton("📖 Bible Quiz", v -> showBibleQuizMenu());
+    addButton("⬅️ Back to Home", v -> showHome());
+}
 
-        content.addView(instruction);
-        
+void showPuzzleMenu() {
+    stopTimer();
+    content.removeAllViews();
 
-        addButton("🧠 Bible Challenge", v -> showBibleChallenge());
-addButton("🧩 Bible Scramble", v -> showBibleScramble());
-        addButton("🔤 Missing Word", v -> showMissingWord());
-        addButton("📖 Bible Journey", v -> showBibleJourney());
-        addButton("⬅️ Back to Home", v -> showHome());
+    TextView title = new TextView(this);
+    title.setText("🧩 Puzzle");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addButton("🧩 Jigsaw Puzzle", v -> showJigsawMenu());
+    addButton("🔤 Missing Word", v -> showMissingWord());
+    addButton("🔀 Bible Scramble", v -> showBibleScramble());
+    addButton("⬅️ Back to Categories", v -> showGameMenu());
+}
+
+void showBibleQuizMenu() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("📖 Bible Quiz");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    addButton("🧠 Bible Challenge", v -> showBibleChallenge());
+    addButton("📖 Bible Journey", v -> showBibleJourney());
+    addButton("⬅️ Back to Categories", v -> showGameMenu());
+}
+    void showJigsawMenu() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🧩 Genesis Jigsaw Puzzle");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 20);
+    content.addView(title);
+
+    TextView instruction = new TextView(this);
+    instruction.setText("Choose your difficulty:");
+    instruction.setTextSize(18);
+    instruction.setTextColor(darkText);
+    instruction.setPadding(0, 0, 0, 15);
+    content.addView(instruction);
+
+    addButton("🟢 Easy — Garden of Eden",
+            v -> startJigsawPuzzle("Easy", "genesis_eden"));
+
+    addButton("🟡 Medium — Noah's Ark",
+            v -> startJigsawPuzzle("Medium", "genesis_noah"));
+
+    addButton("🔴 Hard — Joseph in Egypt",
+            v -> startJigsawPuzzle("Hard", "genesis_joseph"));
+
+    addButton("⬅️ Back to Puzzle Menu",
+            v -> showPuzzleMenu());
     }
     void showBibleJourney() {
     showBibleJourneyOldTestament();
@@ -7792,5 +7859,395 @@ void showBookmarks() {
     );
     }
 
-    
+    private void startJigsawPuzzle(String difficulty, String imageName) {
+    int imageId = getResources().getIdentifier(
+            imageName,
+            "drawable",
+            getPackageName()
+    );
+
+    if (imageId == 0) {
+        new android.app.AlertDialog.Builder(this)
+                .setTitle("Image Not Found")
+                .setMessage("The puzzle image could not be loaded.")
+                .setPositiveButton("OK", null)
+                .show();
+        return;
+    }
+
+    Bitmap puzzleBitmap = BitmapFactory.decodeResource(
+            getResources(),
+            imageId
+    );
+
+    if (puzzleBitmap == null) {
+        new android.app.AlertDialog.Builder(this)
+                .setTitle("Puzzle Error")
+                .setMessage("Unable to load the puzzle image.")
+                .setPositiveButton("OK", null)
+                .show();
+        return;
+    }
+
+    showJigsawBoard(difficulty, puzzleBitmap);
+    }
+    private void showJigsawBoard(String difficulty, Bitmap bitmap) {
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🧩 " + difficulty + " Jigsaw Puzzle");
+    title.setTextSize(22);
+    title.setTypeface(null, Typeface.BOLD);
+    title.setTextColor(Color.WHITE);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(10, 16, 10, 16);
+    content.addView(title);
+
+    TextView instructions = new TextView(this);
+    instructions.setText("Drag each piece to its matching position.");
+    instructions.setTextColor(Color.WHITE);
+    instructions.setGravity(Gravity.CENTER);
+    instructions.setPadding(8, 8, 8, 12);
+    content.addView(instructions);
+
+    JigsawBoard board = new JigsawBoard(this, bitmap, difficulty);
+
+    content.addView(board, new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            0,
+            1f
+    ));
+
+    Button back = new Button(this);
+    back.setText("Back to Jigsaw Levels");
+    back.setOnClickListener(v -> showJigsawMenu());
+    content.addView(back);
+}
+
+private class JigsawBoard extends View {
+
+    private final Bitmap image;
+    private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final int columns;
+    private final int rows;
+    private final int count;
+
+    private float cell;
+    private float boardLeft;
+    private float boardTop;
+
+    private float[] xPositions;
+    private float[] yPositions;
+    private boolean[] locked;
+
+    private int[][] horizontal;
+    private int[][] vertical;
+
+    private int selected = -1;
+    private float offsetX;
+    private float offsetY;
+    private int completed;
+    private boolean victoryShown;
+
+    JigsawBoard(
+            android.content.Context context,
+            Bitmap bitmap,
+            String difficulty
+    ) {
+        super(context);
+
+        image = bitmap;
+
+        if ("Easy".equals(difficulty)) {
+            columns = 4;
+            rows = 3;
+        } else if ("Medium".equals(difficulty)) {
+            columns = 6;
+            rows = 4;
+        } else {
+            columns = 8;
+            rows = 6;
+        }
+
+        count = columns * rows;
+
+        xPositions = new float[count];
+        yPositions = new float[count];
+        locked = new boolean[count];
+
+        horizontal = new int[rows + 1][columns];
+        vertical = new int[rows][columns + 1];
+
+        java.util.Random random = new java.util.Random();
+
+        for (int r = 1; r < rows; r++) {
+            for (int c = 0; c < columns; c++) {
+                horizontal[r][c] =
+                        random.nextBoolean() ? 1 : -1;
+            }
+        }
+
+        for (int r = 0; r < rows; r++) {
+            for (int c = 1; c < columns; c++) {
+                vertical[r][c] =
+                        random.nextBoolean() ? 1 : -1;
+            }
+        }
+
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+    }
+
+    @Override
+    protected void onSizeChanged(
+            int w, int h, int oldW, int oldH
+    ) {
+        super.onSizeChanged(w, h, oldW, oldH);
+
+        cell = Math.min(
+                w * 0.88f / columns,
+                h * 0.46f / rows
+        );
+
+        boardLeft = (w - columns * cell) / 2f;
+        boardTop = 12f;
+
+        java.util.ArrayList<Integer> order =
+                new java.util.ArrayList<>();
+
+        for (int i = 0; i < count; i++) {
+            order.add(i);
+        }
+
+        java.util.Collections.shuffle(order);
+
+        float trayTop = boardTop + rows * cell + 24;
+
+        for (int i = 0; i < count; i++) {
+            int index = order.get(i);
+            xPositions[index] =
+                    8 + (i % columns) * cell * 0.88f;
+            yPositions[index] =
+                    trayTop + (i / columns) * cell * 0.15f;
+        }
+    }
+
+    private Path piecePath(int index, float x, float y) {
+        int row = index / columns;
+        int col = index % columns;
+
+        float w = cell;
+        float h = cell;
+        float tab = cell * 0.18f;
+
+        Path p = new Path();
+        p.moveTo(x, y);
+
+        // Top edge.
+        p.lineTo(x + w * 0.32f, y);
+        if (row > 0) {
+            int direction = -horizontal[row][col];
+            p.cubicTo(
+                    x + w * 0.32f, y + direction * tab,
+                    x + w * 0.68f, y + direction * tab,
+                    x + w * 0.68f, y
+            );
+        }
+        p.lineTo(x + w, y);
+
+        // Right edge.
+        p.lineTo(x + w, y + h * 0.32f);
+        if (col < columns - 1) {
+            int direction = vertical[row][col + 1];
+            p.cubicTo(
+                    x + w + direction * tab,
+                    y + h * 0.32f,
+                    x + w + direction * tab,
+                    y + h * 0.68f,
+                    x + w, y + h * 0.68f
+            );
+        }
+        p.lineTo(x + w, y + h);
+
+        // Bottom edge.
+        p.lineTo(x + w * 0.68f, y + h);
+        if (row < rows - 1) {
+            int direction = horizontal[row + 1][col];
+            p.cubicTo(
+                    x + w * 0.68f, y + h + direction * tab,
+                    x + w * 0.32f, y + h + direction * tab,
+                    x + w * 0.32f, y + h
+            );
+        }
+        p.lineTo(x, y + h);
+
+        // Left edge.
+        p.lineTo(x, y + h * 0.68f);
+        if (col > 0) {
+            int direction = -vertical[row][col];
+            p.cubicTo(
+                    x - direction * tab,
+                    y + h * 0.68f,
+                    x - direction * tab,
+                    y + h * 0.32f,
+                    x, y + h * 0.32f
+            );
+        }
+        p.close();
+
+        return p;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawColor(Color.rgb(24, 29, 42));
+
+        Rect target = new Rect(
+                (int) boardLeft,
+                (int) boardTop,
+                (int) (boardLeft + columns * cell),
+                (int) (boardTop + rows * cell)
+        );
+
+        paint.setAlpha(70);
+        canvas.drawBitmap(image, null, target, paint);
+        paint.setAlpha(255);
+
+        for (int i = 0; i < count; i++) {
+            int row = i / columns;
+            int col = i % columns;
+
+            float x = xPositions[i];
+            float y = yPositions[i];
+
+            Path path = piecePath(i, x, y);
+
+            canvas.save();
+            canvas.clipPath(path);
+
+            Rect source = new Rect(
+                    col * image.getWidth() / columns,
+                    row * image.getHeight() / rows,
+                    (col + 1) * image.getWidth() / columns,
+                    (row + 1) * image.getHeight() / rows
+            );
+
+            Rect destination = new Rect(
+                    (int) x,
+                    (int) y,
+                    (int) (x + cell),
+                    (int) (y + cell)
+            );
+
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawBitmap(image, source, destination, paint);
+            canvas.restore();
+
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(2);
+            paint.setColor(Color.WHITE);
+            canvas.drawPath(path, paint);
+            paint.setStyle(Paint.Style.FILL);
+        }
+
+        paint.setColor(Color.WHITE);
+        paint.setTextSize(16);
+        canvas.drawText(
+                "Pieces placed: " + completed + " / " + count,
+                12, getHeight() - 12, paint
+        );
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        float touchX = event.getX();
+        float touchY = event.getY();
+
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            for (int i = count - 1; i >= 0; i--) {
+                if (locked[i]) continue;
+
+                Path path = piecePath(
+                        i, xPositions[i], yPositions[i]
+                );
+
+                android.graphics.Region region =
+                        new android.graphics.Region();
+
+                region.setPath(
+                        path,
+                        new android.graphics.Region(
+                                0, 0, getWidth(), getHeight()
+                        )
+                );
+
+                if (region.contains(
+                        (int) touchX, (int) touchY
+                )) {
+                    selected = i;
+                    offsetX = touchX - xPositions[i];
+                    offsetY = touchY - yPositions[i];
+                    return true;
+                }
+            }
+            return true;
+        }
+
+        if (event.getAction() == MotionEvent.ACTION_MOVE) {
+            if (selected >= 0 && !locked[selected]) {
+                xPositions[selected] = touchX - offsetX;
+                yPositions[selected] = touchY - offsetY;
+                invalidate();
+            }
+            return true;
+        }
+
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+            if (selected >= 0 && !locked[selected]) {
+                int row = selected / columns;
+                int col = selected % columns;
+
+                float targetX = boardLeft + col * cell;
+                float targetY = boardTop + row * cell;
+
+                if (Math.abs(xPositions[selected] - targetX)
+                        < cell * 0.30f
+                        && Math.abs(yPositions[selected] - targetY)
+                        < cell * 0.30f) {
+
+                    xPositions[selected] = targetX;
+                    yPositions[selected] = targetY;
+                    locked[selected] = true;
+                    completed++;
+
+                    if (completed == count && !victoryShown) {
+                        victoryShown = true;
+
+                        new android.app.AlertDialog.Builder(
+                                MainActivity.this
+                        )
+                                .setTitle("👑 Puzzle Completed!")
+                                .setMessage(
+                                        "Congratulations! You placed all "
+                                                + count + " pieces!"
+                                )
+                                .setPositiveButton(
+                                        "Continue",
+                                        (dialog, which) ->
+                                                showJigsawMenu()
+                                )
+                                .setCancelable(false)
+                                .show();
+                    }
+                }
+            }
+
+            selected = -1;
+            invalidate();
+            return true;
+        }
+
+        return true;
+    }
+            }
   }
