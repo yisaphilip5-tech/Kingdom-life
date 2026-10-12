@@ -5209,6 +5209,7 @@ addCard(
 
     }
     void showAchievementNotification(String achievementName, String message) {
+
     boolean alreadyNotified = prefs.getBoolean(
             "notified_" + achievementName,
             false
@@ -5222,28 +5223,176 @@ addCard(
             .putBoolean("notified_" + achievementName, true)
             .apply();
 
-    TextView notification = new TextView(this);
-    notification.setText(
-            "🏆 ACHIEVEMENT UNLOCKED!\n\n" +
-            achievementName + "\n" +
-            message
-    );
-    notification.setTextSize(18);
-    notification.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    notification.setTextColor(Color.WHITE);
-    notification.setGravity(Gravity.CENTER);
-    notification.setPadding(24, 24, 24, 24);
-    notification.setBackgroundColor(Color.rgb(184, 134, 11));
+    final android.app.Dialog dialog =
+            new android.app.Dialog(this);
 
-    android.widget.Toast toast =
-            android.widget.Toast.makeText(
-                    this,
-                    "",
-                    android.widget.Toast.LENGTH_LONG
+    android.widget.LinearLayout layout =
+            new android.widget.LinearLayout(this);
+
+    layout.setOrientation(
+            android.widget.LinearLayout.VERTICAL
+    );
+
+    layout.setGravity(android.view.Gravity.CENTER);
+    layout.setPadding(32, 36, 32, 32);
+
+    android.graphics.drawable.GradientDrawable background =
+            new android.graphics.drawable.GradientDrawable();
+
+    background.setColor(
+            android.graphics.Color.rgb(30, 24, 55)
+    );
+
+    background.setCornerRadius(36);
+    background.setStroke(
+            4,
+            android.graphics.Color.rgb(212, 175, 55)
+    );
+
+    layout.setBackground(background);
+
+    android.widget.TextView trophy =
+            new android.widget.TextView(this);
+
+    trophy.setText("🏆");
+    trophy.setTextSize(58);
+    trophy.setGravity(android.view.Gravity.CENTER);
+
+    layout.addView(trophy);
+
+    android.widget.TextView title =
+            new android.widget.TextView(this);
+
+    title.setText("🎉 CONGRATULATIONS! 🎉");
+    title.setTextSize(22);
+    title.setTypeface(
+            null,
+            android.graphics.Typeface.BOLD
+    );
+
+    title.setTextColor(
+            android.graphics.Color.rgb(255, 215, 0)
+    );
+
+    title.setGravity(android.view.Gravity.CENTER);
+    title.setPadding(0, 16, 0, 12);
+
+    layout.addView(title);
+
+    android.widget.TextView unlocked =
+            new android.widget.TextView(this);
+
+    unlocked.setText("ACHIEVEMENT UNLOCKED!");
+    unlocked.setTextSize(16);
+    unlocked.setTypeface(
+            null,
+            android.graphics.Typeface.BOLD
+    );
+
+    unlocked.setTextColor(
+            android.graphics.Color.WHITE
+    );
+
+    unlocked.setGravity(android.view.Gravity.CENTER);
+    unlocked.setPadding(0, 0, 0, 12);
+
+    layout.addView(unlocked);
+
+    android.widget.TextView name =
+            new android.widget.TextView(this);
+
+    name.setText(achievementName);
+    name.setTextSize(24);
+    name.setTypeface(
+            null,
+            android.graphics.Typeface.BOLD
+    );
+
+    name.setTextColor(
+            android.graphics.Color.rgb(255, 215, 0)
+    );
+
+    name.setGravity(android.view.Gravity.CENTER);
+    name.setPadding(0, 8, 0, 12);
+
+    layout.addView(name);
+
+    android.widget.TextView details =
+            new android.widget.TextView(this);
+
+    details.setText(
+            message + "\n\nKeep growing in faith!"
+    );
+
+    details.setTextSize(16);
+    details.setTextColor(
+            android.graphics.Color.WHITE
+    );
+
+    details.setGravity(android.view.Gravity.CENTER);
+    details.setPadding(0, 0, 0, 20);
+
+    layout.addView(details);
+
+    android.widget.Button closeButton =
+            new android.widget.Button(this);
+
+    closeButton.setText("CONTINUE");
+    closeButton.setTextColor(
+            android.graphics.Color.WHITE
+    );
+
+    closeButton.setBackgroundTintList(
+            android.content.res.ColorStateList.valueOf(
+                    android.graphics.Color.rgb(184, 134, 11)
+            )
+    );
+
+    layout.addView(closeButton);
+
+    dialog.setContentView(layout);
+
+    android.view.Window window = dialog.getWindow();
+
+    if (window != null) {
+        window.setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+    }
+
+    dialog.show();
+
+    window = dialog.getWindow();
+
+    if (window != null) {
+        window.setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
+
+        window.setLayout(
+                (int) (getResources().getDisplayMetrics().widthPixels * 0.90),
+                android.view.WindowManager.LayoutParams.WRAP_CONTENT
+        );
+    }
+
+    android.view.animation.ScaleAnimation zoom =
+            new android.view.animation.ScaleAnimation(
+                    0.5f, 1.0f,
+                    0.5f, 1.0f,
+                    android.view.animation.Animation.RELATIVE_TO_SELF,
+                    0.5f,
+                    android.view.animation.Animation.RELATIVE_TO_SELF,
+                    0.5f
             );
 
-    toast.setView(notification);
-    toast.show();
+    zoom.setDuration(450);
+    zoom.setInterpolator(
+            new android.view.animation.OvershootInterpolator()
+    );
+
+    layout.startAnimation(zoom);
+
+    closeButton.setOnClickListener(v -> dialog.dismiss());
     }
     void checkAchievementNotifications() {
 
