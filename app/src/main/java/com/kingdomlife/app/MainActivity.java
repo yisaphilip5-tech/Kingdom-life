@@ -2708,10 +2708,17 @@ String meaning =
             v -> showSermons()
     );
 
+    
+            addCard(
+            "🙏 Prayer Journal",
+            "Write, save, and revisit your personal prayers.",
+            v -> showPrayerJournal()
+    );
+
     addCard(
-            "📖 Bible Study",
-            "Explore the Bible and deepen your understanding of Scripture.",
-            v -> showBible()
+            "🎯 Spiritual Goals",
+            "Set spiritual goals and track your progress.",
+            v -> showSpiritualGoals()
     );
 
     addButton(
@@ -2719,6 +2726,230 @@ String meaning =
             v -> showHome()
     );
     }
+    void showPrayerJournal() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🙏 Prayer Journal");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 12);
+    content.addView(title);
+
+    TextView description = new TextView(this);
+    description.setText(
+            "Write your prayers, reflect on your faith, "
+                    + "and revisit your conversations with God."
+    );
+    description.setTextSize(15);
+    description.setTextColor(darkText);
+    description.setPadding(0, 0, 0, 16);
+    content.addView(description);
+
+    addButton(
+            "✍️ Write a Prayer",
+            v -> writePrayer()
+    );
+
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "prayerJournalPrefs",
+                    MODE_PRIVATE
+            );
+
+    int count = prefs.getInt("prayer_count", 0);
+
+    if (count == 0) {
+        TextView empty = new TextView(this);
+        empty.setText(
+                "Your prayer journal is empty.\n"
+                        + "Your saved prayers will appear here."
+        );
+        empty.setTextSize(16);
+        empty.setTextColor(darkText);
+        empty.setPadding(0, 24, 0, 24);
+        content.addView(empty);
+    } else {
+        for (int i = count - 1; i >= 0; i--) {
+            String prayer = prefs.getString(
+                    "prayer_" + i,
+                    ""
+            );
+
+            if (prayer.isEmpty()) {
+                continue;
+            }
+
+            final String savedPrayer = prayer;
+
+            final String savedPrayer = prayer;
+final int prayerIndex = i;
+
+addCard(
+        "🙏 Prayer " + (i + 1),
+        savedPrayer,
+        v -> viewPrayer(prayerIndex, savedPrayer)
+);
+        }
+    }
+
+    addButton(
+            "⬅️ Back to Learn & Grow",
+            v -> showLearnMenu()
+    );
+    }
+    void writePrayer() {
+    android.widget.EditText input =
+            new android.widget.EditText(this);
+
+    input.setHint("Write your prayer here...");
+    input.setMinLines(5);
+    input.setGravity(
+            android.view.Gravity.TOP
+                    | android.view.Gravity.START
+    );
+
+    android.widget.ScrollView scroll =
+            new android.widget.ScrollView(this);
+    scroll.addView(input);
+
+    new android.app.AlertDialog.Builder(this)
+            .setTitle("🙏 Write a Prayer")
+            .setView(scroll)
+            .setPositiveButton("Save", (dialog, which) -> {
+                String prayer = input.getText()
+                        .toString().trim();
+
+                if (prayer.isEmpty()) {
+                    android.widget.Toast.makeText(
+                            this,
+                            "Please write your prayer first.",
+                            android.widget.Toast.LENGTH_SHORT
+                    ).show();
+                    return;
+                }
+
+                android.content.SharedPreferences prefs =
+                        getSharedPreferences(
+                                "prayerJournalPrefs",
+                                MODE_PRIVATE
+                        );
+
+                int count = prefs.getInt("prayer_count", 0);
+
+                prefs.edit()
+                        .putString("prayer_" + count, prayer)
+                        .putInt("prayer_count", count + 1)
+                        .apply();
+
+                android.widget.Toast.makeText(
+                        this,
+                        "Prayer saved successfully!",
+                        android.widget.Toast.LENGTH_SHORT
+                ).show();
+
+                showPrayerJournal();
+            })
+            .setNegativeButton("Cancel", null)
+            .show();
+}
+
+void viewPrayer(int index, String prayer) {
+    new android.app.AlertDialog.Builder(this)
+            .setTitle("🙏 Your Prayer")
+            .setMessage(prayer)
+            .setPositiveButton("Close", null)
+            .setNeutralButton("Edit", (dialog, which) ->
+                    editPrayer(index, prayer))
+            .setNegativeButton("Delete", (dialog, which) ->
+                    confirmDeletePrayer(index))
+            .show();
+}
+
+void editPrayer(int index, String oldPrayer) {
+    android.widget.EditText input =
+            new android.widget.EditText(this);
+
+    input.setText(oldPrayer);
+    input.setMinLines(5);
+    input.setGravity(
+            android.view.Gravity.TOP
+                    | android.view.Gravity.START
+    );
+
+    new android.app.AlertDialog.Builder(this)
+            .setTitle("✍️ Edit Prayer")
+            .setView(input)
+            .setPositiveButton("Save", (dialog, which) -> {
+                String updatedPrayer =
+                        input.getText().toString().trim();
+
+                if (updatedPrayer.isEmpty()) {
+                    android.widget.Toast.makeText(
+                            this,
+                            "Prayer cannot be empty.",
+                            android.widget.Toast.LENGTH_SHORT
+                    ).show();
+                    return;
+                }
+
+                getSharedPreferences(
+                        "prayerJournalPrefs",
+                        MODE_PRIVATE
+                ).edit()
+                        .putString(
+                                "prayer_" + index,
+                                updatedPrayer
+                        )
+                        .apply();
+
+                showPrayerJournal();
+            })
+            .setNegativeButton("Cancel", null)
+            .show();
+}
+
+void confirmDeletePrayer(int index) {
+    new android.app.AlertDialog.Builder(this)
+            .setTitle("Delete Prayer?")
+            .setMessage(
+                    "Are you sure you want to delete this prayer?"
+            )
+            .setPositiveButton("Delete", (dialog, which) -> {
+                android.content.SharedPreferences prefs =
+                        getSharedPreferences(
+                                "prayerJournalPrefs",
+                                MODE_PRIVATE
+                        );
+
+                int count = prefs.getInt("prayer_count", 0);
+
+                android.content.SharedPreferences.Editor editor =
+                        prefs.edit();
+
+                for (int i = index; i < count - 1; i++) {
+                    String nextPrayer = prefs.getString(
+                            "prayer_" + (i + 1),
+                            ""
+                    );
+
+                    editor.putString(
+                            "prayer_" + i,
+                            nextPrayer
+                    );
+                }
+
+                editor.remove("prayer_" + (count - 1));
+                editor.putInt("prayer_count", count - 1);
+                editor.apply();
+
+                showPrayerJournal();
+            })
+            .setNegativeButton("Cancel", null)
+            .show();
+}
     void showSpiritualBooks() {
     stopTimer();
     content.removeAllViews();
