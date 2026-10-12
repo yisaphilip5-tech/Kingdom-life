@@ -7938,10 +7938,13 @@ private class JigsawBoard extends View {
 private final int[][] vertical;
 
     private float cell;
-    private float boardLeft;
-    private float boardTop;
-    private float trayTop;
-    private float trayScroll;
+private float cellWidth;
+private float cellHeight;
+
+private float boardLeft;
+private float boardTop;
+private float trayTop;
+private float trayScroll;
 
     private float[] xPositions;
     private float[] yPositions;
@@ -8094,15 +8097,29 @@ protected void onSizeChanged(
 
     if (w <= 0 || h <= 0) return;
 
-    float availableBoardHeight = h * 0.72f;
-    float cellWidth = (w - 2f * margin) / columns;
-    float cellHeight = availableBoardHeight / rows;
+    float availableBoardHeight = h * 0.76f;
+    float availableBoardWidth = w - 2f * margin;
 
+    float imageRatio =
+            (float) image.getWidth() / image.getHeight();
+
+    float boardWidth = availableBoardWidth;
+    float boardHeight = boardWidth / imageRatio;
+
+    if (boardHeight > availableBoardHeight) {
+        boardHeight = availableBoardHeight;
+        boardWidth = boardHeight * imageRatio;
+    }
+
+    cellWidth = boardWidth / columns;
+    cellHeight = boardHeight / rows;
+
+    // Keep the existing square-piece drawing compatible for now.
     cell = Math.min(cellWidth, cellHeight);
 
-    boardLeft = (w - columns * cell) / 2f;
+    boardLeft = (w - boardWidth) / 2f;
     boardTop = margin;
-    trayTop = boardTop + rows * cell + 28f;
+    trayTop = boardTop + boardHeight + 28f;
 
     java.util.ArrayList<Integer> order =
             new java.util.ArrayList<>();
@@ -8114,36 +8131,33 @@ protected void onSizeChanged(
     java.util.Collections.shuffle(order);
 
     for (int i = 0; i < count; i++) {
-    int index = order.get(i);
+        int index = order.get(i);
 
-    homeX[index] = margin + i * (cell + gap);
-    homeY[index] = trayTop;
+        homeX[index] = margin + i * (cellWidth + gap);
+        homeY[index] = trayTop;
 
-    xPositions[index] = homeX[index];
-    yPositions[index] = homeY[index];
+        xPositions[index] = homeX[index];
+        yPositions[index] = homeY[index];
     }
 
     trayScroll = 0f;
     invalidate();
-}
-
+        }
     private Path piecePath(int index, float x, float y) {
     int row = index / columns;
     int col = index % columns;
 
-    float w = cell;
-    float h = cell;
-    float tab = cell * 0.22f;
+    float w = cellWidth;
+    float h = cellHeight;
+    float tab = Math.min(w, h) * 0.22f;
 
     Path p = new Path();
     p.moveTo(x, y);
 
-    // Top edge: matching tab or notch.
     p.lineTo(x + w * 0.32f, y);
 
     if (row > 0) {
         int direction = -horizontal[row][col];
-
         p.cubicTo(
                 x + w * 0.32f, y + direction * tab,
                 x + w * 0.68f, y + direction * tab,
@@ -8152,30 +8166,22 @@ protected void onSizeChanged(
     }
 
     p.lineTo(x + w, y);
-
-    // Right edge.
     p.lineTo(x + w, y + h * 0.32f);
 
     if (col < columns - 1) {
         int direction = vertical[row][col + 1];
-
         p.cubicTo(
-                x + w + direction * tab,
-                y + h * 0.32f,
-                x + w + direction * tab,
-                y + h * 0.68f,
+                x + w + direction * tab, y + h * 0.32f,
+                x + w + direction * tab, y + h * 0.68f,
                 x + w, y + h * 0.68f
         );
     }
 
     p.lineTo(x + w, y + h);
-
-    // Bottom edge.
     p.lineTo(x + w * 0.68f, y + h);
 
     if (row < rows - 1) {
         int direction = horizontal[row + 1][col];
-
         p.cubicTo(
                 x + w * 0.68f, y + h + direction * tab,
                 x + w * 0.32f, y + h + direction * tab,
@@ -8184,18 +8190,13 @@ protected void onSizeChanged(
     }
 
     p.lineTo(x, y + h);
-
-    // Left edge.
     p.lineTo(x, y + h * 0.68f);
 
     if (col > 0) {
         int direction = -vertical[row][col];
-
         p.cubicTo(
-                x - direction * tab,
-                y + h * 0.68f,
-                x - direction * tab,
-                y + h * 0.32f,
+                x - direction * tab, y + h * 0.68f,
+                x - direction * tab, y + h * 0.32f,
                 x, y + h * 0.32f
         );
     }
@@ -8212,14 +8213,14 @@ protected void onDraw(Canvas canvas) {
 
     // Draw the target picture.
     Rect target = new Rect(
-            (int) boardLeft,
-            (int) boardTop,
-            (int) (boardLeft + columns * cell),
-            (int) (boardTop + rows * cell)
-    );
+        (int) boardLeft,
+        (int) boardTop,
+        (int) (boardLeft + columns * cellWidth),
+        (int) (boardTop + rows * cellHeight)
+);
 
     paint.setStyle(Paint.Style.FILL);
-    paint.setAlpha(75);
+    paint.setAlpha(95);
     canvas.drawBitmap(image, null, target, paint);
     paint.setAlpha(255);
 
@@ -8240,38 +8241,36 @@ protected void onDraw(Canvas canvas) {
     );
 
     // Draw placed pieces on the board.
-    for (int i = 0; i < count; i++) {
-        if (!placed[i]) continue;
+for (int i = 0; i < count; i++) {
+    if (!placed[i]) continue;
 
-        int row = i / columns;
-        int col = i % columns;
+    int row = i / columns;
+    int col = i % columns;
 
-        float x = boardLeft + col * cell;
-        float y = boardTop + row * cell;
+    float x = boardLeft + col * cellWidth;
+    float y = boardTop + row * cellHeight;
 
-        drawPuzzlePiece(canvas, i, x, y);
-    }
-
+    drawPuzzlePiece(canvas, i, x, y);
+}
     // Draw unplaced pieces in the horizontally scrollable tray.
     canvas.save();
-    canvas.clipRect(0, trayTop, getWidth(), getHeight());
-    canvas.translate(-trayScroll, 0);
+canvas.clipRect(0, trayTop, getWidth(), getHeight());
+canvas.translate(-trayScroll, 0);
 
-    for (int i = 0; i < count; i++) {
-        if (placed[i]) continue;
+for (int i = 0; i < count; i++) {
+    if (placed[i]) continue;
 
-        float x = xPositions[i];
-        float y = yPositions[i];
+    float x = xPositions[i];
+    float y = yPositions[i];
 
-        if (selected == i && draggingFromTray) {
-            x = xPositions[i];
-            y = yPositions[i];
-        }
-
-        drawPuzzlePiece(canvas, i, x, y);
+    if (selected == i) {
+        continue;
     }
 
-    canvas.restore();
+    drawPuzzlePiece(canvas, i, x, y);
+}
+
+canvas.restore();
 
     // Draw the selected piece last while dragging.
 if (selected >= 0 && selected < count
@@ -8290,18 +8289,18 @@ if (selected >= 0 && selected < count
 }
 }
     private void drawPuzzlePiece(
-        Canvas canvas,
-        int index,
-        float x,
-        float y
+        Canvas canvas, int index, float x, float y
 ) {
+    int row = index / columns;
+    int col = index % columns;
+
+    float w = cellWidth;
+    float h = cellHeight;
+
     Path path = piecePath(index, x, y);
 
     canvas.save();
     canvas.clipPath(path);
-
-    int row = index / columns;
-    int col = index % columns;
 
     Rect source = new Rect(
             col * image.getWidth() / columns,
@@ -8313,13 +8312,14 @@ if (selected >= 0 && selected < count
     Rect destination = new Rect(
             (int) x,
             (int) y,
-            (int) (x + cell),
-            (int) (y + cell)
+            (int) (x + w),
+            (int) (y + h)
     );
 
     paint.setStyle(Paint.Style.FILL);
     paint.setColor(Color.WHITE);
     paint.setAlpha(255);
+
     canvas.drawBitmap(image, source, destination, paint);
     canvas.restore();
 
@@ -8329,8 +8329,8 @@ if (selected >= 0 && selected < count
     canvas.drawPath(path, paint);
 
     paint.setStyle(Paint.Style.FILL);
-    }
-    @Override
+        }
+@Override
 public boolean onTouchEvent(MotionEvent event) {
     float x = event.getX();
     float y = event.getY();
@@ -8349,13 +8349,14 @@ public boolean onTouchEvent(MotionEvent event) {
                 if (placed[i]) continue;
 
                 if (contentX >= xPositions[i]
-                        && contentX <= xPositions[i] + cell
+                        && contentX <= xPositions[i] + cellWidth
                         && y >= yPositions[i]
-                        && y <= yPositions[i] + cell) {
+                        && y <= yPositions[i] + cellHeight) {
+
                     selected = i;
                     draggingFromTray = true;
                     offsetX = x - (xPositions[i] - trayScroll);
-offsetY = y - yPositions[i];
+                    offsetY = y - yPositions[i];
                     return true;
                 }
             }
@@ -8367,51 +8368,51 @@ offsetY = y - yPositions[i];
     }
 
     if (event.getAction() == MotionEvent.ACTION_MOVE) {
-    dragX = x;
-    dragY = y;
+        dragX = x;
+        dragY = y;
 
-    if (selected >= 0 && !placed[selected]) {
-        xPositions[selected] = x - offsetX;
-        yPositions[selected] = y - offsetY;
+        if (selected >= 0 && !placed[selected]) {
+            xPositions[selected] = x - offsetX;
+            yPositions[selected] = y - offsetY;
+            draggingFromTray = y >= trayTop;
 
-        if (y < trayTop) {
-            draggingFromTray = false;
-        } else {
-            draggingFromTray = true;
+        } else if (downY >= trayTop) {
+            float trayWidth =
+                    margin + count * (cellWidth + gap) - gap;
+
+            float maxScroll = Math.max(
+                    0f,
+                    trayWidth - getWidth()
+            );
+
+            trayScroll = Math.max(
+                    0f,
+                    Math.min(
+                            maxScroll,
+                            trayScroll - (x - downX)
+                    )
+            );
+
+            downX = x;
         }
-    } else if (downY >= trayTop) {
-        trayScroll = Math.max(
-                0f,
-                Math.min(
-                        Math.max(
-                                0f,
-                                margin + count * (cell + gap)
-                                        - gap - getWidth()
-                        ),
-                        trayScroll - (x - downX)
-                )
-        );
 
-        downX = x;
-    }
-
-    invalidate();
-    return true;
+        invalidate();
+        return true;
     }
 
     if (event.getAction() == MotionEvent.ACTION_UP) {
-        if (selected >= 0) {
+        if (selected >= 0 && !placed[selected]) {
             int row = selected / columns;
             int col = selected % columns;
 
-            float targetX = boardLeft + col * cell;
-            float targetY = boardTop + row * cell;
+            float targetX = boardLeft + col * cellWidth;
+            float targetY = boardTop + row * cellHeight;
 
             if (!draggingFromTray
                     && Math.abs(xPositions[selected] - targetX)
-                    < cell * 0.35f
+                            < cellWidth * 0.35f
                     && Math.abs(yPositions[selected] - targetY)
-                    < cell * 0.35f) {
+                            < cellHeight * 0.35f) {
 
                 xPositions[selected] = targetX;
                 yPositions[selected] = targetY;
@@ -8420,13 +8421,13 @@ offsetY = y - yPositions[i];
                 completed++;
 
                 if (completed == count && !victoryShown) {
-    victoryShown = true;
-    post(this::showCompletedPicture);
+                    victoryShown = true;
+                    post(this::showCompletedPicture);
                 }
-                
-            } else if (!placed[selected]) {
-    xPositions[selected] = homeX[selected];
-    yPositions[selected] = homeY[selected];
+
+            } else {
+                xPositions[selected] = homeX[selected];
+                yPositions[selected] = homeY[selected];
             }
         }
 
@@ -8437,6 +8438,6 @@ offsetY = y - yPositions[i];
     }
 
     return true;
-}
+                        }
                        }                         
   }
