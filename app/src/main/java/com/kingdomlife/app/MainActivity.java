@@ -7915,7 +7915,7 @@ void showBookmarks() {
     content.addView(board, new LinearLayout.LayoutParams(
         LinearLayout.LayoutParams.MATCH_PARENT,
         0,
-        1.5f
+        2.0f
 ));
 
     Button back = new Button(this);
@@ -8004,8 +8004,8 @@ private class JigsawBoard extends View {
         super.onSizeChanged(w, h, oldW, oldH);
 
         cell = Math.min(
-        w * 1.10f / columns,
-        h * 0.85f / rows
+        w * 1.16f / columns,
+        h * 0.90f / rows
 );
         boardLeft = (w - columns * cell) / 2f;
         boardTop = 12f;
@@ -8019,14 +8019,32 @@ private class JigsawBoard extends View {
 
         java.util.Collections.shuffle(order);
 
-        float trayTop = boardTop + rows * cell + 10;
-        for (int i = 0; i < count; i++) {
-            int index = order.get(i);
-            xPositions[index] =
-                    8 + (i % columns) * cell * 0.88f;
-            yPositions[index] =
-                    trayTop + (i / columns) * cell * 0.15f;
-        }
+        float trayTop = boardTop + rows * cell + cell * 0.30f;
+
+float trayHeight = Math.max(
+        cell * 1.5f,
+        h - trayTop - cell * 0.45f
+);
+
+int trayRows = Math.max(
+        1,
+        (int) Math.ceil((double) count / columns)
+);
+
+float trayCell = Math.min(
+        cell,
+        trayHeight / trayRows
+);
+
+for (int i = 0; i < count; i++) {
+    int index = order.get(i);
+
+    xPositions[index] =
+            6 + (i % columns) * cell * 0.88f;
+
+    yPositions[index] =
+            trayTop + (i / columns) * trayCell;
+}
     }
 
     private Path piecePath(int index, float x, float y) {
