@@ -5391,8 +5391,78 @@ addCard(
     );
 
     layout.startAnimation(zoom);
+        playAchievementCelebration(
+        (android.view.ViewGroup) dialog.getWindow().getDecorView()
+);
 
     closeButton.setOnClickListener(v -> dialog.dismiss());
+    }
+    void playAchievementCelebration(
+        android.view.ViewGroup container) {
+
+    final String[] effects = {
+            "✨", "⭐", "🌟", "🎉", "💛", "🏆"
+    };
+
+    for (int i = 0; i < 16; i++) {
+
+        final android.widget.TextView sparkle =
+                new android.widget.TextView(this);
+
+        sparkle.setText(
+                effects[i % effects.length]
+        );
+
+        sparkle.setTextSize(22);
+
+        android.widget.FrameLayout.LayoutParams params =
+                new android.widget.FrameLayout.LayoutParams(
+                        android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+                        android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+                );
+
+        params.gravity = android.view.Gravity.TOP
+                | android.view.Gravity.CENTER_HORIZONTAL;
+
+        sparkle.setTranslationX(
+                (i - 8) * 30f
+        );
+
+        container.addView(sparkle, params);
+
+        android.view.animation.Animation fall =
+                new android.view.animation.TranslateAnimation(
+                        0, (i % 2 == 0 ? 45 : -45),
+                        -30, 260 + (i % 5) * 35
+                );
+
+        fall.setDuration(1400 + (i % 4) * 200);
+        fall.setStartOffset(i * 65L);
+        fall.setFillAfter(false);
+
+        fall.setAnimationListener(
+                new android.view.animation.Animation.AnimationListener() {
+
+                    @Override
+                    public void onAnimationStart(
+                            android.view.animation.Animation animation) {
+                    }
+
+                    @Override
+                    public void onAnimationEnd(
+                            android.view.animation.Animation animation) {
+                        container.removeView(sparkle);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(
+                            android.view.animation.Animation animation) {
+                    }
+                }
+        );
+
+        sparkle.startAnimation(fall);
+    }
     }
     void checkAchievementNotifications() {
 
