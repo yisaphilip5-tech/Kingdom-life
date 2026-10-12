@@ -6627,7 +6627,7 @@ if (currentBibleDifficulty.equals("Easy")) {
 String[] difficulties = {
         "Easy", "Medium", "Hard", "Scholar"
 };
-breboolean allDifficultiesCompleted = true;
+boolean allDifficultiesCompleted = true;
 
 for (String difficulty : difficulties) {
 
