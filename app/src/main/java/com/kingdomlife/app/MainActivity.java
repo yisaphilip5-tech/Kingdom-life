@@ -1401,6 +1401,7 @@ prefs.edit()
         .putInt("learnedVerses", learnedVerses)
         .putInt("totalPoints", totalPoints)
         .apply();
+        checkAchievementNotifications();
         showMessage(
         "✅ Verse Learned",
         "Today's verse has been marked as learned.\n\n" +
@@ -5207,6 +5208,197 @@ addCard(
 );
 
     }
+    void showAchievementNotification(String achievementName, String message) {
+    boolean alreadyNotified = prefs.getBoolean(
+            "notified_" + achievementName,
+            false
+    );
+
+    if (alreadyNotified) {
+        return;
+    }
+
+    prefs.edit()
+            .putBoolean("notified_" + achievementName, true)
+            .apply();
+
+    TextView notification = new TextView(this);
+    notification.setText(
+            "🏆 ACHIEVEMENT UNLOCKED!\n\n" +
+            achievementName + "\n" +
+            message
+    );
+    notification.setTextSize(18);
+    notification.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    notification.setTextColor(Color.WHITE);
+    notification.setGravity(Gravity.CENTER);
+    notification.setPadding(24, 24, 24, 24);
+    notification.setBackgroundColor(Color.rgb(184, 134, 11));
+
+    android.widget.Toast toast =
+            android.widget.Toast.makeText(
+                    this,
+                    "",
+                    android.widget.Toast.LENGTH_LONG
+            );
+
+    toast.setView(notification);
+    toast.show();
+    }
+    void checkAchievementNotifications() {
+
+    // Points achievements
+    if (totalPoints >= 5) {
+        showAchievementNotification(
+                "First Step",
+                "You earned your first points!"
+        );
+    }
+
+    if (totalPoints >= 50) {
+        showAchievementNotification(
+                "Point Builder",
+                "You reached 50 points!"
+        );
+    }
+
+    // Bible learning achievement
+    if (learnedVerses >= 5) {
+        showAchievementNotification(
+                "Bible Learner",
+                "You have learned 5 Bible verses!"
+        );
+    }
+
+    // Daily streak achievement
+    if (dailyStreak >= 3) {
+        showAchievementNotification(
+                "Streak Keeper",
+                "You reached a 3-day streak!"
+        );
+    }
+
+    // Daily challenge achievement
+    if (challengeCompletedToday) {
+        showAchievementNotification(
+                "Challenge Complete",
+                "You completed today's challenge!"
+        );
+    }
+
+    // Bible Challenge levels
+    boolean easyCompleted = prefs.getBoolean(
+            "challenge_level_1_completed", false
+    );
+
+    boolean mediumCompleted = prefs.getBoolean(
+            "challenge_level_2_completed", false
+    );
+
+    boolean hardCompleted = prefs.getBoolean(
+            "challenge_level_3_completed", false
+    );
+
+    if (easyCompleted) {
+        showAchievementNotification(
+                "Easy Challenger",
+                "You completed Level 1!"
+        );
+    }
+
+    if (mediumCompleted) {
+        showAchievementNotification(
+                "Medium Challenger",
+                "You completed Level 2!"
+        );
+    }
+
+    if (hardCompleted) {
+        showAchievementNotification(
+                "Hard Challenger",
+                "You completed Level 3!"
+        );
+    }
+
+    if (easyCompleted && mediumCompleted && hardCompleted) {
+        showAchievementNotification(
+                "Challenge Master",
+                "You completed all three Challenge levels!"
+        );
+    }
+
+    // Bible Journey achievements
+    int journeyQuestions = prefs.getInt(
+            "bibleJourney_questions_completed", 0
+    );
+
+    int journeyBooks = prefs.getInt(
+            "bibleJourney_books_completed", 0
+    );
+
+    if (journeyQuestions >= 100) {
+        showAchievementNotification(
+                "100 Questions",
+                "You completed 100 Bible Journey questions!"
+        );
+    }
+
+    if (journeyQuestions >= 250) {
+        showAchievementNotification(
+                "250 Questions",
+                "You completed 250 Bible Journey questions!"
+        );
+    }
+
+    if (journeyQuestions >= 500) {
+        showAchievementNotification(
+                "500 Questions",
+                "You completed 500 Bible Journey questions!"
+        );
+    }
+
+    if (journeyQuestions >= 1000) {
+        showAchievementNotification(
+                "1,000 Questions",
+                "You completed 1,000 Bible Journey questions!"
+        );
+    }
+
+    if (journeyBooks >= 5) {
+        showAchievementNotification(
+                "5 Books",
+                "You completed 5 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 10) {
+        showAchievementNotification(
+                "10 Books",
+                "You completed 10 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 25) {
+        showAchievementNotification(
+                "25 Books",
+                "You completed 25 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 50) {
+        showAchievementNotification(
+                "50 Books",
+                "You completed 50 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 66) {
+        showAchievementNotification(
+                "66 Books",
+                "You completed all 66 Bible Journey books!"
+        );
+    }
+    }
     void showAbout() {
         showMessage(
                 "ℹ️ About Kingdom Life",
@@ -5302,6 +5494,7 @@ addCard(
               prefs.edit()
         .putInt("totalPoints", totalPoints)
         .apply();
+                checkAchievementNotifications();
     feedback.setText("✅ Correct! Excellent memory!\n+10 points");
             } else {
                 feedback.setText("❌ Not quite. Try to remember Jeremiah 29:11.");
@@ -5409,6 +5602,7 @@ addCard(
     prefs.edit()
             .putInt("totalPoints", totalPoints)
             .apply();
+                checkAchievementNotifications();
 
     feedback.setText("✅ Correct! The missing word is \"expected\".\n+10 points");
 } else {
@@ -5514,6 +5708,7 @@ addCard(
     prefs.edit()
             .putInt("totalPoints", totalPoints)
             .apply();
+                checkAchievementNotifications();
 
     feedback.setText("✅ Correct! Jeremiah 29:11.\n+10 points");
 } else {
@@ -6278,6 +6473,7 @@ question.setText(
         prefs.edit()
                 .putInt("totalPoints", totalPoints)
                 .apply();
+        checkAchievementNotifications();
 
         TextView feedback = new TextView(this);
         feedback.setText("🎉 Correct! +5 points");
@@ -6401,6 +6597,7 @@ if (!alreadyCompleted) {
                     completedJourneyQuestions
             )
             .apply();
+    checkAchievementNotifications();
 }
 
 // Unlock the next difficulty.
@@ -6430,8 +6627,7 @@ if (currentBibleDifficulty.equals("Easy")) {
 String[] difficulties = {
         "Easy", "Medium", "Hard", "Scholar"
 };
-
-boolean allDifficultiesCompleted = true;
+breboolean allDifficultiesCompleted = true;
 
 for (String difficulty : difficulties) {
 
@@ -6570,6 +6766,7 @@ if (allDifficultiesCompleted) {
                     completedJourneyBooks
             )
             .apply();
+    checkAchievementNotifications();
 }
     
     TextView scoreText = new TextView(this);
@@ -6809,6 +7006,7 @@ if (selected == correctAnswer) {
           prefs.edit()
         .putInt("totalPoints", totalPoints)
         .apply();
+    checkAchievementNotifications();
             feedback.setText("✅ Correct! +10 points");
         } else {
             wrongAnswers++;
@@ -6845,6 +7043,7 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
 } else if (currentLevel == 3) {
     prefs.edit().putBoolean("challenge_level_3_completed", true).apply();
         }
+        checkAchievementNotifications();
         if (currentLevel == highestLevelUnlocked && highestLevelUnlocked < 3) {
     highestLevelUnlocked++;
 
@@ -7021,6 +7220,7 @@ content.addView(answerInput);
         prefs.edit()
                 .putInt("totalPoints", totalPoints)
                 .apply();
+        checkAchievementNotifications();
 
         TextView feedback = new TextView(this);
         feedback.setText("🎉 Correct! +5 points");
@@ -7427,6 +7627,7 @@ void showMissingWordQuestion(String[][] questions, int questionIndex) {
                 prefs.edit()
                         .putInt("totalPoints", totalPoints)
                         .apply();
+                checkAchievementNotifications();
 
                 feedback.setText(
                         "🎉 Correct! +5 points\n\n" +
@@ -7880,6 +8081,7 @@ void showBookmarks() {
                     lastChallengeDate
             )
             .apply();
+        checkAchievementNotifications();
 
     showMessage(
             "🎉 Challenge Complete!",
