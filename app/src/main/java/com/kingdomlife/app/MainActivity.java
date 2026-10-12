@@ -7906,7 +7906,7 @@ void showBookmarks() {
     content.addView(title);
 
     TextView instructions = new TextView(this);
-    instructions.setText("Drag a piece onto the matching picture.");
+    instructions.setText("Drag each piece onto the matching picture.");
     instructions.setTextColor(Color.WHITE);
     instructions.setGravity(Gravity.CENTER);
     instructions.setPadding(8, 4, 8, 8);
@@ -7924,7 +7924,7 @@ void showBookmarks() {
     back.setText("Back to Jigsaw Levels");
     back.setOnClickListener(v -> showJigsawMenu());
     content.addView(back);
-}
+           }
 
 private class JigsawBoard extends View {
 
@@ -8011,6 +8011,48 @@ homeY = new float[count];
 
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         setFocusable(true);
+    }
+    private void showCompletedPicture() {
+    content.removeAllViews();
+    content.setOrientation(LinearLayout.VERTICAL);
+
+    TextView title = new TextView(MainActivity.this);
+    title.setText("👑 Puzzle Completed!");
+    title.setTextSize(24);
+    title.setTypeface(null, Typeface.BOLD);
+    title.setTextColor(Color.WHITE);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(12, 20, 12, 12);
+    content.addView(title);
+
+    ImageView finishedImage = new ImageView(MainActivity.this);
+    finishedImage.setImageBitmap(image);
+    finishedImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
+    finishedImage.setAdjustViewBounds(true);
+
+    LinearLayout.LayoutParams imageParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    0,
+                    1f
+            );
+
+    imageParams.setMargins(12, 8, 12, 8);
+    content.addView(finishedImage, imageParams);
+
+    TextView message = new TextView(MainActivity.this);
+    message.setText("Congratulations! You completed all "
+            + count + " pieces!");
+    message.setTextColor(Color.WHITE);
+    message.setTextSize(16);
+    message.setGravity(Gravity.CENTER);
+    message.setPadding(12, 8, 12, 16);
+    content.addView(message);
+
+    Button continueButton = new Button(MainActivity.this);
+    continueButton.setText("Back to Jigsaw Levels");
+    continueButton.setOnClickListener(v -> showJigsawMenu());
+    content.addView(continueButton);
     }
 
     @Override
@@ -8347,24 +8389,10 @@ offsetY = y - yPositions[i];
                 completed++;
 
                 if (completed == count && !victoryShown) {
-                    victoryShown = true;
-
-                    new android.app.AlertDialog.Builder(
-                            MainActivity.this
-                    )
-                            .setTitle("👑 Puzzle Completed!")
-                            .setMessage(
-                                    "Congratulations! You placed all "
-                                            + count + " pieces!"
-                            )
-                            .setPositiveButton(
-                                    "Continue",
-                                    (dialog, which) ->
-                                            showJigsawMenu()
-                            )
-                            .setCancelable(false)
-                            .show();
+    victoryShown = true;
+    post(this::showCompletedPicture);
                 }
+                
             } else if (!placed[selected]) {
     xPositions[selected] = homeX[selected];
     yPositions[selected] = homeY[selected];
