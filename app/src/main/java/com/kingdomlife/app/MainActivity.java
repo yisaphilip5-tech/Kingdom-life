@@ -7944,6 +7944,8 @@ private final int[][] vertical;
 
     private float[] xPositions;
     private float[] yPositions;
+    private float[] homeX;
+private float[] homeY;
     private boolean[] locked;
     private boolean[] placed;
 
@@ -7958,8 +7960,8 @@ private float dragY;
     private int completed;
     private boolean victoryShown;
 
-    private final float gap = 12f;
-    private final float margin = 12f;
+    private final float gap = 8f;
+private final float margin = 6f;
     private final float tabRatio = 0.14f;
 
     JigsawBoard(
@@ -8001,7 +8003,9 @@ for (int r = 0; r < rows; r++) {
      }
 
         xPositions = new float[count];
-        yPositions = new float[count];
+yPositions = new float[count];
+homeX = new float[count];
+homeY = new float[count];
         locked = new boolean[count];
         placed = new boolean[count];
 
@@ -8017,7 +8021,7 @@ protected void onSizeChanged(
 
     if (w <= 0 || h <= 0) return;
 
-    float availableBoardHeight = h * 0.58f;
+    float availableBoardHeight = h * 0.72f;
     float cellWidth = (w - 2f * margin) / columns;
     float cellHeight = availableBoardHeight / rows;
 
@@ -8037,12 +8041,13 @@ protected void onSizeChanged(
     java.util.Collections.shuffle(order);
 
     for (int i = 0; i < count; i++) {
-        int index = order.get(i);
+    int index = order.get(i);
 
-        xPositions[index] =
-                margin + i * (cell + gap);
+    homeX[index] = margin + i * (cell + gap);
+    homeY[index] = trayTop;
 
-        yPositions[index] = trayTop;
+    xPositions[index] = homeX[index];
+    yPositions[index] = homeY[index];
     }
 
     trayScroll = 0f;
@@ -8361,9 +8366,8 @@ offsetY = y - yPositions[i];
                             .show();
                 }
             } else if (!placed[selected]) {
-                xPositions[selected] =
-                        margin + selected * (cell + gap);
-                yPositions[selected] = trayTop;
+    xPositions[selected] = homeX[selected];
+    yPositions[selected] = homeY[selected];
             }
         }
 
