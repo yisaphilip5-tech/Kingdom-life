@@ -8004,10 +8004,9 @@ private class JigsawBoard extends View {
         super.onSizeChanged(w, h, oldW, oldH);
 
         cell = Math.min(
-                w * 0.88f / columns,
-                h * 0.46f / rows
-        );
-
+        w * 1.10f / columns,
+        h * 0.85f / rows
+);
         boardLeft = (w - columns * cell) / 2f;
         boardTop = 12f;
 
