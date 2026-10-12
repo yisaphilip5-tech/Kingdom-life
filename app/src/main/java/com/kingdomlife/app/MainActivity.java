@@ -2782,7 +2782,6 @@ String meaning =
                 continue;
             }
 
-            final String savedPrayer = prayer;
 
             final String savedPrayer = prayer;
 final int prayerIndex = i;
@@ -2800,6 +2799,122 @@ addCard(
             v -> showLearnMenu()
     );
     }
+    void showSpiritualGoals() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🎯 Spiritual Goals");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 12);
+    content.addView(title);
+
+    TextView description = new TextView(this);
+    description.setText(
+            "Set goals that help you grow in faith, "
+                    + "prayer, Bible study, and daily living."
+    );
+    description.setTextSize(15);
+    description.setTextColor(darkText);
+    description.setPadding(0, 0, 0, 16);
+    content.addView(description);
+
+    addButton("➕ Add a Spiritual Goal", v -> {
+        android.widget.EditText input =
+                new android.widget.EditText(this);
+
+        input.setHint("Enter your spiritual goal");
+
+        new android.app.AlertDialog.Builder(this)
+                .setTitle("🎯 New Goal")
+                .setView(input)
+                .setPositiveButton("Save", (dialog, which) -> {
+                    String goal = input.getText()
+                            .toString().trim();
+
+                    if (goal.isEmpty()) {
+                        android.widget.Toast.makeText(
+                                this,
+                                "Please enter a goal.",
+                                android.widget.Toast.LENGTH_SHORT
+                        ).show();
+                        return;
+                    }
+
+                    android.content.SharedPreferences prefs =
+                            getSharedPreferences(
+                                    "spiritualGoalsPrefs",
+                                    MODE_PRIVATE
+                            );
+
+                    int count = prefs.getInt("goal_count", 0);
+
+                    prefs.edit()
+                            .putString("goal_" + count, goal)
+                            .putBoolean("goal_done_" + count, false)
+                            .putInt("goal_count", count + 1)
+                            .apply();
+
+                    showSpiritualGoals();
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+    });
+
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "spiritualGoalsPrefs",
+                    MODE_PRIVATE
+            );
+
+    int count = prefs.getInt("goal_count", 0);
+
+    if (count == 0) {
+        TextView empty = new TextView(this);
+        empty.setText(
+                "No goals yet.\n"
+                        + "Add your first spiritual goal above."
+        );
+        empty.setTextSize(16);
+        empty.setTextColor(darkText);
+        empty.setPadding(0, 24, 0, 24);
+        content.addView(empty);
+    } else {
+        for (int i = 0; i < count; i++) {
+            String goal = prefs.getString("goal_" + i, "");
+            boolean done = prefs.getBoolean(
+                    "goal_done_" + i,
+                    false
+            );
+
+            if (goal.isEmpty()) continue;
+
+            final int goalIndex = i;
+
+            addCard(
+                    (done ? "✅ " : "🎯 ") + goal,
+                    done ? "Goal completed!" : "Tap to mark as completed.",
+                    v -> {
+                        prefs.edit()
+                                .putBoolean(
+                                        "goal_done_" + goalIndex,
+                                        !done
+                                )
+                                .apply();
+
+                        showSpiritualGoals();
+                    }
+            );
+        }
+    }
+
+    addButton(
+            "⬅️ Back to Learn & Grow",
+            v -> showLearnMenu()
+    );
+                        }
     void writePrayer() {
     android.widget.EditText input =
             new android.widget.EditText(this);
