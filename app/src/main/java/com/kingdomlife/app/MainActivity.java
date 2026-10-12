@@ -7913,10 +7913,10 @@ void showBookmarks() {
     JigsawBoard board = new JigsawBoard(this, bitmap, difficulty);
 
     content.addView(board, new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            0,
-            1f
-    ));
+        LinearLayout.LayoutParams.MATCH_PARENT,
+        0,
+        1.5f
+));
 
     Button back = new Button(this);
     back.setText("Back to Jigsaw Levels");
@@ -8019,8 +8019,7 @@ private class JigsawBoard extends View {
 
         java.util.Collections.shuffle(order);
 
-        float trayTop = boardTop + rows * cell + 24;
-
+        float trayTop = boardTop + rows * cell + 10;
         for (int i = 0; i < count; i++) {
             int index = order.get(i);
             xPositions[index] =
