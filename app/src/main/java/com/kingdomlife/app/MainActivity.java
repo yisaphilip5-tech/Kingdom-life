@@ -7891,8 +7891,10 @@ void showBookmarks() {
 
     showJigsawBoard(difficulty, puzzleBitmap);
     }
-    private void showJigsawBoard(String difficulty, Bitmap bitmap) {
+            
+           private void showJigsawBoard(String difficulty, Bitmap bitmap) {
     content.removeAllViews();
+    content.setOrientation(LinearLayout.VERTICAL);
 
     TextView title = new TextView(this);
     title.setText("🧩 " + difficulty + " Jigsaw Puzzle");
@@ -7900,23 +7902,23 @@ void showBookmarks() {
     title.setTypeface(null, Typeface.BOLD);
     title.setTextColor(Color.WHITE);
     title.setGravity(Gravity.CENTER);
-    title.setPadding(10, 16, 10, 16);
+    title.setPadding(8, 10, 8, 6);
     content.addView(title);
 
     TextView instructions = new TextView(this);
-    instructions.setText("Drag each piece to its matching position.");
+    instructions.setText("Drag a piece onto the matching picture.");
     instructions.setTextColor(Color.WHITE);
     instructions.setGravity(Gravity.CENTER);
-    instructions.setPadding(8, 8, 8, 12);
+    instructions.setPadding(8, 4, 8, 8);
     content.addView(instructions);
 
     JigsawBoard board = new JigsawBoard(this, bitmap, difficulty);
 
     content.addView(board, new LinearLayout.LayoutParams(
-        LinearLayout.LayoutParams.MATCH_PARENT,
-        0,
-        2.0f
-));
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            0,
+            1f
+    ));
 
     Button back = new Button(this);
     back.setText("Back to Jigsaw Levels");
@@ -7931,23 +7933,34 @@ private class JigsawBoard extends View {
     private final int columns;
     private final int rows;
     private final int count;
+    private final int[][] horizontal;
+private final int[][] vertical;
 
     private float cell;
     private float boardLeft;
     private float boardTop;
+    private float trayTop;
+    private float trayScroll;
 
     private float[] xPositions;
     private float[] yPositions;
     private boolean[] locked;
-
-    private int[][] horizontal;
-    private int[][] vertical;
+    private boolean[] placed;
 
     private int selected = -1;
+    private boolean draggingFromTray;
+    private float downX;
+    private float downY;
+    private float dragX;
+private float dragY;
     private float offsetX;
     private float offsetY;
     private int completed;
     private boolean victoryShown;
+
+    private final float gap = 12f;
+    private final float margin = 12f;
+    private final float tabRatio = 0.14f;
 
     JigsawBoard(
             android.content.Context context,
@@ -7970,31 +7983,30 @@ private class JigsawBoard extends View {
         }
 
         count = columns * rows;
+        horizontal = new int[rows + 1][columns];
+vertical = new int[rows][columns + 1];
+
+java.util.Random random = new java.util.Random();
+
+for (int r = 1; r < rows; r++) {
+    for (int c = 0; c < columns; c++) {
+        horizontal[r][c] = random.nextBoolean() ? 1 : -1;
+    }
+}
+
+for (int r = 0; r < rows; r++) {
+    for (int c = 1; c < columns; c++) {
+        vertical[r][c] = random.nextBoolean() ? 1 : -1;
+    }
+     }
 
         xPositions = new float[count];
         yPositions = new float[count];
         locked = new boolean[count];
-
-        horizontal = new int[rows + 1][columns];
-        vertical = new int[rows][columns + 1];
-
-        java.util.Random random = new java.util.Random();
-
-        for (int r = 1; r < rows; r++) {
-            for (int c = 0; c < columns; c++) {
-                horizontal[r][c] =
-                        random.nextBoolean() ? 1 : -1;
-            }
-        }
-
-        for (int r = 0; r < rows; r++) {
-            for (int c = 1; c < columns; c++) {
-                vertical[r][c] =
-                        random.nextBoolean() ? 1 : -1;
-            }
-        }
+        placed = new boolean[count];
 
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        setFocusable(true);
     }
 
     @Override
@@ -8005,23 +8017,15 @@ protected void onSizeChanged(
 
     if (w <= 0 || h <= 0) return;
 
-    float gap = 4f;
-    float margin = 8f;
+    float availableBoardHeight = h * 0.58f;
+    float cellWidth = (w - 2f * margin) / columns;
+    float cellHeight = availableBoardHeight / rows;
 
-    int trayRows = (int) Math.ceil(
-            (double) count / columns
-    );
-
-    float maxCellWidth =
-            (w - 2f * margin - (columns - 1) * gap)
-                    / columns;
-
-    float maxCellHeight =
-        (h * 0.78f - 24f) / rows;
-    cell = Math.min(maxCellWidth, maxCellHeight);
+    cell = Math.min(cellWidth, cellHeight);
 
     boardLeft = (w - columns * cell) / 2f;
-    boardTop = 8f;
+    boardTop = margin;
+    trayTop = boardTop + rows * cell + 28f;
 
     java.util.ArrayList<Integer> order =
             new java.util.ArrayList<>();
@@ -8032,235 +8036,344 @@ protected void onSizeChanged(
 
     java.util.Collections.shuffle(order);
 
-    float trayTop = boardTop + rows * cell + 12f;
-
     for (int i = 0; i < count; i++) {
         int index = order.get(i);
 
         xPositions[index] =
-                margin + (i % columns) * (cell + gap);
+                margin + i * (cell + gap);
 
-        yPositions[index] =
-                trayTop + (i / columns) * (cell + gap);
+        yPositions[index] = trayTop;
     }
+
+    trayScroll = 0f;
+    invalidate();
 }
+
     private Path piecePath(int index, float x, float y) {
-        int row = index / columns;
-        int col = index % columns;
+    int row = index / columns;
+    int col = index % columns;
 
-        float w = cell;
-        float h = cell;
-        float tab = cell * 0.18f;
+    float w = cell;
+    float h = cell;
+    float tab = cell * 0.22f;
 
-        Path p = new Path();
-        p.moveTo(x, y);
+    Path p = new Path();
+    p.moveTo(x, y);
 
-        // Top edge.
-        p.lineTo(x + w * 0.32f, y);
-        if (row > 0) {
-            int direction = -horizontal[row][col];
-            p.cubicTo(
-                    x + w * 0.32f, y + direction * tab,
-                    x + w * 0.68f, y + direction * tab,
-                    x + w * 0.68f, y
-            );
-        }
-        p.lineTo(x + w, y);
+    // Top edge: matching tab or notch.
+    p.lineTo(x + w * 0.32f, y);
 
-        // Right edge.
-        p.lineTo(x + w, y + h * 0.32f);
-        if (col < columns - 1) {
-            int direction = vertical[row][col + 1];
-            p.cubicTo(
-                    x + w + direction * tab,
-                    y + h * 0.32f,
-                    x + w + direction * tab,
-                    y + h * 0.68f,
-                    x + w, y + h * 0.68f
-            );
-        }
-        p.lineTo(x + w, y + h);
+    if (row > 0) {
+        int direction = -horizontal[row][col];
 
-        // Bottom edge.
-        p.lineTo(x + w * 0.68f, y + h);
-        if (row < rows - 1) {
-            int direction = horizontal[row + 1][col];
-            p.cubicTo(
-                    x + w * 0.68f, y + h + direction * tab,
-                    x + w * 0.32f, y + h + direction * tab,
-                    x + w * 0.32f, y + h
-            );
-        }
-        p.lineTo(x, y + h);
-
-        // Left edge.
-        p.lineTo(x, y + h * 0.68f);
-        if (col > 0) {
-            int direction = -vertical[row][col];
-            p.cubicTo(
-                    x - direction * tab,
-                    y + h * 0.68f,
-                    x - direction * tab,
-                    y + h * 0.32f,
-                    x, y + h * 0.32f
-            );
-        }
-        p.close();
-
-        return p;
-    }
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.drawColor(Color.rgb(24, 29, 42));
-
-        Rect target = new Rect(
-                (int) boardLeft,
-                (int) boardTop,
-                (int) (boardLeft + columns * cell),
-                (int) (boardTop + rows * cell)
-        );
-
-        paint.setAlpha(70);
-        canvas.drawBitmap(image, null, target, paint);
-        paint.setAlpha(255);
-
-        for (int i = 0; i < count; i++) {
-            int row = i / columns;
-            int col = i % columns;
-
-            float x = xPositions[i];
-            float y = yPositions[i];
-
-            Path path = piecePath(i, x, y);
-
-            canvas.save();
-            canvas.clipPath(path);
-
-            Rect source = new Rect(
-                    col * image.getWidth() / columns,
-                    row * image.getHeight() / rows,
-                    (col + 1) * image.getWidth() / columns,
-                    (row + 1) * image.getHeight() / rows
-            );
-
-            Rect destination = new Rect(
-                    (int) x,
-                    (int) y,
-                    (int) (x + cell),
-                    (int) (y + cell)
-            );
-
-            paint.setStyle(Paint.Style.FILL);
-            canvas.drawBitmap(image, source, destination, paint);
-            canvas.restore();
-
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(2);
-            paint.setColor(Color.WHITE);
-            canvas.drawPath(path, paint);
-            paint.setStyle(Paint.Style.FILL);
-        }
-
-        paint.setColor(Color.WHITE);
-        paint.setTextSize(16);
-        canvas.drawText(
-                "Pieces placed: " + completed + " / " + count,
-                12, getHeight() - 12, paint
+        p.cubicTo(
+                x + w * 0.32f, y + direction * tab,
+                x + w * 0.68f, y + direction * tab,
+                x + w * 0.68f, y
         );
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        float touchX = event.getX();
-        float touchY = event.getY();
+    p.lineTo(x + w, y);
 
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+    // Right edge.
+    p.lineTo(x + w, y + h * 0.32f);
+
+    if (col < columns - 1) {
+        int direction = vertical[row][col + 1];
+
+        p.cubicTo(
+                x + w + direction * tab,
+                y + h * 0.32f,
+                x + w + direction * tab,
+                y + h * 0.68f,
+                x + w, y + h * 0.68f
+        );
+    }
+
+    p.lineTo(x + w, y + h);
+
+    // Bottom edge.
+    p.lineTo(x + w * 0.68f, y + h);
+
+    if (row < rows - 1) {
+        int direction = horizontal[row + 1][col];
+
+        p.cubicTo(
+                x + w * 0.68f, y + h + direction * tab,
+                x + w * 0.32f, y + h + direction * tab,
+                x + w * 0.32f, y + h
+        );
+    }
+
+    p.lineTo(x, y + h);
+
+    // Left edge.
+    p.lineTo(x, y + h * 0.68f);
+
+    if (col > 0) {
+        int direction = -vertical[row][col];
+
+        p.cubicTo(
+                x - direction * tab,
+                y + h * 0.68f,
+                x - direction * tab,
+                y + h * 0.32f,
+                x, y + h * 0.32f
+        );
+    }
+
+    p.close();
+    return p;
+            }
+
+@Override
+protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+
+    canvas.drawColor(Color.rgb(24, 29, 42));
+
+    // Draw the target picture.
+    Rect target = new Rect(
+            (int) boardLeft,
+            (int) boardTop,
+            (int) (boardLeft + columns * cell),
+            (int) (boardTop + rows * cell)
+    );
+
+    paint.setStyle(Paint.Style.FILL);
+    paint.setAlpha(75);
+    canvas.drawBitmap(image, null, target, paint);
+    paint.setAlpha(255);
+
+    paint.setStyle(Paint.Style.STROKE);
+    paint.setStrokeWidth(2f);
+    paint.setColor(Color.WHITE);
+    canvas.drawRect(target, paint);
+
+    // Show progress.
+    paint.setStyle(Paint.Style.FILL);
+    paint.setColor(Color.WHITE);
+    paint.setTextSize(16f);
+    canvas.drawText(
+            "Pieces placed: " + completed + " / " + count,
+            margin,
+            trayTop - 10f,
+            paint
+    );
+
+    // Draw placed pieces on the board.
+    for (int i = 0; i < count; i++) {
+        if (!placed[i]) continue;
+
+        int row = i / columns;
+        int col = i % columns;
+
+        float x = boardLeft + col * cell;
+        float y = boardTop + row * cell;
+
+        drawPuzzlePiece(canvas, i, x, y);
+    }
+
+    // Draw unplaced pieces in the horizontally scrollable tray.
+    canvas.save();
+    canvas.clipRect(0, trayTop, getWidth(), getHeight());
+    canvas.translate(-trayScroll, 0);
+
+    for (int i = 0; i < count; i++) {
+        if (placed[i]) continue;
+
+        float x = xPositions[i];
+        float y = yPositions[i];
+
+        if (selected == i && draggingFromTray) {
+            x = xPositions[i];
+            y = yPositions[i];
+        }
+
+        drawPuzzlePiece(canvas, i, x, y);
+    }
+
+    canvas.restore();
+
+    // Draw the selected piece last while dragging.
+if (selected >= 0 && selected < count
+        && !placed[selected]) {
+
+    canvas.save();
+
+    drawPuzzlePiece(
+            canvas,
+            selected,
+            dragX - offsetX,
+            dragY - offsetY
+    );
+
+    canvas.restore();
+}
+}
+    private void drawPuzzlePiece(
+        Canvas canvas,
+        int index,
+        float x,
+        float y
+) {
+    Path path = piecePath(index, x, y);
+
+    canvas.save();
+    canvas.clipPath(path);
+
+    int row = index / columns;
+    int col = index % columns;
+
+    Rect source = new Rect(
+            col * image.getWidth() / columns,
+            row * image.getHeight() / rows,
+            (col + 1) * image.getWidth() / columns,
+            (row + 1) * image.getHeight() / rows
+    );
+
+    Rect destination = new Rect(
+            (int) x,
+            (int) y,
+            (int) (x + cell),
+            (int) (y + cell)
+    );
+
+    paint.setStyle(Paint.Style.FILL);
+    paint.setColor(Color.WHITE);
+    paint.setAlpha(255);
+    canvas.drawBitmap(image, source, destination, paint);
+    canvas.restore();
+
+    paint.setStyle(Paint.Style.STROKE);
+    paint.setStrokeWidth(2f);
+    paint.setColor(Color.WHITE);
+    canvas.drawPath(path, paint);
+
+    paint.setStyle(Paint.Style.FILL);
+    }
+    @Override
+public boolean onTouchEvent(MotionEvent event) {
+    float x = event.getX();
+    float y = event.getY();
+
+    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+        downX = x;
+        downY = y;
+        dragX = x;
+        dragY = y;
+        selected = -1;
+
+        if (y >= trayTop) {
+            float contentX = x + trayScroll;
+
             for (int i = count - 1; i >= 0; i--) {
-                if (locked[i]) continue;
+                if (placed[i]) continue;
 
-                Path path = piecePath(
-                        i, xPositions[i], yPositions[i]
-                );
-
-                android.graphics.Region region =
-                        new android.graphics.Region();
-
-                region.setPath(
-                        path,
-                        new android.graphics.Region(
-                                0, 0, getWidth(), getHeight()
-                        )
-                );
-
-                if (region.contains(
-                        (int) touchX, (int) touchY
-                )) {
+                if (contentX >= xPositions[i]
+                        && contentX <= xPositions[i] + cell
+                        && y >= yPositions[i]
+                        && y <= yPositions[i] + cell) {
                     selected = i;
-                    offsetX = touchX - xPositions[i];
-                    offsetY = touchY - yPositions[i];
+                    draggingFromTray = true;
+                    offsetX = x - (xPositions[i] - trayScroll);
+offsetY = y - yPositions[i];
                     return true;
                 }
             }
-            return true;
-        }
 
-        if (event.getAction() == MotionEvent.ACTION_MOVE) {
-            if (selected >= 0 && !locked[selected]) {
-                xPositions[selected] = touchX - offsetX;
-                yPositions[selected] = touchY - offsetY;
-                invalidate();
-            }
-            return true;
-        }
-
-        if (event.getAction() == MotionEvent.ACTION_UP) {
-            if (selected >= 0 && !locked[selected]) {
-                int row = selected / columns;
-                int col = selected % columns;
-
-                float targetX = boardLeft + col * cell;
-                float targetY = boardTop + row * cell;
-
-                if (Math.abs(xPositions[selected] - targetX)
-                        < cell * 0.30f
-                        && Math.abs(yPositions[selected] - targetY)
-                        < cell * 0.30f) {
-
-                    xPositions[selected] = targetX;
-                    yPositions[selected] = targetY;
-                    locked[selected] = true;
-                    completed++;
-
-                    if (completed == count && !victoryShown) {
-                        victoryShown = true;
-
-                        new android.app.AlertDialog.Builder(
-                                MainActivity.this
-                        )
-                                .setTitle("👑 Puzzle Completed!")
-                                .setMessage(
-                                        "Congratulations! You placed all "
-                                                + count + " pieces!"
-                                )
-                                .setPositiveButton(
-                                        "Continue",
-                                        (dialog, which) ->
-                                                showJigsawMenu()
-                                )
-                                .setCancelable(false)
-                                .show();
-                    }
-                }
-            }
-
-            selected = -1;
-            invalidate();
             return true;
         }
 
         return true;
     }
+
+    if (event.getAction() == MotionEvent.ACTION_MOVE) {
+    dragX = x;
+    dragY = y;
+
+    if (selected >= 0 && !placed[selected]) {
+        xPositions[selected] = x - offsetX;
+        yPositions[selected] = y - offsetY;
+
+        if (y < trayTop) {
+            draggingFromTray = false;
+        } else {
+            draggingFromTray = true;
+        }
+    } else if (downY >= trayTop) {
+        trayScroll = Math.max(
+                0f,
+                Math.min(
+                        Math.max(
+                                0f,
+                                margin + count * (cell + gap)
+                                        - gap - getWidth()
+                        ),
+                        trayScroll - (x - downX)
+                )
+        );
+
+        downX = x;
+    }
+
+    invalidate();
+    return true;
+    }
+
+    if (event.getAction() == MotionEvent.ACTION_UP) {
+        if (selected >= 0) {
+            int row = selected / columns;
+            int col = selected % columns;
+
+            float targetX = boardLeft + col * cell;
+            float targetY = boardTop + row * cell;
+
+            if (!draggingFromTray
+                    && Math.abs(xPositions[selected] - targetX)
+                    < cell * 0.35f
+                    && Math.abs(yPositions[selected] - targetY)
+                    < cell * 0.35f) {
+
+                xPositions[selected] = targetX;
+                yPositions[selected] = targetY;
+                placed[selected] = true;
+                locked[selected] = true;
+                completed++;
+
+                if (completed == count && !victoryShown) {
+                    victoryShown = true;
+
+                    new android.app.AlertDialog.Builder(
+                            MainActivity.this
+                    )
+                            .setTitle("👑 Puzzle Completed!")
+                            .setMessage(
+                                    "Congratulations! You placed all "
+                                            + count + " pieces!"
+                            )
+                            .setPositiveButton(
+                                    "Continue",
+                                    (dialog, which) ->
+                                            showJigsawMenu()
+                            )
+                            .setCancelable(false)
+                            .show();
+                }
+            } else if (!placed[selected]) {
+                xPositions[selected] =
+                        margin + selected * (cell + gap);
+                yPositions[selected] = trayTop;
             }
+        }
+
+        selected = -1;
+        draggingFromTray = false;
+        invalidate();
+        return true;
+    }
+
+    return true;
+}
+                       }                         
   }
