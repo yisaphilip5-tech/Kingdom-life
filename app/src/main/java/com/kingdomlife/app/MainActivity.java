@@ -7929,6 +7929,7 @@ void showBookmarks() {
 private class JigsawBoard extends View {
 
     private final Bitmap image;
+    private final String storyDescription;
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final int columns;
     private final int rows;
@@ -7972,6 +7973,29 @@ private final float margin = 6f;
         super(context);
 
         image = bitmap;
+        if ("Easy".equals(difficulty)) {
+    storyDescription =
+            "THE GARDEN OF EDEN\n\n"
+            + "God created a beautiful garden called Eden, "
+            + "where Adam and Eve lived. The garden reminds us "
+            + "of God's wonderful creation and His desire for "
+            + "people to walk with Him. (Genesis 2–3)";
+} else if ("Medium".equals(difficulty)) {
+    storyDescription =
+            "NOAH'S ARK\n\n"
+            + "God instructed Noah to build an ark to preserve "
+            + "his family and the animals during the great flood. "
+            + "Noah obeyed God, and the rainbow became a sign "
+            + "of God's covenant. (Genesis 6–9)";
+} else {
+    storyDescription =
+            "JOSEPH IN EGYPT\n\n"
+            + "Joseph was sold into slavery by his brothers, "
+            + "but God was with him. Through wisdom and "
+            + "faithfulness, Joseph rose to become a ruler in "
+            + "Egypt and helped save many people during famine. "
+            + "(Genesis 37–50)";
+        }
 
         if ("Easy".equals(difficulty)) {
             columns = 4;
@@ -8039,6 +8063,13 @@ homeY = new float[count];
 
     imageParams.setMargins(12, 8, 12, 8);
     content.addView(finishedImage, imageParams);
+        TextView story = new TextView(MainActivity.this);
+story.setText(storyDescription);
+story.setTextColor(Color.WHITE);
+story.setTextSize(15);
+story.setGravity(Gravity.CENTER);
+story.setPadding(20, 12, 20, 12);
+content.addView(story);
 
     TextView message = new TextView(MainActivity.this);
     message.setText("Congratulations! You completed all "
