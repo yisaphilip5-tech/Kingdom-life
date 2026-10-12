@@ -2549,6 +2549,433 @@ String meaning =
             v -> showHome()
     );
     }
+    void showBackupRestore() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("💾 Backup & Restore");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 15);
+    content.addView(title);
+
+    TextView description = new TextView(this);
+    description.setText(
+            "Protect your Kingdom Life progress, " +
+            "Bible notes, saved verses, prayers, " +
+            "spiritual goals, and achievements."
+    );
+    description.setTextSize(16);
+    description.setTextColor(darkText);
+    description.setPadding(0, 0, 0, 20);
+    content.addView(description);
+
+    addButton(
+            "📤 Create Backup",
+            v -> createBackup()
+    );
+
+    addButton(
+            "📥 Restore Backup",
+            v -> restoreBackup()
+    );
+
+    addButton(
+            "⬅️ Back to More",
+            v -> showMoreMenu()
+    );
+    }
+    void createBackup() {
+    android.content.Intent intent =
+            new android.content.Intent(
+                    android.content.Intent.ACTION_CREATE_DOCUMENT
+            );
+
+    intent.addCategory(
+            android.content.Intent.CATEGORY_OPENABLE
+    );
+
+    intent.setType("application/json");
+
+    intent.putExtra(
+            android.content.Intent.EXTRA_TITLE,
+            "KingdomLife_Backup.json"
+    );
+
+    startActivityForResult(intent, 7101);
+}
+
+void restoreBackup() {
+    android.content.Intent intent =
+            new android.content.Intent(
+                    android.content.Intent.ACTION_OPEN_DOCUMENT
+            );
+
+    intent.addCategory(
+            android.content.Intent.CATEGORY_OPENABLE
+    );
+
+    intent.setType("application/json");
+
+    startActivityForResult(intent, 7102);
+}
+    org.json.JSONObject collectBackupData()
+        throws org.json.JSONException {
+
+    org.json.JSONObject backup = new org.json.JSONObject();
+
+    String[] preferenceFiles = {
+            "KingdomLifePrefs",
+            "saved_verses",
+            "bible_notes",
+            "bible_highlights",
+            "bible_bookmarks",
+            "daily_challenge",
+            "prayerJournalPrefs",
+            "spiritualGoalsPrefs"
+    };
+
+    for (String fileName : preferenceFiles) {
+
+        android.content.SharedPreferences saved =
+                getSharedPreferences(fileName, MODE_PRIVATE);
+
+        org.json.JSONObject values = new org.json.JSONObject();
+        org.json.JSONObject types = new org.json.JSONObject();
+
+        for (java.util.Map.Entry<String, ?> entry
+                : saved.getAll().entrySet()) {
+
+            String key = entry.getKey();
+            Object value = entry.getValue();
+
+            if (value instanceof java.util.Set) {
+
+                org.json.JSONArray items = new org.json.JSONArray();
+
+                for (Object item : (java.util.Set<?>) value) {
+                    items.put(item.toString());
+                }
+
+                values.put(key, items);
+                types.put(key, "string_set");
+
+            } else if (value instanceof String) {
+                values.put(key, value);
+                types.put(key, "string");
+
+            } else if (value instanceof Boolean) {
+                values.put(key, value);
+                types.put(key, "boolean");
+
+            } else if (value instanceof Integer) {
+                values.put(key, value);
+                types.put(key, "integer");
+
+            } else if (value instanceof Long) {
+                values.put(key, value.toString());
+                types.put(key, "long");
+
+            } else if (value instanceof Float) {
+                values.put(key, value);
+                types.put(key, "float");
+            }
+        }
+
+        org.json.JSONObject fileData = new org.json.JSONObject();
+        fileData.put("values", values);
+        fileData.put("types", types);
+
+        backup.put(fileName, fileData);
+    }
+
+    backup.put("backupFormatVersion", 1);
+    backup.put("appName", "Kingdom Life");
+
+    return backup;
+                       }
+    void writeBackup(android.net.Uri uri) {
+    try {
+        org.json.JSONObject backup = collectBackupData();
+
+        try (java.io.OutputStream output =
+                     getContentResolver().openOutputStream(uri)) {
+
+            if (output == null) {
+                android.widget.Toast.makeText(
+                        this,
+                        "Could not create the backup file.",
+                        android.widget.Toast.LENGTH_LONG
+                ).show();
+                return;
+            }
+
+            output.write(
+                    backup.toString(2).getBytes(
+                            java.nio.charset.StandardCharsets.UTF_8
+                    )
+            );
+        }
+
+        android.widget.Toast.makeText(
+                this,
+                "✅ Kingdom Life backup saved!",
+                android.widget.Toast.LENGTH_LONG
+        ).show();
+
+    } catch (Exception e) {
+        android.widget.Toast.makeText(
+                this,
+                "Backup failed. Please try again.",
+                android.widget.Toast.LENGTH_LONG
+        ).show();
+    }
+            }
+    void readBackup(android.net.Uri uri) {
+    try {
+        StringBuilder text = new StringBuilder();
+
+        try (java.io.InputStream input =
+                     getContentResolver().openInputStream(uri);
+             java.io.BufferedReader reader =
+                     new java.io.BufferedReader(
+                             new java.io.InputStreamReader(
+                                     input,
+                                     java.nio.charset.StandardCharsets.UTF_8
+                             )
+                     )) {
+
+            if (input == null) {
+                throw new java.io.IOException("Cannot open backup");
+            }
+
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                text.append(line);
+
+                if (text.length() > 5_000_000) {
+                    throw new java.io.IOException(
+                            "Backup file is too large"
+                    );
+                }
+            }
+        }
+
+        org.json.JSONObject backup =
+                new org.json.JSONObject(text.toString());
+
+        if (!"Kingdom Life".equals(
+                backup.optString("appName"))) {
+            throw new org.json.JSONException(
+                    "Not a Kingdom Life backup"
+            );
+        }
+
+        if (backup.optInt("backupFormatVersion", -1) != 1) {
+            throw new org.json.JSONException(
+                    "Unsupported backup version"
+            );
+        }
+
+        String[] preferenceFiles = {
+                "KingdomLifePrefs",
+                "saved_verses",
+                "bible_notes",
+                "bible_highlights",
+                "bible_bookmarks",
+                "daily_challenge",
+                "prayerJournalPrefs",
+                "spiritualGoalsPrefs"
+        };
+
+        String[] allowedTypes = {
+                "string", "boolean", "integer",
+                "long", "float", "string_set"
+        };
+
+        // Validate all eight sections before changing saved data.
+        for (String fileName : preferenceFiles) {
+            org.json.JSONObject fileData =
+                    backup.getJSONObject(fileName);
+
+            org.json.JSONObject values =
+                    fileData.getJSONObject("values");
+
+            org.json.JSONObject types =
+                    fileData.getJSONObject("types");
+
+            java.util.Iterator<String> keys =
+                    values.keys();
+
+            while (keys.hasNext()) {
+                String key = keys.next();
+
+                if (!types.has(key)) {
+                    throw new org.json.JSONException(
+                            "Missing value type"
+                    );
+                }
+
+                String type = types.getString(key);
+                boolean supported = false;
+
+                for (String allowed : allowedTypes) {
+                    if (allowed.equals(type)) {
+                        supported = true;
+                        break;
+                    }
+                }
+
+                if (!supported) {
+                    throw new org.json.JSONException(
+                            "Unsupported saved value type"
+                    );
+                }
+
+                Object value = values.get(key);
+
+                if ("string".equals(type)
+                        && !(value instanceof String)) {
+                    throw new org.json.JSONException("Invalid string");
+                }
+
+                if ("boolean".equals(type)
+                        && !(value instanceof Boolean)) {
+                    throw new org.json.JSONException("Invalid boolean");
+                }
+
+                if ("integer".equals(type)
+                        && !(value instanceof Integer)) {
+                    throw new org.json.JSONException("Invalid integer");
+                }
+
+                if ("long".equals(type)) {
+                    if (!(value instanceof String)) {
+                        throw new org.json.JSONException("Invalid long");
+                    }
+
+                    Long.parseLong((String) value);
+                }
+
+                if ("float".equals(type)
+                        && !(value instanceof Number)) {
+                    throw new org.json.JSONException("Invalid float");
+                }
+
+                if ("string_set".equals(type)) {
+                    if (!(value instanceof org.json.JSONArray)) {
+                        throw new org.json.JSONException(
+                                "Invalid string set"
+                        );
+                    }
+
+                    org.json.JSONArray items =
+                            (org.json.JSONArray) value;
+
+                    for (int i = 0; i < items.length(); i++) {
+                        if (!(items.get(i) instanceof String)) {
+                            throw new org.json.JSONException(
+                                    "Invalid string-set item"
+                            );
+                        }
+                    }
+                }
+            }
+
+            if (types.length() != values.length()) {
+                throw new org.json.JSONException(
+                        "Backup contains unmatched types"
+                );
+            }
+        }
+
+        // All sections passed validation. Restore each preference file.
+        for (String fileName : preferenceFiles) {
+            org.json.JSONObject fileData =
+                    backup.getJSONObject(fileName);
+
+            org.json.JSONObject values =
+                    fileData.getJSONObject("values");
+
+            org.json.JSONObject types =
+                    fileData.getJSONObject("types");
+
+            android.content.SharedPreferences saved =
+                    getSharedPreferences(fileName, MODE_PRIVATE);
+
+            android.content.SharedPreferences.Editor editor =
+                    saved.edit();
+
+            editor.clear();
+
+            java.util.Iterator<String> keys =
+                    values.keys();
+
+            while (keys.hasNext()) {
+                String key = keys.next();
+                String type = types.getString(key);
+                Object value = values.get(key);
+
+                if ("string".equals(type)) {
+                    editor.putString(key, (String) value);
+
+                } else if ("boolean".equals(type)) {
+                    editor.putBoolean(key, (Boolean) value);
+
+                } else if ("integer".equals(type)) {
+                    editor.putInt(key, (Integer) value);
+
+                } else if ("long".equals(type)) {
+                    editor.putLong(
+                            key,
+                            Long.parseLong((String) value)
+                    );
+
+                } else if ("float".equals(type)) {
+                    editor.putFloat(
+                            key,
+                            ((Number) value).floatValue()
+                    );
+
+                } else if ("string_set".equals(type)) {
+                    org.json.JSONArray items =
+                            (org.json.JSONArray) value;
+
+                    java.util.Set<String> set =
+                            new java.util.HashSet<>();
+
+                    for (int i = 0; i < items.length(); i++) {
+                        set.add(items.getString(i));
+                    }
+
+                    editor.putStringSet(key, set);
+                }
+            }
+
+            if (!editor.commit()) {
+                throw new java.io.IOException(
+                        "Could not save restored data"
+                );
+            }
+        }
+
+        android.widget.Toast.makeText(
+                this,
+                "✅ Backup restored! Please restart Kingdom Life.",
+                android.widget.Toast.LENGTH_LONG
+        ).show();
+
+    } catch (Exception e) {
+        android.widget.Toast.makeText(
+                this,
+                "❌ Restore failed. Your backup may be invalid.",
+                android.widget.Toast.LENGTH_LONG
+        ).show();
+    }
+                    }
     void showNotesHighlights() {
     stopTimer();
     content.removeAllViews();
@@ -9210,5 +9637,34 @@ public boolean onTouchEvent(MotionEvent event) {
 
     return true;
                         }
-                       }                         
+                       }      
+    @Override
+protected void onActivityResult(
+        int requestCode,
+        int resultCode,
+        android.content.Intent data) {
+
+    super.onActivityResult(
+            requestCode,
+            resultCode,
+            data
+    );
+
+    if (resultCode != RESULT_OK || data == null) {
+        return;
+    }
+
+    android.net.Uri uri = data.getData();
+
+    if (uri == null) {
+        return;
+    }
+
+    if (requestCode == 7101) {
+        writeBackup(uri);
+
+    } else if (requestCode == 7102) {
+        readBackup(uri);
+    }
+}
   }
