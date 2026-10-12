@@ -2529,6 +2529,10 @@ String meaning =
             "📚 Bible Dictionary",
             v -> showBibleDictionary()
     );
+        addButton(
+        "💾 Backup & Restore",
+        v -> showBackupRestore()
+);
 
     addButton(
             "⚙️ Settings",
