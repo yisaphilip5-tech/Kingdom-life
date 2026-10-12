@@ -7998,55 +7998,53 @@ private class JigsawBoard extends View {
     }
 
     @Override
-    protected void onSizeChanged(
-            int w, int h, int oldW, int oldH
-    ) {
-        super.onSizeChanged(w, h, oldW, oldH);
+protected void onSizeChanged(
+        int w, int h, int oldW, int oldH
+) {
+    super.onSizeChanged(w, h, oldW, oldH);
 
-        cell = Math.min(
-        w * 1.16f / columns,
-        h * 0.90f / rows
-);
-        boardLeft = (w - columns * cell) / 2f;
-        boardTop = 12f;
+    if (w <= 0 || h <= 0) return;
 
-        java.util.ArrayList<Integer> order =
-                new java.util.ArrayList<>();
+    float gap = 4f;
+    float margin = 8f;
 
-        for (int i = 0; i < count; i++) {
-            order.add(i);
-        }
+    int trayRows = (int) Math.ceil(
+            (double) count / columns
+    );
 
-        java.util.Collections.shuffle(order);
+    float maxCellWidth =
+            (w - 2f * margin - (columns - 1) * gap)
+                    / columns;
 
-        float trayTop = boardTop + rows * cell + cell * 0.30f;
+    float maxCellHeight =
+            (h - 24f) / (rows + trayRows);
 
-float trayHeight = Math.max(
-        cell * 1.5f,
-        h - trayTop - cell * 0.45f
-);
+    cell = Math.min(maxCellWidth, maxCellHeight);
 
-int trayRows = Math.max(
-        1,
-        (int) Math.ceil((double) count / columns)
-);
+    boardLeft = (w - columns * cell) / 2f;
+    boardTop = 8f;
 
-float trayCell = Math.min(
-        cell,
-        trayHeight / trayRows
-);
+    java.util.ArrayList<Integer> order =
+            new java.util.ArrayList<>();
 
-for (int i = 0; i < count; i++) {
-    int index = order.get(i);
-
-    xPositions[index] =
-            6 + (i % columns) * cell * 0.88f;
-
-    yPositions[index] =
-            trayTop + (i / columns) * trayCell;
-}
+    for (int i = 0; i < count; i++) {
+        order.add(i);
     }
 
+    java.util.Collections.shuffle(order);
+
+    float trayTop = boardTop + rows * cell + 12f;
+
+    for (int i = 0; i < count; i++) {
+        int index = order.get(i);
+
+        xPositions[index] =
+                margin + (i % columns) * (cell + gap);
+
+        yPositions[index] =
+                trayTop + (i / columns) * (cell + gap);
+    }
+}
     private Path piecePath(int index, float x, float y) {
         int row = index / columns;
         int col = index % columns;
