@@ -6223,9 +6223,9 @@ void showBibleQuizMenu() {
                     "bibleJourney_books_completed",
                     0
             );
-        int pendingBookAnimation = prefs.getInt(
+        String pendingBookAnimation = prefs.getString(
         "bibleJourney_pendingBookAnimation",
-        -1
+        ""
 );
 
     for (int i = 0; i < books.length; i += 2) {
