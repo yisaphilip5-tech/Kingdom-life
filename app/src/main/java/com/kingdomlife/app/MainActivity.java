@@ -6146,6 +6146,7 @@ android.graphics.Color.rgb(212, 175, 55)
 );
 
 buttons[i].setBackground(optionBackground);
+        buttons[i].setBackgroundTintList(null);
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -6232,6 +6233,7 @@ for (int j = 0; j < buttons.length; j++) {
     );
 
         buttons[j].setBackground(answerBackground);
+    buttons[j].setBackgroundTintList(null);
     buttons[j].setEnabled(false);
 }
 
