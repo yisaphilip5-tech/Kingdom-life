@@ -6071,13 +6071,38 @@ addCard(
     content.addView(instruction);
 
     TextView reference = new TextView(this);
-    reference.setText("📖 Jeremiah 29:11 — KJV");
-    reference.setTextSize(21);
-    reference.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    reference.setTextColor(darkText);
-    reference.setGravity(Gravity.CENTER);
-    reference.setPadding(10, 15, 10, 20);
-    content.addView(reference);
+reference.setText("📖 Jeremiah 29:11 — KJV");
+reference.setTextSize(21);
+reference.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+reference.setTextColor(android.graphics.Color.WHITE);
+reference.setGravity(Gravity.CENTER);
+reference.setPadding(16, 24, 16, 24);
+
+android.graphics.drawable.GradientDrawable referenceBackground =
+new android.graphics.drawable.GradientDrawable();
+
+referenceBackground.setColor(
+android.graphics.Color.rgb(30, 24, 55)
+);
+
+referenceBackground.setCornerRadius(24);
+
+referenceBackground.setStroke(
+3,
+android.graphics.Color.rgb(212, 175, 55)
+);
+
+reference.setBackground(referenceBackground);
+
+LinearLayout.LayoutParams referenceParams =
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.MATCH_PARENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+);
+
+referenceParams.setMargins(0, 8, 0, 16);
+
+content.addView(reference, referenceParams);
 
     String[] choices = {
             "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
@@ -6100,8 +6125,27 @@ addCard(
         final int selected = i;
 
         buttons[i] = new Button(this);
-        buttons[i].setText(choices[i]);
-        buttons[i].setTextSize(15);
+buttons[i].setText(choices[i]);
+buttons[i].setTextSize(15);
+buttons[i].setTextColor(android.graphics.Color.WHITE);
+buttons[i].setAllCaps(false);
+buttons[i].setPadding(16, 12, 16, 12);
+
+android.graphics.drawable.GradientDrawable optionBackground =
+new android.graphics.drawable.GradientDrawable();
+
+optionBackground.setColor(
+android.graphics.Color.rgb(30, 24, 55)
+);
+
+optionBackground.setCornerRadius(24);
+
+optionBackground.setStroke(
+2,
+android.graphics.Color.rgb(212, 175, 55)
+);
+
+buttons[i].setBackground(optionBackground);
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -6112,26 +6156,86 @@ addCard(
         content.addView(buttons[i], params);
 
         buttons[i].setOnClickListener(v -> {
-            if (selected == correctAnswer) {
-    totalPoints += 10;
-              prefs.edit()
-        .putInt("totalPoints", totalPoints)
-        .apply();
-                checkAchievementNotifications();
-    feedback.setText("✅ Correct! Excellent memory!\n+10 points");
-            } else {
-                feedback.setText("❌ Not quite. Try to remember Jeremiah 29:11.");
-            }
 
-            for (Button button : buttons) {
-                button.setEnabled(false);
-            }
-        });
+boolean isCorrect = selected == correctAnswer;
+
+if (isCorrect) {
+    totalPoints += 10;
+
+    prefs.edit()
+            .putInt("totalPoints", totalPoints)
+            .apply();
+
+    checkAchievementNotifications();
+
+    feedback.setText(
+            "Correct! Excellent memory!\n+10 points"
+    );
+
+} else {
+    feedback.setText(
+            "Not quite. Try to remember Jeremiah 29:11."
+    );
+}
+
+feedback.setTextSize(18);
+feedback.setTypeface(
+        Typeface.DEFAULT,
+        Typeface.BOLD
+);
+feedback.setTextColor(android.graphics.Color.WHITE);
+feedback.setGravity(Gravity.CENTER);
+feedback.setPadding(16, 18, 16, 18);
+
+android.graphics.drawable.GradientDrawable feedbackBackground =
+        new android.graphics.drawable.GradientDrawable();
+
+feedbackBackground.setColor(
+        isCorrect
+                ? android.graphics.Color.rgb(35, 120, 65)
+                : android.graphics.Color.rgb(150, 45, 45)
+);
+
+feedbackBackground.setCornerRadius(24);
+
+feedbackBackground.setStroke(
+        2,
+        android.graphics.Color.rgb(212, 175, 55)
+);
+
+feedback.setBackground(feedbackBackground);
+
+for (int j = 0; j < buttons.length; j++) {
+
+    int buttonColor =
+            android.graphics.Color.rgb(30, 24, 55);
+
+    if (j == correctAnswer) {
+        buttonColor =
+                android.graphics.Color.rgb(35, 120, 65);
     }
 
-    content.addView(feedback);
+    if (j == selected && !isCorrect) {
+        buttonColor =
+                android.graphics.Color.rgb(150, 45, 45);
+    }
 
+    android.graphics.drawable.GradientDrawable answerBackground =
+            new android.graphics.drawable.GradientDrawable();
 
+    answerBackground.setColor(buttonColor);
+    answerBackground.setCornerRadius(24);
+
+    answerBackground.setStroke(
+            2,
+            android.graphics.Color.rgb(212, 175, 55)
+    );
+
+    buttons[j].setBackground(answerBackground);
+    buttons[j].setEnabled(false);
+}
+
+});
     }
        
 
