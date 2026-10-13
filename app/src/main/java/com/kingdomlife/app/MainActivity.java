@@ -7484,11 +7484,36 @@ content.addView(levelText);
     question.setText(questions[currentQuestion]);
         }
         question.setTextSize(22);
-        question.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        question.setTextColor(darkText);
-        question.setPadding(0, 10, 0, 20);
+question.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+question.setTextColor(android.graphics.Color.WHITE);
+question.setGravity(Gravity.CENTER);
+question.setPadding(16, 24, 16, 24);
 
-        content.addView(question);
+android.graphics.drawable.GradientDrawable questionBackground =
+        new android.graphics.drawable.GradientDrawable();
+
+questionBackground.setColor(
+        android.graphics.Color.rgb(30, 24, 55)
+);
+
+questionBackground.setCornerRadius(24);
+
+questionBackground.setStroke(
+        3,
+        android.graphics.Color.rgb(212, 175, 55)
+);
+
+question.setBackground(questionBackground);
+
+LinearLayout.LayoutParams questionParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+questionParams.setMargins(0, 8, 0, 16);
+
+content.addView(question, questionParams);
 
         Button[] answerButtons = new Button[4];
 
@@ -7504,6 +7529,27 @@ content.addView(levelText);
     answerButtons[i].setText(options[currentQuestion][i]);
             }
             answerButtons[i].setTextSize(17);
+            answerButtons[i].setTextColor(
+        android.graphics.Color.WHITE
+);
+
+answerButtons[i].setAllCaps(false);
+
+android.graphics.drawable.GradientDrawable optionBackground =
+        new android.graphics.drawable.GradientDrawable();
+
+optionBackground.setColor(
+        android.graphics.Color.rgb(30, 24, 55)
+);
+
+optionBackground.setCornerRadius(24);
+
+optionBackground.setStroke(
+        2,
+        android.graphics.Color.rgb(212, 175, 55)
+);
+
+answerButtons[i].setBackground(optionBackground);
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
@@ -7623,37 +7669,93 @@ if (currentLevel == 2) {
 }
 
 if (selected == correctAnswer) {
-    score += 10;
-    totalPoints += 10;
-    correctAnswers++;
-          prefs.edit()
+boolean isCorrect = selected == correctAnswer;
+
+if (isCorrect) {
+score += 10;
+totalPoints += 10;
+correctAnswers++;
+
+prefs.edit()
         .putInt("totalPoints", totalPoints)
         .apply();
-    checkAchievementNotifications();
-            feedback.setText("✅ Correct! +10 points");
-        } else {
-            wrongAnswers++;
-            String correctOption;
+
+checkAchievementNotifications();
+
+feedback.setText("Correct! +10 points");
+
+} else {
+wrongAnswers++;
+
+String correctOption;
 
 if (currentLevel == 2) {
-    correctOption = level2Options[currentQuestion][level2Answers[currentQuestion]];
+    correctOption =
+            level2Options[currentQuestion][level2Answers[currentQuestion]];
 } else if (currentLevel == 3) {
-    correctOption = level3Options[currentQuestion][level3Answers[currentQuestion]];
+    correctOption =
+            level3Options[currentQuestion][level3Answers[currentQuestion]];
 } else {
-    correctOption = options[currentQuestion][answers[currentQuestion]];
+    correctOption =
+            options[currentQuestion][answers[currentQuestion]];
 }
 
-feedback.setText("❌ Wrong! Correct answer: " + correctOption);
-        }
+feedback.setText("Wrong! Correct answer: " + correctOption);
 
-        feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        feedback.setTextColor(darkText);
+}
 
-        content.addView(feedback, 3);
+feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+feedback.setTextColor(android.graphics.Color.WHITE);
+feedback.setGravity(Gravity.CENTER);
+feedback.setPadding(16, 18, 16, 18);
 
-        for (Button button : buttons) {
-            button.setEnabled(false);
-        }
+android.graphics.drawable.GradientDrawable feedbackBackground =
+new android.graphics.drawable.GradientDrawable();
+
+feedbackBackground.setColor(
+isCorrect
+? android.graphics.Color.rgb(35, 120, 65)
+: android.graphics.Color.rgb(150, 45, 45)
+);
+
+feedbackBackground.setCornerRadius(24);
+
+feedbackBackground.setStroke(
+2,
+android.graphics.Color.rgb(212, 175, 55)
+);
+
+feedback.setBackground(feedbackBackground);
+
+content.addView(feedback, 3);
+
+for (int i = 0; i < buttons.length; i++) {
+int buttonColor = android.graphics.Color.rgb(30, 24, 55);
+
+if (i == correctAnswer) {
+    buttonColor = android.graphics.Color.rgb(35, 120, 65);
+}
+
+if (i == selected && !isCorrect) {
+    buttonColor = android.graphics.Color.rgb(150, 45, 45);
+}
+
+android.graphics.drawable.GradientDrawable answerBackground =
+        new android.graphics.drawable.GradientDrawable();
+
+answerBackground.setColor(buttonColor);
+answerBackground.setCornerRadius(24);
+
+answerBackground.setStroke(
+        2,
+        android.graphics.Color.rgb(212, 175, 55)
+);
+
+buttons[i].setBackground(answerBackground);
+buttons[i].setTextColor(android.graphics.Color.WHITE);
+buttons[i].setEnabled(false);
+
+}
     }
 
     void showResults() {
