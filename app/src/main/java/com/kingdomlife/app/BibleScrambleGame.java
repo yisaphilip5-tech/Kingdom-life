@@ -38,120 +38,122 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
         this.activity = activity;
     }
 
-    
     public void showLevelMenu() {
-activity.stopTimer();
-activity.content.removeAllViews();
+    activity.stopTimer();
+    activity.content.removeAllViews();
 
-TextView title = new TextView(activity);
-title.setText("🧩 Bible Scramble");
-title.setTextSize(26);
-title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-title.setTextColor(activity.darkText);
-title.setGravity(Gravity.CENTER);
-title.setPadding(0, 25, 0, 20);
-activity.content.addView(title);
+    TextView title = new TextView(activity);
+    title.setText("🧩 Bible Scramble");
+    title.setTextSize(26);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(activity.darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 25, 0, 20);
+    activity.content.addView(title);
 
-TextView description = new TextView(activity);
-description.setText("Complete each level to unlock the next!");
-description.setTextSize(18);
-description.setTextColor(activity.darkText);
-description.setGravity(Gravity.CENTER);
-description.setPadding(0, 0, 0, 20);
-activity.content.addView(description);
+    TextView description = new TextView(activity);
+    description.setText("Complete each level to unlock the next!");
+    description.setTextSize(18);
+    description.setTextColor(activity.darkText);
+    description.setGravity(Gravity.CENTER);
+    description.setPadding(0, 0, 0, 20);
+    activity.content.addView(description);
 
-int unlockedLevel = activity.prefs.getInt(
-        "bibleScrambleUnlockedLevel", 1);
+    int unlockedLevel = activity.prefs.getInt(
+            "bibleScrambleUnlockedLevel", 1);
 
-int animatedLevel = activity.prefs.getInt(
-        "bibleScramblePendingAnimation", 0);
+    int animatedLevel = activity.prefs.getInt(
+            "bibleScramblePendingAnimation", 0);
 
-String[] levelNames = {
-        "🌱 Level 1 — Easy",
-        "📖 Level 2 — Intermediate",
-        "🔥 Level 3 — Advanced"
-};
+    String[] levelNames = {
+            "🌱 Level 1 — Easy",
+            "📖 Level 2 — Intermediate",
+            "🔥 Level 3 — Advanced"
+    };
 
-for (int i = 1; i <= 3; i++) {
-    final int selectedLevel = i;
+    for (int i = 1; i <= 3; i++) {
+        final int selectedLevel = i;
 
-    android.widget.FrameLayout buttonFrame =
-            new android.widget.FrameLayout(activity);
+        android.widget.FrameLayout buttonFrame =
+                new android.widget.FrameLayout(activity);
 
-    LinearLayout.LayoutParams frameParams =
-            new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams frameParams =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
 
-    frameParams.setMargins(12, 5, 12, 5);
-    buttonFrame.setLayoutParams(frameParams);
+        frameParams.setMargins(12, 5, 12, 5);
+        buttonFrame.setLayoutParams(frameParams);
 
-    android.widget.Button levelButton =
-            new android.widget.Button(activity);
+        android.widget.Button levelButton =
+                new android.widget.Button(activity);
 
-    levelButton.setText(levelNames[i - 1]);
-    levelButton.setAllCaps(false);
-    levelButton.setGravity(Gravity.CENTER);
-    buttonFrame.addView(
-            levelButton,
-            new android.widget.FrameLayout.LayoutParams(
-                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
-                    android.widget.FrameLayout.LayoutParams.WRAP_CONTENT));
+        boolean isUnlocked = i <= unlockedLevel;
 
-    TextView lockIcon = new TextView(activity);
-    lockIcon.setText("🔒");
-    lockIcon.setTextSize(22);
-    lockIcon.setGravity(Gravity.CENTER);
-    lockIcon.setTextColor(android.graphics.Color.BLACK);
-    lockIcon.setAlpha(1.0f);
-    lockIcon.setShadowLayer(
-            2f, 1f, 1f, android.graphics.Color.WHITE);
+        levelButton.setText(
+                (isUnlocked ? "" : "🔒 ")
+                        + levelNames[i - 1]);
 
-    android.widget.FrameLayout.LayoutParams lockParams =
-            new android.widget.FrameLayout.LayoutParams(
-                    55,
-                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
-                    Gravity.LEFT | Gravity.CENTER_VERTICAL);
+        levelButton.setAllCaps(false);
+        levelButton.setGravity(Gravity.CENTER);
 
-    buttonFrame.addView(lockIcon, lockParams);
-
-    if (i <= unlockedLevel) {
-        lockIcon.setVisibility(View.GONE);
-
-        levelButton.setOnClickListener(
-                v -> startLevel(selectedLevel));
-    } else {
-        levelButton.setOnClickListener(v ->
-                android.widget.Toast.makeText(
-                        activity,
-                        "Complete Level " + (selectedLevel - 1)
-                                + " first!",
-                        android.widget.Toast.LENGTH_SHORT
-                ).show());
-    }
-
-    activity.content.addView(buttonFrame);
-
-    if (i == animatedLevel && i <= unlockedLevel) {
-        lockIcon.setVisibility(View.VISIBLE);
-
-        LevelUnlockAnimator.animateUnlock(
-                lockIcon,
+        buttonFrame.addView(
                 levelButton,
-                activity,
-                "Level " + i
-        );
+                new android.widget.FrameLayout.LayoutParams(
+                        android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                        android.widget.FrameLayout.LayoutParams.WRAP_CONTENT));
 
-        activity.prefs.edit()
-                .remove("bibleScramblePendingAnimation")
-                .apply();
+        if (isUnlocked) {
+            levelButton.setOnClickListener(
+                    v -> startLevel(selectedLevel));
+        } else {
+            levelButton.setOnClickListener(v ->
+                    android.widget.Toast.makeText(
+                            activity,
+                            "Complete Level " + (selectedLevel - 1)
+                                    + " first!",
+                            android.widget.Toast.LENGTH_SHORT
+                    ).show());
+        }
+
+        activity.content.addView(buttonFrame);
+
+        if (i == animatedLevel && isUnlocked) {
+            // Put the animated lock directly over the button.
+            TextView lockIcon = new TextView(activity);
+            lockIcon.setText("🔒");
+            lockIcon.setTextSize(22);
+            lockIcon.setGravity(Gravity.CENTER);
+            lockIcon.setTextColor(android.graphics.Color.BLACK);
+            lockIcon.setAlpha(1.0f);
+            lockIcon.setShadowLayer(
+                    2f, 1f, 1f, android.graphics.Color.WHITE);
+
+            android.widget.FrameLayout.LayoutParams lockParams =
+                    new android.widget.FrameLayout.LayoutParams(
+                            55,
+                            android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                            Gravity.CENTER);
+
+            buttonFrame.addView(lockIcon, lockParams);
+
+            LevelUnlockAnimator.animateUnlock(
+                    lockIcon,
+                    levelButton,
+                    activity,
+                    "Level " + i
+            );
+
+            activity.prefs.edit()
+                    .remove("bibleScramblePendingAnimation")
+                    .apply();
+        }
     }
-}
 
-activity.addButton("⬅️ Back to Games",
-        v -> activity.showGameMenu());
-
+    activity.addButton("⬅️ Back to Games",
+            v -> activity.showGameMenu());
     }
+    
 
     private void startLevel(int selectedLevel) {
         level = selectedLevel;
