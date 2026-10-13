@@ -6253,19 +6253,7 @@ void showBibleQuizMenu() {
             button1.setOnClickListener(
                     v -> showBookDifficulty(book1)
             );
-            if (pendingBookAnimation == i) {
-    button1.setText("🔒 " + book1);
-
-    LevelUnlockAnimator.animateUnlock(
-            createBookLockIcon(button1),
-            button1,
-            this,
-            book1
-    );
-
-    prefs.edit()
-            .remove("bibleJourney_pendingBookAnimation")
-            .apply();
+            
             }
             button1.setOnTouchListener(
         this::handleBibleJourneySwipe
