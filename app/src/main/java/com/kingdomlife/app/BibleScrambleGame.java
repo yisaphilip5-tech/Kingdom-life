@@ -121,9 +121,9 @@ public class BibleScrambleGame {
                 activity.totalPoints += 5;
 
                 activity.prefs.edit()
-                        .putInt("totalPoints",
-                                activity.totalPoints)
-                        .apply();
+        .putInt("totalPoints", activity.totalPoints)
+        .putBoolean("bibleScrambleSolved", true)
+        .apply();
 
                 activity.checkAchievementNotifications();
 
