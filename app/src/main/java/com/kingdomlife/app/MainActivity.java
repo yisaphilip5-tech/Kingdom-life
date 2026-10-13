@@ -6247,33 +6247,28 @@ for (int j = 0; j < buttons.length; j++) {
 void showCompleteVerse() {
     stopTimer();
     content.removeAllViews();
-            ImageButton backButton = new ImageButton(this);
 
-    backButton.setImageResource(
-            android.R.drawable.ic_media_previous
-    );
-
-    backButton.setBackgroundColor(
-            Color.TRANSPARENT
-    );
-
-    backButton.setOnClickListener(
-            v -> showMemoryVerse()
-    );
+    ImageButton backButton = new ImageButton(this);
+    backButton.setImageResource(android.R.drawable.ic_media_previous);
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(v -> showMemoryVerse());
 
     content.addView(
             backButton,
-            new LinearLayout.LayoutParams(
-                    60,
-                    60
-            )
+            new LinearLayout.LayoutParams(60, 60)
     );
+
+    int purple = android.graphics.Color.rgb(30, 24, 55);
+    int gold = android.graphics.Color.rgb(212, 175, 55);
+    int green = android.graphics.Color.rgb(35, 120, 65);
+    int red = android.graphics.Color.rgb(150, 45, 45);
+    int white = android.graphics.Color.WHITE;
 
     TextView title = new TextView(this);
     title.setText("✍️ Complete the Verse");
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    title.setTextColor(darkText);
+    title.setTextColor(gold);
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
@@ -6291,9 +6286,24 @@ void showCompleteVerse() {
             "thoughts of peace, and not of evil, to give you an ________ end."
     );
     verse.setTextSize(18);
-    verse.setTextColor(darkText);
-    verse.setPadding(10, 15, 10, 20);
-    content.addView(verse);
+    verse.setTextColor(white);
+    verse.setGravity(Gravity.CENTER);
+    verse.setPadding(20, 24, 20, 24);
+
+    android.graphics.drawable.GradientDrawable verseBackground =
+            new android.graphics.drawable.GradientDrawable();
+    verseBackground.setColor(purple);
+    verseBackground.setCornerRadius(24);
+    verseBackground.setStroke(3, gold);
+    verse.setBackground(verseBackground);
+
+    LinearLayout.LayoutParams verseParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+    verseParams.setMargins(0, 8, 0, 16);
+    content.addView(verse, verseParams);
 
     String[] choices = {
             "expected",
@@ -6307,8 +6317,10 @@ void showCompleteVerse() {
     TextView feedback = new TextView(this);
     feedback.setTextSize(18);
     feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    feedback.setTextColor(darkText);
-    feedback.setPadding(0, 15, 0, 15);
+    feedback.setTextColor(white);
+    feedback.setGravity(Gravity.CENTER);
+    feedback.setPadding(16, 18, 16, 18);
+    feedback.setVisibility(View.GONE);
 
     Button[] buttons = new Button[choices.length];
 
@@ -6318,39 +6330,90 @@ void showCompleteVerse() {
         buttons[i] = new Button(this);
         buttons[i].setText(choices[i]);
         buttons[i].setTextSize(17);
+        buttons[i].setTextColor(white);
+        buttons[i].setAllCaps(false);
+        buttons[i].setPadding(16, 12, 16, 12);
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+        android.graphics.drawable.GradientDrawable optionBackground =
+                new android.graphics.drawable.GradientDrawable();
+        optionBackground.setColor(purple);
+        optionBackground.setCornerRadius(24);
+        optionBackground.setStroke(2, gold);
 
+        buttons[i].setBackground(optionBackground);
+        buttons[i].setBackgroundTintList(null);
+
+        LinearLayout.LayoutParams params =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
         params.setMargins(0, 6, 0, 6);
         content.addView(buttons[i], params);
 
         buttons[i].setOnClickListener(v -> {
-            if (selected == correctAnswer) {
-    totalPoints += 10;
+            boolean isCorrect = selected == correctAnswer;
 
-    prefs.edit()
-            .putInt("totalPoints", totalPoints)
-            .apply();
+            if (isCorrect) {
+                totalPoints += 10;
+
+                prefs.edit()
+                        .putInt("totalPoints", totalPoints)
+                        .apply();
+
                 checkAchievementNotifications();
 
-    feedback.setText("✅ Correct! The missing word is \"expected\".\n+10 points");
-} else {
-    feedback.setText("❌ Not quite. The correct answer is \"expected\".");
+                feedback.setText(
+                        "Correct! The missing word is \"expected\".\n+10 points"
+                );
+            } else {
+                feedback.setText(
+                        "Not quite. The correct answer is \"expected\"."
+                );
             }
 
-            for (Button button : buttons) {
-                button.setEnabled(false);
+            android.graphics.drawable.GradientDrawable feedbackBackground =
+                    new android.graphics.drawable.GradientDrawable();
+            feedbackBackground.setColor(isCorrect ? green : red);
+            feedbackBackground.setCornerRadius(24);
+            feedbackBackground.setStroke(2, gold);
+            feedback.setBackground(feedbackBackground);
+            feedback.setVisibility(View.VISIBLE);
+
+            for (int j = 0; j < buttons.length; j++) {
+                int buttonColor = purple;
+
+                if (j == correctAnswer) {
+                    buttonColor = green;
+                }
+
+                if (j == selected && !isCorrect) {
+                    buttonColor = red;
+                }
+
+                android.graphics.drawable.GradientDrawable answerBackground =
+                        new android.graphics.drawable.GradientDrawable();
+                answerBackground.setColor(buttonColor);
+                answerBackground.setCornerRadius(24);
+                answerBackground.setStroke(2, gold);
+
+                buttons[j].setBackground(answerBackground);
+                buttons[j].setBackgroundTintList(null);
+                buttons[j].setEnabled(false);
             }
         });
     }
 
-    content.addView(feedback);
+    LinearLayout.LayoutParams feedbackParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+    feedbackParams.setMargins(0, 12, 0, 12);
+    content.addView(feedback, feedbackParams);
+                    }
 
     
-    }
   void showGuessReference() {
     stopTimer();
     content.removeAllViews();
