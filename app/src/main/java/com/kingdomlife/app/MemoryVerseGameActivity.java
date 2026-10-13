@@ -1128,35 +1128,41 @@ private void handleAnswer(
 private void showFinalResult() {
 
     content.removeAllViews();
-    if (level == 1) {
+    if (level == 1 || level == 2) {
+
+    int nextLevel = level + 1;
+
+    String unlockKey =
+            "memory_" +
+            gameType +
+            "_level_" +
+            nextLevel +
+            "_unlocked";
+
+    boolean wasAlreadyUnlocked =
+            getSharedPreferences(
+                    "KingdomLifePrefs",
+                    MODE_PRIVATE
+            ).getBoolean(
+                    unlockKey,
+                    false
+            );
 
     getSharedPreferences(
             "KingdomLifePrefs",
             MODE_PRIVATE
     ).edit()
             .putBoolean(
-                    "memory_" +
-                    gameType +
-                    "_level_2_unlocked",
+                    unlockKey,
                     true
             )
             .apply();
 
-} else if (level == 2) {
-
-    getSharedPreferences(
-            "KingdomLifePrefs",
-            MODE_PRIVATE
-    ).edit()
-            .putBoolean(
-                    "memory_" +
-                    gameType +
-                    "_level_3_unlocked",
-                    true
-            )
-            .apply();
+    if (!wasAlreadyUnlocked) {
+        animateMemoryVerseUnlock(nextLevel);
+        return;
     }
-
+    }
     TextView title =
             new TextView(this);
 
@@ -1343,5 +1349,89 @@ private void showFinalResult() {
         );
 
         content.addView(backButton);
+    }
+    private void animateMemoryVerseUnlock(
+        int unlockedLevel
+) {
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+
+    title.setText("🔓 LEVEL UNLOCKED!");
+    title.setTextSize(28);
+    title.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    title.setTextColor(Color.BLACK);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 40, 0, 20);
+
+    content.addView(title);
+
+    TextView message = new TextView(this);
+
+    message.setText(
+            "🎉 Congratulations!\n\n" +
+            "You have unlocked Memory Verse Level " +
+            unlockedLevel + "!\n\n" +
+            "Keep growing in God's Word."
+    );
+
+    message.setTextSize(20);
+    message.setTextColor(Color.BLACK);
+    message.setGravity(Gravity.CENTER);
+    message.setPadding(15, 20, 15, 30);
+
+    content.addView(message);
+
+    title.setAlpha(0f);
+    title.setScaleX(0.5f);
+    title.setScaleY(0.5f);
+
+    title.animate()
+            .alpha(1f)
+            .scaleX(1f)
+            .scaleY(1f)
+            .setDuration(600)
+            .start();
+
+    Button continueButton = new Button(this);
+
+    continueButton.setText(
+            "✨ Continue to Level " + unlockedLevel
+    );
+
+    continueButton.setTextSize(17);
+    continueButton.setAllCaps(false);
+
+    continueButton.setOnClickListener(
+            v -> showLevels(gameType)
+    );
+
+    content.addView(
+            continueButton,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    70
+            )
+    );
+
+    Button menuButton = new Button(this);
+
+    menuButton.setText("🧠 Choose Another Game");
+    menuButton.setAllCaps(false);
+
+    menuButton.setOnClickListener(
+            v -> showGameMenu()
+    );
+
+    content.addView(
+            menuButton,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    70
+            )
+    );
     }
 }
