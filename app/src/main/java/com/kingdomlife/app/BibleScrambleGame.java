@@ -39,37 +39,57 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
     }
 
     public void showLevelMenu() {
-        activity.stopTimer();
-        activity.content.removeAllViews();
+activity.stopTimer();
+activity.content.removeAllViews();
 
-        TextView title = new TextView(activity);
-        title.setText("🧩 Bible Scramble");
-        title.setTextSize(26);
-        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        title.setTextColor(activity.darkText);
-        title.setGravity(Gravity.CENTER);
-        title.setPadding(0, 25, 0, 20);
-        activity.content.addView(title);
+TextView title = new TextView(activity);
+title.setText("🧩 Bible Scramble");
+title.setTextSize(26);
+title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+title.setTextColor(activity.darkText);
+title.setGravity(Gravity.CENTER);
+title.setPadding(0, 25, 0, 20);
+activity.content.addView(title);
 
-        TextView description = new TextView(activity);
-        description.setText("Choose your difficulty level");
-        description.setTextSize(18);
-        description.setTextColor(activity.darkText);
-        description.setGravity(Gravity.CENTER);
-        description.setPadding(0, 0, 0, 20);
-        activity.content.addView(description);
+TextView description = new TextView(activity);
+description.setText("Complete each level to unlock the next!");
+description.setTextSize(18);
+description.setTextColor(activity.darkText);
+description.setGravity(Gravity.CENTER);
+description.setPadding(0, 0, 0, 20);
+activity.content.addView(description);
 
-        activity.addButton("🌱 Level 1 — Easy",
-                v -> startLevel(1));
+int unlockedLevel = activity.prefs.getInt(
+        "bibleScrambleUnlockedLevel", 1);
 
-        activity.addButton("📖 Level 2 — Intermediate",
-                v -> startLevel(2));
+String[] levelNames = {
+        "🌱 Level 1 — Easy",
+        "📖 Level 2 — Intermediate",
+        "🔥 Level 3 — Advanced"
+};
 
-        activity.addButton("🔥 Level 3 — Advanced",
-                v -> startLevel(3));
+for (int i = 1; i <= 3; i++) {
+    final int selectedLevel = i;
 
-        activity.addButton("⬅️ Back to Games",
-                v -> activity.showGameMenu());
+    if (i <= unlockedLevel) {
+        activity.addButton(
+                "🔓 " + levelNames[i - 1],
+                v -> startLevel(selectedLevel));
+    } else {
+        activity.addButton(
+                "🔒 " + levelNames[i - 1],
+                v -> android.widget.Toast.makeText(
+                        activity,
+                        "Complete Level " + (selectedLevel - 1)
+                                + " first!",
+                        android.widget.Toast.LENGTH_SHORT
+                ).show());
+    }
+}
+
+activity.addButton("⬅️ Back to Games",
+        v -> activity.showGameMenu());
+
     }
 
     private void startLevel(int selectedLevel) {
@@ -238,6 +258,14 @@ activity.content.addView(feedback, feedbackParams);
 
     private void showFinalResult() {
         activity.content.removeAllViews();
+        int unlockedLevel = activity.prefs.getInt(
+"bibleScrambleUnlockedLevel", 1);
+
+if (level >= unlockedLevel && level < 3) {
+activity.prefs.edit()
+.putInt("bibleScrambleUnlockedLevel", level + 1)
+.apply();
+}
 
         TextView title = new TextView(activity);
         title.setText("🏆 Scramble Complete!");
