@@ -6244,25 +6244,25 @@ void showBibleQuizMenu() {
 
         if (isBibleJourneyBookUnlocked(book1)) {
 
-            if (i == completedBooks) {
-                button1.setBackgroundColor(
-                        Color.rgb(255, 152, 0)
-                );
-            }
+    if (i == completedBooks) {
+        button1.setBackgroundColor(
+                Color.rgb(255, 152, 0)
+        );
+    }
 
-            button1.setOnClickListener(
-                    v -> showBookDifficulty(book1)
-            );
-            
-            }
-            button1.setOnTouchListener(
-        this::handleBibleJourneySwipe
-);
+    button1.setOnClickListener(
+            v -> showBookDifficulty(book1)
+    );
 
-        } else {
+    button1.setOnTouchListener(
+            this::handleBibleJourneySwipe
+    );
 
-            button1.setText("🔒 " + book1);
-            button1.setOnClickListener(v -> {});
+} else {
+
+    button1.setText("🔒 " + book1);
+
+    button1.setOnClickListener(v -> {});
         }
 
         row.addView(
