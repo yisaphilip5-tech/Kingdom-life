@@ -6223,6 +6223,10 @@ void showBibleQuizMenu() {
                     "bibleJourney_books_completed",
                     0
             );
+        int pendingBookAnimation = prefs.getInt(
+        "bibleJourney_pendingBookAnimation",
+        -1
+);
 
     for (int i = 0; i < books.length; i += 2) {
 
@@ -6249,6 +6253,20 @@ void showBibleQuizMenu() {
             button1.setOnClickListener(
                     v -> showBookDifficulty(book1)
             );
+            if (pendingBookAnimation == i) {
+    button1.setText("🔒 " + book1);
+
+    LevelUnlockAnimator.animateUnlock(
+            createBookLockIcon(button1),
+            button1,
+            this,
+            book1
+    );
+
+    prefs.edit()
+            .remove("bibleJourney_pendingBookAnimation")
+            .apply();
+            }
             button1.setOnTouchListener(
         this::handleBibleJourneySwipe
 );
@@ -7715,6 +7733,82 @@ void showBibleScramble() {
     params.setMargins(12, 8, 12, 8);
 
     content.addView(button, params);
+    }
+    private void addAnimatedUnlockButton(
+        String text,
+        String levelName,
+        boolean isUnlocked,
+        boolean shouldAnimate,
+        View.OnClickListener listener,
+        Runnable onAnimationHandled
+) {
+    android.widget.FrameLayout frame =
+            new android.widget.FrameLayout(this);
+
+    Button button = new Button(this);
+
+    button.setText(text);
+    button.setTextSize(17);
+    button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    button.setTextColor(darkText);
+    button.setAllCaps(false);
+    button.setPadding(24, 16, 24, 16);
+
+    GradientDrawable buttonBackground =
+            new GradientDrawable();
+
+    buttonBackground.setColor(
+            Color.argb(225, 255, 255, 255));
+
+    buttonBackground.setCornerRadius(32);
+    button.setBackground(buttonBackground);
+    button.setElevation(5);
+    button.setOnClickListener(listener);
+
+    frame.addView(
+            button,
+            new android.widget.FrameLayout.LayoutParams(
+                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                    android.widget.FrameLayout.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    LinearLayout.LayoutParams frameParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    frameParams.setMargins(12, 8, 12, 8);
+    content.addView(frame, frameParams);
+
+    if (shouldAnimate && isUnlocked) {
+        TextView lockIcon = new TextView(this);
+        lockIcon.setText("🔒");
+        lockIcon.setTextSize(22);
+        lockIcon.setGravity(Gravity.CENTER);
+        lockIcon.setAlpha(1f);
+
+        android.widget.FrameLayout.LayoutParams lockParams =
+                new android.widget.FrameLayout.LayoutParams(
+                        55,
+                        android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                        Gravity.CENTER
+                );
+
+        frame.addView(lockIcon, lockParams);
+
+        LevelUnlockAnimator.animateUnlock(
+                lockIcon,
+                button,
+                this,
+                levelName
+        );
+
+        if (onAnimationHandled != null) {
+            onAnimationHandled.run();
+        }
+    }
     }
     void addFeatureGrid() {
 
