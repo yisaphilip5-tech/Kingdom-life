@@ -6495,8 +6495,14 @@ void unlockBibleJourneyDifficulty(
             difficulty +
             "_unlocked";
 
+    String animationKey =
+            "bibleJourney_" +
+            book +
+            "_pendingDifficultyAnimation";
+
     prefs.edit()
             .putBoolean(key, true)
+            .putString(animationKey, difficulty)
             .apply();
 }
     boolean isBibleJourneyBookUnlocked(String book) {
