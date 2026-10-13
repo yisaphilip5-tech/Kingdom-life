@@ -7140,12 +7140,16 @@ if (allDifficultiesCompleted) {
 
         String nextBook = oldTestamentBooks[bookIndex + 1];
 
-        prefs.edit()
-                .putBoolean(
-                        "bibleJourney_" + nextBook + "_book_unlocked",
-                        true
-                )
-                .apply();
+prefs.edit()
+        .putBoolean(
+                "bibleJourney_" + nextBook + "_book_unlocked",
+                true
+        )
+        .putString(
+                "bibleJourney_pendingBookAnimation",
+                nextBook
+        )
+        .apply();
     }
 
     // If all 39 Old Testament books are complete,
