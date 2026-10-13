@@ -6624,41 +6624,55 @@ void unlockBibleJourneyDifficulty(
     info.setPadding(0, 0, 0, 20);
     content.addView(info);
 
-    if (isBibleJourneyDifficultyUnlocked(book, "Easy")) {
-    addButton(
-            "🟢 Easy",
-            v -> startBibleJourney(book, "Easy")
-    );
-} else {
-    addButton("🔒 Easy", v -> {});
-}
+    String animationKey =
+        "bibleJourney_" +
+        book +
+        "_pendingDifficultyAnimation";
 
-if (isBibleJourneyDifficultyUnlocked(book, "Medium")) {
-    addButton(
-            "🔵 Medium",
-            v -> startBibleJourney(book, "Medium")
-    );
-} else {
-    addButton("🔒 Medium", v -> {});
-}
+String pendingDifficulty =
+        prefs.getString(animationKey, "");
 
-if (isBibleJourneyDifficultyUnlocked(book, "Hard")) {
-    addButton(
-            "🟠 Hard",
-            v -> startBibleJourney(book, "Hard")
-    );
-} else {
-    addButton("🔒 Hard", v -> {});
-}
+String[] difficulties = {
+        "Easy", "Medium", "Hard", "Scholar"
+};
 
-if (isBibleJourneyDifficultyUnlocked(book, "Scholar")) {
-    addButton(
-            "🟣 Scholar",
-            v -> startBibleJourney(book, "Scholar")
+String[] labels = {
+        "🟢 Easy", "🔵 Medium",
+        "🟠 Hard", "🟣 Scholar"
+};
+
+for (int i = 0; i < difficulties.length; i++) {
+    final String difficulty = difficulties[i];
+
+    boolean isUnlocked =
+            isBibleJourneyDifficultyUnlocked(
+                    book, difficulty);
+
+    boolean shouldAnimate =
+            difficulty.equals(pendingDifficulty)
+                    && isUnlocked;
+
+    String buttonText = isUnlocked
+            ? labels[i]
+            : "🔒 " + difficulties[i];
+
+    addAnimatedUnlockButton(
+            buttonText,
+            difficulty,
+            isUnlocked,
+            shouldAnimate,
+            v -> {
+                if (isUnlocked) {
+                    startBibleJourney(book, difficulty);
+                }
+            },
+            shouldAnimate
+                    ? () -> prefs.edit()
+                            .remove(animationKey)
+                            .apply()
+                    : null
     );
-} else {
-    addButton("🔒 Scholar", v -> {});
-}
+                    }
     
     }
     void startBibleJourney(String book, String difficulty) {
