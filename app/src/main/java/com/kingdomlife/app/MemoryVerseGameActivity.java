@@ -682,20 +682,38 @@ private void showGuessVerseQuestion(
     );
 
     question.setTextSize(19);
+question.setTextColor(Color.WHITE);
+question.setGravity(Gravity.CENTER);
 
-    question.setTextColor(Color.BLACK);
+question.setPadding(
+        20,
+        24,
+        20,
+        24
+);
 
-    question.setGravity(Gravity.CENTER);
+int purple = Color.rgb(30, 24, 55);
+int gold = Color.rgb(212, 175, 55);
 
-    question.setPadding(
-            0,
-            10,
-            0,
-            20
-    );
+GradientDrawable questionBackground =
+        new GradientDrawable();
 
-    content.addView(question);
+questionBackground.setColor(purple);
+questionBackground.setCornerRadius(28);
+questionBackground.setStroke(3, gold);
 
+question.setBackground(questionBackground);
+question.setBackgroundTintList(null);
+
+LinearLayout.LayoutParams questionParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+questionParams.setMargins(0, 12, 0, 20);
+
+content.addView(question, questionParams);
     java.util.ArrayList<String> answers =
             new java.util.ArrayList<>();
 
@@ -788,19 +806,38 @@ private void showCompleteVerseQuestion(
     );
 
     question.setTextSize(18);
+question.setTextColor(Color.WHITE);
+question.setGravity(Gravity.CENTER);
 
-    question.setTextColor(Color.BLACK);
+question.setPadding(
+        20,
+        24,
+        20,
+        24
+);
 
-    question.setGravity(Gravity.CENTER);
+int purple = Color.rgb(30, 24, 55);
+int gold = Color.rgb(212, 175, 55);
 
-    question.setPadding(
-            0,
-            10,
-            0,
-            20
-    );
+GradientDrawable questionBackground =
+        new GradientDrawable();
 
-    content.addView(question);
+questionBackground.setColor(purple);
+questionBackground.setCornerRadius(28);
+questionBackground.setStroke(3, gold);
+
+question.setBackground(questionBackground);
+question.setBackgroundTintList(null);
+
+LinearLayout.LayoutParams questionParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+questionParams.setMargins(0, 12, 0, 20);
+
+content.addView(question, questionParams);
 
     java.util.ArrayList<String> answers =
             new java.util.ArrayList<>();
@@ -867,20 +904,38 @@ private void showGuessReferenceQuestion(
     );
 
     question.setTextSize(18);
+question.setTextColor(Color.WHITE);
+question.setGravity(Gravity.CENTER);
 
-    question.setTextColor(Color.BLACK);
+question.setPadding(
+        20,
+        24,
+        20,
+        24
+);
 
-    question.setGravity(Gravity.CENTER);
+int purple = Color.rgb(30, 24, 55);
+int gold = Color.rgb(212, 175, 55);
 
-    question.setPadding(
-            0,
-            10,
-            0,
-            20
-    );
+GradientDrawable questionBackground =
+        new GradientDrawable();
 
-    content.addView(question);
+questionBackground.setColor(purple);
+questionBackground.setCornerRadius(28);
+questionBackground.setStroke(3, gold);
 
+question.setBackground(questionBackground);
+question.setBackgroundTintList(null);
+
+LinearLayout.LayoutParams questionParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+questionParams.setMargins(0, 12, 0, 20);
+
+content.addView(question, questionParams);
     java.util.ArrayList<String> answers =
             new java.util.ArrayList<>();
 
@@ -923,15 +978,27 @@ private void addAnswerButton(
         String answer,
         boolean correct
 ) {
+    int purple = Color.rgb(30, 24, 55);
+    int gold = Color.rgb(212, 175, 55);
 
-    Button button =
-            new Button(this);
+    Button button = new Button(this);
 
     button.setText(answer);
-
-    button.setTextSize(15);
-
+    button.setTextSize(16);
+    button.setTextColor(Color.WHITE);
     button.setAllCaps(false);
+    button.setPadding(16, 12, 16, 12);
+
+    GradientDrawable buttonBackground =
+            new GradientDrawable();
+
+    buttonBackground.setColor(purple);
+    buttonBackground.setCornerRadius(24);
+    buttonBackground.setStroke(2, gold);
+
+    button.setBackground(buttonBackground);
+    button.setBackgroundTintList(null);
+    button.setTag(correct);
 
     button.setOnClickListener(
             v -> handleAnswer(
@@ -940,107 +1007,129 @@ private void addAnswerButton(
             )
     );
 
-    content.addView(
-            button,
+    LinearLayout.LayoutParams params =
             new LinearLayout.LayoutParams(
-                    -1,
-                    -2
-            )
-    );
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    params.setMargins(0, 6, 0, 6);
+
+    content.addView(button, params);
 }
 
+
+
+    nextButton.setTextSize(17);
 
 private void handleAnswer(
         Button selectedButton,
         boolean correct
 ) {
+    int purple = Color.rgb(30, 24, 55);
+    int gold = Color.rgb(212, 175, 55);
+    int green = Color.rgb(35, 120, 65);
+    int red = Color.rgb(150, 45, 45);
 
-    for (int i = 0;
-            i < content.getChildCount();
-            i++) {
-
-        View child =
-                content.getChildAt(i);
+    // Disable the answer buttons after selection.
+    for (int i = 0; i < content.getChildCount(); i++) {
+        View child = content.getChildAt(i);
 
         if (child instanceof Button) {
-
             child.setEnabled(false);
         }
     }
 
+    // Colour the selected answer and show feedback.
     if (correct) {
-
         score += 10;
 
         selectedButton.setText(
-                "✅ " +
-                selectedButton.getText()
+                "✅ " + selectedButton.getText()
         );
-
     } else {
-
         selectedButton.setText(
-                "❌ " +
-                selectedButton.getText()
+                "❌ " + selectedButton.getText()
         );
     }
 
-    Button nextButton =
-            new Button(this);
+    // Apply the correct answer colours.
+    for (int i = 0; i < content.getChildCount(); i++) {
+        View child = content.getChildAt(i);
 
-    if (questionIndex + 1 <
-            activeQuestions.length) {
+        if (child instanceof Button) {
+            Button answerButton = (Button) child;
 
-        nextButton.setText(
-                "➡️ Next Question"
-        );
+            int answerColor = purple;
 
+            if (answerButton == selectedButton) {
+                answerColor = correct ? green : red;
+            } else if (!answerButton.getText().toString().startsWith("➡️")
+                    && !answerButton.getText().toString().startsWith("🏆")) {
+
+                // The correct answer is identified by its click listener's
+                // captured value, so we colour it below using the stored tag.
+                Object answerTag = answerButton.getTag();
+
+                if (Boolean.TRUE.equals(answerTag)) {
+                    answerColor = green;
+                }
+            }
+
+            GradientDrawable answerBackground =
+                    new GradientDrawable();
+
+            answerBackground.setColor(answerColor);
+            answerBackground.setCornerRadius(24);
+            answerBackground.setStroke(2, gold);
+
+            answerButton.setBackground(answerBackground);
+            answerButton.setBackgroundTintList(null);
+        }
+    }
+
+    Button nextButton = new Button(this);
+
+    if (questionIndex + 1 < activeQuestions.length) {
+        nextButton.setText("➡️ Next Question");
     } else {
-
-        nextButton.setText(
-                "🏆 See Results"
-        );
+        nextButton.setText("🏆 See Results");
     }
 
     nextButton.setTextSize(17);
-
+    nextButton.setTextColor(Color.WHITE);
     nextButton.setAllCaps(false);
+    nextButton.setMinHeight(70);
+    nextButton.setPadding(20, 12, 20, 12);
 
-    nextButton.setOnClickListener(
-            v -> {
+    GradientDrawable nextBackground =
+            new GradientDrawable();
 
-                questionIndex++;
+    nextBackground.setColor(purple);
+    nextBackground.setCornerRadius(24);
+    nextBackground.setStroke(2, gold);
 
-                showQuestion();
-            }
-    );
+    nextButton.setBackground(nextBackground);
+    nextButton.setBackgroundTintList(null);
+    button.setTag(correct);
+
+    nextButton.setOnClickListener(v -> {
+        questionIndex++;
+        showQuestion();
+    });
 
     LinearLayout.LayoutParams nextParams =
-        new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
 
-nextParams.setMargins(
-        0,
-        10,
-        0,
-        10
-);
+    nextParams.setMargins(0, 10, 0, 10);
 
-nextButton.setMinHeight(70);
-nextButton.setPadding(
-        20,
-        12,
-        20,
-        12
-);
-
-content.addView(
-        nextButton,
-        nextParams
-);
+    content.addView(nextButton, nextParams);
 }
+
+    
 
 
 private void showFinalResult() {
