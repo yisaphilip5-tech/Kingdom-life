@@ -204,45 +204,91 @@ public class MissingWordGame {
     }
 
     private void addLevelButton(
-String title,
-int level
+        String title,
+        int level
 ) {
-int unlockedLevel = activity.prefs.getInt(
-"missingWordUnlockedLevel", 1);
+    int unlockedLevel = activity.prefs.getInt(
+            "missingWordUnlockedLevel", 1);
 
-boolean isUnlocked = level <= unlockedLevel;
+    int animatedLevel = activity.prefs.getInt(
+            "missingWordPendingAnimation", 0);
 
-Button button = makeButton(
-        (isUnlocked ? "🔓 " : "🔒 ") + title
-);
+    boolean isUnlocked = level <= unlockedLevel;
 
-button.setBackgroundTintList(
-        android.content.res.ColorStateList.valueOf(
-                isUnlocked ? goldColor : Color.GRAY
-        )
-);
+    android.widget.FrameLayout buttonFrame =
+            new android.widget.FrameLayout(activity);
 
-button.setTextColor(
-        isUnlocked ? backgroundColor : Color.WHITE
-);
+    Button button = makeButton(
+            (isUnlocked ? "" : "🔒 ") + title
+    );
 
-button.setOnClickListener(v -> {
-    if (isUnlocked) {
-        startLevel(level);
-    } else {
-        android.widget.Toast.makeText(
+    button.setBackgroundTintList(
+            android.content.res.ColorStateList.valueOf(
+                    isUnlocked ? goldColor : Color.GRAY
+            )
+    );
+
+    button.setTextColor(
+            isUnlocked ? backgroundColor : Color.WHITE
+    );
+
+    button.setAllCaps(false);
+
+    button.setOnClickListener(v -> {
+        if (isUnlocked) {
+            startLevel(level);
+        } else {
+            android.widget.Toast.makeText(
+                    activity,
+                    "Complete Level " + (level - 1)
+                            + " first to unlock this level!",
+                    android.widget.Toast.LENGTH_SHORT
+            ).show();
+        }
+    });
+
+    buttonFrame.addView(
+            button,
+            new android.widget.FrameLayout.LayoutParams(
+                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                    android.widget.FrameLayout.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    activity.content.addView(buttonFrame);
+
+    if (level == animatedLevel && isUnlocked) {
+        TextView lockIcon = new TextView(activity);
+        lockIcon.setText("🔒");
+        lockIcon.setTextSize(22);
+        lockIcon.setGravity(Gravity.CENTER);
+        lockIcon.setTextColor(Color.BLACK);
+        lockIcon.setAlpha(1.0f);
+        lockIcon.setShadowLayer(
+                2f, 1f, 1f, Color.WHITE
+        );
+
+        android.widget.FrameLayout.LayoutParams lockParams =
+                new android.widget.FrameLayout.LayoutParams(
+                        55,
+                        android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                        Gravity.CENTER
+                );
+
+        buttonFrame.addView(lockIcon, lockParams);
+
+        LevelUnlockAnimator.animateUnlock(
+                lockIcon,
+                button,
                 activity,
-                "Complete Level " + (level - 1)
-                        + " first to unlock this level!",
-                android.widget.Toast.LENGTH_SHORT
-        ).show();
+                title
+        );
+
+        activity.prefs.edit()
+                .remove("missingWordPendingAnimation")
+                .apply();
     }
-});
-
-activity.content.addView(button);
-
     }
-
     private void startLevel(int level) {
         currentLevel = level;
         questionIndex = 0;
@@ -498,14 +544,17 @@ activity.content.addView(button);
 "missingWordUnlockedLevel", 1);
 
 if (currentLevel >= unlockedLevel && currentLevel < 3) {
-activity.prefs.edit()
-.putInt(
-"missingWordUnlockedLevel",
-currentLevel + 1
-)
-.apply();
+    activity.prefs.edit()
+            .putInt(
+                    "missingWordUnlockedLevel",
+                    currentLevel + 1
+            )
+            .putInt(
+                    "missingWordPendingAnimation",
+                    currentLevel + 1
+            )
+            .apply();
 }
-
         TextView title = makeText(
                 "🏆 Level Complete!",
                 27,
