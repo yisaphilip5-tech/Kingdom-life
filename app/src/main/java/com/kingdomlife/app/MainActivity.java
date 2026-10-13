@@ -6257,6 +6257,15 @@ void showBibleQuizMenu() {
     button1.setOnTouchListener(
             this::handleBibleJourneySwipe
     );
+            if (book1.equals(pendingBookAnimation)) {
+    animateBibleJourneyBookUnlock(button1, book1);
+
+    prefs.edit()
+            .remove("bibleJourney_pendingBookAnimation")
+            .apply();
+
+    pendingBookAnimation = "";
+            }
 
 } else {
 
@@ -6297,6 +6306,15 @@ void showBibleQuizMenu() {
                 button2.setOnTouchListener(
         this::handleBibleJourneySwipe
 );
+                if (book2.equals(pendingBookAnimation)) {
+    animateBibleJourneyBookUnlock(button2, book2);
+
+    prefs.edit()
+            .remove("bibleJourney_pendingBookAnimation")
+            .apply();
+
+    pendingBookAnimation = "";
+                }
 
             } else {
 
@@ -7822,6 +7840,68 @@ void showBibleScramble() {
         }
     }
     }
+    private void animateBibleJourneyBookUnlock(
+        Button bookButton,
+        String bookName
+) {
+    if (bookButton == null) {
+        return;
+    }
+
+    android.view.ViewParent parent = bookButton.getParent();
+
+    if (!(parent instanceof android.widget.LinearLayout)) {
+        return;
+    }
+
+    android.widget.LinearLayout row =
+            (android.widget.LinearLayout) parent;
+
+    int index = row.indexOfChild(bookButton);
+
+    if (index < 0) {
+        return;
+    }
+
+    android.view.ViewGroup.LayoutParams originalParams =
+            bookButton.getLayoutParams();
+
+    android.widget.FrameLayout frame =
+            new android.widget.FrameLayout(this);
+
+    row.removeView(bookButton);
+
+    frame.addView(
+            bookButton,
+            new android.widget.FrameLayout.LayoutParams(
+                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                    android.widget.FrameLayout.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    TextView lockIcon = new TextView(this);
+    lockIcon.setText("🔒");
+    lockIcon.setTextSize(18);
+    lockIcon.setGravity(Gravity.CENTER);
+
+    frame.addView(
+            lockIcon,
+            new android.widget.FrameLayout.LayoutParams(
+                    45,
+                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                    Gravity.CENTER
+            )
+    );
+
+    row.addView(frame, index, originalParams);
+
+    LevelUnlockAnimator.animateUnlock(
+            lockIcon,
+            bookButton,
+            this,
+            bookName
+    );
+        }
     void addFeatureGrid() {
 
     LinearLayout grid = new LinearLayout(this);
