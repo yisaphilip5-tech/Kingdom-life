@@ -7648,17 +7648,17 @@ result.setText("⏰ Time's up! The correct answer is: " + correctOption);
     }
 
     void answerQuestion(int selected, Button[] buttons) {
-        if (answered) {
-            return;
-        }
+if (answered) {
+return;
+}
 
-        answered = true;
-        stopTimer();
+answered = true;
+stopTimer();
 
-        TextView feedback = new TextView(this);
-        feedback.setTextSize(18);
+TextView feedback = new TextView(this);
+feedback.setTextSize(18);
 
-        int correctAnswer;
+int correctAnswer;
 
 if (currentLevel == 2) {
     correctAnswer = level2Answers[currentQuestion];
@@ -7668,40 +7668,38 @@ if (currentLevel == 2) {
     correctAnswer = answers[currentQuestion];
 }
 
-if (selected == correctAnswer) {
 boolean isCorrect = selected == correctAnswer;
 
 if (isCorrect) {
-score += 10;
-totalPoints += 10;
-correctAnswers++;
+    score += 10;
+    totalPoints += 10;
+    correctAnswers++;
 
-prefs.edit()
-        .putInt("totalPoints", totalPoints)
-        .apply();
+    prefs.edit()
+            .putInt("totalPoints", totalPoints)
+            .apply();
 
-checkAchievementNotifications();
+    checkAchievementNotifications();
 
-feedback.setText("Correct! +10 points");
+    feedback.setText("Correct! +10 points");
 
 } else {
-wrongAnswers++;
+    wrongAnswers++;
 
-String correctOption;
+    String correctOption;
 
-if (currentLevel == 2) {
-    correctOption =
-            level2Options[currentQuestion][level2Answers[currentQuestion]];
-} else if (currentLevel == 3) {
-    correctOption =
-            level3Options[currentQuestion][level3Answers[currentQuestion]];
-} else {
-    correctOption =
-            options[currentQuestion][answers[currentQuestion]];
-}
+    if (currentLevel == 2) {
+        correctOption =
+                level2Options[currentQuestion][level2Answers[currentQuestion]];
+    } else if (currentLevel == 3) {
+        correctOption =
+                level3Options[currentQuestion][level3Answers[currentQuestion]];
+    } else {
+        correctOption =
+                options[currentQuestion][answers[currentQuestion]];
+    }
 
-feedback.setText("Wrong! Correct answer: " + correctOption);
-
+    feedback.setText("Wrong! Correct answer: " + correctOption);
 }
 
 feedback.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
@@ -7710,19 +7708,19 @@ feedback.setGravity(Gravity.CENTER);
 feedback.setPadding(16, 18, 16, 18);
 
 android.graphics.drawable.GradientDrawable feedbackBackground =
-new android.graphics.drawable.GradientDrawable();
+        new android.graphics.drawable.GradientDrawable();
 
 feedbackBackground.setColor(
-isCorrect
-? android.graphics.Color.rgb(35, 120, 65)
-: android.graphics.Color.rgb(150, 45, 45)
+        isCorrect
+                ? android.graphics.Color.rgb(35, 120, 65)
+                : android.graphics.Color.rgb(150, 45, 45)
 );
 
 feedbackBackground.setCornerRadius(24);
 
 feedbackBackground.setStroke(
-2,
-android.graphics.Color.rgb(212, 175, 55)
+        2,
+        android.graphics.Color.rgb(212, 175, 55)
 );
 
 feedback.setBackground(feedbackBackground);
@@ -7730,33 +7728,33 @@ feedback.setBackground(feedbackBackground);
 content.addView(feedback, 3);
 
 for (int i = 0; i < buttons.length; i++) {
-int buttonColor = android.graphics.Color.rgb(30, 24, 55);
+    int buttonColor = android.graphics.Color.rgb(30, 24, 55);
 
-if (i == correctAnswer) {
-    buttonColor = android.graphics.Color.rgb(35, 120, 65);
-}
-
-if (i == selected && !isCorrect) {
-    buttonColor = android.graphics.Color.rgb(150, 45, 45);
-}
-
-android.graphics.drawable.GradientDrawable answerBackground =
-        new android.graphics.drawable.GradientDrawable();
-
-answerBackground.setColor(buttonColor);
-answerBackground.setCornerRadius(24);
-
-answerBackground.setStroke(
-        2,
-        android.graphics.Color.rgb(212, 175, 55)
-);
-
-buttons[i].setBackground(answerBackground);
-buttons[i].setTextColor(android.graphics.Color.WHITE);
-buttons[i].setEnabled(false);
-
-}
+    if (i == correctAnswer) {
+        buttonColor = android.graphics.Color.rgb(35, 120, 65);
     }
+
+    if (i == selected && !isCorrect) {
+        buttonColor = android.graphics.Color.rgb(150, 45, 45);
+    }
+
+    android.graphics.drawable.GradientDrawable answerBackground =
+            new android.graphics.drawable.GradientDrawable();
+
+    answerBackground.setColor(buttonColor);
+    answerBackground.setCornerRadius(24);
+
+    answerBackground.setStroke(
+            2,
+            android.graphics.Color.rgb(212, 175, 55)
+    );
+
+    buttons[i].setBackground(answerBackground);
+    buttons[i].setTextColor(android.graphics.Color.WHITE);
+    buttons[i].setEnabled(false);
+}
+
+        }
 
     void showResults() {
         stopTimer();
