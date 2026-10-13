@@ -1061,19 +1061,12 @@ private void handleAnswer(
             Button answerButton = (Button) child;
 
             int answerColor = purple;
+            Object answerTag = answerButton.getTag();
 
             if (answerButton == selectedButton) {
                 answerColor = correct ? green : red;
-            } else if (!answerButton.getText().toString().startsWith("➡️")
-                    && !answerButton.getText().toString().startsWith("🏆")) {
-
-                // The correct answer is identified by its click listener's
-                // captured value, so we colour it below using the stored tag.
-                Object answerTag = answerButton.getTag();
-
-                if (Boolean.TRUE.equals(answerTag)) {
-                    answerColor = green;
-                }
+            } else if (Boolean.TRUE.equals(answerTag)) {
+                answerColor = green;
             }
 
             GradientDrawable answerBackground =
@@ -1111,7 +1104,7 @@ private void handleAnswer(
 
     nextButton.setBackground(nextBackground);
     nextButton.setBackgroundTintList(null);
-    button.setTag(correct);
+    
 
     nextButton.setOnClickListener(v -> {
         questionIndex++;
