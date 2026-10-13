@@ -1020,7 +1020,7 @@ private void addAnswerButton(
 
 
 
-    nextButton.setTextSize(17);
+    
 
 private void handleAnswer(
         Button selectedButton,
