@@ -4939,10 +4939,10 @@ addCard(
         v -> {}
 );
       addCard(
-        scrambleScore > 0
+        prefs.getBoolean("bibleScrambleSolved", false)
                 ? "✅ Puzzle Solver"
                 : "🔒 Puzzle Solver",
-        scrambleScore > 0
+        prefs.getBoolean("bibleScrambleSolved", false)
                 ? "You earned points from a Bible puzzle!"
                 : "Earn points from a Bible puzzle to unlock this achievement.",
         v -> {}
