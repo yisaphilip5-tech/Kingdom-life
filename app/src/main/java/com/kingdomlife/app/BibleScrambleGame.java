@@ -38,6 +38,7 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
         this.activity = activity;
     }
 
+    
     public void showLevelMenu() {
 activity.stopTimer();
 activity.content.removeAllViews();
@@ -74,30 +75,45 @@ String[] levelNames = {
 for (int i = 1; i <= 3; i++) {
     final int selectedLevel = i;
 
-    LinearLayout row = new LinearLayout(activity);
-    row.setOrientation(LinearLayout.HORIZONTAL);
-    row.setGravity(Gravity.CENTER_VERTICAL);
+    android.widget.FrameLayout buttonFrame =
+            new android.widget.FrameLayout(activity);
+
+    LinearLayout.LayoutParams frameParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+
+    frameParams.setMargins(12, 5, 12, 5);
+    buttonFrame.setLayoutParams(frameParams);
+
+    android.widget.Button levelButton =
+            new android.widget.Button(activity);
+
+    levelButton.setText(levelNames[i - 1]);
+    levelButton.setAllCaps(false);
+    levelButton.setGravity(Gravity.CENTER);
+    buttonFrame.addView(
+            levelButton,
+            new android.widget.FrameLayout.LayoutParams(
+                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                    android.widget.FrameLayout.LayoutParams.WRAP_CONTENT));
 
     TextView lockIcon = new TextView(activity);
     lockIcon.setText("🔒");
     lockIcon.setTextSize(22);
     lockIcon.setGravity(Gravity.CENTER);
+    lockIcon.setTextColor(android.graphics.Color.BLACK);
+    lockIcon.setAlpha(1.0f);
+    lockIcon.setShadowLayer(
+            2f, 1f, 1f, android.graphics.Color.WHITE);
 
-    LinearLayout.LayoutParams lockParams =
-            new LinearLayout.LayoutParams(55, 60);
-    row.addView(lockIcon, lockParams);
+    android.widget.FrameLayout.LayoutParams lockParams =
+            new android.widget.FrameLayout.LayoutParams(
+                    55,
+                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                    Gravity.LEFT | Gravity.CENTER_VERTICAL);
 
-    android.widget.Button levelButton =
-            new android.widget.Button(activity);
-    levelButton.setText(levelNames[i - 1]);
-    levelButton.setAllCaps(false);
-
-    LinearLayout.LayoutParams buttonParams =
-            new LinearLayout.LayoutParams(
-                    0,
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    1f);
-    row.addView(levelButton, buttonParams);
+    buttonFrame.addView(lockIcon, lockParams);
 
     if (i <= unlockedLevel) {
         lockIcon.setVisibility(View.GONE);
@@ -114,7 +130,7 @@ for (int i = 1; i <= 3; i++) {
                 ).show());
     }
 
-    activity.content.addView(row);
+    activity.content.addView(buttonFrame);
 
     if (i == animatedLevel && i <= unlockedLevel) {
         lockIcon.setVisibility(View.VISIBLE);
@@ -135,7 +151,7 @@ for (int i = 1; i <= 3; i++) {
 activity.addButton("⬅️ Back to Games",
         v -> activity.showGameMenu());
 
-                                       }
+    }
 
     private void startLevel(int selectedLevel) {
         level = selectedLevel;
