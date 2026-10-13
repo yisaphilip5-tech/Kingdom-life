@@ -6231,15 +6231,18 @@ for (int j = 0; j < buttons.length; j++) {
             android.graphics.Color.rgb(212, 175, 55)
     );
 
-    buttons[j].setBackground(answerBackground);
+        buttons[j].setBackground(answerBackground);
     buttons[j].setEnabled(false);
 }
 
 });
-    }
-       
 
-    void showCompleteVerse() {
+    }
+
+    content.addView(feedback);
+}
+
+void showCompleteVerse() {
     stopTimer();
     content.removeAllViews();
             ImageButton backButton = new ImageButton(this);
