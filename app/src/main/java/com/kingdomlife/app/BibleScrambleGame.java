@@ -62,6 +62,9 @@ activity.content.addView(description);
 int unlockedLevel = activity.prefs.getInt(
         "bibleScrambleUnlockedLevel", 1);
 
+int animatedLevel = activity.prefs.getInt(
+        "bibleScramblePendingAnimation", 0);
+
 String[] levelNames = {
         "🌱 Level 1 — Easy",
         "📖 Level 2 — Intermediate",
@@ -71,26 +74,68 @@ String[] levelNames = {
 for (int i = 1; i <= 3; i++) {
     final int selectedLevel = i;
 
+    LinearLayout row = new LinearLayout(activity);
+    row.setOrientation(LinearLayout.HORIZONTAL);
+    row.setGravity(Gravity.CENTER_VERTICAL);
+
+    TextView lockIcon = new TextView(activity);
+    lockIcon.setText("🔒");
+    lockIcon.setTextSize(22);
+    lockIcon.setGravity(Gravity.CENTER);
+
+    LinearLayout.LayoutParams lockParams =
+            new LinearLayout.LayoutParams(55, 60);
+    row.addView(lockIcon, lockParams);
+
+    android.widget.Button levelButton =
+            new android.widget.Button(activity);
+    levelButton.setText(levelNames[i - 1]);
+    levelButton.setAllCaps(false);
+
+    LinearLayout.LayoutParams buttonParams =
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f);
+    row.addView(levelButton, buttonParams);
+
     if (i <= unlockedLevel) {
-        activity.addButton(
-                "🔓 " + levelNames[i - 1],
+        lockIcon.setVisibility(View.GONE);
+
+        levelButton.setOnClickListener(
                 v -> startLevel(selectedLevel));
     } else {
-        activity.addButton(
-                "🔒 " + levelNames[i - 1],
-                v -> android.widget.Toast.makeText(
+        levelButton.setOnClickListener(v ->
+                android.widget.Toast.makeText(
                         activity,
                         "Complete Level " + (selectedLevel - 1)
                                 + " first!",
                         android.widget.Toast.LENGTH_SHORT
                 ).show());
     }
+
+    activity.content.addView(row);
+
+    if (i == animatedLevel && i <= unlockedLevel) {
+        lockIcon.setVisibility(View.VISIBLE);
+
+        LevelUnlockAnimator.animateUnlock(
+                lockIcon,
+                levelButton,
+                activity,
+                "Level " + i
+        );
+
+        activity.prefs.edit()
+                .remove("bibleScramblePendingAnimation")
+                .apply();
+    }
 }
 
 activity.addButton("⬅️ Back to Games",
         v -> activity.showGameMenu());
 
-    }
+                                       }
 
     private void startLevel(int selectedLevel) {
         level = selectedLevel;
@@ -264,9 +309,9 @@ activity.content.addView(feedback, feedbackParams);
 if (level >= unlockedLevel && level < 3) {
 activity.prefs.edit()
 .putInt("bibleScrambleUnlockedLevel", level + 1)
+.putInt("bibleScramblePendingAnimation", level + 1)
 .apply();
 }
-
         TextView title = new TextView(activity);
         title.setText("🏆 Scramble Complete!");
         title.setTextSize(26);
