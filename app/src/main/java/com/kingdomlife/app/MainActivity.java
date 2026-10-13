@@ -7048,101 +7048,227 @@ if (isBibleJourneyDifficultyUnlocked(book, "Scholar")) {
 answered = false;
 
 question.setText(
-        bibleJourneyQuestions.get(bibleJourneyQuestion)
+bibleJourneyQuestions.get(bibleJourneyQuestion)
 );
-    question.setTextSize(21);
-    question.setTypeface(
-            Typeface.DEFAULT,
-            Typeface.BOLD
-    );
-    question.setTextColor(darkText);
-    question.setGravity(Gravity.CENTER);
-    question.setPadding(10, 15, 10, 25);
-    content.addView(question);
 
+question.setTextSize(21);
+
+question.setTypeface(
+Typeface.DEFAULT,
+Typeface.BOLD
+);
+
+question.setTextColor(android.graphics.Color.WHITE);
+question.setGravity(Gravity.CENTER);
+question.setPadding(16, 24, 16, 24);
+
+android.graphics.drawable.GradientDrawable questionBackground =
+new android.graphics.drawable.GradientDrawable();
+
+questionBackground.setColor(
+android.graphics.Color.rgb(30, 24, 55)
+);
+
+questionBackground.setCornerRadius(24);
+
+questionBackground.setStroke(
+3,
+android.graphics.Color.rgb(212, 175, 55)
+);
+
+question.setBackground(questionBackground);
+
+LinearLayout.LayoutParams questionParams =
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.MATCH_PARENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+);
+
+questionParams.setMargins(0, 8, 0, 16);
+
+content.addView(question, questionParams);
     String[] options =
-            bibleJourneyOptions.get(bibleJourneyQuestion);
+bibleJourneyOptions.get(bibleJourneyQuestion);
 
-    for (int i = 0; i < options.length; i++) {
+Button[] answerButtons = new Button[options.length];
 
-        final int selectedAnswer = i;
+for (int i = 0; i < options.length; i++) {
 
-        addButton(
-                (i + 1) + ". " + options[i],
-                v -> checkBibleJourneyAnswer(selectedAnswer)
+final int selectedAnswer = i;
+
+answerButtons[i] = new Button(this);
+
+answerButtons[i].setText(
+        (i + 1) + ". " + options[i]
+);
+
+answerButtons[i].setTextSize(16);
+answerButtons[i].setTextColor(
+        android.graphics.Color.WHITE
+);
+answerButtons[i].setAllCaps(false);
+
+android.graphics.drawable.GradientDrawable optionBackground =
+        new android.graphics.drawable.GradientDrawable();
+
+optionBackground.setColor(
+        android.graphics.Color.rgb(30, 24, 55)
+);
+
+optionBackground.setCornerRadius(24);
+
+optionBackground.setStroke(
+        2,
+        android.graphics.Color.rgb(212, 175, 55)
+);
+
+answerButtons[i].setBackground(optionBackground);
+
+LinearLayout.LayoutParams optionParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
         );
-    }
+
+optionParams.setMargins(0, 5, 0, 5);
+
+content.addView(answerButtons[i], optionParams);
+
+answerButtons[i].setOnClickListener(v ->
+        checkBibleJourneyAnswer(
+                selectedAnswer,
+                answerButtons
+        )
+);
+
+}
 
     addButton(
             "⬅️ Exit Game",
             v -> showBookDifficulty(currentBibleBook)
     );
         }
-    void checkBibleJourneyAnswer(int selectedAnswer) {
+    
+    void checkBibleJourneyAnswer(
+int selectedAnswer,
+Button[] answerButtons
+) {
 
-    if (answered) {
-        return;
+if (answered) {
+    return;
+}
+
+answered = true;
+
+int correctAnswer =
+        bibleJourneyAnswers.get(bibleJourneyQuestion);
+
+boolean isCorrect = selectedAnswer == correctAnswer;
+
+TextView feedback = new TextView(this);
+
+feedback.setTextSize(19);
+feedback.setTypeface(
+        Typeface.DEFAULT,
+        Typeface.BOLD
+);
+feedback.setTextColor(android.graphics.Color.WHITE);
+feedback.setGravity(Gravity.CENTER);
+feedback.setPadding(16, 18, 16, 18);
+
+if (isCorrect) {
+
+    bibleJourneyScore += 5;
+    totalPoints += 5;
+
+    prefs.edit()
+            .putInt("totalPoints", totalPoints)
+            .apply();
+
+    checkAchievementNotifications();
+
+    feedback.setText("Correct! +5 points");
+
+} else {
+
+    feedback.setText(
+            "Incorrect!\n\n" +
+            "The correct answer was:\n" +
+            bibleJourneyOptions
+                    .get(bibleJourneyQuestion)
+                    [correctAnswer]
+    );
+}
+
+android.graphics.drawable.GradientDrawable feedbackBackground =
+        new android.graphics.drawable.GradientDrawable();
+
+feedbackBackground.setColor(
+        isCorrect
+                ? android.graphics.Color.rgb(35, 120, 65)
+                : android.graphics.Color.rgb(150, 45, 45)
+);
+
+feedbackBackground.setCornerRadius(24);
+
+feedbackBackground.setStroke(
+        2,
+        android.graphics.Color.rgb(212, 175, 55)
+);
+
+feedback.setBackground(feedbackBackground);
+
+content.addView(feedback, 5);
+
+for (int i = 0; i < answerButtons.length; i++) {
+
+    int buttonColor =
+            android.graphics.Color.rgb(30, 24, 55);
+
+    if (i == correctAnswer) {
+        buttonColor =
+                android.graphics.Color.rgb(35, 120, 65);
     }
 
-    answered = true;
+    if (i == selectedAnswer && !isCorrect) {
+        buttonColor =
+                android.graphics.Color.rgb(150, 45, 45);
+    }
 
-    int correctAnswer =
-            bibleJourneyAnswers.get(bibleJourneyQuestion);
-    if (selectedAnswer == correctAnswer) {
+    android.graphics.drawable.GradientDrawable answerBackground =
+            new android.graphics.drawable.GradientDrawable();
 
-        bibleJourneyScore += 5;
-        totalPoints += 5;
+    answerBackground.setColor(buttonColor);
+    answerBackground.setCornerRadius(24);
 
-        prefs.edit()
-                .putInt("totalPoints", totalPoints)
-                .apply();
-        checkAchievementNotifications();
+    answerBackground.setStroke(
+            2,
+            android.graphics.Color.rgb(212, 175, 55)
+    );
 
-        TextView feedback = new TextView(this);
-        feedback.setText("🎉 Correct! +5 points");
-        feedback.setTextSize(20);
-        feedback.setTypeface(
-                Typeface.DEFAULT,
-                Typeface.BOLD
-        );
-        feedback.setTextColor(darkText);
-        feedback.setGravity(Gravity.CENTER);
-        feedback.setPadding(0, 15, 0, 15);
+    answerButtons[i].setBackground(answerBackground);
+    answerButtons[i].setTextColor(
+            android.graphics.Color.WHITE
+    );
+    answerButtons[i].setEnabled(false);
+}
 
-        content.addView(feedback, 5);
+addButton("Next Question", v -> {
+
+    if (bibleJourneyQuestion <
+            bibleJourneyQuestions.size() - 1) {
+
+        bibleJourneyQuestion++;
+        showBibleJourneyQuestion();
 
     } else {
 
-        TextView feedback = new TextView(this);
-        feedback.setText(
-                "❌ Incorrect!\n\n" +
-                "The correct answer was:\n" +
-                bibleJourneyOptions
-                        .get(bibleJourneyQuestion)
-                        [correctAnswer]
-        );
-        feedback.setTextSize(19);
-        feedback.setTextColor(darkText);
-        feedback.setGravity(Gravity.CENTER);
-        feedback.setPadding(0, 15, 0, 15);
-
-        content.addView(feedback, 5);
+        showBibleJourneyResult();
     }
+});
 
-    addButton("➡️ Next Question", v -> {
-
-        if (bibleJourneyQuestion <
-                bibleJourneyQuestions.size() - 1) {
-
-            bibleJourneyQuestion++;
-            showBibleJourneyQuestion();
-
-        } else {
-
-            showBibleJourneyResult();
-        }
-    });
     }
+    
     void showBibleJourneyResult() {
 
     stopTimer();
