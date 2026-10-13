@@ -7796,13 +7796,8 @@ feedback.setText("❌ Wrong! Correct answer: " + correctOption);
         
     }
 void showBibleScramble() {
-    stopTimer();
-    content.removeAllViews();
-
-    scrambleQuestion = 0;
-    scrambleScore = 0;
-
-    showScrambleQuestion();
+    BibleScrambleGame game = new BibleScrambleGame(this);
+    game.showLevelMenu();
 }
     void showScrambleQuestion() {
     content.removeAllViews();
