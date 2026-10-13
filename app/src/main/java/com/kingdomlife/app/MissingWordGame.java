@@ -204,24 +204,43 @@ public class MissingWordGame {
     }
 
     private void addLevelButton(
-            String title,
-            int level
-    ) {
-        Button button = makeButton(title);
+String title,
+int level
+) {
+int unlockedLevel = activity.prefs.getInt(
+"missingWordUnlockedLevel", 1);
 
-        button.setBackgroundTintList(
-                android.content.res.ColorStateList.valueOf(
-                        goldColor
-                )
-        );
+boolean isUnlocked = level <= unlockedLevel;
 
-        button.setTextColor(backgroundColor);
+Button button = makeButton(
+        (isUnlocked ? "🔓 " : "🔒 ") + title
+);
 
-        button.setOnClickListener(
-                v -> startLevel(level)
-        );
+button.setBackgroundTintList(
+        android.content.res.ColorStateList.valueOf(
+                isUnlocked ? goldColor : Color.GRAY
+        )
+);
 
-        activity.content.addView(button);
+button.setTextColor(
+        isUnlocked ? backgroundColor : Color.WHITE
+);
+
+button.setOnClickListener(v -> {
+    if (isUnlocked) {
+        startLevel(level);
+    } else {
+        android.widget.Toast.makeText(
+                activity,
+                "Complete Level " + (level - 1)
+                        + " first to unlock this level!",
+                android.widget.Toast.LENGTH_SHORT
+        ).show();
+    }
+});
+
+activity.content.addView(button);
+
     }
 
     private void startLevel(int level) {
@@ -475,6 +494,17 @@ public class MissingWordGame {
 
     private void showResults() {
         prepareScreen();
+        int unlockedLevel = activity.prefs.getInt(
+"missingWordUnlockedLevel", 1);
+
+if (currentLevel >= unlockedLevel && currentLevel < 3) {
+activity.prefs.edit()
+.putInt(
+"missingWordUnlockedLevel",
+currentLevel + 1
+)
+.apply();
+}
 
         TextView title = makeText(
                 "🏆 Level Complete!",
