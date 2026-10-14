@@ -360,12 +360,23 @@ new Handler().postDelayed(() -> {
         stopTimer();
 content.removeAllViews();
         content.setPadding(12, 0, 12, 12);
-        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        android.content.SharedPreferences displayPrefs =
+        getSharedPreferences("KingdomLifeDisplayPrefs", MODE_PRIVATE);
 
-if (hour >= 6 && hour < 18) {
+String displayMode = displayPrefs.getString("displayMode", "AUTO");
+
+if (displayMode.equals("DAY")) {
     content.setBackgroundResource(R.drawable.kingdom_home_bg);
-} else {
+} else if (displayMode.equals("NIGHT")) {
     content.setBackgroundResource(R.drawable.kingdom_night_bg);
+} else {
+    int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+    if (hour >= 6 && hour < 18) {
+        content.setBackgroundResource(R.drawable.kingdom_home_bg);
+    } else {
+        content.setBackgroundResource(R.drawable.kingdom_night_bg);
+    }
 }
 
 /* ===== KINGDOM LIFE HEADER ===== */
@@ -4886,7 +4897,85 @@ addCard(
         "Adjust text size and text colour.",
         v -> showTextAppearanceSettings()
 );
+        addCard(
+        "🌞 Day / 🌙 Night Mode",
+        "Switch between light and dark appearance.",
+        v -> showDisplayModeSettings()
+);
     addButton("⬅️ Back to Home", v -> showHome());
+    }
+    void showDisplayModeSettings() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🌞 Day / 🌙 Night Mode");
+    title.setTextSize(22);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 15);
+    content.addView(title);
+
+    android.content.SharedPreferences displayPrefs =
+            getSharedPreferences("KingdomLifeDisplayPrefs", MODE_PRIVATE);
+
+    String currentMode =
+            displayPrefs.getString("displayMode", "AUTO");
+
+    String[] modes = {
+            "Automatic (follow time)",
+            "Day Mode",
+            "Night Mode"
+    };
+
+    int selectedMode = currentMode.equals("DAY") ? 1
+            : currentMode.equals("NIGHT") ? 2 : 0;
+
+    android.widget.RadioGroup group =
+            new android.widget.RadioGroup(this);
+
+    String[] values = {"AUTO", "DAY", "NIGHT"};
+
+    for (int i = 0; i < modes.length; i++) {
+        android.widget.RadioButton option =
+                new android.widget.RadioButton(this);
+
+        option.setText(modes[i]);
+        option.setTextSize(16);
+        option.setTextColor(darkText);
+        option.setId(100 + i);
+        group.addView(option);
+
+        if (i == selectedMode) {
+            option.setChecked(true);
+        }
+    }
+
+    content.addView(group);
+
+    addButton("💾 Save Display Mode", v -> {
+        int checkedId = group.getCheckedRadioButtonId();
+
+        if (checkedId == -1) {
+            showMessage("Display Mode", "Please select a mode.");
+            return;
+        }
+
+        String mode = values[checkedId - 100];
+
+        displayPrefs.edit()
+                .putString("displayMode", mode)
+                .apply();
+
+        showMessage(
+                "Display Mode Saved",
+                "Your display preference has been saved."
+        );
+
+        showHome();
+    });
+
+    addButton("⬅️ Back to Settings", v -> showSettings());
     }
     void showTextAppearanceSettings() {
     stopTimer();
