@@ -2364,6 +2364,37 @@ content.addView(bookGrid);
     stopTimer();
     content.removeAllViews();
 
+    // Large back arrow at the top-left
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+
+    backButton.setContentDescription("Back to Bible");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(
+            v -> showBible()
+    );
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
+
     TextView title = new TextView(this);
     title.setText("🔎 Search Bible — KJV");
     title.setTextSize(24);
@@ -2379,30 +2410,59 @@ content.addView(bookGrid);
     content.addView(searchInput);
 
     addButton(
-        "🔎 Search",
-        v -> {
-            String query = searchInput.getText().toString().trim();
+            "🔎 Search",
+            v -> {
+                String query = searchInput.getText()
+                        .toString().trim();
 
-            if (query.isEmpty()) {
-                showMessage(
-                        "🔎 Bible Search",
-                        "Please enter a word or phrase to search."
-                );
-                return;
+                if (query.isEmpty()) {
+                    showMessage(
+                            "🔎 Bible Search",
+                            "Please enter a word or phrase to search."
+                    );
+                    return;
+                }
+
+                showBibleSearchResults(query);
             }
-
-            showBibleSearchResults(query);
-        }
-);
-
-    addButton(
-            "⬅️ Back to Bible",
-            v -> showBible()
     );
-    }
+
+    // The old bottom Back to Bible button is removed.
+        }
     void showBibleSearchResults(String query) {
     stopTimer();
     content.removeAllViews();
+
+    // Large back arrow at the top-left
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+
+    backButton.setContentDescription("Back to Search");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(
+            v -> showBibleSearch()
+    );
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
 
     TextView title = new TextView(this);
     title.setText("🔎 Search Results");
@@ -2416,7 +2476,6 @@ content.addView(bookGrid);
     int resultCount = 0;
 
     try {
-
         String[] books = {
                 "Genesis", "Exodus", "Leviticus", "Numbers",
                 "Deuteronomy", "Joshua", "Judges", "Ruth",
@@ -2428,7 +2487,6 @@ content.addView(bookGrid);
                 "Joel", "Amos", "Obadiah", "Jonah", "Micah",
                 "Nahum", "Habakkuk", "Zephaniah", "Haggai",
                 "Zechariah", "Malachi",
-
                 "Matthew", "Mark", "Luke", "John", "Acts",
                 "Romans", "1 Corinthians", "2 Corinthians",
                 "Galatians", "Ephesians", "Philippians", "Colossians",
@@ -2439,7 +2497,6 @@ content.addView(bookGrid);
         };
 
         for (String book : books) {
-
             InputStream inputStream =
                     getAssets().open("kjv/" + book + ".json");
 
@@ -2448,9 +2505,7 @@ content.addView(bookGrid);
                             new InputStreamReader(inputStream)
                     );
 
-            StringBuilder jsonText =
-                    new StringBuilder();
-
+            StringBuilder jsonText = new StringBuilder();
             String line;
 
             while ((line = reader.readLine()) != null) {
@@ -2462,29 +2517,23 @@ content.addView(bookGrid);
             JSONObject bible =
                     new JSONObject(jsonText.toString());
 
-            java.util.Iterator<String> chapters =
-                    bible.keys();
+            java.util.Iterator<String> chapters = bible.keys();
 
             while (chapters.hasNext()) {
-
                 String chapterNumber = chapters.next();
 
                 JSONObject chapter =
                         bible.getJSONObject(chapterNumber);
 
-                java.util.Iterator<String> verses =
-                        chapter.keys();
+                java.util.Iterator<String> verses = chapter.keys();
 
                 while (verses.hasNext()) {
-
                     String verseNumber = verses.next();
 
                     String verseText =
                             chapter.getString(verseNumber);
 
-                    if (verseText.toLowerCase()
-                            .contains(searchText)) {
-
+                    if (verseText.toLowerCase().contains(searchText)) {
                         TextView result = new TextView(this);
 
                         result.setText(
@@ -2496,9 +2545,7 @@ content.addView(bookGrid);
 
                         result.setTextSize(17);
                         result.setTextColor(darkText);
-                        result.setPadding(
-                                10, 12, 10, 12
-                        );
+                        result.setPadding(10, 12, 10, 12);
 
                         content.addView(result);
 
@@ -2521,13 +2568,9 @@ content.addView(bookGrid);
         }
 
         if (resultCount == 0) {
-
             TextView none = new TextView(this);
 
-            none.setText(
-                    "No verses found for: " + query
-            );
-
+            none.setText("No verses found for: " + query);
             none.setTextSize(18);
             none.setTextColor(darkText);
             none.setPadding(10, 20, 10, 20);
@@ -2536,7 +2579,6 @@ content.addView(bookGrid);
         }
 
     } catch (Exception e) {
-
         TextView error = new TextView(this);
 
         error.setText(
@@ -2551,11 +2593,11 @@ content.addView(bookGrid);
         content.addView(error);
     }
 
-    addButton(
-            "⬅️ Back to Search",
-            v -> showBibleSearch()
-    );
-        }
+    // The old bottom Back to Search button is removed.
+    }
+            
+
+        
     void saveVerse(String reference, String verseText) {
 
     if (savedVersesPrefs == null) {
