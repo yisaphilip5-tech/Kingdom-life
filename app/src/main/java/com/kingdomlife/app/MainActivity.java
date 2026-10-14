@@ -5338,133 +5338,67 @@ content.addView(topBar);
         return "ERROR: " + e.toString();
     }
     }
-        
-  void showProgress() {
+        void showProgress() {
     stopTimer();
     content.removeAllViews();
 
     TextView title = new TextView(this);
-    title.setText("🏆 Progress");
+    title.setText("📊 Progress");
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    addCard("⭐ Points", totalPoints + " points earned so far.", v -> {});
-addCard("🎮 Game Scores", "Complete Bible games to build your score.", v -> {});
-addCard("🧠 Memory Verses", learnedVerses + " verse(s) learned.", v -> {});
-addCard("🔥 Daily Streak", dailyStreak + " day(s) streak.", v -> {});
-addCard(
-        "✅ Challenges",
-        challengeCompletedToday
-                ? "Today's challenge completed."
-                : "Today's challenge not completed yet.",
-        v -> {}
-);
-TextView achievementTitle = new TextView(this);
-achievementTitle.setText("🏆 Achievements");
-achievementTitle.setTextSize(22);
-achievementTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-achievementTitle.setTextColor(darkText);
-achievementTitle.setPadding(0, 20, 0, 10);
-content.addView(achievementTitle);
+    // Existing points progress
+    addCard(
+            "⭐ Points",
+            totalPoints + " points earned so far.",
+            v -> {}
+    );
 
-addCard(
-        totalPoints >= 5 ? "✅ First Step" : "🔒 First Step",
-        totalPoints >= 5
-                ? "You earned your first points!"
-                : "Earn 5 points to unlock this achievement.",
-        v -> {}
-);
+    // Existing memory verse progress
+    addCard(
+            "🧠 Memory Verses",
+            learnedVerses + " verse(s) learned.",
+            v -> {}
+    );
 
-addCard(
-        learnedVerses >= 5 ? "✅ Bible Learner" : "🔒 Bible Learner",
-        learnedVerses >= 5
-                ? "You have learned 5 Bible verses!"
-                : "Learn 5 Bible verses to unlock this achievement.",
-        v -> {}
-);
+    // Existing daily streak
+    addCard(
+            "🔥 Daily Streak",
+            dailyStreak + " day(s) streak.",
+            v -> {}
+    );
 
-addCard(
-        dailyStreak >= 3 ? "✅ Streak Keeper" : "🔒 Streak Keeper",
-        dailyStreak >= 3
-                ? "You reached a 3-day streak!"
-                : "Reach a 3-day streak to unlock this achievement.",
-        v -> {}
-);
+    // Existing daily challenge status
+    addCard(
+            "✅ Challenges",
+            challengeCompletedToday
+                    ? "Today's challenge completed."
+                    : "Today's challenge not completed yet.",
+            v -> {}
+    );
 
-addCard(
-        totalPoints >= 50 ? "✅ Point Builder" : "🔒 Point Builder",
-        totalPoints >= 50
-                ? "You reached 50 points!"
-                : "Earn 50 points to unlock this achievement.",
-        v -> {}
-);
+    // Bible books read
+    android.content.SharedPreferences readingPrefs =
+            getSharedPreferences(
+                    "BibleReadingPrefs",
+                    MODE_PRIVATE
+            );
 
-addCard(
-        challengeCompletedToday ? "✅ Challenge Complete" : "🔒 Challenge Complete",
-        challengeCompletedToday
-                ? "You completed today's challenge!"
-                : "Complete today's challenge to unlock this achievement.",
-        v -> {}
-);
-addCard(
-        correctAnswers > 0
-                ? "✅ Quiz Starter"
-                : "🔒 Quiz Starter",
-        correctAnswers > 0
-                ? "You answered a Bible Quiz question correctly!"
-                : "Answer a Bible Quiz question correctly to unlock this achievement.",
-        v -> {}
-);
-      addCard(
-        prefs.getBoolean("bibleScrambleSolved", false)
-                ? "✅ Puzzle Solver"
-                : "🔒 Puzzle Solver",
-        prefs.getBoolean("bibleScrambleSolved", false)
-                ? "You earned points from a Bible puzzle!"
-                : "Earn points from a Bible puzzle to unlock this achievement.",
-        v -> {}
-);
-      addCard(
-        totalPoints >= 5
-                ? "✅ Word Finder"
-                : "🔒 Word Finder",
-        totalPoints >= 5
-                ? "You earned points from Missing Word!"
-                : "Answer a Missing Word question correctly to unlock this achievement.",
-        v -> {}
-);
-      addCard(
-        learnedVerses >= 10
-                ? "✅ Memory Master"
-                : "🔒 Memory Master",
-        learnedVerses >= 10
-                ? "You have learned 10 Bible verses!"
-                : "Learn 10 Bible verses to unlock this achievement.",
-        v -> {}
-);
-      addCard(
-        dailyStreak >= 7
-                ? "✅ Streak Champion"
-                : "🔒 Streak Champion",
-        dailyStreak >= 7
-                ? "You reached a 7-day streak!"
-                : "Reach a 7-day streak to unlock this achievement.",
-        v -> {}
-);
-      addCard(
-        totalPoints >= 100
-                ? "✅ 100 Point Milestone"
-                : "🔒 100 Point Milestone",
-        totalPoints >= 100
-                ? "You reached 100 total points!"
-                : "Earn 100 points to unlock this achievement.",
-        v -> {}
-);
-addButton("⬅️ Back to Home", v -> showHome());
-  }
+    int booksRead = readingPrefs.getInt("booksRead", 0);
+
+    addCard(
+            "📚 Books Read",
+            booksRead + " Bible book(s) read.",
+            v -> {}
+    );
+
+    // Return to Home
+    addButton("⬅️ Back to Home", v -> showHome());
+        }
+
     void showSettings() {
     stopTimer();
     content.removeAllViews();
