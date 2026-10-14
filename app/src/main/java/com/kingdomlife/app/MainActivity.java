@@ -4637,28 +4637,28 @@ content.addView(topBar);
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    // Existing points progress
+    // Points progress
     addCard(
             "⭐ Points",
             totalPoints + " points earned so far.",
             v -> {}
     );
 
-    // Existing memory verse progress
+    // Memory verse progress
     addCard(
             "🧠 Memory Verses",
             learnedVerses + " verse(s) learned.",
             v -> {}
     );
 
-    // Existing daily streak
+    // Daily streak
     addCard(
             "🔥 Daily Streak",
             dailyStreak + " day(s) streak.",
             v -> {}
     );
 
-    // Existing daily challenge status
+    // Daily challenge status
     addCard(
             "✅ Challenges",
             challengeCompletedToday
@@ -4667,18 +4667,40 @@ content.addView(topBar);
             v -> {}
     );
 
-    // Bible books read
+    // Reading progress preferences
     android.content.SharedPreferences readingPrefs =
             getSharedPreferences(
                     "BibleReadingPrefs",
                     MODE_PRIVATE
             );
 
-    int booksRead = readingPrefs.getInt("booksRead", 0);
+    // Bible books read
+    int bibleBooksRead =
+            readingPrefs.getInt("booksRead", 0);
 
     addCard(
-            "📚 Books Read",
-            booksRead + " Bible book(s) read.",
+            "📖 Bible Books Read",
+            bibleBooksRead + " Bible book(s) read.",
+            v -> {}
+    );
+
+    // Spiritual books read
+    int spiritualBooksRead =
+            readingPrefs.getInt("spiritualBooksRead", 0);
+
+    addCard(
+            "📚 Spiritual Books Read",
+            spiritualBooksRead + " spiritual book(s) read.",
+            v -> {}
+    );
+
+    // Story books read
+    int storyBooksRead =
+            readingPrefs.getInt("storyBooksRead", 0);
+
+    addCard(
+            "📕 Story Books Read",
+            storyBooksRead + " story book(s) read.",
             v -> {}
     );
 
