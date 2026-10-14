@@ -4726,11 +4726,7 @@ content.addView(topBar);
             );
 
     // Bible books read
-android.content.SharedPreferences readingPrefs =
-        getSharedPreferences(
-                "BibleReadingPrefs",
-                MODE_PRIVATE
-        );
+// Reuse the readingPrefs variable declared earlier
 
 java.util.Set<String> completedBibleBooks =
         readingPrefs.getStringSet(
