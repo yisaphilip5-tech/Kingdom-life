@@ -42,6 +42,37 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
     activity.stopTimer();
     activity.content.removeAllViews();
 
+    // Large back arrow at the top-left
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(activity);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+
+    backButton.setContentDescription("Back to Games");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(
+            v -> activity.showGameMenu()
+    );
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+
+    backParams.gravity = Gravity.LEFT;
+
+    activity.content.addView(backButton, backParams);
+
     TextView title = new TextView(activity);
     title.setText("🧩 Bible Scramble");
     title.setTextSize(26);
@@ -119,7 +150,6 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
         activity.content.addView(buttonFrame);
 
         if (i == animatedLevel && isUnlocked) {
-            // Put the animated lock directly over the button.
             TextView lockIcon = new TextView(activity);
             lockIcon.setText("🔒");
             lockIcon.setTextSize(22);
@@ -150,10 +180,8 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
         }
     }
 
-    activity.addButton("⬅️ Back to Games",
-            v -> activity.showGameMenu());
-    }
-    
+    // The old bottom Back to Games button has been removed.
+                    }
 
     private void startLevel(int selectedLevel) {
         level = selectedLevel;
