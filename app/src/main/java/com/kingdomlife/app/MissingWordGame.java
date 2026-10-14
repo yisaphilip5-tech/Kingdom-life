@@ -159,9 +159,12 @@ public class MissingWordGame {
             new android.widget.ImageButton(activity);
 
     backButton.setImageResource(
-            android.R.drawable.ic_media_previous
-    );
+        android.R.drawable.ic_media_previous
+);
 
+backButton.setScaleX(1.5f);
+backButton.setScaleY(1.5f);
+        
     backButton.setContentDescription("Back to Puzzle Menu");
     backButton.setBackgroundColor(
             android.graphics.Color.TRANSPARENT
@@ -178,9 +181,9 @@ public class MissingWordGame {
     activity.content.addView(
             backButton,
             new android.widget.LinearLayout.LayoutParams(
-                    60,
-                    50
-            )
+        100,
+        70
+)
     );
 
     TextView title = makeText(
