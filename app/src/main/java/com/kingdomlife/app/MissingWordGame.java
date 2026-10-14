@@ -457,15 +457,40 @@ backButton.setScaleY(1.5f);
 
         activity.content.addView(nextButton);
 
-        Button exitButton = makeButton(
-                "Exit to Levels"
-        );
+        android.widget.ImageButton backButton =
+        new android.widget.ImageButton(activity);
 
-        exitButton.setOnClickListener(
-                v -> showLevelMenu()
-        );
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
 
-        activity.content.addView(exitButton);
+backButton.setScaleX(1.5f);
+backButton.setScaleY(1.5f);
+
+backButton.setContentDescription("Back to Levels");
+
+backButton.setBackgroundColor(
+        android.graphics.Color.TRANSPARENT
+);
+
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(
+        v -> showLevelMenu()
+);
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+
+backParams.gravity = Gravity.LEFT;
+
+activity.content.addView(
+        backButton,
+        0,
+        backParams
+);
     }
 
     private void checkAnswer(
