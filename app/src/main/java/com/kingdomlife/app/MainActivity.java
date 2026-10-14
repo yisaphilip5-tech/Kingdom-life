@@ -3806,9 +3806,8 @@ if (chapterCompleted) {
             .apply();
 
     // Count the story book once all chapters are complete
-    List<DescendantsOfGoodLibrary.Chapter> allChapters =
-            DescendantsOfGoodLibrary.getChapters();
-
+    java.util.List<DescendantsOfGoodLibrary.Chapter> allChapters =
+        DescendantsOfGoodLibrary.getChapters();
     if (completedChapters.size() == allChapters.size()) {
         SharedPreferences readingPrefs =
                 getSharedPreferences(
