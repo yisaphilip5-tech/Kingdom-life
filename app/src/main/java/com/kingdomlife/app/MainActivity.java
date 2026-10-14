@@ -3857,6 +3857,57 @@ if (startingPage >= 0) {
     void showBibleChapter(String book, int chapter) {
     stopTimer();
     content.removeAllViews();
+        // Record this Bible chapter as visited
+SharedPreferences chapterProgressPrefs =
+        getSharedPreferences(
+                "BibleChapterProgressPrefs",
+                MODE_PRIVATE
+        );
+
+String chapterKey = book + "_" + chapter;
+
+chapterProgressPrefs.edit()
+        .putBoolean(chapterKey, true)
+        .apply();
+
+// Check whether every chapter in this book has been visited
+int totalChapters = getChapterCount(book);
+boolean allChaptersVisited = totalChapters > 0;
+
+for (int i = 1; i <= totalChapters; i++) {
+    if (!chapterProgressPrefs.getBoolean(
+            book + "_" + i, false)) {
+        allChaptersVisited = false;
+        break;
+    }
+}
+
+// Count the book only once
+if (allChaptersVisited) {
+    SharedPreferences readingPrefs =
+            getSharedPreferences(
+                    "BibleReadingPrefs",
+                    MODE_PRIVATE
+            );
+
+    java.util.Set<String> completedBooks =
+            new java.util.HashSet<>(
+                    readingPrefs.getStringSet(
+                            "completedBibleBooks",
+                            new java.util.HashSet<>()
+                    )
+            );
+
+    if (completedBooks.add(book)) {
+        readingPrefs.edit()
+                .putStringSet(
+                        "completedBibleBooks",
+                        completedBooks
+                )
+                .putInt("booksRead", completedBooks.size())
+                .apply();
+    }
+}
 
     SharedPreferences biblePrefs =
             getSharedPreferences(
