@@ -5515,105 +5515,131 @@ addCard(
     addButton("⬅️ Back to Home", v -> showHome());
     }
     void showTextAppearanceSettings() {
-stopTimer();
-content.removeAllViews();
+    stopTimer();
+    content.removeAllViews();
 
-TextView title = new TextView(this);
-title.setText("🔤 Text Appearance");
-title.setTextSize(24);
-title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-title.setTextColor(darkText);
-title.setPadding(0, 15, 0, 15);
-content.addView(title);
+    // Top-left back arrow
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
 
-android.content.SharedPreferences prefs =
-        getSharedPreferences("TextAppearancePrefs", MODE_PRIVATE);
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+    backButton.setContentDescription("Back to Settings");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
 
-int savedSize = prefs.getInt("textSize", 18);
-String savedMode = prefs.getString("textMode", "Light");
+    backButton.setOnClickListener(v -> showSettings());
 
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+    backParams.gravity = Gravity.LEFT;
 
+    content.addView(backButton, backParams);
 
-LinearLayout textSizeRow = new LinearLayout(this);
+    // Title
+    TextView title = new TextView(this);
+    title.setText("🔤 Text Appearance");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 15);
+    content.addView(title);
 
-textSizeRow.setOrientation(LinearLayout.HORIZONTAL);
-textSizeRow.setGravity(Gravity.CENTER);
-textSizeRow.setPadding(0, 10, 0, 10);
+    // Saved preferences
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "TextAppearancePrefs",
+                    MODE_PRIVATE
+            );
 
-Button decreaseTextButton = new Button(this);
-decreaseTextButton.setText("−");
-decreaseTextButton.setTextSize(22);
-decreaseTextButton.setAllCaps(false);
+    int savedSize = prefs.getInt("textSize", 18);
+    String savedMode = prefs.getString("textMode", "Light");
 
-TextView textSizeValue = new TextView(this);
-textSizeValue.setText("(" + savedSize + ")");
-textSizeValue.setTextSize(20);
-textSizeValue.setTextColor(darkText);
-textSizeValue.setGravity(Gravity.CENTER);
-textSizeValue.setPadding(20, 0, 20, 0);
+    // Text size controls
+    LinearLayout textSizeRow = new LinearLayout(this);
+    textSizeRow.setOrientation(LinearLayout.HORIZONTAL);
+    textSizeRow.setGravity(Gravity.CENTER);
+    textSizeRow.setPadding(0, 10, 0, 10);
 
-Button increaseTextButton = new Button(this);
-increaseTextButton.setText("+");
-increaseTextButton.setTextSize(22);
-increaseTextButton.setAllCaps(false);
+    Button decreaseTextButton = new Button(this);
+    decreaseTextButton.setText("−");
+    decreaseTextButton.setTextSize(22);
+    decreaseTextButton.setAllCaps(false);
 
-decreaseTextButton.setOnClickListener(v -> {
-    int size = prefs.getInt("textSize", 18);
+    TextView textSizeValue = new TextView(this);
+    textSizeValue.setText("(" + savedSize + ")");
+    textSizeValue.setTextSize(20);
+    textSizeValue.setTextColor(darkText);
+    textSizeValue.setGravity(Gravity.CENTER);
+    textSizeValue.setPadding(20, 0, 20, 0);
 
-    if (size > 13) {
-        size--;
-        prefs.edit().putInt("textSize", size).apply();
-        showTextAppearanceSettings();
-    }
-});
+    Button increaseTextButton = new Button(this);
+    increaseTextButton.setText("+");
+    increaseTextButton.setTextSize(22);
+    increaseTextButton.setAllCaps(false);
 
-increaseTextButton.setOnClickListener(v -> {
-    int size = prefs.getInt("textSize", 18);
+    decreaseTextButton.setOnClickListener(v -> {
+        int size = prefs.getInt("textSize", 18);
 
-    if (size < 30) {
-        size++;
-        prefs.edit().putInt("textSize", size).apply();
-        showTextAppearanceSettings();
-    }
-});
-
-textSizeRow.addView(decreaseTextButton);
-textSizeRow.addView(textSizeValue);
-textSizeRow.addView(increaseTextButton);
-
-content.addView(textSizeRow);
-
-TextView modeLabel = new TextView(this);
-modeLabel.setText("Text Colour Mode: " + savedMode);
-modeLabel.setTextSize(18);
-modeLabel.setTextColor(darkText);
-modeLabel.setPadding(0, 20, 0, 10);
-content.addView(modeLabel);
-
-Switch textColorSwitch = new Switch(this);
-
-textColorSwitch.setText("Dark Text Mode");
-textColorSwitch.setTextSize(18);
-
-textColorSwitch.setChecked(
-        savedMode.equals("Dark")
-);
-
-textColorSwitch.setOnCheckedChangeListener(
-        (buttonView, isChecked) -> {
-            prefs.edit()
-                    .putString(
-                            "textMode",
-                            isChecked ? "Dark" : "Light"
-                    )
-                    .apply();
+        if (size > 13) {
+            size--;
+            prefs.edit().putInt("textSize", size).apply();
+            showTextAppearanceSettings();
         }
-);
+    });
 
-content.addView(textColorSwitch);
-addButton("⬅️ Back to Settings", v -> showSettings());
+    increaseTextButton.setOnClickListener(v -> {
+        int size = prefs.getInt("textSize", 18);
 
+        if (size < 30) {
+            size++;
+            prefs.edit().putInt("textSize", size).apply();
+            showTextAppearanceSettings();
+        }
+    });
+
+    textSizeRow.addView(decreaseTextButton);
+    textSizeRow.addView(textSizeValue);
+    textSizeRow.addView(increaseTextButton);
+
+    content.addView(textSizeRow);
+
+    // Text colour mode
+    TextView modeLabel = new TextView(this);
+    modeLabel.setText("Text Colour Mode: " + savedMode);
+    modeLabel.setTextSize(18);
+    modeLabel.setTextColor(darkText);
+    modeLabel.setPadding(0, 20, 0, 10);
+    content.addView(modeLabel);
+
+    Switch textColorSwitch = new Switch(this);
+    textColorSwitch.setText("Dark Text Mode");
+    textColorSwitch.setTextSize(18);
+
+    textColorSwitch.setChecked(savedMode.equals("Dark"));
+
+    textColorSwitch.setOnCheckedChangeListener(
+            (buttonView, isChecked) -> {
+                String mode = isChecked ? "Dark" : "Light";
+
+                prefs.edit()
+                        .putString("textMode", mode)
+                        .apply();
+
+                modeLabel.setText("Text Colour Mode: " + mode);
+            }
+    );
+
+    content.addView(textColorSwitch);
     }
+
     void showNotificationSettings() {
     stopTimer();
     content.removeAllViews();
@@ -5773,10 +5799,6 @@ addButton("⬅️ Back to Settings", v -> showSettings());
             v -> {}
     );
 
-    addButton(
-            "⬅️ Back to Settings",
-            v -> showSettings()
-    );
     }
                 
     void scheduleKingdomLifeNotification(
