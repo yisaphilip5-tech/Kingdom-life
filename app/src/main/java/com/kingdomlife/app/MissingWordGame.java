@@ -152,55 +152,74 @@ public class MissingWordGame {
     }
 
     public void showLevelMenu() {
-        prepareScreen();
+    prepareScreen();
 
-        TextView title = makeText(
-                "🔤 Missing Word",
-                26,
-                goldColor,
-                true
-        );
+    // Back arrow at the top-left
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(activity);
 
-        activity.content.addView(title);
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
 
-        TextView description = makeText(
-                "Complete each Bible verse by choosing "
-                        + "the missing word.",
-                16,
-                textColor,
-                false
-        );
+    backButton.setContentDescription("Back to Puzzle Menu");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
 
-        activity.content.addView(description);
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
 
-        addSpace(15);
+    backButton.setOnClickListener(
+            v -> activity.showPuzzleMenu()
+    );
 
-        addLevelButton(
-                "Level 1 — Easy",
-                1
-        );
+    activity.content.addView(
+            backButton,
+            new android.widget.LinearLayout.LayoutParams(
+                    60,
+                    50
+            )
+    );
 
-        addLevelButton(
-                "Level 2 — Medium",
-                2
-        );
+    TextView title = makeText(
+            "🔤 Missing Word",
+            26,
+            goldColor,
+            true
+    );
 
-        addLevelButton(
-                "Level 3 — Hard",
-                3
-        );
+    activity.content.addView(title);
 
-        addSpace(15);
+    TextView description = makeText(
+            "Complete each Bible verse by choosing "
+                    + "the missing word.",
+            16,
+            textColor,
+            false
+    );
 
-        Button backButton = makeButton(
-                "⬅️ Back to Puzzle Menu"
-        );
+    activity.content.addView(description);
 
-        backButton.setOnClickListener(
-                v -> activity.showPuzzleMenu()
-        );
+    addSpace(15);
 
-        activity.content.addView(backButton);
+    addLevelButton(
+            "Level 1 — Easy",
+            1
+    );
+
+    addLevelButton(
+            "Level 2 — Medium",
+            2
+    );
+
+    addLevelButton(
+            "Level 3 — Hard",
+            3
+    );
+
+    // The old bottom back button has been removed.
     }
 
     private void addLevelButton(
