@@ -16,6 +16,11 @@ public class BibleJigsawPuzzle extends View {
     super(activity);
     this.activity = activity;
     setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
+    setVisibility(View.VISIBLE);
+    setBackgroundColor(Color.rgb(220, 240, 220));
+    setMinimumHeight(1000);
+    setWillNotDraw(false);
     }
 
     @Override
