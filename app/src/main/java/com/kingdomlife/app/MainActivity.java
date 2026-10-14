@@ -3470,6 +3470,37 @@ void restoreBackup() {
     stopTimer();
     content.removeAllViews();
 
+    // Large back arrow at the top-left
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+
+    backButton.setContentDescription("Back to Learn & Grow");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(
+            v -> showLearnMenu()
+    );
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
+
     TextView title = new TextView(this);
     title.setText("🙏 Prayer Journal");
     title.setTextSize(24);
@@ -3522,26 +3553,53 @@ void restoreBackup() {
                 continue;
             }
 
-
             final String savedPrayer = prayer;
-final int prayerIndex = i;
+            final int prayerIndex = i;
 
-addCard(
-        "🙏 Prayer " + (i + 1),
-        savedPrayer,
-        v -> viewPrayer(prayerIndex, savedPrayer)
-);
+            addCard(
+                    "🙏 Prayer " + (i + 1),
+                    savedPrayer,
+                    v -> viewPrayer(prayerIndex, savedPrayer)
+            );
         }
     }
 
-    addButton(
-            "⬅️ Back to Learn & Grow",
-            v -> showLearnMenu()
-    );
+    // The old bottom Back to Learn & Grow button is removed.
     }
     void showSpiritualGoals() {
     stopTimer();
     content.removeAllViews();
+
+    // Large back arrow at the top-left
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+
+    backButton.setContentDescription("Back to Learn & Grow");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(
+            v -> showLearnMenu()
+    );
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
 
     TextView title = new TextView(this);
     title.setText("🎯 Spiritual Goals");
@@ -3650,11 +3708,10 @@ addCard(
         }
     }
 
-    addButton(
-            "⬅️ Back to Learn & Grow",
-            v -> showLearnMenu()
-    );
-                        }
+    // The old bottom Back to Learn & Grow button is removed.
+    }
+
+
     void writePrayer() {
     android.widget.EditText input =
             new android.widget.EditText(this);
