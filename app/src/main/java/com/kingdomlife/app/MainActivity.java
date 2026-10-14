@@ -1313,6 +1313,91 @@ addCard(
         iconView.setTag("unlocked");
     }
     }
+    void animateAchievementUnlock(
+        android.view.View card,
+        android.view.View lockView,
+        android.view.View iconView) {
+
+    if (card == null || lockView == null || iconView == null) {
+        return;
+    }
+
+    android.view.animation.Animation shake =
+            new android.view.animation.TranslateAnimation(
+                    -8, 8, 0, 0
+            );
+
+    shake.setDuration(70);
+    shake.setRepeatCount(5);
+    shake.setRepeatMode(
+            android.view.animation.Animation.REVERSE
+    );
+
+    shake.setAnimationListener(
+            new android.view.animation.Animation.AnimationListener() {
+
+                @Override
+                public void onAnimationStart(
+                        android.view.animation.Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(
+                        android.view.animation.Animation animation) {
+
+                    android.view.animation.Animation fall =
+                            new android.view.animation.TranslateAnimation(
+                                    0, 0,
+                                    0, card.getHeight()
+                            );
+
+                    fall.setDuration(650);
+                    fall.setFillAfter(false);
+
+                    fall.setAnimationListener(
+                            new android.view.animation.Animation.AnimationListener() {
+
+                                @Override
+                                public void onAnimationStart(
+                                        android.view.animation.Animation animation) {
+                                }
+
+                                @Override
+                                public void onAnimationEnd(
+                                        android.view.animation.Animation animation) {
+
+                                    lockView.setVisibility(
+                                            android.view.View.GONE
+                                    );
+
+                                    iconView.setVisibility(
+                                            android.view.View.VISIBLE
+                                    );
+
+                                    playAchievementCelebration(
+                                            (android.view.ViewGroup) card
+                                    );
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(
+                                        android.view.animation.Animation animation) {
+                                }
+                            }
+                    );
+
+                    lockView.startAnimation(fall);
+                }
+
+                @Override
+                public void onAnimationRepeat(
+                        android.view.animation.Animation animation) {
+                }
+            }
+    );
+
+    lockView.startAnimation(shake);
+    }
 void addHomeButtonGrid() {
 
     LinearLayout grid = new LinearLayout(this);
