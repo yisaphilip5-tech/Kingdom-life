@@ -6581,6 +6581,32 @@ void showPuzzleMenu() {
     stopTimer();
     content.removeAllViews();
 
+    // Top-left back arrow
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+    backButton.setContentDescription("Back to Categories");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(v -> showGameMenu());
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
+
+    // Title
     TextView title = new TextView(this);
     title.setText("🧩 Puzzle");
     title.setTextSize(24);
@@ -6589,16 +6615,42 @@ void showPuzzleMenu() {
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
+    // Existing puzzle options
     addButton("🧩 Jigsaw Puzzle", v -> showJigsawMenu());
     addButton("🔤 Missing Word", v -> showMissingWord());
     addButton("🔀 Bible Scramble", v -> showBibleScramble());
-    addButton("⬅️ Back to Categories", v -> showGameMenu());
 }
 
 void showBibleQuizMenu() {
     stopTimer();
     content.removeAllViews();
 
+    // Top-left back arrow
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+    backButton.setContentDescription("Back to Categories");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(v -> showGameMenu());
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
+
+    // Title
     TextView title = new TextView(this);
     title.setText("📖 Bible Quiz");
     title.setTextSize(24);
@@ -6607,10 +6659,10 @@ void showBibleQuizMenu() {
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
+    // Existing quiz options
     addButton("🧠 Bible Challenge", v -> showBibleChallenge());
     addButton("📖 Bible Journey", v -> showBibleJourney());
-    addButton("⬅️ Back to Categories", v -> showGameMenu());
-}
+                      }
     void showJigsawMenu() {
     stopTimer();
     content.removeAllViews();
