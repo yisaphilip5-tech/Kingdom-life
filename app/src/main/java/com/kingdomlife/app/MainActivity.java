@@ -1246,7 +1246,8 @@ addCard(
 
     content.addView(card, cardParams);
     }
-    void addAchievementCard(
+    
+void addAchievementCard(
         LinearLayout row,
         String icon,
         String heading,
@@ -1266,11 +1267,14 @@ addCard(
 
     card.setBackground(background);
     card.setElevation(5);
+    card.setClipChildren(false);
+    card.setClipToPadding(false);
 
     LinearLayout body = new LinearLayout(this);
     body.setOrientation(LinearLayout.VERTICAL);
     body.setGravity(Gravity.CENTER);
     body.setPadding(10, 16, 10, 16);
+    body.setClipChildren(false);
 
     android.widget.FrameLayout.LayoutParams bodyParams =
             new android.widget.FrameLayout.LayoutParams(
@@ -1284,14 +1288,13 @@ addCard(
             new android.widget.FrameLayout(this);
 
     iconArea.setMinimumHeight(48);
+    iconArea.setClipChildren(false);
 
     TextView iconView = new TextView(this);
     iconView.setText(icon);
     iconView.setTextSize(32);
     iconView.setGravity(Gravity.CENTER);
-    iconView.setVisibility(
-            unlocked ? View.VISIBLE : View.GONE
-    );
+    iconView.setVisibility(unlocked ? View.VISIBLE : View.GONE);
 
     android.widget.FrameLayout.LayoutParams iconParams =
             new android.widget.FrameLayout.LayoutParams(
@@ -1305,9 +1308,7 @@ addCard(
     lockView.setText("🔒");
     lockView.setTextSize(32);
     lockView.setGravity(Gravity.CENTER);
-    lockView.setVisibility(
-            unlocked ? View.GONE : View.VISIBLE
-    );
+    lockView.setVisibility(unlocked ? View.GONE : View.VISIBLE);
 
     android.widget.FrameLayout.LayoutParams lockParams =
             new android.widget.FrameLayout.LayoutParams(
@@ -1335,38 +1336,115 @@ addCard(
     body.addView(descriptionView);
 
     TextView statusView = new TextView(this);
-    statusView.setText(
-            unlocked ? "✓ UNLOCKED" : "🔒 LOCKED"
-    );
+    statusView.setText(unlocked ? "✓ UNLOCKED" : "🔒 LOCKED");
     statusView.setTextSize(11);
     statusView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    statusView.setTextColor(
-            unlocked ? gold : Color.LTGRAY
-    );
+    statusView.setTextColor(unlocked ? gold : Color.LTGRAY);
     statusView.setGravity(Gravity.CENTER);
     statusView.setPadding(0, 10, 0, 0);
     body.addView(statusView);
 
-    LinearLayout.LayoutParams params =
+    LinearLayout.LayoutParams cardParams =
             new LinearLayout.LayoutParams(
                     0,
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     1f
             );
 
-    params.setMargins(6, 6, 6, 6);
-    row.addView(card, params);
+    cardParams.setMargins(6, 6, 6, 6);
+    row.addView(card, cardParams);
 
     card.setTag(heading);
 
-    if (unlocked) {
-        iconView.setTag("unlocked");
+    // Use the same keys defined in showAchievements().
+    String achievementKey;
+
+    switch (heading) {
+        case "First Step":
+            achievementKey = "first_step";
+            break;
+        case "Bible Learner":
+            achievementKey = "bible_learner";
+            break;
+        case "Streak Keeper":
+            achievementKey = "streak_keeper";
+            break;
+        case "Point Builder":
+            achievementKey = "point_builder";
+            break;
+        case "Challenge Complete":
+            achievementKey = "challenge_complete";
+            break;
+        case "Easy Challenger":
+            achievementKey = "easy_challenger";
+            break;
+        case "Medium Challenger":
+            achievementKey = "medium_challenger";
+            break;
+        case "Hard Challenger":
+            achievementKey = "hard_challenger";
+            break;
+        case "Challenge Master":
+            achievementKey = "challenge_master";
+            break;
+        case "100 Questions":
+            achievementKey = "questions_100";
+            break;
+        case "250 Questions":
+            achievementKey = "questions_250";
+            break;
+        case "500 Questions":
+            achievementKey = "questions_500";
+            break;
+        case "1,000 Questions":
+            achievementKey = "questions_1000";
+            break;
+        case "5 Books":
+            achievementKey = "books_5";
+            break;
+        case "10 Books":
+            achievementKey = "books_10";
+            break;
+        case "25 Books":
+            achievementKey = "books_25";
+            break;
+        case "50 Books":
+            achievementKey = "books_50";
+            break;
+        case "66 Books":
+            achievementKey = "books_66";
+            break;
+        default:
+            achievementKey = null;
+            break;
     }
 
-    card.setClipChildren(false);
-    card.setClipToPadding(false);
-    iconArea.setClipChildren(false);
+    if (unlocked && achievementKey != null) {
+
+        String pendingKey =
+                "pending_achievement_animation_" + achievementKey;
+
+        boolean pendingAnimation =
+                prefs.getBoolean(pendingKey, false);
+
+        if (pendingAnimation) {
+
+            // Consume the saved flag so this animation runs only once.
+            prefs.edit()
+                    .putBoolean(pendingKey, false)
+                    .apply();
+
+            card.postDelayed(
+                    () -> animateAchievementUnlock(
+                            card,
+                            lockView,
+                            iconView
+                    ),
+                    300
+            );
+        }
     }
+}
     void animateAchievementUnlock(
         android.view.View card,
         android.view.View lockView,
