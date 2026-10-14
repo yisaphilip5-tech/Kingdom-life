@@ -8766,7 +8766,7 @@ void showBookmarks() {
     void showDailyChallenge() {
     stopTimer();
     content.removeAllViews();
-    
+
     String today =
             new java.text.SimpleDateFormat(
                     "yyyy-MM-dd",
@@ -8774,7 +8774,7 @@ void showBookmarks() {
             ).format(new java.util.Date());
 
     boolean completedToday =
-        today.equals(lastChallengeDate);
+            today.equals(lastChallengeDate);
 
     int dayNumber =
             Math.abs(today.hashCode()) % 5;
@@ -8844,23 +8844,12 @@ void showBookmarks() {
         );
     }
 
-    addCard(
-            "⭐ Points",
-            totalPoints + " points earned so far.",
-            v -> {}
-    );
-
-    addCard(
-            "🔥 Daily Streak",
-            dailyStreak + " day(s) streak.",
-            v -> {}
-    );
-
     addButton(
             "⬅️ Back to Home",
             v -> showHome()
     );
-        }
+    }
+    
     void completeDailyChallenge(String today) {
 
     if (prefs == null) {
