@@ -25,8 +25,20 @@ public class BibleJigsawPuzzle extends View {
         float width = getWidth();
         float height = getHeight();
 
-        // Temporary diagnostic background
-        canvas.drawColor(Color.rgb(220, 240, 220));
+        // Background follows the saved display preference
+android.content.SharedPreferences prefs =
+        getContext().getSharedPreferences(
+                "KingdomLifeDisplayPrefs",
+                android.content.Context.MODE_PRIVATE
+        );
+
+String mode = prefs.getString("displayMode", "AUTO");
+
+if (mode.equals("NIGHT")) {
+    canvas.drawColor(Color.rgb(25, 35, 45));
+} else {
+    canvas.drawColor(Color.rgb(220, 240, 220));
+}
 
         paint.setColor(Color.rgb(30, 90, 50));
         paint.setTextSize(32f);
