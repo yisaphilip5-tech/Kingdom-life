@@ -7823,6 +7823,39 @@ wrongAnswers = 0;
     void showQuestion() {
         stopTimer();
         content.removeAllViews();
+        android.widget.ImageButton backButton =
+        new android.widget.ImageButton(this);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+
+backButton.setScaleX(1.5f);
+backButton.setScaleY(1.5f);
+
+backButton.setContentDescription(
+        "Exit Bible Challenge"
+);
+
+backButton.setBackgroundColor(
+        android.graphics.Color.TRANSPARENT
+);
+
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v -> {
+    stopTimer();
+    showBibleQuizMenu();
+});
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
 
         answered = false;
         int questionCount;
