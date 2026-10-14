@@ -1253,15 +1253,18 @@ addCard(
         String description,
         boolean unlocked) {
 
+    final int purple = Color.rgb(30, 24, 55);
+    final int gold = Color.rgb(184, 134, 11);
+
     LinearLayout card = new LinearLayout(this);
     card.setOrientation(LinearLayout.VERTICAL);
     card.setGravity(Gravity.CENTER);
     card.setPadding(10, 16, 10, 16);
 
     GradientDrawable background = new GradientDrawable();
-    background.setColor(Color.rgb(30, 24, 55));
+    background.setColor(purple);
     background.setCornerRadius(24);
-    background.setStroke(2, Color.rgb(184, 134, 11));
+    background.setStroke(2, gold);
     card.setBackground(background);
     card.setElevation(5);
 
@@ -1291,11 +1294,7 @@ addCard(
     statusView.setText(unlocked ? "✓ UNLOCKED" : "🔒 LOCKED");
     statusView.setTextSize(11);
     statusView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    statusView.setTextColor(
-            unlocked
-                    ? Color.rgb(255, 215, 0)
-                    : Color.LTGRAY
-    );
+    statusView.setTextColor(unlocked ? gold : Color.LTGRAY);
     statusView.setGravity(Gravity.CENTER);
     statusView.setPadding(0, 10, 0, 0);
     card.addView(statusView);
@@ -1309,6 +1308,10 @@ addCard(
 
     params.setMargins(6, 6, 6, 6);
     row.addView(card, params);
+
+    if (unlocked) {
+        iconView.setTag("unlocked");
+    }
     }
 void addHomeButtonGrid() {
 
