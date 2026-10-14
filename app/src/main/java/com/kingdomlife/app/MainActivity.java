@@ -6038,36 +6038,122 @@ void showBibleQuizMenu() {
     addButton("📖 Bible Journey", v -> showBibleJourney());
                       }
     void showJigsawMenu() {
-    stopTimer();
-    content.removeAllViews();
+stopTimer();
+content.removeAllViews();
+content.setOrientation(LinearLayout.VERTICAL);
 
-    TextView title = new TextView(this);
-    title.setText("🧩 Genesis Jigsaw Puzzle");
-    title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
-    content.addView(title);
+TextView title = new TextView(this);
+title.setText("🧩 Bible Jigsaw Journey");
+title.setTextSize(26);
+title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+title.setTextColor(darkText);
+title.setGravity(Gravity.CENTER);
+title.setPadding(8, 20, 8, 10);
+content.addView(title);
 
-    TextView instruction = new TextView(this);
-    instruction.setText("Choose your difficulty:");
-    instruction.setTextSize(18);
-    instruction.setTextColor(darkText);
-    instruction.setPadding(0, 0, 0, 15);
-    content.addView(instruction);
+TextView subtitle = new TextView(this);
+subtitle.setText("Travel through the Bible, one book at a time!");
+subtitle.setTextSize(15);
+subtitle.setTextColor(darkText);
+subtitle.setGravity(Gravity.CENTER);
+subtitle.setPadding(8, 0, 8, 16);
+content.addView(subtitle);
 
-    addButton("🟢 Easy — Garden of Eden",
-            v -> startJigsawPuzzle("Easy", "genesis_eden"));
+ScrollView scrollView = new ScrollView(this);
+LinearLayout bookList = new LinearLayout(this);
+bookList.setOrientation(LinearLayout.VERTICAL);
+bookList.setPadding(12, 8, 12, 20);
 
-    addButton("🟡 Medium — Noah's Ark",
-            v -> startJigsawPuzzle("Medium", "genesis_noah"));
+String[] books = {
+    "Genesis", "Exodus", "Leviticus", "Numbers",
+    "Deuteronomy", "Joshua", "Judges", "Ruth",
+    "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
+    "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah",
+    "Esther", "Job", "Psalms", "Proverbs",
+    "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah",
+    "Lamentations", "Ezekiel", "Daniel", "Hosea",
+    "Joel", "Amos", "Obadiah", "Jonah",
+    "Micah", "Nahum", "Habakkuk", "Zephaniah",
+    "Haggai", "Zechariah", "Malachi",
+    "Matthew", "Mark", "Luke", "John",
+    "Acts", "Romans", "1 Corinthians", "2 Corinthians",
+    "Galatians", "Ephesians", "Philippians", "Colossians",
+    "1 Thessalonians", "2 Thessalonians", "1 Timothy",
+    "2 Timothy", "Titus", "Philemon", "Hebrews",
+    "James", "1 Peter", "2 Peter", "1 John",
+    "2 John", "3 John", "Jude", "Revelation"
+};
 
-    addButton("🔴 Hard — Joseph in Egypt",
-            v -> startJigsawPuzzle("Hard", "genesis_joseph"));
+TextView progress = new TextView(this);
+progress.setText("⭐ Bible books: 1 / 66 completed");
+progress.setTextSize(17);
+progress.setTypeface(null, Typeface.BOLD);
+progress.setTextColor(darkText);
+progress.setGravity(Gravity.CENTER);
+progress.setPadding(8, 8, 8, 16);
+bookList.addView(progress);
 
-    addButton("⬅️ Back to Puzzle Menu",
-            v -> showPuzzleMenu());
+for (int i = 0; i < books.length; i++) {
+    final int bookIndex = i;
+    final String bookName = books[i];
+
+    Button bookButton = new Button(this);
+    bookButton.setAllCaps(false);
+    bookButton.setText(
+            (i == 0 ? "⭐ 1. " : "🔒 " + (i + 1) + ". ")
+                    + bookName
+    );
+
+    if (i == 0) {
+        bookButton.setText("🟢 1. Genesis — Completed");
+        bookButton.setOnClickListener(v -> {
+            new android.app.AlertDialog.Builder(this)
+                    .setTitle("Genesis Jigsaw")
+                    .setMessage("Choose your difficulty:")
+                    .setPositiveButton("Easy",
+                            (dialog, which) ->
+                                    startJigsawPuzzle(
+                                            "Easy", "genesis_eden"))
+                    .setNegativeButton("Medium",
+                            (dialog, which) ->
+                                    startJigsawPuzzle(
+                                            "Medium", "genesis_noah"))
+                    .setNeutralButton("Hard",
+                            (dialog, which) ->
+                                    startJigsawPuzzle(
+                                            "Hard", "genesis_joseph"))
+                    .show();
+        });
+    } else {
+        bookButton.setAlpha(0.65f);
+        bookButton.setOnClickListener(v ->
+                new android.app.AlertDialog.Builder(this)
+                        .setTitle(bookName)
+                        .setMessage(
+                                "This Bible Jigsaw level is locked. "
+                                + "We'll unlock it when its puzzles "
+                                + "are ready and the previous book "
+                                + "has been completed."
+                        )
+                        .setPositiveButton("OK", null)
+                        .show()
+        );
     }
+
+    bookList.addView(bookButton);
+}
+
+scrollView.addView(bookList);
+
+content.addView(scrollView, new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams.MATCH_PARENT,
+        0,
+        1f
+));
+
+addButton("⬅️ Back to Puzzle Menu", v -> showPuzzleMenu());
+
+                                      }
     void showBibleJourney() {
     showBibleJourneyOldTestament();
     }
