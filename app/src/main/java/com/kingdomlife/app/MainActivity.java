@@ -1909,85 +1909,79 @@ prefs.edit()
     stopTimer();
     content.removeAllViews();
 
+    // Top-left back arrow
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+    backButton.setContentDescription("Back to Bible");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(v -> showBible());
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
+
+    // Title
     TextView title = new TextView(this);
-
-    title.setText(
-            "🌍 Bible Translations"
-    );
-
+    title.setText("🌍 Bible Translations");
     title.setTextSize(24);
-    title.setTypeface(
-            Typeface.DEFAULT,
-            Typeface.BOLD
-    );
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
-    title.setPadding(
-            0,
-            15,
-            0,
-            20
-    );
-
+    title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
+    // Instructions
     TextView message = new TextView(this);
-
-    message.setText(
-            "Choose a Bible translation:"
-    );
-
+    message.setText("Choose a Bible translation:");
     message.setTextSize(18);
     message.setTextColor(darkText);
-    message.setPadding(
-            0,
-            10,
-            0,
-            20
-    );
-
+    message.setPadding(0, 10, 0, 20);
     content.addView(message);
 
+    // King James Version
     addButton(
             "📖 King James Version (KJV)",
             v -> {
-
                 getSharedPreferences(
                         "KingdomLifePrefs",
                         MODE_PRIVATE
                 ).edit()
-                        .putString(
-                                "bible_translation",
-                                "KJV"
-                        )
+                        .putString("bible_translation", "KJV")
                         .apply();
 
                 showBible();
             }
     );
 
+    // World English Bible
     addButton(
             "🌍 World English Bible (WEB)",
             v -> {
-
                 getSharedPreferences(
                         "KingdomLifePrefs",
                         MODE_PRIVATE
                 ).edit()
-                        .putString(
-                                "bible_translation",
-                                "WEB"
-                        )
+                        .putString("bible_translation", "WEB")
                         .apply();
 
                 showBible();
             }
     );
-
-    addButton(
-            "⬅️ Back to Bible",
-            v -> showBible()
-    );
-                    }
+    }
+    
     void showOldTestament() {
     stopTimer();
     content.removeAllViews();
