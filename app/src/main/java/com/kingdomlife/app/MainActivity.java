@@ -7372,10 +7372,36 @@ answerButtons[i].setOnClickListener(v ->
 
 }
 
-    addButton(
-            "⬅️ Exit Game",
-            v -> showBookDifficulty(currentBibleBook)
-    );
+    android.widget.ImageButton backButton =
+        new android.widget.ImageButton(this);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+
+backButton.setScaleX(1.5f);
+backButton.setScaleY(1.5f);
+
+backButton.setContentDescription("Back to difficulty selection");
+
+backButton.setBackgroundColor(
+        android.graphics.Color.TRANSPARENT
+);
+
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v ->
+        showBookDifficulty(currentBibleBook)
+);
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, 0, backParams);
         }
     
     void checkBibleJourneyAnswer(
