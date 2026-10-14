@@ -3754,18 +3754,98 @@ if (startingPage >= 0) {
     );
 }
     Runnable updatePage = () -> {
-        pageText.setText(chapter.pages.get(currentPage[0]));
-        storyPrefs.edit()
+pageText.setText(chapter.pages.get(currentPage[0]));
+
+// Save the current reading position
+storyPrefs.edit()
         .putInt("lastChapter", chapterIndex)
         .putInt("lastPage", currentPage[0])
         .apply();
 
-        previousButton.setEnabled(currentPage[0] > 0);
-
-        nextButton.setEnabled(
-                currentPage[0] < chapter.pages.size() - 1
+// Record this story page as visited
+SharedPreferences visitedPagesPrefs =
+        getSharedPreferences(
+                "DescendantsVisitedPages",
+                MODE_PRIVATE
         );
-    };
+
+String pageKey = chapterIndex + "_" + currentPage[0];
+
+visitedPagesPrefs.edit()
+        .putBoolean(pageKey, true)
+        .apply();
+
+// Check whether every page in this chapter was visited
+boolean chapterCompleted = true;
+
+for (int i = 0; i < chapter.pages.size(); i++) {
+    if (!visitedPagesPrefs.getBoolean(
+            chapterIndex + "_" + i, false)) {
+        chapterCompleted = false;
+        break;
+    }
+}
+
+// Record completed chapters
+if (chapterCompleted) {
+    java.util.Set<String> completedChapters =
+            new java.util.HashSet<>(
+                    visitedPagesPrefs.getStringSet(
+                            "completedChapters",
+                            java.util.Collections.emptySet()
+                    )
+            );
+
+    completedChapters.add(String.valueOf(chapterIndex));
+
+    visitedPagesPrefs.edit()
+            .putStringSet(
+                    "completedChapters",
+                    completedChapters
+            )
+            .apply();
+
+    // Count the story book once all chapters are complete
+    List<DescendantsOfGoodLibrary.Chapter> allChapters =
+            DescendantsOfGoodLibrary.getChapters();
+
+    if (completedChapters.size() == allChapters.size()) {
+        SharedPreferences readingPrefs =
+                getSharedPreferences(
+                        "BibleReadingPrefs",
+                        MODE_PRIVATE
+                );
+
+        java.util.Set<String> completedStoryBooks =
+                new java.util.HashSet<>(
+                        readingPrefs.getStringSet(
+                                "completedStoryBooks",
+                                java.util.Collections.emptySet()
+                        )
+                );
+
+        if (completedStoryBooks.add("Descendants of Good")) {
+            readingPrefs.edit()
+                    .putStringSet(
+                            "completedStoryBooks",
+                            completedStoryBooks
+                    )
+                    .putInt(
+                            "storyBooksRead",
+                            completedStoryBooks.size()
+                    )
+                    .apply();
+        }
+    }
+}
+
+previousButton.setEnabled(currentPage[0] > 0);
+
+nextButton.setEnabled(
+        currentPage[0] < chapter.pages.size() - 1
+);
+
+};
 
     previousButton.setOnClickListener(v -> {
         if (currentPage[0] > 0) {
