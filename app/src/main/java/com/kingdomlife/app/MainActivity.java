@@ -6156,9 +6156,9 @@ void showJigsawMenu() {
     BibleJigsawPuzzle map = new BibleJigsawPuzzle(this);
 
     mapScroll.addView(map, new ScrollView.LayoutParams(
-            ScrollView.LayoutParams.MATCH_PARENT,
-            500
-    ));
+        ScrollView.LayoutParams.MATCH_PARENT,
+        1000
+));
 
     content.addView(mapScroll, new LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
