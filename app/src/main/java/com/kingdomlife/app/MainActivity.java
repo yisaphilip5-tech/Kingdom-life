@@ -6037,123 +6037,49 @@ void showBibleQuizMenu() {
     addButton("🧠 Bible Challenge", v -> showBibleChallenge());
     addButton("📖 Bible Journey", v -> showBibleJourney());
                       }
-    void showJigsawMenu() {
-stopTimer();
-content.removeAllViews();
-content.setOrientation(LinearLayout.VERTICAL);
+    
 
-TextView title = new TextView(this);
-title.setText("🧩 Bible Jigsaw Journey");
-title.setTextSize(26);
-title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-title.setTextColor(darkText);
-title.setGravity(Gravity.CENTER);
-title.setPadding(8, 20, 8, 10);
-content.addView(title);
+void showJigsawMenu() {
+    stopTimer();
+    content.removeAllViews();
+    content.setOrientation(LinearLayout.VERTICAL);
 
-TextView subtitle = new TextView(this);
-subtitle.setText("Travel through the Bible, one book at a time!");
-subtitle.setTextSize(15);
-subtitle.setTextColor(darkText);
-subtitle.setGravity(Gravity.CENTER);
-subtitle.setPadding(8, 0, 8, 16);
-content.addView(subtitle);
+    TextView title = new TextView(this);
+    title.setText("🧩 Bible Jigsaw Journey");
+    title.setTextSize(25);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(8, 16, 8, 4);
+    content.addView(title);
 
-ScrollView scrollView = new ScrollView(this);
-LinearLayout bookList = new LinearLayout(this);
-bookList.setOrientation(LinearLayout.VERTICAL);
-bookList.setPadding(12, 8, 12, 20);
+    TextView subtitle = new TextView(this);
+    subtitle.setText("Travel through the Bible, one book at a time!");
+    subtitle.setTextSize(14);
+    subtitle.setTextColor(darkText);
+    subtitle.setGravity(Gravity.CENTER);
+    subtitle.setPadding(8, 4, 8, 10);
+    content.addView(subtitle);
 
-String[] books = {
-    "Genesis", "Exodus", "Leviticus", "Numbers",
-    "Deuteronomy", "Joshua", "Judges", "Ruth",
-    "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
-    "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah",
-    "Esther", "Job", "Psalms", "Proverbs",
-    "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah",
-    "Lamentations", "Ezekiel", "Daniel", "Hosea",
-    "Joel", "Amos", "Obadiah", "Jonah",
-    "Micah", "Nahum", "Habakkuk", "Zephaniah",
-    "Haggai", "Zechariah", "Malachi",
-    "Matthew", "Mark", "Luke", "John",
-    "Acts", "Romans", "1 Corinthians", "2 Corinthians",
-    "Galatians", "Ephesians", "Philippians", "Colossians",
-    "1 Thessalonians", "2 Thessalonians", "1 Timothy",
-    "2 Timothy", "Titus", "Philemon", "Hebrews",
-    "James", "1 Peter", "2 Peter", "1 John",
-    "2 John", "3 John", "Jude", "Revelation"
-};
+    ScrollView mapScroll = new ScrollView(this);
+    mapScroll.setFillViewport(false);
 
-TextView progress = new TextView(this);
-progress.setText("⭐ Bible books: 1 / 66 completed");
-progress.setTextSize(17);
-progress.setTypeface(null, Typeface.BOLD);
-progress.setTextColor(darkText);
-progress.setGravity(Gravity.CENTER);
-progress.setPadding(8, 8, 8, 16);
-bookList.addView(progress);
+    BibleJigsawMap map = new BibleJigsawMap(this);
 
-for (int i = 0; i < books.length; i++) {
-    final int bookIndex = i;
-    final String bookName = books[i];
+    mapScroll.addView(map, new ScrollView.LayoutParams(
+            ScrollView.LayoutParams.MATCH_PARENT,
+            66 * 145
+    ));
 
-    Button bookButton = new Button(this);
-    bookButton.setAllCaps(false);
-    bookButton.setText(
-            (i == 0 ? "⭐ 1. " : "🔒 " + (i + 1) + ". ")
-                    + bookName
-    );
+    content.addView(mapScroll, new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            0,
+            1f
+    ));
 
-    if (i == 0) {
-        bookButton.setText("🟢 1. Genesis — Completed");
-        bookButton.setOnClickListener(v -> {
-            new android.app.AlertDialog.Builder(this)
-                    .setTitle("Genesis Jigsaw")
-                    .setMessage("Choose your difficulty:")
-                    .setPositiveButton("Easy",
-                            (dialog, which) ->
-                                    startJigsawPuzzle(
-                                            "Easy", "genesis_eden"))
-                    .setNegativeButton("Medium",
-                            (dialog, which) ->
-                                    startJigsawPuzzle(
-                                            "Medium", "genesis_noah"))
-                    .setNeutralButton("Hard",
-                            (dialog, which) ->
-                                    startJigsawPuzzle(
-                                            "Hard", "genesis_joseph"))
-                    .show();
-        });
-    } else {
-        bookButton.setAlpha(0.65f);
-        bookButton.setOnClickListener(v ->
-                new android.app.AlertDialog.Builder(this)
-                        .setTitle(bookName)
-                        .setMessage(
-                                "This Bible Jigsaw level is locked. "
-                                + "We'll unlock it when its puzzles "
-                                + "are ready and the previous book "
-                                + "has been completed."
-                        )
-                        .setPositiveButton("OK", null)
-                        .show()
-        );
-    }
-
-    bookList.addView(bookButton);
+    addButton("⬅️ Back to Puzzle Menu", v -> showPuzzleMenu());
 }
-
-scrollView.addView(bookList);
-
-content.addView(scrollView, new LinearLayout.LayoutParams(
-        LinearLayout.LayoutParams.MATCH_PARENT,
-        0,
-        1f
-));
-
-addButton("⬅️ Back to Puzzle Menu", v -> showPuzzleMenu());
-
-                                      }
+    
     void showBibleJourney() {
     showBibleJourneyOldTestament();
     }
@@ -8906,6 +8832,226 @@ void showBookmarks() {
     back.setOnClickListener(v -> showJigsawMenu());
     content.addView(back);
            }
+        private class BibleJigsawMap extends View {
+
+    private final Paint paint =
+            new Paint(Paint.ANTI_ALIAS_FLAG);
+
+    private final String[] books = {
+        "Genesis", "Exodus", "Leviticus", "Numbers",
+        "Deuteronomy", "Joshua", "Judges", "Ruth",
+        "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
+        "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah",
+        "Esther", "Job", "Psalms", "Proverbs",
+        "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah",
+        "Lamentations", "Ezekiel", "Daniel", "Hosea",
+        "Joel", "Amos", "Obadiah", "Jonah",
+        "Micah", "Nahum", "Habakkuk", "Zephaniah",
+        "Haggai", "Zechariah", "Malachi",
+        "Matthew", "Mark", "Luke", "John",
+        "Acts", "Romans", "1 Corinthians", "2 Corinthians",
+        "Galatians", "Ephesians", "Philippians", "Colossians",
+        "1 Thessalonians", "2 Thessalonians", "1 Timothy",
+        "2 Timothy", "Titus", "Philemon", "Hebrews",
+        "James", "1 Peter", "2 Peter", "1 John",
+        "2 John", "3 John", "Jude", "Revelation"
+    };
+
+    private final float rowHeight = 145f;
+
+    BibleJigsawMap(android.content.Context context) {
+        super(context);
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        setClickable(true);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        float width = getWidth();
+        if (width <= 0) return;
+
+        // Colourful adventure background
+        paint.setStyle(Paint.Style.FILL);
+        paint.setShader(new android.graphics.LinearGradient(
+                0, 0, width, getHeight(),
+                new int[] {
+                    Color.rgb(105, 190, 125),
+                    Color.rgb(76, 160, 190),
+                    Color.rgb(224, 184, 105),
+                    Color.rgb(105, 150, 105)
+                },
+                null,
+                android.graphics.Shader.TileMode.CLAMP
+        ));
+
+        canvas.drawRect(
+                0, 0, width, getHeight(), paint
+        );
+
+        paint.setShader(null);
+
+        // Winding golden adventure path
+        Path path = new Path();
+
+        for (int i = 0; i < books.length; i++) {
+            float x = getBookX(i, width);
+            float y = i * rowHeight + 65f;
+
+            if (i == 0) {
+                path.moveTo(x, y);
+            } else {
+                float previousX = getBookX(i - 1, width);
+                float previousY = (i - 1) * rowHeight + 65f;
+                float middleY = (previousY + y) / 2f;
+
+                path.cubicTo(
+                        previousX, middleY,
+                        x, middleY,
+                        x, y
+                );
+            }
+        }
+
+        paint.setColor(Color.rgb(116, 78, 40));
+        paint.setStrokeWidth(18f);
+        paint.setStyle(Paint.Style.STROKE);
+        canvas.drawPath(path, paint);
+
+        paint.setColor(Color.rgb(255, 218, 100));
+        paint.setStrokeWidth(11f);
+        canvas.drawPath(path, paint);
+
+        paint.setStyle(Paint.Style.FILL);
+
+        for (int i = 0; i < books.length; i++) {
+            float x = getBookX(i, width);
+            float y = i * rowHeight + 65f;
+
+            boolean genesis = i == 0;
+
+            // Round book marker
+            paint.setColor(Color.rgb(110, 70, 40));
+            canvas.drawCircle(x, y + 4f, 43f, paint);
+
+            paint.setColor(genesis
+                    ? Color.rgb(255, 213, 65)
+                    : Color.rgb(185, 190, 200));
+
+            canvas.drawCircle(x, y, 40f, paint);
+
+            paint.setColor(genesis
+                    ? Color.rgb(255, 245, 175)
+                    : Color.rgb(225, 230, 238));
+
+            canvas.drawCircle(x, y - 3f, 33f, paint);
+
+            paint.setColor(Color.rgb(55, 65, 80));
+            paint.setTextAlign(Paint.Align.CENTER);
+            paint.setTextSize(19f);
+            paint.setTypeface(Typeface.DEFAULT_BOLD);
+
+            canvas.drawText(
+                    String.valueOf(i + 1),
+                    x, y + 7f, paint
+            );
+
+            paint.setTextSize(16f);
+            paint.setColor(Color.WHITE);
+            paint.setTypeface(Typeface.DEFAULT_BOLD);
+
+            canvas.drawText(
+                    books[i],
+                    x,
+                    y + 62f,
+                    paint
+            );
+
+            if (genesis) {
+                paint.setTextSize(13f);
+                paint.setColor(Color.rgb(255, 250, 180));
+
+                canvas.drawText(
+                        "★ GENESIS",
+                        x,
+                        y - 49f,
+                        paint
+                );
+            } else {
+                paint.setTextSize(20f);
+                paint.setColor(Color.WHITE);
+
+                canvas.drawText(
+                        "🔒",
+                        x,
+                        y - 50f,
+                        paint
+                );
+            }
+        }
+
+        paint.setTextAlign(Paint.Align.LEFT);
+        paint.setTypeface(Typeface.DEFAULT);
+    }
+
+    private float getBookX(int index, float width) {
+        float center = width / 2f;
+        float spread = Math.min(width * 0.29f, 105f);
+
+        int position = index % 4;
+
+        if (position == 0) return center;
+        if (position == 1) return center + spread;
+        if (position == 2) return center;
+        return center - spread;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+            float y = event.getY();
+
+            int index = (int) ((y - 65f) / rowHeight);
+
+            if (index >= 0 && index < books.length) {
+                if (index == 0) {
+                    new android.app.AlertDialog.Builder(
+                            MainActivity.this
+                    )
+                    .setTitle("🌿 Genesis")
+                    .setMessage("Choose your puzzle difficulty.")
+                    .setPositiveButton("Easy",
+                            (d, w) -> startJigsawPuzzle(
+                                    "Easy", "genesis_eden"))
+                    .setNegativeButton("Medium",
+                            (d, w) -> startJigsawPuzzle(
+                                    "Medium", "genesis_noah"))
+                    .setNeutralButton("Hard",
+                            (d, w) -> startJigsawPuzzle(
+                                    "Hard", "genesis_joseph"))
+                    .show();
+                } else {
+                    new android.app.AlertDialog.Builder(
+                            MainActivity.this
+                    )
+                    .setTitle(books[index])
+                    .setMessage(
+                            "This level is locked for now. "
+                            + "We'll unlock it after the previous "
+                            + "book's puzzles are completed."
+                    )
+                    .setPositiveButton("OK", null)
+                    .show();
+                }
+
+                return true;
+            }
+        }
+
+        return true;
+    }
+            }
 
 private class JigsawBoard extends View {
 
