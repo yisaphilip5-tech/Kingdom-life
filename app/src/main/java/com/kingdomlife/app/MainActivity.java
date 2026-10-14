@@ -2833,6 +2833,37 @@ String meaning =
     stopTimer();
     content.removeAllViews();
 
+    // Large back arrow at the top-left
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setScaleX(1.5f);
+    backButton.setScaleY(1.5f);
+
+    backButton.setContentDescription("Back to More");
+    backButton.setBackgroundColor(
+            android.graphics.Color.TRANSPARENT
+    );
+
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
+
+    backButton.setOnClickListener(
+            v -> showMoreMenu()
+    );
+
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+
+    backParams.gravity = Gravity.LEFT;
+
+    content.addView(backButton, backParams);
+
     TextView title = new TextView(this);
     title.setText("💾 Backup & Restore");
     title.setTextSize(24);
@@ -2862,10 +2893,7 @@ String meaning =
             v -> restoreBackup()
     );
 
-    addButton(
-            "⬅️ Back to More",
-            v -> showMoreMenu()
-    );
+    // The old bottom Back to More button has been removed.
     }
     void createBackup() {
     android.content.Intent intent =
