@@ -1256,23 +1256,67 @@ addCard(
     final int purple = Color.rgb(30, 24, 55);
     final int gold = Color.rgb(184, 134, 11);
 
-    LinearLayout card = new LinearLayout(this);
-    card.setOrientation(LinearLayout.VERTICAL);
-    card.setGravity(Gravity.CENTER);
-    card.setPadding(10, 16, 10, 16);
+    android.widget.FrameLayout card =
+            new android.widget.FrameLayout(this);
 
     GradientDrawable background = new GradientDrawable();
     background.setColor(purple);
     background.setCornerRadius(24);
     background.setStroke(2, gold);
+
     card.setBackground(background);
     card.setElevation(5);
 
+    LinearLayout body = new LinearLayout(this);
+    body.setOrientation(LinearLayout.VERTICAL);
+    body.setGravity(Gravity.CENTER);
+    body.setPadding(10, 16, 10, 16);
+
+    android.widget.FrameLayout.LayoutParams bodyParams =
+            new android.widget.FrameLayout.LayoutParams(
+                    android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                    android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+
+    card.addView(body, bodyParams);
+
+    android.widget.FrameLayout iconArea =
+            new android.widget.FrameLayout(this);
+
+    iconArea.setMinimumHeight(48);
+
     TextView iconView = new TextView(this);
-    iconView.setText(unlocked ? icon : "🔒");
+    iconView.setText(icon);
     iconView.setTextSize(32);
     iconView.setGravity(Gravity.CENTER);
-    card.addView(iconView);
+    iconView.setVisibility(
+            unlocked ? View.VISIBLE : View.GONE
+    );
+
+    android.widget.FrameLayout.LayoutParams iconParams =
+            new android.widget.FrameLayout.LayoutParams(
+                    android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                    android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+
+    iconArea.addView(iconView, iconParams);
+
+    TextView lockView = new TextView(this);
+    lockView.setText("🔒");
+    lockView.setTextSize(32);
+    lockView.setGravity(Gravity.CENTER);
+    lockView.setVisibility(
+            unlocked ? View.GONE : View.VISIBLE
+    );
+
+    android.widget.FrameLayout.LayoutParams lockParams =
+            new android.widget.FrameLayout.LayoutParams(
+                    android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                    android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+
+    iconArea.addView(lockView, lockParams);
+    body.addView(iconArea);
 
     TextView titleView = new TextView(this);
     titleView.setText(heading);
@@ -1281,23 +1325,27 @@ addCard(
     titleView.setTextColor(Color.rgb(255, 215, 0));
     titleView.setGravity(Gravity.CENTER);
     titleView.setPadding(0, 8, 0, 6);
-    card.addView(titleView);
+    body.addView(titleView);
 
     TextView descriptionView = new TextView(this);
     descriptionView.setText(description);
     descriptionView.setTextSize(12);
     descriptionView.setTextColor(Color.WHITE);
     descriptionView.setGravity(Gravity.CENTER);
-    card.addView(descriptionView);
+    body.addView(descriptionView);
 
     TextView statusView = new TextView(this);
-    statusView.setText(unlocked ? "✓ UNLOCKED" : "🔒 LOCKED");
+    statusView.setText(
+            unlocked ? "✓ UNLOCKED" : "🔒 LOCKED"
+    );
     statusView.setTextSize(11);
     statusView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    statusView.setTextColor(unlocked ? gold : Color.LTGRAY);
+    statusView.setTextColor(
+            unlocked ? gold : Color.LTGRAY
+    );
     statusView.setGravity(Gravity.CENTER);
     statusView.setPadding(0, 10, 0, 0);
-    card.addView(statusView);
+    body.addView(statusView);
 
     LinearLayout.LayoutParams params =
             new LinearLayout.LayoutParams(
@@ -1309,9 +1357,15 @@ addCard(
     params.setMargins(6, 6, 6, 6);
     row.addView(card, params);
 
+    card.setTag(heading);
+
     if (unlocked) {
         iconView.setTag("unlocked");
     }
+
+    card.setClipChildren(false);
+    card.setClipToPadding(false);
+    iconArea.setClipChildren(false);
     }
     void animateAchievementUnlock(
         android.view.View card,
@@ -1319,6 +1373,10 @@ addCard(
         android.view.View iconView) {
 
     if (card == null || lockView == null || iconView == null) {
+        return;
+    }
+
+    if (card.getTag() == null) {
         return;
     }
 
@@ -1348,7 +1406,7 @@ addCard(
                     android.view.animation.Animation fall =
                             new android.view.animation.TranslateAnimation(
                                     0, 0,
-                                    0, card.getHeight()
+                                    0, Math.max(80, lockView.getHeight())
                             );
 
                     fall.setDuration(650);
@@ -1366,17 +1424,36 @@ addCard(
                                 public void onAnimationEnd(
                                         android.view.animation.Animation animation) {
 
-                                    lockView.setVisibility(
-                                            android.view.View.GONE
-                                    );
+                                    lockView.setVisibility(View.GONE);
+                                    iconView.setVisibility(View.VISIBLE);
 
-                                    iconView.setVisibility(
-                                            android.view.View.VISIBLE
-                                    );
+                                    if (card instanceof android.view.ViewGroup) {
+                                        android.view.ViewGroup cardGroup =
+                                                (android.view.ViewGroup) card;
 
-                                    playAchievementCelebration(
-                                            (android.view.ViewGroup) card
-                                    );
+                                        android.widget.FrameLayout sparkleLayer =
+                                                new android.widget.FrameLayout(
+                                                        MainActivity.this
+                                                );
+
+                                        android.widget.FrameLayout.LayoutParams sparkleParams =
+                                                new android.widget.FrameLayout.LayoutParams(
+                                                        android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                                                        android.view.ViewGroup.LayoutParams.MATCH_PARENT
+                                                );
+
+                                        cardGroup.addView(
+                                                sparkleLayer,
+                                                sparkleParams
+                                        );
+
+                                        playAchievementCelebration(sparkleLayer);
+
+                                        sparkleLayer.postDelayed(
+                                                () -> cardGroup.removeView(sparkleLayer),
+                                                3500
+                                        );
+                                    }
                                 }
 
                                 @Override
@@ -1397,7 +1474,7 @@ addCard(
     );
 
     lockView.startAnimation(shake);
-    }
+                      }
 void addHomeButtonGrid() {
 
     LinearLayout grid = new LinearLayout(this);
@@ -5569,201 +5646,213 @@ addButton("⬅️ Back to Settings", v -> showSettings());
     alarmManager.cancel(pendingIntent);
     pendingIntent.cancel();
     }
-    void showAchievements() {
+    
+    
+void showAchievements() {
     stopTimer();
     content.removeAllViews();
-            ImageButton backButton = new ImageButton(this);
 
+    final int gold = Color.rgb(184, 134, 11);
+
+    ImageButton backButton = new ImageButton(this);
     backButton.setImageResource(
             android.R.drawable.ic_media_previous
     );
-
-    backButton.setBackgroundColor(
-            Color.TRANSPARENT
-    );
-
-    backButton.setOnClickListener(
-            v -> showProgress()
-    );
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(v -> showProgress());
 
     content.addView(
             backButton,
-            new LinearLayout.LayoutParams(
-                    60,
-                    60
-            )
+            new LinearLayout.LayoutParams(60, 60)
     );
 
     TextView title = new TextView(this);
     title.setText("🏆 Achievements");
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    title.setTextColor(darkText);
+    title.setTextColor(Color.rgb(255, 215, 0));
+    title.setGravity(Gravity.CENTER);
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    addCard(
-            totalPoints >= 5 ? "✅ First Step" : "🔒 First Step",
-            totalPoints >= 5
-                    ? "You earned your first points!"
-                    : "Earn 5 points to unlock this achievement.",
-            v -> {}
-    );
+    TextView subtitle = new TextView(this);
+    subtitle.setText("Your journey of faith and progress");
+    subtitle.setTextSize(14);
+    subtitle.setTextColor(darkText);
+    subtitle.setGravity(Gravity.CENTER);
+    subtitle.setPadding(0, 0, 0, 16);
+    content.addView(subtitle);
 
-    addCard(
-            learnedVerses >= 5 ? "✅ Bible Learner" : "🔒 Bible Learner",
-            learnedVerses >= 5
-                    ? "You have learned 5 Bible verses!"
-                    : "Learn 5 Bible verses to unlock this achievement.",
-            v -> {}
-    );
+    boolean level1 =
+            prefs.getBoolean("challenge_level_1_completed", false);
+    boolean level2 =
+            prefs.getBoolean("challenge_level_2_completed", false);
+    boolean level3 =
+            prefs.getBoolean("challenge_level_3_completed", false);
 
-    addCard(
-            dailyStreak >= 3 ? "✅ Streak Keeper" : "🔒 Streak Keeper",
-            dailyStreak >= 3
-                    ? "You reached a 3-day streak!"
-                    : "Reach a 3-day streak to unlock this achievement.",
-            v -> {}
-    );
+    int journeyQuestions =
+            prefs.getInt("bibleJourney_questions_completed", 0);
+    int journeyBooks =
+            prefs.getInt("bibleJourney_books_completed", 0);
 
-    addCard(
-            totalPoints >= 50 ? "✅ Point Builder" : "🔒 Point Builder",
-            totalPoints >= 50
-                    ? "You reached 50 points!"
-                    : "Earn 50 points to unlock this achievement.",
-            v -> {}
-    );
+    String[] names = {
+            "First Step",
+            "Bible Learner",
+            "Streak Keeper",
+            "Point Builder",
+            "Challenge Complete",
+            "Easy Challenger",
+            "Medium Challenger",
+            "Hard Challenger",
+            "Challenge Master",
+            "100 Questions",
+            "250 Questions",
+            "500 Questions",
+            "1,000 Questions",
+            "5 Books",
+            "10 Books",
+            "25 Books",
+            "50 Books",
+            "66 Books"
+    };
 
-    addCard(
-            challengeCompletedToday
-                    ? "✅ Challenge Complete"
-                    : "🔒 Challenge Complete",
-            challengeCompletedToday
-                    ? "You completed today's challenge!"
-                    : "Complete today's challenge to unlock this achievement.",
-            v -> {}
-    );
-        boolean level1Completed =
-        prefs.getBoolean("challenge_level_1_completed", false);
+    String[] icons = {
+            "🌱", "📖", "🔥", "⭐", "🎯",
+            "🥉", "🥈", "🥇", "🏆",
+            "💯", "📚", "🌟", "🏅",
+            "📕", "📗", "📘", "📙", "👑"
+    };
 
-boolean level2Completed =
-        prefs.getBoolean("challenge_level_2_completed", false);
+    String[] descriptions = {
+            "Earn 5 points. Current: " + totalPoints + " points.",
+            "Learn 5 Bible verses. Current: " + learnedVerses + " verses.",
+            "Reach a 3-day streak. Current: " + dailyStreak + " days.",
+            "Earn 50 points. Current: " + totalPoints + " points.",
+            "Complete today's challenge.",
+            "Complete Bible Challenge Level 1.",
+            "Complete Bible Challenge Level 2.",
+            "Complete Bible Challenge Level 3.",
+            "Complete all three Challenge levels.",
+            "Complete 100 Bible Journey questions. Current: " + journeyQuestions + ".",
+            "Complete 250 Bible Journey questions. Current: " + journeyQuestions + ".",
+            "Complete 500 Bible Journey questions. Current: " + journeyQuestions + ".",
+            "Complete 1,000 Bible Journey questions. Current: " + journeyQuestions + ".",
+            "Complete 5 Bible Journey books. Current: " + journeyBooks + ".",
+            "Complete 10 Bible Journey books. Current: " + journeyBooks + ".",
+            "Complete 25 Bible Journey books. Current: " + journeyBooks + ".",
+            "Complete 50 Bible Journey books. Current: " + journeyBooks + ".",
+            "Complete all 66 Bible Journey books. Current: " + journeyBooks + "."
+    };
 
-boolean level3Completed =
-        prefs.getBoolean("challenge_level_3_completed", false);
+    boolean[] unlocked = {
+            totalPoints >= 5,
+            learnedVerses >= 5,
+            dailyStreak >= 3,
+            totalPoints >= 50,
+            challengeCompletedToday,
+            level1,
+            level2,
+            level3,
+            level1 && level2 && level3,
+            journeyQuestions >= 100,
+            journeyQuestions >= 250,
+            journeyQuestions >= 500,
+            journeyQuestions >= 1000,
+            journeyBooks >= 5,
+            journeyBooks >= 10,
+            journeyBooks >= 25,
+            journeyBooks >= 50,
+            journeyBooks >= 66
+    };
 
-addCard(
-        level1Completed ? "✅ Easy Challenger" : "🔒 Easy Challenger",
-        level1Completed
-                ? "You completed Level 1!"
-                : "Complete Bible Challenge Level 1.",
-        v -> {}
-);
+    String[] keys = {
+            "first_step",
+            "bible_learner",
+            "streak_keeper",
+            "point_builder",
+            "challenge_complete",
+            "easy_challenger",
+            "medium_challenger",
+            "hard_challenger",
+            "challenge_master",
+            "questions_100",
+            "questions_250",
+            "questions_500",
+            "questions_1000",
+            "books_5",
+            "books_10",
+            "books_25",
+            "books_50",
+            "books_66"
+    };
 
-addCard(
-        level2Completed ? "✅ Medium Challenger" : "🔒 Medium Challenger",
-        level2Completed
-                ? "You completed Level 2!"
-                : "Complete Bible Challenge Level 2.",
-        v -> {}
-);
+    boolean initialized =
+            prefs.getBoolean("achievement_states_initialized", false);
 
-addCard(
-        level3Completed ? "✅ Hard Challenger" : "🔒 Hard Challenger",
-        level3Completed
-                ? "You completed Level 3!"
-                : "Complete Bible Challenge Level 3.",
-        v -> {}
-);
+    android.content.SharedPreferences.Editor editor = prefs.edit();
 
-addCard(
-        level1Completed && level2Completed && level3Completed
-                ? "🏆 Challenge Master"
-                : "🔒 Challenge Master",
-        level1Completed && level2Completed && level3Completed
-                ? "You completed all three Challenge levels!"
-                : "Complete Levels 1, 2 and 3.",
-        v -> {}
-);
-        int journeyQuestions =
-        prefs.getInt("bibleJourney_questions_completed", 0);
+    for (int i = 0; i < names.length; i++) {
+        String stateKey = "achievement_unlocked_" + keys[i];
 
-int journeyBooks =
-        prefs.getInt("bibleJourney_books_completed", 0);
+        if (!initialized) {
+            editor.putBoolean(stateKey, unlocked[i]);
+        } else {
+            boolean wasUnlocked = prefs.getBoolean(stateKey, false);
 
-addCard(
-        journeyQuestions >= 100 ? "✅ 100 Questions" : "🔒 100 Questions",
-        journeyQuestions >= 100
-                ? "You completed 100 Bible Journey questions!"
-                : "Complete 100 Bible Journey questions.",
-        v -> {}
-);
+            if (unlocked[i] && !wasUnlocked) {
+                editor.putBoolean(
+                        "pending_achievement_animation_" + keys[i],
+                        true
+                );
+            }
 
-addCard(
-        journeyQuestions >= 250 ? "✅ 250 Questions" : "🔒 250 Questions",
-        journeyQuestions >= 250
-                ? "You completed 250 Bible Journey questions!"
-                : "Complete 250 Bible Journey questions.",
-        v -> {}
-);
-
-addCard(
-        journeyQuestions >= 500 ? "✅ 500 Questions" : "🔒 500 Questions",
-        journeyQuestions >= 500
-                ? "You completed 500 Bible Journey questions!"
-                : "Complete 500 Bible Journey questions.",
-        v -> {}
-);
-
-addCard(
-        journeyQuestions >= 1000 ? "🏆 1,000 Questions" : "🔒 1,000 Questions",
-        journeyQuestions >= 1000
-                ? "You completed 1,000 Bible Journey questions!"
-                : "Complete 1,000 Bible Journey questions.",
-        v -> {}
-);
-
-addCard(
-        journeyBooks >= 5 ? "✅ 5 Books" : "🔒 5 Books",
-        journeyBooks >= 5
-                ? "You completed 5 Bible Journey books!"
-                : "Complete 5 Bible Journey books.",
-        v -> {}
-);
-
-addCard(
-        journeyBooks >= 10 ? "✅ 10 Books" : "🔒 10 Books",
-        journeyBooks >= 10
-                ? "You completed 10 Bible Journey books!"
-                : "Complete 10 Bible Journey books.",
-        v -> {}
-);
-
-addCard(
-        journeyBooks >= 25 ? "🏆 25 Books" : "🔒 25 Books",
-        journeyBooks >= 25
-                ? "You completed 25 Bible Journey books!"
-                : "Complete 25 Bible Journey books.",
-        v -> {}
-);
-
-addCard(
-        journeyBooks >= 50 ? "🏆 50 Books" : "🔒 50 Books",
-        journeyBooks >= 50
-                ? "You completed 50 Bible Journey books!"
-                : "Complete 50 Bible Journey books.",
-        v -> {}
-);
-
-addCard(
-        journeyBooks >= 66 ? "👑 66 Books" : "🔒 66 Books",
-        journeyBooks >= 66
-                ? "You completed all 66 Bible Journey books!"
-                : "Complete all 66 Bible Journey books.",
-        v -> {}
-);
-
+            editor.putBoolean(stateKey, unlocked[i]);
+        }
     }
+
+    editor.putBoolean("achievement_states_initialized", true);
+    editor.apply();
+
+    LinearLayout currentRow = null;
+
+    for (int i = 0; i < names.length; i++) {
+
+        if (i % 2 == 0) {
+            currentRow = new LinearLayout(this);
+            currentRow.setOrientation(LinearLayout.HORIZONTAL);
+            currentRow.setGravity(Gravity.CENTER_VERTICAL);
+
+            content.addView(
+                    currentRow,
+                    new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+            );
+        }
+
+        addAchievementCard(
+                currentRow,
+                icons[i],
+                names[i],
+                descriptions[i],
+                unlocked[i]
+        );
+    }
+
+    if (names.length % 2 != 0 && currentRow != null) {
+        View spacer = new View(this);
+
+        currentRow.addView(
+                spacer,
+                new LinearLayout.LayoutParams(
+                        0,
+                        1,
+                        1f
+                )
+        );
+    }
+}
     void showAchievementNotification(String achievementName, String message) {
 
     boolean alreadyNotified = prefs.getBoolean(
