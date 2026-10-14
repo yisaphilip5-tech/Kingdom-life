@@ -62,93 +62,18 @@ public class MainActivity extends Activity {
     int darkText = Color.rgb(45, 45, 45);
     int cardColor = Color.rgb(245, 247, 250);
 
-    String[] questions = {
-        "Who built the ark?",
-        "Which Bible book comes first?",
-        "Who was swallowed by a great fish?",
-        "Who defeated Goliath?",
-        "How many disciples did Jesus choose?",
-        "Who led the Israelites out of Egypt?",
-        "What was the first miracle of Jesus recorded in John?",
-        "Who was the mother of Jesus?",
-        "Who betrayed Jesus?",
-        "What did David use to defeat Goliath?",
-        "Who received the Ten Commandments?",
-        "Which New Testament book has only one chapter and is addressed to Philemon?",
-        "Who was known for his great wisdom?",
-        "Where was Jesus born?",
-        "Who denied Jesus three times?"
-};
+    String[] questions = BibleChallengeData.questions;
+String[][] options = BibleChallengeData.options;
+int[] answers = BibleChallengeData.answers;
 
-String[][] options = {
-        {"Moses", "Noah", "David", "Abraham"},
-        {"Exodus", "Genesis", "Matthew", "Psalms"},
-        {"Jonah", "Peter", "Paul", "Daniel"},
-        {"Solomon", "David", "Samuel", "Joshua"},
-        {"10", "11", "12", "14"},
-        {"Moses", "Joshua", "Aaron", "Samuel"},
-        {"Walking on water", "Turning water into wine", "Healing a blind man", "Feeding 5,000"},
-        {"Mary", "Martha", "Elizabeth", "Sarah"},
-        {"Peter", "Judas Iscariot", "Thomas", "John"},
-        {"A sword", "A spear", "A sling and stones", "A bow"},
-        {"David", "Moses", "Solomon", "Joshua"},
-        {"Philemon", "Romans", "Genesis", "Revelation"},
-        {"Solomon", "Samson", "Paul", "Isaiah"},
-        {"Jerusalem", "Nazareth", "Bethlehem", "Capernaum"},
-        {"John", "Peter", "James", "Matthew"}
-};
+String[] level2Questions = BibleChallengeData.level2Questions;
+String[][] level2Options = BibleChallengeData.level2Options;
+int[] level2Answers = BibleChallengeData.level2Answers;
 
-int[] answers = {
-        1,
-        1,
-        0,
-        1,
-        2,
-        0,
-        1,
-        0,
-        1,
-        2,
-        1,
-        0,
-        0,
-        2,
-        1
-};
-String[] level2Questions = {
-        "Which prophet confronted the prophets of Baal on Mount Carmel?",
-        "Who interpreted Pharaoh's dreams in Egypt?",
-        "Which judge of Israel was known for his great strength?",
-        "Who was the father of King Solomon?",
-        "Which disciple was also called Didymus?"
-};
+String[] level3Questions = BibleChallengeData.level3Questions;
+String[][] level3Options = BibleChallengeData.level3Options;
+int[] level3Answers = BibleChallengeData.level3Answers;
 
-String[][] level2Options = {
-        {"Elijah", "Isaiah", "Jeremiah", "Ezekiel"},
-        {"Joseph", "Daniel", "Moses", "Aaron"},
-        {"Gideon", "Samson", "Samuel", "Jephthah"},
-        {"Saul", "David", "Samuel", "Jesse"},
-        {"Peter", "Thomas", "Andrew", "Philip"}
-};
-
-int[] level2Answers = {0, 0, 1, 1, 1};
-    String[] level3Questions = {
-        "Which king of Judah was shown the shadow moving backward as a sign?",
-        "Which prophet married Gomer?",
-        "Who was the first Christian martyr recorded in Acts?",
-        "Which judge made a vow before going into battle against the Ammonites?",
-        "Which king asked God for wisdom rather than riches or long life?"
-};
-
-String[][] level3Options = {
-        {"Hezekiah", "Josiah", "Uzziah", "Manasseh"},
-        {"Hosea", "Amos", "Joel", "Micah"},
-        {"Stephen", "James", "Barnabas", "Philip"},
-        {"Jephthah", "Gideon", "Samson", "Ehud"},
-        {"Solomon", "David", "Saul", "Rehoboam"}
-};
-
-int[] level3Answers = {0, 0, 0, 0, 0};
     int currentQuestion = 0;
     int currentLevel = 1;
     int highestLevelUnlocked = 1;
