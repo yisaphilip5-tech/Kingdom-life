@@ -4726,14 +4726,25 @@ content.addView(topBar);
             );
 
     // Bible books read
-    int bibleBooksRead =
-            readingPrefs.getInt("booksRead", 0);
+android.content.SharedPreferences readingPrefs =
+        getSharedPreferences(
+                "BibleReadingPrefs",
+                MODE_PRIVATE
+        );
 
-    addCard(
-            "📖 Bible Books Read",
-            bibleBooksRead + " Bible book(s) read.",
-            v -> {}
-    );
+java.util.Set<String> completedBibleBooks =
+        readingPrefs.getStringSet(
+                "completedBibleBooks",
+                java.util.Collections.emptySet()
+        );
+
+int booksRead = completedBibleBooks.size();
+
+addCard(
+        "📖 Bible Books Read",
+        booksRead + " Bible book(s) read.",
+        v -> {}
+);
 
     // Spiritual books read
     int spiritualBooksRead =
