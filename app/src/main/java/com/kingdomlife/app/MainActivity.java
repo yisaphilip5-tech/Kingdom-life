@@ -1246,6 +1246,70 @@ addCard(
 
     content.addView(card, cardParams);
     }
+    void addAchievementCard(
+        LinearLayout row,
+        String icon,
+        String heading,
+        String description,
+        boolean unlocked) {
+
+    LinearLayout card = new LinearLayout(this);
+    card.setOrientation(LinearLayout.VERTICAL);
+    card.setGravity(Gravity.CENTER);
+    card.setPadding(10, 16, 10, 16);
+
+    GradientDrawable background = new GradientDrawable();
+    background.setColor(Color.rgb(30, 24, 55));
+    background.setCornerRadius(24);
+    background.setStroke(2, Color.rgb(184, 134, 11));
+    card.setBackground(background);
+    card.setElevation(5);
+
+    TextView iconView = new TextView(this);
+    iconView.setText(unlocked ? icon : "🔒");
+    iconView.setTextSize(32);
+    iconView.setGravity(Gravity.CENTER);
+    card.addView(iconView);
+
+    TextView titleView = new TextView(this);
+    titleView.setText(heading);
+    titleView.setTextSize(16);
+    titleView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    titleView.setTextColor(Color.rgb(255, 215, 0));
+    titleView.setGravity(Gravity.CENTER);
+    titleView.setPadding(0, 8, 0, 6);
+    card.addView(titleView);
+
+    TextView descriptionView = new TextView(this);
+    descriptionView.setText(description);
+    descriptionView.setTextSize(12);
+    descriptionView.setTextColor(Color.WHITE);
+    descriptionView.setGravity(Gravity.CENTER);
+    card.addView(descriptionView);
+
+    TextView statusView = new TextView(this);
+    statusView.setText(unlocked ? "✓ UNLOCKED" : "🔒 LOCKED");
+    statusView.setTextSize(11);
+    statusView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    statusView.setTextColor(
+            unlocked
+                    ? Color.rgb(255, 215, 0)
+                    : Color.LTGRAY
+    );
+    statusView.setGravity(Gravity.CENTER);
+    statusView.setPadding(0, 10, 0, 0);
+    card.addView(statusView);
+
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f
+            );
+
+    params.setMargins(6, 6, 6, 6);
+    row.addView(card, params);
+    }
 void addHomeButtonGrid() {
 
     LinearLayout grid = new LinearLayout(this);
