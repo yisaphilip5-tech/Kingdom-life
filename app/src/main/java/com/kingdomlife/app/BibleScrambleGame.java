@@ -16,6 +16,8 @@ public class BibleScrambleGame {
     private int level = 1;
     private int question = 0;
     private int score = 0;
+    private int correctlySolved = 0;
+private int correctlySolvedThisLevel = 0;
     private String[] words;
     private final int royalPurple = Color.rgb(30, 24, 55);
 private final int kingdomGold = Color.rgb(212, 175, 55);
