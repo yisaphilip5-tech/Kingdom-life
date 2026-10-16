@@ -186,11 +186,12 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
                     }
 
     private void startLevel(int selectedLevel) {
-        level = selectedLevel;
-        words = BibleScrambleData.getWordsForLevel(level);
-        question = 0;
-        score = 0;
-        showQuestion();
+    level = selectedLevel;
+    words = BibleScrambleData.getWordsForLevel(level);
+    question = 0;
+    score = 0;
+    correctlySolvedThisLevel = 0;
+    showQuestion();
     }
 
     private void showQuestion() {
@@ -275,6 +276,8 @@ activity.content.addView(answerInput, inputParams);
             if (userAnswer.equalsIgnoreCase(word)) {
                 score += 5;
                 activity.totalPoints += 5;
+                correctlySolved++;
+correctlySolvedThisLevel++;
 
                 activity.prefs.edit()
         .putInt("totalPoints", activity.totalPoints)
