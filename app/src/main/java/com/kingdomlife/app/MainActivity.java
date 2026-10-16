@@ -6134,7 +6134,7 @@ void showJigsawMenu() {
     content.setOrientation(LinearLayout.VERTICAL);
 
     TextView title = new TextView(this);
-    title.setText("🧩 Bible Jigsaw Journey");
+    title.setText("🧩 Bible Jigsaw Challenge");
     title.setTextSize(25);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
@@ -6143,24 +6143,79 @@ void showJigsawMenu() {
     content.addView(title);
 
     TextView subtitle = new TextView(this);
-    subtitle.setText("Travel through the Bible, one book at a time!");
+    subtitle.setText("Complete each level to unlock the next!");
     subtitle.setTextSize(14);
     subtitle.setTextColor(darkText);
     subtitle.setGravity(Gravity.CENTER);
-    subtitle.setPadding(8, 4, 8, 10);
+    subtitle.setPadding(8, 4, 8, 16);
     content.addView(subtitle);
 
-    ScrollView mapScroll = new ScrollView(this);
-    mapScroll.setFillViewport(true);
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "KingdomLifeJigsawPrefs",
+                    MODE_PRIVATE
+            );
 
-    BibleJigsawPuzzle map = new BibleJigsawPuzzle(this);
+    int highestUnlocked =
+            prefs.getInt("highestUnlockedLevel", 1);
 
-    mapScroll.addView(map, new ScrollView.LayoutParams(
-        ScrollView.LayoutParams.MATCH_PARENT,
-        1000
-));
+    ScrollView levelScroll = new ScrollView(this);
 
-    content.addView(mapScroll, new LinearLayout.LayoutParams(
+    LinearLayout levelContainer = new LinearLayout(this);
+    levelContainer.setOrientation(LinearLayout.VERTICAL);
+    levelContainer.setPadding(12, 8, 12, 8);
+
+    levelScroll.addView(levelContainer);
+
+    String[] levelNames = {
+            "🌿 Level 1 - Garden of Eden",
+            "🌊 Level 2 - Noah's Ark",
+            "🌾 Level 3 - Joseph in Egypt"
+    };
+
+    String[] imageNames = {
+            "genesis_eden",
+            "genesis_noah",
+            "genesis_joseph"
+    };
+
+    String[] difficulties = {
+            "Easy",
+            "Medium",
+            "Hard"
+    };
+
+    for (int i = 0; i < levelNames.length; i++) {
+        final int level = i + 1;
+        final String imageName = imageNames[i];
+        final String difficulty = difficulties[i];
+
+        boolean unlocked = level <= highestUnlocked;
+
+        Button levelButton = new Button(this);
+        levelButton.setText(
+                (unlocked ? "🔓 " : "🔒 ")
+                        + levelNames[i]
+        );
+        levelButton.setTextSize(16);
+        levelButton.setAllCaps(false);
+        levelButton.setEnabled(unlocked);
+
+        levelButton.setOnClickListener(v ->
+                startJigsawPuzzle(difficulty, imageName)
+        );
+
+        LinearLayout.LayoutParams params =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+        params.setMargins(0, 6, 0, 6);
+        levelContainer.addView(levelButton, params);
+    }
+
+    content.addView(levelScroll, new LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             0,
             1f
