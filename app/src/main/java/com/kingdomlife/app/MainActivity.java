@@ -5456,9 +5456,12 @@ void showAchievements() {
             "5 Books",
             "10 Books",
             "25 Books",
-            "50 Books",
-            "66 Books"
-    };
+"50 Books",
+"66 Books",
+"The Scrambled Achiever",
+"Master of Letters",
+"The Word Unraveller"
+};
 
     String[] icons = {
             "🌱", "📖", "🔥", "⭐", "🎯",
