@@ -8965,7 +8965,7 @@ if (query.contains("prayer journal") ||
     addCard(
             "🙏 Prayer Journal",
             "Record and revisit your prayer entries.",
-            v -> showLearnGrow()
+            v -> showLearnMenu()
     );
     found = true;
 }
@@ -8977,7 +8977,7 @@ if (query.contains("spiritual goals") ||
     addCard(
             "🎯 Spiritual Goals",
             "Set and track your personal spiritual goals.",
-            v -> showLearnGrow()
+            v -> showLearnMenu()
     );
     found = true;
 }
