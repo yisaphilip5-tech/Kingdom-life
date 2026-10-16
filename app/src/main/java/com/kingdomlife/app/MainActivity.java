@@ -8889,6 +8889,110 @@ void showBookmarks() {
         );
         found = true;
     }
+        // Missing Word
+if (query.contains("missing word") ||
+        query.contains("missing")) {
+
+    addCard(
+            "🔤 Missing Word",
+            "Complete Bible verses by finding the missing words.",
+            v -> showPuzzleMenu()
+    );
+    found = true;
+}
+
+// Bible Scramble
+if (query.contains("bible scramble") ||
+        query.contains("scramble")) {
+
+    addCard(
+            "🔀 Bible Scramble",
+            "Arrange scrambled letters to discover Bible words.",
+            v -> showPuzzleMenu()
+    );
+    found = true;
+}
+
+// Bible Jigsaw Puzzle
+if (query.contains("jigsaw")) {
+
+    addCard(
+            "🧩 Bible Jigsaw Puzzle",
+            "Complete Bible picture puzzles and unlock new levels.",
+            v -> showJigsawMenu()
+    );
+    found = true;
+}
+
+// Guess the Reference
+if (query.contains("guess the reference") ||
+        query.contains("guess reference")) {
+
+    addCard(
+            "📖 Guess the Reference",
+            "Identify the Bible reference for each verse.",
+            v -> showGameMenu()
+    );
+    found = true;
+}
+
+// Guess the Verse
+if (query.contains("guess the verse")) {
+
+    addCard(
+            "📜 Guess the Verse",
+            "Test your knowledge of Bible verses.",
+            v -> showGameMenu()
+    );
+    found = true;
+}
+
+// Complete the Verse
+if (query.contains("complete the verse")) {
+
+    addCard(
+            "✍️ Complete the Verse",
+            "Finish Bible verses from memory.",
+            v -> showGameMenu()
+    );
+    found = true;
+}
+
+// Prayer Journal
+if (query.contains("prayer journal") ||
+        query.equals("prayer")) {
+
+    addCard(
+            "🙏 Prayer Journal",
+            "Record and revisit your prayer entries.",
+            v -> showLearnGrow()
+    );
+    found = true;
+}
+
+// Spiritual Goals
+if (query.contains("spiritual goals") ||
+        query.contains("spiritual goal")) {
+
+    addCard(
+            "🎯 Spiritual Goals",
+            "Set and track your personal spiritual goals.",
+            v -> showLearnGrow()
+    );
+    found = true;
+}
+
+// Backup and Restore
+if (query.contains("backup") ||
+        query.contains("restore")) {
+
+    addCard(
+            "💾 Backup & Restore",
+            "Access your saved-data backup and restore tools.",
+            v -> showSettings()
+    );
+    found = true;
+}
 
     if (!found) {
 
