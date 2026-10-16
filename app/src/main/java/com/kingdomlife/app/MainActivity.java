@@ -5436,6 +5436,8 @@ void showAchievements() {
             prefs.getInt("bibleJourney_questions_completed", 0);
     int journeyBooks =
             prefs.getInt("bibleJourney_books_completed", 0);
+    int scrambleWordsSolved =
+        prefs.getInt("bibleScramble_words_solved", 0);
 
     String[] names = {
             "First Step",
@@ -5462,9 +5464,9 @@ void showAchievements() {
             "🌱", "📖", "🔥", "⭐", "🎯",
             "🥉", "🥈", "🥇", "🏆",
             "💯", "📚", "🌟", "🏅",
-            "📕", "📗", "📘", "📙", "👑"
-    };
-
+            "📕", "📗", "📘", "📙", "👑",
+"🔀", "🔠", "🧩"
+};
     String[] descriptions = {
             "Earn 5 points. Current: " + totalPoints + " points.",
             "Learn 5 Bible verses. Current: " + learnedVerses + " verses.",
@@ -5483,8 +5485,12 @@ void showAchievements() {
             "Complete 10 Bible Journey books. Current: " + journeyBooks + ".",
             "Complete 25 Bible Journey books. Current: " + journeyBooks + ".",
             "Complete 50 Bible Journey books. Current: " + journeyBooks + ".",
-            "Complete all 66 Bible Journey books. Current: " + journeyBooks + "."
-    };
+            "Complete 50 Bible Journey books. Current: " + journeyBooks + ".",
+"Complete all 66 Bible Journey books. Current: " + journeyBooks + ".",
+"Solve 10 different Bible Scramble words correctly. Current: " + scrambleWordsSolved + ".",
+"Solve 25 different Bible Scramble words correctly. Current: " + scrambleWordsSolved + ".",
+"Solve all 75 Bible Scramble words correctly. Current: " + scrambleWordsSolved + "."
+};
 
     boolean[] unlocked = {
             totalPoints >= 5,
@@ -5504,8 +5510,11 @@ void showAchievements() {
             journeyBooks >= 10,
             journeyBooks >= 25,
             journeyBooks >= 50,
-            journeyBooks >= 66
-    };
+journeyBooks >= 66,
+scrambleWordsSolved >= 10,
+scrambleWordsSolved >= 25,
+scrambleWordsSolved >= 75
+};
 
     String[] keys = {
             "first_step",
@@ -5524,10 +5533,12 @@ void showAchievements() {
             "books_5",
             "books_10",
             "books_25",
-            "books_50",
-            "books_66"
-    };
-
+"books_50",
+"books_66",
+"scramble_10_words",
+"scramble_25_words",
+"scramble_75_words"
+};
     boolean initialized =
             prefs.getBoolean("achievement_states_initialized", false);
 
