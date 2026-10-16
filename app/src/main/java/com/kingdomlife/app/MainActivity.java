@@ -9310,9 +9310,56 @@ homeY = new float[count];
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         setFocusable(true);
     }
-    private void showCompletedPicture() {
+    
+private void showCompletedPicture() {
     content.removeAllViews();
     content.setOrientation(LinearLayout.VERTICAL);
+
+    // Identify the completed level
+    final int level;
+
+    if (columns == 4 && rows == 3) {
+        level = 1;
+    } else if (columns == 6 && rows == 4) {
+        level = 2;
+    } else {
+        level = 3;
+    }
+
+    android.content.SharedPreferences jigsawPrefs =
+            getSharedPreferences(
+                    "KingdomLifeJigsawPrefs",
+                    MODE_PRIVATE
+            );
+
+    int highestUnlocked =
+            jigsawPrefs.getInt("highestUnlockedLevel", 1);
+
+    String rewardKey = "level" + level + "RewardClaimed";
+
+    boolean alreadyClaimed =
+            jigsawPrefs.getBoolean(rewardKey, false);
+
+    int reward = level * 10;
+
+    // Award points only once per level
+    if (!alreadyClaimed) {
+        totalPoints += reward;
+
+        prefs.edit()
+                .putInt("totalPoints", totalPoints)
+                .apply();
+
+        jigsawPrefs.edit()
+                .putBoolean(rewardKey, true)
+                .putInt(
+                        "highestUnlockedLevel",
+                        Math.max(highestUnlocked, Math.min(level + 1, 3))
+                )
+                .apply();
+
+        checkAchievementNotifications();
+    }
 
     TextView title = new TextView(MainActivity.this);
     title.setText("👑 Puzzle Completed!");
@@ -9337,17 +9384,34 @@ homeY = new float[count];
 
     imageParams.setMargins(12, 8, 12, 8);
     content.addView(finishedImage, imageParams);
-        TextView story = new TextView(MainActivity.this);
-story.setText(storyDescription);
-story.setTextColor(Color.WHITE);
-story.setTextSize(15);
-story.setGravity(Gravity.CENTER);
-story.setPadding(20, 12, 20, 12);
-content.addView(story);
+
+    TextView story = new TextView(MainActivity.this);
+    story.setText(storyDescription);
+    story.setTextColor(Color.WHITE);
+    story.setTextSize(15);
+    story.setGravity(Gravity.CENTER);
+    story.setPadding(20, 12, 20, 12);
+    content.addView(story);
 
     TextView message = new TextView(MainActivity.this);
-    message.setText("Congratulations! You completed all "
-            + count + " pieces!");
+
+    if (alreadyClaimed) {
+        message.setText(
+                "Congratulations! You completed all "
+                + count + " pieces!\n\n"
+                + "You've already claimed this level's reward."
+        );
+    } else {
+        message.setText(
+                "🎉 Congratulations! You completed all "
+                + count + " pieces!\n\n"
+                + "🏆 +" + reward + " points!\n\n"
+                + (level < 3
+                    ? "Level " + (level + 1) + " is now unlocked!"
+                    : "You've completed the first Jigsaw Journey!")
+        );
+    }
+
     message.setTextColor(Color.WHITE);
     message.setTextSize(16);
     message.setGravity(Gravity.CENTER);
@@ -9355,10 +9419,17 @@ content.addView(story);
     content.addView(message);
 
     Button continueButton = new Button(MainActivity.this);
-    continueButton.setText("Back to Jigsaw Levels");
-    continueButton.setOnClickListener(v -> showJigsawMenu());
-    content.addView(continueButton);
+
+    if (level < 3) {
+        continueButton.setText("Continue to Level " + (level + 1));
+        continueButton.setOnClickListener(v -> showJigsawMenu());
+    } else {
+        continueButton.setText("Complete Jigsaw Journey");
+        continueButton.setOnClickListener(v -> showJigsawMenu());
     }
+
+    content.addView(continueButton);
+}
 
     @Override
 protected void onSizeChanged(
