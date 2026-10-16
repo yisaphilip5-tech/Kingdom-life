@@ -6010,11 +6010,36 @@ scrambleWordsSolved >= 75
     }
 
     if (journeyBooks >= 66) {
-        showAchievementNotification(
-                "66 Books",
-                "You completed all 66 Bible Journey books!"
-        );
-    }
+showAchievementNotification(
+"66 Books",
+"You completed all 66 Bible Journey books!"
+);
+}
+
+// Bible Scramble achievements
+int scrambleWordsSolved = prefs.getInt(
+"bibleScramble_words_solved", 0);
+
+if (scrambleWordsSolved >= 10) {
+showAchievementNotification(
+"The Scrambled Achiever",
+"You solved 10 different Bible Scramble words!"
+);
+}
+
+if (scrambleWordsSolved >= 25) {
+showAchievementNotification(
+"Master of Letters",
+"You solved 25 different Bible Scramble words!"
+);
+}
+
+if (scrambleWordsSolved >= 75) {
+showAchievementNotification(
+"The Word Unraveller",
+"You solved all 75 Bible Scramble words!"
+);
+}
     }
     void showAbout() {
         showMessage(
