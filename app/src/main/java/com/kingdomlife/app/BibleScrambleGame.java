@@ -276,6 +276,19 @@ activity.content.addView(answerInput, inputParams);
             if (userAnswer.equalsIgnoreCase(word)) {
                 score += 5;
                 activity.totalPoints += 5;
+                String solvedKey = "bibleScramble_word_solved_level_"
+        + level + "_question_" + question;
+
+if (!activity.prefs.getBoolean(solvedKey, false)) {
+    int savedSolved = activity.prefs.getInt(
+            "bibleScramble_words_solved", 0);
+
+    activity.prefs.edit()
+            .putBoolean(solvedKey, true)
+            .putInt("bibleScramble_words_solved",
+                    savedSolved + 1)
+            .apply();
+}
                 correctlySolved++;
 correctlySolvedThisLevel++;
 
