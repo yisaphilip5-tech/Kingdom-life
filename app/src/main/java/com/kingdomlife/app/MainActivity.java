@@ -5980,7 +5980,7 @@ String message) {
 
     title.setText("ACHIEVEMENT UNLOCKED");
     title.setTextSize(13);
-    title.setTextStyle(android.graphics.Typeface.BOLD);
+    title.setTypeface(null, android.graphics.Typeface.BOLD);
     title.setTextColor(kingdomGold);
     title.setGravity(android.view.Gravity.CENTER);
 
