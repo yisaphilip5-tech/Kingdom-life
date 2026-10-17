@@ -5390,6 +5390,7 @@ addCard(
     }
     
     
+
 void showAchievements() {
     stopTimer();
     content.removeAllViews();
@@ -5425,19 +5426,54 @@ void showAchievements() {
     subtitle.setPadding(0, 0, 0, 16);
     content.addView(subtitle);
 
-    boolean level1 =
-            prefs.getBoolean("challenge_level_1_completed", false);
-    boolean level2 =
-            prefs.getBoolean("challenge_level_2_completed", false);
-    boolean level3 =
-            prefs.getBoolean("challenge_level_3_completed", false);
+    boolean level1 = prefs.getBoolean(
+            "challenge_level_1_completed", false
+    );
+    boolean level2 = prefs.getBoolean(
+            "challenge_level_2_completed", false
+    );
+    boolean level3 = prefs.getBoolean(
+            "challenge_level_3_completed", false
+    );
 
-    int journeyQuestions =
-            prefs.getInt("bibleJourney_questions_completed", 0);
-    int journeyBooks =
-            prefs.getInt("bibleJourney_books_completed", 0);
-    int scrambleWordsSolved =
-        prefs.getInt("bibleScramble_words_solved", 0);
+    int journeyQuestions = prefs.getInt(
+            "bibleJourney_questions_completed", 0
+    );
+    int journeyBooks = prefs.getInt(
+            "bibleJourney_books_completed", 0
+    );
+    int scrambleWordsSolved = prefs.getInt(
+            "bibleScramble_words_solved", 0
+    );
+
+    int missingWordCorrect = prefs.getInt(
+            "missingWord_correct_answers", 0
+    );
+    int guessReferenceCorrect = prefs.getInt(
+            "memory_reference_correct_answers", 0
+    );
+    int guessVerseCorrect = prefs.getInt(
+            "memory_guess_correct_answers", 0
+    );
+    int completeVerseCorrect = prefs.getInt(
+            "memory_complete_correct_answers", 0
+    );
+
+    android.content.SharedPreferences jigsawPrefs =
+            getSharedPreferences(
+                    "KingdomLifeJigsawPrefs",
+                    MODE_PRIVATE
+            );
+
+    boolean jigsawLevel1 = jigsawPrefs.getBoolean(
+            "level1RewardClaimed", false
+    );
+    boolean jigsawLevel2 = jigsawPrefs.getBoolean(
+            "level2RewardClaimed", false
+    );
+    boolean jigsawLevel3 = jigsawPrefs.getBoolean(
+            "level3RewardClaimed", false
+    );
 
     String[] names = {
             "First Step",
@@ -5456,20 +5492,27 @@ void showAchievements() {
             "5 Books",
             "10 Books",
             "25 Books",
-"50 Books",
-"66 Books",
-"The Scrambled Achiever",
-"Master of Letters",
-"The Word Unraveller"
-};
+            "50 Books",
+            "66 Books",
+            "The Scrambled Achiever",
+            "Master of Letters",
+            "The Word Unraveller",
+            "The Big Picture",
+            "The Word Hearer",
+            "The Scripture Detective",
+            "The Verse Guardian",
+            "The Verse Finisher"
+    };
 
     String[] icons = {
             "🌱", "📖", "🔥", "⭐", "🎯",
             "🥉", "🥈", "🥇", "🏆",
             "💯", "📚", "🌟", "🏅",
             "📕", "📗", "📘", "📙", "👑",
-"🔀", "🔠", "🧩"
-};
+            "🔀", "🔠", "🧩",
+            "🧩", "👂", "🔎", "🛡️", "✍️"
+    };
+
     String[] descriptions = {
             "Earn 5 points. Current: " + totalPoints + " points.",
             "Learn 5 Bible verses. Current: " + learnedVerses + " verses.",
@@ -5488,12 +5531,16 @@ void showAchievements() {
             "Complete 10 Bible Journey books. Current: " + journeyBooks + ".",
             "Complete 25 Bible Journey books. Current: " + journeyBooks + ".",
             "Complete 50 Bible Journey books. Current: " + journeyBooks + ".",
-            "Complete 50 Bible Journey books. Current: " + journeyBooks + ".",
-"Complete all 66 Bible Journey books. Current: " + journeyBooks + ".",
-"Solve 10 different Bible Scramble words correctly. Current: " + scrambleWordsSolved + ".",
-"Solve 25 different Bible Scramble words correctly. Current: " + scrambleWordsSolved + ".",
-"Solve all 75 Bible Scramble words correctly. Current: " + scrambleWordsSolved + "."
-};
+            "Complete all 66 Bible Journey books. Current: " + journeyBooks + ".",
+            "Solve 10 different Bible Scramble words correctly. Current: " + scrambleWordsSolved + ".",
+            "Solve 25 different Bible Scramble words correctly. Current: " + scrambleWordsSolved + ".",
+            "Solve all 75 Bible Scramble words correctly. Current: " + scrambleWordsSolved + ".",
+            "Complete all 3 Jigsaw Puzzle levels.",
+            "Answer 25 Missing Word questions correctly. Current: " + missingWordCorrect + ".",
+            "Answer 25 Guess the Reference questions correctly. Current: " + guessReferenceCorrect + ".",
+            "Answer 25 Guess the Verse questions correctly. Current: " + guessVerseCorrect + ".",
+            "Complete 25 verses correctly. Current: " + completeVerseCorrect + "."
+    };
 
     boolean[] unlocked = {
             totalPoints >= 5,
@@ -5513,11 +5560,16 @@ void showAchievements() {
             journeyBooks >= 10,
             journeyBooks >= 25,
             journeyBooks >= 50,
-journeyBooks >= 66,
-scrambleWordsSolved >= 10,
-scrambleWordsSolved >= 25,
-scrambleWordsSolved >= 75
-};
+            journeyBooks >= 66,
+            scrambleWordsSolved >= 10,
+            scrambleWordsSolved >= 25,
+            scrambleWordsSolved >= 75,
+            jigsawLevel1 && jigsawLevel2 && jigsawLevel3,
+            missingWordCorrect >= 25,
+            guessReferenceCorrect >= 25,
+            guessVerseCorrect >= 25,
+            completeVerseCorrect >= 25
+    };
 
     String[] keys = {
             "first_step",
@@ -5536,14 +5588,21 @@ scrambleWordsSolved >= 75
             "books_5",
             "books_10",
             "books_25",
-"books_50",
-"books_66",
-"scramble_10_words",
-"scramble_25_words",
-"scramble_75_words"
-};
-    boolean initialized =
-            prefs.getBoolean("achievement_states_initialized", false);
+            "books_50",
+            "books_66",
+            "scramble_10_words",
+            "scramble_25_words",
+            "scramble_75_words",
+            "big_picture",
+            "word_hearer",
+            "scripture_detective",
+            "verse_guardian",
+            "verse_finisher"
+    };
+
+    boolean initialized = prefs.getBoolean(
+            "achievement_states_initialized", false
+    );
 
     android.content.SharedPreferences.Editor editor = prefs.edit();
 
@@ -5553,7 +5612,9 @@ scrambleWordsSolved >= 75
         if (!initialized) {
             editor.putBoolean(stateKey, unlocked[i]);
         } else {
-            boolean wasUnlocked = prefs.getBoolean(stateKey, false);
+            boolean wasUnlocked = prefs.getBoolean(
+                    stateKey, false
+            );
 
             if (unlocked[i] && !wasUnlocked) {
                 editor.putBoolean(
@@ -5572,11 +5633,14 @@ scrambleWordsSolved >= 75
     LinearLayout currentRow = null;
 
     for (int i = 0; i < names.length; i++) {
-
         if (i % 2 == 0) {
             currentRow = new LinearLayout(this);
-            currentRow.setOrientation(LinearLayout.HORIZONTAL);
-            currentRow.setGravity(Gravity.CENTER_VERTICAL);
+            currentRow.setOrientation(
+                    LinearLayout.HORIZONTAL
+            );
+            currentRow.setGravity(
+                    Gravity.CENTER_VERTICAL
+            );
 
             content.addView(
                     currentRow,
@@ -5609,6 +5673,7 @@ scrambleWordsSolved >= 75
         );
     }
 }
+    
     void showAchievementNotification(String achievementName, String message) {
 
     boolean alreadyNotified = prefs.getBoolean(
