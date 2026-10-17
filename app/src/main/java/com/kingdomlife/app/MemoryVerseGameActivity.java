@@ -1040,18 +1040,45 @@ private void handleAnswer(
         }
     }
 
-    // Colour the selected answer and show feedback.
-    if (correct) {
-        score += 10;
+    // Colour the selected answer and track achievements.
+if (correct) {
+    score += 10;
 
-        selectedButton.setText(
-                "✅ " + selectedButton.getText()
-        );
-    } else {
-        selectedButton.setText(
-                "❌ " + selectedButton.getText()
-        );
+    // Save the correct-answer count for this game.
+    android.content.SharedPreferences memoryPrefs =
+            getSharedPreferences(
+                    "KingdomLifePrefs",
+                    MODE_PRIVATE
+            );
+
+    String counterKey = null;
+
+    if ("reference".equals(gameType)) {
+        counterKey = "memory_reference_correct_answers";
+    } else if ("guess".equals(gameType)) {
+        counterKey = "memory_guess_correct_answers";
+    } else if ("complete".equals(gameType)) {
+        counterKey = "memory_complete_correct_answers";
     }
+
+    if (counterKey != null) {
+        int currentCount = memoryPrefs.getInt(
+                counterKey, 0
+        );
+
+        memoryPrefs.edit()
+                .putInt(counterKey, currentCount + 1)
+                .apply();
+    }
+
+    selectedButton.setText(
+            "✅ " + selectedButton.getText()
+    );
+} else {
+    selectedButton.setText(
+            "❌ " + selectedButton.getText()
+    );
+}
 
     // Apply the correct answer colours.
     for (int i = 0; i < content.getChildCount(); i++) {
