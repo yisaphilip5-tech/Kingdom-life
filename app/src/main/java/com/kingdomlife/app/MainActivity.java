@@ -5949,70 +5949,87 @@ String message) {
     final int kingdomGold =
             android.graphics.Color.rgb(184, 134, 11);
 
-    android.widget.LinearLayout layout =
+    android.widget.LinearLayout card =
             new android.widget.LinearLayout(this);
 
-    layout.setOrientation(
+    card.setOrientation(
             android.widget.LinearLayout.VERTICAL
     );
 
-    layout.setGravity(android.view.Gravity.CENTER);
-    layout.setPadding(36, 32, 36, 28);
+    card.setGravity(android.view.Gravity.CENTER);
+    card.setPadding(32, 30, 32, 26);
 
-    android.graphics.drawable.GradientDrawable background =
+    android.graphics.drawable.GradientDrawable cardBackground =
             new android.graphics.drawable.GradientDrawable();
 
-    background.setColor(royalPurple);
-    background.setCornerRadius(24);
-    background.setStroke(3, kingdomGold);
+    cardBackground.setColor(royalPurple);
+    cardBackground.setCornerRadius(24);
+    cardBackground.setStroke(2, kingdomGold);
 
-    layout.setBackground(background);
+    card.setBackground(cardBackground);
 
     android.widget.TextView trophy =
             new android.widget.TextView(this);
 
     trophy.setText("🏆");
-    trophy.setTextSize(42);
+    trophy.setTextSize(44);
     trophy.setGravity(android.view.Gravity.CENTER);
 
-    android.widget.TextView title =
+    android.widget.TextView congratulations =
             new android.widget.TextView(this);
 
-    title.setText("ACHIEVEMENT UNLOCKED");
-    title.setTextSize(13);
-    title.setTypeface(null, android.graphics.Typeface.BOLD);
-    title.setTextColor(kingdomGold);
-    title.setGravity(android.view.Gravity.CENTER);
+    congratulations.setText("🎉 Congratulations! 🎉");
+    congratulations.setTextSize(22);
+    congratulations.setTypeface(
+            null, android.graphics.Typeface.BOLD
+    );
+    congratulations.setTextColor(kingdomGold);
+    congratulations.setGravity(android.view.Gravity.CENTER);
+    congratulations.setPadding(0, 12, 0, 16);
+
+    android.widget.TextView achievementTitle =
+            new android.widget.TextView(this);
+
+    achievementTitle.setText("ACHIEVEMENT UNLOCKED");
+    achievementTitle.setTextSize(13);
+    achievementTitle.setTypeface(
+            null, android.graphics.Typeface.BOLD
+    );
+    achievementTitle.setTextColor(
+            android.graphics.Color.WHITE
+    );
+    achievementTitle.setGravity(android.view.Gravity.CENTER);
 
     android.widget.TextView achievementName =
             new android.widget.TextView(this);
 
     achievementName.setText(name);
-    achievementName.setTextSize(23);
-    achievementName.setTextColor(
-            android.graphics.Color.WHITE
+    achievementName.setTextSize(24);
+    achievementName.setTypeface(
+            null, android.graphics.Typeface.BOLD
     );
+    achievementName.setTextColor(kingdomGold);
     achievementName.setGravity(android.view.Gravity.CENTER);
-    achievementName.setPadding(0, 12, 0, 12);
+    achievementName.setPadding(0, 12, 0, 14);
 
-    android.widget.TextView description =
+    android.widget.TextView comment =
             new android.widget.TextView(this);
 
-    description.setText(message);
-    description.setTextSize(16);
-    description.setTextColor(
-            android.graphics.Color.LTGRAY
-    );
-    description.setGravity(android.view.Gravity.CENTER);
+    comment.setText(message);
+    comment.setTextSize(16);
+    comment.setTextColor(android.graphics.Color.WHITE);
+    comment.setGravity(android.view.Gravity.CENTER);
+    comment.setPadding(4, 0, 4, 18);
 
-    layout.addView(trophy);
-    layout.addView(title);
-    layout.addView(achievementName);
-    layout.addView(description);
+    card.addView(trophy);
+    card.addView(congratulations);
+    card.addView(achievementTitle);
+    card.addView(achievementName);
+    card.addView(comment);
 
     android.app.AlertDialog dialog =
             new android.app.AlertDialog.Builder(this)
-                    .setView(layout)
+                    .setView(card)
                     .setPositiveButton(
                             "CONTINUE",
                             (d, which) -> d.dismiss()
@@ -6023,9 +6040,27 @@ String message) {
         dialog.getButton(
                 android.app.AlertDialog.BUTTON_POSITIVE
         ).setTextColor(kingdomGold);
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(
+                    new android.graphics.drawable.ColorDrawable(
+                            android.graphics.Color.TRANSPARENT
+                    )
+            );
+        }
     });
 
     dialog.show();
+
+    if (dialog.getWindow() != null) {
+        dialog.getWindow().setBackgroundDrawable(
+                new android.graphics.drawable.ColorDrawable(
+                        android.graphics.Color.TRANSPARENT
+                )
+        );
+
+        dialog.getWindow().setDimAmount(0.65f);
+    }
 
     android.view.View decorView =
             dialog.getWindow().getDecorView();
