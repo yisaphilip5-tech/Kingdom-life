@@ -6331,36 +6331,109 @@ void showJigsawMenu() {
             "Hard"
     };
 
-    for (int i = 0; i < levelNames.length; i++) {
-        final int level = i + 1;
-        final String imageName = imageNames[i];
-        final String difficulty = difficulties[i];
+    int previouslyShownUnlocked =
+prefs.getInt("jigsawLastShownUnlockedLevel", 1);
 
-        boolean unlocked = level <= highestUnlocked;
+for (int i = 0; i < levelNames.length; i++) {
+    final int level = i + 1;
+    final String imageName = imageNames[i];
+    final String difficulty = difficulties[i];
 
-        Button levelButton = new Button(this);
-        levelButton.setText(
-                (unlocked ? "🔓 " : "🔒 ")
-                        + levelNames[i]
-        );
-        levelButton.setTextSize(16);
-        levelButton.setAllCaps(false);
-        levelButton.setEnabled(unlocked);
+    boolean unlocked = level <= highestUnlocked;
 
-        levelButton.setOnClickListener(v ->
+    LinearLayout levelRow = new LinearLayout(this);
+    levelRow.setOrientation(LinearLayout.HORIZONTAL);
+    levelRow.setGravity(Gravity.CENTER_VERTICAL);
+    levelRow.setPadding(16, 14, 16, 14);
+
+    android.graphics.drawable.GradientDrawable rowBackground =
+            new android.graphics.drawable.GradientDrawable();
+
+    rowBackground.setColor(
+            unlocked
+                    ? android.graphics.Color.rgb(30, 24, 55)
+                    : android.graphics.Color.rgb(65, 60, 75)
+    );
+
+    rowBackground.setCornerRadius(16);
+
+    rowBackground.setStroke(
+            2,
+            android.graphics.Color.rgb(184, 134, 11)
+    );
+
+    levelRow.setBackground(rowBackground);
+
+    TextView lockIcon = new TextView(this);
+
+    lockIcon.setText(unlocked ? "🔓" : "🔒");
+    lockIcon.setTextSize(23);
+    lockIcon.setGravity(Gravity.CENTER);
+
+    LinearLayout.LayoutParams lockParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    lockParams.setMargins(0, 0, 14, 0);
+    levelRow.addView(lockIcon, lockParams);
+
+    TextView levelTitle = new TextView(this);
+
+    levelTitle.setText(levelNames[i]);
+    levelTitle.setTextSize(17);
+    levelTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+
+    levelTitle.setTextColor(
+            unlocked
+                    ? android.graphics.Color.WHITE
+                    : android.graphics.Color.LTGRAY
+    );
+
+    levelRow.addView(levelTitle);
+
+    levelRow.setEnabled(unlocked);
+
+    if (unlocked) {
+        levelRow.setOnClickListener(v ->
                 startJigsawPuzzle(difficulty, imageName)
         );
-
-        LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                );
-
-        params.setMargins(0, 6, 0, 6);
-        levelContainer.addView(levelButton, params);
     }
 
+    LinearLayout.LayoutParams rowParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    rowParams.setMargins(0, 6, 0, 6);
+    levelContainer.addView(levelRow, rowParams);
+
+    // Animate only a newly unlocked level.
+    if (level == highestUnlocked
+            && highestUnlocked > previouslyShownUnlocked) {
+
+        lockIcon.setText("🔒");
+        lockIcon.setVisibility(View.VISIBLE);
+
+        LevelUnlockAnimator.animateUnlock(
+                lockIcon,
+                levelTitle,
+                this,
+                levelNames[i]
+        );
+    }
+}
+
+if (highestUnlocked > previouslyShownUnlocked) {
+    prefs.edit()
+            .putInt(
+                    "jigsawLastShownUnlockedLevel",
+                    highestUnlocked
+            )
+            .apply();
+}
     content.addView(levelScroll, new LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
             0,
