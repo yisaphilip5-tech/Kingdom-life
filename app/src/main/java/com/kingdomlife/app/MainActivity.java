@@ -5929,7 +5929,74 @@ void showAchievements() {
     }
     }
     
+void showAchievementNotification(
+String name,
+String message) {
 
+    String notificationKey = "notified_" + name;
+
+    if (prefs.getBoolean(notificationKey, false)) {
+        return;
+    }
+
+    prefs.edit()
+            .putBoolean(notificationKey, true)
+            .apply();
+
+    android.app.AlertDialog.Builder builder =
+            new android.app.AlertDialog.Builder(this);
+
+    android.widget.LinearLayout layout =
+            new android.widget.LinearLayout(this);
+
+    layout.setOrientation(
+            android.widget.LinearLayout.VERTICAL
+    );
+
+    layout.setPadding(32, 28, 32, 28);
+
+    layout.setBackgroundColor(
+            android.graphics.Color.rgb(30, 24, 55)
+    );
+
+    android.widget.TextView title =
+            new android.widget.TextView(this);
+
+    title.setText("🏆 Achievement Unlocked!\n" + name);
+    title.setTextSize(21);
+    title.setTextColor(
+            android.graphics.Color.rgb(184, 134, 11)
+    );
+    title.setGravity(android.view.Gravity.CENTER);
+
+    android.widget.TextView description =
+            new android.widget.TextView(this);
+
+    description.setText(message);
+    description.setTextSize(16);
+    description.setTextColor(
+            android.graphics.Color.WHITE
+    );
+    description.setGravity(android.view.Gravity.CENTER);
+    description.setPadding(0, 18, 0, 18);
+
+    layout.addView(title);
+    layout.addView(description);
+
+    builder.setView(layout);
+    builder.setPositiveButton("Awesome!", (dialog, which) ->
+            dialog.dismiss()
+    );
+
+    android.app.AlertDialog dialog = builder.create();
+    dialog.show();
+
+    dialog.getButton(
+            android.app.AlertDialog.BUTTON_POSITIVE
+    ).setTextColor(
+            android.graphics.Color.rgb(184, 134, 11)
+    );
+        }
     void playAchievementCelebration(
         android.view.ViewGroup container) {
 
@@ -5997,185 +6064,8 @@ void showAchievements() {
         sparkle.startAnimation(fall);
     }
     }
-    void checkAchievementNotifications() {
+    
 
-    // Points achievements
-    if (totalPoints >= 5) {
-        showAchievementNotification(
-                "First Step",
-                "You earned your first points!"
-        );
-    }
-
-    if (totalPoints >= 50) {
-        showAchievementNotification(
-                "Point Builder",
-                "You reached 50 points!"
-        );
-    }
-
-    // Bible learning achievement
-    if (learnedVerses >= 5) {
-        showAchievementNotification(
-                "Bible Learner",
-                "You have learned 5 Bible verses!"
-        );
-    }
-
-    // Daily streak achievement
-    if (dailyStreak >= 3) {
-        showAchievementNotification(
-                "Streak Keeper",
-                "You reached a 3-day streak!"
-        );
-    }
-
-    // Daily challenge achievement
-    if (challengeCompletedToday) {
-        showAchievementNotification(
-                "Challenge Complete",
-                "You completed today's challenge!"
-        );
-    }
-
-    // Bible Challenge levels
-    boolean easyCompleted = prefs.getBoolean(
-            "challenge_level_1_completed", false
-    );
-
-    boolean mediumCompleted = prefs.getBoolean(
-            "challenge_level_2_completed", false
-    );
-
-    boolean hardCompleted = prefs.getBoolean(
-            "challenge_level_3_completed", false
-    );
-
-    if (easyCompleted) {
-        showAchievementNotification(
-                "Easy Challenger",
-                "You completed Level 1!"
-        );
-    }
-
-    if (mediumCompleted) {
-        showAchievementNotification(
-                "Medium Challenger",
-                "You completed Level 2!"
-        );
-    }
-
-    if (hardCompleted) {
-        showAchievementNotification(
-                "Hard Challenger",
-                "You completed Level 3!"
-        );
-    }
-
-    if (easyCompleted && mediumCompleted && hardCompleted) {
-        showAchievementNotification(
-                "Challenge Master",
-                "You completed all three Challenge levels!"
-        );
-    }
-
-    // Bible Journey achievements
-    int journeyQuestions = prefs.getInt(
-            "bibleJourney_questions_completed", 0
-    );
-
-    int journeyBooks = prefs.getInt(
-            "bibleJourney_books_completed", 0
-    );
-
-    if (journeyQuestions >= 100) {
-        showAchievementNotification(
-                "100 Questions",
-                "You completed 100 Bible Journey questions!"
-        );
-    }
-
-    if (journeyQuestions >= 250) {
-        showAchievementNotification(
-                "250 Questions",
-                "You completed 250 Bible Journey questions!"
-        );
-    }
-
-    if (journeyQuestions >= 500) {
-        showAchievementNotification(
-                "500 Questions",
-                "You completed 500 Bible Journey questions!"
-        );
-    }
-
-    if (journeyQuestions >= 1000) {
-        showAchievementNotification(
-                "1,000 Questions",
-                "You completed 1,000 Bible Journey questions!"
-        );
-    }
-
-    if (journeyBooks >= 5) {
-        showAchievementNotification(
-                "5 Books",
-                "You completed 5 Bible Journey books!"
-        );
-    }
-
-    if (journeyBooks >= 10) {
-        showAchievementNotification(
-                "10 Books",
-                "You completed 10 Bible Journey books!"
-        );
-    }
-
-    if (journeyBooks >= 25) {
-        showAchievementNotification(
-                "25 Books",
-                "You completed 25 Bible Journey books!"
-        );
-    }
-
-    if (journeyBooks >= 50) {
-        showAchievementNotification(
-                "50 Books",
-                "You completed 50 Bible Journey books!"
-        );
-    }
-
-    if (journeyBooks >= 66) {
-showAchievementNotification(
-"66 Books",
-"You completed all 66 Bible Journey books!"
-);
-}
-
-// Bible Scramble achievements
-int scrambleWordsSolved = prefs.getInt(
-"bibleScramble_words_solved", 0);
-
-if (scrambleWordsSolved >= 10) {
-showAchievementNotification(
-"The Scrambled Achiever",
-"You solved 10 different Bible Scramble words!"
-);
-}
-
-if (scrambleWordsSolved >= 25) {
-showAchievementNotification(
-"Master of Letters",
-"You solved 25 different Bible Scramble words!"
-);
-}
-
-if (scrambleWordsSolved >= 75) {
-showAchievementNotification(
-"The Word Unraveller",
-"You solved all 75 Bible Scramble words!"
-);
-}
-    }
     void showAbout() {
         showMessage(
                 "ℹ️ About Kingdom Life",
