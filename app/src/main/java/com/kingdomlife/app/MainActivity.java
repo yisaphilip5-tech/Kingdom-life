@@ -5674,195 +5674,262 @@ void showAchievements() {
     }
 }
     
-    void showAchievementNotification(String achievementName, String message) {
+    void checkAchievementNotifications() {
 
-    boolean alreadyNotified = prefs.getBoolean(
-            "notified_" + achievementName,
-            false
-    );
-
-    if (alreadyNotified) {
-        return;
-    }
-
-    prefs.edit()
-            .putBoolean("notified_" + achievementName, true)
-            .apply();
-
-    final android.app.Dialog dialog =
-            new android.app.Dialog(this);
-
-    android.widget.LinearLayout layout =
-            new android.widget.LinearLayout(this);
-
-    layout.setOrientation(
-            android.widget.LinearLayout.VERTICAL
-    );
-
-    layout.setGravity(android.view.Gravity.CENTER);
-    layout.setPadding(32, 36, 32, 32);
-
-    android.graphics.drawable.GradientDrawable background =
-            new android.graphics.drawable.GradientDrawable();
-
-    background.setColor(
-            android.graphics.Color.rgb(30, 24, 55)
-    );
-
-    background.setCornerRadius(36);
-    background.setStroke(
-            4,
-            android.graphics.Color.rgb(212, 175, 55)
-    );
-
-    layout.setBackground(background);
-
-    android.widget.TextView trophy =
-            new android.widget.TextView(this);
-
-    trophy.setText("🏆");
-    trophy.setTextSize(58);
-    trophy.setGravity(android.view.Gravity.CENTER);
-
-    layout.addView(trophy);
-
-    android.widget.TextView title =
-            new android.widget.TextView(this);
-
-    title.setText("🎉 CONGRATULATIONS! 🎉");
-    title.setTextSize(22);
-    title.setTypeface(
-            null,
-            android.graphics.Typeface.BOLD
-    );
-
-    title.setTextColor(
-            android.graphics.Color.rgb(255, 215, 0)
-    );
-
-    title.setGravity(android.view.Gravity.CENTER);
-    title.setPadding(0, 16, 0, 12);
-
-    layout.addView(title);
-
-    android.widget.TextView unlocked =
-            new android.widget.TextView(this);
-
-    unlocked.setText("ACHIEVEMENT UNLOCKED!");
-    unlocked.setTextSize(16);
-    unlocked.setTypeface(
-            null,
-            android.graphics.Typeface.BOLD
-    );
-
-    unlocked.setTextColor(
-            android.graphics.Color.WHITE
-    );
-
-    unlocked.setGravity(android.view.Gravity.CENTER);
-    unlocked.setPadding(0, 0, 0, 12);
-
-    layout.addView(unlocked);
-
-    android.widget.TextView name =
-            new android.widget.TextView(this);
-
-    name.setText(achievementName);
-    name.setTextSize(24);
-    name.setTypeface(
-            null,
-            android.graphics.Typeface.BOLD
-    );
-
-    name.setTextColor(
-            android.graphics.Color.rgb(255, 215, 0)
-    );
-
-    name.setGravity(android.view.Gravity.CENTER);
-    name.setPadding(0, 8, 0, 12);
-
-    layout.addView(name);
-
-    android.widget.TextView details =
-            new android.widget.TextView(this);
-
-    details.setText(
-            message + "\n\nKeep growing in faith!"
-    );
-
-    details.setTextSize(16);
-    details.setTextColor(
-            android.graphics.Color.WHITE
-    );
-
-    details.setGravity(android.view.Gravity.CENTER);
-    details.setPadding(0, 0, 0, 20);
-
-    layout.addView(details);
-
-    android.widget.Button closeButton =
-            new android.widget.Button(this);
-
-    closeButton.setText("CONTINUE");
-    closeButton.setTextColor(
-            android.graphics.Color.WHITE
-    );
-
-    closeButton.setBackgroundTintList(
-            android.content.res.ColorStateList.valueOf(
-                    android.graphics.Color.rgb(184, 134, 11)
-            )
-    );
-
-    layout.addView(closeButton);
-
-    dialog.setContentView(layout);
-
-    android.view.Window window = dialog.getWindow();
-
-    if (window != null) {
-        window.setBackgroundDrawableResource(
-                android.R.color.transparent
+    // Points achievements
+    if (totalPoints >= 5) {
+        showAchievementNotification(
+                "First Step",
+                "You earned your first points!"
         );
     }
 
-    dialog.show();
-
-    window = dialog.getWindow();
-
-    if (window != null) {
-        window.setBackgroundDrawableResource(
-                android.R.color.transparent
-        );
-
-        window.setLayout(
-                (int) (getResources().getDisplayMetrics().widthPixels * 0.90),
-                android.view.WindowManager.LayoutParams.WRAP_CONTENT
+    if (totalPoints >= 50) {
+        showAchievementNotification(
+                "Point Builder",
+                "You reached 50 points!"
         );
     }
 
-    android.view.animation.ScaleAnimation zoom =
-            new android.view.animation.ScaleAnimation(
-                    0.5f, 1.0f,
-                    0.5f, 1.0f,
-                    android.view.animation.Animation.RELATIVE_TO_SELF,
-                    0.5f,
-                    android.view.animation.Animation.RELATIVE_TO_SELF,
-                    0.5f
+    // Bible learning achievement
+    if (learnedVerses >= 5) {
+        showAchievementNotification(
+                "Bible Learner",
+                "You have learned 5 Bible verses!"
+        );
+    }
+
+    // Daily streak achievement
+    if (dailyStreak >= 3) {
+        showAchievementNotification(
+                "Streak Keeper",
+                "You reached a 3-day streak!"
+        );
+    }
+
+    // Daily challenge achievement
+    if (challengeCompletedToday) {
+        showAchievementNotification(
+                "Challenge Complete",
+                "You completed today's challenge!"
+        );
+    }
+
+    // Bible Challenge levels
+    boolean easyCompleted = prefs.getBoolean(
+            "challenge_level_1_completed", false
+    );
+
+    boolean mediumCompleted = prefs.getBoolean(
+            "challenge_level_2_completed", false
+    );
+
+    boolean hardCompleted = prefs.getBoolean(
+            "challenge_level_3_completed", false
+    );
+
+    if (easyCompleted) {
+        showAchievementNotification(
+                "Easy Challenger",
+                "You completed Level 1!"
+        );
+    }
+
+    if (mediumCompleted) {
+        showAchievementNotification(
+                "Medium Challenger",
+                "You completed Level 2!"
+        );
+    }
+
+    if (hardCompleted) {
+        showAchievementNotification(
+                "Hard Challenger",
+                "You completed Level 3!"
+        );
+    }
+
+    if (easyCompleted && mediumCompleted && hardCompleted) {
+        showAchievementNotification(
+                "Challenge Master",
+                "You completed all three Challenge levels!"
+        );
+    }
+
+    // Bible Journey achievements
+    int journeyQuestions = prefs.getInt(
+            "bibleJourney_questions_completed", 0
+    );
+
+    int journeyBooks = prefs.getInt(
+            "bibleJourney_books_completed", 0
+    );
+
+    if (journeyQuestions >= 100) {
+        showAchievementNotification(
+                "100 Questions",
+                "You completed 100 Bible Journey questions!"
+        );
+    }
+
+    if (journeyQuestions >= 250) {
+        showAchievementNotification(
+                "250 Questions",
+                "You completed 250 Bible Journey questions!"
+        );
+    }
+
+    if (journeyQuestions >= 500) {
+        showAchievementNotification(
+                "500 Questions",
+                "You completed 500 Bible Journey questions!"
+        );
+    }
+
+    if (journeyQuestions >= 1000) {
+        showAchievementNotification(
+                "1,000 Questions",
+                "You completed 1,000 Bible Journey questions!"
+        );
+    }
+
+    if (journeyBooks >= 5) {
+        showAchievementNotification(
+                "5 Books",
+                "You completed 5 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 10) {
+        showAchievementNotification(
+                "10 Books",
+                "You completed 10 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 25) {
+        showAchievementNotification(
+                "25 Books",
+                "You completed 25 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 50) {
+        showAchievementNotification(
+                "50 Books",
+                "You completed 50 Bible Journey books!"
+        );
+    }
+
+    if (journeyBooks >= 66) {
+        showAchievementNotification(
+                "66 Books",
+                "You completed all 66 Bible Journey books!"
+        );
+    }
+
+    // Bible Scramble achievements
+    int scrambleWordsSolved = prefs.getInt(
+            "bibleScramble_words_solved", 0
+    );
+
+    if (scrambleWordsSolved >= 10) {
+        showAchievementNotification(
+                "The Scrambled Achiever",
+                "You solved 10 different Bible Scramble words!"
+        );
+    }
+
+    if (scrambleWordsSolved >= 25) {
+        showAchievementNotification(
+                "Master of Letters",
+                "You solved 25 different Bible Scramble words!"
+        );
+    }
+
+    if (scrambleWordsSolved >= 75) {
+        showAchievementNotification(
+                "The Word Unraveller",
+                "You solved all 75 Bible Scramble words!"
+        );
+    }
+
+    // NEW ACHIEVEMENT: The Big Picture
+    android.content.SharedPreferences jigsawPrefs =
+            getSharedPreferences(
+                    "KingdomLifeJigsawPrefs",
+                    MODE_PRIVATE
             );
 
-    zoom.setDuration(450);
-    zoom.setInterpolator(
-            new android.view.animation.OvershootInterpolator()
+    boolean jigsawLevel1 = jigsawPrefs.getBoolean(
+            "level1RewardClaimed", false
     );
 
-    layout.startAnimation(zoom);
-        playAchievementCelebration(
-        (android.view.ViewGroup) dialog.getWindow().getDecorView()
-);
+    boolean jigsawLevel2 = jigsawPrefs.getBoolean(
+            "level2RewardClaimed", false
+    );
 
-    closeButton.setOnClickListener(v -> dialog.dismiss());
+    boolean jigsawLevel3 = jigsawPrefs.getBoolean(
+            "level3RewardClaimed", false
+    );
+
+    if (jigsawLevel1 && jigsawLevel2 && jigsawLevel3) {
+        showAchievementNotification(
+                "The Big Picture",
+                "You completed all three Jigsaw Puzzle levels!"
+        );
     }
+
+    // NEW ACHIEVEMENT: The Word Hearer
+    int missingWordCorrect = prefs.getInt(
+            "missingWord_correct_answers", 0
+    );
+
+    if (missingWordCorrect >= 25) {
+        showAchievementNotification(
+                "The Word Hearer",
+                "You answered 25 Missing Word questions correctly!"
+        );
+    }
+
+    // NEW ACHIEVEMENT: The Scripture Detective
+    int referenceCorrect = prefs.getInt(
+            "memory_reference_correct_answers", 0
+    );
+
+    if (referenceCorrect >= 25) {
+        showAchievementNotification(
+                "The Scripture Detective",
+                "You answered 25 Guess the Reference questions correctly!"
+        );
+    }
+
+    // NEW ACHIEVEMENT: The Verse Guardian
+    int guessVerseCorrect = prefs.getInt(
+            "memory_guess_correct_answers", 0
+    );
+
+    if (guessVerseCorrect >= 25) {
+        showAchievementNotification(
+                "The Verse Guardian",
+                "You answered 25 Guess the Verse questions correctly!"
+        );
+    }
+
+    // NEW ACHIEVEMENT: The Verse Finisher
+    int completeVerseCorrect = prefs.getInt(
+            "memory_complete_correct_answers", 0
+    );
+
+    if (completeVerseCorrect >= 25) {
+        showAchievementNotification(
+                "The Verse Finisher",
+                "You completed 25 verses correctly!"
+        );
+    }
+    }
+    
+
     void playAchievementCelebration(
         android.view.ViewGroup container) {
 
