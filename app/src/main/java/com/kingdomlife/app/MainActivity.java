@@ -6315,11 +6315,10 @@ void showJigsawMenu() {
     levelScroll.addView(levelContainer);
 
     String[] levelNames = {
-            "🌿 Level 1 - Garden of Eden",
-            "🌊 Level 2 - Noah's Ark",
-            "🌾 Level 3 - Joseph in Egypt"
-    };
-
+"🧩 Level 1",
+"🧩 Level 2",
+"🧩 Level 3"
+};
     String[] imageNames = {
             "genesis_eden",
             "genesis_noah",
