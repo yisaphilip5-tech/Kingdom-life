@@ -519,6 +519,16 @@ activity.content.addView(
                             activity.totalPoints
                     )
                     .apply();
+            int missingWordCorrect = activity.prefs.getInt(
+        "missingWord_correct_answers", 0
+);
+
+activity.prefs.edit()
+        .putInt(
+                "missingWord_correct_answers",
+                missingWordCorrect + 1
+        )
+        .apply();
 
             feedbackText.setText(
                     "✅ Correct! You earned 5 points."
