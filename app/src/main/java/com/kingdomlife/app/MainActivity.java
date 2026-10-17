@@ -6075,6 +6075,13 @@ String message) {
             .scaleY(1f)
             .setDuration(350)
             .start();
+            android.view.ViewGroup rootContainer =
+                (android.view.ViewGroup)
+                        decorView.getRootView();
+
+        decorView.postDelayed(() -> {
+            playAchievementCelebration(rootContainer);
+        }, 200);
 }
     void playAchievementCelebration(
         android.view.ViewGroup container) {
