@@ -5943,8 +5943,11 @@ String message) {
             .putBoolean(notificationKey, true)
             .apply();
 
-    android.app.AlertDialog.Builder builder =
-            new android.app.AlertDialog.Builder(this);
+    final int royalPurple =
+            android.graphics.Color.rgb(30, 24, 55);
+
+    final int kingdomGold =
+            android.graphics.Color.rgb(184, 134, 11);
 
     android.widget.LinearLayout layout =
             new android.widget.LinearLayout(this);
@@ -5953,21 +5956,44 @@ String message) {
             android.widget.LinearLayout.VERTICAL
     );
 
-    layout.setPadding(32, 28, 32, 28);
+    layout.setGravity(android.view.Gravity.CENTER);
+    layout.setPadding(36, 32, 36, 28);
 
-    layout.setBackgroundColor(
-            android.graphics.Color.rgb(30, 24, 55)
-    );
+    android.graphics.drawable.GradientDrawable background =
+            new android.graphics.drawable.GradientDrawable();
+
+    background.setColor(royalPurple);
+    background.setCornerRadius(24);
+    background.setStroke(3, kingdomGold);
+
+    layout.setBackground(background);
+
+    android.widget.TextView trophy =
+            new android.widget.TextView(this);
+
+    trophy.setText("🏆");
+    trophy.setTextSize(42);
+    trophy.setGravity(android.view.Gravity.CENTER);
 
     android.widget.TextView title =
             new android.widget.TextView(this);
 
-    title.setText("🏆 Achievement Unlocked!\n" + name);
-    title.setTextSize(21);
-    title.setTextColor(
-            android.graphics.Color.rgb(184, 134, 11)
-    );
+    title.setText("ACHIEVEMENT UNLOCKED");
+    title.setTextSize(13);
+    title.setTextStyle(android.graphics.Typeface.BOLD);
+    title.setTextColor(kingdomGold);
     title.setGravity(android.view.Gravity.CENTER);
+
+    android.widget.TextView achievementName =
+            new android.widget.TextView(this);
+
+    achievementName.setText(name);
+    achievementName.setTextSize(23);
+    achievementName.setTextColor(
+            android.graphics.Color.WHITE
+    );
+    achievementName.setGravity(android.view.Gravity.CENTER);
+    achievementName.setPadding(0, 12, 0, 12);
 
     android.widget.TextView description =
             new android.widget.TextView(this);
@@ -5975,28 +6001,46 @@ String message) {
     description.setText(message);
     description.setTextSize(16);
     description.setTextColor(
-            android.graphics.Color.WHITE
+            android.graphics.Color.LTGRAY
     );
     description.setGravity(android.view.Gravity.CENTER);
-    description.setPadding(0, 18, 0, 18);
 
+    layout.addView(trophy);
     layout.addView(title);
+    layout.addView(achievementName);
     layout.addView(description);
 
-    builder.setView(layout);
-    builder.setPositiveButton("Awesome!", (dialog, which) ->
-            dialog.dismiss()
-    );
+    android.app.AlertDialog dialog =
+            new android.app.AlertDialog.Builder(this)
+                    .setView(layout)
+                    .setPositiveButton(
+                            "CONTINUE",
+                            (d, which) -> d.dismiss()
+                    )
+                    .create();
 
-    android.app.AlertDialog dialog = builder.create();
+    dialog.setOnShowListener(d -> {
+        dialog.getButton(
+                android.app.AlertDialog.BUTTON_POSITIVE
+        ).setTextColor(kingdomGold);
+    });
+
     dialog.show();
 
-    dialog.getButton(
-            android.app.AlertDialog.BUTTON_POSITIVE
-    ).setTextColor(
-            android.graphics.Color.rgb(184, 134, 11)
-    );
-        }
+    android.view.View decorView =
+            dialog.getWindow().getDecorView();
+
+    decorView.setAlpha(0f);
+    decorView.setScaleX(0.85f);
+    decorView.setScaleY(0.85f);
+
+    decorView.animate()
+            .alpha(1f)
+            .scaleX(1f)
+            .scaleY(1f)
+            .setDuration(350)
+            .start();
+}
     void playAchievementCelebration(
         android.view.ViewGroup container) {
 
