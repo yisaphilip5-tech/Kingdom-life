@@ -639,6 +639,162 @@ public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_3 = {
             "But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people."
     )
 };
+    // Complete the Verse — Level 4
+public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_4 = {
+
+    new MemoryVerse(
+            "Deuteronomy 31:6",
+            "Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee."
+    ),
+
+    new MemoryVerse(
+            "1 Chronicles 16:11",
+            "Seek the LORD and his strength, seek his face continually."
+    ),
+
+    new MemoryVerse(
+            "Psalm 27:1",
+            "The LORD is my light and my salvation; whom shall I fear?"
+    ),
+
+    new MemoryVerse(
+            "Psalm 34:8",
+            "O taste and see that the LORD is good: blessed is the man that trusteth in him."
+    ),
+
+    new MemoryVerse(
+            "Psalm 56:3",
+            "What time I am afraid, I will trust in thee."
+    ),
+
+    new MemoryVerse(
+            "Psalm 119:11",
+            "Thy word have I hid in mine heart, that I might not sin against thee."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 4:23",
+            "Keep thy heart with all diligence; for out of it are the issues of life."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 26:3",
+            "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee."
+    ),
+
+    new MemoryVerse(
+            "Jeremiah 33:3",
+            "Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not."
+    ),
+
+    new MemoryVerse(
+            "Matthew 7:7",
+            "Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you."
+    ),
+
+    new MemoryVerse(
+            "John 13:34",
+            "A new commandment I give unto you, That ye love one another; as I have loved you."
+    ),
+
+    new MemoryVerse(
+            "Romans 10:17",
+            "So then faith cometh by hearing, and hearing by the word of God."
+    ),
+
+    new MemoryVerse(
+            "1 Corinthians 16:14",
+            "Let all your things be done with charity."
+    ),
+
+    new MemoryVerse(
+            "Ephesians 4:32",
+            "And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you."
+    ),
+
+    new MemoryVerse(
+            "Colossians 3:23",
+            "And whatsoever ye do, do it heartily, as to the Lord, and not unto men."
+    )
+};
+    // Complete the Verse — Level 5
+public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_5 = {
+
+    new MemoryVerse(
+            "Genesis 1:1",
+            "In the beginning God created the heaven and the earth."
+    ),
+
+    new MemoryVerse(
+            "Exodus 14:14",
+            "The LORD shall fight for you, and ye shall hold your peace."
+    ),
+
+    new MemoryVerse(
+            "Deuteronomy 10:12",
+            "And now, Israel, what doth the LORD thy God require of thee, but to fear the LORD thy God, to walk in all his ways, and to love him."
+    ),
+
+    new MemoryVerse(
+            "Joshua 24:15",
+            "Choose you this day whom ye will serve; but as for me and my house, we will serve the LORD."
+    ),
+
+    new MemoryVerse(
+            "1 Samuel 16:7",
+            "For man looketh on the outward appearance, but the LORD looketh on the heart."
+    ),
+
+    new MemoryVerse(
+            "2 Chronicles 7:14",
+            "If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven."
+    ),
+
+    new MemoryVerse(
+            "Psalm 1:1",
+            "Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners."
+    ),
+
+    new MemoryVerse(
+            "Psalm 103:12",
+            "As far as the east is from the west, so far hath he removed our transgressions from us."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 18:10",
+            "The name of the LORD is a strong tower: the righteous runneth into it, and is safe."
+    ),
+
+    new MemoryVerse(
+            "Ecclesiastes 3:1",
+            "To every thing there is a season, and a time to every purpose under the heaven."
+    ),
+
+    new MemoryVerse(
+            "Matthew 28:19",
+            "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost."
+    ),
+
+    new MemoryVerse(
+            "Luke 11:28",
+            "Blessed are they that hear the word of God, and keep it."
+    ),
+
+    new MemoryVerse(
+            "John 11:25",
+            "I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live."
+    ),
+
+    new MemoryVerse(
+            "Romans 15:13",
+            "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."
+    ),
+
+    new MemoryVerse(
+            "1 Thessalonians 5:18",
+            "In every thing give thanks: for this is the will of God in Christ Jesus concerning you."
+    )
+};
     // Guess the Reference — Level 1
 public static final MemoryVerse[] GUESS_REFERENCE_LEVEL_1 = {
 
