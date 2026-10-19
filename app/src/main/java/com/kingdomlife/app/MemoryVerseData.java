@@ -249,6 +249,162 @@ public static final MemoryVerse[] GUESS_VERSE_LEVEL_3 = {
             "We love him, because he first loved us."
     )
 };
+    // Guess the Verse — Level 4
+public static final MemoryVerse[] GUESS_VERSE_LEVEL_4 = {
+
+    new MemoryVerse(
+            "Joshua 1:9",
+            "Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest."
+    ),
+
+    new MemoryVerse(
+            "Psalm 19:14",
+            "Let the words of my mouth, and the meditation of my heart, be acceptable in thy sight, O LORD, my strength, and my redeemer."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 3:5-6",
+            "Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 40:31",
+            "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."
+    ),
+
+    new MemoryVerse(
+            "Matthew 5:16",
+            "Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven."
+    ),
+
+    new MemoryVerse(
+            "Matthew 6:33",
+            "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you."
+    ),
+
+    new MemoryVerse(
+            "John 8:32",
+            "And ye shall know the truth, and the truth shall make you free."
+    ),
+
+    new MemoryVerse(
+            "Romans 8:28",
+            "And we know that all things work together for good to them that love God, to them who are the called according to his purpose."
+    ),
+
+    new MemoryVerse(
+            "Romans 12:2",
+            "And be not conformed to this world: but be ye transformed by the renewing of your mind."
+    ),
+
+    new MemoryVerse(
+            "1 Corinthians 10:13",
+            "There hath no temptation taken you but such as is common to man: but God is faithful, who will not suffer you to be tempted above that ye are able."
+    ),
+
+    new MemoryVerse(
+            "2 Corinthians 12:9",
+            "My grace is sufficient for thee: for my strength is made perfect in weakness."
+    ),
+
+    new MemoryVerse(
+            "Galatians 5:22-23",
+            "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law."
+    ),
+
+    new MemoryVerse(
+            "Philippians 4:6-7",
+            "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God."
+    ),
+
+    new MemoryVerse(
+            "2 Timothy 2:15",
+            "Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth."
+    ),
+
+    new MemoryVerse(
+            "Hebrews 11:1",
+            "Now faith is the substance of things hoped for, the evidence of things not seen."
+    )
+};
+    // Guess the Verse — Level 5
+public static final MemoryVerse[] GUESS_VERSE_LEVEL_5 = {
+
+    new MemoryVerse(
+            "Deuteronomy 6:5",
+            "And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might."
+    ),
+
+    new MemoryVerse(
+            "1 Samuel 15:22",
+            "Behold, to obey is better than sacrifice, and to hearken than the fat of rams."
+    ),
+
+    new MemoryVerse(
+            "Psalm 37:4",
+            "Delight thyself also in the LORD; and he shall give thee the desires of thine heart."
+    ),
+
+    new MemoryVerse(
+            "Psalm 46:10",
+            "Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth."
+    ),
+
+    new MemoryVerse(
+            "Psalm 119:105",
+            "Thy word is a lamp unto my feet, and a light unto my path."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 16:3",
+            "Commit thy works unto the LORD, and thy thoughts shall be established."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 53:5",
+            "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+    ),
+
+    new MemoryVerse(
+            "Micah 6:8",
+            "He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?"
+    ),
+
+    new MemoryVerse(
+            "Matthew 11:28",
+            "Come unto me, all ye that labour and are heavy laden, and I will give you rest."
+    ),
+
+    new MemoryVerse(
+            "John 15:5",
+            "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing."
+    ),
+
+    new MemoryVerse(
+            "Romans 12:1",
+            "I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service."
+    ),
+
+    new MemoryVerse(
+            "1 Corinthians 13:13",
+            "And now abideth faith, hope, charity, these three; but the greatest of these is charity."
+    ),
+
+    new MemoryVerse(
+            "Ephesians 2:8",
+            "For by grace are ye saved through faith; and that not of yourselves: it is the gift of God."
+    ),
+
+    new MemoryVerse(
+            "Philippians 2:3",
+            "Let nothing be done through strife or vainglory; but in lowliness of mind let each esteem other better than themselves."
+    ),
+
+    new MemoryVerse(
+            "2 Peter 3:18",
+            "But grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ. To him be glory both now and for ever. Amen."
+    )
+};
     // Complete the Verse — Level 1
 public static final MemoryVerse[] COMPLETE_VERSE_LEVEL_1 = {
 
