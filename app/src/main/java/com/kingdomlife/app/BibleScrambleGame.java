@@ -372,7 +372,7 @@ activity.content.addView(feedback, feedbackParams);
         int unlockedLevel = activity.prefs.getInt(
 "bibleScrambleUnlockedLevel", 1);
 
-if (level >= unlockedLevel && level < 3) {
+if (level >= unlockedLevel && level < 5) {
 activity.prefs.edit()
 .putInt("bibleScrambleUnlockedLevel", level + 1)
 .putInt("bibleScramblePendingAnimation", level + 1)
