@@ -207,21 +207,15 @@ backButton.setScaleY(1.5f);
 
     addSpace(15);
 
-    addLevelButton(
-            "Level 1 — Easy",
-            1
-    );
+    addLevelButton("Level 1", 1);
 
-    addLevelButton(
-            "Level 2 — Medium",
-            2
-    );
+addLevelButton("Level 2", 2);
 
-    addLevelButton(
-            "Level 3 — Hard",
-            3
-    );
+addLevelButton("Level 3", 3);
 
+addLevelButton("Level 4", 4);
+
+addLevelButton("Level 5", 5);
     // The old bottom back button has been removed.
     }
 
@@ -600,7 +594,7 @@ activity.prefs.edit()
         int unlockedLevel = activity.prefs.getInt(
 "missingWordUnlockedLevel", 1);
 
-if (currentLevel >= unlockedLevel && currentLevel < 3) {
+if (currentLevel >= unlockedLevel && currentLevel < 5) {
     activity.prefs.edit()
             .putInt(
                     "missingWordUnlockedLevel",
