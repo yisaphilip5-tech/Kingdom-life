@@ -408,6 +408,17 @@ content.addView(
                 type,
                 3
         );
+                addLevelButton(
+                "⭐⭐⭐⭐ Level 4",
+                type,
+                4
+        );
+
+        addLevelButton(
+                "⭐⭐⭐⭐⭐ Level 5",
+                type,
+                5
+        );
     }
 
     private void addLevelButton(
