@@ -103,6 +103,64 @@ public static String[][] getLevel3Questions() {
         {"Commit thy works unto the Lord, and thy thoughts shall be ___", "established", "ordered", "guided", "fulfilled", "Proverbs 16:3", "0"}
     };
 }
+    public static String[][] getLevel4Questions() {
+return new String[][]{
+{"The Lord is gracious, and full of ___", "compassion", "anger", "fear", "doubt", "Psalm 145:8", "0"},
+{"A good name is rather to be chosen than great ___", "riches", "power", "honour", "wisdom", "Proverbs 22:1", "0"},
+{"The liberal deviseth liberal things; and by liberal things shall he ___", "stand", "prosper", "flourish", "live", "Isaiah 32:8", "0"},
+{"The Lord will perfect that which concerneth ___", "me", "thee", "us", "them", "Psalm 138:8", "1"},
+{"The blessing of the Lord, it maketh ___", "rich", "strong", "wise", "holy", "Proverbs 10:22", "0"},
+{"A merry heart maketh a cheerful ___", "face", "spirit", "countenance", "voice", "Proverbs 15:13", "2"},
+{"The integrity of the upright shall guide ___", "them", "him", "us", "you", "Proverbs 11:3", "0"},
+{"The Lord is nigh unto all them that call upon ___", "him", "thee", "God", "Jesus", "Psalm 145:18", "0"},
+{"A faithful man shall abound with ___", "blessings", "riches", "wisdom", "honour", "Proverbs 28:20", "0"},
+{"The righteous eateth to the satisfying of his ___", "heart", "soul", "mouth", "desire", "Proverbs 13:25", "1"},
+{"The Lord shall preserve thy going out and thy coming in from this time forth, and even for ___", "ever", "always", "eternity", "life", "Psalm 121:8", "0"},
+{"The path of the just is as the shining ___", "sun", "light", "star", "moon", "Proverbs 4:18", "1"},
+{"The Lord is my strength and my ___", "shield", "refuge", "rock", "fortress", "Psalm 28:7", "0"},
+{"A soft tongue breaketh the ___", "bone", "heart", "pride", "silence", "Proverbs 25:15", "0"},
+{"The memory of the just is ___", "blessed", "honoured", "good", "lasting", "Proverbs 10:7", "0"},
+{"The righteous shall never be ___", "moved", "forgotten", "shaken", "forsaken", "Psalm 112:6", "0"},
+{"The Lord is good to all: and his tender mercies are over all his ___", "works", "children", "people", "creation", "Psalm 145:9", "0"},
+{"The way of the wicked is as ___", "darkness", "death", "destruction", "sorrow", "Proverbs 4:19", "0"},
+{"The fear of the Lord is the instruction of ___", "wisdom", "knowledge", "understanding", "life", "Proverbs 15:33", "0"},
+{"The Lord upholdeth all that ___", "fall", "trust", "believe", "wait", "Psalm 145:14", "0"},
+{"A wise son maketh a glad ___", "father", "mother", "family", "king", "Proverbs 10:1", "0"},
+{"The name of the Lord is a strong tower: the righteous runneth into it, and is ___", "safe", "strong", "saved", "secure", "Proverbs 18:10", "0"},
+{"The Lord is righteous in all his ___", "ways", "works", "judgments", "words", "Psalm 145:17", "0"},
+{"He that followeth after righteousness and mercy findeth life, righteousness, and ___", "honour", "peace", "wisdom", "joy", "Proverbs 21:21", "0"},
+{"The tongue of the wise useth knowledge ___", "aright", "well", "daily", "faithfully", "Proverbs 15:2", "0"}
+};
+    }
+    public static String[][] getLevel5Questions() {
+    return new String[][]{
+        {"The secret things belong unto the Lord our ___", "God", "King", "Father", "Creator", "Deuteronomy 29:29", "0"},
+        {"The Lord is good, a strong hold in the day of ___", "trouble", "sorrow", "fear", "battle", "Nahum 1:7", "0"},
+        {"The fining pot is for silver, and the furnace for ___", "gold", "iron", "brass", "copper", "Proverbs 17:3", "0"},
+        {"The heart of the prudent getteth ___", "knowledge", "wisdom", "understanding", "instruction", "Proverbs 18:15", "0"},
+        {"The words of the Lord are pure words: as silver tried in a furnace of earth, purified ___ times", "seven", "three", "five", "ten", "Psalm 12:6", "0"},
+        {"The just man walketh in his ___", "integrity", "wisdom", "strength", "righteousness", "Proverbs 20:7", "0"},
+        {"A word fitly spoken is like apples of gold in pictures of ___", "silver", "bronze", "ivory", "wood", "Proverbs 25:11", "0"},
+        {"The spirit of man is the candle of the Lord, searching all the inward parts of the ___", "belly", "heart", "mind", "soul", "Proverbs 20:27", "0"},
+        {"The fining pot is for silver, and the furnace for gold: but the Lord trieth the ___", "hearts", "spirits", "works", "ways", "Proverbs 17:3", "0"},
+        {"The desire accomplished is sweet to the ___", "soul", "heart", "mind", "spirit", "Proverbs 13:19", "0"},
+        {"The righteous considereth the cause of the ___", "poor", "fatherless", "widow", "stranger", "Proverbs 29:7", "0"},
+        {"The Lord hath made all things for ___", "himself", "his people", "his glory", "his kingdom", "Proverbs 16:4", "0"},
+        {"The hoary head is a crown of ___", "glory", "honour", "wisdom", "righteousness", "Proverbs 16:31", "0"},
+        {"The name of the Lord is a strong ___", "tower", "shield", "refuge", "fortress", "Proverbs 18:10", "0"},
+        {"The words of a man's mouth are as deep ___", "waters", "wells", "rivers", "oceans", "Proverbs 18:4", "0"},
+        {"A man that hath friends must shew himself ___", "friendly", "faithful", "kind", "honest", "Proverbs 18:24", "0"},
+        {"The king's heart is in the hand of the ___", "Lord", "people", "prophet", "priest", "Proverbs 21:1", "0"},
+        {"The horse is prepared against the day of battle: but safety is of the ___", "Lord", "king", "captain", "army", "Proverbs 21:31", "0"},
+        {"Every way of a man is right in his own ___", "eyes", "heart", "mind", "sight", "Proverbs 21:2", "0"},
+        {"The lot is cast into the lap; but the whole disposing thereof is of the ___", "Lord", "king", "priest", "judge", "Proverbs 16:33", "0"},
+        {"The fear of the Lord tendeth to ___", "life", "wisdom", "peace", "knowledge", "Proverbs 19:23", "0"},
+        {"A false witness shall not be ___", "unpunished", "forgotten", "believed", "honoured", "Proverbs 19:5", "0"},
+        {"The soul of the sluggard desireth, and hath ___", "nothing", "little", "enough", "much", "Proverbs 13:4", "0"},
+        {"The Lord is far from the wicked: but he heareth the prayer of the ___", "righteous", "humble", "faithful", "poor", "Proverbs 15:29", "0"},
+        {"The fining pot is for silver, and the furnace for gold: and a man is valued by his ___", "praise", "wealth", "strength", "wisdom", "Proverbs 27:21", "0"}
+    };
+        }
 
 public static String[][] getQuestionsForLevel(int level) {
     switch (level) {
