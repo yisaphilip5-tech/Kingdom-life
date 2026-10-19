@@ -6315,21 +6315,43 @@ void showJigsawMenu() {
     levelScroll.addView(levelContainer);
 
     String[] levelNames = {
-"🧩 Level 1",
-"🧩 Level 2",
-"🧩 Level 3"
+        "🧩 Level 1",
+        "🧩 Level 2",
+        "🧩 Level 3",
+        "🧩 Level 4",
+        "🧩 Level 5",
+        "🧩 Level 6",
+        "🧩 Level 7",
+        "🧩 Level 8",
+        "🧩 Level 9",
+        "🧩 Level 10"
 };
-    String[] imageNames = {
-            "genesis_eden",
-            "genesis_noah",
-            "genesis_joseph"
-    };
 
-    String[] difficulties = {
-            "Easy",
-            "Medium",
-            "Hard"
-    };
+String[] imageNames = {
+        "genesis_eden",
+        "genesis_noah",
+        "genesis_joseph",
+        "abraham_covenant",
+        "moses_red_sea",
+        "joshua_jericho",
+        "david_goliath",
+        "david_king",
+        "elijah_carmel",
+        "esther_queen"
+};
+
+String[] difficulties = {
+        "Easy",
+        "Medium",
+        "Hard",
+        "Medium",
+        "Easy",
+        "Hard",
+        "Easy",
+        "Hard",
+        "Medium",
+        "Easy"
+};
 
     int previouslyShownUnlocked =
 prefs.getInt("jigsawLastShownUnlockedLevel", 1);
