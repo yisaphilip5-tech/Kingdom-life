@@ -99,12 +99,14 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
             "bibleScramblePendingAnimation", 0);
 
     String[] levelNames = {
-            "🌱 Level 1 — Easy",
-            "📖 Level 2 — Intermediate",
-            "🔥 Level 3 — Advanced"
-    };
+"Level 1",
+"Level 2",
+"Level 3",
+"Level 4",
+"Level 5"
+};
 
-    for (int i = 1; i <= 3; i++) {
+    for (int i = 1; i <= 5; i++) {
         final int selectedLevel = i;
 
         android.widget.FrameLayout buttonFrame =
