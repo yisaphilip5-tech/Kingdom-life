@@ -96,51 +96,63 @@ public static void open(Activity a, LinearLayout container) {
 }
 
 private static void extractChapters() {
-    String script =
-            "(function() {" +
-            "var headings = Array.from(document.querySelectorAll('h1,h2,h3,h4'));" +
-            "headings = headings.filter(function(h) {" +
-            "return /^CHAPTER\\\\s+[IVXLCDM0-9]+\\\\.?$/i.test(h.textContent.trim());" +
-            "});" +
-            "var result = [];" +
-            "headings.forEach(function(h, i) {" +
-            "var box = document.createElement('div');" +
-            "var n = h.nextSibling;" +
-            "while (n && n !== headings[i + 1]) {" +
-            "box.appendChild(n.cloneNode(true));" +
-            "n = n.nextSibling;" +
-            "}" +
-            "result.push({title:h.textContent.trim(), html:box.innerHTML});" +
-            "});" +
-            "return JSON.stringify(result);" +
-            "})()";
+String script =
+"(function() {" +
+"var headings = Array.from(document.querySelectorAll('h1,h2,h3,h4'));" +
+"headings = headings.filter(function(h) {" +
+"return /^\\s*CHAPTER\\s+[IVXLCDM0-9]+\\b/i.test(h.textContent.trim());" +
+"});" +
+"var result = [];" +
+"headings.forEach(function(h, i) {" +
+"var box = document.createElement('div');" +
+"var n = h.nextSibling;" +
+"while (n && n !== headings[i + 1]) {" +
+"box.appendChild(n.cloneNode(true));" +
+"n = n.nextSibling;" +
+"}" +
+"result.push({" +
+"title: h.textContent.trim()," +
+"html: box.innerHTML" +
+"});" +
+"});" +
+"return JSON.stringify(result);" +
+"})()";
 
-    bookView.evaluateJavascript(script, value -> {
-        try {
-            Object decoded = new JSONTokener(value).nextValue();
-            chapters = new JSONArray(decoded.toString());
-
-            if (chapters.length() == 0) {
-                Toast.makeText(
-                        activity,
-                        "No chapter headings were found.",
-                        Toast.LENGTH_LONG
-                ).show();
-                return;
-            }
-
-            showChapterList();
-
-        } catch (Exception e) {
+bookView.evaluateJavascript(script, value -> {
+    try {
+        if (value == null || value.equals("null")) {
             Toast.makeText(
                     activity,
-                    "Could not load the chapter list.",
+                    "Could not read the book HTML.",
                     Toast.LENGTH_LONG
             ).show();
+            return;
         }
-    });
-}
 
+        Object decoded = new JSONTokener(value).nextValue();
+        chapters = new JSONArray(decoded.toString());
+
+        if (chapters.length() == 0) {
+            Toast.makeText(
+                    activity,
+                    "No chapter headings were found. Please send me the next error message.",
+                    Toast.LENGTH_LONG
+            ).show();
+            return;
+        }
+
+        showChapterList();
+
+    } catch (Exception e) {
+        Toast.makeText(
+                activity,
+                "Could not load chapters: " + e.getMessage(),
+                Toast.LENGTH_LONG
+        ).show();
+    }
+});
+
+}
 private static void showChapterList() {
     readerReady = false;
     content.removeAllViews();
