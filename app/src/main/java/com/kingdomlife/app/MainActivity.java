@@ -3251,26 +3251,19 @@ void confirmDeletePrayer(int index) {
     void showSpiritualBooks() {
     stopTimer();
     content.removeAllViews();
-            ImageButton backButton = new ImageButton(this);
 
+    ImageButton backButton = new ImageButton(this);
     backButton.setImageResource(
             android.R.drawable.ic_media_previous
     );
-
-    backButton.setBackgroundColor(
-            Color.TRANSPARENT
-    );
-
+    backButton.setBackgroundColor(Color.TRANSPARENT);
     backButton.setOnClickListener(
             v -> showLearnMenu()
     );
 
     content.addView(
             backButton,
-            new LinearLayout.LayoutParams(
-                    60,
-                    60
-            )
+            new LinearLayout.LayoutParams(60, 60)
     );
 
     TextView title = new TextView(this);
@@ -3281,7 +3274,11 @@ void confirmDeletePrayer(int index) {
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    v -> PilgrimsProgressBook.open(this, content)
+    addCard(
+            "📖 The Pilgrim's Progress",
+            "By John Bunyan — a Christian classic about faith, perseverance, and the journey toward salvation.",
+            v -> PilgrimsProgressBook.open(this, content)
+    );
 
     addCard(
             "🙏 The Power of Prayer",
@@ -3309,8 +3306,6 @@ void confirmDeletePrayer(int index) {
                     "Book content will be added here."
             )
     );
-
-    
     }
     void showStoryBooks() {
     stopTimer();
