@@ -6303,9 +6303,14 @@ void showJigsawMenu() {
                     MODE_PRIVATE
             );
 
-    int highestUnlocked =
-            prefs.getInt("highestUnlockedLevel", 1);
+    android.content.SharedPreferences jigsawPrefs =
+        getSharedPreferences(
+                "KingdomLifeJigsawPrefs",
+                MODE_PRIVATE
+        );
 
+int highestUnlocked =
+        jigsawPrefs.getInt("highestUnlockedLevel", 1);
     ScrollView levelScroll = new ScrollView(this);
 
     LinearLayout levelContainer = new LinearLayout(this);
@@ -6354,8 +6359,7 @@ String[] difficulties = {
 };
 
     int previouslyShownUnlocked =
-prefs.getInt("jigsawLastShownUnlockedLevel", 1);
-
+        jigsawPrefs.getInt("jigsawLastShownUnlockedLevel", 1);
 for (int i = 0; i < levelNames.length; i++) {
     final int level = i + 1;
     final String imageName = imageNames[i];
@@ -6419,8 +6423,8 @@ for (int i = 0; i < levelNames.length; i++) {
 
     if (unlocked) {
         levelRow.setOnClickListener(v ->
-                startJigsawPuzzle(difficulty, imageName)
-        );
+        startJigsawPuzzle(level, difficulty, imageName)
+);
     }
 
     LinearLayout.LayoutParams rowParams =
@@ -6449,7 +6453,7 @@ for (int i = 0; i < levelNames.length; i++) {
 }
 
 if (highestUnlocked > previouslyShownUnlocked) {
-    prefs.edit()
+    jigsawPrefs.edit()
             .putInt(
                     "jigsawLastShownUnlockedLevel",
                     highestUnlocked
@@ -9255,7 +9259,11 @@ if (query.contains("backup") ||
     );
     }
 
-    private void startJigsawPuzzle(String difficulty, String imageName) {
+    private void startJigsawPuzzle(
+        int level,
+        String difficulty,
+        String imageName
+) {
     int imageId = getResources().getIdentifier(
             imageName,
             "drawable",
@@ -9285,10 +9293,14 @@ if (query.contains("backup") ||
         return;
     }
 
-    showJigsawBoard(difficulty, puzzleBitmap);
+    showJigsawBoard(level, difficulty, puzzleBitmap);
     }
             
-           private void showJigsawBoard(String difficulty, Bitmap bitmap) {
+           private void showJigsawBoard(
+        int level,
+        String difficulty,
+        Bitmap bitmap
+) {
     content.removeAllViews();
     content.setOrientation(LinearLayout.VERTICAL);
 
@@ -9308,7 +9320,8 @@ if (query.contains("backup") ||
     instructions.setPadding(8, 4, 8, 8);
     content.addView(instructions);
 
-    JigsawBoard board = new JigsawBoard(this, bitmap, difficulty);
+    JigsawBoard board =
+        new JigsawBoard(this, bitmap, difficulty, level);
 
     content.addView(board, new LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -9333,6 +9346,7 @@ if (query.contains("backup") ||
 private class JigsawBoard extends View {
 
     private final Bitmap image;
+    private final int levelNumber;
     private final String storyDescription;
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final int columns;
@@ -9373,35 +9387,105 @@ private final float margin = 6f;
     private final float tabRatio = 0.14f;
 
     JigsawBoard(
-            android.content.Context context,
-            Bitmap bitmap,
-            String difficulty
-    ) {
+        android.content.Context context,
+        Bitmap bitmap,
+        String difficulty,
+        int level
+) {
         super(context);
 
         image = bitmap;
-        if ("Easy".equals(difficulty)) {
-    storyDescription =
-            "THE GARDEN OF EDEN\n\n"
-            + "God created a beautiful garden called Eden, "
-            + "where Adam and Eve lived. The garden reminds us "
-            + "of God's wonderful creation and His desire for "
-            + "people to walk with Him. (Genesis 2–3)";
-} else if ("Medium".equals(difficulty)) {
-    storyDescription =
-            "NOAH'S ARK\n\n"
-            + "God instructed Noah to build an ark to preserve "
-            + "his family and the animals during the great flood. "
-            + "Noah obeyed God, and the rainbow became a sign "
-            + "of God's covenant. (Genesis 6–9)";
-} else {
-    storyDescription =
-            "JOSEPH IN EGYPT\n\n"
-            + "Joseph was sold into slavery by his brothers, "
-            + "but God was with him. Through wisdom and "
-            + "faithfulness, Joseph rose to become a ruler in "
-            + "Egypt and helped save many people during famine. "
-            + "(Genesis 37–50)";
+levelNumber = level;
+        switch (levelNumber) {
+case 1:
+storyDescription =
+"THE GARDEN OF EDEN\n\n"
++ "God created a beautiful garden called Eden, "
++ "where Adam and Eve lived. The garden reminds us "
++ "of God's wonderful creation and His desire for "
++ "people to walk with Him. (Genesis 2–3)";
+break;
+
+        case 2:
+            storyDescription =
+                    "NOAH'S ARK\n\n"
+                    + "God instructed Noah to build an ark to preserve "
+                    + "his family and the animals during the great flood. "
+                    + "Noah obeyed God, and the rainbow became a sign "
+                    + "of God's covenant. (Genesis 6–9)";
+            break;
+
+        case 3:
+            storyDescription =
+                    "JOSEPH IN EGYPT\n\n"
+                    + "Joseph was sold into slavery by his brothers, "
+                    + "but God was with him. Through wisdom and "
+                    + "faithfulness, Joseph rose to become a ruler in "
+                    + "Egypt and helped save many people during famine. "
+                    + "(Genesis 37–50)";
+            break;
+
+        case 4:
+            storyDescription =
+                    "ABRAHAM — GOD'S COVENANT\n\n"
+                    + "God called Abraham and promised to make his "
+                    + "descendants into a great nation. Abraham trusted "
+                    + "God's promise. (Genesis 12, 15, 17)";
+            break;
+
+        case 5:
+            storyDescription =
+                    "MOSES — THE RED SEA\n\n"
+                    + "God delivered the Israelites from Egypt. When "
+                    + "they reached the Red Sea, God made a way for "
+                    + "them to cross on dry ground. (Exodus 14)";
+            break;
+
+        case 6:
+            storyDescription =
+                    "JOSHUA — THE FALL OF JERICHO\n\n"
+                    + "God instructed Joshua and the Israelites to "
+                    + "march around Jericho. They followed God's "
+                    + "instructions, and the city's wall fell. "
+                    + "(Joshua 6)";
+            break;
+
+        case 7:
+            storyDescription =
+                    "DAVID AND GOLIATH\n\n"
+                    + "David trusted God when he faced Goliath. "
+                    + "Although Goliath was a mighty warrior, David "
+                    + "went against him in the name of the Lord. "
+                    + "(1 Samuel 17)";
+            break;
+
+        case 8:
+            storyDescription =
+                    "DAVID — KING OF ISRAEL\n\n"
+                    + "David became king of Israel. His life reminds "
+                    + "us of the importance of trusting God and seeking "
+                    + "His guidance. (2 Samuel 5–7)";
+            break;
+
+        case 9:
+            storyDescription =
+                    "ELIJAH ON MOUNT CARMEL\n\n"
+                    + "Elijah challenged the prophets of Baal on "
+                    + "Mount Carmel. God answered Elijah's prayer "
+                    + "and showed that He alone is God. (1 Kings 18)";
+            break;
+
+        case 10:
+            storyDescription =
+                    "ESTHER — COURAGE AND DELIVERANCE\n\n"
+                    + "Queen Esther courageously approached the king "
+                    + "to plead for her people. Her bravery helped "
+                    + "bring deliverance to the Jews. (Esther 4–8)";
+            break;
+
+        default:
+            storyDescription = "BIBLE JIGSAW PUZZLE";
+            break;
         }
 
         if ("Easy".equals(difficulty)) {
@@ -9449,15 +9533,7 @@ private void showCompletedPicture() {
     content.setOrientation(LinearLayout.VERTICAL);
 
     // Identify the completed level
-    final int level;
-
-    if (columns == 4 && rows == 3) {
-        level = 1;
-    } else if (columns == 6 && rows == 4) {
-        level = 2;
-    } else {
-        level = 3;
-    }
+final int level = levelNumber;
 
     android.content.SharedPreferences jigsawPrefs =
             getSharedPreferences(
@@ -9476,24 +9552,28 @@ private void showCompletedPicture() {
     int reward = level * 10;
 
     // Award points only once per level
-    if (!alreadyClaimed) {
-        totalPoints += reward;
+    // Award points only once per level
+if (!alreadyClaimed) {
+totalPoints += reward;
 
-        prefs.edit()
-                .putInt("totalPoints", totalPoints)
-                .apply();
+    prefs.edit()
+            .putInt("totalPoints", totalPoints)
+            .apply();
 
-        jigsawPrefs.edit()
-                .putBoolean(rewardKey, true)
-                .putInt(
-                        "highestUnlockedLevel",
-                        Math.max(highestUnlocked, Math.min(level + 1, 3))
-                )
-                .apply();
+    jigsawPrefs.edit()
+            .putBoolean(rewardKey, true)
+            .apply();
 
-        checkAchievementNotifications();
-    }
+    checkAchievementNotifications();
+}
 
+// Unlock the next level independently of reward claiming
+int nextUnlockedLevel =
+        Math.min(10, Math.max(highestUnlocked, level + 1));
+
+jigsawPrefs.edit()
+        .putInt("highestUnlockedLevel", nextUnlockedLevel)
+        .apply();
     TextView title = new TextView(MainActivity.this);
     title.setText("👑 Puzzle Completed!");
     title.setTextSize(24);
@@ -9529,41 +9609,42 @@ private void showCompletedPicture() {
     TextView message = new TextView(MainActivity.this);
 
     if (alreadyClaimed) {
-        message.setText(
-                "Congratulations! You completed all "
-                + count + " pieces!\n\n"
-                + "You've already claimed this level's reward."
-        );
-    } else {
-        message.setText(
-                "🎉 Congratulations! You completed all "
-                + count + " pieces!\n\n"
-                + "🏆 +" + reward + " points!\n\n"
-                + (level < 3
-                    ? "Level " + (level + 1) + " is now unlocked!"
-                    : "You've completed the first Jigsaw Journey!")
-        );
-    }
-
-    message.setTextColor(Color.WHITE);
-    message.setTextSize(16);
-    message.setGravity(Gravity.CENTER);
-    message.setPadding(12, 8, 12, 16);
-    content.addView(message);
-
-    Button continueButton = new Button(MainActivity.this);
-
-    if (level < 3) {
-        continueButton.setText("Continue to Level " + (level + 1));
-        continueButton.setOnClickListener(v -> showJigsawMenu());
-    } else {
-        continueButton.setText("Complete Jigsaw Journey");
-        continueButton.setOnClickListener(v -> showJigsawMenu());
-    }
-
-    content.addView(continueButton);
+message.setText(
+"Congratulations! You completed all "
++ count + " pieces!\n\n"
++ "You've already claimed this level's reward."
++ (level < 10
+? "\n\nLevel " + (level + 1) + " is next!"
+: "\n\nYou've completed all 10 Jigsaw levels!")
+);
+} else {
+message.setText(
+"🎉 Congratulations! You completed all "
++ count + " pieces!\n\n"
++ "🏆 +" + reward + " points!\n\n"
++ (level < 10
+? "Level " + (level + 1) + " is now unlocked!"
+: "You've completed all 10 Jigsaw levels!")
+);
 }
 
+message.setTextColor(Color.WHITE);
+message.setTextSize(16);
+message.setGravity(Gravity.CENTER);
+message.setPadding(12, 8, 12, 16);
+content.addView(message);
+
+Button continueButton = new Button(MainActivity.this);
+
+if (level < 10) {
+continueButton.setText("Continue to Level " + (level + 1));
+continueButton.setOnClickListener(v -> showJigsawMenu());
+} else {
+continueButton.setText("Complete Jigsaw Journey");
+continueButton.setOnClickListener(v -> showJigsawMenu());
+}
+
+content.addView(continueButton);
     @Override
 protected void onSizeChanged(
         int w, int h, int oldW, int oldH
