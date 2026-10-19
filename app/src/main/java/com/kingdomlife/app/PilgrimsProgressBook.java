@@ -325,7 +325,7 @@ private static void showReader() {
 
 private static void loadReaderHtml() {
 try {
-String chapterJson = chapters.toString().replace("</", "<\/");
+String chapterJson = chapters.toString();
     String html =
             "<!DOCTYPE html><html><head>" +
             "<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>" +
