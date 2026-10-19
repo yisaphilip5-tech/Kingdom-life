@@ -170,6 +170,10 @@ public static String[][] getQuestionsForLevel(int level) {
             return getLevel2Questions();
         case 3:
             return getLevel3Questions();
+        case 4:
+            return getLevel4Questions();
+        case 5:
+            return getLevel5Questions();
         default:
             return new String[0][0];
     }
