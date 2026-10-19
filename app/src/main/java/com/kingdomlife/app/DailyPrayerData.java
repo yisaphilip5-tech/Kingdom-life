@@ -724,7 +724,7 @@ public class DailyPrayerData {
 
 "Lord, make me dependable in my words and actions. Help me keep my promises, fulfil my responsibilities, and become someone whom others can trust.\n\nAmen.",
 
-"Father, let my life bring honour to Jesus Christ. May my choices reflect Your truth, my relationships show Your love, and my service demonstrate the hope I have in You.\n\nAmen."
+"Father, let my life bring honour to Jesus Christ. May my choices reflect Your truth, my relationships show Your love, and my service demonstrate the hope I have in You.\n\nAmen.",
 "Father, let Your presence go with me wherever I go. Guide my steps, guard my heart, and help me recognize Your faithfulness in every season. When I face uncertainty, give me wisdom; when I feel weak, strengthen me; and when I experience blessings, remind me to give You all the glory. Let my life remain rooted in Your Word and directed by Your Spirit.\n\nAmen.",
 
 "Lord Jesus, let my life continually reflect Your love, truth, and grace. Fill me with the Holy Spirit, establish me in Your Word, and help me grow in faith, wisdom, and obedience. Let my mouth overflow with praise and thanksgiving, let my heart remain full of joy, and let my life draw others closer to You. May everything I do bring honour to Your name.\n\nAmen."
