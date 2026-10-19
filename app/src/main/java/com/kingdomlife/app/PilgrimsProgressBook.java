@@ -324,75 +324,102 @@ private static void showReader() {
 }
 
 private static void loadReaderHtml() {
-    try {
-        JSONObject chapter = chapters.getJSONObject(chapterIndex);
-        String chapterJson = chapters.toString().replace("</", "<\\/");
+try {
+String chapterJson = chapters.toString().replace("</", "<\/");
 
-        String html =
-                "<!DOCTYPE html><html><head>" +
-                "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
-                "<style>" +
-                "html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff;}" +
-                "#viewport{box-sizing:border-box;width:100%;height:100%;overflow:hidden;padding:14px;}" +
-                "#pages{height:100%;column-width:calc(100vw - 28px);column-gap:28px;column-fill:auto;" +
-                "font-family:Georgia,serif;font-size:18px;line-height:1.55;color:#222;}" +
-                "h1,h2,h3,h4{break-after:avoid-column;}" +
-                "p{orphans:2;widows:2;}" +
-                "img{max-width:100%;height:auto;}" +
-                "a{color:#6b4b00;}" +
-                "</style></head><body>" +
-                "<div id='viewport'><div id='pages'></div></div>" +
-                "<script>" +
-                "var allChapters=" + chapterJson + ";" +
-                "var currentChapter=" + chapterIndex + ";" +
-                "var currentPage=0;" +
-                "var pagesCount=1;" +
-                "function renderChapter(){" +
-                "var c=allChapters[currentChapter];" +
-                "var box=document.getElementById('pages');" +
-                "box.innerHTML='<h2>'+c.title+'</h2>'+c.html;" +
-                "box.style.columnWidth=(document.getElementById('viewport').clientWidth-28)+'px';" +
-                "box.style.height=(document.getElementById('viewport').clientHeight-28)+'px';" +
-                "box.style.columnGap='28px';" +
-                "box.style.columnFill='auto';" +
-                "requestAnimationFrame(function(){" +
-                "var w=box.clientWidth;" +
-                "pagesCount=Math.max(1,Math.ceil(box.scrollWidth/w));" +
-                "currentPage=Math.min(currentPage,pagesCount-1);" +
-                "showPage();" +
-                "AndroidBook.pageCount(pagesCount);" +
-                "});" +
-                "}" +
-                "function showPage(){" +
-                "var box=document.getElementById('pages');" +
-                "box.style.transform='translateX(-'+(currentPage*(box.clientWidth+28))+'px)';" +
-                "AndroidBook.pageChanged(currentPage);" +
-                "}" +
-                "function goPage(p){" +
-                "currentPage=Math.max(0,Math.min(p,pagesCount-1));showPage();" +
-                "}" +
-                "function resizeBook(){renderChapter();}" +
-                "window.onload=renderChapter;" +
-                "window.onresize=resizeBook;" +
-                "</script></body></html>";
+    String html =
+            "<!DOCTYPE html><html><head>" +
+            "<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>" +
+            "<style>" +
+            "*{box-sizing:border-box;}" +
+            "html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff;}" +
+            "#viewport{width:100%;height:100%;overflow:hidden;padding:14px;}" +
+            "#pages{" +
+            "height:100%;" +
+            "column-width:100%;" +
+            "column-gap:28px;" +
+            "column-fill:auto;" +
+            "font-family:Georgia,serif;" +
+            "font-size:18px;" +
+            "line-height:1.55;" +
+            "color:#222;" +
+            "}" +
+            "#pages>*{max-width:100%;}" +
+            "h1,h2,h3,h4{break-after:avoid-column;}" +
+            "p{orphans:2;widows:2;}" +
+            "img{max-width:100%;height:auto;}" +
+            "a{color:#6b4b00;}" +
+            "</style></head><body>" +
+            "<div id='viewport'><div id='pages'></div></div>" +
+            "<script>" +
+            "var allChapters=" + chapterJson + ";" +
+            "var currentChapter=" + chapterIndex + ";" +
+            "var currentPage=0;" +
+            "var pagesCount=1;" +
 
-        bookView.loadDataWithBaseURL(
-                "file:///android_asset/",
-                html,
-                "text/html",
-                "UTF-8",
-                null
-        );
+            "function renderChapter(){" +
+            "var c=allChapters[currentChapter];" +
+            "var viewport=document.getElementById('viewport');" +
+            "var box=document.getElementById('pages');" +
+            "var pageWidth=viewport.clientWidth-28;" +
+            "var pageHeight=viewport.clientHeight-28;" +
 
-    } catch (Exception e) {
-        Toast.makeText(
-                activity,
-                "Could not open this chapter.",
-                Toast.LENGTH_LONG
-        ).show();
-    }
+            "box.style.transform='none';" +
+            "box.style.width=pageWidth+'px';" +
+            "box.style.height=pageHeight+'px';" +
+            "box.style.columnWidth=pageWidth+'px';" +
+            "box.style.columnGap='28px';" +
+            "box.style.columnFill='auto';" +
+            "box.innerHTML='<h2>'+c.title+'</h2>'+c.html;" +
+
+            "requestAnimationFrame(function(){" +
+            "var actualWidth=box.scrollWidth;" +
+            "pagesCount=Math.max(1,Math.round((actualWidth+28)/(pageWidth+28)));" +
+            "currentPage=Math.min(currentPage,pagesCount-1);" +
+            "showPage();" +
+            "AndroidBook.pageCount(pagesCount);" +
+            "});" +
+            "}" +
+
+            "function showPage(){" +
+            "var box=document.getElementById('pages');" +
+            "var viewport=document.getElementById('viewport');" +
+            "var pageWidth=viewport.clientWidth-28;" +
+            "box.style.transform='translateX(-'+(currentPage*(pageWidth+28))+'px)';" +
+            "AndroidBook.pageChanged(currentPage);" +
+            "}" +
+
+            "function goPage(p){" +
+            "currentPage=Math.max(0,Math.min(p,pagesCount-1));" +
+            "showPage();" +
+            "}" +
+
+            "function resizeBook(){" +
+            "currentPage=0;" +
+            "renderChapter();" +
+            "}" +
+
+            "window.onload=renderChapter;" +
+            "window.onresize=resizeBook;" +
+            "</script></body></html>";
+
+    bookView.loadDataWithBaseURL(
+            "file:///android_asset/",
+            html,
+            "text/html",
+            "UTF-8",
+            null
+    );
+
+} catch (Exception e) {
+    Toast.makeText(
+            activity,
+            "Could not open this chapter.",
+            Toast.LENGTH_LONG
+    ).show();
 }
 
+}
 private static void previousPage() {
     if (pageIndex > 0) {
         pageIndex--;
