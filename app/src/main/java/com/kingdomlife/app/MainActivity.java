@@ -3281,18 +3281,7 @@ void confirmDeletePrayer(int index) {
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
 
-    addCard(
-            "📖 The Pilgrim's Progress",
-            "By John Bunyan — a Christian classic about faith, perseverance, and the journey toward salvation.",
-            v -> showMessage(
-                    "📖 The Pilgrim's Progress",
-                    "THE PILGRIM'S PROGRESS\n" +
-                    "By John Bunyan\n\n" +
-                    "A Christian allegory about a pilgrim's journey toward the Celestial City.\n\n" +
-                    "The book explores faith, perseverance, temptation, and the importance of remaining steadfast on the Christian journey.\n\n" +
-                    "Full book chapters will be added in the next step."
-            )
-    );
+    v -> PilgrimsProgressBook.open(this, content)
 
     addCard(
             "🙏 The Power of Prayer",
