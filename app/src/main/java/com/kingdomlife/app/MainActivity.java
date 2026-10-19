@@ -3282,11 +3282,15 @@ void confirmDeletePrayer(int index) {
     content.addView(title);
 
     addCard(
-            "📖 Growing in Faith",
-            "Learn practical ways to strengthen your faith and walk with God.",
+            "📖 The Pilgrim's Progress",
+            "By John Bunyan — a Christian classic about faith, perseverance, and the journey toward salvation.",
             v -> showMessage(
-                    "📖 Growing in Faith",
-                    "Book content will be added here."
+                    "📖 The Pilgrim's Progress",
+                    "THE PILGRIM'S PROGRESS\n" +
+                    "By John Bunyan\n\n" +
+                    "A Christian allegory about a pilgrim's journey toward the Celestial City.\n\n" +
+                    "The book explores faith, perseverance, temptation, and the importance of remaining steadfast on the Christian journey.\n\n" +
+                    "Full book chapters will be added in the next step."
             )
     );
 
