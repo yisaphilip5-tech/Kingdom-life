@@ -9645,6 +9645,7 @@ continueButton.setOnClickListener(v -> showJigsawMenu());
 }
 
 content.addView(continueButton);
+}
     @Override
 protected void onSizeChanged(
         int w, int h, int oldW, int oldH
