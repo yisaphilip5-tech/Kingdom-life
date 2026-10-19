@@ -727,7 +727,7 @@ public class FoodForThoughtData {
 
 "💭 Food for Thought\n\n" +
 "At the end of a busy day, it is worth asking not only what you accomplished but also who you encouraged, helped, respected, or loved.\n\n" +
-"Reflection:\nWhat good did my life produce today?"
+"Reflection:\nWhat good did my life produce today?",
             "💭 Food for Thought\n\n" +
 "Imagine if God told you He was too busy to answer your prayers whenever you called on Him. Would that be fair? Wouldn't you feel hurt if the One you depended on had no time for you? Yet sometimes, we become so busy with our daily activities that we struggle to make time for God. We want Him to hear us whenever we pray, but are we making time to spend with Him? If we would not consider it fair for God to be too busy for us, why do we allow ourselves to become too busy for Him?\n\n" +
 "Reflection:\nAm I giving God the time He deserves, or am I allowing the busyness of life to push Him aside?",
