@@ -524,17 +524,26 @@ button.setPadding(
 
     if ("guess".equals(type)) {
 
-        if (selectedLevel == 1) {
-            activeQuestions =
-                    MemoryVerseData.GUESS_VERSE_LEVEL_1;
-        } else if (selectedLevel == 2) {
-            activeQuestions =
-                    MemoryVerseData.GUESS_VERSE_LEVEL_2;
-        } else {
-            activeQuestions =
-                    MemoryVerseData.GUESS_VERSE_LEVEL_3;
-        }
+    if (selectedLevel == 1) {
+        activeQuestions =
+                MemoryVerseData.GUESS_VERSE_LEVEL_1;
 
+    } else if (selectedLevel == 2) {
+        activeQuestions =
+                MemoryVerseData.GUESS_VERSE_LEVEL_2;
+
+    } else if (selectedLevel == 3) {
+        activeQuestions =
+                MemoryVerseData.GUESS_VERSE_LEVEL_3;
+
+    } else if (selectedLevel == 4) {
+        activeQuestions =
+                MemoryVerseData.GUESS_VERSE_LEVEL_4;
+
+    } else {
+        activeQuestions =
+                MemoryVerseData.GUESS_VERSE_LEVEL_5;
+    }
     } else if ("complete".equals(type)) {
 
         if (selectedLevel == 1) {
