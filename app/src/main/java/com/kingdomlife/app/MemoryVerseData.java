@@ -1029,4 +1029,160 @@ public static final MemoryVerse[] GUESS_REFERENCE_LEVEL_3 = {
             "Greater is he that is in you, than he that is in the world."
     )
 };
+    // Guess the Reference — Level 4
+public static final MemoryVerse[] GUESS_REFERENCE_LEVEL_4 = {
+
+    new MemoryVerse(
+            "Joshua 1:8",
+            "This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night."
+    ),
+
+    new MemoryVerse(
+            "1 Chronicles 16:34",
+            "O give thanks unto the LORD; for he is good; for his mercy endureth for ever."
+    ),
+
+    new MemoryVerse(
+            "Psalm 16:11",
+            "Thou wilt shew me the path of life: in thy presence is fulness of joy."
+    ),
+
+    new MemoryVerse(
+            "Psalm 37:5",
+            "Commit thy way unto the LORD; trust also in him; and he shall bring it to pass."
+    ),
+
+    new MemoryVerse(
+            "Psalm 84:11",
+            "For the LORD God is a sun and shield: the LORD will give grace and glory."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 15:1",
+            "A soft answer turneth away wrath: but grievous words stir up anger."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 41:13",
+            "For I the LORD thy God will hold thy right hand, saying unto thee, Fear not; I will help thee."
+    ),
+
+    new MemoryVerse(
+            "Jeremiah 32:27",
+            "Behold, I am the LORD, the God of all flesh: is there any thing too hard for me?"
+    ),
+
+    new MemoryVerse(
+            "Matthew 6:21",
+            "For where your treasure is, there will your heart be also."
+    ),
+
+    new MemoryVerse(
+            "Luke 12:32",
+            "Fear not, little flock; for it is your Father's good pleasure to give you the kingdom."
+    ),
+
+    new MemoryVerse(
+            "John 16:33",
+            "In the world ye shall have tribulation: but be of good cheer; I have overcome the world."
+    ),
+
+    new MemoryVerse(
+            "Romans 5:1",
+            "Therefore being justified by faith, we have peace with God through our Lord Jesus Christ."
+    ),
+
+    new MemoryVerse(
+            "1 Corinthians 6:19",
+            "What? know ye not that your body is the temple of the Holy Ghost which is in you?"
+    ),
+
+    new MemoryVerse(
+            "Ephesians 5:2",
+            "And walk in love, as Christ also hath loved us, and hath given himself for us."
+    ),
+
+    new MemoryVerse(
+            "1 Peter 5:7",
+            "Casting all your care upon him; for he careth for you."
+    )
+};
+    // Guess the Reference — Level 5
+public static final MemoryVerse[] GUESS_REFERENCE_LEVEL_5 = {
+
+    new MemoryVerse(
+            "Genesis 12:2",
+            "And I will make of thee a great nation, and I will bless thee, and make thy name great."
+    ),
+
+    new MemoryVerse(
+            "Exodus 15:2",
+            "The LORD is my strength and song, and he is become my salvation."
+    ),
+
+    new MemoryVerse(
+            "Deuteronomy 7:9",
+            "Know therefore that the LORD thy God, he is God, the faithful God, which keepeth covenant and mercy with them that love him."
+    ),
+
+    new MemoryVerse(
+            "1 Samuel 12:24",
+            "Only fear the LORD, and serve him in truth with all your heart."
+    ),
+
+    new MemoryVerse(
+            "2 Samuel 22:31",
+            "As for God, his way is perfect; the word of the LORD is tried."
+    ),
+
+    new MemoryVerse(
+            "1 Kings 8:61",
+            "Let your heart therefore be perfect with the LORD our God, to walk in his statutes, and to keep his commandments."
+    ),
+
+    new MemoryVerse(
+            "2 Chronicles 20:15",
+            "Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but God's."
+    ),
+
+    new MemoryVerse(
+            "Nehemiah 8:10",
+            "For the joy of the LORD is your strength."
+    ),
+
+    new MemoryVerse(
+            "Job 19:25",
+            "For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth."
+    ),
+
+    new MemoryVerse(
+            "Psalm 18:30",
+            "As for God, his way is perfect: the word of the LORD is tried."
+    ),
+
+    new MemoryVerse(
+            "Psalm 62:1",
+            "Truly my soul waiteth upon God: from him cometh my salvation."
+    ),
+
+    new MemoryVerse(
+            "Proverbs 14:26",
+            "In the fear of the LORD is strong confidence: and his children shall have a place of refuge."
+    ),
+
+    new MemoryVerse(
+            "Isaiah 12:2",
+            "Behold, God is my salvation; I will trust, and not be afraid."
+    ),
+
+    new MemoryVerse(
+            "Habakkuk 3:19",
+            "The LORD God is my strength, and he will make my feet like hinds' feet."
+    ),
+
+    new MemoryVerse(
+            "1 John 1:9",
+            "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness."
+    )
+};
 }
