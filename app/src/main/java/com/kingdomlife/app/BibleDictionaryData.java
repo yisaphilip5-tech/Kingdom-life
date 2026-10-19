@@ -575,6 +575,47 @@ WORDS.put("mephibosheth", "Jonathan's son, whom David treated with kindness and 
 WORDS.put("longsuffering", "Patience and endurance in the face of difficulty or wrongdoing. See Galatians 5:22.");
 
 WORDS.put("reconciliation", "The restoration of a relationship that has been broken; the New Testament describes reconciliation between God and humanity through Christ. See 2 Corinthians 5:18-19.");
+        WORDS.put("abishai", "A nephew of David and brother of Joab who served as one of David's warriors. Bible references: 1 Samuel 26:6–9; 2 Samuel 23:18–19.");
+        WORDS.put("absalom", "A son of King David who rebelled against his father and attempted to take the throne. Bible references: 2 Samuel 15–18.");
+        WORDS.put("achan", "An Israelite whose disobedience involving devoted things led to Israel's defeat at Ai. Bible reference: Joshua 7:1–26.");
+        WORDS.put("achish", "The Philistine king of Gath with whom David sought refuge on different occasions. Bible references: 1 Samuel 21:10–15; 1 Samuel 27:1–7.");
+        WORDS.put("ahithophel", "A counsellor of David who later supported Absalom's rebellion. Bible references: 2 Samuel 15:12, 31; 2 Samuel 17:1–23.");
+        WORDS.put("amminadab", "The father of Nahshon and an ancestor in the family line associated with David and Jesus. Bible references: Ruth 4:19–20; Matthew 1:4.");
+        WORDS.put("aphek", "The name of several biblical locations, including a place associated with battles between Israel and the Philistines. Bible reference: 1 Samuel 4:1.");
+        WORDS.put("asenath", "The Egyptian wife of Joseph and mother of Ephraim and Manasseh. Bible reference: Genesis 41:45, 50–52.");
+        WORDS.put("azazel", "A name appearing in the instructions for the Day of Atonement, associated with the live goat sent into the wilderness. Bible reference: Leviticus 16:8–10.");
+        WORDS.put("baruch", "The scribe who wrote Jeremiah's words on a scroll and read them publicly. Bible references: Jeremiah 36:4–10; Jeremiah 36:27–32.");
+        WORDS.put("boaz", "A wealthy man of Bethlehem who married Ruth and became an ancestor of King David. Bible references: Ruth 2–4; Matthew 1:5–6.");
+        WORDS.put("caleb", "One of the twelve spies who trusted God's promise and later received an inheritance in the Promised Land. Bible references: Numbers 14:24; Joshua 14:6–14.");
+        WORDS.put("cherith", "The brook where God directed Elijah to stay during part of the drought, with ravens bringing him food. Bible reference: 1 Kings 17:2–6.");
+        WORDS.put("claudia", "A Christian mentioned by Paul among those who sent greetings to Timothy. Bible reference: 2 Timothy 4:21.");
+        WORDS.put("corban", "A term for something dedicated or offered to God, discussed by Jesus when correcting a misuse of religious tradition. Bible reference: Mark 7:11.");
+        WORDS.put("damaris", "A woman in Athens who believed after Paul preached at the Areopagus. Bible reference: Acts 17:34.");
+        WORDS.put("elkanah", "The husband of Hannah and father of Samuel. Bible references: 1 Samuel 1:1–20; 1 Samuel 2:11.");
+        WORDS.put("enoch", "A man who walked with God and was taken by God; another Enoch appears in Cain's family line. Bible references: Genesis 4:17; Genesis 5:21–24.");
+        WORDS.put("eutychus", "A young man who fell from a window while Paul was speaking and was restored to life. Bible reference: Acts 20:7–12.");
+        WORDS.put("gamaliel", "A respected Pharisee and teacher of the law who advised the Jewish council to be cautious in dealing with the apostles. Bible reference: Acts 5:34–39.");
+                WORDS.put("adrammelech", "A name associated with a deity worshipped by people settled in Samaria after the exile of Israel. Bible reference: 2 Kings 17:31.");
+        WORDS.put("ahaziah", "The name of kings of Israel and Judah mentioned in the Old Testament. Bible references: 1 Kings 22:51–53; 2 Kings 8:25–29.");
+        WORDS.put("amaziah", "A king of Judah who began his reign by doing what was right in the sight of the Lord, though not wholeheartedly. Bible reference: 2 Chronicles 25:1–2.");
+        WORDS.put("asahel", "A brother of Joab and Abishai, known for running swiftly and killed during a conflict with Abner. Bible reference: 2 Samuel 2:18–23.");
+        WORDS.put("athaliah", "A queen of Judah who seized power and attempted to destroy the royal heirs, but Joash was preserved. Bible reference: 2 Kings 11:1–3.");
+        WORDS.put("benaiah", "A mighty warrior of David who later served as commander of Solomon's army. Bible references: 2 Samuel 23:20–23; 1 Kings 2:35.");
+        WORDS.put("bezalel", "A skilled craftsman chosen and filled with the Spirit of God to help make the tabernacle and its furnishings. Bible reference: Exodus 31:1–11.");
+        WORDS.put("bildad", "One of Job's friends who spoke to him during his suffering. Bible references: Job 2:11; Job 8:1–7.");
+        WORDS.put("bithynia", "A region in Asia Minor mentioned in the New Testament, where the Spirit did not permit Paul and his companions to preach at that time. Bible reference: Acts 16:7.");
+        WORDS.put("bochim", "A place where the Israelites wept after an angel of the Lord rebuked them for disobedience. Bible reference: Judges 2:1–5.");
+        WORDS.put("cenchrea", "A port near Corinth where Phoebe served the church. Bible reference: Romans 16:1.");
+        WORDS.put("chloe", "A Christian woman whose household informed Paul about divisions among believers in Corinth. Bible reference: 1 Corinthians 1:11.");
+        WORDS.put("crispus", "A ruler of the synagogue in Corinth who believed in the Lord with his household after hearing Paul preach. Bible reference: Acts 18:8.");
+        WORDS.put("demas", "A coworker mentioned by Paul who later deserted him because he loved this present world. Bible references: Colossians 4:14; 2 Timothy 4:10.");
+        WORDS.put("drusilla", "The wife of the Roman governor Felix, before whom Paul spoke about faith in Christ. Bible reference: Acts 24:24–25.");
+        WORDS.put("elihu", "A younger man who spoke during the discussion with Job and his three friends. Bible references: Job 32:1–6; Job 33:1.");
+        WORDS.put("elimelech", "Naomi's husband who moved with his family from Bethlehem to Moab during a famine. Bible reference: Ruth 1:1–3.");
+        WORDS.put("epaphroditus", "A believer from Philippi who brought assistance to Paul and became seriously ill while serving him. Bible reference: Philippians 2:25–30.");
+        WORDS.put("erastus", "A coworker of Paul mentioned in the New Testament; one passage identifies an Erastus as the city's treasurer. Bible references: Romans 16:23; 2 Timothy 4:20.");
+        WORDS.put("festus", "The Roman governor who succeeded Felix and heard Paul's case before Paul appealed to Caesar. Bible references: Acts 24:27; Acts 25:1–12.");
+        WORDS.put("zarephath", "A town in the region of Sidon where a widow provided food for Elijah during a famine, and God miraculously sustained her flour and oil. (1 Kings 17:8–16; Luke 4:25–26)");
     }
 
     public static String getMeaning(String word) {
