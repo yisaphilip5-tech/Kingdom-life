@@ -3248,7 +3248,7 @@ void confirmDeletePrayer(int index) {
             .setNegativeButton("Cancel", null)
             .show();
 }
-    void showSpiritualBooks() {
+    public void showSpiritualBooks() {
     stopTimer();
     content.removeAllViews();
 
