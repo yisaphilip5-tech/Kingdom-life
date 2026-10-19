@@ -11,6 +11,23 @@ public class PilgrimsProgressBook {
 
     public static void open(Activity activity, LinearLayout content) {
         content.removeAllViews();
+        android.widget.ImageButton backButton =
+        new android.widget.ImageButton(activity);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setOnClickListener(v -> {
+    if (activity instanceof MainActivity) {
+        ((MainActivity) activity).showSpiritualBooks();
+    }
+});
+
+content.addView(
+        backButton,
+        new LinearLayout.LayoutParams(60, 60)
+);
 
         TextView title = new TextView(activity);
         title.setText("The Pilgrim's Progress");
