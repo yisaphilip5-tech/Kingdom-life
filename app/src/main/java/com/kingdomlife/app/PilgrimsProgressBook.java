@@ -419,18 +419,28 @@ String chapterJson = chapters.toString();
 "}" +
 
             "function showPage(){" +
-            "document.getElementById('page').innerHTML=pages[currentPage]||'';" +
-            "AndroidBook.pageChanged(currentPage);" +
-            "}" +
+"var page=document.getElementById('page');" +
+"page.innerHTML=pages[currentPage]||'';" +
+"AndroidBook.pageChanged(currentPage);" +
+"}" +
 
-            "function goPage(p){" +
-            "currentPage=Math.max(0,Math.min(p,pages.length-1));" +
-            "showPage();" +
-            "}" +
+"function goPage(p){" +
+"var target=parseInt(p,10);" +
+"if(isNaN(target))return;" +
+"currentPage=Math.max(0,Math.min(target,pages.length-1));" +
+"showPage();" +
+"}" +
 
-            "window.onload=function(){setTimeout(makePages,100);};" +
-            "window.onresize=function(){currentPage=0;setTimeout(makePages,100);};" +
-            "</script></body></html>";
+"window.onload=function(){setTimeout(makePages,100);};" +
+"window.onresize=function(){" +
+"setTimeout(function(){" +
+"var oldPage=currentPage;" +
+"makePages();" +
+"currentPage=Math.max(0,Math.min(oldPage,pages.length-1));" +
+"showPage();" +
+"},150);" +
+"};" +
+"</script></body></html>";
 
     bookView.loadDataWithBaseURL(
             "file:///android_asset/",
