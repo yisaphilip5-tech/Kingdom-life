@@ -9406,18 +9406,18 @@ message.setText(
 "Congratulations! You completed all "
 + count + " pieces!\n\n"
 + "You've already claimed this level's reward."
-+ (level < 10
++ (level < 21
 ? "\n\nLevel " + (level + 1) + " is next!"
-: "\n\nYou've completed all 10 Jigsaw levels!")
+: "\n\nYou've completed all 21 Old Testament Jigsaw levels!")
 );
 } else {
 message.setText(
 "🎉 Congratulations! You completed all "
 + count + " pieces!\n\n"
 + "🏆 +" + reward + " points!\n\n"
-+ (level < 10
++ (level < 21
 ? "Level " + (level + 1) + " is now unlocked!"
-: "You've completed all 10 Jigsaw levels!")
+: "You've completed all 21 Old Testament Jigsaw levels!")
 );
 }
 
@@ -9429,12 +9429,12 @@ content.addView(message);
 
 Button continueButton = new Button(MainActivity.this);
 
-if (level < 10) {
-continueButton.setText("Continue to Level " + (level + 1));
-continueButton.setOnClickListener(v -> showJigsawMenu());
+if (level < 21) {
+    continueButton.setText("Continue to Level " + (level + 1));
+    continueButton.setOnClickListener(v -> showJigsawMenu());
 } else {
-continueButton.setText("Complete Jigsaw Journey");
-continueButton.setOnClickListener(v -> showJigsawMenu());
+    continueButton.setText("Complete Old Testament Journey");
+    continueButton.setOnClickListener(v -> showJigsawMenu());
 }
 
 content.addView(continueButton);
