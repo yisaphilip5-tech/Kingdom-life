@@ -9323,7 +9323,7 @@ if (query.contains("backup") ||
     content.addView(back);
            }
 
-private class JigsawBoard extends View {
+class JigsawBoard extends View {
 
     private final Bitmap image;
     private final int levelNumber;
