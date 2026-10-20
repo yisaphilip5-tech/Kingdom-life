@@ -1,19 +1,31 @@
 package com.kingdomlife.app;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.Typeface;
+import android.view.Gravity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 public class BibleJigsawPuzzle {
 
-    private final Activity activity;
+    private final MainActivity activity;
     private final LinearLayout content;
 
-    public BibleJigsawPuzzle(
-            Activity activity,
-            LinearLayout content
-    ) {
+    public BibleJigsawPuzzle(MainActivity activity) {
         this.activity = activity;
-        this.content = content;
+        this.content = activity.content;
     }
 
 }
