@@ -285,10 +285,17 @@ public class BibleJigsawPuzzle {
         String imageName = OLD_TESTAMENT_IMAGES[level - 1];
 
         int imageId = activity.getResources().getIdentifier(
-                imageName,
-                "drawable",
-                activity.getPackageName()
-        );
+        imageName,
+        "drawable",
+        activity.getPackageName()
+);
+
+android.util.Log.d(
+        "JigsawImageCheck",
+        "Image: " + imageName
+                + ", Resource ID: " + imageId
+                + ", Package: " + activity.getPackageName()
+);
 
         if (imageId == 0) {
             new android.app.AlertDialog.Builder(activity)
