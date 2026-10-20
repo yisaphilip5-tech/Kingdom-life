@@ -9322,14 +9322,6 @@ if (query.contains("backup") ||
     back.setOnClickListener(v -> showJigsawMenu());
     content.addView(back);
            }
-        
-
-
-        
-            
-
-    
-
 
 private class JigsawBoard extends View {
 
