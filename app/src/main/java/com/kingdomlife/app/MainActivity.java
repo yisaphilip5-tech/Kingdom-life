@@ -9060,7 +9060,7 @@ if (query.contains("backup") ||
     );
     }
 
-    private void startJigsawPuzzle(
+    public void startJigsawPuzzle(
         int level,
         String difficulty,
         String imageName
