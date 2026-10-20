@@ -6175,7 +6175,7 @@ String message) {
     addButton("⬅️ Back to Home", v -> showHome());
 }
 
-void showPuzzleMenu() {
+public void showPuzzleMenu() {
     stopTimer();
     content.removeAllViews();
 
@@ -6263,7 +6263,7 @@ void showBibleQuizMenu() {
                       }
     
 
-void showJigsawMenu() {
+public void showJigsawMenu() {
     stopTimer();
     content.removeAllViews();
     content.setOrientation(LinearLayout.VERTICAL);
