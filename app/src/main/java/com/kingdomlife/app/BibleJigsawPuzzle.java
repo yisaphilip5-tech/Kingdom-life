@@ -304,10 +304,10 @@ public class BibleJigsawPuzzle {
             return;
         }
 
-        Toast.makeText(
-                activity,
-                "Level " + level + " is ready to connect to the puzzle board.",
-                Toast.LENGTH_SHORT
-        ).show();
+        activity.startJigsawPuzzle(
+        level,
+        difficulties[level - 1],
+        imageName
+);
     }
                                }
