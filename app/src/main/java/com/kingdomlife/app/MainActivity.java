@@ -9362,7 +9362,7 @@ totalPoints += reward;
 
 // Unlock the next level independently of reward claiming
 int nextUnlockedLevel =
-        Math.min(10, Math.max(highestUnlocked, level + 1));
+        Math.max(highestUnlocked, level + 1);
 
 jigsawPrefs.edit()
         .putInt("highestUnlockedLevel", nextUnlockedLevel)
