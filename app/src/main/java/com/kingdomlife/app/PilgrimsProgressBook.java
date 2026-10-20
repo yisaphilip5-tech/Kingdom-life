@@ -353,56 +353,70 @@ String chapterJson = chapters.toString();
             "var pages=[];" +
 
             "function makePages(){" +
-            "var c=allChapters[currentChapter];" +
-            "var source=document.createElement('div');" +
-            "source.innerHTML='<h2>'+c.title+'</h2>'+c.html;" +
-            "var measure=document.getElementById('measure');" +
-            "var viewport=document.getElementById('viewport');" +
-            "measure.style.width=(viewport.clientWidth-28)+'px';" +
-            "measure.style.padding='0';" +
-            "measure.style.visibility='hidden';" +
-            "measure.innerHTML='';" +
-            "var available=viewport.clientHeight-28;" +
-            "var blocks=Array.from(source.childNodes);" +
-            "pages=[];" +
-            "var current=document.createElement('div');" +
-            "function fits(){return measure.scrollHeight<=available;}" +
-            "function savePage(){if(current.innerHTML.trim()!==''){pages.push(current.innerHTML);current=document.createElement('div');measure.innerHTML='';}}" +
-            "blocks.forEach(function(node){" +
-            "if(node.nodeType===3 && !node.textContent.trim())return;" +
-            "var clone=node.cloneNode(true);" +
-            "measure.appendChild(clone);" +
-            "if(fits()){current.appendChild(clone);return;}" +
-            "measure.removeChild(clone);" +
-            "if(current.childNodes.length>0)savePage();" +
-            "var test=node.cloneNode(true);" +
-            "measure.appendChild(test);" +
-            "if(fits()){current.appendChild(test);return;}" +
-            "measure.removeChild(test);" +
-            "var text=node.textContent||'';" +
-            "var words=text.split(/\\\\s+/);" +
-            "var chunk='';" +
-            "words.forEach(function(word){" +
-            "var candidate=(chunk?' ':'')+word;" +
-            "var part=document.createElement('p');" +
-            "part.textContent=chunk+candidate;" +
-            "measure.innerHTML='';measure.appendChild(part);" +
-            "if(!fits() && chunk){" +
-            "var finished=document.createElement('p');finished.textContent=chunk;" +
-            "current.appendChild(finished);savePage();chunk=word;" +
-            "}else{chunk+=candidate;}" +
-            "});" +
-            "if(chunk){" +
-            "var last=document.createElement('p');last.textContent=chunk;" +
-            "current.appendChild(last);measure.innerHTML='';" +
-            "}" +
-            "});" +
-            "if(current.childNodes.length>0)pages.push(current.innerHTML);" +
-            "if(pages.length===0)pages.push(source.innerHTML);" +
-            "currentPage=Math.min(currentPage,pages.length-1);" +
-            "showPage();" +
-            "AndroidBook.pageCount(pages.length);" +
-            "}" +
+"var c=allChapters[currentChapter];" +
+"var source=document.createElement('div');" +
+"source.innerHTML='<h2>'+c.title+'</h2>'+c.html;" +
+"var measure=document.getElementById('measure');" +
+"var viewport=document.getElementById('viewport');" +
+"var available=viewport.clientHeight-28;" +
+"measure.style.width=(viewport.clientWidth-28)+'px';" +
+"measure.style.height=available+'px';" +
+"measure.style.overflow='hidden';" +
+"measure.style.padding='0';" +
+"measure.style.visibility='hidden';" +
+"measure.style.position='absolute';" +
+"measure.innerHTML='';" +
+"pages=[];" +
+"var currentHtml='';" +
+"function fits(html){" +
+"measure.innerHTML=html;" +
+"return measure.scrollHeight<=measure.clientHeight+1;" +
+"}" +
+"function savePage(){" +
+"if(currentHtml.trim()!=='')pages.push(currentHtml);" +
+"currentHtml='';" +
+"}" +
+"var blocks=Array.from(source.childNodes);" +
+"blocks.forEach(function(node){" +
+"if(node.nodeType===3&&!node.textContent.trim())return;" +
+"var html=node.nodeType===3?" +
+"'<p>'+node.textContent+'</p>':node.outerHTML;" +
+"var candidate=currentHtml+html;" +
+"if(fits(candidate)){" +
+"currentHtml=candidate;" +
+"return;" +
+"}" +
+"if(currentHtml!=='')savePage();" +
+"if(fits(html)){" +
+"currentHtml=html;" +
+"return;" +
+"}" +
+"var text=node.textContent||'';" +
+"var words=text.trim().split(/\\s+/);" +
+"var chunk='';" +
+"words.forEach(function(word){" +
+"var next=chunk?chunk+' '+word:word;" +
+"var paragraph='<p>'+next+'</p>';" +
+"if(!fits(currentHtml+paragraph)&&chunk!==''){" +
+"currentHtml+='<p>'+chunk+'</p>';" +
+"savePage();" +
+"chunk=word;" +
+"}else{" +
+"chunk=next;" +
+"}" +
+"});" +
+"if(chunk!==''){" +
+"var paragraph='<p>'+chunk+'</p>';" +
+"if(!fits(currentHtml+paragraph)&&currentHtml!=='')savePage();" +
+"currentHtml+=paragraph;" +
+"}" +
+"});" +
+"if(currentHtml.trim()!=='')pages.push(currentHtml);" +
+"if(pages.length===0)pages.push(source.innerHTML);" +
+"currentPage=Math.max(0,Math.min(currentPage,pages.length-1));" +
+"showPage();" +
+"AndroidBook.pageCount(pages.length);" +
+"}" +
 
             "function showPage(){" +
             "document.getElementById('page').innerHTML=pages[currentPage]||'';" +
