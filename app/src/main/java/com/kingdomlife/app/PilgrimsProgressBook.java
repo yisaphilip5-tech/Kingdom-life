@@ -334,7 +334,7 @@ String chapterJson = chapters.toString();
             "<style>" +
             "*{box-sizing:border-box;}" +
             "html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff;}" +
-            "#viewport{width:100%;height:100%;padding:14px;overflow:hidden;}" +
+            "#viewport{width:100%;height:100%;min-height:100vh;padding:14px;overflow:hidden;}" +
             "#page{width:100%;height:100%;overflow:hidden;" +
             "font-family:Georgia,serif;font-size:18px;line-height:1.5;color:#222;}" +
             "#page h1,#page h2,#page h3,#page h4{margin-top:0;}" +
