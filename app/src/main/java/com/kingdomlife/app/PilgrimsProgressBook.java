@@ -323,83 +323,99 @@ private static void showReader() {
     loadReaderHtml();
 }
 
-private static void loadReaderHtml() {
+
+    private static void loadReaderHtml() {
 try {
 String chapterJson = chapters.toString();
+
     String html =
             "<!DOCTYPE html><html><head>" +
-            "<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>" +
+            "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
             "<style>" +
             "*{box-sizing:border-box;}" +
             "html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff;}" +
-            "#viewport{width:100%;height:100%;overflow:hidden;padding:14px;}" +
-            "#pages{" +
-            "height:100%;" +
-            "column-width:100%;" +
-            "column-gap:28px;" +
-            "column-fill:auto;" +
-            "font-family:Georgia,serif;" +
-            "font-size:18px;" +
-            "line-height:1.55;" +
-            "color:#222;" +
-            "}" +
-            "#pages>*{max-width:100%;}" +
-            "h1,h2,h3,h4{break-after:avoid-column;}" +
-            "p{orphans:2;widows:2;}" +
-            "img{max-width:100%;height:auto;}" +
-            "a{color:#6b4b00;}" +
+            "#viewport{width:100%;height:100%;padding:14px;overflow:hidden;}" +
+            "#page{width:100%;height:100%;overflow:hidden;" +
+            "font-family:Georgia,serif;font-size:18px;line-height:1.5;color:#222;}" +
+            "#page h1,#page h2,#page h3,#page h4{margin-top:0;}" +
+            "#page img{max-width:100%;height:auto;}" +
+            "#page p{margin:0 0 12px 0;}" +
+            "#measure{position:absolute;left:-10000px;top:0;visibility:hidden;" +
+            "width:calc(100vw - 28px);font-family:Georgia,serif;" +
+            "font-size:18px;line-height:1.5;}" +
             "</style></head><body>" +
-            "<div id='viewport'><div id='pages'></div></div>" +
+            "<div id='viewport'><div id='page'></div></div>" +
+            "<div id='measure'></div>" +
             "<script>" +
             "var allChapters=" + chapterJson + ";" +
             "var currentChapter=" + chapterIndex + ";" +
             "var currentPage=0;" +
-            "var pagesCount=1;" +
+            "var pages=[];" +
 
-            "function renderChapter(){" +
+            "function makePages(){" +
             "var c=allChapters[currentChapter];" +
+            "var source=document.createElement('div');" +
+            "source.innerHTML='<h2>'+c.title+'</h2>'+c.html;" +
+            "var measure=document.getElementById('measure');" +
             "var viewport=document.getElementById('viewport');" +
-            "var box=document.getElementById('pages');" +
-            "var pageWidth=viewport.clientWidth-28;" +
-            "var pageHeight=viewport.clientHeight-28;" +
-
-            "box.style.transform='none';" +
-            "box.style.width=pageWidth+'px';" +
-            "box.style.height=pageHeight+'px';" +
-            "box.style.columnWidth=pageWidth+'px';" +
-            "box.style.columnGap='28px';" +
-            "box.style.columnFill='auto';" +
-            "box.innerHTML='<h2>'+c.title+'</h2>'+c.html;" +
-
-            "requestAnimationFrame(function(){" +
-            "var actualWidth=box.scrollWidth;" +
-            "pagesCount=Math.max(1,Math.round((actualWidth+28)/(pageWidth+28)));" +
-            "currentPage=Math.min(currentPage,pagesCount-1);" +
-            "showPage();" +
-            "AndroidBook.pageCount(pagesCount);" +
+            "measure.style.width=(viewport.clientWidth-28)+'px';" +
+            "measure.style.padding='0';" +
+            "measure.style.visibility='hidden';" +
+            "measure.innerHTML='';" +
+            "var available=viewport.clientHeight-28;" +
+            "var blocks=Array.from(source.childNodes);" +
+            "pages=[];" +
+            "var current=document.createElement('div');" +
+            "function fits(){return measure.scrollHeight<=available;}" +
+            "function savePage(){if(current.innerHTML.trim()!==''){pages.push(current.innerHTML);current=document.createElement('div');measure.innerHTML='';}}" +
+            "blocks.forEach(function(node){" +
+            "if(node.nodeType===3 && !node.textContent.trim())return;" +
+            "var clone=node.cloneNode(true);" +
+            "measure.appendChild(clone);" +
+            "if(fits()){current.appendChild(clone);return;}" +
+            "measure.removeChild(clone);" +
+            "if(current.childNodes.length>0)savePage();" +
+            "var test=node.cloneNode(true);" +
+            "measure.appendChild(test);" +
+            "if(fits()){current.appendChild(test);return;}" +
+            "measure.removeChild(test);" +
+            "var text=node.textContent||'';" +
+            "var words=text.split(/\\\\s+/);" +
+            "var chunk='';" +
+            "words.forEach(function(word){" +
+            "var candidate=(chunk?' ':'')+word;" +
+            "var part=document.createElement('p');" +
+            "part.textContent=chunk+candidate;" +
+            "measure.innerHTML='';measure.appendChild(part);" +
+            "if(!fits() && chunk){" +
+            "var finished=document.createElement('p');finished.textContent=chunk;" +
+            "current.appendChild(finished);savePage();chunk=word;" +
+            "}else{chunk+=candidate;}" +
             "});" +
+            "if(chunk){" +
+            "var last=document.createElement('p');last.textContent=chunk;" +
+            "current.appendChild(last);measure.innerHTML='';" +
+            "}" +
+            "});" +
+            "if(current.childNodes.length>0)pages.push(current.innerHTML);" +
+            "if(pages.length===0)pages.push(source.innerHTML);" +
+            "currentPage=Math.min(currentPage,pages.length-1);" +
+            "showPage();" +
+            "AndroidBook.pageCount(pages.length);" +
             "}" +
 
             "function showPage(){" +
-            "var box=document.getElementById('pages');" +
-            "var viewport=document.getElementById('viewport');" +
-            "var pageWidth=viewport.clientWidth-28;" +
-            "box.style.transform='translateX(-'+(currentPage*(pageWidth+28))+'px)';" +
+            "document.getElementById('page').innerHTML=pages[currentPage]||'';" +
             "AndroidBook.pageChanged(currentPage);" +
             "}" +
 
             "function goPage(p){" +
-            "currentPage=Math.max(0,Math.min(p,pagesCount-1));" +
+            "currentPage=Math.max(0,Math.min(p,pages.length-1));" +
             "showPage();" +
             "}" +
 
-            "function resizeBook(){" +
-            "currentPage=0;" +
-            "renderChapter();" +
-            "}" +
-
-            "window.onload=renderChapter;" +
-            "window.onresize=resizeBook;" +
+            "window.onload=function(){setTimeout(makePages,100);};" +
+            "window.onresize=function(){currentPage=0;setTimeout(makePages,100);};" +
             "</script></body></html>";
 
     bookView.loadDataWithBaseURL(
@@ -418,7 +434,7 @@ String chapterJson = chapters.toString();
     ).show();
 }
 
-}
+    }
 private static void previousPage() {
     if (pageIndex > 0) {
         pageIndex--;
