@@ -9455,7 +9455,7 @@ content.addView(continueButton);
                 1f,
                 (h - 2f * margin - 28f) * rows / (rows + 1f)
         );
-        float availableBoardHeight = Math.min(h * 0.68f, maxBoardHeightForOneRow);
+        float availableBoardHeight = Math.min(h * 0.86f, maxBoardHeightForOneRow);
 
         float boardWidth = availableBoardWidth;
         float boardHeight = boardWidth / imageRatio;
