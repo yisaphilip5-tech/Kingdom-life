@@ -9156,6 +9156,8 @@ private float boardLeft;
 private float boardTop;
 private float trayTop;
 private float trayScroll;
+    private int trayColumns;
+private int trayRows;
 
     private float[] xPositions;
     private float[] yPositions;
