@@ -9458,12 +9458,12 @@ protected void onSizeChanged(int w, int h, int oldW, int oldH) {
     );
 
     float availableBoardHeight = Math.min(
-            h * 0.76f,
+            h * 0.70f,
             maxBoardHeightForOneRow
     );
 
     // Give the board the full available width.
-    float boardWidth = availableBoardWidth * 0.70f;
+    float boardWidth = availableBoardWidth * 0.60f;
 float boardHeight = boardWidth / imageRatio;
 
 if (boardHeight > availableBoardHeight) {
