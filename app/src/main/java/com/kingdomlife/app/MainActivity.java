@@ -9152,6 +9152,9 @@ private final int[][] vertical;
 private float cellWidth;
 private float cellHeight;
 
+private float boardCellWidth;
+private float boardCellHeight;
+
 private float boardLeft;
 private float boardTop;
 private float trayTop;
@@ -9370,7 +9373,7 @@ jigsawPrefs.edit()
         .putInt("highestUnlockedLevel", nextUnlockedLevel)
         .apply();
     TextView title = new TextView(MainActivity.this);
-    title.setText("ðŸ‘‘ Puzzle Completed!");
+    title.setText("✨‘‘ Puzzle Completed!");
     title.setTextSize(24);
     title.setTypeface(null, Typeface.BOLD);
     title.setTextColor(Color.WHITE);
@@ -9414,7 +9417,7 @@ message.setText(
 );
 } else {
 message.setText(
-"ðŸŽ‰ Congratulations! You completed all "
+"🎉 Congratulations! You completed all "
 + count + " pieces!\n\n"
 + "ðŸ† +" + reward + " points!\n\n"
 + (level < 21
@@ -9442,72 +9445,85 @@ if (level < 21) {
 content.addView(continueButton);
 }
         @Override
-    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
-        super.onSizeChanged(w, h, oldW, oldH);
-        if (w <= 0 || h <= 0) return;
+protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+    super.onSizeChanged(w, h, oldW, oldH);
+    if (w <= 0 || h <= 0) return;
 
-        float availableBoardWidth = Math.max(1f, w - 2f * margin);
-        float imageRatio = (float) image.getWidth() / (float) image.getHeight();
+    float availableBoardWidth = Math.max(1f, w - 2f * margin);
+    float imageRatio = (float) image.getWidth() / (float) image.getHeight();
 
-        // Keep the picture large, while reserving enough height for at least
-        // one complete row of pieces in the tray on short screens.
-        float maxBoardHeightForOneRow = Math.max(
-                1f,
-                (h - 2f * margin - 28f) * rows / (rows + 1f)
-        );
-        float availableBoardHeight = Math.min(h * 0.86f, maxBoardHeightForOneRow);
+    float maxBoardHeightForOneRow = Math.max(
+            1f,
+            (h - 2f * margin - 28f) * rows / (rows + 1f)
+    );
 
-        float boardWidth = availableBoardWidth;
-        float boardHeight = boardWidth / imageRatio;
-        if (boardHeight > availableBoardHeight) {
-            boardHeight = availableBoardHeight;
-            boardWidth = boardHeight * imageRatio;
-        }
+    float availableBoardHeight = Math.min(
+            h * 0.86f,
+            maxBoardHeightForOneRow
+    );
 
-        cellWidth = boardWidth / columns;
-        cellHeight = boardHeight / rows;
-        cell = Math.min(cellWidth, cellHeight);
-        boardLeft = (w - boardWidth) / 2f;
-        boardTop = margin;
-        trayTop = boardTop + boardHeight + 28f;
+    // Give the board the full available width.
+    float boardWidth = availableBoardWidth;
+float boardHeight = boardWidth / imageRatio;
 
-        // Make a grid that fits the screen width. The tray scrolls vertically.
-        trayColumns = Math.max(
-                1,
-                (int) Math.floor((w - 2f * margin + gap) / (cellWidth + gap))
-        );
-        trayRows = (int) Math.ceil((double) count / (double) trayColumns);
+if (boardHeight > availableBoardHeight) {
+    boardHeight = availableBoardHeight;
+    boardWidth = availableBoardWidth;
+}
+    boardCellWidth = boardWidth / columns;
+    boardCellHeight = boardHeight / rows;
 
-        java.util.ArrayList<Integer> order = new java.util.ArrayList<>();
-        for (int i = 0; i < count; i++) order.add(i);
-        java.util.Collections.shuffle(order);
+    // Keep tray piece dimensions independent from board dimensions.
+    cellWidth = boardCellWidth;
+    cellHeight = boardCellHeight;
+    cell = Math.min(cellWidth, cellHeight);
 
-        for (int slot = 0; slot < count; slot++) {
-            int index = order.get(slot);
-            int trayRow = slot / trayColumns;
-            int trayCol = slot % trayColumns;
-            homeX[index] = margin + trayCol * (cellWidth + gap);
-            homeY[index] = trayTop + trayRow * (cellHeight + gap);
-            xPositions[index] = homeX[index];
-            yPositions[index] = homeY[index];
-        }
+    boardLeft = (w - boardWidth) / 2f;
+    boardTop = margin;
+    trayTop = boardTop + boardHeight + 28f;
 
-        trayScroll = 0f;
-        invalidate();
+    trayColumns = Math.max(
+            1,
+            (int) Math.floor(
+                    (w - 2f * margin + gap) / (cellWidth + gap)
+            )
+    );
+
+    trayRows = (int) Math.ceil(
+            (double) count / (double) trayColumns
+    );
+
+    java.util.ArrayList<Integer> order = new java.util.ArrayList<>();
+    for (int i = 0; i < count; i++) {
+        order.add(i);
+    }
+    java.util.Collections.shuffle(order);
+
+    for (int slot = 0; slot < count; slot++) {
+        int index = order.get(slot);
+        int trayRow = slot / trayColumns;
+        int trayCol = slot % trayColumns;
+
+        homeX[index] = margin + trayCol * (cellWidth + gap);
+        homeY[index] = trayTop + trayRow * (cellHeight + gap);
+
+        xPositions[index] = homeX[index];
+        yPositions[index] = homeY[index];
     }
 
+    trayScroll = 0f;
+    invalidate();
+}
     private float getMaxTrayScroll() {
         float trayContentHeight = trayRows * cellHeight + Math.max(0, trayRows - 1) * gap;
         float visibleTrayHeight = Math.max(0f, getHeight() - trayTop - margin);
         return Math.max(0f, trayContentHeight - visibleTrayHeight);
     }
 
-    private Path piecePath(int index, float x, float y) {
+    private Path piecePath(int index, float x, float y, float w, float h) {
     int row = index / columns;
     int col = index % columns;
 
-    float w = cellWidth;
-    float h = cellHeight;
     float tab = Math.min(w, h) * 0.22f;
 
     Path p = new Path();
@@ -9562,7 +9578,7 @@ content.addView(continueButton);
 
     p.close();
     return p;
-            }
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -9570,11 +9586,17 @@ content.addView(continueButton);
         canvas.drawColor(Color.rgb(24, 29, 42));
 
         Rect target = new Rect(
-                (int) boardLeft,
-                (int) boardTop,
-                (int) (boardLeft + columns * cellWidth),
-                (int) (boardTop + rows * cellHeight)
-        );
+        (int) boardLeft,
+        (int) boardTop,
+        (int) (boardLeft + columns * cellWidth),
+        (int) (boardTop + rows * cellHeight)
+);
+Rect target = new Rect(
+        (int) (boardLeft - extraWidth / 2f),
+        (int) boardTop,
+        (int) (boardLeft + boardWidth + extraWidth / 2f),
+        (int) (boardTop + boardHeight)
+);
 
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.WHITE);
@@ -9607,8 +9629,8 @@ content.addView(continueButton);
             int row = i / columns;
             int col = i % columns;
             drawPuzzlePiece(canvas, i,
-                    boardLeft + col * cellWidth,
-                    boardTop + row * cellHeight);
+        boardLeft + col * boardCellWidth,
+        boardTop + row * boardCellHeight);
         }
 
         // The tray is a multi-row grid and scrolls vertically.
@@ -9628,16 +9650,16 @@ content.addView(continueButton);
         }
     }
 
-    private void drawPuzzlePiece(
-        Canvas canvas, int index, float x, float y
-) {
+    private void drawPuzzlePiece(Canvas canvas, int index, float x, float y) {
     int row = index / columns;
     int col = index % columns;
 
-    float w = cellWidth;
-    float h = cellHeight;
+    boolean onBoard = placed[index] || index == selected && !draggingFromTray;
 
-    Path path = piecePath(index, x, y);
+    float w = onBoard ? boardCellWidth : cellWidth;
+    float h = onBoard ? boardCellHeight : cellHeight;
+
+    Path path = piecePath(index, x, y, w, h);
 
     canvas.save();
     canvas.clipPath(path);
@@ -9669,7 +9691,7 @@ content.addView(continueButton);
     canvas.drawPath(path, paint);
 
     paint.setStyle(Paint.Style.FILL);
-        }
+    }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
@@ -9729,12 +9751,11 @@ content.addView(continueButton);
                     && selected >= 0 && selected < count && !placed[selected]) {
                 int row = selected / columns;
                 int col = selected % columns;
-                float targetX = boardLeft + col * cellWidth;
-                float targetY = boardTop + row * cellHeight;
-
+                float targetX = boardLeft + col * boardCellWidth;
+float targetY = boardTop + row * boardCellHeight;
                 if (!draggingFromTray
-                        && Math.abs(xPositions[selected] - targetX) < cellWidth * 0.35f
-                        && Math.abs(yPositions[selected] - targetY) < cellHeight * 0.35f) {
+                        && Math.abs(xPositions[selected] - targetX) < boardCellWidth * 0.35f
+&& Math.abs(yPositions[selected] - targetY) < boardCellHeight * 0.35f
                     xPositions[selected] = targetX;
                     yPositions[selected] = targetY;
                     placed[selected] = true;
