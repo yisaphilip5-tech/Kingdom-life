@@ -9196,7 +9196,7 @@ storyDescription =
 + "God created a beautiful garden called Eden, "
 + "where Adam and Eve lived. The garden reminds us "
 + "of God's wonderful creation and His desire for "
-+ "people to walk with Him. (Genesis 2–3)";
++ "people to walk with Him. (Genesis 2â€“3)";
 break;
 
         case 2:
@@ -9205,7 +9205,7 @@ break;
                     + "God instructed Noah to build an ark to preserve "
                     + "his family and the animals during the great flood. "
                     + "Noah obeyed God, and the rainbow became a sign "
-                    + "of God's covenant. (Genesis 6–9)";
+                    + "of God's covenant. (Genesis 6â€“9)";
             break;
 
         case 3:
@@ -9215,12 +9215,12 @@ break;
                     + "but God was with him. Through wisdom and "
                     + "faithfulness, Joseph rose to become a ruler in "
                     + "Egypt and helped save many people during famine. "
-                    + "(Genesis 37–50)";
+                    + "(Genesis 37â€“50)";
             break;
 
         case 4:
             storyDescription =
-                    "ABRAHAM — GOD'S COVENANT\n\n"
+                    "ABRAHAM â€” GOD'S COVENANT\n\n"
                     + "God called Abraham and promised to make his "
                     + "descendants into a great nation. Abraham trusted "
                     + "God's promise. (Genesis 12, 15, 17)";
@@ -9228,7 +9228,7 @@ break;
 
         case 5:
             storyDescription =
-                    "MOSES — THE RED SEA\n\n"
+                    "MOSES â€” THE RED SEA\n\n"
                     + "God delivered the Israelites from Egypt. When "
                     + "they reached the Red Sea, God made a way for "
                     + "them to cross on dry ground. (Exodus 14)";
@@ -9236,7 +9236,7 @@ break;
 
         case 6:
             storyDescription =
-                    "JOSHUA — THE FALL OF JERICHO\n\n"
+                    "JOSHUA â€” THE FALL OF JERICHO\n\n"
                     + "God instructed Joshua and the Israelites to "
                     + "march around Jericho. They followed God's "
                     + "instructions, and the city's wall fell. "
@@ -9254,10 +9254,10 @@ break;
 
         case 8:
             storyDescription =
-                    "DAVID — KING OF ISRAEL\n\n"
+                    "DAVID â€” KING OF ISRAEL\n\n"
                     + "David became king of Israel. His life reminds "
                     + "us of the importance of trusting God and seeking "
-                    + "His guidance. (2 Samuel 5–7)";
+                    + "His guidance. (2 Samuel 5â€“7)";
             break;
 
         case 9:
@@ -9270,10 +9270,10 @@ break;
 
         case 10:
             storyDescription =
-                    "ESTHER — COURAGE AND DELIVERANCE\n\n"
+                    "ESTHER â€” COURAGE AND DELIVERANCE\n\n"
                     + "Queen Esther courageously approached the king "
                     + "to plead for her people. Her bravery helped "
-                    + "bring deliverance to the Jews. (Esther 4–8)";
+                    + "bring deliverance to the Jews. (Esther 4â€“8)";
             break;
 
         default:
@@ -9368,7 +9368,7 @@ jigsawPrefs.edit()
         .putInt("highestUnlockedLevel", nextUnlockedLevel)
         .apply();
     TextView title = new TextView(MainActivity.this);
-    title.setText("👑 Puzzle Completed!");
+    title.setText("ðŸ‘‘ Puzzle Completed!");
     title.setTextSize(24);
     title.setTypeface(null, Typeface.BOLD);
     title.setTextColor(Color.WHITE);
@@ -9412,9 +9412,9 @@ message.setText(
 );
 } else {
 message.setText(
-"🎉 Congratulations! You completed all "
+"ðŸŽ‰ Congratulations! You completed all "
 + count + " pieces!\n\n"
-+ "🏆 +" + reward + " points!\n\n"
++ "ðŸ† +" + reward + " points!\n\n"
 + (level < 21
 ? "Level " + (level + 1) + " is now unlocked!"
 : "You've completed all 21 Old Testament Jigsaw levels!")
@@ -9439,59 +9439,67 @@ if (level < 21) {
 
 content.addView(continueButton);
 }
-    @Override
-protected void onSizeChanged(
-        int w, int h, int oldW, int oldH
-) {
-    super.onSizeChanged(w, h, oldW, oldH);
+        @Override
+    protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+        super.onSizeChanged(w, h, oldW, oldH);
+        if (w <= 0 || h <= 0) return;
 
-    if (w <= 0 || h <= 0) return;
+        float availableBoardWidth = Math.max(1f, w - 2f * margin);
+        float imageRatio = (float) image.getWidth() / (float) image.getHeight();
 
-    float availableBoardHeight = h * 0.68f;
-    float availableBoardWidth = w - 2f * margin;
+        // Keep the picture large, while reserving enough height for at least
+        // one complete row of pieces in the tray on short screens.
+        float maxBoardHeightForOneRow = Math.max(
+                1f,
+                (h - 2f * margin - 28f) * rows / (rows + 1f)
+        );
+        float availableBoardHeight = Math.min(h * 0.68f, maxBoardHeightForOneRow);
 
-    float imageRatio =
-            (float) image.getWidth() / image.getHeight();
+        float boardWidth = availableBoardWidth;
+        float boardHeight = boardWidth / imageRatio;
+        if (boardHeight > availableBoardHeight) {
+            boardHeight = availableBoardHeight;
+            boardWidth = boardHeight * imageRatio;
+        }
 
-    float boardWidth = availableBoardWidth;
-    float boardHeight = boardWidth / imageRatio;
+        cellWidth = boardWidth / columns;
+        cellHeight = boardHeight / rows;
+        cell = Math.min(cellWidth, cellHeight);
+        boardLeft = (w - boardWidth) / 2f;
+        boardTop = margin;
+        trayTop = boardTop + boardHeight + 28f;
 
-    if (boardHeight > availableBoardHeight) {
-        boardHeight = availableBoardHeight;
-        boardWidth = boardHeight * imageRatio;
+        // Make a grid that fits the screen width. The tray scrolls vertically.
+        trayColumns = Math.max(
+                1,
+                (int) Math.floor((w - 2f * margin + gap) / (cellWidth + gap))
+        );
+        trayRows = (int) Math.ceil((double) count / (double) trayColumns);
+
+        java.util.ArrayList<Integer> order = new java.util.ArrayList<>();
+        for (int i = 0; i < count; i++) order.add(i);
+        java.util.Collections.shuffle(order);
+
+        for (int slot = 0; slot < count; slot++) {
+            int index = order.get(slot);
+            int trayRow = slot / trayColumns;
+            int trayCol = slot % trayColumns;
+            homeX[index] = margin + trayCol * (cellWidth + gap);
+            homeY[index] = trayTop + trayRow * (cellHeight + gap);
+            xPositions[index] = homeX[index];
+            yPositions[index] = homeY[index];
+        }
+
+        trayScroll = 0f;
+        invalidate();
     }
 
-    cellWidth = boardWidth / columns;
-    cellHeight = boardHeight / rows;
-
-    cell = Math.min(cellWidth, cellHeight);
-
-    boardLeft = (w - boardWidth) / 2f;
-    boardTop = margin;
-    trayTop = boardTop + boardHeight + 28f;
-
-    java.util.ArrayList<Integer> order =
-            new java.util.ArrayList<>();
-
-    for (int i = 0; i < count; i++) {
-        order.add(i);
+    private float getMaxTrayScroll() {
+        float trayContentHeight = trayRows * cellHeight + Math.max(0, trayRows - 1) * gap;
+        float visibleTrayHeight = Math.max(0f, getHeight() - trayTop - margin);
+        return Math.max(0f, trayContentHeight - visibleTrayHeight);
     }
 
-    java.util.Collections.shuffle(order);
-
-    for (int i = 0; i < count; i++) {
-        int index = order.get(i);
-
-        homeX[index] = margin + i * (cellWidth + gap);
-        homeY[index] = trayTop;
-
-        xPositions[index] = homeX[index];
-        yPositions[index] = homeY[index];
-    }
-
-    trayScroll = 0f;
-    invalidate();
-}
     private Path piecePath(int index, float x, float y) {
     int row = index / columns;
     int col = index % columns;
@@ -9554,89 +9562,70 @@ protected void onSizeChanged(
     return p;
             }
 
-@Override
-protected void onDraw(Canvas canvas) {
-    super.onDraw(canvas);
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawColor(Color.rgb(24, 29, 42));
 
-    canvas.drawColor(Color.rgb(24, 29, 42));
+        Rect target = new Rect(
+                (int) boardLeft,
+                (int) boardTop,
+                (int) (boardLeft + columns * cellWidth),
+                (int) (boardTop + rows * cellHeight)
+        );
 
-    // Draw the target picture.
-    Rect target = new Rect(
-        (int) boardLeft,
-        (int) boardTop,
-        (int) (boardLeft + columns * cellWidth),
-        (int) (boardTop + rows * cellHeight)
-);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.WHITE);
+        paint.setAlpha(95);
+        canvas.drawBitmap(image, null, target, paint);
+        paint.setAlpha(255);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(2f);
+        paint.setColor(Color.WHITE);
+        canvas.drawRect(target, paint);
 
-    paint.setStyle(Paint.Style.FILL);
-    paint.setAlpha(95);
-    canvas.drawBitmap(image, null, target, paint);
-    paint.setAlpha(255);
+        // Tray background and border.
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.rgb(34, 40, 56));
+        canvas.drawRect(0f, trayTop, getWidth(), getHeight(), paint);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.5f);
+        paint.setColor(Color.rgb(112, 125, 151));
+        canvas.drawRect(1f, trayTop, getWidth() - 1f, getHeight() - 1f, paint);
 
-    paint.setStyle(Paint.Style.STROKE);
-    paint.setStrokeWidth(2f);
-    paint.setColor(Color.WHITE);
-    canvas.drawRect(target, paint);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.WHITE);
+        paint.setTextSize(16f);
+        canvas.drawText("Pieces placed: " + completed + " / " + count,
+                margin, trayTop - 10f, paint);
 
-    // Show progress.
-    paint.setStyle(Paint.Style.FILL);
-    paint.setColor(Color.WHITE);
-    paint.setTextSize(16f);
-    canvas.drawText(
-            "Pieces placed: " + completed + " / " + count,
-            margin,
-            trayTop - 10f,
-            paint
-    );
+        // Pieces already placed stay fixed on the picture.
+        for (int i = 0; i < count; i++) {
+            if (!placed[i]) continue;
+            int row = i / columns;
+            int col = i % columns;
+            drawPuzzlePiece(canvas, i,
+                    boardLeft + col * cellWidth,
+                    boardTop + row * cellHeight);
+        }
 
-    // Draw placed pieces on the board.
-for (int i = 0; i < count; i++) {
-    if (!placed[i]) continue;
+        // The tray is a multi-row grid and scrolls vertically.
+        canvas.save();
+        canvas.clipRect(0f, trayTop, getWidth(), getHeight());
+        canvas.translate(0f, -trayScroll);
+        for (int i = 0; i < count; i++) {
+            if (placed[i] || selected == i) continue;
+            drawPuzzlePiece(canvas, i, xPositions[i], yPositions[i]);
+        }
+        canvas.restore();
 
-    int row = i / columns;
-    int col = i % columns;
-
-    float x = boardLeft + col * cellWidth;
-    float y = boardTop + row * cellHeight;
-
-    drawPuzzlePiece(canvas, i, x, y);
-}
-    // Draw unplaced pieces in the horizontally scrollable tray.
-    canvas.save();
-canvas.clipRect(0, trayTop, getWidth(), getHeight());
-canvas.translate(-trayScroll, 0);
-
-for (int i = 0; i < count; i++) {
-    if (placed[i]) continue;
-
-    float x = xPositions[i];
-    float y = yPositions[i];
-
-    if (selected == i) {
-        continue;
+        // Draw the selected piece above the tray and board while dragging.
+        if (selected >= 0 && selected < count && !placed[selected]) {
+            drawPuzzlePiece(canvas, selected,
+                    dragX - offsetX, dragY - offsetY);
+        }
     }
 
-    drawPuzzlePiece(canvas, i, x, y);
-}
-
-canvas.restore();
-
-    // Draw the selected piece last while dragging.
-if (selected >= 0 && selected < count
-        && !placed[selected]) {
-
-    canvas.save();
-
-    drawPuzzlePiece(
-            canvas,
-            selected,
-            dragX - offsetX,
-            dragY - offsetY
-    );
-
-    canvas.restore();
-}
-}
     private void drawPuzzlePiece(
         Canvas canvas, int index, float x, float y
 ) {
@@ -9679,116 +9668,98 @@ if (selected >= 0 && selected < count
 
     paint.setStyle(Paint.Style.FILL);
         }
-@Override
-public boolean onTouchEvent(MotionEvent event) {
-    float x = event.getX();
-    float y = event.getY();
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        float x = event.getX();
+        float y = event.getY();
+        int action = event.getActionMasked();
 
-    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-        downX = x;
-        downY = y;
-        dragX = x;
-        dragY = y;
-        selected = -1;
+        if (action == MotionEvent.ACTION_DOWN) {
+            downX = x;
+            downY = y;
+            dragX = x;
+            dragY = y;
+            selected = -1;
+            draggingFromTray = false;
 
-        if (y >= trayTop) {
-            float contentX = x + trayScroll;
-
-            for (int i = count - 1; i >= 0; i--) {
-                if (placed[i]) continue;
-
-                if (contentX >= xPositions[i]
-                        && contentX <= xPositions[i] + cellWidth
-                        && y >= yPositions[i]
-                        && y <= yPositions[i] + cellHeight) {
-
-                    selected = i;
-                    draggingFromTray = true;
-                    offsetX = x - (xPositions[i] - trayScroll);
-                    offsetY = y - yPositions[i];
-                    return true;
+            if (y >= trayTop && y <= getHeight()) {
+                // Positions are stored in tray-content coordinates. Convert
+                // the piece's Y position to the visible screen position.
+                for (int i = count - 1; i >= 0; i--) {
+                    if (placed[i]) continue;
+                    float screenY = yPositions[i] - trayScroll;
+                    if (x >= xPositions[i] && x <= xPositions[i] + cellWidth
+                            && y >= screenY && y <= screenY + cellHeight) {
+                        selected = i;
+                        draggingFromTray = true;
+                        offsetX = x - xPositions[i];
+                        offsetY = y - screenY;
+                        invalidate();
+                        return true;
+                    }
                 }
             }
-
             return true;
         }
 
-        return true;
-    }
+        if (action == MotionEvent.ACTION_MOVE) {
+            dragX = x;
+            dragY = y;
 
-    if (event.getAction() == MotionEvent.ACTION_MOVE) {
-        dragX = x;
-        dragY = y;
-
-        if (selected >= 0 && !placed[selected]) {
-            xPositions[selected] = x - offsetX;
-            yPositions[selected] = y - offsetY;
-            draggingFromTray = y >= trayTop;
-
-        } else if (downY >= trayTop) {
-            float trayWidth =
-                    margin + count * (cellWidth + gap) - gap;
-
-            float maxScroll = Math.max(
-                    0f,
-                    trayWidth - getWidth()
-            );
-
-            trayScroll = Math.max(
-                    0f,
-                    Math.min(
-                            maxScroll,
-                            trayScroll - (x - downX)
-                    )
-            );
-
-            downX = x;
-        }
-
-        invalidate();
-        return true;
-    }
-
-    if (event.getAction() == MotionEvent.ACTION_UP) {
-        if (selected >= 0 && !placed[selected]) {
-            int row = selected / columns;
-            int col = selected % columns;
-
-            float targetX = boardLeft + col * cellWidth;
-            float targetY = boardTop + row * cellHeight;
-
-            if (!draggingFromTray
-                    && Math.abs(xPositions[selected] - targetX)
-                            < cellWidth * 0.35f
-                    && Math.abs(yPositions[selected] - targetY)
-                            < cellHeight * 0.35f) {
-
-                xPositions[selected] = targetX;
-                yPositions[selected] = targetY;
-                placed[selected] = true;
-                locked[selected] = true;
-                completed++;
-
-                if (completed == count && !victoryShown) {
-                    victoryShown = true;
-                    post(this::showCompletedPicture);
-                }
-
-            } else {
-                xPositions[selected] = homeX[selected];
-                yPositions[selected] = homeY[selected];
+            if (selected >= 0 && !placed[selected]) {
+                // While dragging, positions use screen coordinates so snap
+                // testing compares directly with the board target.
+                xPositions[selected] = x - offsetX;
+                yPositions[selected] = y - offsetY;
+                draggingFromTray = y >= trayTop;
+            } else if (downY >= trayTop) {
+                // Vertical scrolling: swipe up to see later rows.
+                trayScroll = Math.max(0f, Math.min(getMaxTrayScroll(),
+                        trayScroll - (y - downY)));
+                downY = y;
             }
+            invalidate();
+            return true;
         }
 
-        selected = -1;
-        draggingFromTray = false;
-        invalidate();
+        if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+            if (action == MotionEvent.ACTION_UP
+                    && selected >= 0 && selected < count && !placed[selected]) {
+                int row = selected / columns;
+                int col = selected % columns;
+                float targetX = boardLeft + col * cellWidth;
+                float targetY = boardTop + row * cellHeight;
+
+                if (!draggingFromTray
+                        && Math.abs(xPositions[selected] - targetX) < cellWidth * 0.35f
+                        && Math.abs(yPositions[selected] - targetY) < cellHeight * 0.35f) {
+                    xPositions[selected] = targetX;
+                    yPositions[selected] = targetY;
+                    placed[selected] = true;
+                    locked[selected] = true;
+                    completed++;
+                    if (completed == count && !victoryShown) {
+                        victoryShown = true;
+                        post(this::showCompletedPicture);
+                    }
+                } else {
+                    xPositions[selected] = homeX[selected];
+                    yPositions[selected] = homeY[selected];
+                }
+            } else if (selected >= 0 && selected < count && !placed[selected]) {
+                xPositions[selected] = homeX[selected];
+            }
+
+            selected = -1;
+            draggingFromTray = false;
+            invalidate();
+            return true;
+        }
         return true;
     }
 
-    return true;
-                        }
-                       }      
+}
+
     @Override
 protected void onActivityResult(
         int requestCode,
