@@ -9479,7 +9479,7 @@ if (boardHeight > availableBoardHeight) {
 
     boardLeft = (w - boardWidth) / 2f;
     boardTop = margin;
-    trayTop = boardTop + boardHeight + 28f;
+    trayTop = boardTop + boardHeight + 15f;
 
     trayColumns = Math.max(
             1,
