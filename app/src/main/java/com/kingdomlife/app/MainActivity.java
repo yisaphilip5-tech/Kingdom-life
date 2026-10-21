@@ -9754,8 +9754,8 @@ Rect target = new Rect(
                 float targetX = boardLeft + col * boardCellWidth;
 float targetY = boardTop + row * boardCellHeight;
                 if (!draggingFromTray
-                        && Math.abs(xPositions[selected] - targetX) < boardCellWidth * 0.35f
-&& Math.abs(yPositions[selected] - targetY) < boardCellHeight * 0.35f
+        && Math.abs(xPositions[selected] - targetX) < boardCellWidth * 0.35f
+        && Math.abs(yPositions[selected] - targetY) < boardCellHeight * 0.35f) {
                     xPositions[selected] = targetX;
                     yPositions[selected] = targetY;
                     placed[selected] = true;
