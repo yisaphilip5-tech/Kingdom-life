@@ -9458,7 +9458,7 @@ protected void onSizeChanged(int w, int h, int oldW, int oldH) {
     );
 
     float availableBoardHeight = Math.min(
-            h * 0.86f,
+            h * 0.76f,
             maxBoardHeightForOneRow
     );
 
