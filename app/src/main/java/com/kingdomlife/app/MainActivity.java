@@ -9447,7 +9447,7 @@ protected void onSizeChanged(
 
     if (w <= 0 || h <= 0) return;
 
-    float availableBoardHeight = h * 0.76f;
+    float availableBoardHeight = h * 0.68f;
     float availableBoardWidth = w - 2f * margin;
 
     float imageRatio =
@@ -9464,7 +9464,6 @@ protected void onSizeChanged(
     cellWidth = boardWidth / columns;
     cellHeight = boardHeight / rows;
 
-    // Keep the existing square-piece drawing compatible for now.
     cell = Math.min(cellWidth, cellHeight);
 
     boardLeft = (w - boardWidth) / 2f;
@@ -9492,7 +9491,7 @@ protected void onSizeChanged(
 
     trayScroll = 0f;
     invalidate();
-        }
+}
     private Path piecePath(int index, float x, float y) {
     int row = index / columns;
     int col = index % columns;
