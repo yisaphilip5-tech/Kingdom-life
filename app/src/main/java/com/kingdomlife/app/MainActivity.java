@@ -9585,17 +9585,11 @@ if (boardHeight > availableBoardHeight) {
         super.onDraw(canvas);
         canvas.drawColor(Color.rgb(24, 29, 42));
 
-        Rect target = new Rect(
+Rect target = new Rect(
         (int) boardLeft,
         (int) boardTop,
         (int) (boardLeft + columns * cellWidth),
         (int) (boardTop + rows * cellHeight)
-);
-Rect target = new Rect(
-        (int) (boardLeft - extraWidth / 2f),
-        (int) boardTop,
-        (int) (boardLeft + boardWidth + extraWidth / 2f),
-        (int) (boardTop + boardHeight)
 );
 
         paint.setStyle(Paint.Style.FILL);
