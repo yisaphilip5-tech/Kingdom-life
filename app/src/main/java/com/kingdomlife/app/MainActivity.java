@@ -9462,13 +9462,12 @@ protected void onSizeChanged(int w, int h, int oldW, int oldH) {
             maxBoardHeightForOneRow
     );
 
-    // Give the board the full available width.
-    float boardWidth = availableBoardWidth * 0.50f;
-float boardHeight = boardWidth / imageRatio;
+    // Make the board narrower and slightly taller.
+float boardWidth = availableBoardWidth * 0.70f;
+float boardHeight = (boardWidth / imageRatio) * 1.10f;
 
 if (boardHeight > availableBoardHeight) {
     boardHeight = availableBoardHeight;
-    boardWidth = availableBoardWidth;
 }
     boardCellWidth = boardWidth / columns;
     boardCellHeight = boardHeight / rows;
