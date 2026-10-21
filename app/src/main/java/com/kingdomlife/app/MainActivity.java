@@ -9463,7 +9463,7 @@ protected void onSizeChanged(int w, int h, int oldW, int oldH) {
     );
 
     // Give the board the full available width.
-    float boardWidth = availableBoardWidth * 0.60f;
+    float boardWidth = availableBoardWidth * 0.40f;
 float boardHeight = boardWidth / imageRatio;
 
 if (boardHeight > availableBoardHeight) {
