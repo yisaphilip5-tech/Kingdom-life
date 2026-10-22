@@ -312,12 +312,17 @@ public class BibleJigsawPuzzle {
 
     private void openLevel(int level) {
         String[] difficulties = {
-                "Easy", "Medium", "Hard", "Medium", "Easy",
-                "Hard", "Easy", "Hard", "Medium", "Easy",
-                "Medium", "Easy", "Hard", "Hard", "Medium",
-                "Easy", "Medium", "Hard", "Medium", "Hard",
-                "Easy"
-        };
+        "Easy", "Medium", "Hard", "Medium", "Easy",
+        "Hard", "Easy", "Hard", "Medium", "Easy",
+        "Medium", "Easy", "Hard", "Hard", "Medium",
+        "Easy", "Medium", "Hard", "Medium", "Hard",
+        "Easy",
+
+        "Medium", "Hard", "Easy", "Medium", "Hard",
+        "Easy", "Medium", "Hard", "Easy", "Hard",
+        "Medium", "Easy", "Hard", "Medium", "Easy",
+        "Hard", "Medium", "Easy", "Hard"
+};
 
         String imageName = OLD_TESTAMENT_IMAGES[level - 1];
 
