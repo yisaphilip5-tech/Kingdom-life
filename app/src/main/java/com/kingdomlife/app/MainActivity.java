@@ -9280,6 +9280,248 @@ break;
                     + "to plead for her people. Her bravery helped "
                     + "bring deliverance to the Jews. (Esther 4â€“8)";
             break;
+                case 11:
+storyDescription =
+"RUTH AND BETHLEHEM\n\n"
++ "Ruth remained loyal to Naomi and travelled with her "
++ "to Bethlehem. Her faithfulness and kindness became "
++ "part of God's wonderful plan. (Ruth 1–4)";
+break;
+
+    case 12:
+        storyDescription =
+                "SAMUEL HEARS GOD'S CALL\n\n"
+                + "As a boy serving in the house of the Lord, Samuel "
+                + "heard God calling him. He learned to listen and "
+                + "respond to God's voice. (1 Samuel 3)";
+        break;
+
+    case 13:
+        storyDescription =
+                "SOLOMON BUILDS THE TEMPLE\n\n"
+                + "King Solomon built a temple in Jerusalem where "
+                + "the Israelites could worship God. (1 Kings 5–8)";
+        break;
+
+    case 14:
+        storyDescription =
+                "DANIEL AND THE LIONS\n\n"
+                + "Daniel continued praying to God despite the king's "
+                + "decree. God protected him in the lions' den. "
+                + "(Daniel 6)";
+        break;
+
+    case 15:
+        storyDescription =
+                "THE FIERY FURNACE\n\n"
+                + "Shadrach, Meshach, and Abednego refused to worship "
+                + "the golden image. God was with them in the fiery "
+                + "furnace. (Daniel 3)";
+        break;
+
+    case 16:
+        storyDescription =
+                "JONAH AND THE GREAT FISH\n\n"
+                + "God sent Jonah to Nineveh. After Jonah ran away, "
+                + "God gave him another opportunity to obey. "
+                + "(Jonah 1–3)";
+        break;
+
+    case 17:
+        storyDescription =
+                "EZRA AND THE SCRIPTURES\n\n"
+                + "Ezra devoted himself to studying, obeying, and "
+                + "teaching God's Law to the people. (Ezra 7:10)";
+        break;
+
+    case 18:
+        storyDescription =
+                "NEHEMIAH REBUILDS THE WALL\n\n"
+                + "Nehemiah prayed, planned, and led the people "
+                + "in rebuilding Jerusalem's wall despite opposition. "
+                + "(Nehemiah 2–6)";
+        break;
+
+    case 19:
+        storyDescription =
+                "GIDEON'S ARMY\n\n"
+                + "God chose Gideon and reduced his army to show "
+                + "that victory came through God's power rather "
+                + "than human strength. (Judges 7)";
+        break;
+
+    case 20:
+        storyDescription =
+                "SAMSON'S STRENGTH\n\n"
+                + "Samson was set apart for God's purpose. His story "
+                + "reminds us of the importance of faithfulness "
+                + "and obedience. (Judges 13–16)";
+        break;
+                case 21:
+storyDescription =
+"GOD CREATES THE WORLD\n\n"
++ "God created the heavens and the earth and saw "
++ "that His creation was good. (Genesis 1)";
+break;
+
+    case 22:
+        storyDescription =
+                "JOB'S FAITH AND TRIALS\n\n"
+                + "Job faced great suffering but continued to "
+                + "wrestle with questions about God. His story "
+                + "reminds us of God's greatness and wisdom. "
+                + "(Job 1–2, 38–42)";
+        break;
+
+    case 23:
+        storyDescription =
+                "DAVID ANOINTED AS KING\n\n"
+                + "God sent Samuel to anoint David, the youngest "
+                + "son of Jesse, showing that God looks at the heart. "
+                + "(1 Samuel 16:1–13)";
+        break;
+
+    case 24:
+        storyDescription =
+                "DAVID THE SHEPHERD BOY\n\n"
+                + "David cared for his father's sheep before he "
+                + "faced Goliath. He trusted the Lord to deliver "
+                + "him. (1 Samuel 17:32–37)";
+        break;
+
+    case 25:
+        storyDescription =
+                "MOSES AND THE TEN COMMANDMENTS\n\n"
+                + "God gave Moses His commandments at Mount Sinai "
+                + "to guide the Israelites in how they should live. "
+                + "(Exodus 19–20)";
+        break;
+
+    case 26:
+        storyDescription =
+                "RUTH AND BOAZ\n\n"
+                + "Boaz showed kindness to Ruth, and their family "
+                + "became part of the ancestry of King David. "
+                + "(Ruth 2–4)";
+        break;
+
+    case 27:
+        storyDescription =
+                "THE TOWER OF BABEL\n\n"
+                + "The people built a city and a tower to make "
+                + "a name for themselves. God confused their "
+                + "language and scattered them. (Genesis 11:1–9)";
+        break;
+
+    case 28:
+        storyDescription =
+                "JACOB'S DREAM\n\n"
+                + "Jacob dreamed of a ladder reaching to heaven "
+                + "and received God's promise of His presence "
+                + "and blessing. (Genesis 28:10–22)";
+        break;
+
+    case 29:
+        storyDescription =
+                "JOSEPH'S COAT OF MANY COLOURS\n\n"
+                + "Jacob gave Joseph a special coat, which stirred "
+                + "jealousy among his brothers. Their actions began "
+                + "a difficult journey in Joseph's life. "
+                + "(Genesis 37:1–28)";
+        break;
+
+    case 30:
+        storyDescription =
+                "MOSES AND THE BURNING BUSH\n\n"
+                + "God called Moses from a bush that burned without "
+                + "being consumed and commissioned him to lead "
+                + "the Israelites out of Egypt. (Exodus 3)";
+        break;
+                case 31:
+storyDescription =
+"THE TEN PLAGUES OF EGYPT\n\n"
++ "God sent plagues upon Egypt when Pharaoh refused "
++ "to let the Israelites go. The final plague led "
++ "to the Passover and Israel's deliverance. "
++ "(Exodus 7–12)";
+break;
+
+    case 32:
+        storyDescription =
+                "MANNA IN THE WILDERNESS\n\n"
+                + "God provided manna from heaven to feed the "
+                + "Israelites during their journey through "
+                + "the wilderness. (Exodus 16)";
+        break;
+
+    case 33:
+        storyDescription =
+                "SOLOMON AND THE TWO WOMEN\n\n"
+                + "King Solomon used wisdom to determine which "
+                + "woman was the child's true mother. His judgment "
+                + "revealed the wisdom God had given him. "
+                + "(1 Kings 3:16–28)";
+        break;
+
+    case 34:
+        storyDescription =
+                "ELISHA AND NAAMAN\n\n"
+                + "Naaman followed Elisha's instruction to wash "
+                + "seven times in the Jordan River and was healed "
+                + "of his leprosy. (2 Kings 5:1–14)";
+        break;
+
+    case 35:
+        storyDescription =
+                "MOSES IN THE BASKET\n\n"
+                + "Moses' mother placed him in a basket among "
+                + "the reeds of the Nile to protect him. Pharaoh's "
+                + "daughter found him and raised him. "
+                + "(Exodus 2:1–10)";
+        break;
+
+    case 36:
+        storyDescription =
+                "JOSEPH INTERPRETS PHARAOH'S DREAMS\n\n"
+                + "God enabled Joseph to explain Pharaoh's dreams "
+                + "about seven years of plenty followed by seven "
+                + "years of famine. (Genesis 41)";
+        break;
+
+    case 37:
+        storyDescription =
+                "SAMSON AND DELILAH\n\n"
+                + "Delilah pressed Samson to reveal the secret "
+                + "of his strength. His story warns about the "
+                + "consequences of disobedience and misplaced trust. "
+                + "(Judges 16)";
+        break;
+
+    case 38:
+        storyDescription =
+                "THE WRITING ON THE WALL\n\n"
+                + "During King Belshazzar's feast, a mysterious "
+                + "hand wrote a message on the wall. Daniel "
+                + "explained God's judgment. (Daniel 5)";
+        break;
+
+    case 39:
+        storyDescription =
+                "ELIJAH AND THE WIDOW OF ZAREPHATH\n\n"
+                + "During a famine, a widow shared her last food "
+                + "with Elijah. God miraculously provided flour "
+                + "and oil for them. (1 Kings 17:8–16)";
+        break;
+
+    case 40:
+        storyDescription =
+                "JACOB AND ESAU\n\n"
+                + "Jacob and Esau were twin brothers whose "
+                + "relationship was marked by conflict over the "
+                + "birthright and blessing. Their story teaches "
+                + "about family, choices, and reconciliation. "
+                + "(Genesis 25–33)";
+        break;
 
         default:
             storyDescription = "BIBLE JIGSAW PUZZLE";
