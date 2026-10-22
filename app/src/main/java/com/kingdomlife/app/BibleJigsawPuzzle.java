@@ -18,9 +18,8 @@ public class BibleJigsawPuzzle {
     private final MainActivity activity;
     private final LinearLayout content;
 
-    private static final int OLD_TESTAMENT_LEVELS = 21;
-    private static final int FIRST_NEW_TESTAMENT_LEVEL = 22;
-
+    private static final int OLD_TESTAMENT_LEVELS = 40;
+private static final int FIRST_NEW_TESTAMENT_LEVEL = 41;
     private static final int ROYAL_PURPLE =
             Color.rgb(30, 24, 55);
 
@@ -141,10 +140,10 @@ public class BibleJigsawPuzzle {
 
         TextView subtitle = new TextView(activity);
         subtitle.setText(
-                newTestament
-                        ? "New Testament • Levels start at 22"
-                        : "Old Testament • Levels 1–21"
-        );
+        newTestament
+                ? "New Testament • Levels start at 41"
+                : "Old Testament • Levels 1–40"
+);
         subtitle.setTextSize(15);
         subtitle.setTextColor(activity.darkText);
         subtitle.setGravity(Gravity.CENTER);
