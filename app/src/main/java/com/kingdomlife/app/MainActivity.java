@@ -9197,89 +9197,90 @@ levelNumber = level;
         switch (levelNumber) {
 case 1:
 storyDescription =
-"THE GARDEN OF EDEN\n\n"
+"THE GARDEN OF EDEN 🌿\n\n"
 + "God created a beautiful garden called Eden, "
 + "where Adam and Eve lived. The garden reminds us "
 + "of God's wonderful creation and His desire for "
-+ "people to walk with Him. (Genesis 2â€“3)";
++ "people to walk with Him. (Genesis 2-3)";
 break;
 
-        case 2:
-            storyDescription =
-                    "NOAH'S ARK\n\n"
-                    + "God instructed Noah to build an ark to preserve "
-                    + "his family and the animals during the great flood. "
-                    + "Noah obeyed God, and the rainbow became a sign "
-                    + "of God's covenant. (Genesis 6â€“9)";
-            break;
+case 2:
+storyDescription =
+"NOAH'S ARK 🕊️\n\n"
++ "God instructed Noah to build an ark to preserve "
++ "his family and the animals during the great flood. "
++ "Noah obeyed God, and the rainbow became a sign "
++ "of God's covenant. (Genesis 6-9)";
+break;
 
-        case 3:
-            storyDescription =
-                    "JOSEPH IN EGYPT\n\n"
-                    + "Joseph was sold into slavery by his brothers, "
-                    + "but God was with him. Through wisdom and "
-                    + "faithfulness, Joseph rose to become a ruler in "
-                    + "Egypt and helped save many people during famine. "
-                    + "(Genesis 37â€“50)";
-            break;
+case 3:
+storyDescription =
+"JOSEPH IN EGYPT 🌾\n\n"
++ "Joseph was sold into slavery by his brothers, "
++ "but God was with him. Through wisdom and "
++ "faithfulness, Joseph rose to become a ruler in "
++ "Egypt and helped save many people during famine. "
++ "(Genesis 37-50)";
+break;
 
-        case 4:
-            storyDescription =
-                    "ABRAHAM ” GOD'S COVENANT\n\n"
-                    + "God called Abraham and promised to make his "
-                    + "descendants into a great nation. Abraham trusted "
-                    + "God's promise. (Genesis 12, 15, 17)";
-            break;
+case 4:
+storyDescription =
+"ABRAHAM - GOD'S COVENANT ✨\n\n"
++ "God called Abraham and promised to make his "
++ "descendants into a great nation. Abraham trusted "
++ "God's promise. (Genesis 12, 15, 17)";
+break;
 
-        case 5:
-            storyDescription =
-                    "MOSES ” THE RED SEA\n\n"
-                    + "God delivered the Israelites from Egypt. When "
-                    + "they reached the Red Sea, God made a way for "
-                    + "them to cross on dry ground. (Exodus 14)";
-            break;
+case 5:
+storyDescription =
+"MOSES - THE RED SEA 🌊\n\n"
++ "God delivered the Israelites from Egypt. When "
++ "they reached the Red Sea, God made a way for "
++ "them to cross on dry ground. (Exodus 14)";
+break;
 
-        case 6:
-            storyDescription =
-                    "JOSHUA ” THE FALL OF JERICHO\n\n"
-                    + "God instructed Joshua and the Israelites to "
-                    + "march around Jericho. They followed God's "
-                    + "instructions, and the city's wall fell. "
-                    + "(Joshua 6)";
-            break;
+case 6:
+storyDescription =
+"JOSHUA - THE FALL OF JERICHO 🏰\n\n"
++ "God instructed Joshua and the Israelites to "
++ "march around Jericho. They followed God's "
++ "instructions, and the city's wall fell. "
++ "(Joshua 6)";
+break;
 
-        case 7:
-            storyDescription =
-                    "DAVID AND GOLIATH\n\n"
-                    + "David trusted God when he faced Goliath. "
-                    + "Although Goliath was a mighty warrior, David "
-                    + "went against him in the name of the Lord. "
-                    + "(1 Samuel 17)";
-            break;
+case 7:
+storyDescription =
+"DAVID AND GOLIATH 🛡️\n\n"
++ "David trusted God when he faced Goliath. "
++ "Although Goliath was a mighty warrior, David "
++ "went against him in the name of the Lord. "
++ "(1 Samuel 17)";
+break;
 
-        case 8:
-            storyDescription =
-                    "DAVID ” KING OF ISRAEL\n\n"
-                    + "David became king of Israel. His life reminds "
-                    + "us of the importance of trusting God and seeking "
-                    + "His guidance. (2 Samuel 5â€“7)";
-            break;
+case 8:
+storyDescription =
+"DAVID - KING OF ISRAEL 👑\n\n"
++ "David became king of Israel. His life reminds "
++ "us of the importance of trusting God and seeking "
++ "His guidance. (2 Samuel 5-7)";
+break;
 
-        case 9:
-            storyDescription =
-                    "ELIJAH ON MOUNT CARMEL\n\n"
-                    + "Elijah challenged the prophets of Baal on "
-                    + "Mount Carmel. God answered Elijah's prayer "
-                    + "and showed that He alone is God. (1 Kings 18)";
-            break;
+case 9:
+storyDescription =
+"ELIJAH ON MOUNT CARMEL 🔥\n\n"
++ "Elijah challenged the prophets of Baal on "
++ "Mount Carmel. God answered Elijah's prayer "
++ "and showed that He alone is God. (1 Kings 18)";
+break;
 
-        case 10:
-            storyDescription =
-                    "ESTHER ” COURAGE AND DELIVERANCE\n\n"
-                    + "Queen Esther courageously approached the king "
-                    + "to plead for her people. Her bravery helped "
-                    + "bring deliverance to the Jews. (Esther 4â€“8)";
-            break;
+case 10:
+storyDescription =
+"ESTHER - COURAGE AND DELIVERANCE 👑\n\n"
++ "Queen Esther courageously approached the king "
++ "to plead for her people. Her bravery helped "
++ "bring deliverance to the Jews. (Esther 4-8)";
+break;
+
                 case 11:
 storyDescription =
 "RUTH AND BETHLEHEM\n\n"
@@ -9650,21 +9651,24 @@ jigsawPrefs.edit()
 
     if (alreadyClaimed) {
 message.setText(
-"Congratulations! You completed all "
+"🎉 Congratulations! 🎉\n\n"
++ "🧩 You completed all "
 + count + " pieces!\n\n"
-+ "You've already claimed this level's reward."
++ "🏆 You've already claimed this level's reward."
 + (level < 40
-? "\n\nLevel " + (level + 1) + " is next!"
-: "\n\nYou've completed all 40 Old Testament Jigsaw levels!")
+? "\n\n➡️ Level " + (level + 1) + " is next!"
+: "\n\n👑 You've completed all 40 Old Testament Jigsaw levels!")
 );
 } else {
 message.setText(
-"🎉 Congratulations! You completed all "
-+ count + " pieces!\n\n"
-+ "ðŸ† +" + reward + " points!\n\n"
+"🎉 CONGRATULATIONS! 🎉\n\n"
++ "🧩 You completed all " + count + " pieces!\n\n"
++ "🏆 Reward: +" + reward + " points!\n\n"
 + (level < 40
-? "Level " + (level + 1) + " is now unlocked!"
-: "You've completed all 40 Old Testament Jigsaw levels!")
+? "🔓 Level " + (level + 1) + " is now unlocked!\n\n"
++ "🌟 Keep going, champion!"
+: "👑 You've completed all 40 Old Testament Jigsaw levels!\n\n"
++ "✨ What an amazing achievement!")
 );
 }
 
@@ -9677,12 +9681,13 @@ content.addView(message);
 Button continueButton = new Button(MainActivity.this);
 
 if (level < 40) {
-    continueButton.setText("Continue to Level " + (level + 1));
-    continueButton.setOnClickListener(v -> showJigsawMenu());
+continueButton.setText("➡️ Continue to Level " + (level + 1));
+continueButton.setOnClickListener(v -> showJigsawMenu());
 } else {
-    continueButton.setText("Complete Old Testament Journey");
-    continueButton.setOnClickListener(v -> showJigsawMenu());
+continueButton.setText("👑 Complete Old Testament Journey");
+continueButton.setOnClickListener(v -> showJigsawMenu());
 }
+
 content.addView(continueButton);
 }
         @Override
