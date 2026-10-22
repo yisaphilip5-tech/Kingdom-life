@@ -9225,7 +9225,7 @@ break;
 
         case 4:
             storyDescription =
-                    "ABRAHAM â€” GOD'S COVENANT\n\n"
+                    "ABRAHAM ” GOD'S COVENANT\n\n"
                     + "God called Abraham and promised to make his "
                     + "descendants into a great nation. Abraham trusted "
                     + "God's promise. (Genesis 12, 15, 17)";
@@ -9233,7 +9233,7 @@ break;
 
         case 5:
             storyDescription =
-                    "MOSES â€” THE RED SEA\n\n"
+                    "MOSES ” THE RED SEA\n\n"
                     + "God delivered the Israelites from Egypt. When "
                     + "they reached the Red Sea, God made a way for "
                     + "them to cross on dry ground. (Exodus 14)";
@@ -9241,7 +9241,7 @@ break;
 
         case 6:
             storyDescription =
-                    "JOSHUA â€” THE FALL OF JERICHO\n\n"
+                    "JOSHUA ” THE FALL OF JERICHO\n\n"
                     + "God instructed Joshua and the Israelites to "
                     + "march around Jericho. They followed God's "
                     + "instructions, and the city's wall fell. "
@@ -9259,7 +9259,7 @@ break;
 
         case 8:
             storyDescription =
-                    "DAVID â€” KING OF ISRAEL\n\n"
+                    "DAVID ” KING OF ISRAEL\n\n"
                     + "David became king of Israel. His life reminds "
                     + "us of the importance of trusting God and seeking "
                     + "His guidance. (2 Samuel 5â€“7)";
@@ -9275,7 +9275,7 @@ break;
 
         case 10:
             storyDescription =
-                    "ESTHER â€” COURAGE AND DELIVERANCE\n\n"
+                    "ESTHER ” COURAGE AND DELIVERANCE\n\n"
                     + "Queen Esther courageously approached the king "
                     + "to plead for her people. Her bravery helped "
                     + "bring deliverance to the Jews. (Esther 4â€“8)";
@@ -9411,18 +9411,18 @@ message.setText(
 "Congratulations! You completed all "
 + count + " pieces!\n\n"
 + "You've already claimed this level's reward."
-+ (level < 21
++ (level < 40
 ? "\n\nLevel " + (level + 1) + " is next!"
-: "\n\nYou've completed all 21 Old Testament Jigsaw levels!")
+: "\n\nYou've completed all 40 Old Testament Jigsaw levels!")
 );
 } else {
 message.setText(
 "🎉 Congratulations! You completed all "
 + count + " pieces!\n\n"
 + "ðŸ† +" + reward + " points!\n\n"
-+ (level < 21
++ (level < 40
 ? "Level " + (level + 1) + " is now unlocked!"
-: "You've completed all 21 Old Testament Jigsaw levels!")
+: "You've completed all 40 Old Testament Jigsaw levels!")
 );
 }
 
@@ -9434,14 +9434,13 @@ content.addView(message);
 
 Button continueButton = new Button(MainActivity.this);
 
-if (level < 21) {
+if (level < 40) {
     continueButton.setText("Continue to Level " + (level + 1));
     continueButton.setOnClickListener(v -> showJigsawMenu());
 } else {
     continueButton.setText("Complete Old Testament Journey");
     continueButton.setOnClickListener(v -> showJigsawMenu());
 }
-
 content.addView(continueButton);
 }
         @Override
