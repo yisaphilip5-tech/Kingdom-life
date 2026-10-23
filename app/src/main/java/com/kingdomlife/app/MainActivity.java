@@ -9523,6 +9523,145 @@ break;
                 + "about family, choices, and reconciliation. "
                 + "(Genesis 25–33)";
         break;
+             case 41:
+        storyDescription =
+                "ISAAC ON MOUNT MORIAH\n\n"
+                + "God tested Abraham's faith by asking him to "
+                + "offer Isaac, but provided a ram instead. "
+                + "(Genesis 22)";
+        break;
+
+    case 42:
+        storyDescription =
+                "JACOB WRESTLES WITH GOD\n\n"
+                + "Jacob wrestled through the night and received "
+                + "the name Israel after the encounter. "
+                + "(Genesis 32:24–30)";
+        break;
+
+    case 43:
+        storyDescription =
+                "BALAAM AND THE TALKING DONKEY\n\n"
+                + "God opened the donkey's mouth to speak when "
+                + "Balaam failed to recognize the angel of the Lord. "
+                + "(Numbers 22:21–35)";
+        break;
+
+    case 44:
+        storyDescription =
+                "JOSHUA CROSSES THE JORDAN\n\n"
+                + "The Israelites crossed the Jordan River on dry "
+                + "ground as God stopped the flowing waters. "
+                + "(Joshua 3–4)";
+        break;
+
+    case 45:
+        storyDescription =
+                "DEBORAH AND BARAK\n\n"
+                + "Deborah encouraged Barak to lead Israel against "
+                + "Sisera's army, trusting God's promise of victory. "
+                + "(Judges 4)";
+        break;
+
+    case 46:
+        storyDescription =
+                "HANNAH PRAYS FOR A SON\n\n"
+                + "Hannah prayed earnestly for a child and later "
+                + "dedicated Samuel to the Lord. (1 Samuel 1)";
+        break;
+
+    case 47:
+        storyDescription =
+                "DAVID SPARES SAUL\n\n"
+                + "David refused to kill Saul when he had the "
+                + "opportunity, showing respect for the Lord's "
+                + "anointed king. (1 Samuel 24)";
+        break;
+
+    case 48:
+        storyDescription =
+                "ELIJAH IS TAKEN UP TO HEAVEN\n\n"
+                + "Elijah was taken up in a whirlwind, and Elisha "
+                + "witnessed the event. (2 Kings 2:1–12)";
+        break;
+
+    case 49:
+        storyDescription =
+                "JOSIAH FINDS THE BOOK OF THE LAW\n\n"
+                + "When the Book of the Law was found in the "
+                + "temple, Josiah humbled himself and led Judah "
+                + "in a renewal of the covenant. (2 Kings 22–23)";
+        break;
+
+    case 50:
+        storyDescription =
+                "NEBUCHADNEZZAR'S GOLDEN IMAGE\n\n"
+                + "Shadrach, Meshach, and Abednego refused to "
+                + "worship the golden image and trusted God when "
+                + "they were thrown into the fiery furnace. "
+                + "(Daniel 3)";
+        break;
+
+    case 51:
+        storyDescription =
+                "THE BIRTH OF JESUS\n\n"
+                + "Jesus was born in Bethlehem, fulfilling God's "
+                + "promise of a Saviour. (Luke 2:1–20)";
+        break;
+
+    case 52:
+        storyDescription =
+                "JESUS TEACHES THE PEOPLE\n\n"
+                + "Jesus taught the people about God's kingdom "
+                + "and called them to live according to God's word. "
+                + "(Matthew 5–7)";
+        break;
+
+    case 53:
+        storyDescription =
+                "JESUS FEEDS THE MULTITUDE\n\n"
+                + "Jesus multiplied five loaves and two fishes "
+                + "to feed a great crowd. (Matthew 14:13–21)";
+        break;
+
+    case 54:
+        storyDescription =
+                "JESUS CALMS THE STORM\n\n"
+                + "Jesus commanded the wind and waves to be still, "
+                + "and the disciples marvelled at His authority. "
+                + "(Mark 4:35–41)";
+        break;
+
+    case 55:
+        storyDescription =
+                "THE PARABLE OF THE SOWER\n\n"
+                + "Jesus described seed falling on different "
+                + "kinds of ground to teach how people receive "
+                + "God's word. (Matthew 13:1–23)";
+        break;
+
+    case 56:
+        storyDescription =
+                "THE LAST SUPPER\n\n"
+                + "Jesus shared the Passover meal with His "
+                + "disciples and taught them to remember Him. "
+                + "(Luke 22:14–20)";
+        break;
+
+    case 57:
+        storyDescription =
+                "THE CRUCIFIXION OF JESUS\n\n"
+                + "Jesus gave His life on the cross for the sins "
+                + "of the world. (Luke 23:33–46)";
+        break;
+
+    case 58:
+        storyDescription =
+                "THE RESURRECTION OF JESUS\n\n"
+                + "On the third day, Jesus rose from the dead, "
+                + "bringing hope of victory over death. "
+                + "(Luke 24:1–12)";
+        break;   
 
         default:
             storyDescription = "BIBLE JIGSAW PUZZLE";
@@ -9650,28 +9789,30 @@ jigsawPrefs.edit()
     TextView message = new TextView(MainActivity.this);
 
     if (alreadyClaimed) {
-message.setText(
-"🎉 Congratulations! 🎉\n\n"
-+ "🧩 You completed all "
-+ count + " pieces!\n\n"
-+ "🏆 You've already claimed this level's reward."
-+ (level < 40
-? "\n\n➡️ Level " + (level + 1) + " is next!"
-: "\n\n👑 You've completed all 40 Old Testament Jigsaw levels!")
-);
+    message.setText(
+            "🎉 Congratulations! 🎉\n\n"
+            + "🧩 You completed all "
+            + count + " pieces!\n\n"
+            + "🏆 You've already claimed this level's reward."
+            + (level < 58
+                    ? "\n\n➡️ Level " + (level + 1) + " is next!"
+                    : "\n\n👑 You've completed all currently available "
+                    + "Jigsaw levels!")
+    );
 } else {
-message.setText(
-"🎉 CONGRATULATIONS! 🎉\n\n"
-+ "🧩 You completed all " + count + " pieces!\n\n"
-+ "🏆 Reward: +" + reward + " points!\n\n"
-+ (level < 40
-? "🔓 Level " + (level + 1) + " is now unlocked!\n\n"
-+ "🌟 Keep going, champion!"
-: "👑 You've completed all 40 Old Testament Jigsaw levels!\n\n"
-+ "✨ What an amazing achievement!")
-);
-}
-
+    message.setText(
+            "🎉 CONGRATULATIONS! 🎉\n\n"
+            + "🧩 You completed all " + count + " pieces!\n\n"
+            + "🏆 Reward: +" + reward + " points!\n\n"
+            + (level < 58
+                    ? "🔓 Level " + (level + 1)
+                    + " is now unlocked!\n\n"
+                    + "🌟 Keep going, champion!"
+                    : "👑 You've completed all currently available "
+                    + "Jigsaw levels!\n\n"
+                    + "✨ What an amazing achievement!")
+    );
+    }
 message.setTextColor(Color.WHITE);
 message.setTextSize(16);
 message.setGravity(Gravity.CENTER);
@@ -9680,12 +9821,12 @@ content.addView(message);
 
 Button continueButton = new Button(MainActivity.this);
 
-if (level < 40) {
-continueButton.setText("➡️ Continue to Level " + (level + 1));
-continueButton.setOnClickListener(v -> showJigsawMenu());
+if (level < 58) {
+    continueButton.setText("➡️ Continue to Level " + (level + 1));
+    continueButton.setOnClickListener(v -> showJigsawMenu());
 } else {
-continueButton.setText("👑 Complete Old Testament Journey");
-continueButton.setOnClickListener(v -> showJigsawMenu());
+    continueButton.setText("👑 Return to Jigsaw Menu");
+    continueButton.setOnClickListener(v -> showJigsawMenu());
 }
 
 content.addView(continueButton);
