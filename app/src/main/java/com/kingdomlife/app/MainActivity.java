@@ -4895,6 +4895,23 @@ addCard(
     void showDisplayModeSettings() {
     stopTimer();
     content.removeAllViews();
+        // Top-left back arrow
+android.widget.ImageButton backButton =
+new android.widget.ImageButton(this);
+backButton.setImageResource(android.R.drawable.ic_media_previous);
+backButton.setScaleX(1.3f);
+backButton.setScaleY(1.3f);
+backButton.setContentDescription("Back to Settings");
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setScaleType(
+android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+backButton.setOnClickListener(v -> showSettings());
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+backParams.gravity = Gravity.LEFT;
+content.addView(backButton, backParams);
 
     TextView title = new TextView(this);
     title.setText("🌞 Day / 🌙 Night Mode");
@@ -4963,7 +4980,6 @@ addCard(
         showHome();
     });
 
-    addButton("⬅️ Back to Settings", v -> showSettings());
     }
     void showTextAppearanceSettings() {
     stopTimer();
