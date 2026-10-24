@@ -148,6 +148,30 @@ private static final String[] OLD_TESTAMENT_STORIES = {
         activity.stopTimer();
         content.removeAllViews();
         content.setOrientation(LinearLayout.VERTICAL);
+        // Top-left back arrow
+android.widget.ImageButton backButton =
+        new android.widget.ImageButton(activity);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setScaleX(1.3f);
+backButton.setScaleY(1.3f);
+backButton.setContentDescription("Back to Puzzle Menu");
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v ->
+        activity.showPuzzleMenu()
+);
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
 
         TextView title = new TextView(activity);
         title.setText("🧩 Bible Jigsaw Challenge");
@@ -209,10 +233,6 @@ if (newTestament) {
         content.addView(scroll, new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, 0, 1f));
 
-        Button back = new Button(activity);
-        back.setText("⬅ Back to Puzzle Menu");
-        back.setOnClickListener(v -> activity.showPuzzleMenu());
-        content.addView(back);
     }
 
     private void addOldTestamentLevels(LinearLayout grid) {
