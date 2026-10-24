@@ -9104,6 +9104,28 @@ if (query.contains("backup") ||
 ) {
     content.removeAllViews();
     content.setOrientation(LinearLayout.VERTICAL);
+               // Top-left back arrow
+android.widget.ImageButton backButton =
+new android.widget.ImageButton(this);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setScaleX(1.3f);
+backButton.setScaleY(1.3f);
+backButton.setContentDescription("Back to Jigsaw Levels");
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v -> showJigsawMenu());
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
 
     TextView title = new TextView(this);
     title.setText("🧩 " + difficulty + " Jigsaw Puzzle");
@@ -9130,10 +9152,6 @@ if (query.contains("backup") ||
             1f
     ));
 
-    Button back = new Button(this);
-    back.setText("Back to Jigsaw Levels");
-    back.setOnClickListener(v -> showJigsawMenu());
-    content.addView(back);
            }
 
 class JigsawBoard extends View {
