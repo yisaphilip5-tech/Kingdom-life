@@ -49,6 +49,28 @@ public static void open(Activity a, LinearLayout container) {
 
     content.removeAllViews();
     content.setOrientation(LinearLayout.VERTICAL);
+    // Top-left back arrow
+android.widget.ImageButton backButton =
+new android.widget.ImageButton(activity);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setScaleX(1.3f);
+backButton.setScaleY(1.3f);
+backButton.setContentDescription("Back to Spiritual Books");
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v -> returnToBooks());
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
 
     TextView title = new TextView(activity);
     title.setText("The Pilgrim's Progress");
@@ -156,6 +178,28 @@ bookView.evaluateJavascript(script, value -> {
 private static void showChapterList() {
     readerReady = false;
     content.removeAllViews();
+    // Top-left back arrow
+android.widget.ImageButton backButton =
+new android.widget.ImageButton(activity);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setScaleX(1.3f);
+backButton.setScaleY(1.3f);
+backButton.setContentDescription("Back to Spiritual Books");
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v -> returnToBooks());
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
 
     TextView heading = new TextView(activity);
     heading.setText("Choose a Chapter");
@@ -213,23 +257,33 @@ private static void showChapterList() {
         });
     }
 
-    Button back = new Button(activity);
-    back.setText("Back to Spiritual Books");
-    back.setAllCaps(false);
-    back.setOnClickListener(v -> returnToBooks());
-
-    content.addView(
-            back,
-            new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-    );
 }
 
 private static void showReader() {
     readerReady = false;
     content.removeAllViews();
+    // Top-left back arrow
+android.widget.ImageButton backButton =
+new android.widget.ImageButton(activity);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setScaleX(1.3f);
+backButton.setScaleY(1.3f);
+backButton.setContentDescription("Back to Chapter List");
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v -> showChapterList());
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
 
     bookView = new WebView(activity);
     bookView.setBackgroundColor(Color.WHITE);
