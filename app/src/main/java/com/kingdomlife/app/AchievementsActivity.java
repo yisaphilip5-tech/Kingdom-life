@@ -74,7 +74,8 @@ public class AchievementsActivity extends Activity {
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
         root.setBackgroundColor(Color.rgb(18, 16, 32));
-        root.setPadding(10, 8, 10, 8);
+root.setPadding(10, 8, 10, 90);
+root.setClipToPadding(false);
 
         Button backButton = new Button(this);
         backButton.setText("‹  Back");
