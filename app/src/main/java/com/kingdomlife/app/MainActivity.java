@@ -6161,7 +6161,7 @@ String message) {
                 "ℹ️ About Kingdom Life",
                 "Kingdom Life is a Christian app designed to encourage Bible learning, " +
                         "prayer, reflection, daily challenges, and fun Bible activities.\n\n" +
-                        "Version 4"
+                        "Version 5"
         );
     }
     
