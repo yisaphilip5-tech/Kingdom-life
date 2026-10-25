@@ -9230,11 +9230,6 @@ private final float margin = 6f;
 levelNumber = level;
         storyDescription = BibleJigsawData.getStoryDescription(levelNumber);
 
-        default:
-            storyDescription = "BIBLE JIGSAW PUZZLE";
-            break;
-        }
-
         if ("Easy".equals(difficulty)) {
             columns = 4;
             rows = 3;
