@@ -18,8 +18,11 @@ public class BibleJigsawPuzzle {
     private final MainActivity activity;
     private final LinearLayout content;
 
-    private static final int OLD_TESTAMENT_LEVELS = 50;
-private static final int FIRST_NEW_TESTAMENT_LEVEL = 51;
+    subtitle.setText(
+        newTestament
+                ? "New Testament • Levels 51–90"
+                : "Old Testament • Levels 1–50"
+);
     private static final int ROYAL_PURPLE =
             Color.rgb(30, 24, 55);
 
@@ -350,8 +353,8 @@ private void addNewTestamentLevels(LinearLayout grid) {
     LinearLayout row = null;
 
     for (int level = FIRST_NEW_TESTAMENT_LEVEL;
-         level < FIRST_NEW_TESTAMENT_LEVEL + 8;
-         level++) {
+     level <= 90;
+     level++) {
 
         if ((level - FIRST_NEW_TESTAMENT_LEVEL) % 2 == 0) {
             row = new LinearLayout(activity);
@@ -439,9 +442,10 @@ private void addNewTestamentLevels(LinearLayout grid) {
         }
 
     } else if (level >= FIRST_NEW_TESTAMENT_LEVEL
-            && level < FIRST_NEW_TESTAMENT_LEVEL + 8) {
+            && level <= 90) {
 
         String[] newTestamentImages = {
+                // Existing levels 51–58
                 "jesus_birth",
                 "jesus_teaches",
                 "feeding_multitude",
@@ -449,7 +453,41 @@ private void addNewTestamentLevels(LinearLayout grid) {
                 "parable_sower",
                 "last_supper",
                 "crucifixion",
-                "resurrection"
+                "resurrection",
+
+                // New levels 59–90
+                "level_59_jesus_walks_on_water",
+                "level_60_jesus_heals_the_blind_man",
+                "level_61_jesus_raises_lazarus",
+                "level_62_jesus_heals_the_paralytic",
+                "level_63_miraculous_catch_of_fish",
+                "level_64_parable_of_the_sower",
+                "level_65_good_samaritan",
+                "level_66_prodigal_son",
+                "level_67_lost_sheep",
+                "level_68_jesus_blesses_the_children",
+                "level_69_the_transfiguration",
+                "level_70_triumphal_entry",
+                "level_71_last_supper",
+                "level_72_jesus_prays_in_gethsemane",
+                "level_73_crucifixion",
+                "level_74_resurrection",
+                "level_75_ascension",
+                "level_76_pentecost",
+                "level_77_peter_heals_the_lame_man",
+                "level_78_stephens_martyrdom",
+                "level_79_peter_heals_the_lame_man",
+                "level_80_stephens_martyrdom",
+                "level_81_sauls_conversion",
+                "level_82_paul_and_silas_in_prison",
+                "level_83_peters_vision",
+                "level_84_pauls_shipwreck",
+                "level_85_john_receives_revelation",
+                "level_86_vision_of_glorified_jesus",
+                "level_87_four_horsemen",
+                "level_88_throne_of_god",
+                "level_89_lamb_and_seven_sealed_scroll",
+                "level_90_new_jerusalem"
         };
 
         imageName =
