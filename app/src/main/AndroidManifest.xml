@@ -23,6 +23,9 @@
         <activity
     android:name=".MemoryVerseGameActivity"
     android:exported="false" />
+        <activity
+    android:name=".AchievementsActivity"
+    android:exported="false" />
         <receiver
     android:name=".KingdomLifeNotificationReceiver"
     android:exported="false" />
