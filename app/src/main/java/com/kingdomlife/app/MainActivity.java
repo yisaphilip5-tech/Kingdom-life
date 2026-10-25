@@ -9828,7 +9828,7 @@ jigsawPrefs.edit()
             + "🧩 You completed all "
             + count + " pieces!\n\n"
             + "🏆 You've already claimed this level's reward."
-            + (level < 58
+            + (level < 90
                     ? "\n\n➡️ Level " + (level + 1) + " is next!"
                     : "\n\n👑 You've completed all currently available "
                     + "Jigsaw levels!")
@@ -9838,7 +9838,7 @@ jigsawPrefs.edit()
             "🎉 CONGRATULATIONS! 🎉\n\n"
             + "🧩 You completed all " + count + " pieces!\n\n"
             + "🏆 Reward: +" + reward + " points!\n\n"
-            + (level < 58
+            + (level < 90
                     ? "🔓 Level " + (level + 1)
                     + " is now unlocked!\n\n"
                     + "🌟 Keep going, champion!"
@@ -9855,7 +9855,7 @@ content.addView(message);
 
 Button continueButton = new Button(MainActivity.this);
 
-if (level < 58) {
+if (level < 90) {
     continueButton.setText("➡️ Continue to Level " + (level + 1));
     continueButton.setOnClickListener(v -> showJigsawMenu());
 } else {
