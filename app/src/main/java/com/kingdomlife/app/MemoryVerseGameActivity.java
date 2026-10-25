@@ -1212,7 +1212,7 @@ if (correct) {
 private void showFinalResult() {
 
     content.removeAllViews();
-    if (level >= 1 && level < 5) {
+    if (level >= 1 && level < 10) {
     int nextLevel = level + 1;
 
     String unlockKey =
