@@ -218,7 +218,6 @@ navigation.setPadding(0, 4, 0, 16);
 
 setContentView(root);
 
-android.view.ViewCompat.setOnApplyWindowInsetsListener(
 if (android.os.Build.VERSION.SDK_INT >= 30) {
 root.setOnApplyWindowInsetsListener((view, windowInsets) -> {
 android.graphics.Insets systemBars =
