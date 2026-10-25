@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import java.util.Calendar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -73,10 +74,31 @@ public class AchievementsActivity extends Activity {
 
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
-        root.setBackgroundColor(Color.rgb(18, 16, 32));
-root.setPadding(10, 8, 10, 90);
+root.setPadding(10, 8, 10, 0);
 root.setClipToPadding(false);
 
+android.content.SharedPreferences displayPrefs =
+        getSharedPreferences(
+                "KingdomLifeDisplayPrefs",
+                MODE_PRIVATE
+        );
+
+String displayMode =
+        displayPrefs.getString("displayMode", "AUTO");
+
+if (displayMode.equals("DAY")) {
+    root.setBackgroundResource(R.drawable.kingdom_home_bg);
+} else if (displayMode.equals("NIGHT")) {
+    root.setBackgroundResource(R.drawable.kingdom_night_bg);
+} else {
+    int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+    if (hour >= 6 && hour < 18) {
+        root.setBackgroundResource(R.drawable.kingdom_home_bg);
+    } else {
+        root.setBackgroundResource(R.drawable.kingdom_night_bg);
+    }
+}
         Button backButton = new Button(this);
         backButton.setText("‹  Back");
         backButton.setTextColor(BRIGHT_GOLD);
@@ -184,9 +206,37 @@ root.setClipToPadding(false);
                 )
         );
 
-        root.addView(navigation);
+        root.addView(
+        navigation,
+        new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+);
 
-        setContentView(root);
+navigation.setPadding(0, 4, 0, 16);
+
+setContentView(root);
+
+android.view.ViewCompat.setOnApplyWindowInsetsListener(
+        root,
+        (view, windowInsets) -> {
+
+            android.graphics.Insets systemBars =
+                    windowInsets.getInsets(
+                            android.view.WindowInsets.Type.systemBars()
+                    );
+
+            view.setPadding(
+                    10 + systemBars.left,
+                    8 + systemBars.top,
+                    10 + systemBars.right,
+                    systemBars.bottom + 12
+            );
+
+            return windowInsets;
+        }
+);
     }
 
     private void showPage(int page) {
