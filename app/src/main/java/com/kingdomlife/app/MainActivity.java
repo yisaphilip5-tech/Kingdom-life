@@ -7760,8 +7760,6 @@ feedback.setTextSize(18);
 
 int correctAnswer;
 
-int correctAnswer;
-
 if (currentLevel == 2) {
     correctAnswer = level2Answers[currentQuestion];
 } else if (currentLevel == 3) {
