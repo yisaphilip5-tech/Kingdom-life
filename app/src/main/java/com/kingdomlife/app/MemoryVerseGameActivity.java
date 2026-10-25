@@ -503,76 +503,112 @@ button.setPadding(
 
     questionIndex = 0;
     score = 0;
+if ("guess".equals(type)) {
 
-    if ("guess".equals(type)) {
-
-    if (selectedLevel == 1) {
-        activeQuestions =
-                MemoryVerseData.GUESS_VERSE_LEVEL_1;
-
-    } else if (selectedLevel == 2) {
-        activeQuestions =
-                MemoryVerseData.GUESS_VERSE_LEVEL_2;
-
-    } else if (selectedLevel == 3) {
-        activeQuestions =
-                MemoryVerseData.GUESS_VERSE_LEVEL_3;
-
-    } else if (selectedLevel == 4) {
-        activeQuestions =
-                MemoryVerseData.GUESS_VERSE_LEVEL_4;
-
-    } else {
-        activeQuestions =
-                MemoryVerseData.GUESS_VERSE_LEVEL_5;
-    }
-    } else if ("complete".equals(type)) {
-
-    if (selectedLevel == 1) {
-        activeQuestions =
-                MemoryVerseData.COMPLETE_VERSE_LEVEL_1;
-
-    } else if (selectedLevel == 2) {
-        activeQuestions =
-                MemoryVerseData.COMPLETE_VERSE_LEVEL_2;
-
-    } else if (selectedLevel == 3) {
-        activeQuestions =
-                MemoryVerseData.COMPLETE_VERSE_LEVEL_3;
-
-    } else if (selectedLevel == 4) {
-        activeQuestions =
-                MemoryVerseData.COMPLETE_VERSE_LEVEL_4;
-
-    } else {
-        activeQuestions =
-                MemoryVerseData.COMPLETE_VERSE_LEVEL_5;
-    }
-    } else {
-
-    if (selectedLevel == 1) {
-        activeQuestions =
-                MemoryVerseData.GUESS_REFERENCE_LEVEL_1;
-
-    } else if (selectedLevel == 2) {
-        activeQuestions =
-                MemoryVerseData.GUESS_REFERENCE_LEVEL_2;
-
-    } else if (selectedLevel == 3) {
-        activeQuestions =
-                MemoryVerseData.GUESS_REFERENCE_LEVEL_3;
-
-    } else if (selectedLevel == 4) {
-        activeQuestions =
-                MemoryVerseData.GUESS_REFERENCE_LEVEL_4;
-
-    } else {
-        activeQuestions =
-                MemoryVerseData.GUESS_REFERENCE_LEVEL_5;
-    }
+    switch (selectedLevel) {
+        case 1:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_1;
+            break;
+        case 2:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_2;
+            break;
+        case 3:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_3;
+            break;
+        case 4:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_4;
+            break;
+        case 5:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_5;
+            break;
+        case 6:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_6;
+            break;
+        case 7:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_7;
+            break;
+        case 8:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_8;
+            break;
+        case 9:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_9;
+            break;
+        default:
+            activeQuestions = MemoryVerseData.GUESS_VERSE_LEVEL_10;
+            break;
     }
 
-    showQuestion();
+} else if ("complete".equals(type)) {
+
+    switch (selectedLevel) {
+        case 1:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_1;
+            break;
+        case 2:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_2;
+            break;
+        case 3:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_3;
+            break;
+        case 4:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_4;
+            break;
+        case 5:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_5;
+            break;
+        case 6:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_6;
+            break;
+        case 7:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_7;
+            break;
+        case 8:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_8;
+            break;
+        case 9:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_9;
+            break;
+        default:
+            activeQuestions = MemoryVerseData.COMPLETE_VERSE_LEVEL_10;
+            break;
+    }
+
+} else {
+
+    switch (selectedLevel) {
+        case 1:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_1;
+            break;
+        case 2:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_2;
+            break;
+        case 3:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_3;
+            break;
+        case 4:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_4;
+            break;
+        case 5:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_5;
+            break;
+        case 6:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_6;
+            break;
+        case 7:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_7;
+            break;
+        case 8:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_8;
+            break;
+        case 9:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_9;
+            break;
+        default:
+            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_10;
+            break;
+    }
+                }
+    
     }
     private void showQuestion() {
 
