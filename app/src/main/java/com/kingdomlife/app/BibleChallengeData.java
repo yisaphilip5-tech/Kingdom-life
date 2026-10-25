@@ -141,4 +141,94 @@ public class BibleChallengeData {
             1, 3, 1, 3, 3,
             2, 3, 1, 3, 3
     };
+        // =========================
+    // LEVEL 4 — EXPERT (15)
+    // =========================
+
+    public static final String[] level4Questions = {
+            "Which king of Judah was struck with leprosy after unlawfully burning incense?",
+            "Who was the father of the prophet Zechariah, son of Berechiah?",
+            "Which judge had thirty sons who rode on thirty donkeys?",
+            "What was the name of the Moabite king whom Ehud killed?",
+            "Which prophet interpreted the writing on the wall for Belshazzar?",
+            "Who was the father of King Josiah?",
+            "Which woman killed Sisera with a tent peg?",
+            "How many years did Jacob serve Laban before marrying Leah?",
+            "Which king of Judah was eight years old when he began to reign?",
+            "Who was the father of the prophet Joel?",
+            "Which apostle was chosen to replace Judas Iscariot?",
+            "What was the name of the field bought with the money returned by Judas?",
+            "Which king consulted the medium at Endor?",
+            "Who was the father of King Hezekiah?",
+            "Which prophet rebuked David after his sin involving Bathsheba?"
+    };
+
+    public static final String[][] level4Options = {
+            {"Ahaz", "Uzziah", "Jotham", "Manasseh"},
+            {"Zechariah", "Iddo", "Hilkiah", "Berechiah"},
+            {"Jair", "Ibzan", "Abdon", "Tola"},
+            {"Eglon", "Balak", "Sihon", "Og"},
+            {"Daniel", "Ezekiel", "Jeremiah", "Ezra"},
+            {"Amon", "Manasseh", "Josiah", "Jehoiakim"},
+            {"Deborah", "Jael", "Delilah", "Abigail"},
+            {"Seven years", "Fourteen years", "Twenty years", "Six years"},
+            {"Joash", "Josiah", "Uzziah", "Hezekiah"},
+            {"Samuel", "Pethuel", "Amittai", "Hilkiah"},
+            {"Matthias", "Barnabas", "Silas", "Stephen"},
+            {"Potter's field", "Jacob's field", "Kidron field", "Gibeon field"},
+            {"David", "Saul", "Solomon", "Rehoboam"},
+            {"Ahaz", "Ahaziah", "Jotham", "Amon"},
+            {"Nathan", "Gad", "Elijah", "Elisha"}
+    };
+
+    public static final int[] level4Answers = {
+            1, 1, 2, 0, 0,
+            0, 1, 0, 1, 1,
+            0, 0, 1, 0, 0
+    };
+        // =========================
+    // LEVEL 5 — SCHOLAR (15)
+    // =========================
+
+    public static final String[] level5Questions = {
+            "Which king of Israel reigned for seven days in Tirzah?",
+            "Who was the father of Bezalel, the craftsman appointed for the tabernacle?",
+            "Which prophet saw a vision of a basket of summer fruit?",
+            "What was the name of Moses' father-in-law in Exodus 3:1?",
+            "Which king of Judah was buried in the city of David but not in the tombs of the kings?",
+            "Who was the mother of King Lemuel?",
+            "Which priest found the Book of the Law during Josiah's reign?",
+            "What was the name of the servant whose ear Peter cut off?",
+            "Which prophet was told to marry Gomer?",
+            "Who was the father of the prophet Zephaniah?",
+            "Which judge killed six hundred Philistines with an ox goad?",
+            "Which man was chosen by lot with Matthias to be considered as a replacement for Judas?",
+            "What was the name of the high priest who questioned Jesus before sending him to Caiaphas?",
+            "Which king of Judah was struck with leprosy after entering the temple to burn incense?",
+            "In Revelation, what was the name of the star that fell from heaven and was given the key to the bottomless pit?"
+    };
+
+        public static final String[][] level5Options = {
+            {"Omri", "Tibni", "Zimri", "Elah"},
+            {"Uri", "Hur", "Ahisamach", "Bezalel"},
+            {"Hosea", "Micah", "Zechariah", "Amos"},
+            {"Laban", "Jethro", "Hobab", "Reuel"},
+            {"Ahaz", "Manasseh", "Uzziah", "Jehoiakim"},
+            {"Bathsheba", "Hannah", "Abigail", "The unnamed queen"},
+            {"Shaphan", "Hilkiah", "Zadok", "Abiathar"},
+            {"Barabbas", "Simon", "Alexander", "Malchus"},
+            {"Amos", "Joel", "Hosea", "Micah"},
+            {"Cushi", "Gedaliah", "Hezekiah", "Amariah"},
+            {"Samson", "Shamgar", "Ehud", "Gideon"},
+            {"Silas", "Stephen", "Barsabbas (Justus)", "Philip"},
+            {"Gamaliel", "Annas", "Caiaphas", "Nicodemus"},
+            {"Jotham", "Ahaz", "Hezekiah", "Uzziah"},
+            {"Wormwood", "Abaddon", "Lucifer", "Apollyon"}
+    };
+
+    public static final int[] level5Answers = {
+            2, 0, 3, 1, 2,
+            3, 1, 0, 2, 3,
+            0, 2, 1, 3, 1
+    };
              }
