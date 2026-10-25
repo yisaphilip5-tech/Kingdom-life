@@ -18,11 +18,8 @@ public class BibleJigsawPuzzle {
     private final MainActivity activity;
     private final LinearLayout content;
 
-    subtitle.setText(
-        newTestament
-                ? "New Testament • Levels 51–90"
-                : "Old Testament • Levels 1–50"
-);
+    private static final int OLD_TESTAMENT_LEVELS = 50;
+private static final int FIRST_NEW_TESTAMENT_LEVEL = 51;
     private static final int ROYAL_PURPLE =
             Color.rgb(30, 24, 55);
 
@@ -188,7 +185,7 @@ content.addView(backButton, backParams);
         TextView subtitle = new TextView(activity);
         subtitle.setText(
         newTestament
-                ? "New Testament • Levels 51–58"
+                ? "New Testament • Levels 51–90"
                 : "Old Testament • Levels 1–50"
 );
         subtitle.setTextSize(15);
@@ -418,7 +415,8 @@ private void addNewTestamentLevels(LinearLayout grid) {
     }
         }
     private void openLevel(int level) {
-    String[] difficulties = {
+        String[] difficulties = {
+            // Old Testament: Levels 1–50
             "Easy", "Medium", "Hard", "Medium", "Easy",
             "Hard", "Easy", "Hard", "Medium", "Easy",
             "Medium", "Easy", "Hard", "Hard", "Medium",
@@ -426,7 +424,19 @@ private void addNewTestamentLevels(LinearLayout grid) {
             "Easy", "Medium", "Hard", "Easy", "Medium",
             "Hard", "Easy", "Medium", "Hard", "Easy",
             "Hard", "Medium", "Easy", "Hard", "Medium",
-            "Easy", "Hard", "Medium", "Easy", "Hard"
+            "Easy", "Hard", "Medium", "Easy", "Hard",
+            "Medium", "Easy",
+
+            // New Testament: Levels 51–90
+            "Easy", "Medium", "Hard", "Easy", "Medium",
+            "Hard", "Easy", "Medium",
+            "Easy", "Medium", "Hard", "Medium", "Easy",
+            "Hard", "Medium", "Easy", "Medium", "Hard",
+            "Easy", "Medium", "Hard", "Easy", "Medium",
+            "Hard", "Easy", "Medium", "Hard", "Medium",
+            "Easy", "Hard", "Medium", "Easy", "Hard",
+            "Medium", "Easy", "Hard", "Medium", "Easy",
+            "Hard", "Medium"
     };
 
     String imageName;
