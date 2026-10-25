@@ -899,10 +899,14 @@ row2.addView(createHomeSquareButton(
     ));
 
     row2.addView(createHomeSquareButton(
-            "🏆\nAchievements",
-            v -> showAchievements()
-    ));
-
+"🏆\nAchievements",
+v -> startActivity(
+new android.content.Intent(
+MainActivity.this,
+AchievementsActivity.class
+)
+)
+));
     grid.addView(row2);
 
     content.addView(grid, gridParams);
