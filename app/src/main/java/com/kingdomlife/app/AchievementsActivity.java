@@ -219,24 +219,24 @@ navigation.setPadding(0, 4, 0, 16);
 setContentView(root);
 
 android.view.ViewCompat.setOnApplyWindowInsetsListener(
-        root,
-        (view, windowInsets) -> {
-
-            android.graphics.Insets systemBars =
-                    windowInsets.getInsets(
-                            android.view.WindowInsets.Type.systemBars()
-                    );
-
-            view.setPadding(
-                    10 + systemBars.left,
-                    8 + systemBars.top,
-                    10 + systemBars.right,
-                    systemBars.bottom + 12
-            );
-
-            return windowInsets;
-        }
+if (android.os.Build.VERSION.SDK_INT >= 30) {
+root.setOnApplyWindowInsetsListener((view, windowInsets) -> {
+android.graphics.Insets systemBars =
+windowInsets.getInsets(
+android.view.WindowInsets.Type.systemBars()
 );
+
+    view.setPadding(
+            10 + systemBars.left,
+            8 + systemBars.top,
+            10 + systemBars.right,
+            systemBars.bottom + 12
+    );
+
+    return windowInsets;
+});
+
+}
     }
 
     private void showPage(int page) {
