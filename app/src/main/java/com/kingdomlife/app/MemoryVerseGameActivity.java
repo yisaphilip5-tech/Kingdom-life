@@ -391,108 +391,120 @@ content.addView(
 
         content.addView(message);
 
-        addLevelButton("📖 Level 1", type, 1);
-addLevelButton("📖 Level 2", type, 2);
-addLevelButton("📖 Level 3", type, 3);
-addLevelButton("📖 Level 4", type, 4);
-addLevelButton("📖 Level 5", type, 5);
-addLevelButton("📖 Level 6", type, 6);
-addLevelButton("📖 Level 7", type, 7);
-addLevelButton("📖 Level 8", type, 8);
-addLevelButton("📖 Level 9", type, 9);
-addLevelButton("📖 Level 10", type, 10);
+                LinearLayout row = new LinearLayout(this);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setLayoutParams(
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
+
+        addLevelButton("📖 Level 1", type, 1, row);
+        addLevelButton("📖 Level 2", type, 2, row);
+
+        row = new LinearLayout(this);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setLayoutParams(
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
+
+        addLevelButton("📖 Level 3", type, 3, row);
+        addLevelButton("📖 Level 4", type, 4, row);
+
+        row = new LinearLayout(this);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setLayoutParams(
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
+
+        addLevelButton("📖 Level 5", type, 5, row);
+        addLevelButton("📖 Level 6", type, 6, row);
+
+        row = new LinearLayout(this);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setLayoutParams(
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
+
+        addLevelButton("📖 Level 7", type, 7, row);
+        addLevelButton("📖 Level 8", type, 8, row);
+
+        row = new LinearLayout(this);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setLayoutParams(
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
+
+        addLevelButton("📖 Level 9", type, 9, row);
+        addLevelButton("📖 Level 10", type, 10, row);
     }
 
     private void addLevelButton(
         String text,
         String type,
-        int selectedLevel
+        int selectedLevel,
+        LinearLayout row
 ) {
 
-    Button button =
-            new Button(this);
+    Button button = new Button(this);
 
     boolean unlocked =
-            isLevelUnlocked(
-                    type,
-                    selectedLevel
-            );
+            isLevelUnlocked(type, selectedLevel);
 
     if (unlocked) {
-
         button.setText(text);
-
         button.setEnabled(true);
 
         button.setOnClickListener(
-                v -> startGame(
-                        type,
-                        selectedLevel
-                )
+                v -> startGame(type, selectedLevel)
         );
 
     } else {
-
-        button.setText(
-                text + " 🔒"
-        );
-
+        button.setText(text + " 🔒");
         button.setEnabled(false);
     }
 
-    button.setTextSize(18);
-
+    button.setTextSize(15);
     button.setAllCaps(false);
-        button.setMinHeight(80);
+    button.setMinHeight(70);
+    button.setPadding(4, 8, 4, 8);
 
-button.setPadding(
-        20,
-        15,
-        20,
-        15
-);
+    GradientDrawable levelBackground =
+            new GradientDrawable();
 
-GradientDrawable levelBackground =
-        new GradientDrawable();
+    levelBackground.setColor(Color.WHITE);
+    levelBackground.setCornerRadius(28);
 
-levelBackground.setColor(
-        Color.WHITE
-);
-
-levelBackground.setCornerRadius(
-        28
-);
-
-button.setBackground(
-        levelBackground
-);
+    button.setBackground(levelBackground);
 
     LinearLayout.LayoutParams params =
-        new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f
+            );
 
-params.setMargins(
-        0,
-        5,
-        0,
-        5
-);
+    params.setMargins(4, 5, 4, 5);
 
-button.setMinHeight(70);
-button.setPadding(
-        20,
-        12,
-        20,
-        12
-);
-    content.addView(
-            button,
-            params
-    );
+    row.addView(button, params);
+
+    if (row.getParent() == null) {
+        content.addView(row);
     }
-
+                }
     private void startGame(
         String type,
         int selectedLevel
