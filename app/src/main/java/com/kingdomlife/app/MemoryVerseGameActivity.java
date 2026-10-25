@@ -391,16 +391,16 @@ content.addView(
 
         content.addView(message);
 
-        addLevelButton("📖 Level 1");
-        addLevelButton("📖 Level 2");
-        addLevelButton("📖 Level 3");
-        addLevelButton("📖 Level 4");
-        addLevelButton("📖 Level 5");
-        addLevelButton("📖 Level 6");
-        addLevelButton("📖 Level 7");
-        addLevelButton("📖 Level 8");
-        addLevelButton("📖 Level 9");
-        addLevelButton("📖 Level 10");
+        addLevelButton("📖 Level 1", type, 1);
+addLevelButton("📖 Level 2", type, 2);
+addLevelButton("📖 Level 3", type, 3);
+addLevelButton("📖 Level 4", type, 4);
+addLevelButton("📖 Level 5", type, 5);
+addLevelButton("📖 Level 6", type, 6);
+addLevelButton("📖 Level 7", type, 7);
+addLevelButton("📖 Level 8", type, 8);
+addLevelButton("📖 Level 9", type, 9);
+addLevelButton("📖 Level 10", type, 10);
     }
 
     private void addLevelButton(
