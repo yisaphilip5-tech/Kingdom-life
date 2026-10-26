@@ -2806,60 +2806,49 @@ void restoreBackup() {
             }
             
     void showLearnMenu() {
-    stopTimer();
-    content.removeAllViews();
+stopTimer();
+content.removeAllViews();
 
-    TextView title = new TextView(this);
-    title.setText("📖 Learn & Grow");
-    title.setTextSize(24);
-    title.setTypeface(
-            Typeface.DEFAULT,
-            Typeface.BOLD
-    );
-    title.setTextColor(darkText);
-    title.setPadding(
-            0,
-            15,
-            0,
-            20
-    );
-    content.addView(title);
+TextView title = new TextView(this);
+title.setText("📖 Learn & Grow");
+title.setTextSize(24);
+title.setTypeface(
+        Typeface.DEFAULT,
+        Typeface.BOLD
+);
+title.setTextColor(darkText);
+title.setPadding(0, 15, 0, 20);
+content.addView(title);
 
-    addCard(
-            "📚 Spiritual Growth Books",
-            "Read books and resources that help you grow in faith.",
-            v -> showSpiritualBooks()
-    );
+addCard(
+        "📚 Kingdom Books",
+        "Read Christian books, inspiring stories, and lessons.",
+        v -> showKingdomBooks()
+);
 
-    addCard(
-            "📚 Story Books",
-            "Read inspiring Bible-based stories and lessons.",
-            v -> showStoryBooks()
-    );
+addCard(
+        "🎙️ Sermons",
+        "Listen to sermons and messages for spiritual encouragement.",
+        v -> showSermons()
+);
 
-    addCard(
-            "🎙️ Sermons",
-            "Listen to sermons and messages for spiritual encouragement.",
-            v -> showSermons()
-    );
+addCard(
+        "🙏 Prayer Journal",
+        "Write, save, and revisit your personal prayers.",
+        v -> showPrayerJournal()
+);
 
-    
-            addCard(
-            "🙏 Prayer Journal",
-            "Write, save, and revisit your personal prayers.",
-            v -> showPrayerJournal()
-    );
+addCard(
+        "🎯 Spiritual Goals",
+        "Set spiritual goals and track your progress.",
+        v -> showSpiritualGoals()
+);
 
-    addCard(
-            "🎯 Spiritual Goals",
-            "Set spiritual goals and track your progress.",
-            v -> showSpiritualGoals()
-    );
+addButton(
+        "⬅️ Back to Home",
+        v -> showHome()
+);
 
-    addButton(
-            "⬅️ Back to Home",
-            v -> showHome()
-    );
     }
     void showPrayerJournal() {
     stopTimer();
@@ -3257,31 +3246,37 @@ void confirmDeletePrayer(int index) {
             .setNegativeButton("Cancel", null)
             .show();
 }
-    public void showSpiritualBooks() {
+    
+    
+    void showKingdomBooks() {
     stopTimer();
     content.removeAllViews();
 
     ImageButton backButton = new ImageButton(this);
-    backButton.setImageResource(
-            android.R.drawable.ic_media_previous
-    );
+    backButton.setImageResource(android.R.drawable.ic_media_previous);
     backButton.setBackgroundColor(Color.TRANSPARENT);
-    backButton.setOnClickListener(
-            v -> showLearnMenu()
-    );
-
+    backButton.setOnClickListener(v -> showLearnMenu());
     content.addView(
             backButton,
             new LinearLayout.LayoutParams(60, 60)
     );
 
     TextView title = new TextView(this);
-    title.setText("📚 Spiritual Growth Books");
+    title.setText("📚 Kingdom Books");
     title.setTextSize(24);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(darkText);
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
+
+    TextView message = new TextView(this);
+    message.setText(
+            "Explore Christian books, inspiring stories, and lessons."
+    );
+    message.setTextSize(18);
+    message.setTextColor(darkText);
+    message.setPadding(0, 10, 0, 20);
+    content.addView(message);
 
     addCard(
             "📖 The Pilgrim's Progress",
@@ -3315,116 +3310,74 @@ void confirmDeletePrayer(int index) {
                     "Book content will be added here."
             )
     );
-    }
-    void showStoryBooks() {
-    stopTimer();
-    content.removeAllViews();
-
-    ImageButton backButton = new ImageButton(this);
-
-    backButton.setImageResource(
-            android.R.drawable.ic_media_previous
-    );
-
-    backButton.setBackgroundColor(
-            Color.TRANSPARENT
-    );
-
-    backButton.setOnClickListener(
-            v -> showLearnMenu()
-    );
-
-    content.addView(
-            backButton,
-            new LinearLayout.LayoutParams(
-                    60,
-                    60
-            )
-    );
-
-    TextView title = new TextView(this);
-
-    title.setText("📚 Story Books");
-    title.setTextSize(24);
-    title.setTypeface(
-            Typeface.DEFAULT,
-            Typeface.BOLD
-    );
-    title.setTextColor(darkText);
-    title.setPadding(
-            0,
-            15,
-            0,
-            20
-    );
-
-    content.addView(title);
-
-    TextView message = new TextView(this);
-
-    message.setText(
-            "Explore inspiring stories and original Christian fiction."
-    );
-
-    message.setTextSize(18);
-    message.setTextColor(darkText);
-    message.setPadding(
-            0,
-            10,
-            0,
-            20
-    );
-
-    content.addView(message);
 
     ImageView descendantsCover = new ImageView(this);
-descendantsCover.setImageResource(R.drawable.descendants_of_good_cover);
-descendantsCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
-descendantsCover.setAdjustViewBounds(true);
-descendantsCover.setContentDescription("Descendants of Good book cover");
+    descendantsCover.setImageResource(
+            R.drawable.descendants_of_good_cover
+    );
+    descendantsCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+    descendantsCover.setAdjustViewBounds(true);
+    descendantsCover.setContentDescription(
+            "Descendants of Good book cover"
+    );
+    descendantsCover.setOnClickListener(
+            v -> showDescendantsOfGoodChapters()
+    );
 
-descendantsCover.setOnClickListener(v ->
-        showDescendantsOfGoodChapters()
-);
+    LinearLayout.LayoutParams coverParams =
+            new LinearLayout.LayoutParams(
+                    (int) (
+                            getResources()
+                                    .getDisplayMetrics()
+                                    .widthPixels * 0.45
+                    ),
+                    (int) (
+                            getResources()
+                                    .getDisplayMetrics()
+                                    .widthPixels * 0.50
+                    )
+            );
 
-LinearLayout.LayoutParams coverParams =
-        new LinearLayout.LayoutParams(
-                (int) (getResources().getDisplayMetrics().widthPixels * 0.45),
-                (int) (getResources().getDisplayMetrics().widthPixels * 0.50)
-        );
+    coverParams.gravity =
+            android.view.Gravity.CENTER_HORIZONTAL;
+    coverParams.setMargins(0, 10, 0, 20);
+    content.addView(descendantsCover, coverParams);
 
-coverParams.gravity = android.view.Gravity.CENTER_HORIZONTAL;
+    addCard(
+            "⏩ Continue Reading",
+            "Return to where you last stopped reading.",
+            v -> {
+                android.content.SharedPreferences storyPrefs =
+                        getSharedPreferences(
+                                "DescendantsReadingProgress",
+                                MODE_PRIVATE
+                        );
 
-coverParams.setMargins(0, 10, 0, 20);
-content.addView(descendantsCover, coverParams);
-        addCard(
-        "⏩ Continue Reading",
-        "Return to where you last stopped reading.",
-        v -> {
-            android.content.SharedPreferences storyPrefs =
-                    getSharedPreferences("DescendantsReadingProgress", MODE_PRIVATE);
+                int lastChapter =
+                        storyPrefs.getInt("lastChapter", 0);
 
-            int lastChapter = storyPrefs.getInt("lastChapter", 0);
+                java.util.List<DescendantsOfGoodLibrary.Chapter>
+                        chapters =
+                        DescendantsOfGoodLibrary.getChapters();
 
-            java.util.List<DescendantsOfGoodLibrary.Chapter> chapters =
-                    DescendantsOfGoodLibrary.getChapters();
-
-            if (lastChapter >= 0 && lastChapter < chapters.size()) {
-                showDescendantsOfGoodChapter(lastChapter);
-            } else {
-                showDescendantsOfGoodChapters();
+                if (lastChapter >= 0
+                        && lastChapter < chapters.size()) {
+                    showDescendantsOfGoodChapter(lastChapter);
+                } else {
+                    showDescendantsOfGoodChapters();
+                }
             }
-        }
-);
-        addCard(
-"🔖 My Bookmarks",
-"Revisit your saved story passages.",
-v -> showDescendantsBookmarks()
-);
+    );
+
+    addCard(
+            "🔖 My Bookmarks",
+            "Revisit your saved story passages.",
+            v -> showDescendantsBookmarks()
+    );
 
     addCard(
             "📚 More Stories Coming Soon",
-            "New stories can be added to the Story Books library.",
+            "New stories can be added to the Kingdom Books library.",
             v -> showMessage(
                     "📚 More Stories",
                     "More stories will be added here in the future."
