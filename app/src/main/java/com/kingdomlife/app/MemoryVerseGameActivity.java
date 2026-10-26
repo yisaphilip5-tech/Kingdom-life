@@ -616,12 +616,13 @@ if ("guess".equals(type)) {
             activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_9;
             break;
         default:
-            activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_10;
-            break;
-    }
-                }
-    
-    }
+activeQuestions = MemoryVerseData.GUESS_REFERENCE_LEVEL_10;
+break;
+}
+}
+
+showQuestion();
+}
     private void showQuestion() {
 
     content.removeAllViews();
