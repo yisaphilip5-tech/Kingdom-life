@@ -4839,15 +4839,21 @@ addCard(
             v -> {}
     );
 
-    // Story books read
-    int storyBooksRead =
-            readingPrefs.getInt("storyBooksRead", 0);
+    // Kingdom books read
+int spiritualBooksRead =
+        readingPrefs.getInt("spiritualBooksRead", 0);
 
-    addCard(
-            "📕 Story Books Read",
-            storyBooksRead + " story book(s) read.",
-            v -> {}
-    );
+int storyBooksRead =
+        readingPrefs.getInt("storyBooksRead", 0);
+
+int kingdomBooksRead =
+        spiritualBooksRead + storyBooksRead;
+
+addCard(
+        "📚 Kingdom Books Read",
+        kingdomBooksRead + " book(s) read.",
+        v -> {}
+);
 
     // Return to Home
     addButton("⬅️ Back to Home", v -> showHome());
