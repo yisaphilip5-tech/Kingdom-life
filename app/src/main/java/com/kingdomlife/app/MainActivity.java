@@ -3391,31 +3391,81 @@ booksRow.addView(
         )
 );
 
-// Reading features underneath the books.
 addCard(
-        "⏩ Continue Reading",
-        "Return to where you last stopped reading.",
-        v -> {
-            android.content.SharedPreferences storyPrefs =
-                    getSharedPreferences(
-                            "DescendantsReadingProgress",
-                            MODE_PRIVATE
-                    );
+"⏩ Continue Reading",
+"Return to where you last stopped reading.",
+v -> {
+android.content.SharedPreferences pilgrimPrefs =
+getSharedPreferences(
+"PilgrimsProgressReadingProgress",
+MODE_PRIVATE
+);
 
-            int lastChapter =
-                    storyPrefs.getInt("lastChapter", 0);
+        android.content.SharedPreferences storyPrefs =
+                getSharedPreferences(
+                        "DescendantsReadingProgress",
+                        MODE_PRIVATE
+                );
 
-            java.util.List<DescendantsOfGoodLibrary.Chapter>
-                    chapters =
-                    DescendantsOfGoodLibrary.getChapters();
+        boolean pilgrimStarted =
+                pilgrimPrefs.contains("lastChapter");
 
-            if (lastChapter >= 0
-                    && lastChapter < chapters.size()) {
-                showDescendantsOfGoodChapter(lastChapter);
-            } else {
-                showDescendantsOfGoodChapters();
-            }
+        boolean descendantsStarted =
+                storyPrefs.contains("lastChapter");
+
+        if (pilgrimStarted && descendantsStarted) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Continue Reading")
+                    .setItems(
+                            new String[]{
+                                    "The Pilgrim's Progress",
+                                    "Descendants of Good"
+                            },
+                            (dialog, which) -> {
+                                if (which == 0) {
+                                    PilgrimsProgressBook.continueReading(
+                                            this, content
+                                    );
+                                } else {
+                                    int lastChapter =
+                                            storyPrefs.getInt(
+                                                    "lastChapter", 0
+                                            );
+                                    int lastPage =
+                                            storyPrefs.getInt(
+                                                    "lastPage", 0
+                                            );
+
+                                    showDescendantsBookmarkedPage(
+                                            lastChapter, lastPage
+                                    );
+                                }
+                            }
+                    )
+                    .setNegativeButton("Cancel", null)
+                    .show();
+
+        } else if (pilgrimStarted) {
+            PilgrimsProgressBook.continueReading(
+                    this, content
+            );
+
+        } else if (descendantsStarted) {
+            int lastChapter = storyPrefs.getInt("lastChapter", 0);
+            int lastPage = storyPrefs.getInt("lastPage", 0);
+
+            showDescendantsBookmarkedPage(
+                    lastChapter, lastPage
+            );
+
+        } else {
+            showMessage(
+                    "Continue Reading",
+                    "Open a book and start reading to save your position."
+            );
         }
+    }
+
 );
 
 addCard(
