@@ -3247,143 +3247,194 @@ void confirmDeletePrayer(int index) {
             .show();
 }
     
-    
     void showKingdomBooks() {
-    stopTimer();
-    content.removeAllViews();
+stopTimer();
+content.removeAllViews();
 
-    ImageButton backButton = new ImageButton(this);
-    backButton.setImageResource(android.R.drawable.ic_media_previous);
-    backButton.setBackgroundColor(Color.TRANSPARENT);
-    backButton.setOnClickListener(v -> showLearnMenu());
-    content.addView(
-            backButton,
-            new LinearLayout.LayoutParams(60, 60)
-    );
+ImageButton backButton = new ImageButton(this);
+backButton.setImageResource(android.R.drawable.ic_media_previous);
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setOnClickListener(v -> showLearnMenu());
+content.addView(
+        backButton,
+        new LinearLayout.LayoutParams(60, 60)
+);
 
-    TextView title = new TextView(this);
-    title.setText("📚 Kingdom Books");
-    title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 20);
-    content.addView(title);
+TextView title = new TextView(this);
+title.setText("📚 Kingdom Books");
+title.setTextSize(24);
+title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+title.setTextColor(darkText);
+title.setPadding(0, 15, 0, 10);
+content.addView(title);
 
-    TextView message = new TextView(this);
-    message.setText(
-            "Explore Christian books, inspiring stories, and lessons."
-    );
-    message.setTextSize(18);
-    message.setTextColor(darkText);
-    message.setPadding(0, 10, 0, 20);
-    content.addView(message);
+TextView message = new TextView(this);
+message.setText("Explore Christian books and inspiring stories.");
+message.setTextSize(16);
+message.setTextColor(darkText);
+message.setPadding(0, 0, 0, 20);
+content.addView(message);
 
-    addCard(
-            "📖 The Pilgrim's Progress",
-            "By John Bunyan — a Christian classic about faith, perseverance, and the journey toward salvation.",
-            v -> PilgrimsProgressBook.open(this, content)
-    );
+// Display both books side by side.
+LinearLayout booksRow = new LinearLayout(this);
+booksRow.setOrientation(LinearLayout.HORIZONTAL);
+booksRow.setGravity(android.view.Gravity.CENTER);
+booksRow.setWeightSum(2);
 
-    addCard(
-            "🙏 The Power of Prayer",
-            "Explore the importance of prayer and developing a consistent prayer life.",
-            v -> showMessage(
-                    "🙏 The Power of Prayer",
-                    "Book content will be added here."
-            )
-    );
+LinearLayout.LayoutParams rowParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+rowParams.setMargins(0, 0, 0, 20);
+content.addView(booksRow, rowParams);
 
-    addCard(
-            "❤️ Living With Love",
-            "Learn how Christian love can shape everyday life and relationships.",
-            v -> showMessage(
-                    "❤️ Living With Love",
-                    "Book content will be added here."
-            )
-    );
+// The Pilgrim's Progress.
+LinearLayout pilgrimBook = new LinearLayout(this);
+pilgrimBook.setOrientation(LinearLayout.VERTICAL);
+pilgrimBook.setGravity(android.view.Gravity.CENTER);
+pilgrimBook.setPadding(6, 6, 6, 6);
+pilgrimBook.setOnClickListener(
+        v -> PilgrimsProgressBook.open(this, content)
+);
 
-    addCard(
-            "🌱 Christian Character",
-            "Study qualities that help believers grow spiritually and live with purpose.",
-            v -> showMessage(
-                    "🌱 Christian Character",
-                    "Book content will be added here."
-            )
-    );
+ImageView pilgrimCover = new ImageView(this);
+pilgrimCover.setImageResource(
+        android.R.drawable.ic_menu_view
+);
+pilgrimCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+pilgrimCover.setContentDescription(
+        "The Pilgrim's Progress book"
+);
 
-    ImageView descendantsCover = new ImageView(this);
-    descendantsCover.setImageResource(
-            R.drawable.descendants_of_good_cover
-    );
-    descendantsCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
-    descendantsCover.setAdjustViewBounds(true);
-    descendantsCover.setContentDescription(
-            "Descendants of Good book cover"
-    );
-    descendantsCover.setOnClickListener(
-            v -> showDescendantsOfGoodChapters()
-    );
+LinearLayout.LayoutParams pilgrimImageParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                180
+        );
+pilgrimBook.addView(pilgrimCover, pilgrimImageParams);
 
-    LinearLayout.LayoutParams coverParams =
-            new LinearLayout.LayoutParams(
-                    (int) (
-                            getResources()
-                                    .getDisplayMetrics()
-                                    .widthPixels * 0.45
-                    ),
-                    (int) (
-                            getResources()
-                                    .getDisplayMetrics()
-                                    .widthPixels * 0.50
-                    )
-            );
+TextView pilgrimTitle = new TextView(this);
+pilgrimTitle.setText("The Pilgrim's Progress");
+pilgrimTitle.setTextSize(16);
+pilgrimTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+pilgrimTitle.setTextColor(darkText);
+pilgrimTitle.setGravity(android.view.Gravity.CENTER);
+pilgrimTitle.setPadding(0, 8, 0, 8);
+pilgrimBook.addView(pilgrimTitle);
 
-    coverParams.gravity =
-            android.view.Gravity.CENTER_HORIZONTAL;
-    coverParams.setMargins(0, 10, 0, 20);
-    content.addView(descendantsCover, coverParams);
+TextView pilgrimAuthor = new TextView(this);
+pilgrimAuthor.setText("By John Bunyan");
+pilgrimAuthor.setTextSize(13);
+pilgrimAuthor.setTextColor(darkText);
+pilgrimAuthor.setGravity(android.view.Gravity.CENTER);
+pilgrimBook.addView(pilgrimAuthor);
 
-    addCard(
-            "⏩ Continue Reading",
-            "Return to where you last stopped reading.",
-            v -> {
-                android.content.SharedPreferences storyPrefs =
-                        getSharedPreferences(
-                                "DescendantsReadingProgress",
-                                MODE_PRIVATE
-                        );
+booksRow.addView(
+        pilgrimBook,
+        new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        )
+);
 
-                int lastChapter =
-                        storyPrefs.getInt("lastChapter", 0);
+// Descendants of Good.
+LinearLayout descendantsBook = new LinearLayout(this);
+descendantsBook.setOrientation(LinearLayout.VERTICAL);
+descendantsBook.setGravity(android.view.Gravity.CENTER);
+descendantsBook.setPadding(6, 6, 6, 6);
+descendantsBook.setOnClickListener(
+        v -> showDescendantsOfGoodChapters()
+);
 
-                java.util.List<DescendantsOfGoodLibrary.Chapter>
-                        chapters =
-                        DescendantsOfGoodLibrary.getChapters();
+ImageView descendantsCover = new ImageView(this);
+descendantsCover.setImageResource(
+        R.drawable.descendants_of_good_cover
+);
+descendantsCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+descendantsCover.setAdjustViewBounds(true);
+descendantsCover.setContentDescription(
+        "Descendants of Good book cover"
+);
 
-                if (lastChapter >= 0
-                        && lastChapter < chapters.size()) {
-                    showDescendantsOfGoodChapter(lastChapter);
-                } else {
-                    showDescendantsOfGoodChapters();
-                }
+descendantsBook.addView(
+        descendantsCover,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                180
+        )
+);
+
+TextView descendantsTitle = new TextView(this);
+descendantsTitle.setText("Descendants of Good");
+descendantsTitle.setTextSize(16);
+descendantsTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+descendantsTitle.setTextColor(darkText);
+descendantsTitle.setGravity(android.view.Gravity.CENTER);
+descendantsTitle.setPadding(0, 8, 0, 8);
+descendantsBook.addView(descendantsTitle);
+
+TextView descendantsDescription = new TextView(this);
+descendantsDescription.setText("Christian fiction");
+descendantsDescription.setTextSize(13);
+descendantsDescription.setTextColor(darkText);
+descendantsDescription.setGravity(android.view.Gravity.CENTER);
+descendantsBook.addView(descendantsDescription);
+
+booksRow.addView(
+        descendantsBook,
+        new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        )
+);
+
+// Reading features underneath the books.
+addCard(
+        "⏩ Continue Reading",
+        "Return to where you last stopped reading.",
+        v -> {
+            android.content.SharedPreferences storyPrefs =
+                    getSharedPreferences(
+                            "DescendantsReadingProgress",
+                            MODE_PRIVATE
+                    );
+
+            int lastChapter =
+                    storyPrefs.getInt("lastChapter", 0);
+
+            java.util.List<DescendantsOfGoodLibrary.Chapter>
+                    chapters =
+                    DescendantsOfGoodLibrary.getChapters();
+
+            if (lastChapter >= 0
+                    && lastChapter < chapters.size()) {
+                showDescendantsOfGoodChapter(lastChapter);
+            } else {
+                showDescendantsOfGoodChapters();
             }
-    );
+        }
+);
 
-    addCard(
-            "🔖 My Bookmarks",
-            "Revisit your saved story passages.",
-            v -> showDescendantsBookmarks()
-    );
+addCard(
+        "🔖 My Bookmarks",
+        "Revisit your saved story passages.",
+        v -> showDescendantsBookmarks()
+);
 
-    addCard(
-            "📚 More Stories Coming Soon",
-            "New stories can be added to the Kingdom Books library.",
-            v -> showMessage(
-                    "📚 More Stories",
-                    "More stories will be added here in the future."
-            )
-    );
+addCard(
+        "📚 More Stories Coming Soon",
+        "New stories can be added to the Kingdom Books library.",
+        v -> showMessage(
+                "📚 More Stories",
+                "More stories will be added here in the future."
+        )
+);
+
     }
+     
     void showDescendantsOfGoodChapters() {
     stopTimer();
     content.removeAllViews();
