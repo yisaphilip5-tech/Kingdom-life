@@ -586,9 +586,9 @@ private static GradientDrawable makeBackground(
 }
 
 private static void returnToBooks() {
-    if (activity instanceof MainActivity) {
-        ((MainActivity) activity).showSpiritualBooks();
-    }
+if (activity instanceof MainActivity) {
+((MainActivity) activity).showKingdomBooks();
+}
 }
 
 private static class BookBridge {
