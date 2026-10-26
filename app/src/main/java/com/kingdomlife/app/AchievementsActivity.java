@@ -133,6 +133,30 @@ if (displayMode.equals("DAY")) {
         subtitle.setPadding(0, 0, 0, 8);
 
         root.addView(subtitle);
+        int unlockedCount = 0;
+
+for (boolean unlocked : unlockedStates) {
+    if (unlocked) {
+        unlockedCount++;
+    }
+}
+
+TextView progressDescription = new TextView(this);
+
+progressDescription.setText(
+        "Your Achievement Progress\n"
+        + unlockedCount + " of "
+        + achievements.size()
+        + " achievements unlocked. Keep growing "
+        + "in faith and completing challenges!"
+);
+
+progressDescription.setTextSize(13);
+progressDescription.setTextColor(BRIGHT_GOLD);
+progressDescription.setGravity(Gravity.CENTER);
+progressDescription.setPadding(12, 4, 12, 12);
+
+root.addView(progressDescription);
 
         ScrollView scrollView = new ScrollView(this);
         scrollView.setFillViewport(true);
