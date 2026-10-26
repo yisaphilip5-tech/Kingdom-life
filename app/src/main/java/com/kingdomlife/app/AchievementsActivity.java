@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import java.util.Calendar;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -482,6 +483,138 @@ android.view.WindowInsets.Type.systemBars()
         }
     }
 
+    private int getAchievementProgress(String key) {
+
+    switch (key) {
+
+        case "first_step":
+        case "point_builder":
+            return prefs.getInt("totalPoints", 0);
+
+        case "bible_learner":
+        case "gods_vessel_15":
+        case "gods_vessel_25":
+            return prefs.getInt("learnedVerses", 0);
+
+        case "streak_keeper":
+            return prefs.getInt("dailyStreak", 0);
+
+        case "challenge_complete":
+            return prefs.getBoolean(
+                    "challengeCompletedToday", false
+            ) ? 1 : 0;
+
+        case "easy_challenger":
+            return prefs.getBoolean(
+                    "challenge_level_1_completed", false
+            ) ? 1 : 0;
+
+        case "medium_challenger":
+            return prefs.getBoolean(
+                    "challenge_level_2_completed", false
+            ) ? 1 : 0;
+
+        case "hard_challenger":
+            return prefs.getBoolean(
+                    "challenge_level_3_completed", false
+            ) ? 1 : 0;
+
+        case "challenge_master":
+            return countCompletedChallengeLevels(3);
+
+        case "bible_challenge_master":
+            return countCompletedChallengeLevels(5);
+
+        case "questions_100":
+        case "questions_250":
+        case "questions_500":
+        case "questions_1000":
+            return prefs.getInt(
+                    "bibleJourney_questions_completed", 0
+            );
+
+        case "books_5":
+        case "books_10":
+        case "books_25":
+        case "books_50":
+        case "books_66":
+            return prefs.getInt(
+                    "bibleJourney_books_completed", 0
+            );
+
+        case "scramble_10_words":
+        case "scramble_25_words":
+        case "scramble_75_words":
+            return prefs.getInt(
+                    "bibleScramble_words_solved", 0
+            );
+
+        case "big_picture":
+            return countClaimedJigsawRewards();
+
+        case "word_hearer":
+            return prefs.getInt(
+                    "missingWord_correct_answers", 0
+            );
+
+        case "scripture_detective":
+            return prefs.getInt(
+                    "memory_reference_correct_answers", 0
+            );
+
+        case "verse_guardian":
+            return prefs.getInt(
+                    "memory_guess_correct_answers", 0
+            );
+
+        case "verse_finisher":
+            return prefs.getInt(
+                    "memory_complete_correct_answers", 0
+            );
+
+        default:
+            return isAchievementUnlocked(key) ? 1 : 0;
+    }
+}
+
+private int countCompletedChallengeLevels(int maximumLevel) {
+
+    int completed = 0;
+
+    for (int level = 1; level <= maximumLevel; level++) {
+
+        if (prefs.getBoolean(
+                "challenge_level_" + level + "_completed",
+                false
+        )) {
+            completed++;
+        }
+    }
+
+    return completed;
+}
+
+private int countClaimedJigsawRewards() {
+
+    SharedPreferences jigsawPrefs = getSharedPreferences(
+            "KingdomLifeJigsawPrefs",
+            MODE_PRIVATE
+    );
+
+    int completed = 0;
+
+    for (int level = 1; level <= 3; level++) {
+
+        if (jigsawPrefs.getBoolean(
+                "level" + level + "RewardClaimed",
+                false
+        )) {
+            completed++;
+        }
+    }
+
+    return completed;
+    }
     private void addAchievementCard(
             LinearLayout row,
             AchievementData achievement,
@@ -563,16 +696,109 @@ android.view.WindowInsets.Type.systemBars()
 
         body.addView(descriptionView);
 
-        TextView statusView = new TextView(this);
-        statusView.setText(
-                unlocked ? "✓ UNLOCKED" : "🔒 LOCKED"
-        );
-        statusView.setTextSize(11);
-        statusView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        statusView.setTextColor(unlocked ? GOLD : Color.LTGRAY);
-        statusView.setGravity(Gravity.CENTER);
-        statusView.setPadding(0, 8, 0, 0);
+// Individual achievement progress
+if (achievement.key.equals("word_student")
+        || achievement.key.equals("finisher")) {
 
+    TextView progressView = new TextView(this);
+    progressView.setText(
+            "Progress tracking not connected yet"
+    );
+    progressView.setTextSize(11);
+    progressView.setTextColor(Color.LTGRAY);
+    progressView.setGravity(Gravity.CENTER);
+    progressView.setPadding(0, 8, 0, 4);
+
+    body.addView(progressView);
+
+} else {
+
+    int target = achievement.target;
+
+    if (achievement.key.equals("easy_challenger")
+            || achievement.key.equals("medium_challenger")
+            || achievement.key.equals("hard_challenger")) {
+        target = 1;
+    }
+
+    int progress = Math.max(
+            0,
+            getAchievementProgress(achievement.key)
+    );
+
+    int displayedProgress = Math.min(progress, target);
+
+    String unit = "completed";
+
+    if (achievement.category.equals("Points")) {
+        unit = "points";
+    } else if (achievement.category.equals("Bible Learning")) {
+        unit = "verses";
+    } else if (achievement.category.equals("Daily Progress")) {
+        unit = "days";
+    } else if (achievement.category.equals("Bible Journey")) {
+        unit = achievement.key.startsWith("books_")
+                ? "books" : "questions";
+    } else if (achievement.category.equals("Bible Scramble")) {
+        unit = "words";
+    } else if (achievement.category.equals("Missing Word")) {
+        unit = "answers";
+    } else if (achievement.category.equals("Memory Verse")) {
+        unit = "answers";
+    } else if (achievement.category.equals("Jigsaw Puzzle")) {
+        unit = "levels";
+    } else if (achievement.category.equals("Bible Challenge")) {
+        unit = achievement.key.equals("challenge_complete")
+                ? "challenge" : "levels";
+    }
+
+    TextView progressView = new TextView(this);
+    progressView.setText(
+            "Progress: " + displayedProgress
+                    + " of " + target + " " + unit
+    );
+    progressView.setTextSize(11);
+    progressView.setTextColor(BRIGHT_GOLD);
+    progressView.setGravity(Gravity.CENTER);
+    progressView.setPadding(0, 8, 0, 4);
+
+    body.addView(progressView);
+
+    ProgressBar progressBar = new ProgressBar(
+            this,
+            null,
+            android.R.attr.progressBarStyleHorizontal
+    );
+
+    progressBar.setMax(target);
+    progressBar.setProgress(displayedProgress);
+
+    if (android.os.Build.VERSION.SDK_INT >= 21) {
+        progressBar.setProgressTintList(
+                android.content.res.ColorStateList.valueOf(
+                        BRIGHT_GOLD
+                )
+        );
+
+        progressBar.setProgressBackgroundTintList(
+                android.content.res.ColorStateList.valueOf(
+                        Color.rgb(75, 65, 90)
+                )
+        );
+    }
+
+    LinearLayout.LayoutParams progressParams =
+            new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    12
+            );
+
+    progressParams.setMargins(8, 2, 8, 4);
+
+    body.addView(progressBar, progressParams);
+}
+
+TextView statusView = new TextView(this);
         body.addView(statusView);
 
         LinearLayout.LayoutParams cardParams =
