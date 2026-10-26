@@ -272,11 +272,16 @@ for (String item : navItems) {
 
     } else if (item.contains("Achievements")) {
 
-        navButton.setOnClickListener(v ->
-                showAchievements()
-        );
+    navButton.setOnClickListener(v ->
+            startActivity(
+                    new android.content.Intent(
+                            MainActivity.this,
+                            AchievementsActivity.class
+                    )
+            )
+    );
 
-    } else {
+} else {
 
     navButton.setOnClickListener(v ->
             showMoreMenu()
