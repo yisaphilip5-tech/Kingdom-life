@@ -8707,11 +8707,13 @@ void showBookmarks() {
         addCard(
                 "🏆 Achievements",
                 "View your unlocked and locked achievements.",
-                v -> showAchievements()
-        );
-        found = true;
-    }
-
+                v -> startActivity(
+        new android.content.Intent(
+                MainActivity.this,
+                AchievementsActivity.class
+        )
+)
+            }
     if (query.contains("notification") ||
             query.contains("notifications")) {
 
