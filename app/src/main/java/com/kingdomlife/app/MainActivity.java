@@ -8704,16 +8704,19 @@ void showBookmarks() {
 
     if (query.contains("achievement")) {
 
-        addCard(
-                "🏆 Achievements",
-                "View your unlocked and locked achievements.",
-                v -> startActivity(
-        new android.content.Intent(
-                MainActivity.this,
-                AchievementsActivity.class
-        )
-)
-            }
+    addCard(
+            "🏆 Achievements",
+            "View your unlocked and locked achievements.",
+            v -> startActivity(
+                    new android.content.Intent(
+                            MainActivity.this,
+                            AchievementsActivity.class
+                    )
+            )
+    );
+
+    found = true;
+    }
     if (query.contains("notification") ||
             query.contains("notifications")) {
 
