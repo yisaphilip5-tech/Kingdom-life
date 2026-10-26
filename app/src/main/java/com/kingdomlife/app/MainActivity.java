@@ -3393,7 +3393,7 @@ void confirmDeletePrayer(int index) {
             android.R.drawable.ic_media_previous
     );
     backButton.setBackgroundColor(Color.TRANSPARENT);
-    backButton.setOnClickListener(v -> showStoryBooks());
+    backButton.setOnClickListener(v -> showKingdomBooks());
 
     content.addView(
             backButton,
@@ -3440,7 +3440,7 @@ content.removeAllViews();
 ImageButton backButton = new ImageButton(this);
 backButton.setImageResource(android.R.drawable.ic_media_previous);
 backButton.setBackgroundColor(Color.TRANSPARENT);
-backButton.setOnClickListener(v -> showStoryBooks());
+backButton.setOnClickListener(v -> showKingdomBooks());
 
 content.addView(
         backButton,
@@ -4782,15 +4782,6 @@ addCard(
         v -> {}
 );
 
-    // Spiritual books read
-    int spiritualBooksRead =
-            readingPrefs.getInt("spiritualBooksRead", 0);
-
-    addCard(
-            "📚 Spiritual Books Read",
-            spiritualBooksRead + " spiritual book(s) read.",
-            v -> {}
-    );
 
     // Kingdom books read
 int spiritualBooksRead =
@@ -8565,27 +8556,19 @@ void showBookmarks() {
     }
 
     if (query.contains("story") ||
-            query.contains("stories")) {
+query.contains("stories") ||
+query.contains("spiritual") ||
+query.contains("growth") ||
+query.contains("kingdom books") ||
+query.contains("books")) {
 
-        addCard(
-                "📚 Story Books",
-                "Read inspiring stories and original Christian fiction.",
-                v -> showStoryBooks()
-        );
-        found = true;
+    addCard(
+            "📚 Kingdom Books",
+            "Read Christian books, inspiring stories, and lessons.",
+            v -> showKingdomBooks()
+    );
+    found = true;
     }
-
-    if (query.contains("spiritual") ||
-            query.contains("growth")) {
-
-        addCard(
-                "📚 Spiritual Growth Books",
-                "Read books and resources that help you grow in faith.",
-                v -> showSpiritualBooks()
-        );
-        found = true;
-    }
-
     if (query.contains("sermon") ||
             query.contains("sermons")) {
 
