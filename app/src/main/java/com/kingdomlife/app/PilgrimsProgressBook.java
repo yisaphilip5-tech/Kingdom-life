@@ -542,15 +542,17 @@ private static void nextPage() {
 }
 
 private static void navigateToPage() {
-    if (bookView != null) {
-        bookView.evaluateJavascript(
-                "goPage(" + pageIndex + ")",
-                null
-        );
-    }
-    updateIndicator();
+if (bookView != null) {
+bookView.evaluateJavascript(
+"goPage(" + pageIndex + ")",
+null
+);
 }
 
+saveReadingPosition();
+updateIndicator();
+
+}
 private static void updateIndicator() {
     if (pageIndicator == null) return;
 
@@ -574,7 +576,21 @@ private static void updateIndicator() {
         );
     }
 }
+private static void saveReadingPosition() {
+if (activity == null) return;
 
+android.content.SharedPreferences prefs =
+        activity.getSharedPreferences(
+                "PilgrimsProgressReadingProgress",
+                Activity.MODE_PRIVATE
+        );
+
+prefs.edit()
+        .putInt("lastChapter", chapterIndex)
+        .putInt("lastPage", pageIndex)
+        .apply();
+
+}
 private static GradientDrawable makeBackground(
         int backgroundColor, int strokeColor) {
 
