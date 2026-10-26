@@ -34,6 +34,7 @@ private static int chapterIndex = 0;
 private static int pageIndex = 0;
 private static int totalPages = 1;
 private static boolean readerReady = false;
+    private static boolean resumeWhenReady = false;
 
 private static final int PURPLE = Color.rgb(30, 24, 55);
 private static final int GOLD = Color.rgb(184, 134, 11);
@@ -116,7 +117,13 @@ content.addView(backButton, backParams);
             "file:///android_asset/PilgrimsProgress.html"
     );
 }
+public static void continueReading(
+        Activity a,
+        LinearLayout container) {
 
+    resumeWhenReady = true;
+    open(a, container);
+}
 private static void extractChapters() {
 String script =
 "(function() {" +
@@ -163,7 +170,28 @@ bookView.evaluateJavascript(script, value -> {
             return;
         }
 
-        showChapterList();
+                if (resumeWhenReady) {
+            android.content.SharedPreferences prefs =
+                    activity.getSharedPreferences(
+                            "PilgrimsProgressReadingProgress",
+                            Activity.MODE_PRIVATE
+                    );
+
+            int savedChapter = prefs.getInt("lastChapter", 0);
+            int savedPage = prefs.getInt("lastPage", 0);
+
+            chapterIndex = Math.max(
+                    0,
+                    Math.min(savedChapter, chapters.length() - 1)
+            );
+
+            pageIndex = Math.max(0, savedPage);
+            resumeWhenReady = false;
+
+            showReader();
+        } else {
+            showChapterList();
+                }
 
     } catch (Exception e) {
         Toast.makeText(
@@ -403,7 +431,7 @@ String chapterJson = chapters.toString();
             "<script>" +
             "var allChapters=" + chapterJson + ";" +
             "var currentChapter=" + chapterIndex + ";" +
-            "var currentPage=0;" +
+            "var currentPage=" + pageIndex + ";" +
             "var pages=[];" +
 
             "function makePages(){" +
