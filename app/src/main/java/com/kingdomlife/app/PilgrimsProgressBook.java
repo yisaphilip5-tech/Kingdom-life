@@ -469,8 +469,22 @@ bookmarkButton.setOnClickListener(v -> {
 
     private static void loadReaderHtml() {
 try {
-String chapterJson = chapters.toString();
+    android.content.SharedPreferences appearancePrefs =
+            activity.getSharedPreferences(
+                    "TextAppearancePrefs",
+                    Activity.MODE_PRIVATE
+            );
 
+    int readerTextSize =
+            appearancePrefs.getInt("textSize", 18);
+
+    String readerTextMode =
+            appearancePrefs.getString("textMode", "Light");
+
+    String readerTextColor =
+            readerTextMode.equals("Dark") ? "#222222" : "#444444";
+
+    String chapterJson = chapters.toString();
     String html =
             "<!DOCTYPE html><html><head>" +
             "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
@@ -479,13 +493,14 @@ String chapterJson = chapters.toString();
             "html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff;}" +
             "#viewport{width:100%;height:100%;min-height:100vh;padding:14px;overflow:hidden;}" +
             "#page{width:100%;height:100%;overflow:hidden;" +
-            "font-family:Georgia,serif;font-size:18px;line-height:1.5;color:#222;}" +
+"font-family:Georgia,serif;font-size:" + readerTextSize +
+"px;line-height:1.5;color:" + readerTextColor + ";}" +
             "#page h1,#page h2,#page h3,#page h4{margin-top:0;}" +
             "#page img{max-width:100%;height:auto;}" +
             "#page p{margin:0 0 12px 0;}" +
             "#measure{position:absolute;left:-10000px;top:0;visibility:hidden;" +
             "width:calc(100vw - 28px);font-family:Georgia,serif;" +
-            "font-size:18px;line-height:1.5;}" +
+            "font-size:" + readerTextSize + "px;line-height:1.5;}" +
             "</style></head><body>" +
             "<div id='viewport'><div id='page'></div></div>" +
             "<div id='measure'></div>" +
