@@ -11,6 +11,7 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.app.AlertDialog;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
