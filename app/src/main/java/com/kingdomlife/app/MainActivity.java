@@ -3724,7 +3724,7 @@ for (int i = 0; i < chapters.size(); i++) {
     }
 }
 
-if (!foundBookmark) {
+if (!foundBookmark && !foundPilgrimBookmark) {
     TextView emptyMessage = new TextView(this);
     emptyMessage.setText(
             "You haven't bookmarked any passages yet.\n\n"
