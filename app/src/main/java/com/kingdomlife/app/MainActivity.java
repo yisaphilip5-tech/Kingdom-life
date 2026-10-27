@@ -3395,7 +3395,6 @@ booksRow.addView(
 addCard(
 "⏩ Continue Reading",
 "Return to where you last stopped reading.",
-    addCard("📚 My Library", "View your books and reading status.", v -> showKingdomLibrary());
 v -> {
 android.content.SharedPreferences pilgrimPrefs =
 getSharedPreferences(
@@ -3469,6 +3468,7 @@ MODE_PRIVATE
     }
 
 );
+        addCard("📚 My Library", "View your books and reading status.", v -> showKingdomLibrary());
 
 addCard(
         "🔖 My Bookmarks",
