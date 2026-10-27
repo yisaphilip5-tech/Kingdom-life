@@ -100,20 +100,33 @@ if (displayMode.equals("DAY")) {
         root.setBackgroundResource(R.drawable.kingdom_night_bg);
     }
 }
-        Button backButton = new Button(this);
-        backButton.setText("‹  Back");
-        backButton.setTextColor(BRIGHT_GOLD);
-        backButton.setBackgroundColor(PURPLE);
-        backButton.setOnClickListener(v -> finish());
+        android.widget.ImageButton backButton =
+        new android.widget.ImageButton(this);
 
-        root.addView(
-                backButton,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                )
-        );
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
 
+backButton.setColorFilter(BRIGHT_GOLD);
+
+backButton.setContentDescription("Back");
+
+backButton.setBackgroundColor(
+        android.graphics.Color.TRANSPARENT
+);
+
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+
+backParams.gravity = Gravity.LEFT;
+
+backButton.setOnClickListener(v -> finish());
+
+root.addView(backButton, backParams);
         TextView title = new TextView(this);
         title.setText("🏆 Achievements");
         title.setTextSize(25);
@@ -183,14 +196,13 @@ root.addView(progressDescription);
         navigation.setPadding(0, 4, 0, 0);
 
         previousButton = new Button(this);
-        previousButton.setText("←");
-        previousButton.setTextSize(24);
-        previousButton.setTextColor(BRIGHT_GOLD);
-        previousButton.setBackgroundColor(PURPLE);
-        previousButton.setOnClickListener(
-                v -> showPage(currentPage - 1)
-        );
-
+previousButton.setText("‹");
+previousButton.setTextSize(36);
+previousButton.setTextColor(BRIGHT_GOLD);
+previousButton.setBackgroundColor(PURPLE);
+previousButton.setOnClickListener(
+        v -> showPage(currentPage - 1)
+);
         navigation.addView(
                 previousButton,
                 new LinearLayout.LayoutParams(
@@ -215,14 +227,13 @@ root.addView(progressDescription);
         );
 
         nextButton = new Button(this);
-        nextButton.setText("→");
-        nextButton.setTextSize(24);
-        nextButton.setTextColor(BRIGHT_GOLD);
-        nextButton.setBackgroundColor(PURPLE);
-        nextButton.setOnClickListener(
-                v -> showPage(currentPage + 1)
-        );
-
+nextButton.setText("›");
+nextButton.setTextSize(36);
+nextButton.setTextColor(BRIGHT_GOLD);
+nextButton.setBackgroundColor(PURPLE);
+nextButton.setOnClickListener(
+        v -> showPage(currentPage + 1)
+);
         navigation.addView(
                 nextButton,
                 new LinearLayout.LayoutParams(
