@@ -3489,10 +3489,34 @@ addCard(
     private void showKingdomLibrary() {
     content.removeAllViews();
 
-    Button backButton = new Button(this);
-    backButton.setText("← Back to Kingdom Books");
-    backButton.setOnClickListener(v -> showKingdomBooks());
-    content.addView(backButton);
+    android.widget.ImageButton backButton =
+        new android.widget.ImageButton(this);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+
+backButton.setScaleX(1.5f);
+backButton.setScaleY(1.5f);
+
+backButton.setContentDescription("Back to Kingdom Books");
+
+backButton.setBackgroundColor(
+        android.graphics.Color.TRANSPARENT
+);
+
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v -> showKingdomBooks());
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
 
     TextView title = new TextView(this);
     title.setText("📚 My Library");
