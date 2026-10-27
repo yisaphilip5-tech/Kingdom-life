@@ -352,7 +352,38 @@ content.addView(backButton, backParams);
                     LinearLayout.LayoutParams.WRAP_CONTENT
             )
     );
+Button bookmarkButton = new Button(activity);
+bookmarkButton.setText("🔖 Bookmark This Page");
+bookmarkButton.setAllCaps(false);
 
+controls.addView(
+        bookmarkButton,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
+
+bookmarkButton.setOnClickListener(v -> {
+    android.content.SharedPreferences bookmarkPrefs =
+            activity.getSharedPreferences(
+                    "PilgrimsProgressBookmarks",
+                    Activity.MODE_PRIVATE
+            );
+
+    String bookmarkKey = chapterIndex + "_" + pageIndex;
+
+    bookmarkPrefs.edit()
+            .putBoolean(bookmarkKey, true)
+            .apply();
+
+    Toast.makeText(
+            activity,
+            "Bookmark saved for Chapter " + (chapterIndex + 1)
+                    + ", Page " + (pageIndex + 1),
+            Toast.LENGTH_SHORT
+    ).show();
+});
     LinearLayout buttons = new LinearLayout(activity);
     buttons.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -647,12 +678,13 @@ private static class BookBridge {
     }
 
     @JavascriptInterface
-    public void pageChanged(int page) {
-        activity.runOnUiThread(() -> {
-            pageIndex = Math.max(0, page);
-            updateIndicator();
-        });
-    }
+public void pageChanged(int page) {
+activity.runOnUiThread(() -> {
+pageIndex = Math.max(0, page);
+saveReadingPosition();
+updateIndicator();
+});
+}
 }
 
                 }
