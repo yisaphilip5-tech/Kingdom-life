@@ -3395,6 +3395,7 @@ booksRow.addView(
 addCard(
 "⏩ Continue Reading",
 "Return to where you last stopped reading.",
+    addCard("📚 My Library", "View your books and reading status.", v -> showKingdomLibrary());
 v -> {
 android.content.SharedPreferences pilgrimPrefs =
 getSharedPreferences(
@@ -3485,6 +3486,141 @@ addCard(
 );
 
     }
+    private void showKingdomLibrary() {
+    content.removeAllViews();
+
+    Button backButton = new Button(this);
+    backButton.setText("← Back to Kingdom Books");
+    backButton.setOnClickListener(v -> showKingdomBooks());
+    content.addView(backButton);
+
+    TextView title = new TextView(this);
+    title.setText("📚 My Library");
+    title.setTextSize(24);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(8, 16, 8, 16);
+    content.addView(title);
+
+    android.content.SharedPreferences completedPrefs =
+            getSharedPreferences("BibleReadingPrefs", MODE_PRIVATE);
+
+    java.util.Set<String> completedBooks =
+            completedPrefs.getStringSet(
+                    "completedStoryBooks",
+                    java.util.Collections.emptySet()
+            );
+
+    android.widget.LinearLayout row =
+            new android.widget.LinearLayout(this);
+    row.setOrientation(android.widget.LinearLayout.HORIZONTAL);
+    row.setGravity(Gravity.CENTER);
+    content.addView(row);
+
+    addLibraryBook(
+            row,
+            android.R.drawable.ic_menu_view,
+            "The Pilgrim's Progress",
+            getReadingStatus(
+                    "The Pilgrim's Progress",
+                    "PilgrimsProgressReadingProgress",
+                    completedBooks
+            ),
+            () -> PilgrimsProgressBook.open(this, content)
+    );
+
+    addLibraryBook(
+            row,
+            R.drawable.descendants_of_good_cover,
+            "Descendants of Good",
+            getReadingStatus(
+                    "Descendants of Good",
+                    "DescendantsReadingProgress",
+                    completedBooks
+            ),
+            () -> showDescendantsOfGoodChapters()
+    );
+}
+
+private String getReadingStatus(
+        String bookName,
+        String progressPrefsName,
+        java.util.Set<String> completedBooks) {
+
+    if (completedBooks.contains(bookName)) {
+        return "Completed";
+    }
+
+    android.content.SharedPreferences progressPrefs =
+            getSharedPreferences(progressPrefsName, MODE_PRIVATE);
+
+    if (progressPrefs.contains("lastChapter")) {
+        return "In Progress";
+    }
+
+    return "Not Started";
+}
+
+private void addLibraryBook(
+        android.widget.LinearLayout row,
+        int coverResource,
+        String bookName,
+        String status,
+        Runnable openBook) {
+
+    android.widget.LinearLayout bookCard =
+            new android.widget.LinearLayout(this);
+
+    bookCard.setOrientation(android.widget.LinearLayout.VERTICAL);
+    bookCard.setGravity(Gravity.CENTER);
+    bookCard.setPadding(8, 8, 8, 8);
+    bookCard.setClickable(true);
+    bookCard.setFocusable(true);
+    bookCard.setOnClickListener(v -> openBook.run());
+
+    android.widget.ImageView cover =
+            new android.widget.ImageView(this);
+
+    int coverWidth =
+            (int) (110 * getResources().getDisplayMetrics().density);
+
+    int coverHeight =
+            (int) (145 * getResources().getDisplayMetrics().density);
+
+    cover.setImageResource(coverResource);
+    cover.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
+
+    bookCard.addView(
+            cover,
+            new android.widget.LinearLayout.LayoutParams(
+                    coverWidth,
+                    coverHeight
+            )
+    );
+
+    TextView name = new TextView(this);
+    name.setText(bookName);
+    name.setTextSize(14);
+    name.setGravity(Gravity.CENTER);
+    name.setPadding(4, 8, 4, 2);
+    bookCard.addView(name);
+
+    TextView readingStatus = new TextView(this);
+    readingStatus.setText(status);
+    readingStatus.setTextSize(11);
+    readingStatus.setGravity(Gravity.CENTER);
+    readingStatus.setPadding(4, 2, 4, 4);
+    bookCard.addView(readingStatus);
+
+    android.widget.LinearLayout.LayoutParams cardParams =
+            new android.widget.LinearLayout.LayoutParams(
+                    0,
+                    android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f
+            );
+
+    cardParams.setMargins(4, 4, 4, 4);
+    row.addView(bookCard, cardParams);
+}
      
     void showDescendantsOfGoodChapters() {
     stopTimer();
