@@ -622,11 +622,39 @@ private static void nextPage() {
         pageIndex = 0;
         showReader();
     } else {
-        Toast.makeText(
-                activity,
-                "You have reached the end of the book.",
-                Toast.LENGTH_SHORT
-        ).show();
+android.content.SharedPreferences readingPrefs =
+activity.getSharedPreferences(
+"BibleReadingPrefs",
+Activity.MODE_PRIVATE
+);
+
+java.util.Set<String> completedStoryBooks =
+        new java.util.HashSet<>(
+                readingPrefs.getStringSet(
+                        "completedStoryBooks",
+                        java.util.Collections.emptySet()
+                )
+        );
+
+completedStoryBooks.add("The Pilgrim's Progress");
+
+readingPrefs.edit()
+        .putStringSet(
+                "completedStoryBooks",
+                completedStoryBooks
+        )
+        .putInt(
+                "storyBooksRead",
+                completedStoryBooks.size()
+        )
+        .apply();
+
+Toast.makeText(
+        activity,
+        "You have reached the end of the book!",
+        Toast.LENGTH_SHORT
+).show();
+
     }
 }
 
