@@ -5198,6 +5198,11 @@ addCard(
         v -> showTextAppearanceSettings()
 );
         addCard(
+        "🌍 Language Preference",
+        "Choose your preferred Bible language.",
+        v -> showLanguagePreferenceSettings()
+);
+        addCard(
         "🌞 Day / 🌙 Night Mode",
         "Switch between light and dark appearance.",
         v -> showDisplayModeSettings()
@@ -5417,6 +5422,55 @@ content.addView(backButton, backParams);
     );
 
     content.addView(textColorSwitch);
+    }
+    void showLanguagePreferenceSettings() {
+    stopTimer();
+    content.removeAllViews();
+
+    TextView title = new TextView(this);
+    title.setText("🌍 Language Preference");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(darkText);
+    title.setPadding(0, 15, 0, 15);
+    content.addView(title);
+
+    android.content.SharedPreferences prefs =
+            getSharedPreferences("LanguagePrefs", MODE_PRIVATE);
+
+    String savedLanguage =
+            prefs.getString("selectedLanguage", "English (KJV)");
+
+    addCard(
+            "🇬🇧 English (KJV)",
+            savedLanguage.equals("English (KJV)")
+                    ? "✓ Currently selected"
+                    : "Use the King James Version.",
+            v -> {
+                prefs.edit()
+                        .putString("selectedLanguage", "English (KJV)")
+                        .apply();
+                showLanguagePreferenceSettings();
+            }
+    );
+
+    addCard(
+            "🇫🇷 French (Louis Segond 1910)",
+            savedLanguage.equals("French (Louis Segond 1910)")
+                    ? "✓ Currently selected"
+                    : "French Bible translation — text integration pending.",
+            v -> {
+                prefs.edit()
+                        .putString(
+                                "selectedLanguage",
+                                "French (Louis Segond 1910)"
+                        )
+                        .apply();
+                showLanguagePreferenceSettings();
+            }
+    );
+
+    addButton("⬅️ Back to Settings", v -> showSettings());
     }
 
     void showNotificationSettings() {
