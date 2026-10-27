@@ -35,6 +35,8 @@ private static int pageIndex = 0;
 private static int totalPages = 1;
 private static boolean readerReady = false;
     private static boolean resumeWhenReady = false;
+    private static int pendingBookmarkChapter = -1;
+private static int pendingBookmarkPage = -1;
 
 private static final int PURPLE = Color.rgb(30, 24, 55);
 private static final int GOLD = Color.rgb(184, 134, 11);
@@ -117,13 +119,27 @@ content.addView(backButton, backParams);
             "file:///android_asset/PilgrimsProgress.html"
     );
 }
-public static void continueReading(
+public static void continueReading(Activity a, LinearLayout container) {
+pendingBookmarkChapter = -1;
+pendingBookmarkPage = -1;
+resumeWhenReady = true;
+
+open(a, container);
+
+}
+    public static void openBookmarkedPage(
         Activity a,
-        LinearLayout container) {
+        LinearLayout container,
+        int savedChapter,
+        int savedPage) {
 
     resumeWhenReady = true;
+    pendingBookmarkChapter = Math.max(0, savedChapter);
+    pendingBookmarkPage = Math.max(0, savedPage);
+
     open(a, container);
-}
+    }
+    
 private static void extractChapters() {
 String script =
 "(function() {" +
@@ -171,26 +187,40 @@ bookView.evaluateJavascript(script, value -> {
         }
 
                 if (resumeWhenReady) {
-            android.content.SharedPreferences prefs =
-                    activity.getSharedPreferences(
-                            "PilgrimsProgressReadingProgress",
-                            Activity.MODE_PRIVATE
-                    );
+int savedChapter;
+int savedPage;
 
-            int savedChapter = prefs.getInt("lastChapter", 0);
-            int savedPage = prefs.getInt("lastPage", 0);
+if (pendingBookmarkChapter >= 0) {
+    // Open the exact bookmarked chapter and page.
+    savedChapter = pendingBookmarkChapter;
+    savedPage = pendingBookmarkPage;
 
-            chapterIndex = Math.max(
-                    0,
-                    Math.min(savedChapter, chapters.length() - 1)
+    pendingBookmarkChapter = -1;
+    pendingBookmarkPage = -1;
+} else {
+    // Continue from the last reading position.
+    android.content.SharedPreferences prefs =
+            activity.getSharedPreferences(
+                    "PilgrimsProgressReadingProgress",
+                    Activity.MODE_PRIVATE
             );
 
-            pageIndex = Math.max(0, savedPage);
-            resumeWhenReady = false;
+    savedChapter = prefs.getInt("lastChapter", 0);
+    savedPage = prefs.getInt("lastPage", 0);
+}
 
-            showReader();
-        } else {
-            showChapterList();
+chapterIndex = Math.max(
+        0,
+        Math.min(savedChapter, chapters.length() - 1)
+);
+
+pageIndex = Math.max(0, savedPage);
+resumeWhenReady = false;
+
+showReader();
+
+} else {
+showChapterList();
                 }
 
     } catch (Exception e) {
