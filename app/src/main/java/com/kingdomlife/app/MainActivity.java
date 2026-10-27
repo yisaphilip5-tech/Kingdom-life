@@ -3564,6 +3564,97 @@ java.util.List<DescendantsOfGoodLibrary.Chapter> chapters =
         DescendantsOfGoodLibrary.getChapters();
 
 boolean foundBookmark = false;
+        android.content.SharedPreferences pilgrimBookmarkPrefs =
+        getSharedPreferences(
+                "PilgrimsProgressBookmarks",
+                MODE_PRIVATE
+        );
+
+boolean foundPilgrimBookmark = false;
+
+for (int chapterIndex = 0;
+     chapterIndex < 100;
+     chapterIndex++) {
+
+    for (int pageIndex = 0;
+         pageIndex < 100;
+         pageIndex++) {
+
+        String bookmarkKey =
+                chapterIndex + "_" + pageIndex;
+
+        if (pilgrimBookmarkPrefs.getBoolean(
+                bookmarkKey, false)) {
+
+            foundPilgrimBookmark = true;
+
+            final int savedChapterIndex = chapterIndex;
+            final int savedPageIndex = pageIndex;
+
+            LinearLayout bookmarkRow =
+                    new LinearLayout(this);
+
+            bookmarkRow.setOrientation(
+                    LinearLayout.HORIZONTAL
+            );
+
+            bookmarkRow.setGravity(
+                    android.view.Gravity.CENTER_VERTICAL
+            );
+
+            android.widget.Button openButton =
+                    new android.widget.Button(this);
+
+            openButton.setText(
+                    "The Pilgrim's Progress — Chapter "
+                    + (chapterIndex + 1)
+                    + " • Page "
+                    + (pageIndex + 1)
+            );
+
+            openButton.setOnClickListener(v -> {
+                PilgrimsProgressBook.openBookmarkedPage(
+                        this,
+                        content,
+                        savedChapterIndex,
+                        savedPageIndex
+                );
+            });
+
+            android.widget.Button removeButton =
+                    new android.widget.Button(this);
+
+            removeButton.setText("Remove");
+
+            removeButton.setOnClickListener(v -> {
+                pilgrimBookmarkPrefs.edit()
+                        .remove(bookmarkKey)
+                        .apply();
+
+                showDescendantsBookmarks();
+            });
+
+            bookmarkRow.addView(
+                    openButton,
+                    new LinearLayout.LayoutParams(
+                            0,
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            1
+                    )
+            );
+
+            bookmarkRow.addView(removeButton);
+
+            content.addView(
+                    bookmarkRow,
+                    new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+            );
+        }
+    }
+}
 
 for (int i = 0; i < chapters.size(); i++) {
     final int chapterIndex = i;
