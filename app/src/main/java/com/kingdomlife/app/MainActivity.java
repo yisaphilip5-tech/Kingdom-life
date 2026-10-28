@@ -504,6 +504,7 @@ addCard(
         "Continue your Bible learning journey from where you left off.",
         v -> showBible()
 );
+        addHomeJourneySection();
 
         
     }
@@ -857,100 +858,96 @@ void addAchievementCard(
 
     lockView.startAnimation(shake);
                       }
+
 void addHomeButtonGrid() {
 
-    LinearLayout grid = new LinearLayout(this);
-    grid.setOrientation(LinearLayout.VERTICAL);
+TextView sectionTitle = new TextView(this);
+sectionTitle.setText("🎮 Learn & Play");
+sectionTitle.setTextSize(21);
+sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+sectionTitle.setTextColor(darkText);
+sectionTitle.setPadding(5, 16, 5, 8);
+content.addView(sectionTitle);
 
-    LinearLayout.LayoutParams gridParams =
-            new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            );
+LinearLayout grid = new LinearLayout(this);
+grid.setOrientation(LinearLayout.VERTICAL);
 
-    gridParams.setMargins(8, 8, 8, 8);
+LinearLayout.LayoutParams gridParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+gridParams.setMargins(4, 4, 4, 8);
 
-    // FIRST ROW
-    LinearLayout row1 = new LinearLayout(this);
-    row1.setOrientation(LinearLayout.HORIZONTAL);
+// FIRST ROW
+LinearLayout row1 = new LinearLayout(this);
+row1.setOrientation(LinearLayout.HORIZONTAL);
 
-    row1.addView(createHomeSquareButton(
-            "📖\nBible Quiz",
-            v -> showGameMenu()
-    ));
+row1.addView(createHomeSquareButton(
+        "📖\nBible Quiz",
+        v -> showBibleQuizMenu()
+));
 
-    row1.addView(createHomeSquareButton(
-            "🧠\nMemory Verse",
-            v -> showMemoryVerse()
-    ));
+row1.addView(createHomeSquareButton(
+        "🧠\nMemory Verse",
+        v -> showMemoryVerse()
+));
 
-    row1.addView(createHomeSquareButton(
-            "🧩\nPuzzle",
-            v -> showGameMenu()
-    ));
+grid.addView(row1);
 
-    grid.addView(row1);
+// SECOND ROW
+LinearLayout row2 = new LinearLayout(this);
+row2.setOrientation(LinearLayout.HORIZONTAL);
 
-    // SECOND ROW
-    LinearLayout row2 = new LinearLayout(this);
-    row2.setOrientation(LinearLayout.HORIZONTAL);
-    
+row2.addView(createHomeSquareButton(
+        "🧩\nBible Puzzles",
+        v -> showPuzzleMenu()
+));
+
 row2.addView(createHomeSquareButton(
         "🎯\nDaily Challenge",
         v -> showDailyChallenge()
 ));
-    row2.addView(createHomeSquareButton(
-            "📊\nProgress",
-            v -> showProgress()
-    ));
 
-    row2.addView(createHomeSquareButton(
-"🏆\nAchievements",
-v -> startActivity(
-new android.content.Intent(
-MainActivity.this,
-AchievementsActivity.class
-)
-)
+grid.addView(row2);
+
+content.addView(grid, gridParams);
+
+}
+    void addHomeJourneySection() {
+
+TextView sectionTitle = new TextView(this);
+sectionTitle.setText("👑 Your Journey");
+sectionTitle.setTextSize(21);
+sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+sectionTitle.setTextColor(darkText);
+sectionTitle.setPadding(5, 16, 5, 8);
+content.addView(sectionTitle);
+
+LinearLayout row = new LinearLayout(this);
+row.setOrientation(LinearLayout.HORIZONTAL);
+
+LinearLayout.LayoutParams rowParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+rowParams.setMargins(4, 4, 4, 8);
+
+row.addView(createHomeSquareButton(
+        "📊\nProgress",
+        v -> showProgress()
 ));
-    grid.addView(row2);
 
-    content.addView(grid, gridParams);
-    }
-    View createHomeSquareButton(
-        String text,
-        View.OnClickListener listener
-) {
+row.addView(createHomeSquareButton(
+        "🏆\nAchievements",
+        v -> startActivity(
+                new Intent(MainActivity.this, AchievementsActivity.class)
+        )
+));
 
-    Button button = new Button(this);
+content.addView(row, rowParams);
 
-    button.setText(text);
-    button.setTextSize(14);
-    button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    button.setTextColor(Color.WHITE);
-    button.setGravity(Gravity.CENTER);
-    button.setAllCaps(false);
-
-    GradientDrawable background = new GradientDrawable();
-    background.setColor(Color.argb(220, 0, 0, 0));
-    background.setCornerRadius(24);
-
-    button.setBackground(background);
-    button.setElevation(4);
-    button.setOnClickListener(listener);
-
-    LinearLayout.LayoutParams params =
-            new LinearLayout.LayoutParams(
-                    0,
-                    120,
-                    1
-            );
-
-    params.setMargins(4, 4, 4, 4);
-
-    button.setLayoutParams(params);
-
-    return button;
     }
     void showVerse() {
     stopTimer();
