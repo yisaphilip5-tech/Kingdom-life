@@ -1132,87 +1132,67 @@ prefs.edit()
 
     startActivity(intent);
     }
-    void showBible() {
-    stopTimer();
-    content.removeAllViews();
+    
+void showBible() {
+stopTimer();
+content.removeAllViews();
 
-    SharedPreferences biblePrefs =
-            getSharedPreferences(
-                    "KingdomLifePrefs",
-                    MODE_PRIVATE
-            );
+SharedPreferences biblePrefs =
+        getSharedPreferences(
+                "KingdomLifePrefs",
+                MODE_PRIVATE
+        );
 
-    String translation =
-            biblePrefs.getString(
-                    "bible_translation",
-                    "KJV"
-            );
+String translation =
+        biblePrefs.getString(
+                "bible_translation",
+                "KJV"
+        );
 
-    TextView title = new TextView(this);
+TextView title = new TextView(this);
 
-    title.setText(
-            "📖 Holy Bible — " + translation
-    );
+title.setText("📖 Holy Bible — " + translation);
+title.setTextSize(24);
+title.setTypeface(
+        Typeface.DEFAULT,
+        Typeface.BOLD
+);
+title.setTextColor(darkText);
+title.setPadding(0, 15, 0, 20);
 
-    title.setTextSize(24);
-    title.setTypeface(
-            Typeface.DEFAULT,
-            Typeface.BOLD
-    );
-    title.setTextColor(darkText);
-    title.setPadding(
-            0,
-            15,
-            0,
-            20
-    );
+content.addView(title);
 
-    content.addView(title);
+TextView message = new TextView(this);
 
-    TextView message = new TextView(this);
+message.setText(
+        "Choose an option:\n\n" +
+        "🔎 Search the Bible\n" +
+        "🌍 View Bible Translations"
+);
 
-    message.setText(
-            "Choose where you want to read:\n\n" +
-            "📚 Old Testament\n" +
-            "📚 New Testament"
-    );
+message.setTextSize(18);
+message.setTextColor(darkText);
+message.setPadding(0, 10, 0, 20);
 
-    message.setTextSize(18);
-    message.setTextColor(darkText);
-    message.setPadding(
-            0,
-            10,
-            0,
-            20
-    );
+content.addView(message);
 
-    content.addView(message);
+addButton(
+        "🌍 View Translations",
+        v -> showBibleTranslations()
+);
 
-    addButton(
-            "🌍 View Translations",
-            v -> showBibleTranslations()
-    );
+addButton(
+        "🔎 Search Bible",
+        v -> showBibleSearch()
+);
 
-    addButton(
-            "📚 Old Testament",
-            v -> showOldTestament()
-    );
+addButton(
+        "⬅️ Back to Home",
+        v -> showHome()
+);
 
-    addButton(
-            "🔎 Search Bible",
-            v -> showBibleSearch()
-    );
-
-    addButton(
-            "📚 New Testament",
-            v -> showNewTestament()
-    );
-
-    addButton(
-            "⬅️ Back to Home",
-            v -> showHome()
-    );
-    }
+}
+    
     void showBibleTranslations() {
     stopTimer();
     content.removeAllViews();
