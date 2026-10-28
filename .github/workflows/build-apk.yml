@@ -28,11 +28,14 @@ jobs:
           mkdir -p app/src/main/assets/web
           unzip -o web_json.zip -d app/src/main/assets/web
 
-      - name: Prepare French Bible
-        run: |
-          mkdir -p app/src/main/assets/lsg1910
-          unzip -o lsg1910_json.zip -d app/src/main/assets/lsg1910
-
+          - name: Prepare French Bible
+          run: |
+          mkdir -p app/src/main/assets/lsg1910 /tmp/lsg1910
+          unzip -o lsg1910_json.zip -d /tmp/lsg1910
+          find /tmp/lsg1910 -type f -name '*.json' -exec cp {} app/src/main/assets/lsg1910/ ;
+          echo "French Bible files found:"
+          ls app/src/main/assets/lsg1910 | head
+          test -f app/src/main/assets/lsg1910/Genesis.json
       - name: Build APK
         run: gradle :app:assembleDebug --no-daemon
 
