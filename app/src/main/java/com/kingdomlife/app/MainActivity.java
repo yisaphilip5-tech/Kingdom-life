@@ -583,17 +583,6 @@ dateText.setPadding(0, 5, 0, 15);
 
 content.addView(dateText);
 
-/* ===== WELCOME ===== */
-
-TextView welcome = new TextView(this);
-welcome.setText("🌅 Welcome to Kingdom Life");
-welcome.setTextSize(22);
-welcome.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-welcome.setTextColor(darkText);
-welcome.setPadding(5, 10, 5, 18);
-
-content.addView(welcome);
-
 
 
         addCard(
@@ -626,7 +615,7 @@ int challengeIndex = (int) (
 LinearLayout learningCard = new LinearLayout(this);
 learningCard.setOrientation(LinearLayout.HORIZONTAL);
 learningCard.setGravity(Gravity.CENTER_VERTICAL);
-learningCard.setPadding(18, 18, 18, 18);
+learningCard.setPadding(12, 10, 12, 10);
 
 GradientDrawable learningBackground = new GradientDrawable(
 GradientDrawable.Orientation.TL_BR,
@@ -651,7 +640,7 @@ LinearLayout.LayoutParams.MATCH_PARENT,
 LinearLayout.LayoutParams.WRAP_CONTENT
 );
 
-learningParams.setMargins(8, 12, 8, 12);
+learningParams.setMargins(8, 6, 8, 6);
 
 FrameLayout bibleFrame = new FrameLayout(this);
 
@@ -730,6 +719,20 @@ LinearLayout.LayoutParams.WRAP_CONTENT,
 1
 )
 );
+        TextView learningArrow = new TextView(this);
+learningArrow.setText("›");
+learningArrow.setTextSize(30);
+learningArrow.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+learningArrow.setTextColor(Color.rgb(75, 35, 115));
+learningArrow.setGravity(Gravity.CENTER);
+
+learningCard.addView(
+learningArrow,
+new LinearLayout.LayoutParams(
+(int) (25 * getResources().getDisplayMetrics().density),
+LinearLayout.LayoutParams.WRAP_CONTENT
+)
+);
 
 content.addView(learningCard, learningParams);
         addHomeJourneySection();
@@ -776,19 +779,46 @@ cardParams.setMargins(
 (int) (8 * density),
 (int) (4 * density)
 );
+LinearLayout headingRow = new LinearLayout(this);
+headingRow.setOrientation(LinearLayout.HORIZONTAL);
+headingRow.setGravity(Gravity.CENTER_VERTICAL);
+
 TextView headingView = new TextView(this);
 headingView.setText(heading);
-headingView.setTextSize(15);
+headingView.setTextSize(17);
 headingView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-headingView.setTextColor(Color.rgb(30, 24, 55));
+headingView.setTextColor(Color.rgb(75, 35, 115));
 headingView.setGravity(Gravity.CENTER_VERTICAL);
 
-card.addView(headingView);
+headingRow.addView(
+headingView,
+new LinearLayout.LayoutParams(
+0,
+LinearLayout.LayoutParams.WRAP_CONTENT,
+1
+)
+);
 
+TextView arrowView = new TextView(this);
+arrowView.setText("›");
+arrowView.setTextSize(28);
+arrowView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+arrowView.setTextColor(Color.rgb(75, 35, 115));
+arrowView.setGravity(Gravity.CENTER);
+
+headingRow.addView(
+arrowView,
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.WRAP_CONTENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+)
+);
+
+card.addView(headingRow);
 TextView messageView = new TextView(this);
 messageView.setText(message);
 messageView.setTextSize(13);
-messageView.setTextColor(Color.rgb(65, 61, 75));
+messageView.setTextColor(Color.rgb(75, 35, 115));
 messageView.setLineSpacing(2 * density, 1.0f);
 messageView.setPadding(0, (int) (4 * density), 0, 0);
 
@@ -1113,7 +1143,7 @@ sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 sectionTitle.setTextColor(Color.rgb(255, 215, 0));
 sectionTitle.setPadding(5, 16, 5, 8);
-content.addView(sectionTitle);
+
 
 LinearLayout grid = new LinearLayout(this);
 grid.setOrientation(LinearLayout.VERTICAL);
@@ -1186,6 +1216,13 @@ Color.rgb(255, 215, 0)
 
 gamePanel.setBackground(panelBackground);
 gamePanel.setElevation(5 * panelDensity);
+    gamePanel.addView(
+        sectionTitle,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
 
 gamePanel.addView(
 grid,
@@ -1206,7 +1243,7 @@ sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 sectionTitle.setTextColor(Color.rgb(255, 215, 0));
 sectionTitle.setPadding(5, 16, 5, 8);
-content.addView(sectionTitle);
+
 
 LinearLayout row = new LinearLayout(this);
 row.setOrientation(LinearLayout.HORIZONTAL);
@@ -1259,6 +1296,13 @@ Color.rgb(255, 215, 0)
 
 journeyPanel.setBackground(journeyBackground);
 journeyPanel.setElevation(5 * journeyDensity);
+        journeyPanel.addView(
+        sectionTitle,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
 
 journeyPanel.addView(
 row,
@@ -1271,20 +1315,9 @@ LinearLayout.LayoutParams.WRAP_CONTENT
 content.addView(journeyPanel, rowParams);
 
     }
-    View createHomeSquareButton(String text, View.OnClickListener listener) {
-
-Button button = new Button(this);
-
-button.setText(text);
-button.setTextSize(17);
-button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-button.setTextColor(Color.WHITE);
-button.setAllCaps(false);
-button.setGravity(Gravity.CENTER);
-button.setPadding(2, 2, 2, 2);
-button.setTextSize(12);
-button.setMinHeight(0);
-button.setStateListAnimator(null);
+    
+View createHomeSquareButton(String text, View.OnClickListener listener) {
+float density = getResources().getDisplayMetrics().density;
 
 int purpleDark = Color.rgb(30, 24, 55);
 int purpleLight = Color.rgb(83, 52, 125);
@@ -1317,41 +1350,67 @@ android.graphics.drawable.GradientDrawable background =
                 new int[]{startColor, endColor}
         );
 
-background.setCornerRadius(
-        12 * getResources().getDisplayMetrics().density
-);
+background.setCornerRadius(12 * density);
+background.setStroke((int) (1.5f * density), gold);
 
-background.setStroke(
-        (int) (1.5f * getResources().getDisplayMetrics().density),
-        gold
-);
+LinearLayout buttonLayout = new LinearLayout(this);
+buttonLayout.setOrientation(LinearLayout.HORIZONTAL);
+buttonLayout.setGravity(Gravity.CENTER_VERTICAL);
+buttonLayout.setPadding((int) (4 * density), 0, (int) (5 * density), 0);
+buttonLayout.setBackground(background);
+buttonLayout.setElevation(6 * density);
+buttonLayout.setClickable(true);
+buttonLayout.setFocusable(true);
+buttonLayout.setOnClickListener(listener);
 
-button.setBackground(background);
+TextView buttonText = new TextView(this);
+buttonText.setText(text);
+buttonText.setTextSize(12);
+buttonText.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+buttonText.setTextColor(Color.WHITE);
+buttonText.setGravity(Gravity.CENTER);
+buttonText.setMaxLines(2);
 
-button.setElevation(
-        6 * getResources().getDisplayMetrics().density
-);
+LinearLayout.LayoutParams textParams =
+        new LinearLayout.LayoutParams(0, 
+                LinearLayout.LayoutParams.MATCH_PARENT, 1);
+
+buttonLayout.addView(buttonText, textParams);
+
+TextView arrow = new TextView(this);
+arrow.setText("›");
+arrow.setTextSize(25);
+arrow.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+arrow.setTextColor(gold);
+arrow.setGravity(Gravity.CENTER);
+
+LinearLayout.LayoutParams arrowParams =
+        new LinearLayout.LayoutParams(
+                (int) (18 * density),
+                LinearLayout.LayoutParams.MATCH_PARENT
+        );
+
+buttonLayout.addView(arrow, arrowParams);
 
 LinearLayout.LayoutParams params =
-new LinearLayout.LayoutParams(
-0,
-(int) (55 * getResources().getDisplayMetrics().density),
-1
-);
+        new LinearLayout.LayoutParams(
+                0,
+                (int) (55 * density),
+                1
+        );
 
 params.setMargins(
-(int) (8 * getResources().getDisplayMetrics().density),
-(int) (4 * getResources().getDisplayMetrics().density),
-(int) (8 * getResources().getDisplayMetrics().density),
-(int) (4 * getResources().getDisplayMetrics().density)
+        (int) (8 * density),
+        (int) (4 * density),
+        (int) (8 * density),
+        (int) (4 * density)
 );
 
-button.setLayoutParams(params);
-button.setOnClickListener(listener);
+buttonLayout.setLayoutParams(params);
 
-return button;
+return buttonLayout;
 
-    }
+}
     void showVerse() {
     stopTimer();
     content.removeAllViews();
