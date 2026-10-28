@@ -4655,9 +4655,11 @@ verseLayout.addView(actionRow);
         TextView error = new TextView(this);
 
         error.setText(
-                "Unable to load this Bible chapter."
-        );
-
+        "Unable to load this Bible chapter.\nError: "
+                + e.getClass().getSimpleName()
+                + "\nDetails: "
+                + e.getMessage()
+);
         error.setTextSize(18);
         error.setTextColor(darkText);
         error.setPadding(5, 10, 5, 20);
