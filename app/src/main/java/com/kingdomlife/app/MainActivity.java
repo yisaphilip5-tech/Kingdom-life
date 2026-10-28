@@ -743,16 +743,16 @@ float density = getResources().getDisplayMetrics().density;
 LinearLayout card = new LinearLayout(this);
 card.setOrientation(LinearLayout.VERTICAL);
 card.setPadding(
-        (int) (20 * density),
-        (int) (13 * density),
-        (int) (20 * density),
-        (int) (13 * density)
+(int) (16 * density),
+(int) (8 * density),
+(int) (16 * density),
+(int) (8 * density)
 );
 
 // Premium soft-white background with rounded corners
 GradientDrawable cardBackground = new GradientDrawable();
 cardBackground.setColor(Color.argb(238, 255, 255, 255));
-cardBackground.setCornerRadius(18 * density);
+cardBackground.setCornerRadius(10 * density);
 cardBackground.setStroke(
         (int) (1.5f * density),
         Color.rgb(184, 134, 11)
@@ -778,7 +778,7 @@ cardParams.setMargins(
 );
 TextView headingView = new TextView(this);
 headingView.setText(heading);
-headingView.setTextSize(20);
+headingView.setTextSize(15);
 headingView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 headingView.setTextColor(Color.rgb(30, 24, 55));
 headingView.setGravity(Gravity.CENTER_VERTICAL);
@@ -787,10 +787,10 @@ card.addView(headingView);
 
 TextView messageView = new TextView(this);
 messageView.setText(message);
-messageView.setTextSize(15);
+messageView.setTextSize(13);
 messageView.setTextColor(Color.rgb(65, 61, 75));
 messageView.setLineSpacing(2 * density, 1.0f);
-messageView.setPadding(0, (int) (9 * density), 0, 0);
+messageView.setPadding(0, (int) (4 * density), 0, 0);
 
 card.addView(messageView);
 
