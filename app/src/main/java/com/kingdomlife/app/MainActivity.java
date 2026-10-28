@@ -505,7 +505,7 @@ Color.rgb(255, 248, 200),
 Color.rgb(184, 134, 11)
 }
 );
-
+android.text.TextPaint titlePaint = kingdomTitle.getPaint();
 titlePaint.setShader(
 new android.graphics.LinearGradient(
 0, 0, 0, kingdomTitle.getTextSize(),
