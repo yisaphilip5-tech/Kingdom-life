@@ -523,7 +523,7 @@ android.graphics.Shader.TileMode.CLAMP
 );
 
 kingdomTitle.setShadowLayer(
-2f, 0f, 1f, Color.rgb(255, 200, 0)
+1f, 0f, 0f, Color.rgb(255, 200, 0)
 );
 kingdomTitle.invalidate();
 titleArea.addView(kingdomTitle);
@@ -1332,13 +1332,18 @@ button.setElevation(
 );
 
 LinearLayout.LayoutParams params =
-        new LinearLayout.LayoutParams(
-                0,
-                (int) (88 * getResources().getDisplayMetrics().density),
-                1
-        );
+new LinearLayout.LayoutParams(
+0,
+(int) (55 * getResources().getDisplayMetrics().density),
+1
+);
 
-params.setMargins(5, 5, 5, 5);
+params.setMargins(
+(int) (8 * getResources().getDisplayMetrics().density),
+(int) (4 * getResources().getDisplayMetrics().density),
+(int) (8 * getResources().getDisplayMetrics().density),
+(int) (4 * getResources().getDisplayMetrics().density)
+);
 
 button.setLayoutParams(params);
 button.setOnClickListener(listener);
