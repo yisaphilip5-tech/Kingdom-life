@@ -949,6 +949,39 @@ row.addView(createHomeSquareButton(
 content.addView(row, rowParams);
 
     }
+    View createHomeSquareButton(String text, View.OnClickListener listener) {
+
+Button button = new Button(this);
+button.setText(text);
+button.setTextSize(16);
+button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+button.setTextColor(Color.WHITE);
+button.setAllCaps(false);
+button.setGravity(Gravity.CENTER);
+
+android.graphics.drawable.GradientDrawable background =
+        new android.graphics.drawable.GradientDrawable();
+
+background.setColor(Color.argb(220, 0, 0, 0));
+background.setCornerRadius(24);
+
+button.setBackground(background);
+button.setElevation(4);
+
+LinearLayout.LayoutParams params =
+        new LinearLayout.LayoutParams(
+                0,
+                (int) (120 * getResources().getDisplayMetrics().density),
+                1
+        );
+
+params.setMargins(4, 4, 4, 4);
+button.setLayoutParams(params);
+button.setOnClickListener(listener);
+
+return button;
+
+    }
     void showVerse() {
     stopTimer();
     content.removeAllViews();
