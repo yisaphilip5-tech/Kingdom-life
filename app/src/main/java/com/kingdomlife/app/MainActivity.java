@@ -1240,49 +1240,110 @@ addButton(
     content.addView(message);
 
     // King James Version
-    addButton(
-            "📖 King James Version (KJV)",
-            v -> {
-                getSharedPreferences(
-                        "KingdomLifePrefs",
-                        MODE_PRIVATE
-                ).edit()
-                        .putString("bible_translation", "KJV")
-                        .apply();
-
-                showBible();
-            }
-    );
-
-    // World English Bible
-    addButton(
-            "🌍 World English Bible (WEB)",
-            v -> {
-                getSharedPreferences(
-                        "KingdomLifePrefs",
-                        MODE_PRIVATE
-                ).edit()
-                        .putString("bible_translation", "WEB")
-                        .apply();
-
-                showBible();
-            }
-    );
-        // French Louis Segond 1910
 addButton(
-"🇫🇷 Louis Segond 1910 (LSG1910)",
+"📖 King James Version (KJV)",
 v -> {
 getSharedPreferences(
 "KingdomLifePrefs",
 MODE_PRIVATE
 ).edit()
-.putString("bible_translation", "LSG1910")
+.putString("bible_translation", "KJV")
 .apply();
 
-            showBible();
+            showTestamentSelection();
         }
 );
+
+// World English Bible
+addButton(
+        "🌍 World English Bible (WEB)",
+        v -> {
+            getSharedPreferences(
+                    "KingdomLifePrefs",
+                    MODE_PRIVATE
+            ).edit()
+                    .putString("bible_translation", "WEB")
+                    .apply();
+
+            showTestamentSelection();
+        }
+);
+
+// French Louis Segond 1910
+addButton(
+        "🇫🇷 Louis Segond 1910 (LSG1910)",
+        v -> {
+            getSharedPreferences(
+                    "KingdomLifePrefs",
+                    MODE_PRIVATE
+            ).edit()
+                    .putString("bible_translation", "LSG1910")
+                    .apply();
+
+            showTestamentSelection();
+        }
+);
+
     }
+    void showTestamentSelection() {
+stopTimer();
+content.removeAllViews();
+
+SharedPreferences biblePrefs =
+        getSharedPreferences(
+                "KingdomLifePrefs",
+                MODE_PRIVATE
+        );
+
+String translation =
+        biblePrefs.getString(
+                "bible_translation",
+                "KJV"
+        );
+
+ImageButton backButton = new ImageButton(this);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setContentDescription("Back to translations");
+backButton.setOnClickListener(
+        v -> showBibleTranslations()
+);
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(100, 70);
+backParams.gravity = Gravity.LEFT;
+
+content.addView(backButton, backParams);
+
+TextView title = new TextView(this);
+title.setText("📖 Holy Bible — " + translation);
+title.setTextSize(24);
+title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+title.setTextColor(darkText);
+title.setPadding(0, 15, 0, 20);
+content.addView(title);
+
+TextView message = new TextView(this);
+message.setText("Choose a testament:");
+message.setTextSize(18);
+message.setTextColor(darkText);
+message.setPadding(0, 10, 0, 20);
+content.addView(message);
+
+addButton(
+        "📚 Old Testament",
+        v -> showOldTestament()
+);
+
+addButton(
+        "📚 New Testament",
+        v -> showNewTestament()
+);
+
+                              }
     
     void showOldTestament() {
     stopTimer();
@@ -1439,11 +1500,11 @@ backButton.setBackgroundColor(
 );
 
 backButton.setContentDescription(
-        "Back to Bible"
+        "Back to testament selection"
 );
 
 backButton.setOnClickListener(
-        v -> showBible()
+        v -> showTestamentSelection()
 );
 
 topBar.addView(
@@ -1486,12 +1547,12 @@ content.addView(
     );
 
     backButton.setContentDescription(
-            "Back to Bible"
+            "Back to testament selection"
     );
 
     backButton.setOnClickListener(
-            v -> showBible()
-    );
+        v -> showTestamentSelection()
+);
 
     topBar.addView(
             backButton,
