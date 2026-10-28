@@ -506,21 +506,26 @@ Color.rgb(184, 134, 11)
 }
 );
 
-android.text.TextPaint titlePaint = kingdomTitle.getPaint();
 titlePaint.setShader(
 new android.graphics.LinearGradient(
-0, 0, 0, 65,
+0, 0, 0, kingdomTitle.getTextSize(),
 new int[]{
-Color.rgb(255, 242, 180),
-Color.rgb(212, 175, 55),
-Color.rgb(255, 215, 80)
+Color.rgb(145, 95, 10),
+Color.rgb(255, 225, 100),
+Color.WHITE,
+Color.rgb(255, 215, 65),
+Color.rgb(184, 134, 11)
 },
-null,
+new float[]{0.0f, 0.28f, 0.45f, 0.62f, 1.0f},
 android.graphics.Shader.TileMode.CLAMP
 )
 );
-kingdomTitle.invalidate();
 
+kingdomTitle.setShadowLayer(
+6f, 0f, 2f, Color.rgb(180, 125, 15)
+);
+
+kingdomTitle.invalidate();
 titleArea.addView(kingdomTitle);
 
 TextView kingdomSubtitle = new TextView(this);
@@ -648,18 +653,52 @@ LinearLayout.LayoutParams.WRAP_CONTENT
 
 learningParams.setMargins(8, 12, 8, 12);
 
+FrameLayout bibleFrame = new FrameLayout(this);
+
 TextView bibleIcon = new TextView(this);
 bibleIcon.setText("📔");
 bibleIcon.setTextSize(42);
 bibleIcon.setGravity(Gravity.CENTER);
 
+FrameLayout.LayoutParams bibleIconParams =
+new FrameLayout.LayoutParams(
+FrameLayout.LayoutParams.MATCH_PARENT,
+FrameLayout.LayoutParams.MATCH_PARENT
+);
+
+bibleFrame.addView(bibleIcon, bibleIconParams);
+
+TextView playIcon = new TextView(this);
+playIcon.setText("▶");
+playIcon.setTextSize(15);
+playIcon.setTextColor(Color.rgb(255, 215, 70));
+playIcon.setGravity(Gravity.CENTER);
+
+FrameLayout.LayoutParams playIconParams =
+new FrameLayout.LayoutParams(
+(int) (30 * getResources().getDisplayMetrics().density),
+(int) (30 * getResources().getDisplayMetrics().density),
+Gravity.CENTER
+);
+
+playIcon.setBackground(
+new android.graphics.drawable.GradientDrawable(
+android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
+new int[]{
+Color.rgb(30, 24, 55),
+Color.rgb(83, 52, 125)
+}
+)
+);
+
+bibleFrame.addView(playIcon, playIconParams);
 LinearLayout.LayoutParams iconParams =
 new LinearLayout.LayoutParams(
 (int) (75 * getResources().getDisplayMetrics().density),
 LinearLayout.LayoutParams.WRAP_CONTENT
 );
 
-learningCard.addView(bibleIcon, iconParams);
+learningCard.addView(bibleFrame, iconParams);
 
 LinearLayout learningText = new LinearLayout(this);
 learningText.setOrientation(LinearLayout.VERTICAL);
@@ -704,16 +743,16 @@ float density = getResources().getDisplayMetrics().density;
 LinearLayout card = new LinearLayout(this);
 card.setOrientation(LinearLayout.VERTICAL);
 card.setPadding(
-        (int) (22 * density),
         (int) (20 * density),
-        (int) (22 * density),
-        (int) (20 * density)
+        (int) (13 * density),
+        (int) (20 * density),
+        (int) (13 * density)
 );
 
 // Premium soft-white background with rounded corners
 GradientDrawable cardBackground = new GradientDrawable();
 cardBackground.setColor(Color.argb(238, 255, 255, 255));
-cardBackground.setCornerRadius(24 * density);
+cardBackground.setCornerRadius(18 * density);
 cardBackground.setStroke(
         (int) (1.5f * density),
         Color.rgb(184, 134, 11)
@@ -732,12 +771,11 @@ LinearLayout.LayoutParams cardParams =
         );
 
 cardParams.setMargins(
-        (int) (8 * density),
-        (int) (7 * density),
-        (int) (8 * density),
-        (int) (7 * density)
+(int) (8 * density),
+(int) (4 * density),
+(int) (8 * density),
+(int) (4 * density)
 );
-
 TextView headingView = new TextView(this);
 headingView.setText(heading);
 headingView.setTextSize(20);
@@ -1070,10 +1108,10 @@ void addAchievementCard(
 void addHomeButtonGrid() {
 
 TextView sectionTitle = new TextView(this);
-sectionTitle.setText("🎮 Learn & Play");
+sectionTitle.setText("🎮 Play & Grow");
 sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-sectionTitle.setTextColor(darkText);
+sectionTitle.setTextColor(Color.rgb(212, 175, 55));
 sectionTitle.setPadding(5, 16, 5, 8);
 content.addView(sectionTitle);
 
@@ -1119,7 +1157,45 @@ row2.addView(createHomeSquareButton(
 
 grid.addView(row2);
 
-content.addView(grid, gridParams);
+LinearLayout gamePanel = new LinearLayout(this);
+gamePanel.setOrientation(LinearLayout.VERTICAL);
+
+float panelDensity = getResources().getDisplayMetrics().density;
+
+gamePanel.setPadding(
+(int) (8 * panelDensity),
+(int) (6 * panelDensity),
+(int) (8 * panelDensity),
+(int) (6 * panelDensity)
+);
+
+android.graphics.drawable.GradientDrawable panelBackground =
+new android.graphics.drawable.GradientDrawable(
+android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
+new int[]{
+Color.rgb(30, 24, 55),
+Color.rgb(55, 35, 85)
+}
+);
+
+panelBackground.setCornerRadius(20 * panelDensity);
+panelBackground.setStroke(
+(int) (1.5f * panelDensity),
+Color.rgb(212, 175, 55)
+);
+
+gamePanel.setBackground(panelBackground);
+gamePanel.setElevation(5 * panelDensity);
+
+gamePanel.addView(
+grid,
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.MATCH_PARENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+)
+);
+
+content.addView(gamePanel, gridParams);
 
 }
     void addHomeJourneySection() {
@@ -1154,7 +1230,45 @@ row.addView(createHomeSquareButton(
         )
 ));
 
-content.addView(row, rowParams);
+LinearLayout journeyPanel = new LinearLayout(this);
+journeyPanel.setOrientation(LinearLayout.VERTICAL);
+
+float journeyDensity = getResources().getDisplayMetrics().density;
+
+journeyPanel.setPadding(
+(int) (8 * journeyDensity),
+(int) (6 * journeyDensity),
+(int) (8 * journeyDensity),
+(int) (6 * journeyDensity)
+);
+
+android.graphics.drawable.GradientDrawable journeyBackground =
+new android.graphics.drawable.GradientDrawable(
+android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
+new int[]{
+Color.rgb(30, 24, 55),
+Color.rgb(55, 35, 85)
+}
+);
+
+journeyBackground.setCornerRadius(20 * journeyDensity);
+journeyBackground.setStroke(
+(int) (1.5f * journeyDensity),
+Color.rgb(212, 175, 55)
+);
+
+journeyPanel.setBackground(journeyBackground);
+journeyPanel.setElevation(5 * journeyDensity);
+
+journeyPanel.addView(
+row,
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.MATCH_PARENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+)
+);
+
+content.addView(journeyPanel, rowParams);
 
     }
     View createHomeSquareButton(String text, View.OnClickListener listener) {
@@ -1220,7 +1334,7 @@ button.setElevation(
 LinearLayout.LayoutParams params =
         new LinearLayout.LayoutParams(
                 0,
-                (int) (120 * getResources().getDisplayMetrics().density),
+                (int) (88 * getResources().getDisplayMetrics().density),
                 1
         );
 
