@@ -523,9 +523,8 @@ android.graphics.Shader.TileMode.CLAMP
 );
 
 kingdomTitle.setShadowLayer(
-8f, 0f, 0f, Color.rgb(255, 200, 0)
+2f, 0f, 1f, Color.rgb(255, 200, 0)
 );
-
 kingdomTitle.invalidate();
 titleArea.addView(kingdomTitle);
 
@@ -695,7 +694,7 @@ Color.rgb(83, 52, 125)
 bibleFrame.addView(playIcon, playIconParams);
 LinearLayout.LayoutParams iconParams =
 new LinearLayout.LayoutParams(
-(int) (75 * getResources().getDisplayMetrics().density),
+(int) (65 * getResources().getDisplayMetrics().density),
 LinearLayout.LayoutParams.WRAP_CONTENT
 );
 
@@ -706,7 +705,7 @@ learningText.setOrientation(LinearLayout.VERTICAL);
 learningText.setPadding(12, 0, 0, 0);
 
 TextView learningTitle = new TextView(this);
-learningTitle.setText("▶️ Continue Learning");
+learningTitle.setText(" Continue Learning");
 learningTitle.setTextSize(19);
 learningTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 learningTitle.setTextColor(Color.rgb(255, 215, 0));
