@@ -216,7 +216,7 @@ bottomNav.setPadding(4, 4, 4, 4);
 String[] navItems = {
         "🏠\nHome",
         "📖\nLearn",
-        "🔎\nExplore",
+        "🧭\nExplore",
         "🏆\nAchievements",
         "⋯\nMore"
 };
@@ -227,21 +227,36 @@ for (String item : navItems) {
 
     navButton.setText(item);
     navButton.setTextSize(11);
-    navButton.setAllCaps(false);
-    navButton.setTextColor(Color.WHITE);
-    navButton.setGravity(Gravity.CENTER);
+navButton.setAllCaps(false);
+navButton.setTextColor(Color.rgb(255, 230, 150));
+navButton.setGravity(Gravity.CENTER);
+navButton.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+navButton.setPadding(2, 8, 2, 8);
+navButton.setMinHeight(0);
+navButton.setStateListAnimator(null);
 
-    GradientDrawable navBackground =
-            new GradientDrawable();
+GradientDrawable navBackground = new GradientDrawable(
+GradientDrawable.Orientation.TL_BR,
+new int[]{
+Color.rgb(30, 24, 55),
+Color.rgb(65, 42, 95)
+}
+);
 
-    navBackground.setColor(
-            Color.argb(220, 0, 0, 0)
-    );
+navBackground.setCornerRadius(
+18 * getResources().getDisplayMetrics().density
+);
 
-    navBackground.setCornerRadius(18);
+navBackground.setStroke(
+(int) (1.2f * getResources().getDisplayMetrics().density),
+Color.rgb(184, 134, 11)
+);
 
-    navButton.setBackground(navBackground);
+navButton.setBackground(navBackground);
 
+navButton.setElevation(
+5 * getResources().getDisplayMetrics().density
+);
     LinearLayout.LayoutParams navParams =
             new LinearLayout.LayoutParams(
                     0,
@@ -252,6 +267,86 @@ for (String item : navItems) {
     navParams.setMargins(2, 2, 2, 2);
 
     bottomNav.addView(navButton, navParams);
+    navButton.setOnClickListener(v -> {
+
+for (int i = 0; i < bottomNav.getChildCount(); i++) {
+
+    View child = bottomNav.getChildAt(i);
+
+    if (child instanceof Button) {
+
+        GradientDrawable normalBackground =
+                new GradientDrawable(
+                        GradientDrawable.Orientation.TL_BR,
+                        new int[]{
+                                Color.rgb(30, 24, 55),
+                                Color.rgb(65, 42, 95)
+                        }
+                );
+
+        normalBackground.setCornerRadius(
+                18 * getResources().getDisplayMetrics().density
+        );
+
+        normalBackground.setStroke(
+                (int) (1.2f * getResources().getDisplayMetrics().density),
+                Color.rgb(184, 134, 11)
+        );
+
+        child.setBackground(normalBackground);
+        child.setElevation(
+                5 * getResources().getDisplayMetrics().density
+        );
+        ((Button) child).setTextColor(
+                Color.rgb(255, 230, 150)
+        );
+    }
+}
+
+GradientDrawable selectedBackground =
+        new GradientDrawable(
+                GradientDrawable.Orientation.TL_BR,
+                new int[]{
+                        Color.rgb(255, 226, 130),
+                        Color.rgb(212, 175, 55)
+                }
+        );
+
+selectedBackground.setCornerRadius(
+        18 * getResources().getDisplayMetrics().density
+);
+
+selectedBackground.setStroke(
+        (int) (2 * getResources().getDisplayMetrics().density),
+        Color.WHITE
+);
+
+navButton.setBackground(selectedBackground);
+navButton.setTextColor(Color.rgb(30, 24, 55));
+navButton.setElevation(
+        9 * getResources().getDisplayMetrics().density
+);
+
+String selectedItem = item;
+
+if (selectedItem.contains("Home")) {
+    showHome();
+} else if (selectedItem.contains("Learn")) {
+    showLearnMenu();
+} else if (selectedItem.contains("Explore")) {
+    showExplore();
+} else if (selectedItem.contains("Achievements")) {
+    startActivity(
+            new android.content.Intent(
+                    MainActivity.this,
+                    AchievementsActivity.class
+            )
+    );
+} else {
+    showMoreMenu();
+}
+
+});
 
     if (item.contains("Home")) {
 
@@ -400,14 +495,38 @@ TextView kingdomTitle = new TextView(this);
 kingdomTitle.setText("👑 Kingdom Life");
 kingdomTitle.setTextSize(28);
 kingdomTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-kingdomTitle.setTextColor(darkText);
+android.graphics.drawable.GradientDrawable goldTextBackground =
+new android.graphics.drawable.GradientDrawable(
+android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
+new int[]{
+Color.rgb(255, 235, 150),
+Color.rgb(212, 175, 55),
+Color.rgb(255, 248, 200),
+Color.rgb(184, 134, 11)
+}
+);
+
+android.text.TextPaint titlePaint = kingdomTitle.getPaint();
+titlePaint.setShader(
+new android.graphics.LinearGradient(
+0, 0, 0, 65,
+new int[]{
+Color.rgb(255, 242, 180),
+Color.rgb(212, 175, 55),
+Color.rgb(255, 215, 80)
+},
+null,
+android.graphics.Shader.TileMode.CLAMP
+)
+);
+kingdomTitle.invalidate();
 
 titleArea.addView(kingdomTitle);
 
 TextView kingdomSubtitle = new TextView(this);
 kingdomSubtitle.setText("Grow in faith. Live with purpose.");
 kingdomSubtitle.setTextSize(15);
-kingdomSubtitle.setTextColor(darkText);
+kingdomSubtitle.setTextColor(Color.rgb(255, 235, 180));
 
 titleArea.addView(kingdomSubtitle);
 
@@ -424,7 +543,7 @@ Button settingsButton = new Button(this);
 settingsButton.setText("⚙️");
 settingsButton.setTextSize(20);
 settingsButton.setAllCaps(false);
-settingsButton.setTextColor(darkText);
+settingsButton.setTextColor(Color.rgb(212, 175, 55));
 settingsButton.setBackgroundColor(Color.TRANSPARENT);
 
 settingsButton.setOnClickListener(v -> showSettings());
@@ -499,57 +618,146 @@ int challengeIndex = (int) (
 
         addHomeButtonGrid();
 
-addCard(
-        "▶️ Continue Learning",
-        "Continue your Bible learning journey from where you left off.",
-        v -> showBible()
+LinearLayout learningCard = new LinearLayout(this);
+learningCard.setOrientation(LinearLayout.HORIZONTAL);
+learningCard.setGravity(Gravity.CENTER_VERTICAL);
+learningCard.setPadding(18, 18, 18, 18);
+
+GradientDrawable learningBackground = new GradientDrawable(
+GradientDrawable.Orientation.TL_BR,
+new int[]{
+Color.rgb(30, 24, 55),
+Color.rgb(75, 48, 112)
+}
 );
+
+learningBackground.setCornerRadius(26);
+learningBackground.setStroke(2, Color.rgb(212, 175, 55));
+
+learningCard.setBackground(learningBackground);
+learningCard.setElevation(8);
+learningCard.setClickable(true);
+learningCard.setFocusable(true);
+learningCard.setOnClickListener(v -> showBible());
+
+LinearLayout.LayoutParams learningParams =
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.MATCH_PARENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+);
+
+learningParams.setMargins(8, 12, 8, 12);
+
+TextView bibleIcon = new TextView(this);
+bibleIcon.setText("📔");
+bibleIcon.setTextSize(42);
+bibleIcon.setGravity(Gravity.CENTER);
+
+LinearLayout.LayoutParams iconParams =
+new LinearLayout.LayoutParams(
+(int) (75 * getResources().getDisplayMetrics().density),
+LinearLayout.LayoutParams.WRAP_CONTENT
+);
+
+learningCard.addView(bibleIcon, iconParams);
+
+LinearLayout learningText = new LinearLayout(this);
+learningText.setOrientation(LinearLayout.VERTICAL);
+learningText.setPadding(12, 0, 0, 0);
+
+TextView learningTitle = new TextView(this);
+learningTitle.setText("▶️ Continue Learning");
+learningTitle.setTextSize(19);
+learningTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+learningTitle.setTextColor(Color.rgb(255, 220, 100));
+
+learningText.addView(learningTitle);
+
+TextView learningMessage = new TextView(this);
+learningMessage.setText(
+"Continue your Bible learning journey from where you left off."
+);
+learningMessage.setTextSize(14);
+learningMessage.setTextColor(Color.WHITE);
+learningMessage.setPadding(0, 7, 0, 0);
+
+learningText.addView(learningMessage);
+
+learningCard.addView(
+learningText,
+new LinearLayout.LayoutParams(
+0,
+LinearLayout.LayoutParams.WRAP_CONTENT,
+1
+)
+);
+
+content.addView(learningCard, learningParams);
         addHomeJourneySection();
 
         
     }
     void addCard(String heading, String message, View.OnClickListener listener) {
 
-    LinearLayout card = new LinearLayout(this);
-    card.setOrientation(LinearLayout.VERTICAL);
-    card.setPadding(28, 22, 28, 22);
+float density = getResources().getDisplayMetrics().density;
 
-    // Soft rounded background
-    GradientDrawable cardBackground = new GradientDrawable();
-    cardBackground.setColor(Color.argb(225, 255, 255, 255));
-    cardBackground.setCornerRadius(32);
-    card.setBackground(cardBackground);
+LinearLayout card = new LinearLayout(this);
+card.setOrientation(LinearLayout.VERTICAL);
+card.setPadding(
+        (int) (22 * density),
+        (int) (20 * density),
+        (int) (22 * density),
+        (int) (20 * density)
+);
 
-    // Subtle depth
-    card.setElevation(6);
+// Premium soft-white background with rounded corners
+GradientDrawable cardBackground = new GradientDrawable();
+cardBackground.setColor(Color.argb(238, 255, 255, 255));
+cardBackground.setCornerRadius(24 * density);
+cardBackground.setStroke(
+        (int) (1.5f * density),
+        Color.rgb(184, 134, 11)
+);
 
-    card.setOnClickListener(listener);
+card.setBackground(cardBackground);
+card.setElevation(5 * density);
+card.setClickable(true);
+card.setFocusable(true);
+card.setOnClickListener(listener);
 
-    LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-    );
+LinearLayout.LayoutParams cardParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
 
-    cardParams.setMargins(12, 10, 12, 10);
+cardParams.setMargins(
+        (int) (8 * density),
+        (int) (7 * density),
+        (int) (8 * density),
+        (int) (7 * density)
+);
 
-    TextView headingView = new TextView(this);
-    headingView.setText(heading);
-    headingView.setTextSize(20);
-    headingView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    headingView.setTextColor(darkText);
-    headingView.setGravity(Gravity.CENTER_VERTICAL);
+TextView headingView = new TextView(this);
+headingView.setText(heading);
+headingView.setTextSize(20);
+headingView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+headingView.setTextColor(Color.rgb(30, 24, 55));
+headingView.setGravity(Gravity.CENTER_VERTICAL);
 
-    card.addView(headingView);
+card.addView(headingView);
 
-    TextView messageView = new TextView(this);
-    messageView.setText(message);
-    messageView.setTextSize(16);
-    messageView.setTextColor(darkText);
-    messageView.setPadding(0, 10, 0, 0);
+TextView messageView = new TextView(this);
+messageView.setText(message);
+messageView.setTextSize(15);
+messageView.setTextColor(Color.rgb(65, 61, 75));
+messageView.setLineSpacing(2 * density, 1.0f);
+messageView.setPadding(0, (int) (9 * density), 0, 0);
 
-    card.addView(messageView);
+card.addView(messageView);
 
-    content.addView(card, cardParams);
+content.addView(card, cardParams);
+
     }
     
 void addAchievementCard(
@@ -917,10 +1125,10 @@ content.addView(grid, gridParams);
     void addHomeJourneySection() {
 
 TextView sectionTitle = new TextView(this);
-sectionTitle.setText("👑 Your Journey");
+sectionTitle.setText("⛰️🚩  Your Journey");
 sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-sectionTitle.setTextColor(darkText);
+sectionTitle.setTextColor(Color.rgb(212, 175, 55));
 sectionTitle.setPadding(5, 16, 5, 8);
 content.addView(sectionTitle);
 
@@ -952,21 +1160,62 @@ content.addView(row, rowParams);
     View createHomeSquareButton(String text, View.OnClickListener listener) {
 
 Button button = new Button(this);
+
 button.setText(text);
-button.setTextSize(16);
+button.setTextSize(17);
 button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 button.setTextColor(Color.WHITE);
 button.setAllCaps(false);
 button.setGravity(Gravity.CENTER);
+button.setPadding(8, 12, 8, 12);
+button.setMinHeight(0);
+button.setStateListAnimator(null);
+
+int purpleDark = Color.rgb(30, 24, 55);
+int purpleLight = Color.rgb(83, 52, 125);
+int gold = Color.rgb(212, 175, 55);
+int blueDark = Color.rgb(29, 48, 86);
+int blueLight = Color.rgb(66, 91, 139);
+int goldDark = Color.rgb(105, 76, 25);
+int goldLight = Color.rgb(165, 125, 43);
+
+int startColor = purpleDark;
+int endColor = purpleLight;
+
+if (text.contains("Memory")) {
+    startColor = blueDark;
+    endColor = blueLight;
+} else if (text.contains("Daily Challenge")) {
+    startColor = goldDark;
+    endColor = goldLight;
+} else if (text.contains("Progress")) {
+    startColor = blueDark;
+    endColor = purpleLight;
+} else if (text.contains("Achievements")) {
+    startColor = purpleDark;
+    endColor = goldDark;
+}
 
 android.graphics.drawable.GradientDrawable background =
-        new android.graphics.drawable.GradientDrawable();
+        new android.graphics.drawable.GradientDrawable(
+                android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
+                new int[]{startColor, endColor}
+        );
 
-background.setColor(Color.argb(220, 0, 0, 0));
-background.setCornerRadius(24);
+background.setCornerRadius(
+        22 * getResources().getDisplayMetrics().density
+);
+
+background.setStroke(
+        (int) (1.5f * getResources().getDisplayMetrics().density),
+        gold
+);
 
 button.setBackground(background);
-button.setElevation(4);
+
+button.setElevation(
+        6 * getResources().getDisplayMetrics().density
+);
 
 LinearLayout.LayoutParams params =
         new LinearLayout.LayoutParams(
@@ -975,7 +1224,8 @@ LinearLayout.LayoutParams params =
                 1
         );
 
-params.setMargins(4, 4, 4, 4);
+params.setMargins(5, 5, 5, 5);
+
 button.setLayoutParams(params);
 button.setOnClickListener(listener);
 
