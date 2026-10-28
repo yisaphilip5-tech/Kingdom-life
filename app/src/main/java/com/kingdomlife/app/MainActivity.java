@@ -506,15 +506,16 @@ Color.rgb(184, 134, 11)
 }
 );
 android.text.TextPaint titlePaint = kingdomTitle.getPaint();
+
 titlePaint.setShader(
 new android.graphics.LinearGradient(
 0, 0, 0, kingdomTitle.getTextSize(),
 new int[]{
-Color.rgb(145, 95, 10),
-Color.rgb(255, 225, 100),
+Color.rgb(255, 200, 0),
+Color.rgb(255, 245, 120),
 Color.WHITE,
-Color.rgb(255, 215, 65),
-Color.rgb(184, 134, 11)
+Color.rgb(255, 215, 0),
+Color.rgb(255, 235, 90)
 },
 new float[]{0.0f, 0.28f, 0.45f, 0.62f, 1.0f},
 android.graphics.Shader.TileMode.CLAMP
@@ -522,7 +523,7 @@ android.graphics.Shader.TileMode.CLAMP
 );
 
 kingdomTitle.setShadowLayer(
-6f, 0f, 2f, Color.rgb(180, 125, 15)
+8f, 0f, 0f, Color.rgb(255, 200, 0)
 );
 
 kingdomTitle.invalidate();
@@ -637,7 +638,7 @@ Color.rgb(75, 48, 112)
 );
 
 learningBackground.setCornerRadius(26);
-learningBackground.setStroke(2, Color.rgb(212, 175, 55));
+learningBackground.setStroke(2, Color.rgb(255, 215, 0));
 
 learningCard.setBackground(learningBackground);
 learningCard.setElevation(8);
@@ -708,7 +709,7 @@ TextView learningTitle = new TextView(this);
 learningTitle.setText("▶️ Continue Learning");
 learningTitle.setTextSize(19);
 learningTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-learningTitle.setTextColor(Color.rgb(255, 220, 100));
+learningTitle.setTextColor(Color.rgb(255, 215, 0));
 
 learningText.addView(learningTitle);
 
@@ -1111,7 +1112,7 @@ TextView sectionTitle = new TextView(this);
 sectionTitle.setText("🎮 Play & Grow");
 sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-sectionTitle.setTextColor(Color.rgb(212, 175, 55));
+sectionTitle.setTextColor(Color.rgb(255, 215, 0));
 sectionTitle.setPadding(5, 16, 5, 8);
 content.addView(sectionTitle);
 
@@ -1181,7 +1182,7 @@ Color.rgb(55, 35, 85)
 panelBackground.setCornerRadius(20 * panelDensity);
 panelBackground.setStroke(
 (int) (1.5f * panelDensity),
-Color.rgb(212, 175, 55)
+Color.rgb(255, 215, 0)
 );
 
 gamePanel.setBackground(panelBackground);
@@ -1204,7 +1205,7 @@ TextView sectionTitle = new TextView(this);
 sectionTitle.setText("⛰️🚩  Your Journey");
 sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-sectionTitle.setTextColor(Color.rgb(212, 175, 55));
+sectionTitle.setTextColor(Color.rgb(255, 215, 0));
 sectionTitle.setPadding(5, 16, 5, 8);
 content.addView(sectionTitle);
 
@@ -1254,7 +1255,7 @@ Color.rgb(55, 35, 85)
 journeyBackground.setCornerRadius(20 * journeyDensity);
 journeyBackground.setStroke(
 (int) (1.5f * journeyDensity),
-Color.rgb(212, 175, 55)
+Color.rgb(255, 215, 0)
 );
 
 journeyPanel.setBackground(journeyBackground);
@@ -1287,7 +1288,7 @@ button.setStateListAnimator(null);
 
 int purpleDark = Color.rgb(30, 24, 55);
 int purpleLight = Color.rgb(83, 52, 125);
-int gold = Color.rgb(212, 175, 55);
+int gold = Color.rgb(255, 215, 0);
 int blueDark = Color.rgb(29, 48, 86);
 int blueLight = Color.rgb(66, 91, 139);
 int goldDark = Color.rgb(105, 76, 25);
