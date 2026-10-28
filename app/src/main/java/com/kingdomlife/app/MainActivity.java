@@ -1130,12 +1130,12 @@ LinearLayout row1 = new LinearLayout(this);
 row1.setOrientation(LinearLayout.HORIZONTAL);
 
 row1.addView(createHomeSquareButton(
-        "📖\nBible Quiz",
+        "📖 Bible Quiz",
         v -> showBibleQuizMenu()
 ));
 
 row1.addView(createHomeSquareButton(
-        "🧠\nMemory Verse",
+        "🧠 Memory Verse",
         v -> showMemoryVerse()
 ));
 
@@ -1146,12 +1146,12 @@ LinearLayout row2 = new LinearLayout(this);
 row2.setOrientation(LinearLayout.HORIZONTAL);
 
 row2.addView(createHomeSquareButton(
-        "🧩\nBible Puzzles",
+        "🧩 Bible Puzzles",
         v -> showPuzzleMenu()
 ));
 
 row2.addView(createHomeSquareButton(
-        "🎯\nDaily Challenge",
+        "🎯 Daily Challenge",
         v -> showDailyChallenge()
 ));
 
@@ -1219,12 +1219,12 @@ LinearLayout.LayoutParams rowParams =
 rowParams.setMargins(4, 4, 4, 8);
 
 row.addView(createHomeSquareButton(
-        "📊\nProgress",
+        "📊 Progress",
         v -> showProgress()
 ));
 
 row.addView(createHomeSquareButton(
-        "🏆\nAchievements",
+        "🏆 Achievements",
         v -> startActivity(
                 new Intent(MainActivity.this, AchievementsActivity.class)
         )
@@ -1281,7 +1281,8 @@ button.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 button.setTextColor(Color.WHITE);
 button.setAllCaps(false);
 button.setGravity(Gravity.CENTER);
-button.setPadding(8, 12, 8, 12);
+button.setPadding(2, 2, 2, 2);
+button.setTextSize(12);
 button.setMinHeight(0);
 button.setStateListAnimator(null);
 
@@ -1317,7 +1318,7 @@ android.graphics.drawable.GradientDrawable background =
         );
 
 background.setCornerRadius(
-        22 * getResources().getDisplayMetrics().density
+        12 * getResources().getDisplayMetrics().density
 );
 
 background.setStroke(
