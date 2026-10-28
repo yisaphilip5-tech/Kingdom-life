@@ -1288,6 +1288,20 @@ prefs.edit()
                 showBible();
             }
     );
+        // French Louis Segond 1910
+addButton(
+"🇫🇷 Louis Segond 1910 (LSG1910)",
+v -> {
+getSharedPreferences(
+"KingdomLifePrefs",
+MODE_PRIVATE
+).edit()
+.putString("bible_translation", "LSG1910")
+.apply();
+
+            showBible();
+        }
+);
     }
     
     void showOldTestament() {
@@ -4376,13 +4390,20 @@ TextView title = new TextView(this);
 
     try {
 
-        InputStream inputStream =
-                getAssets().open(
-                        (translation.equals("KJV")
-                                ? "kjv/"
-                                : "web/")
-                        + book + ".json"
-                );
+        String bibleFolder;
+
+if ("LSG1910".equals(translation)) {
+bibleFolder = "lsg1910/";
+} else if ("WEB".equals(translation)) {
+bibleFolder = "web/";
+} else {
+bibleFolder = "kjv/";
+}
+
+InputStream inputStream =
+getAssets().open(
+bibleFolder + book + ".json"
+);
         BufferedReader reader =
                 new BufferedReader(
                         new InputStreamReader(inputStream)
@@ -5447,10 +5468,17 @@ content.addView(backButton, backParams);
                     ? "✓ Currently selected"
                     : "Use the King James Version.",
             v -> {
-                prefs.edit()
-                        .putString("selectedLanguage", "English (KJV)")
-                        .apply();
-                showLanguagePreferenceSettings();
+prefs.edit()
+.putString("selectedLanguage", "English (KJV)")
+.apply();
+
+getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE)
+        .edit()
+        .putString("bible_translation", "KJV")
+        .apply();
+
+showLanguagePreferenceSettings();
+
             }
     );
 
@@ -5460,13 +5488,20 @@ content.addView(backButton, backParams);
                     ? "✓ Currently selected"
                     : "French Bible translation — text integration pending.",
             v -> {
-                prefs.edit()
-                        .putString(
-                                "selectedLanguage",
-                                "French (Louis Segond 1910)"
-                        )
-                        .apply();
-                showLanguagePreferenceSettings();
+prefs.edit()
+.putString(
+"selectedLanguage",
+"French (Louis Segond 1910)"
+)
+.apply();
+
+getSharedPreferences("KingdomLifePrefs", MODE_PRIVATE)
+        .edit()
+        .putString("bible_translation", "LSG1910")
+        .apply();
+
+showLanguagePreferenceSettings();
+
             }
     );
 
