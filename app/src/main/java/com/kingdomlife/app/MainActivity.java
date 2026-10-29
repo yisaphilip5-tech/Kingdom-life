@@ -605,7 +605,7 @@ content.addView(dateText);
 
 
         addCard(
-        "📖 Verse of the Day",
+        "Verse of the Day",
         "What is the Word of God saying about you today?",
         v -> showVerse()
 );
