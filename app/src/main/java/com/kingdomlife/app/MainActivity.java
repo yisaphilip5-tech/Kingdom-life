@@ -566,8 +566,8 @@ settingsButton.setBackgroundColor(Color.TRANSPARENT);
 
 settingsButton.setLayoutParams(
         new LinearLayout.LayoutParams(
-                (int) (50 * settingsDensity),
-                (int) (50 * settingsDensity)
+                (int) (65 * settingsDensity),
+                (int) (65 * settingsDensity)
         )
 );
 
