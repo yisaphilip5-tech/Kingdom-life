@@ -107,7 +107,7 @@ backButton.setImageResource(
         android.R.drawable.ic_media_previous
 );
 
-backButton.setColorFilter(BRIGHT_GOLD);
+backButton.setColorFilter(Color.WHITE);
 
 backButton.setContentDescription("Back");
 
@@ -119,8 +119,13 @@ backButton.setScaleType(
         android.widget.ImageView.ScaleType.CENTER_INSIDE
 );
 
+float backDensity = getResources().getDisplayMetrics().density;
+
 LinearLayout.LayoutParams backParams =
-        new LinearLayout.LayoutParams(100, 70);
+        new LinearLayout.LayoutParams(
+                (int) (56 * backDensity),
+                (int) (50 * backDensity)
+        );
 
 backParams.gravity = Gravity.LEFT;
 
