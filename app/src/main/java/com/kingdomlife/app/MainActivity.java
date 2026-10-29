@@ -657,11 +657,13 @@ learningParams.setMargins(8, 6, 8, 6);
 
 FrameLayout bibleFrame = new FrameLayout(this);
 
-TextView bibleIcon = new TextView(this);
-bibleIcon.setText("📔");
-bibleIcon.setTextSize(42);
-bibleIcon.setGravity(Gravity.CENTER);
+android.widget.ImageView bibleIcon =
+new android.widget.ImageView(this);
 
+bibleIcon.setImageResource(R.drawable.continue_learning);
+bibleIcon.setScaleType(
+android.widget.ImageView.ScaleType.FIT_CENTER
+);
 FrameLayout.LayoutParams bibleIconParams =
 new FrameLayout.LayoutParams(
 FrameLayout.LayoutParams.MATCH_PARENT,
@@ -670,30 +672,6 @@ FrameLayout.LayoutParams.MATCH_PARENT
 
 bibleFrame.addView(bibleIcon, bibleIconParams);
 
-TextView playIcon = new TextView(this);
-playIcon.setText("▶");
-playIcon.setTextSize(15);
-playIcon.setTextColor(Color.rgb(255, 215, 70));
-playIcon.setGravity(Gravity.CENTER);
-
-FrameLayout.LayoutParams playIconParams =
-new FrameLayout.LayoutParams(
-(int) (30 * getResources().getDisplayMetrics().density),
-(int) (30 * getResources().getDisplayMetrics().density),
-Gravity.CENTER
-);
-
-playIcon.setBackground(
-new android.graphics.drawable.GradientDrawable(
-android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
-new int[]{
-Color.rgb(30, 24, 55),
-Color.rgb(83, 52, 125)
-}
-)
-);
-
-bibleFrame.addView(playIcon, playIconParams);
 LinearLayout.LayoutParams iconParams =
 new LinearLayout.LayoutParams(
 (int) (65 * getResources().getDisplayMetrics().density),
@@ -1234,7 +1212,7 @@ row1.addView(createHomeSquareButton(
 ));
 
 row1.addView(createHomeSquareButton(
-        "🧠 Memory Verse",
+        "Memory Verse",
         v -> showMemoryVerse()
 ));
 
@@ -1245,7 +1223,7 @@ LinearLayout row2 = new LinearLayout(this);
 row2.setOrientation(LinearLayout.HORIZONTAL);
 
 row2.addView(createHomeSquareButton(
-        "🧩 Bible Puzzles",
+        "Bible Puzzles",
         v -> showPuzzleMenu()
 ));
 
@@ -1306,13 +1284,47 @@ content.addView(gamePanel, gridParams);
 }
     void addHomeJourneySection() {
 
+LinearLayout sectionHeader = new LinearLayout(this);
+sectionHeader.setOrientation(LinearLayout.HORIZONTAL);
+sectionHeader.setGravity(Gravity.CENTER_VERTICAL);
+sectionHeader.setPadding(5, 16, 5, 8);
+
+float journeyIconDensity =
+getResources().getDisplayMetrics().density;
+
+android.widget.ImageView journeyIcon =
+new android.widget.ImageView(this);
+
+journeyIcon.setImageResource(R.drawable.your_journey);
+journeyIcon.setScaleType(
+android.widget.ImageView.ScaleType.FIT_CENTER
+);
+
+LinearLayout.LayoutParams journeyIconParams =
+new LinearLayout.LayoutParams(
+(int) (40 * journeyIconDensity),
+(int) (40 * journeyIconDensity)
+);
+
+sectionHeader.addView(journeyIcon, journeyIconParams);
+
 TextView sectionTitle = new TextView(this);
-sectionTitle.setText("⛰️🚩  Your Journey");
+sectionTitle.setText("Your Journey");
 sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 sectionTitle.setTextColor(Color.rgb(255, 215, 0));
-sectionTitle.setPadding(5, 16, 5, 8);
 
+LinearLayout.LayoutParams journeyTitleParams =
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.WRAP_CONTENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+);
+
+journeyTitleParams.setMargins(
+(int) (8 * journeyIconDensity), 0, 0, 0
+);
+
+sectionHeader.addView(sectionTitle, journeyTitleParams);
 
 LinearLayout row = new LinearLayout(this);
 row.setOrientation(LinearLayout.HORIZONTAL);
@@ -1366,7 +1378,7 @@ Color.rgb(255, 215, 0)
 journeyPanel.setBackground(journeyBackground);
 journeyPanel.setElevation(5 * journeyDensity);
         journeyPanel.addView(
-        sectionTitle,
+        sectionHeader,
         new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -1434,14 +1446,19 @@ buttonLayout.setClickable(true);
 buttonLayout.setFocusable(true);
 buttonLayout.setOnClickListener(listener);
 
-// Show custom images for Progress and Achievements.
+// Show custom images for Progress, Achievements, and Bible Puzzles.
 int iconResource = 0;
 
 if (text.contains("Progress")) {
-    iconResource = R.drawable.progress;
+iconResource = R.drawable.progress;
 } else if (text.contains("Achievements")) {
-    iconResource = R.drawable.achievements;
+iconResource = R.drawable.achievements;
+} else if (text.contains("Bible Puzzles")) {
+iconResource = R.drawable.bible_puzzles;
 }
+    else if (text.contains("Memory Verse")) {
+    iconResource = R.drawable.memory_verse;
+    }
 
 if (iconResource != 0) {
     android.widget.ImageView icon = new android.widget.ImageView(this);
