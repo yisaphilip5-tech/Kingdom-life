@@ -1450,8 +1450,8 @@ if (iconResource != 0) {
 
     LinearLayout.LayoutParams iconParams =
             new LinearLayout.LayoutParams(
-                    (int) (45 * density),
-                    (int) (45 * density)
+                    (int) (50 * density),
+                    (int) (50 * density)
             );
 
     buttonLayout.addView(icon, iconParams);
