@@ -735,12 +735,11 @@ float density = getResources().getDisplayMetrics().density;
 LinearLayout card = new LinearLayout(this);
 card.setOrientation(LinearLayout.VERTICAL);
 card.setPadding(
-(int) (16 * density),
-(int) (8 * density),
-(int) (16 * density),
-(int) (8 * density)
+        (int) (12 * density),
+        (int) (2 * density),
+        (int) (12 * density),
+        (int) (2 * density)
 );
-
 // Premium soft-white background with rounded corners
 GradientDrawable cardBackground = new GradientDrawable();
 cardBackground.setColor(Color.argb(238, 255, 255, 255));
@@ -764,9 +763,9 @@ LinearLayout.LayoutParams cardParams =
 
 cardParams.setMargins(
 (int) (8 * density),
-(int) (4 * density),
+(int) (2 * density),
 (int) (8 * density),
-(int) (4 * density)
+(int) (2 * density)
 );
 LinearLayout headingRow = new LinearLayout(this);
 headingRow.setOrientation(LinearLayout.HORIZONTAL);
@@ -832,9 +831,8 @@ TextView messageView = new TextView(this);
 messageView.setText(message);
 messageView.setTextSize(13);
 messageView.setTextColor(Color.rgb(75, 35, 115));
-messageView.setLineSpacing(2 * density, 1.0f);
-messageView.setPadding(0, (int) (4 * density), 0, 0);
-
+messageView.setLineSpacing(0, 1.0f);
+messageView.setPadding(0, (int) (1 * density), 0, 0);
 card.addView(messageView);
 
 content.addView(card, cardParams);
@@ -1240,9 +1238,9 @@ float panelDensity = getResources().getDisplayMetrics().density;
 
 gamePanel.setPadding(
 (int) (8 * panelDensity),
-(int) (6 * panelDensity),
+(int) (3 * panelDensity),
 (int) (8 * panelDensity),
-(int) (6 * panelDensity)
+(int) (3 * panelDensity)
 );
 
 android.graphics.drawable.GradientDrawable panelBackground =
@@ -1516,7 +1514,7 @@ buttonLayout.addView(arrow, arrowParams);
 LinearLayout.LayoutParams params =
         new LinearLayout.LayoutParams(
                 0,
-                (int) (55 * density),
+                (int) (45 * density),
                 1
         );
 
