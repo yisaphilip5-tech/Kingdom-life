@@ -204,7 +204,7 @@ root.addView(progressDescription);
 previousButton.setText("‹");
 previousButton.setTextSize(36);
 previousButton.setTextColor(BRIGHT_GOLD);
-previousButton.setBackgroundColor(PURPLE);
+previousButton.setBackgroundColor(Color.TRANSPARENT);
 previousButton.setOnClickListener(
         v -> showPage(currentPage - 1)
 );
@@ -235,7 +235,7 @@ previousButton.setOnClickListener(
 nextButton.setText("›");
 nextButton.setTextSize(36);
 nextButton.setTextColor(BRIGHT_GOLD);
-nextButton.setBackgroundColor(PURPLE);
+nextButton.setBackgroundColor(Color.TRANSPARENT);
 nextButton.setOnClickListener(
         v -> showPage(currentPage + 1)
 );
