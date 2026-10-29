@@ -634,8 +634,8 @@ int challengeIndex = (int) (
 LinearLayout learningCard = new LinearLayout(this);
 learningCard.setOrientation(LinearLayout.HORIZONTAL);
 learningCard.setGravity(Gravity.CENTER_VERTICAL);
-learningCard.setPadding(12, 10, 12, 10);
-
+learningCard.setPadding(12, 8, 12, 8);
+learningCard.setMinimumHeight(0);
 GradientDrawable learningBackground = new GradientDrawable();
 
 learningBackground.setColor(Color.WHITE);
