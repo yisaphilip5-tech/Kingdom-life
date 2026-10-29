@@ -531,7 +531,7 @@ titleArea.addView(kingdomTitle);
 TextView kingdomSubtitle = new TextView(this);
 kingdomSubtitle.setText("Grow in faith. Live with purpose.");
 kingdomSubtitle.setTextSize(15);
-kingdomSubtitle.setTextColor(Color.rgb(255, 235, 180));
+kingdomSubtitle.setTextColor(Color.WHITE);
 
 titleArea.addView(kingdomSubtitle);
 
@@ -577,7 +577,7 @@ String currentDate = new SimpleDateFormat(
 
 dateText.setText("📅 " + currentDate);
 dateText.setTextSize(15);
-dateText.setTextColor(darkText);
+dateText.setTextColor(Color.WHITE);
 dateText.setGravity(Gravity.CENTER);
 dateText.setPadding(0, 5, 0, 15);
 
