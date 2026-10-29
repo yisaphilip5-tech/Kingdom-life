@@ -1237,12 +1237,11 @@ gamePanel.setOrientation(LinearLayout.VERTICAL);
 float panelDensity = getResources().getDisplayMetrics().density;
 
 gamePanel.setPadding(
-(int) (8 * panelDensity),
-(int) (3 * panelDensity),
-(int) (8 * panelDensity),
-(int) (3 * panelDensity)
+(int) (5 * panelDensity),
+(int) (1 * panelDensity),
+(int) (5 * panelDensity),
+(int) (1 * panelDensity)
 );
-
 android.graphics.drawable.GradientDrawable panelBackground =
 new android.graphics.drawable.GradientDrawable(
 android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
@@ -1443,19 +1442,19 @@ buttonLayout.setClickable(true);
 buttonLayout.setFocusable(true);
 buttonLayout.setOnClickListener(listener);
 
-// Show custom images for Progress, Achievements, and Bible Puzzles.
 int iconResource = 0;
 
-if (text.contains("Progress")) {
+if (text.contains("Bible Quiz")) {
+iconResource = R.drawable.verse_of_the_day;
+} else if (text.contains("Progress")) {
 iconResource = R.drawable.progress;
 } else if (text.contains("Achievements")) {
 iconResource = R.drawable.achievements;
 } else if (text.contains("Bible Puzzles")) {
 iconResource = R.drawable.bible_puzzles;
+} else if (text.contains("Memory Verse")) {
+iconResource = R.drawable.memory_verse;
 }
-    else if (text.contains("Memory Verse")) {
-    iconResource = R.drawable.memory_verse;
-    }
 
 if (iconResource != 0) {
     android.widget.ImageView icon = new android.widget.ImageView(this);
@@ -1520,9 +1519,9 @@ LinearLayout.LayoutParams params =
 
 params.setMargins(
         (int) (8 * density),
-        (int) (4 * density),
+        (int) (2 * density),
         (int) (8 * density),
-        (int) (4 * density)
+        (int) (2 * density)
 );
 
 buttonLayout.setLayoutParams(params);
