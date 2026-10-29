@@ -566,8 +566,8 @@ settingsButton.setBackgroundColor(Color.TRANSPARENT);
 
 settingsButton.setLayoutParams(
         new LinearLayout.LayoutParams(
-                (int) (35 * settingsDensity),
-                (int) (35 * settingsDensity)
+                (int) (50 * settingsDensity),
+                (int) (50 * settingsDensity)
         )
 );
 
@@ -807,8 +807,8 @@ verseIcon.setScaleType(
 
 LinearLayout.LayoutParams verseIconParams =
         new LinearLayout.LayoutParams(
-                (int) (40 * density),
-                (int) (40 * density)
+                (int) (50 * density),
+                (int) (50 * density)
         );
 
 verseIconParams.setMargins(
@@ -1190,8 +1190,8 @@ android.widget.ImageView.ScaleType.FIT_CENTER
 
 LinearLayout.LayoutParams playGrowIconParams =
 new LinearLayout.LayoutParams(
-(int) (40 * headingDensity),
-(int) (40 * headingDensity)
+(int) (50 * headingDensity),
+(int) (50 * headingDensity)
 );
 
 sectionHeader.addView(playGrowIcon, playGrowIconParams);
