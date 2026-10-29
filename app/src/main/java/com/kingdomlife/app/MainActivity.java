@@ -673,13 +673,12 @@ FrameLayout.LayoutParams.MATCH_PARENT
 bibleFrame.addView(bibleIcon, bibleIconParams);
 
 LinearLayout.LayoutParams iconParams =
-new LinearLayout.LayoutParams(
-(int) (45 * getResources().getDisplayMetrics().density),
-LinearLayout.LayoutParams.WRAP_CONTENT
-);
+        new LinearLayout.LayoutParams(
+                (int) (45 * getResources().getDisplayMetrics().density),
+                (int) (45 * getResources().getDisplayMetrics().density)
+        );
 
 learningCard.addView(bibleFrame, iconParams);
-
 LinearLayout learningText = new LinearLayout(this);
 learningText.setOrientation(LinearLayout.VERTICAL);
 learningText.setPadding(12, 0, 0, 0);
