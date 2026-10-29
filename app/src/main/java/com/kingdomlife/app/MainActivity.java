@@ -807,8 +807,8 @@ verseIcon.setScaleType(
 
 LinearLayout.LayoutParams verseIconParams =
         new LinearLayout.LayoutParams(
-                (int) (30 * density),
-                (int) (30 * density)
+                (int) (40 * density),
+                (int) (40 * density)
         );
 
 verseIconParams.setMargins(
@@ -1190,8 +1190,8 @@ android.widget.ImageView.ScaleType.FIT_CENTER
 
 LinearLayout.LayoutParams playGrowIconParams =
 new LinearLayout.LayoutParams(
-(int) (30 * headingDensity),
-(int) (30 * headingDensity)
+(int) (40 * headingDensity),
+(int) (40 * headingDensity)
 );
 
 sectionHeader.addView(playGrowIcon, playGrowIconParams);
@@ -1450,8 +1450,8 @@ if (iconResource != 0) {
 
     LinearLayout.LayoutParams iconParams =
             new LinearLayout.LayoutParams(
-                    (int) (30 * density),
-                    (int) (30 * density)
+                    (int) (45 * density),
+                    (int) (45 * density)
             );
 
     buttonLayout.addView(icon, iconParams);
