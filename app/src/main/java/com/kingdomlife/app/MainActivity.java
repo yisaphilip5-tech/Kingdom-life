@@ -674,7 +674,7 @@ bibleFrame.addView(bibleIcon, bibleIconParams);
 
 LinearLayout.LayoutParams iconParams =
 new LinearLayout.LayoutParams(
-(int) (65 * getResources().getDisplayMetrics().density),
+(int) (45 * getResources().getDisplayMetrics().density),
 LinearLayout.LayoutParams.WRAP_CONTENT
 );
 
