@@ -1204,7 +1204,7 @@ LinearLayout row1 = new LinearLayout(this);
 row1.setOrientation(LinearLayout.HORIZONTAL);
 
 row1.addView(createHomeSquareButton(
-        "📖 Bible Quiz",
+        "Bible Quiz",
         v -> showBibleQuizMenu()
 ));
 
