@@ -544,17 +544,36 @@ LinearLayout.LayoutParams titleParams =
 
 header.addView(titleArea, titleParams);
 
-Button settingsButton = new Button(this);
-settingsButton.setText("⚙️");
-settingsButton.setTextSize(20);
-settingsButton.setAllCaps(false);
-settingsButton.setTextColor(Color.rgb(212, 175, 55));
+android.widget.ImageButton settingsButton =
+        new android.widget.ImageButton(this);
+
+settingsButton.setImageResource(R.drawable.settings);
+settingsButton.setScaleType(
+        android.widget.ImageView.ScaleType.FIT_CENTER
+);
+
+float settingsDensity = getResources()
+        .getDisplayMetrics().density;
+
+settingsButton.setPadding(
+        (int) (5 * settingsDensity),
+        (int) (5 * settingsDensity),
+        (int) (5 * settingsDensity),
+        (int) (5 * settingsDensity)
+);
+
 settingsButton.setBackgroundColor(Color.TRANSPARENT);
+
+settingsButton.setLayoutParams(
+        new LinearLayout.LayoutParams(
+                (int) (35 * settingsDensity),
+                (int) (35 * settingsDensity)
+        )
+);
 
 settingsButton.setOnClickListener(v -> showSettings());
 
 header.addView(settingsButton);
-
 content.addView(header);
         Space headerSpace = new Space(this);
 
@@ -617,17 +636,11 @@ learningCard.setOrientation(LinearLayout.HORIZONTAL);
 learningCard.setGravity(Gravity.CENTER_VERTICAL);
 learningCard.setPadding(12, 10, 12, 10);
 
-GradientDrawable learningBackground = new GradientDrawable(
-GradientDrawable.Orientation.TL_BR,
-new int[]{
-Color.rgb(30, 24, 55),
-Color.rgb(75, 48, 112)
-}
-);
+GradientDrawable learningBackground = new GradientDrawable();
 
+learningBackground.setColor(Color.WHITE);
 learningBackground.setCornerRadius(26);
-learningBackground.setStroke(2, Color.rgb(255, 215, 0));
-
+learningBackground.setStroke(2, Color.rgb(184, 134, 11));
 learningCard.setBackground(learningBackground);
 learningCard.setElevation(8);
 learningCard.setClickable(true);
@@ -697,8 +710,7 @@ TextView learningTitle = new TextView(this);
 learningTitle.setText(" Continue Learning");
 learningTitle.setTextSize(19);
 learningTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-learningTitle.setTextColor(Color.rgb(255, 215, 0));
-
+learningTitle.setTextColor(Color.rgb(75, 35, 115));
 learningText.addView(learningTitle);
 
 TextView learningMessage = new TextView(this);
@@ -706,7 +718,7 @@ learningMessage.setText(
 "Continue your Bible learning journey from where you left off."
 );
 learningMessage.setTextSize(14);
-learningMessage.setTextColor(Color.WHITE);
+learningMessage.setTextColor(Color.rgb(75, 35, 115));
 learningMessage.setPadding(0, 7, 0, 0);
 
 learningText.addView(learningMessage);
@@ -782,6 +794,30 @@ cardParams.setMargins(
 LinearLayout headingRow = new LinearLayout(this);
 headingRow.setOrientation(LinearLayout.HORIZONTAL);
 headingRow.setGravity(Gravity.CENTER_VERTICAL);
+
+// Add the custom icon only to the Verse of the Day card.
+if (heading.contains("Verse of the Day")) {
+android.widget.ImageView verseIcon =
+new android.widget.ImageView(this);
+
+verseIcon.setImageResource(R.drawable.verse_of_the_day);
+verseIcon.setScaleType(
+        android.widget.ImageView.ScaleType.FIT_CENTER
+);
+
+LinearLayout.LayoutParams verseIconParams =
+        new LinearLayout.LayoutParams(
+                (int) (30 * density),
+                (int) (30 * density)
+        );
+
+verseIconParams.setMargins(
+        0, 0, (int) (8 * density), 0
+);
+
+headingRow.addView(verseIcon, verseIconParams);
+
+}
 
 TextView headingView = new TextView(this);
 headingView.setText(heading);
@@ -1137,13 +1173,46 @@ void addAchievementCard(
 
 void addHomeButtonGrid() {
 
+LinearLayout sectionHeader = new LinearLayout(this);
+sectionHeader.setOrientation(LinearLayout.HORIZONTAL);
+sectionHeader.setGravity(Gravity.CENTER_VERTICAL);
+sectionHeader.setPadding(5, 16, 5, 8);
+
+float headingDensity = getResources().getDisplayMetrics().density;
+
+android.widget.ImageView playGrowIcon =
+new android.widget.ImageView(this);
+
+playGrowIcon.setImageResource(R.drawable.play_and_grow);
+playGrowIcon.setScaleType(
+android.widget.ImageView.ScaleType.FIT_CENTER
+);
+
+LinearLayout.LayoutParams playGrowIconParams =
+new LinearLayout.LayoutParams(
+(int) (30 * headingDensity),
+(int) (30 * headingDensity)
+);
+
+sectionHeader.addView(playGrowIcon, playGrowIconParams);
+
 TextView sectionTitle = new TextView(this);
-sectionTitle.setText("🎮 Play & Grow");
+sectionTitle.setText("Play & Grow");
 sectionTitle.setTextSize(21);
 sectionTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 sectionTitle.setTextColor(Color.rgb(255, 215, 0));
-sectionTitle.setPadding(5, 16, 5, 8);
 
+LinearLayout.LayoutParams sectionTitleParams =
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.WRAP_CONTENT,
+LinearLayout.LayoutParams.WRAP_CONTENT
+);
+
+sectionTitleParams.setMargins(
+(int) (8 * headingDensity), 0, 0, 0
+);
+
+sectionHeader.addView(sectionTitle, sectionTitleParams);
 
 LinearLayout grid = new LinearLayout(this);
 grid.setOrientation(LinearLayout.VERTICAL);
@@ -1217,7 +1286,7 @@ Color.rgb(255, 215, 0)
 gamePanel.setBackground(panelBackground);
 gamePanel.setElevation(5 * panelDensity);
     gamePanel.addView(
-        sectionTitle,
+        sectionHeader,
         new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -1256,12 +1325,12 @@ LinearLayout.LayoutParams rowParams =
 rowParams.setMargins(4, 4, 4, 8);
 
 row.addView(createHomeSquareButton(
-        "📊 Progress",
+        " Progress",
         v -> showProgress()
 ));
 
 row.addView(createHomeSquareButton(
-        "🏆 Achievements",
+        " Achievements",
         v -> startActivity(
                 new Intent(MainActivity.this, AchievementsActivity.class)
         )
@@ -1356,15 +1425,48 @@ background.setStroke((int) (1.5f * density), gold);
 LinearLayout buttonLayout = new LinearLayout(this);
 buttonLayout.setOrientation(LinearLayout.HORIZONTAL);
 buttonLayout.setGravity(Gravity.CENTER_VERTICAL);
-buttonLayout.setPadding((int) (4 * density), 0, (int) (5 * density), 0);
+buttonLayout.setPadding(
+        (int) (4 * density), 0, (int) (5 * density), 0
+);
 buttonLayout.setBackground(background);
 buttonLayout.setElevation(6 * density);
 buttonLayout.setClickable(true);
 buttonLayout.setFocusable(true);
 buttonLayout.setOnClickListener(listener);
 
+// Show custom images for Progress and Achievements.
+int iconResource = 0;
+
+if (text.contains("Progress")) {
+    iconResource = R.drawable.progress;
+} else if (text.contains("Achievements")) {
+    iconResource = R.drawable.achievements;
+}
+
+if (iconResource != 0) {
+    android.widget.ImageView icon = new android.widget.ImageView(this);
+    icon.setImageResource(iconResource);
+    icon.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
+
+    LinearLayout.LayoutParams iconParams =
+            new LinearLayout.LayoutParams(
+                    (int) (30 * density),
+                    (int) (30 * density)
+            );
+
+    buttonLayout.addView(icon, iconParams);
+}
+
 TextView buttonText = new TextView(this);
-buttonText.setText(text);
+String displayText = text;
+
+if (text.contains("Progress")) {
+    displayText = "Progress";
+} else if (text.contains("Achievements")) {
+    displayText = "Achievements";
+}
+
+buttonText.setText(displayText);
 buttonText.setTextSize(12);
 buttonText.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 buttonText.setTextColor(Color.WHITE);
@@ -1372,8 +1474,11 @@ buttonText.setGravity(Gravity.CENTER);
 buttonText.setMaxLines(2);
 
 LinearLayout.LayoutParams textParams =
-        new LinearLayout.LayoutParams(0, 
-                LinearLayout.LayoutParams.MATCH_PARENT, 1);
+        new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                1
+        );
 
 buttonLayout.addView(buttonText, textParams);
 
