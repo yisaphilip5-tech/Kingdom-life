@@ -415,48 +415,65 @@ main.requestApplyInsets();
 
 content.removeAllViews();
 
-ImageView loadingIcon = new ImageView(this);
-loadingIcon.setImageResource(R.drawable.kingdom_life_icon);
-loadingIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
-
 LinearLayout loadingScreen = new LinearLayout(this);
 loadingScreen.setOrientation(LinearLayout.VERTICAL);
 loadingScreen.setGravity(Gravity.CENTER);
 loadingScreen.setPadding(20, 30, 20, 30);
-loadingScreen.setBackgroundColor(Color.WHITE);
+loadingScreen.setBackgroundColor(Color.rgb(255, 252, 242));
+
+// App icon
+ImageView loadingIcon = new ImageView(this);
+loadingIcon.setImageResource(R.drawable.kingdom_life_icon);
+loadingIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
 LinearLayout.LayoutParams iconParams =
         new LinearLayout.LayoutParams(180, 180);
 iconParams.gravity = Gravity.CENTER;
+
 loadingScreen.addView(loadingIcon, iconParams);
 
+// Gold Kingdom Life heading with crown
 TextView loadingTitle = new TextView(this);
-loadingTitle.setText("Kingdom Life");
+loadingTitle.setText("👑 Kingdom Life");
 loadingTitle.setTextSize(28);
 loadingTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-loadingTitle.setTextColor(Color.rgb(106, 75, 188));
+loadingTitle.setTextColor(Color.rgb(212, 175, 55));
 loadingTitle.setGravity(Gravity.CENTER);
 loadingTitle.setPadding(0, 20, 0, 8);
+
+// Subtle shine effect
+loadingTitle.setShadowLayer(
+        3f,
+        0f,
+        1f,
+        Color.rgb(255, 223, 100)
+);
+
 loadingScreen.addView(loadingTitle);
 
+// Subtitle
 TextView loadingSubtitle = new TextView(this);
 loadingSubtitle.setText("Grow in faith. Live with purpose.");
 loadingSubtitle.setTextSize(16);
-loadingSubtitle.setTextColor(Color.DKGRAY);
+loadingSubtitle.setTextColor(Color.rgb(75, 65, 80));
 loadingSubtitle.setGravity(Gravity.CENTER);
 loadingSubtitle.setPadding(0, 0, 0, 25);
+
 loadingScreen.addView(loadingSubtitle);
 
+// Loading indicator
 ProgressBar loadingProgress = new ProgressBar(this);
 loadingProgress.setIndeterminate(true);
+
 loadingScreen.addView(loadingProgress);
 
 content.addView(loadingScreen);
+
+// Open Home after loading
 new Handler().postDelayed(() -> {
     showHome();
 }, 1200);
     }
-
     void showHome() {
         stopTimer();
 content.removeAllViews();
