@@ -422,7 +422,19 @@ loadingScreen.setPadding(20, 30, 20, 30);
 
 // Royal purple background
 loadingScreen.setBackgroundColor(Color.rgb(30, 24, 55));
+        
+// App icon at the top
+ImageView loadingIcon = new ImageView(this);
+loadingIcon.setImageResource(R.drawable.kingdom_life_icon);
+loadingIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
+LinearLayout.LayoutParams iconParams =
+        new LinearLayout.LayoutParams(150, 150);
+iconParams.gravity = Gravity.CENTER;
+iconParams.bottomMargin = 20;
+
+loadingScreen.addView(loadingIcon, iconParams);
+        
 // Combined gold logo with jeweled crown
 ImageView loadingLogo = new ImageView(this);
 loadingLogo.setImageResource(R.drawable.kingdom_life_gold_logo);
