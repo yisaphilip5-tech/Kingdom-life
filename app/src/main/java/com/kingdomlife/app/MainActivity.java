@@ -5817,7 +5817,13 @@ addCard(
 addCard(
         "🎵 Kingdom Music",
         "Play music and worship audio from your device.",
-        v -> showKingdomMusic()
+        v -> {
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    KingdomMusicActivity.class
+            );
+            startActivity(intent);
+        }
 );
     
 
