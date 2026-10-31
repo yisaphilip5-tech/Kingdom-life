@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -34,7 +33,6 @@ public class KingdomMusicActivity extends Activity {
     private final ArrayList<String> songNames = new ArrayList<>();
     private final Set<String> favourites = new HashSet<>();
 
-    private MediaPlayer player;
     private int currentIndex = -1;
     private boolean prepared = false;
 
@@ -278,55 +276,78 @@ public class KingdomMusicActivity extends Activity {
     }
 
     private void playSong() {
-        if (songUris.isEmpty()) {
-            toast("Choose some music first.");
-            return;
-        }
-
-        if (currentIndex < 0 || currentIndex >= songUris.size()) {
-            currentIndex = 0;
-        }
-
-        releasePlayer();
-
-        try {
-            player = new MediaPlayer();
-            prepared = false;
-
-            player.setDataSource(
-                    this,
-                    songUris.get(currentIndex)
-            );
-
-            player.setOnPreparedListener(mp -> {
-                prepared = true;
-                mp.start();
-
-                nowPlaying.setText(
-                        "▶ Playing: " + songNames.get(currentIndex)
-                );
-            });
-
-            player.setOnCompletionListener(mp -> nextSong());
-
-            player.setOnErrorListener((mp, what, extra) -> {
-                toast("This audio could not be played.");
-                releasePlayer();
-                return true;
-            });
-
-            player.prepareAsync();
-
-            nowPlaying.setText(
-                    "Loading: " + songNames.get(currentIndex)
-            );
-
-        } catch (Exception e) {
-            releasePlayer();
-            toast("Unable to open this audio file.");
-        }
+    if (songUris.isEmpty()) {
+        toast("Choose some music first.");
+        return;
     }
 
+    if (currentIndex < 0 || currentIndex >= songUris.size()) {
+        currentIndex = 0;
+    }
+
+    Intent intent = new Intent(this, KingdomMusicService.class);
+    intent.setAction(KingdomMusicService.ACTION_PLAY);
+    intent.putExtra(
+            KingdomMusicService.EXTRA_URI,
+            songUris.get(currentIndex).toString()
+    );
+    intent.putExtra(
+            KingdomMusicService.EXTRA_TITLE,
+            songNames.get(currentIndex)
+    );
+
+    if (android.os.Build.VERSION.SDK_INT >= 26) {
+        startForegroundService(intent);
+    } else {
+        startService(intent);
+    }
+
+    nowPlaying.setText("▶ Playing: " + songNames.get(currentIndex));
+}
+
+private void pauseSong() {
+    Intent intent = new Intent(this, KingdomMusicService.class);
+    intent.setAction(KingdomMusicService.ACTION_PAUSE);
+    startService(intent);
+
+    nowPlaying.setText("⏸ Pause requested");
+}
+
+private void stopSong() {
+    Intent intent = new Intent(this, KingdomMusicService.class);
+    intent.setAction(KingdomMusicService.ACTION_STOP);
+    startService(intent);
+
+    nowPlaying.setText("Nothing playing");
+}
+
+private void nextSong() {
+    if (songUris.isEmpty()) {
+        return;
+    }
+
+    currentIndex = (currentIndex + 1) % songUris.size();
+    playSong();
+}
+
+private void previousSong() {
+    if (songUris.isEmpty()) {
+        return;
+    }
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = songUris.size() - 1;
+    }
+
+    playSong();
+}
+
+private void releasePlayer() {
+    // Playback is now managed by KingdomMusicService.
+    // Do not stop the service when this screen closes.
+        }
     private void pauseSong() {
         if (player != null && prepared && player.isPlaying()) {
             player.pause();
@@ -464,12 +485,10 @@ public class KingdomMusicActivity extends Activity {
                 Toast.LENGTH_SHORT
         ).show();
     }
-
-    @Override
-    protected void onDestroy() {
-        // This initial version releases playback when the screen closes.
-        // A separate foreground service will be added for background playback.
-        releasePlayer();
-        super.onDestroy();
-    }
+@Override
+protected void onDestroy() {
+    // KingdomMusicService manages playback independently.
+    super.onDestroy();
+}
+    
           }
