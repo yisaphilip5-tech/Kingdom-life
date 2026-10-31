@@ -344,7 +344,97 @@ private void previousSong() {
     playSong();
 }
 
+private void toggleFavourite(int index) {
+if (index < 0 || index >= songUris.size()) return;
 
+    String uri = songUris.get(index).toString();
+
+    if (favourites.contains(uri)) {
+        favourites.remove(uri);
+        toast("Removed from favourites");
+    } else {
+        favourites.add(uri);
+        toast("Added to favourites");
+    }
+
+    saveMusic();
+    refreshSongList();
+}
+
+private void removeSong(int index) {
+    if (index < 0 || index >= songUris.size()) return;
+
+    String removedUri = songUris.get(index).toString();
+    songUris.remove(index);
+    songNames.remove(index);
+    favourites.remove(removedUri);
+
+    if (songUris.isEmpty()) {
+        currentIndex = -1;
+    } else if (currentIndex >= songUris.size()) {
+        currentIndex = songUris.size() - 1;
+    }
+
+    saveMusic();
+    refreshSongList();
+    toast("Song removed");
+}
+
+private void loadSavedMusic() {
+    SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
+
+    songUris.clear();
+    songNames.clear();
+    favourites.clear();
+
+    String savedUris = prefs.getString(SONGS_KEY, "");
+    String savedNames = prefs.getString(NAMES_KEY, "");
+
+    if (!savedUris.isEmpty() && !savedNames.isEmpty()) {
+        String[] uris = savedUris.split("\n", -1);
+        String[] names = savedNames.split("\n", -1);
+
+        int count = Math.min(uris.length, names.length);
+
+        for (int i = 0; i < count; i++) {
+            if (!uris[i].isEmpty()) {
+                songUris.add(Uri.parse(uris[i]));
+                songNames.add(names[i]);
+            }
+        }
+    }
+
+    favourites.addAll(
+            prefs.getStringSet(
+                    FAVOURITES_KEY,
+                    new HashSet<>()
+            )
+    );
+}
+
+private void saveMusic() {
+    SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
+
+    StringBuilder savedUris = new StringBuilder();
+    StringBuilder savedNames = new StringBuilder();
+
+    for (int i = 0; i < songUris.size(); i++) {
+        if (i > 0) {
+            savedUris.append("\n");
+            savedNames.append("\n");
+        }
+
+        savedUris.append(songUris.get(i).toString());
+        savedNames.append(songNames.get(i));
+    }
+
+    prefs.edit()
+            .putString(SONGS_KEY, savedUris.toString())
+            .putString(NAMES_KEY, savedNames.toString())
+            .putStringSet(FAVOURITES_KEY, new HashSet<>(favourites))
+            .apply();
+            }
+    
     private void toast(String message) {
         Toast.makeText(
                 this,
