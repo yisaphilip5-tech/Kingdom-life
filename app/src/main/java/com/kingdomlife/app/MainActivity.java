@@ -10540,40 +10540,7 @@ protected void onActivityResult(
 
     android.net.Uri uri = data.getData();
 
-    if (requestCode == PICK_KINGDOM_MUSIC) {
-
-        if (data.getClipData() != null) {
-            android.content.ClipData clipData = data.getClipData();
-
-            for (int i = 0; i < clipData.getItemCount(); i++) {
-                android.net.Uri musicUri =
-                        clipData.getItemAt(i).getUri();
-
-                if (!kingdomMusicUris.contains(musicUri)) {
-                    kingdomMusicUris.add(musicUri);
-
-                    String name = musicUri.getLastPathSegment();
-                    kingdomMusicNames.add(
-                            name == null ? "Selected audio" : name
-                    );
-                }
-            }
-
-        } else if (uri != null) {
-
-            if (!kingdomMusicUris.contains(uri)) {
-                kingdomMusicUris.add(uri);
-
-                String name = uri.getLastPathSegment();
-                kingdomMusicNames.add(
-                        name == null ? "Selected audio" : name
-                );
-            }
-        }
-
-        showKingdomMusic();
-
-    } else if (requestCode == 7101) {
+    if (requestCode == 7101) {
 
         if (uri != null) {
             writeBackup(uri);
@@ -10586,76 +10553,5 @@ protected void onActivityResult(
         }
     }
 }
-    private static final int PICK_KINGDOM_MUSIC = 2001;
-
-private final ArrayList<Uri> kingdomMusicUris = new ArrayList<>();
-private final ArrayList<String> kingdomMusicNames = new ArrayList<>();
-
-private MediaPlayer kingdomMediaPlayer;
-private int kingdomMusicIndex = 0;
-
-private void showKingdomMusic() {
-    stopTimer();
-    content.removeAllViews();
-
-    TextView title = new TextView(this);
-    title.setText("🎵 Kingdom Music");
-    title.setTextSize(24);
-    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    title.setTextColor(darkText);
-    title.setPadding(0, 15, 0, 15);
-    content.addView(title);
-
-    TextView description = new TextView(this);
-    description.setText(
-            "Choose worship music or audio files stored on your device."
-    );
-    description.setTextSize(16);
-    description.setTextColor(darkText);
-    description.setPadding(0, 0, 0, 16);
-    content.addView(description);
-
-    addButton("＋ Choose Music", v -> {
-    Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-    intent.setType("audio/*");
-    intent.addCategory(Intent.CATEGORY_OPENABLE);
-    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-    startActivityForResult(intent, PICK_KINGDOM_MUSIC);
-});
-
-TextView songListTitle = new TextView(this);
-songListTitle.setText("🎶 Your Music");
-songListTitle.setTextSize(20);
-songListTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-songListTitle.setTextColor(darkText);
-songListTitle.setPadding(0, 20, 0, 10);
-content.addView(songListTitle);
-
-if (kingdomMusicNames.isEmpty()) {
-    TextView emptyMessage = new TextView(this);
-    emptyMessage.setText(
-            "No music selected yet. Tap Choose Music to add audio files."
-    );
-    emptyMessage.setTextSize(15);
-    emptyMessage.setTextColor(darkText);
-    emptyMessage.setPadding(0, 10, 0, 20);
-    content.addView(emptyMessage);
-
-} else {
-    for (int i = 0; i < kingdomMusicNames.size(); i++) {
-        final int songIndex = i;
-
-        addCard(
-                "🎵 " + kingdomMusicNames.get(i),
-                "Tap to select this track.",
-                v -> {
-                    kingdomMusicIndex = songIndex;
-                    showKingdomMusic();
-                }
-        );
-    }
-}
-
-addButton("⬅️ Back to Settings", v -> showSettings());
-}
+    
   }
