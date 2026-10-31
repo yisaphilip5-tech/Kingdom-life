@@ -29,6 +29,9 @@
         <receiver
     android:name=".KingdomLifeNotificationReceiver"
     android:exported="false" />
+        <activity
+    android:name=".KingdomMusicActivity"
+    android:exported="false" />
 
     </application>
 
