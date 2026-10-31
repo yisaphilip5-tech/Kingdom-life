@@ -419,45 +419,32 @@ LinearLayout loadingScreen = new LinearLayout(this);
 loadingScreen.setOrientation(LinearLayout.VERTICAL);
 loadingScreen.setGravity(Gravity.CENTER);
 loadingScreen.setPadding(20, 30, 20, 30);
-loadingScreen.setBackgroundColor(Color.rgb(255, 252, 242));
 
-// App icon
-ImageView loadingIcon = new ImageView(this);
-loadingIcon.setImageResource(R.drawable.kingdom_life_icon);
-loadingIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
+// Royal purple background
+loadingScreen.setBackgroundColor(Color.rgb(30, 24, 55));
 
-LinearLayout.LayoutParams iconParams =
-        new LinearLayout.LayoutParams(180, 180);
-iconParams.gravity = Gravity.CENTER;
+// Combined gold logo with jeweled crown
+ImageView loadingLogo = new ImageView(this);
+loadingLogo.setImageResource(R.drawable.kingdom_life_gold_logo);
+loadingLogo.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
-loadingScreen.addView(loadingIcon, iconParams);
+LinearLayout.LayoutParams logoParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                220
+        );
+logoParams.gravity = Gravity.CENTER;
+logoParams.bottomMargin = 20;
 
-// Gold Kingdom Life heading with crown
-TextView loadingTitle = new TextView(this);
-loadingTitle.setText("👑 Kingdom Life");
-loadingTitle.setTextSize(28);
-loadingTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-loadingTitle.setTextColor(Color.rgb(212, 175, 55));
-loadingTitle.setGravity(Gravity.CENTER);
-loadingTitle.setPadding(0, 20, 0, 8);
-
-// Subtle shine effect
-loadingTitle.setShadowLayer(
-        3f,
-        0f,
-        1f,
-        Color.rgb(255, 223, 100)
-);
-
-loadingScreen.addView(loadingTitle);
+loadingScreen.addView(loadingLogo, logoParams);
 
 // Subtitle
 TextView loadingSubtitle = new TextView(this);
 loadingSubtitle.setText("Grow in faith. Live with purpose.");
 loadingSubtitle.setTextSize(16);
-loadingSubtitle.setTextColor(Color.rgb(75, 65, 80));
+loadingSubtitle.setTextColor(Color.rgb(255, 255, 255));
 loadingSubtitle.setGravity(Gravity.CENTER);
-loadingSubtitle.setPadding(0, 0, 0, 25);
+loadingSubtitle.setPadding(0, 10, 0, 25);
 
 loadingScreen.addView(loadingSubtitle);
 
@@ -502,49 +489,26 @@ if (displayMode.equals("DAY")) {
 LinearLayout header = new LinearLayout(this);
 header.setOrientation(LinearLayout.HORIZONTAL);
 header.setGravity(Gravity.CENTER_VERTICAL);
-header.setPadding(5, 90, 5, 5);
+header.setPadding(5, 70, 5, 5);
 
 LinearLayout titleArea = new LinearLayout(this);
 titleArea.setOrientation(LinearLayout.VERTICAL);
 titleArea.setGravity(Gravity.CENTER_VERTICAL);
 
-TextView kingdomTitle = new TextView(this);
-kingdomTitle.setText("👑 Kingdom Life");
-kingdomTitle.setTextSize(28);
-kingdomTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-android.graphics.drawable.GradientDrawable goldTextBackground =
-new android.graphics.drawable.GradientDrawable(
-android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
-new int[]{
-Color.rgb(255, 235, 150),
-Color.rgb(212, 175, 55),
-Color.rgb(255, 248, 200),
-Color.rgb(184, 134, 11)
-}
-);
-android.text.TextPaint titlePaint = kingdomTitle.getPaint();
+ImageView kingdomTitle = new ImageView(this);
+kingdomTitle.setImageResource(R.drawable.kingdom_life_gold_name);
+kingdomTitle.setScaleType(ImageView.ScaleType.FIT_CENTER);
+kingdomTitle.setAdjustViewBounds(true);
 
-titlePaint.setShader(
-new android.graphics.LinearGradient(
-0, 0, 0, kingdomTitle.getTextSize(),
-new int[]{
-Color.rgb(255, 200, 0),
-Color.rgb(255, 245, 120),
-Color.WHITE,
-Color.rgb(255, 215, 0),
-Color.rgb(255, 235, 90)
-},
-new float[]{0.0f, 0.28f, 0.45f, 0.62f, 1.0f},
-android.graphics.Shader.TileMode.CLAMP
-)
-);
+LinearLayout.LayoutParams kingdomTitleParams =
+        new LinearLayout.LayoutParams(
+                (int) (230 * getResources().getDisplayMetrics().density),
+                (int) (65 * getResources().getDisplayMetrics().density)
+        );
 
-kingdomTitle.setShadowLayer(
-1f, 0f, 0f, Color.rgb(255, 200, 0)
-);
-kingdomTitle.invalidate();
-titleArea.addView(kingdomTitle);
+kingdomTitleParams.gravity = Gravity.START;
 
+titleArea.addView(kingdomTitle, kingdomTitleParams);
 TextView kingdomSubtitle = new TextView(this);
 kingdomSubtitle.setText("Grow in faith. Live with purpose.");
 kingdomSubtitle.setTextSize(15);
