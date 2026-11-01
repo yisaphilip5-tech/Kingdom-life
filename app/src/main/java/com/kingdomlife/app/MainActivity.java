@@ -7952,8 +7952,22 @@ addButton("Next Question", v -> {
     
     void showBibleJourneyResult() {
 
-    stopTimer();
-    content.removeAllViews();
+stopTimer();
+
+android.media.MediaPlayer levelCompletePlayer =
+        android.media.MediaPlayer.create(
+                this,
+                R.raw.level_complete
+        );
+
+if (levelCompletePlayer != null) {
+    levelCompletePlayer.setOnCompletionListener(
+            android.media.MediaPlayer::release
+    );
+    levelCompletePlayer.start();
+}
+
+content.removeAllViews();
         
     ImageButton backButton = new ImageButton(this);
 
@@ -8652,8 +8666,22 @@ for (int i = 0; i < buttons.length; i++) {
 
     void showResults() {
 stopTimer();
-content.removeAllViews();
 
+android.media.MediaPlayer levelCompletePlayer =
+        android.media.MediaPlayer.create(
+                this,
+                R.raw.level_complete
+        );
+
+if (levelCompletePlayer != null) {
+    levelCompletePlayer.setOnCompletionListener(
+            android.media.MediaPlayer::release
+    );
+    levelCompletePlayer.start();
+}
+
+content.removeAllViews();
+        
 if (currentLevel == 1) {
     prefs.edit()
             .putBoolean("challenge_level_1_completed", true)
@@ -10108,8 +10136,22 @@ homeY = new float[count];
     }
     
 private void showCompletedPicture() {
-    content.removeAllViews();
-    content.setOrientation(LinearLayout.VERTICAL);
+android.media.MediaPlayer levelCompletePlayer =
+android.media.MediaPlayer.create(
+MainActivity.this,
+R.raw.level_complete
+);
+
+if (levelCompletePlayer != null) {
+    levelCompletePlayer.setOnCompletionListener(
+            android.media.MediaPlayer::release
+    );
+    levelCompletePlayer.start();
+}
+
+content.removeAllViews();
+content.setOrientation(LinearLayout.VERTICAL);
+    
 
     // Identify the completed level
 final int level = levelNumber;
