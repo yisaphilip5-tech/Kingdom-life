@@ -10530,6 +10530,26 @@ float targetY = boardTop + row * boardCellHeight;
                     yPositions[selected] = targetY;
                     placed[selected] = true;
                     locked[selected] = true;
+                    try {
+    android.media.MediaPlayer snapSound =
+            android.media.MediaPlayer.create(
+                    getContext(),
+                    R.raw.jigsaw_snap
+            );
+
+    if (snapSound != null) {
+        snapSound.setOnCompletionListener(
+                mediaPlayer -> mediaPlayer.release()
+        );
+        snapSound.start();
+    }
+} catch (Exception e) {
+    android.util.Log.e(
+            "BibleJigsawPuzzle",
+            "Could not play jigsaw snap sound",
+            e
+    );
+                    }
                     completed++;
                     if (completed == count && !victoryShown) {
                         victoryShown = true;
