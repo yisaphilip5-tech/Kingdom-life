@@ -1249,7 +1249,21 @@ if (correct) {
 
 private void showFinalResult() {
 
-    content.removeAllViews();
+android.media.MediaPlayer levelCompletePlayer =
+        android.media.MediaPlayer.create(
+                this,
+                R.raw.level_complete
+        );
+
+if (levelCompletePlayer != null) {
+    levelCompletePlayer.setOnCompletionListener(
+            android.media.MediaPlayer::release
+    );
+    levelCompletePlayer.start();
+}
+
+content.removeAllViews();
+    
     if (level >= 1 && level < 10) {
     int nextLevel = level + 1;
 
