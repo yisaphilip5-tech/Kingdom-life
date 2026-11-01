@@ -1112,8 +1112,20 @@ private void handleAnswer(
 
     // Colour the selected answer and track achievements.
 if (correct) {
-    score += 10;
+    android.media.MediaPlayer correctSound =
+            android.media.MediaPlayer.create(
+                    MemoryVerseGameActivity.this,
+                    R.raw.answer_correct
+            );
 
+    if (correctSound != null) {
+        correctSound.setOnCompletionListener(
+                mediaPlayer -> mediaPlayer.release()
+        );
+        correctSound.start();
+    }
+
+    score += 10;
     // Save the correct-answer count for this game.
     android.content.SharedPreferences memoryPrefs =
             getSharedPreferences(
@@ -1145,6 +1157,19 @@ if (correct) {
             "✅ " + selectedButton.getText()
     );
 } else {
+    android.media.MediaPlayer wrongSound =
+            android.media.MediaPlayer.create(
+                    MemoryVerseGameActivity.this,
+                    R.raw.answer_wrong
+            );
+
+    if (wrongSound != null) {
+        wrongSound.setOnCompletionListener(
+                mediaPlayer -> mediaPlayer.release()
+        );
+        wrongSound.start();
+    }
+
     selectedButton.setText(
             "❌ " + selectedButton.getText()
     );
