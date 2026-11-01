@@ -8509,6 +8509,13 @@ if (currentLevel == 2) {
 boolean isCorrect = selected == correctAnswer;
 
 if (isCorrect) {
+    android.media.MediaPlayer correctSound =
+        android.media.MediaPlayer.create(this, R.raw.answer_correct);
+
+if (correctSound != null) {
+    correctSound.setOnCompletionListener(mp -> mp.release());
+    correctSound.start();
+}
     score += 10;
     totalPoints += 10;
     correctAnswers++;
@@ -8522,8 +8529,16 @@ if (isCorrect) {
     feedback.setText("Correct! +10 points");
 
 } else {
-    wrongAnswers++;
 
+    android.media.MediaPlayer wrongSound =
+            android.media.MediaPlayer.create(this, R.raw.answer_wrong);
+
+    if (wrongSound != null) {
+        wrongSound.setOnCompletionListener(mp -> mp.release());
+        wrongSound.start();
+    }
+
+    wrongAnswers++;
     String correctOption;
 
     if (currentLevel == 2) {
