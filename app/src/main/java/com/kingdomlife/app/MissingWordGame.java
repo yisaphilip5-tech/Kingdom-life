@@ -503,6 +503,18 @@ activity.content.addView(
         }
 
         if (selectedAnswer.equals(correctAnswer)) {
+            android.media.MediaPlayer correctSound =
+        android.media.MediaPlayer.create(
+                activity,
+                R.raw.answer_correct
+        );
+
+if (correctSound != null) {
+    correctSound.setOnCompletionListener(
+            mp -> mp.release()
+    );
+    correctSound.start();
+}
             score += 5;
 
             activity.totalPoints += 5;
@@ -542,9 +554,22 @@ activity.prefs.edit()
             activity.checkAchievementNotifications();
 
         } else {
-            feedbackText.setText(
-                    "❌ Not quite. Correct answer: "
-                            + correctAnswer
+
+    android.media.MediaPlayer wrongSound =
+            android.media.MediaPlayer.create(
+                    activity,
+                    R.raw.answer_wrong
+            );
+
+    if (wrongSound != null) {
+        wrongSound.setOnCompletionListener(
+                mp -> mp.release()
+        );
+        wrongSound.start();
+    }
+
+    feedbackText.setText(
+            "❌ Not quite. Correct answer: "
             );
 
             feedbackText.setTextColor(
