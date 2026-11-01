@@ -495,44 +495,64 @@ if (displayMode.equals("DAY")) {
 }
 
 /* ===== KINGDOM LIFE HEADER ===== */
-
-LinearLayout header = new LinearLayout(this);
-header.setOrientation(LinearLayout.HORIZONTAL);
-header.setGravity(Gravity.CENTER_VERTICAL);
-header.setPadding(5, 70, 5, 5);
-
 LinearLayout titleArea = new LinearLayout(this);
-titleArea.setOrientation(LinearLayout.VERTICAL);
+titleArea.setOrientation(LinearLayout.HORIZONTAL);
 titleArea.setGravity(Gravity.CENTER_VERTICAL);
+
+float headerDensity = getResources()
+.getDisplayMetrics().density;
+
+// Crown image
+ImageView crownImage = new ImageView(this);
+crownImage.setImageResource(R.drawable.kingdom_life_crown);
+crownImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
+crownImage.setAdjustViewBounds(true);
+
+LinearLayout.LayoutParams crownParams =
+new LinearLayout.LayoutParams(
+(int) (65 * headerDensity),
+(int) (65 * headerDensity)
+);
+
+crownParams.setMargins(
+0, 0, (int) (8 * headerDensity), 0
+);
+
+titleArea.addView(crownImage, crownParams);
+
+// Title and subtitle
+LinearLayout textArea = new LinearLayout(this);
+textArea.setOrientation(LinearLayout.VERTICAL);
+textArea.setGravity(Gravity.CENTER_VERTICAL);
 
 ImageView kingdomTitle = new ImageView(this);
 kingdomTitle.setImageResource(R.drawable.kingdom_life_gold_name);
-kingdomTitle.setScaleType(ImageView.ScaleType.FIT_CENTER);
+kingdomTitle.setScaleType(ImageView.ScaleType.FIT_START);
 kingdomTitle.setAdjustViewBounds(true);
 
 LinearLayout.LayoutParams kingdomTitleParams =
-        new LinearLayout.LayoutParams(
-                (int) (230 * getResources().getDisplayMetrics().density),
-                (int) (65 * getResources().getDisplayMetrics().density)
-        );
+new LinearLayout.LayoutParams(
+LinearLayout.LayoutParams.MATCH_PARENT,
+(int) (52 * headerDensity)
+);
 
-kingdomTitleParams.gravity = Gravity.START;
+textArea.addView(kingdomTitle, kingdomTitleParams);
 
-titleArea.addView(kingdomTitle, kingdomTitleParams);
 TextView kingdomSubtitle = new TextView(this);
 kingdomSubtitle.setText("Grow in faith. Live with purpose.");
-kingdomSubtitle.setTextSize(15);
+kingdomSubtitle.setTextSize(13);
 kingdomSubtitle.setTextColor(Color.WHITE);
 
-titleArea.addView(kingdomSubtitle);
+textArea.addView(kingdomSubtitle);
 
-LinearLayout.LayoutParams titleParams =
-        new LinearLayout.LayoutParams(
-                0,
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                1
-        );
-
+titleArea.addView(
+textArea,
+new LinearLayout.LayoutParams(
+0,
+LinearLayout.LayoutParams.WRAP_CONTENT,
+1
+)
+);
 header.addView(titleArea, titleParams);
 
 android.widget.ImageButton settingsButton =
