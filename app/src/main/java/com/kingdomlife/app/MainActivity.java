@@ -8455,6 +8455,7 @@ answerButtons[i].setBackground(optionBackground);
         ));
 
         content.addView(navigation);
+        startBibleChallengeTick();
 
         previous.setOnClickListener(v -> {
             if (currentQuestion > 0) {
@@ -8473,7 +8474,7 @@ answerButtons[i].setBackground(optionBackground);
         });
 
         timer = new CountDownTimer(timeLimit, 1000) {
-            startBibleChallengeTick();
+            
 
             public void onTick(long millisUntilFinished) {
                 timerText.setText("⏱️ Time: "
