@@ -394,7 +394,20 @@ activity.content.addView(feedback, feedbackParams);
     }
 
     private void showFinalResult() {
-        activity.content.removeAllViews();
+android.media.MediaPlayer levelCompletePlayer =
+android.media.MediaPlayer.create(
+activity,
+R.raw.level_complete
+);
+
+    if (levelCompletePlayer != null) {
+        levelCompletePlayer.setOnCompletionListener(
+                android.media.MediaPlayer::release
+        );
+        levelCompletePlayer.start();
+    }
+
+    activity.content.removeAllViews();
         int unlockedLevel = activity.prefs.getInt(
 "bibleScrambleUnlockedLevel", 1);
 
