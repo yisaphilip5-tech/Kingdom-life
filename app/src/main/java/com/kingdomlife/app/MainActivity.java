@@ -7830,6 +7830,18 @@ feedback.setGravity(Gravity.CENTER);
 feedback.setPadding(16, 18, 16, 18);
 
 if (isCorrect) {
+        android.media.MediaPlayer correctSound =
+            android.media.MediaPlayer.create(
+                    MainActivity.this,
+                    R.raw.answer_correct
+            );
+
+    if (correctSound != null) {
+        correctSound.setOnCompletionListener(
+                mediaPlayer -> mediaPlayer.release()
+        );
+        correctSound.start();
+    }
 
     bibleJourneyScore += 5;
     totalPoints += 5;
@@ -7843,6 +7855,18 @@ if (isCorrect) {
     feedback.setText("Correct! +5 points");
 
 } else {
+        android.media.MediaPlayer wrongSound =
+            android.media.MediaPlayer.create(
+                    MainActivity.this,
+                    R.raw.answer_wrong
+            );
+
+    if (wrongSound != null) {
+        wrongSound.setOnCompletionListener(
+                mediaPlayer -> mediaPlayer.release()
+        );
+        wrongSound.start();
+    }
 
     feedback.setText(
             "Incorrect!\n\n" +
