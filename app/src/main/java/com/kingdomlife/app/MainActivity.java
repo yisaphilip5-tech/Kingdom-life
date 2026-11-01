@@ -392,7 +392,9 @@ if (selectedItem.contains("Home")) {
 }
 
 main.addView(bottomNav);
-    setContentView(main);
+bottomNav.setVisibility(View.GONE);
+
+setContentView(main);
         final int baseLeft = main.getPaddingLeft();
 final int baseTop = main.getPaddingTop();
 final int baseRight = main.getPaddingRight();
@@ -457,6 +459,28 @@ loadingSubtitle.setGravity(Gravity.CENTER);
 loadingSubtitle.setPadding(0, 10, 0, 25);
 
 loadingScreen.addView(loadingSubtitle);
+        // Daily encouragement message
+int dayOfYear = Calendar.getInstance().get(
+        Calendar.DAY_OF_YEAR
+);
+
+String encouragement =
+        DailyEncouragementData.getMessageForDay(dayOfYear);
+
+TextView encouragementText = new TextView(this);
+encouragementText.setText(encouragement);
+encouragementText.setTextSize(15);
+encouragementText.setTextColor(Color.rgb(255, 223, 128));
+encouragementText.setGravity(Gravity.CENTER);
+encouragementText.setPadding(12, 12, 12, 20);
+
+loadingScreen.addView(
+        encouragementText,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+);
 
 // Loading indicator
 ProgressBar loadingProgress = new ProgressBar(this);
@@ -469,6 +493,7 @@ content.addView(loadingScreen);
 // Open Home after loading
 new Handler().postDelayed(() -> {
     showHome();
+    bottomNav.setVisibility(View.VISIBLE);
 }, 1200);
     }
     void showHome() {
