@@ -53,6 +53,8 @@ import android.widget.Space;
 import android.content.SharedPreferences;
 
 public class MainActivity extends Activity {
+    
+    
 
     LinearLayout content;
   SharedPreferences prefs;
@@ -93,6 +95,8 @@ int wrongAnswers = 0;
 
 boolean answered = false;
 CountDownTimer timer;
+    
+    private android.media.MediaPlayer bibleChallengeTick;
 
 int timeLimit = 30000;
 
@@ -8469,6 +8473,7 @@ answerButtons[i].setBackground(optionBackground);
         });
 
         timer = new CountDownTimer(timeLimit, 1000) {
+            startBibleChallengeTick();
 
             public void onTick(long millisUntilFinished) {
                 timerText.setText("⏱️ Time: "
@@ -8477,6 +8482,7 @@ answerButtons[i].setBackground(optionBackground);
             }
 
             public void onFinish() {
+                stopBibleChallengeTick();
                 if (!answered) {
                     answered = true;
                     wrongAnswers++;
@@ -8512,6 +8518,7 @@ return;
 
 answered = true;
 stopTimer();
+stopBibleChallengeTick();
 
 TextView feedback = new TextView(this);
 feedback.setTextSize(18);
@@ -8640,6 +8647,7 @@ for (int i = 0; i < buttons.length; i++) {
 }
 
         }
+    
 
     void showResults() {
 stopTimer();
@@ -10604,5 +10612,46 @@ protected void onActivityResult(
         }
     }
 }
+    private void startBibleChallengeTick() {
+    stopBibleChallengeTick();
+
+    try {
+        bibleChallengeTick =
+                android.media.MediaPlayer.create(
+                        this,
+                        R.raw.bible_challenge_tick
+                );
+
+        if (bibleChallengeTick != null) {
+            bibleChallengeTick.setLooping(true);
+            bibleChallengeTick.start();
+        }
+    } catch (Exception e) {
+        android.util.Log.e(
+                "BibleChallenge",
+                "Could not start ticking sound",
+                e
+        );
+    }
+    }
+    private void stopBibleChallengeTick() {
+    if (bibleChallengeTick != null) {
+        try {
+            if (bibleChallengeTick.isPlaying()) {
+                bibleChallengeTick.stop();
+            }
+        } catch (IllegalStateException e) {
+            android.util.Log.e(
+                    "BibleChallenge",
+                    "Error stopping ticking sound",
+                    e
+            );
+        } finally {
+            bibleChallengeTick.release();
+            bibleChallengeTick = null;
+        }
+    }
+    }
+    
     
   }
