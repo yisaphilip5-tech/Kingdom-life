@@ -615,7 +615,20 @@ activity.prefs.edit()
     }
 
     private void showResults() {
-        prepareScreen();
+android.media.MediaPlayer levelCompletePlayer =
+android.media.MediaPlayer.create(
+activity,
+R.raw.level_complete
+);
+
+    if (levelCompletePlayer != null) {
+        levelCompletePlayer.setOnCompletionListener(
+                android.media.MediaPlayer::release
+        );
+        levelCompletePlayer.start();
+    }
+
+    prepareScreen();
         int unlockedLevel = activity.prefs.getInt(
 "missingWordUnlockedLevel", 1);
 
