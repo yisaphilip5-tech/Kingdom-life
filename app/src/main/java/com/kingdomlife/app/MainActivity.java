@@ -494,7 +494,14 @@ if (displayMode.equals("DAY")) {
     }
 }
 
+
 /* ===== KINGDOM LIFE HEADER ===== */
+
+LinearLayout header = new LinearLayout(this);
+header.setOrientation(LinearLayout.HORIZONTAL);
+header.setGravity(Gravity.CENTER_VERTICAL);
+header.setPadding(5, 70, 5, 5);
+
 LinearLayout titleArea = new LinearLayout(this);
 titleArea.setOrientation(LinearLayout.HORIZONTAL);
 titleArea.setGravity(Gravity.CENTER_VERTICAL);
@@ -553,33 +560,43 @@ LinearLayout.LayoutParams.WRAP_CONTENT,
 1
 )
 );
+
+// Position the crown and title area
+LinearLayout.LayoutParams titleParams =
+new LinearLayout.LayoutParams(
+0,
+LinearLayout.LayoutParams.WRAP_CONTENT,
+1
+);
+
 header.addView(titleArea, titleParams);
 
+// Settings button
 android.widget.ImageButton settingsButton =
-        new android.widget.ImageButton(this);
+new android.widget.ImageButton(this);
 
 settingsButton.setImageResource(R.drawable.settings);
 settingsButton.setScaleType(
-        android.widget.ImageView.ScaleType.FIT_CENTER
+android.widget.ImageView.ScaleType.FIT_CENTER
 );
 
 float settingsDensity = getResources()
-        .getDisplayMetrics().density;
+.getDisplayMetrics().density;
 
 settingsButton.setPadding(
-        (int) (5 * settingsDensity),
-        (int) (5 * settingsDensity),
-        (int) (5 * settingsDensity),
-        (int) (5 * settingsDensity)
+(int) (5 * settingsDensity),
+(int) (5 * settingsDensity),
+(int) (5 * settingsDensity),
+(int) (5 * settingsDensity)
 );
 
 settingsButton.setBackgroundColor(Color.TRANSPARENT);
 
 settingsButton.setLayoutParams(
-        new LinearLayout.LayoutParams(
-                (int) (65 * settingsDensity),
-                (int) (65 * settingsDensity)
-        )
+new LinearLayout.LayoutParams(
+(int) (65 * settingsDensity),
+(int) (65 * settingsDensity)
+)
 );
 
 settingsButton.setOnClickListener(v -> showSettings());
