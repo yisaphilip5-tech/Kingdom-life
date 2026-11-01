@@ -276,6 +276,18 @@ activity.content.addView(answerInput, inputParams);
                     .toString().trim();
 
             if (userAnswer.equalsIgnoreCase(word)) {
+                android.media.MediaPlayer correctSound =
+        android.media.MediaPlayer.create(
+                activity,
+                R.raw.answer_correct
+        );
+
+if (correctSound != null) {
+    correctSound.setOnCompletionListener(
+            mp -> mp.release()
+    );
+    correctSound.start();
+}
                 score += 5;
                 activity.totalPoints += 5;
                 String solvedKey = "bibleScramble_word_solved_level_"
@@ -329,7 +341,21 @@ activity.content.addView(feedback, 3, feedbackParams);
                         nextView -> nextQuestion());
 
             } else {
-                TextView feedback = new TextView(activity);
+
+    android.media.MediaPlayer wrongSound =
+            android.media.MediaPlayer.create(
+                    activity,
+                    R.raw.answer_wrong
+            );
+
+    if (wrongSound != null) {
+        wrongSound.setOnCompletionListener(
+                mp -> mp.release()
+        );
+        wrongSound.start();
+    }
+
+    TextView feedback = new TextView(activity);
 feedback.setText("Not quite. Try again!");
 feedback.setTextSize(18);
 feedback.setTypeface(
