@@ -10411,11 +10411,20 @@ if (boardHeight > availableBoardHeight) {
     invalidate();
 }
     private float getMaxTrayScroll() {
-        float trayContentHeight = trayRows * cellHeight + Math.max(0, trayRows - 1) * gap;
-        float visibleTrayHeight = Math.max(0f, getHeight() - trayTop - margin);
-        return Math.max(0f, trayContentHeight - visibleTrayHeight);
-    }
+    float trayContentHeight =
+            trayRows * cellHeight
+            + Math.max(0, trayRows - 1) * gap;
 
+    float visibleTrayHeight = Math.max(
+            0f,
+            getHeight() - trayTop - margin
+    );
+
+    return Math.max(
+            0f,
+            trayContentHeight - visibleTrayHeight
+    );
+    }
     private Path piecePath(int index, float x, float y, float w, float h) {
     int row = index / columns;
     int col = index % columns;
