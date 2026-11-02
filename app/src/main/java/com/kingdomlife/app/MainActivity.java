@@ -6956,7 +6956,8 @@ String message) {
     }
 
     void showAbout() {
-    startActivity(new Intent(this, AboutActivity.class));
+    Intent intent = new Intent(this, AboutActivity.class);
+    startActivity(intent);
     }
     
     void showGameMenu() {
