@@ -34,6 +34,25 @@ private void createAboutPage() {
     rootLayout.setPadding(12, 12, 12, 12);
 
     applyDisplayBackground();
+    TextView backArrow = new TextView(this);
+backArrow.setText("←");
+backArrow.setTextSize(34);
+backArrow.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+backArrow.setTextColor(Color.rgb(184, 134, 11));
+backArrow.setGravity(Gravity.CENTER);
+backArrow.setContentDescription("Back");
+
+LinearLayout.LayoutParams arrowParams =
+        new LinearLayout.LayoutParams(
+                55,
+                55
+        );
+
+arrowParams.setMargins(4, 0, 0, 6);
+
+backArrow.setOnClickListener(v -> finish());
+
+rootLayout.addView(backArrow, arrowParams);
 
     ScrollView scrollView = new ScrollView(this);
     scrollView.setFillViewport(true);
@@ -97,33 +116,6 @@ private void createAboutPage() {
                     1
             )
     );
-
-    Button backButton = new Button(this);
-    backButton.setText("⬅️ Back");
-    backButton.setTextSize(17);
-    backButton.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    backButton.setTextColor(Color.rgb(75, 35, 115));
-    backButton.setAllCaps(false);
-
-    GradientDrawable buttonBackground = new GradientDrawable();
-    buttonBackground.setColor(Color.argb(225, 255, 255, 255));
-    buttonBackground.setCornerRadius(32);
-    buttonBackground.setStroke(2, Color.rgb(184, 134, 11));
-
-    backButton.setBackground(buttonBackground);
-    backButton.setElevation(5);
-
-    backButton.setOnClickListener(v -> finish());
-
-    LinearLayout.LayoutParams buttonParams =
-            new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            );
-
-    buttonParams.setMargins(8, 8, 8, 4);
-
-    rootLayout.addView(backButton, buttonParams);
 
     setContentView(rootLayout);
 }
