@@ -10642,24 +10642,27 @@ canvas.drawRect(
         }
 
         if (action == MotionEvent.ACTION_MOVE) {
-            dragX = x;
-            dragY = y;
-
-            if (selected >= 0 && !placed[selected]) {
     dragX = x;
     dragY = y;
 
-    // Keep the original tray position unchanged.
-    draggingFromTray = y >= trayTop;
-            }
-            } else if (downY >= trayTop) {
-                // Vertical scrolling: swipe up to see later rows.
-                trayScroll = Math.max(0f, Math.min(getMaxTrayScroll(),
-                        trayScroll - (y - downY)));
-                downY = y;
-            }
-            invalidate();
-            return true;
+    if (selected >= 0 && !placed[selected]) {
+        // Keep original tray positions unchanged while dragging.
+        draggingFromTray = y >= trayTop;
+
+    } else if (downY >= trayTop) {
+        // Vertical scrolling: swipe up to see later rows.
+        trayScroll = Math.max(
+                0f,
+                Math.min(
+                        getMaxTrayScroll(),
+                        trayScroll - (y - downY)
+                )
+        );
+        downY = y;
+    }
+
+    invalidate();
+    return true;
         }
 
         if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
