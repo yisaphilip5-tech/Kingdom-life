@@ -34,25 +34,31 @@ private void createAboutPage() {
     rootLayout.setPadding(12, 12, 12, 12);
 
     applyDisplayBackground();
-    TextView backArrow = new TextView(this);
-backArrow.setText("←");
-backArrow.setTextSize(34);
-backArrow.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-backArrow.setTextColor(Color.rgb(184, 134, 11));
-backArrow.setGravity(Gravity.CENTER);
-backArrow.setContentDescription("Back");
+    
+
+// Top-left back arrow
+android.widget.ImageButton backButton =
+        new android.widget.ImageButton(this);
+
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
+backButton.setScaleX(1.5f);
+backButton.setScaleY(1.5f);
+backButton.setContentDescription("Back to previous screen");
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setScaleType(
+        android.widget.ImageView.ScaleType.CENTER_INSIDE
+);
+
+backButton.setOnClickListener(v -> finish());
 
 LinearLayout.LayoutParams arrowParams =
-        new LinearLayout.LayoutParams(
-                55,
-                55
-        );
+        new LinearLayout.LayoutParams(55, 55);
 
 arrowParams.setMargins(4, 0, 0, 6);
 
-backArrow.setOnClickListener(v -> finish());
-
-rootLayout.addView(backArrow, arrowParams);
+rootLayout.addView(backButton, arrowParams);
 
     ScrollView scrollView = new ScrollView(this);
     scrollView.setFillViewport(true);
