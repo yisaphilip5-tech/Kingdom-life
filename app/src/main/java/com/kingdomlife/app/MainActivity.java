@@ -6954,18 +6954,10 @@ String message) {
         sparkle.startAnimation(fall);
     }
     }
-    
 
     void showAbout() {
-        showMessage(
-                "ℹ️ About Kingdom Life",
-                "Kingdom Life is a Christian app designed to encourage Bible learning, " +
-                        "prayer, reflection, daily challenges, and fun Bible activities.\n\n" +
-                        "Version 5"
-        );
+    startActivity(new Intent(this, AboutActivity.class));
     }
-    
-  
     
     void showGameMenu() {
     stopTimer();
