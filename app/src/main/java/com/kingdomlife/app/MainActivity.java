@@ -6889,6 +6889,20 @@ String message) {
 }
     void playAchievementCelebration(
         android.view.ViewGroup container) {
+        // Play achievement notification sound
+android.media.MediaPlayer achievementPlayer =
+        android.media.MediaPlayer.create(
+                this,
+                R.raw.achievement_notification
+        );
+
+if (achievementPlayer != null) {
+    achievementPlayer.setOnCompletionListener(mp -> {
+        mp.release();
+    });
+
+    achievementPlayer.start();
+}
 
     final String[] effects = {
             "✨", "⭐", "🌟", "🎉", "💛", "🏆"
