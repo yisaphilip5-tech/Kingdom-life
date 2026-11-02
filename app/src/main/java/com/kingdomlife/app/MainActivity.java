@@ -10629,6 +10629,7 @@ canvas.drawRect(
                     if (x >= xPositions[i] && x <= xPositions[i] + cellWidth
                             && y >= screenY && y <= screenY + cellHeight) {
                         selected = i;
+                        getParent().requestDisallowInterceptTouchEvent(true);
                         draggingFromTray = true;
                         offsetX = x - xPositions[i];
                         offsetY = y - screenY;
@@ -10645,11 +10646,12 @@ canvas.drawRect(
             dragY = y;
 
             if (selected >= 0 && !placed[selected]) {
-                // While dragging, positions use screen coordinates so snap
-                // testing compares directly with the board target.
-                xPositions[selected] = x - offsetX;
-                yPositions[selected] = y - offsetY;
-                draggingFromTray = y >= trayTop;
+    dragX = x;
+    dragY = y;
+
+    // Keep the original tray position unchanged.
+    draggingFromTray = y >= trayTop;
+            }
             } else if (downY >= trayTop) {
                 // Vertical scrolling: swipe up to see later rows.
                 trayScroll = Math.max(0f, Math.min(getMaxTrayScroll(),
@@ -10668,8 +10670,8 @@ canvas.drawRect(
                 float targetX = boardLeft + col * boardCellWidth;
 float targetY = boardTop + row * boardCellHeight;
                 if (!draggingFromTray
-        && Math.abs(xPositions[selected] - targetX) < boardCellWidth * 0.35f
-        && Math.abs(yPositions[selected] - targetY) < boardCellHeight * 0.35f) {
+        && Math.abs((x - offsetX) - targetX) < boardCellWidth * 0.35f
+        && Math.abs((y - offsetY) - targetY) < boardCellHeight * 0.35f) {
                     xPositions[selected] = targetX;
                     yPositions[selected] = targetY;
                     placed[selected] = true;
@@ -10708,9 +10710,14 @@ float targetY = boardTop + row * boardCellHeight;
             }
 
             selected = -1;
-            draggingFromTray = false;
-            invalidate();
-            return true;
+draggingFromTray = false;
+
+if (getParent() != null) {
+    getParent().requestDisallowInterceptTouchEvent(false);
+}
+
+invalidate();
+return true;
         }
         return true;
     }
