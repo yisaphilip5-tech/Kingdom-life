@@ -10499,14 +10499,29 @@ Rect target = new Rect(
         canvas.drawRect(target, paint);
 
         // Tray background and border.
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.rgb(34, 40, 56));
-        canvas.drawRect(0f, trayTop, getWidth(), getHeight(), paint);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.5f);
-        paint.setColor(Color.rgb(112, 125, 151));
-        canvas.drawRect(1f, trayTop, getWidth() - 1f, getHeight() - 1f, paint);
+float trayContentHeight =
+        trayRows * cellHeight
+        + Math.max(0, trayRows - 1) * gap;
 
+float trayBottom = Math.min(
+        getHeight(),
+        trayTop + trayContentHeight + margin
+);
+
+paint.setStyle(Paint.Style.FILL);
+paint.setColor(Color.rgb(34, 40, 56));
+canvas.drawRect(0f, trayTop, getWidth(), trayBottom, paint);
+
+paint.setStyle(Paint.Style.STROKE);
+paint.setStrokeWidth(1.5f);
+paint.setColor(Color.rgb(112, 125, 151));
+canvas.drawRect(
+        1f,
+        trayTop,
+        getWidth() - 1f,
+        trayBottom,
+        paint
+);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.WHITE);
         paint.setTextSize(16f);
