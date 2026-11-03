@@ -98,86 +98,108 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
     int animatedLevel = activity.prefs.getInt(
             "bibleScramblePendingAnimation", 0);
 
-    
+LinearLayout levelRow = null;
 
-    for (int i = 1; i <= 125; i++) {
-        final int selectedLevel = i;
+for (int i = 1; i <= 125; i++) {
+final int selectedLevel = i;
 
-        android.widget.FrameLayout buttonFrame =
-                new android.widget.FrameLayout(activity);
+if (i % 2 == 1) {
+    levelRow = new LinearLayout(activity);
+    levelRow.setOrientation(LinearLayout.HORIZONTAL);
 
-        LinearLayout.LayoutParams frameParams =
-                new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT);
+    LinearLayout.LayoutParams rowParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        frameParams.setMargins(12, 5, 12, 5);
-        buttonFrame.setLayoutParams(frameParams);
+    activity.content.addView(levelRow, rowParams);
+}
 
-        android.widget.Button levelButton =
-                new android.widget.Button(activity);
+android.widget.FrameLayout buttonFrame =
+        new android.widget.FrameLayout(activity);
 
-        boolean isUnlocked = i <= unlockedLevel;
+LinearLayout.LayoutParams frameParams =
+        new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1f);
 
-        levelButton.setText(
-        (isUnlocked ? "" : "🔒 ")
-                + "Level " + i
-);
+frameParams.setMargins(6, 5, 6, 5);
+buttonFrame.setLayoutParams(frameParams);
+
+android.widget.Button levelButton =
+        new android.widget.Button(activity);
+
+boolean isUnlocked = i <= unlockedLevel;
+
+levelButton.setText(
+        (isUnlocked ? "" : "🔒 ") + "Level " + i);
 
 levelButton.setAllCaps(false);
-        levelButton.setGravity(Gravity.CENTER);
+levelButton.setGravity(Gravity.CENTER);
 
-        buttonFrame.addView(
-                levelButton,
-                new android.widget.FrameLayout.LayoutParams(
-                        android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
-                        android.widget.FrameLayout.LayoutParams.WRAP_CONTENT));
+buttonFrame.addView(
+        levelButton,
+        new android.widget.FrameLayout.LayoutParams(
+                android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                android.widget.FrameLayout.LayoutParams.WRAP_CONTENT));
 
-        if (isUnlocked) {
-            levelButton.setOnClickListener(
-                    v -> startLevel(selectedLevel));
-        } else {
-            levelButton.setOnClickListener(v ->
-                    android.widget.Toast.makeText(
-                            activity,
-                            "Complete Level " + (selectedLevel - 1)
-                                    + " first!",
-                            android.widget.Toast.LENGTH_SHORT
-                    ).show());
-        }
-
-        activity.content.addView(buttonFrame);
-
-        if (i == animatedLevel && isUnlocked) {
-            TextView lockIcon = new TextView(activity);
-            lockIcon.setText("🔒");
-            lockIcon.setTextSize(22);
-            lockIcon.setGravity(Gravity.CENTER);
-            lockIcon.setTextColor(android.graphics.Color.BLACK);
-            lockIcon.setAlpha(1.0f);
-            lockIcon.setShadowLayer(
-                    2f, 1f, 1f, android.graphics.Color.WHITE);
-
-            android.widget.FrameLayout.LayoutParams lockParams =
-                    new android.widget.FrameLayout.LayoutParams(
-                            55,
-                            android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
-                            Gravity.CENTER);
-
-            buttonFrame.addView(lockIcon, lockParams);
-
-            LevelUnlockAnimator.animateUnlock(
-                    lockIcon,
-                    levelButton,
+if (isUnlocked) {
+    levelButton.setOnClickListener(
+            v -> startLevel(selectedLevel));
+} else {
+    levelButton.setOnClickListener(v ->
+            android.widget.Toast.makeText(
                     activity,
-                    "Level " + i
-            );
+                    "Complete Level " + (selectedLevel - 1)
+                            + " first!",
+                    android.widget.Toast.LENGTH_SHORT
+            ).show());
+}
 
-            activity.prefs.edit()
-                    .remove("bibleScramblePendingAnimation")
-                    .apply();
-        }
+levelRow.addView(buttonFrame);
+
+if (i % 2 == 0 || i == 125) {
+    // Add an empty space after the last button if needed.
+    if (i == 125 && i % 2 == 1) {
+        View spacer = new View(activity);
+        levelRow.addView(
+                spacer,
+                new LinearLayout.LayoutParams(0, 1, 1f));
     }
+}
+
+if (i == animatedLevel && isUnlocked) {
+    TextView lockIcon = new TextView(activity);
+    lockIcon.setText("🔒");
+    lockIcon.setTextSize(22);
+    lockIcon.setGravity(Gravity.CENTER);
+    lockIcon.setTextColor(android.graphics.Color.BLACK);
+    lockIcon.setAlpha(1.0f);
+    lockIcon.setShadowLayer(
+            2f, 1f, 1f, android.graphics.Color.WHITE);
+
+    android.widget.FrameLayout.LayoutParams lockParams =
+            new android.widget.FrameLayout.LayoutParams(
+                    55,
+                    android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
+                    Gravity.CENTER);
+
+    buttonFrame.addView(lockIcon, lockParams);
+
+    LevelUnlockAnimator.animateUnlock(
+            lockIcon,
+            levelButton,
+            activity,
+            "Level " + i
+    );
+
+    activity.prefs.edit()
+            .remove("bibleScramblePendingAnimation")
+            .apply();
+}
+
+}
 
     // The old bottom Back to Games button has been removed.
                     }
