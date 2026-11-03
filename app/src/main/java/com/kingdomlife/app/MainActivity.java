@@ -9738,8 +9738,7 @@ void showBookmarks() {
         }
     }
                                 }
-                            
-    void showDailyChallenge() {
+  void showDailyChallenge() {
     stopTimer();
     content.removeAllViews();
 
@@ -9752,42 +9751,20 @@ void showBookmarks() {
     boolean completedToday =
             today.equals(lastChallengeDate);
 
-    int dayNumber =
-            Math.abs(today.hashCode()) % 5;
+    String[] challenges =
+            DailyChallengeData.getChallenges();
 
-    String challengeTitle;
-    String challengeText;
-
-    if (dayNumber == 0) {
-
-        challengeTitle = "🙏 Prayer Challenge";
-        challengeText =
-                "Spend a few quiet minutes talking to God today.";
-
-    } else if (dayNumber == 1) {
-
-        challengeTitle = "❤️ Love Challenge";
-        challengeText =
-                "Show kindness and encouragement to someone today.";
-
-    } else if (dayNumber == 2) {
-
-        challengeTitle = "📖 Scripture Challenge";
-        challengeText =
-                "Read a Bible passage and think about one lesson from it.";
-
-    } else if (dayNumber == 3) {
-
-        challengeTitle = "🤝 Kindness Challenge";
-        challengeText =
-                "Do one helpful thing for someone without expecting anything in return.";
-
-    } else {
-
-        challengeTitle = "🌟 Gratitude Challenge";
-        challengeText =
-                "Think of three things you are thankful to God for today.";
+    if (challenges == null || challenges.length == 0) {
+        addCard(
+                "Daily Challenge",
+                "No challenges are currently available.",
+                v -> {}
+        );
+        return;
     }
+
+    String challengeText =
+            getDailyChallengeForToday(today, challenges);
 
     TextView title = new TextView(this);
     title.setText("🎯 Daily Challenge");
@@ -9798,7 +9775,7 @@ void showBookmarks() {
     content.addView(title);
 
     addCard(
-            challengeTitle,
+            "🌟 Today's Challenge",
             challengeText,
             v -> {}
     );
@@ -9824,6 +9801,135 @@ void showBookmarks() {
             "⬅️ Back to Home",
             v -> showHome()
     );
+                            }
+    private String getDailyChallengeForToday(
+        String today,
+        String[] challenges
+) {
+
+    int total = challenges.length;
+
+    java.util.ArrayList<Integer> order =
+            new java.util.ArrayList<>();
+
+    String savedOrder =
+            challengePrefs.getString(
+                    "challengeOrder",
+                    ""
+            );
+
+    boolean validOrder = true;
+
+    if (!savedOrder.isEmpty()) {
+
+        String[] savedNumbers = savedOrder.split(",");
+
+        if (savedNumbers.length == total) {
+
+            boolean[] used = new boolean[total];
+
+            for (String number : savedNumbers) {
+                try {
+                    int value = Integer.parseInt(number);
+
+                    if (value < 0 ||
+                            value >= total ||
+                            used[value]) {
+                        validOrder = false;
+                        break;
+                    }
+
+                    used[value] = true;
+                    order.add(value);
+
+                } catch (NumberFormatException e) {
+                    validOrder = false;
+                    break;
+                }
+            }
+
+        } else {
+            validOrder = false;
+        }
+
+    } else {
+        validOrder = false;
+    }
+
+    // Create a new shuffled order if necessary.
+    if (!validOrder) {
+
+        order.clear();
+
+        for (int i = 0; i < total; i++) {
+            order.add(i);
+        }
+
+        java.util.Collections.shuffle(order);
+
+        challengePrefs.edit()
+                .putInt("challengeIndex", 0)
+                .putString("challengeDisplayDate", today)
+                .apply();
+    }
+
+    int index =
+            challengePrefs.getInt(
+                    "challengeIndex",
+                    0
+            );
+
+    String lastDisplayDate =
+            challengePrefs.getString(
+                    "challengeDisplayDate",
+                    ""
+            );
+
+    if (lastDisplayDate.isEmpty()) {
+
+        index = 0;
+
+    } else if (!today.equals(lastDisplayDate)) {
+
+        index++;
+
+    }
+
+    // Reshuffle after every challenge has been used.
+    if (index >= total || index < 0) {
+
+        java.util.Collections.shuffle(order);
+        index = 0;
+    }
+
+    // Save the shuffled order.
+    StringBuilder orderBuilder = new StringBuilder();
+
+    for (int i = 0; i < order.size(); i++) {
+
+        if (i > 0) {
+            orderBuilder.append(",");
+        }
+
+        orderBuilder.append(order.get(i));
+    }
+
+    challengePrefs.edit()
+            .putString(
+                    "challengeOrder",
+                    orderBuilder.toString()
+            )
+            .putInt(
+                    "challengeIndex",
+                    index
+            )
+            .putString(
+                    "challengeDisplayDate",
+                    today
+            )
+            .apply();
+
+    return challenges[order.get(index)];
     }
     
     void completeDailyChallenge(String today) {
