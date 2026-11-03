@@ -87,11 +87,15 @@ int[] level3Answers = BibleChallengeData.level3Answers;
   int totalPoints = 0;
   int learnedVerses = 0;
   int dailyStreak = 0;
-    long remainingTime = 0;
+    
   boolean challengeCompletedToday = false;
   String lastChallengeDate = "";
     int correctAnswers = 0;
 int wrongAnswers = 0;
+    long remainingTime = 0;
+remainingTime = questionTime;
+
+timer = new CountDownTimer(questionTime, 1000) {
 
 boolean answered = false;
 CountDownTimer timer;
@@ -8353,6 +8357,11 @@ void resumeGame(int milliseconds) {
 
     answered = prefs.getBoolean(answeredKey, false);
 
+    String timeKey = prefix + "remainingTime_" + currentQuestion;
+
+    remainingTime = prefs.getLong(
+            timeKey, milliseconds);
+
     showQuestion();
 }
     void showQuestion() {
@@ -8585,15 +8594,30 @@ answerButtons[i].setBackground(optionBackground);
             }
         });
 
-        timer = new CountDownTimer(timeLimit, 1000) {
-            
+        long questionTime = remainingTime > 0
+        ? remainingTime
+        : timeLimit;
+
+remainingTime = questionTime;
+
+timer = new CountDownTimer(questionTime, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                timerText.setText("⏱️ Time: "
-                        + ((millisUntilFinished + 999) / 1000)
-                        + " seconds");
-            }
 
+    remainingTime = millisUntilFinished;
+
+    String prefix = "bibleChallengeAttempt_"
+            + currentLevel + "_";
+
+    String timeKey = prefix + "remainingTime_" + currentQuestion;
+
+prefs.edit()
+        .putLong(timeKey, remainingTime)
+        .apply();
+    timerText.setText("⏱️ Time: "
+            + ((millisUntilFinished + 999) / 1000)
+            + " seconds");
+            }
             public void onFinish() {
                 stopBibleChallengeTick();
                 if (!answered) {
