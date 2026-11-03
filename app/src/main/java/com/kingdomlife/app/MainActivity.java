@@ -80,27 +80,26 @@ String[][] level3Options = BibleChallengeData.level3Options;
 int[] level3Answers = BibleChallengeData.level3Answers;
 
     int currentQuestion = 0;
-    int currentLevel = 1;
-    int highestLevelUnlocked = 1;
-    int score = 0;
-    
-  int totalPoints = 0;
-  int learnedVerses = 0;
-  int dailyStreak = 0;
-    
-  boolean challengeCompletedToday = false;
-  String lastChallengeDate = "";
-    int correctAnswers = 0;
+int currentLevel = 1;
+int highestLevelUnlocked = 1;
+int score = 0;
+
+int totalPoints = 0;
+int learnedVerses = 0;
+int dailyStreak = 0;
+
+boolean challengeCompletedToday = false;
+String lastChallengeDate = "";
+
+int correctAnswers = 0;
 int wrongAnswers = 0;
-    long remainingTime = 0;
-remainingTime = questionTime;
 
-timer = new CountDownTimer(questionTime, 1000) {
-
+long remainingTime = 0;
 boolean answered = false;
+
 CountDownTimer timer;
-    
-    private android.media.MediaPlayer bibleChallengeTick;
+
+private android.media.MediaPlayer bibleChallengeTick;
 
 int timeLimit = 30000;
 
