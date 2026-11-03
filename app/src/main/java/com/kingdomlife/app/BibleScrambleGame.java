@@ -98,15 +98,9 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
     int animatedLevel = activity.prefs.getInt(
             "bibleScramblePendingAnimation", 0);
 
-    String[] levelNames = {
-"Level 1",
-"Level 2",
-"Level 3",
-"Level 4",
-"Level 5"
-};
+    
 
-    for (int i = 1; i <= 5; i++) {
+    for (int i = 1; i <= 125; i++) {
         final int selectedLevel = i;
 
         android.widget.FrameLayout buttonFrame =
@@ -127,8 +121,7 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
 
         levelButton.setText(
                 (isUnlocked ? "" : "🔒 ")
-                        + levelNames[i - 1]);
-
+        + "Level " + i
         levelButton.setAllCaps(false);
         levelButton.setGravity(Gravity.CENTER);
 
@@ -189,265 +182,316 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
 
     private void startLevel(int selectedLevel) {
     level = selectedLevel;
-    words = BibleScrambleData.getWordsForLevel(level);
-    question = 0;
-    score = 0;
-    correctlySolvedThisLevel = 0;
-    showQuestion();
+
+    currentWord = BibleScrambleData.getWordForLevel(level);
+
+    if (currentWord == null) {
+        return;
     }
+
+    score = 0;
+
+    maxTrials = getTrialLimit(currentWord);
+    trialsRemaining = maxTrials;
+
+    showQuestion();
+}
+
+private int getTrialLimit(String word) {
+    int length = word.length();
+
+    if (length <= 5) return 27;
+    if (length <= 7) return 25;
+    if (length <= 9) return 23;
+    if (length <= 11) return 21;
+    if (length <= 13) return 19;
+    if (length <= 15) return 18;
+
+    return 16;
+}
 
     private void showQuestion() {
-        activity.content.removeAllViews();
+    activity.content.removeAllViews();
 
-        ImageButton backButton = new ImageButton(activity);
-        backButton.setImageResource(
-                android.R.drawable.ic_media_previous);
-        backButton.setBackgroundColor(Color.TRANSPARENT);
-        backButton.setOnClickListener(
-                v -> showLevelMenu());
+    ImageButton backButton = new ImageButton(activity);
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous);
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(v -> showLevelMenu());
 
-        activity.content.addView(
-                backButton,
-                new LinearLayout.LayoutParams(60, 60));
+    activity.content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(60, 60));
 
-        String word = words[question];
+    TextView title = new TextView(activity);
+    title.setText("🧩 Bible Scramble — Level " + level);
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(kingdomGold);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 15, 0, 15);
+    activity.content.addView(title);
 
-        TextView title = new TextView(activity);
-        title.setText("🧩 Bible Scramble — Level " + level);
-        title.setTextSize(24);
-        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        title.setTextColor(kingdomGold);
-        title.setPadding(0, 15, 0, 15);
-        activity.content.addView(title);
+    TextView progress = new TextView(activity);
+    progress.setText("Level " + level + " of 125");
+    progress.setTextSize(18);
+    progress.setTextColor(activity.darkText);
+    progress.setGravity(Gravity.CENTER);
+    progress.setPadding(0, 0, 0, 15);
+    activity.content.addView(progress);
 
-        TextView progress = new TextView(activity);
-        progress.setText(
-                "Question " + (question + 1) +
-                " of " + words.length);
-        progress.setTextSize(18);
-        progress.setTextColor(activity.darkText);
-        progress.setPadding(0, 0, 0, 15);
-        activity.content.addView(progress);
+    TextView scrambled = new TextView(activity);
+    scrambled.setText(
+            "🔤 UNSCRAMBLE\n\n" + scrambleWord(currentWord));
+    scrambled.setTextSize(26);
+    scrambled.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    scrambled.setTextColor(Color.WHITE);
+    scrambled.setGravity(Gravity.CENTER);
+    scrambled.setPadding(16, 28, 16, 28);
+    scrambled.setBackground(
+            makeGameCard(royalPurple, kingdomGold));
 
-        TextView scrambled = new TextView(activity);
-scrambled.setText("🔤 UNSCRAMBLE\n\n" + scrambleWord(word));
-scrambled.setTextSize(26);
-scrambled.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-scrambled.setTextColor(Color.WHITE);
-scrambled.setGravity(Gravity.CENTER);
-scrambled.setPadding(16, 28, 16, 28);
-scrambled.setBackground(
-        makeGameCard(royalPurple, kingdomGold)
-);
+    LinearLayout.LayoutParams scrambledParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
 
-LinearLayout.LayoutParams scrambledParams =
-        new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+    scrambledParams.setMargins(0, 8, 0, 16);
+    activity.content.addView(scrambled, scrambledParams);
 
-scrambledParams.setMargins(0, 8, 0, 16);
-activity.content.addView(scrambled, scrambledParams);
+    TextView trialsText = new TextView(activity);
+    trialsText.setText(
+            "🎯 Trials remaining: " + trialsRemaining
+                    + " / " + maxTrials);
+    trialsText.setTextSize(19);
+    trialsText.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    trialsText.setTextColor(kingdomGold);
+    trialsText.setGravity(Gravity.CENTER);
+    trialsText.setPadding(0, 8, 0, 12);
+    activity.content.addView(trialsText);
 
-        EditText answerInput = new EditText(activity);
-answerInput.setHint("Type your answer here");
-answerInput.setTextSize(18);
-answerInput.setSingleLine(true);
+    EditText answerInput = new EditText(activity);
+    answerInput.setHint("Type your answer here");
+    answerInput.setTextSize(18);
+    answerInput.setSingleLine(true);
+    answerInput.setTextColor(Color.WHITE);
+    answerInput.setHintTextColor(kingdomGold);
+    answerInput.setPadding(16, 14, 16, 14);
+    answerInput.setBackground(
+            makeGameCard(royalPurple, kingdomGold));
 
-answerInput.setTextColor(Color.WHITE);
-answerInput.setHintTextColor(kingdomGold);
-answerInput.setPadding(16, 14, 16, 14);
+    LinearLayout.LayoutParams inputParams =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
 
-answerInput.setBackground(
-        makeGameCard(royalPurple, kingdomGold)
-);
+    inputParams.setMargins(0, 8, 0, 12);
+    activity.content.addView(answerInput, inputParams);
 
-LinearLayout.LayoutParams inputParams =
-        new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+    activity.addButton("✅ Submit Answer", v -> {
+        String userAnswer = answerInput.getText()
+                .toString().trim();
 
-inputParams.setMargins(0, 8, 0, 12);
+        if (userAnswer.isEmpty()) {
+            android.widget.Toast.makeText(
+                    activity,
+                    "Enter an answer first!",
+                    android.widget.Toast.LENGTH_SHORT
+            ).show();
+            return;
+        }
 
-activity.content.addView(answerInput, inputParams);
-        activity.addButton("✅ Submit Answer", v -> {
-            String userAnswer = answerInput.getText()
-                    .toString().trim();
+        if (userAnswer.equalsIgnoreCase(currentWord)) {
 
-            if (userAnswer.equalsIgnoreCase(word)) {
-                android.media.MediaPlayer correctSound =
-        android.media.MediaPlayer.create(
-                activity,
-                R.raw.answer_correct
-        );
+            android.media.MediaPlayer correctSound =
+                    android.media.MediaPlayer.create(
+                            activity,
+                            R.raw.answer_correct);
 
-if (correctSound != null) {
-    correctSound.setOnCompletionListener(
-            mp -> mp.release()
-    );
-    correctSound.start();
-}
-                score += 5;
-                activity.totalPoints += 5;
-                String solvedKey = "bibleScramble_word_solved_level_"
-        + level + "_question_" + question;
+            if (correctSound != null) {
+                correctSound.setOnCompletionListener(
+                        android.media.MediaPlayer::release);
+                correctSound.start();
+            }
 
-if (!activity.prefs.getBoolean(solvedKey, false)) {
-    int savedSolved = activity.prefs.getInt(
-            "bibleScramble_words_solved", 0);
+            answerInput.setEnabled(false);
+
+String solvedKey =
+        "bibleScrambleSolvedLevel_" + level;
+
+boolean alreadySolved =
+        activity.prefs.getBoolean(solvedKey, false);
+
+if (!alreadySolved) {
+    score = 5;
+    activity.totalPoints += 5;
 
     activity.prefs.edit()
+            .putInt("totalPoints", activity.totalPoints)
             .putBoolean(solvedKey, true)
-            .putInt("bibleScramble_words_solved",
-                    savedSolved + 1)
+            .putBoolean("bibleScrambleSolved", true)
             .apply();
+
+    activity.checkAchievementNotifications();
+
+} else {
+    score = 0;
 }
-                correctlySolved++;
-correctlySolvedThisLevel++;
+            TextView feedback = new TextView(activity);
+            feedback.setText(
+        alreadySolved
+                ? "🎉 Correct! Level completed before."
+                : "🎉 Correct! +5 points");
+            feedback.setTextSize(20);
+            feedback.setTypeface(
+                    Typeface.DEFAULT, Typeface.BOLD);
+            feedback.setTextColor(Color.WHITE);
+            feedback.setGravity(Gravity.CENTER);
+            feedback.setPadding(16, 18, 16, 18);
+            feedback.setBackground(
+                    makeGameCard(correctGreen, kingdomGold));
 
-                activity.prefs.edit()
-        .putInt("totalPoints", activity.totalPoints)
-        .putBoolean("bibleScrambleSolved", true)
-        .apply();
+            activity.content.addView(feedback);
 
-                activity.checkAchievementNotifications();
+            activity.addButton(
+                    level == 125
+                            ? "🏆 Finish Bible Scramble"
+                            : "➡️ Continue to Next Level",
+                    nextView -> completeLevel());
 
-                TextView feedback = new TextView(activity);
-feedback.setText("🎉 Correct! +5 points");
-feedback.setTextSize(20);
-feedback.setTypeface(
-        Typeface.DEFAULT, Typeface.BOLD);
-feedback.setTextColor(Color.WHITE);
-feedback.setGravity(Gravity.CENTER);
-feedback.setPadding(16, 18, 16, 18);
+        } else {
 
-feedback.setBackground(
-        makeGameCard(correctGreen, kingdomGold)
-);
+            trialsRemaining--;
 
-LinearLayout.LayoutParams feedbackParams =
-        new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+            android.media.MediaPlayer wrongSound =
+                    android.media.MediaPlayer.create(
+                            activity,
+                            R.raw.answer_wrong);
 
-feedbackParams.setMargins(0, 12, 0, 12);
+            if (wrongSound != null) {
+                wrongSound.setOnCompletionListener(
+                        android.media.MediaPlayer::release);
+                wrongSound.start();
+            }
 
-activity.content.addView(feedback, 3, feedbackParams);
+            trialsText.setText(
+                    "🎯 Trials remaining: "
+                            + trialsRemaining + " / " + maxTrials);
+
+            if (trialsRemaining <= 0) {
                 answerInput.setEnabled(false);
 
-                activity.addButton("➡️ Next Question",
-                        nextView -> nextQuestion());
+                TextView feedback = new TextView(activity);
+                feedback.setText(
+                        "❌ Level Failed!\nYou have used all your trials.");
+                feedback.setTextSize(20);
+                feedback.setTypeface(
+                        Typeface.DEFAULT, Typeface.BOLD);
+                feedback.setTextColor(Color.WHITE);
+                feedback.setGravity(Gravity.CENTER);
+                feedback.setPadding(16, 18, 16, 18);
+                feedback.setBackground(
+                        makeGameCard(wrongRed, kingdomGold));
+
+                activity.content.addView(feedback);
+
+                activity.addButton(
+                        "🔄 Retry This Level",
+                        retryView -> startLevel(level));
+
+                activity.addButton(
+                        "📚 Level Menu",
+                        menuView -> showLevelMenu());
 
             } else {
+                TextView feedback = new TextView(activity);
+                feedback.setText("Not quite. Try again!");
+                feedback.setTextSize(18);
+                feedback.setTypeface(
+                        Typeface.DEFAULT, Typeface.BOLD);
+                feedback.setTextColor(Color.WHITE);
+                feedback.setGravity(Gravity.CENTER);
+                feedback.setPadding(16, 18, 16, 18);
+                feedback.setBackground(
+                        makeGameCard(wrongRed, kingdomGold));
 
-    android.media.MediaPlayer wrongSound =
-            android.media.MediaPlayer.create(
-                    activity,
-                    R.raw.answer_wrong
-            );
-
-    if (wrongSound != null) {
-        wrongSound.setOnCompletionListener(
-                mp -> mp.release()
-        );
-        wrongSound.start();
-    }
-
-    TextView feedback = new TextView(activity);
-feedback.setText("Not quite. Try again!");
-feedback.setTextSize(18);
-feedback.setTypeface(
-        Typeface.DEFAULT, Typeface.BOLD);
-feedback.setTextColor(Color.WHITE);
-feedback.setGravity(Gravity.CENTER);
-feedback.setPadding(16, 18, 16, 18);
-
-feedback.setBackground(
-        makeGameCard(wrongRed, kingdomGold)
-);
-
-LinearLayout.LayoutParams feedbackParams =
-        new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-
-feedbackParams.setMargins(0, 12, 0, 12);
-
-activity.content.addView(feedback, feedbackParams);
+                activity.content.addView(feedback);
             }
-        });
+        }
+    });
+                }
+    private void completeLevel() {
 
-        activity.addButton("➡️ Skip",
-                v -> nextQuestion());
+    int unlockedLevel = activity.prefs.getInt(
+            "bibleScrambleUnlockedLevel", 1);
+
+    if (level >= unlockedLevel && level < 125) {
+        activity.prefs.edit()
+                .putInt("bibleScrambleUnlockedLevel", level + 1)
+                .putInt("bibleScramblePendingAnimation", level + 1)
+                .apply();
     }
 
-    private void nextQuestion() {
-        if (question < words.length - 1) {
-            question++;
-            showQuestion();
-        } else {
-            showFinalResult();
+    if (level == 125) {
+        android.media.MediaPlayer player =
+                android.media.MediaPlayer.create(
+                        activity,
+                        R.raw.level_complete);
+
+        if (player != null) {
+            player.setOnCompletionListener(
+                    android.media.MediaPlayer::release);
+            player.start();
         }
     }
 
-    private void showFinalResult() {
-android.media.MediaPlayer levelCompletePlayer =
-android.media.MediaPlayer.create(
-activity,
-R.raw.level_complete
-);
+    activity.content.removeAllViews();
 
-    if (levelCompletePlayer != null) {
-        levelCompletePlayer.setOnCompletionListener(
-                android.media.MediaPlayer::release
-        );
-        levelCompletePlayer.start();
+    TextView title = new TextView(activity);
+    title.setText(
+            level == 125
+                    ? "🏆 Bible Scramble Completed!"
+                    : "🎉 Level " + level + " Completed!");
+    title.setTextSize(26);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(activity.darkText);
+    title.setGravity(Gravity.CENTER);
+    title.setPadding(0, 25, 0, 20);
+    activity.content.addView(title);
+
+    TextView result = new TextView(activity);
+    result.setText(
+            "You unscrambled the word successfully!\n\n"
+                    + "🧩 Level: " + level + " of 125\n"
+                    + "⭐ Points earned: " + score
+                    + "\n⭐ Total Points: " + activity.totalPoints);
+    result.setTextSize(20);
+    result.setTextColor(activity.darkText);
+    result.setGravity(Gravity.CENTER);
+    result.setPadding(0, 10, 0, 30);
+    activity.content.addView(result);
+
+    if (level < 125) {
+        activity.addButton(
+                "➡️ Continue to Level " + (level + 1),
+                v -> startLevel(level + 1));
     }
 
-    activity.content.removeAllViews();
-        int unlockedLevel = activity.prefs.getInt(
-"bibleScrambleUnlockedLevel", 1);
+    activity.addButton(
+            "🔄 Play This Level Again",
+            v -> startLevel(level));
 
-if (level >= unlockedLevel && level < 5) {
-activity.prefs.edit()
-.putInt("bibleScrambleUnlockedLevel", level + 1)
-.putInt("bibleScramblePendingAnimation", level + 1)
-.apply();
-}
-        TextView title = new TextView(activity);
-        title.setText("🏆 Scramble Complete!");
-        title.setTextSize(26);
-        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        title.setTextColor(activity.darkText);
-        title.setGravity(Gravity.CENTER);
-        title.setPadding(0, 25, 0, 20);
-        activity.content.addView(title);
+    activity.addButton(
+            "📚 Choose a Level",
+            v -> showLevelMenu());
 
-        TextView result = new TextView(activity);
-        result.setText(
-                "You completed Level " + level + "!\n\n" +
-                "🧩 Scramble Score: " + score + "\n" +
-                "⭐ Total Points: " + activity.totalPoints);
-        result.setTextSize(20);
-        result.setTextColor(activity.darkText);
-        result.setGravity(Gravity.CENTER);
-        result.setPadding(0, 10, 0, 30);
-        activity.content.addView(result);
+    activity.addButton(
+            "⬅️ Back to Games",
+            v -> activity.showGameMenu());
 
-        activity.addButton("🔄 Play This Level Again",
-                v -> startLevel(level));
-
-        activity.addButton("📚 Choose Another Level",
-                v -> showLevelMenu());
-
-        activity.addButton("⬅️ Back to Games",
-                v -> activity.showGameMenu());
-
-        activity.addButton("🏠 Back to Home",
-                v -> activity.showHome());
+    activity.addButton(
+            "🏠 Back to Home",
+            v -> activity.showHome());
     }
 
     private String scrambleWord(String word) {
