@@ -30,11 +30,23 @@ protected void onCreate(Bundle savedInstanceState) {
 private void createAboutPage() {
 
     rootLayout = new LinearLayout(this);
-    rootLayout.setOrientation(LinearLayout.VERTICAL);
-    rootLayout.setPadding(12, 12, 12, 12);
+rootLayout.setOrientation(LinearLayout.VERTICAL);
 
-    applyDisplayBackground();
-    
+rootLayout.setPadding(12, 12, 12, 12);
+
+// Keep the About screen clear of the phone's system bars.
+rootLayout.setOnApplyWindowInsetsListener((view, insets) -> {
+    view.setPadding(
+            12 + insets.getSystemWindowInsetLeft(),
+            12 + insets.getSystemWindowInsetTop(),
+            12 + insets.getSystemWindowInsetRight(),
+            12 + insets.getSystemWindowInsetBottom()
+    );
+
+    return insets;
+});
+
+applyDisplayBackground();
 
 // Top-left back arrow
 android.widget.ImageButton backButton =
@@ -43,8 +55,8 @@ android.widget.ImageButton backButton =
 backButton.setImageResource(
         android.R.drawable.ic_media_previous
 );
-backButton.setScaleX(1.5f);
-backButton.setScaleY(1.5f);
+backButton.setScaleX(1.8f);
+backButton.setScaleY(1.8f);
 backButton.setContentDescription("Back to previous screen");
 backButton.setBackgroundColor(Color.TRANSPARENT);
 backButton.setScaleType(
@@ -54,7 +66,7 @@ backButton.setScaleType(
 backButton.setOnClickListener(v -> finish());
 
 LinearLayout.LayoutParams arrowParams =
-        new LinearLayout.LayoutParams(55, 55);
+        new LinearLayout.LayoutParams(70, 70);
 
 arrowParams.setMargins(4, 0, 0, 6);
 
