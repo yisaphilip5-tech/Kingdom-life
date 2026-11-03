@@ -120,9 +120,11 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
         boolean isUnlocked = i <= unlockedLevel;
 
         levelButton.setText(
-                (isUnlocked ? "" : "🔒 ")
-        + "Level " + i
-        levelButton.setAllCaps(false);
+        (isUnlocked ? "" : "🔒 ")
+                + "Level " + i
+);
+
+levelButton.setAllCaps(false);
         levelButton.setGravity(Gravity.CENTER);
 
         buttonFrame.addView(
