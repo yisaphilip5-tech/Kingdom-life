@@ -39,6 +39,20 @@ public final class LevelUnlockAnimator {
 
         levelTitle.animate().cancel();
         lockIcon.animate().cancel();
+        // Play the padlock unlocking sound.
+android.media.MediaPlayer unlockSound =
+        android.media.MediaPlayer.create(
+                activity,
+                R.raw.padlock_unlock
+        );
+
+if (unlockSound != null) {
+    unlockSound.setOnCompletionListener(
+            android.media.MediaPlayer::release
+    );
+
+    unlockSound.start();
+}
 
         Toast.makeText(
                 activity,
