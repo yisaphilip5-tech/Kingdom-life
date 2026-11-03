@@ -14,11 +14,11 @@ public class BibleScrambleGame {
 
     private final MainActivity activity;
     private int level = 1;
-    private int question = 0;
-    private int score = 0;
-    private int correctlySolved = 0;
-private int correctlySolvedThisLevel = 0;
-    private String[] words;
+private int score = 0;
+private int correctlySolved = 0;
+private int trialsRemaining = 0;
+private int maxTrials = 0;
+private String currentWord;
     private final int royalPurple = Color.rgb(30, 24, 55);
 private final int kingdomGold = Color.rgb(212, 175, 55);
 private final int correctGreen = Color.rgb(35, 120, 65);
