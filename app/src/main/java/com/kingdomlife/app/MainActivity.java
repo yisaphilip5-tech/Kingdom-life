@@ -87,7 +87,7 @@ int[] level3Answers = BibleChallengeData.level3Answers;
   int totalPoints = 0;
   int learnedVerses = 0;
   int dailyStreak = 0;
-    
+    long remainingTime = 0;
   boolean challengeCompletedToday = false;
   String lastChallengeDate = "";
     int correctAnswers = 0;
@@ -8347,6 +8347,11 @@ void resumeGame(int milliseconds) {
 
     wrongAnswers = prefs.getInt(
             prefix + "wrong", 0);
+
+    String answeredKey = "bibleChallengeAnswered_"
+            + currentLevel + "_" + currentQuestion;
+
+    answered = prefs.getBoolean(answeredKey, false);
 
     showQuestion();
 }
