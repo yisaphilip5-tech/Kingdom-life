@@ -151,8 +151,23 @@ return new String[]{
 };
         
 
-            default:
+                        default:
                 return getWordsForLevel(1);
         }
+    }
+
+    // Returns one word for each of the 125 individual levels.
+    public static String getWordForLevel(int level) {
+
+        if (level < 1 || level > 125) {
+            return null;
+        }
+
+        int originalLevel = ((level - 1) / 25) + 1;
+        int questionIndex = (level - 1) % 25;
+
+        String[] words = getWordsForLevel(originalLevel);
+
+        return words[questionIndex];
     }
 }
