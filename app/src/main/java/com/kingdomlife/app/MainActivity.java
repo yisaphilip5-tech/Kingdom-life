@@ -8322,17 +8322,58 @@ prefs.edit()
     }
 
     void startGame(int milliseconds) {
-    stopTimer();
+stopTimer();
+stopBibleChallengeTick();
 
-    timeLimit = milliseconds;
-    currentQuestion = 0;
-    score = 0;
-    correctAnswers = 0;
-    wrongAnswers = 0;
+timeLimit = milliseconds;
+remainingTime = milliseconds;
 
-    showQuestion();
+currentQuestion = 0;
+score = 0;
+correctAnswers = 0;
+wrongAnswers = 0;
+answered = false;
+
+int questionCount;
+
+if (currentLevel == 2) {
+    questionCount = level2Questions.length;
+} else if (currentLevel == 3) {
+    questionCount = level3Questions.length;
+} else if (currentLevel == 4) {
+    questionCount = BibleChallengeData.level4Questions.length;
+} else if (currentLevel == 5) {
+    questionCount = BibleChallengeData.level5Questions.length;
+} else {
+    questionCount = questions.length;
 }
 
+String prefix = "bibleChallengeAttempt_"
+        + currentLevel + "_";
+
+android.content.SharedPreferences.Editor editor =
+        prefs.edit();
+
+for (int i = 0; i < questionCount; i++) {
+    editor.remove("bibleChallengeAnswered_"
+            + currentLevel + "_" + i);
+
+    editor.remove("bibleChallengeSelected_"
+            + currentLevel + "_" + i);
+
+    editor.remove(prefix + "remainingTime_" + i);
+}
+
+editor.putInt(prefix + "question", 0);
+editor.putInt(prefix + "score", 0);
+editor.putInt(prefix + "correct", 0);
+editor.putInt(prefix + "wrong", 0);
+editor.putBoolean(prefix + "inProgress", true);
+editor.apply();
+
+showQuestion();
+
+    }
 void resumeGame(int milliseconds) {
     stopTimer();
 
@@ -8390,10 +8431,26 @@ backButton.setScaleType(
 );
 
 backButton.setOnClickListener(v -> {
+
+    String attemptPrefix = "bibleChallengeAttempt_"
+            + currentLevel + "_";
+
+    String timeKey = attemptPrefix
+            + "remainingTime_" + currentQuestion;
+
+    prefs.edit()
+            .putInt(attemptPrefix + "question", currentQuestion)
+            .putInt(attemptPrefix + "score", score)
+            .putInt(attemptPrefix + "correct", correctAnswers)
+            .putInt(attemptPrefix + "wrong", wrongAnswers)
+            .putLong(timeKey, remainingTime)
+            .putBoolean(attemptPrefix + "inProgress", true)
+            .apply();
+
     stopTimer();
+    stopBibleChallengeTick();
     showBibleQuizMenu();
 });
-
 LinearLayout.LayoutParams backParams =
         new LinearLayout.LayoutParams(100, 70);
 
@@ -8539,16 +8596,113 @@ answerButtons[i].setBackground(optionBackground);
             content.addView(answerButtons[i], params);
 
             answerButtons[i].setOnClickListener(v ->
-                    answerQuestion(selected, answerButtons)
-            );
+        answerQuestion(selected, answerButtons)
+);
+
+if (answered) {
+    answerButtons[i].setEnabled(false);
+}
+        }
+        if (answered) {
+
+    String selectedKey = "bibleChallengeSelected_"
+            + currentLevel + "_" + currentQuestion;
+
+    int savedSelected = prefs.getInt(selectedKey, -1);
+
+    int correctAnswer;
+
+    if (currentLevel == 2) {
+        correctAnswer = level2Answers[currentQuestion];
+    } else if (currentLevel == 3) {
+        correctAnswer = level3Answers[currentQuestion];
+    } else if (currentLevel == 4) {
+        correctAnswer = BibleChallengeData.level4Answers[currentQuestion];
+    } else if (currentLevel == 5) {
+        correctAnswer = BibleChallengeData.level5Answers[currentQuestion];
+    } else {
+        correctAnswer = answers[currentQuestion];
+    }
+
+    for (int i = 0; i < answerButtons.length; i++) {
+
+        int buttonColor = android.graphics.Color.rgb(30, 24, 55);
+
+        if (i == correctAnswer) {
+            buttonColor = android.graphics.Color.rgb(35, 120, 65);
+        }
+
+        if (i == savedSelected && savedSelected != correctAnswer) {
+            buttonColor = android.graphics.Color.rgb(150, 45, 45);
+        }
+
+        android.graphics.drawable.GradientDrawable background =
+                new android.graphics.drawable.GradientDrawable();
+
+        background.setColor(buttonColor);
+        background.setCornerRadius(24);
+        background.setStroke(
+                2,
+                android.graphics.Color.rgb(212, 175, 55)
+        );
+
+        answerButtons[i].setBackground(background);
+    }
         }
 
         TextView result = new TextView(this);
-        result.setTextSize(18);
-        result.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        result.setPadding(0, 15, 0, 10);
-        content.addView(result);
+result.setTextSize(18);
+result.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+result.setTextColor(android.graphics.Color.WHITE);
+result.setGravity(Gravity.CENTER);
+result.setPadding(16, 18, 16, 18);
 
+if (answered) {
+
+    String selectedKey = "bibleChallengeSelected_"
+            + currentLevel + "_" + currentQuestion;
+
+    int savedSelected = prefs.getInt(selectedKey, -1);
+
+    int correctAnswer;
+
+    if (currentLevel == 2) {
+        correctAnswer = level2Answers[currentQuestion];
+    } else if (currentLevel == 3) {
+        correctAnswer = level3Answers[currentQuestion];
+    } else if (currentLevel == 4) {
+        correctAnswer = BibleChallengeData.level4Answers[currentQuestion];
+    } else if (currentLevel == 5) {
+        correctAnswer = BibleChallengeData.level5Answers[currentQuestion];
+    } else {
+        correctAnswer = answers[currentQuestion];
+    }
+
+    android.graphics.drawable.GradientDrawable feedbackBackground =
+            new android.graphics.drawable.GradientDrawable();
+
+    feedbackBackground.setCornerRadius(24);
+    feedbackBackground.setStroke(
+            2,
+            android.graphics.Color.rgb(212, 175, 55)
+    );
+
+    if (savedSelected == correctAnswer) {
+        result.setText("Correct! Answer already recorded.");
+        feedbackBackground.setColor(
+                android.graphics.Color.rgb(35, 120, 65)
+        );
+    } else {
+        result.setText("Wrong! Previous answer recorded.");
+        feedbackBackground.setColor(
+                android.graphics.Color.rgb(150, 45, 45)
+        );
+    }
+
+    result.setBackground(feedbackBackground);
+}
+
+content.addView(result);
         LinearLayout navigation = new LinearLayout(this);
         navigation.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -8576,8 +8730,9 @@ answerButtons[i].setBackground(optionBackground);
         ));
 
         content.addView(navigation);
-        startBibleChallengeTick();
-
+        if (!answered) {
+    startBibleChallengeTick();
+        }
         previous.setOnClickListener(v -> {
             if (currentQuestion > 0) {
                 currentQuestion--;
@@ -8593,66 +8748,95 @@ answerButtons[i].setBackground(optionBackground);
     showResults();
             }
         });
+String attemptPrefix = "bibleChallengeAttempt_"
+        + currentLevel + "_";
 
-        long questionTime = remainingTime > 0
+String timeKey = attemptPrefix
+        + "remainingTime_" + currentQuestion;
+
+remainingTime = prefs.getLong(timeKey, timeLimit);
+
+long questionTime = remainingTime > 0
         ? remainingTime
         : timeLimit;
 
 remainingTime = questionTime;
 
-timer = new CountDownTimer(questionTime, 1000) {
+if (!answered) {
+    timer = new CountDownTimer(questionTime, 1000) {
 
-            public void onTick(long millisUntilFinished) {
+        @Override
+        public void onTick(long millisUntilFinished) {
 
-    remainingTime = millisUntilFinished;
+            remainingTime = millisUntilFinished;
 
-    String prefix = "bibleChallengeAttempt_"
-            + currentLevel + "_";
+            prefs.edit()
+                    .putLong(timeKey, remainingTime)
+                    .apply();
 
-    String timeKey = prefix + "remainingTime_" + currentQuestion;
+            timerText.setText("⏱️ Time: "
+                    + ((millisUntilFinished + 999) / 1000)
+                    + " seconds");
+        }
 
-prefs.edit()
-        .putLong(timeKey, remainingTime)
-        .apply();
-    timerText.setText("⏱️ Time: "
-            + ((millisUntilFinished + 999) / 1000)
-            + " seconds");
-            }
-            public void onFinish() {
-                stopBibleChallengeTick();
-                if (!answered) {
-                    answered = true;
-                    String answeredKey = "bibleChallengeAnswered_"
-        + currentLevel + "_" + currentQuestion;
+        @Override
+        public void onFinish() {
 
-prefs.edit()
-        .putBoolean(answeredKey, true)
-        .apply();
-                    wrongAnswers++;
-                    String correctOption;
+            stopBibleChallengeTick();
 
-if (currentLevel == 2) {
-    correctOption = level2Options[currentQuestion][level2Answers[currentQuestion]];
-} else if (currentLevel == 3) {
-    correctOption = level3Options[currentQuestion][level3Answers[currentQuestion]];
-} else if (currentLevel == 4) {
-    correctOption = BibleChallengeData.level4Options[currentQuestion]
-            [BibleChallengeData.level4Answers[currentQuestion]];
-} else if (currentLevel == 5) {
-    correctOption = BibleChallengeData.level5Options[currentQuestion]
-            [BibleChallengeData.level5Answers[currentQuestion]];
-} else {
-    correctOption = options[currentQuestion][answers[currentQuestion]];
-}
-result.setText("⏰ Time's up! The correct answer is: " + correctOption);
+            if (!answered) {
 
-                    for (Button button : answerButtons) {
-                        button.setEnabled(false);
-                    }
+                answered = true;
+                remainingTime = 0;
+
+                String answeredKey = "bibleChallengeAnswered_"
+                        + currentLevel + "_" + currentQuestion;
+
+                prefs.edit()
+                        .putBoolean(answeredKey, true)
+                        .putLong(timeKey, 0)
+                        .putInt(attemptPrefix + "question", currentQuestion)
+                        .putInt(attemptPrefix + "score", score)
+                        .putInt(attemptPrefix + "correct", correctAnswers)
+                        .putInt(attemptPrefix + "wrong", wrongAnswers + 1)
+                        .putBoolean(attemptPrefix + "inProgress", true)
+                        .apply();
+
+                wrongAnswers++;
+
+                String correctOption;
+
+                if (currentLevel == 2) {
+                    correctOption = level2Options[currentQuestion]
+                            [level2Answers[currentQuestion]];
+                } else if (currentLevel == 3) {
+                    correctOption = level3Options[currentQuestion]
+                            [level3Answers[currentQuestion]];
+                } else if (currentLevel == 4) {
+                    correctOption = BibleChallengeData.level4Options[currentQuestion]
+                            [BibleChallengeData.level4Answers[currentQuestion]];
+                } else if (currentLevel == 5) {
+                    correctOption = BibleChallengeData.level5Options[currentQuestion]
+                            [BibleChallengeData.level5Answers[currentQuestion]];
+                } else {
+                    correctOption = options[currentQuestion]
+                            [answers[currentQuestion]];
+                }
+
+                result.setText("⏰ Time's up! The correct answer is: "
+                        + correctOption);
+
+                for (Button button : answerButtons) {
+                    button.setEnabled(false);
                 }
             }
-        }.start();
+        }
+
+    }.start();
+                        }
     }
+        
+            
 
     void answerQuestion(int selected, Button[] buttons) {
 if (answered) {
@@ -8660,6 +8844,13 @@ return;
 }
 
 answered = true;
+        String selectedKey = "bibleChallengeSelected_"
+        + currentLevel + "_" + currentQuestion;
+
+prefs.edit()
+        .putInt(selectedKey, selected)
+        .apply();
+        
         String answeredKey = "bibleChallengeAnswered_"
         + currentLevel + "_" + currentQuestion;
 
@@ -8825,6 +9016,17 @@ prefs.edit()
 
     void showResults() {
 stopTimer();
+            stopBibleChallengeTick();
+
+    String attemptPrefix = "bibleChallengeAttempt_"
+            + currentLevel + "_";
+
+    prefs.edit()
+            .putBoolean(attemptPrefix + "inProgress", false)
+            .putInt(attemptPrefix + "score", score)
+            .putInt(attemptPrefix + "correct", correctAnswers)
+            .putInt(attemptPrefix + "wrong", wrongAnswers)
+            .apply();
 
 android.media.MediaPlayer levelCompletePlayer =
         android.media.MediaPlayer.create(
@@ -8937,13 +9139,23 @@ content.addView(description);
 
 addButton("🟢 Level 1 — Easy", v -> {
     currentLevel = 1;
-    startGame(30000);
+    String key = "bibleChallengeAttempt_1_inProgress";
+    if (prefs.getBoolean(key, false)) {
+        resumeGame(30000);
+    } else {
+        startGame(30000);
+    }
 });
 
 if (highestLevelUnlocked >= 2) {
     addButton("🟡 Level 2 — Medium", v -> {
         currentLevel = 2;
-        startGame(20000);
+        String key = "bibleChallengeAttempt_2_inProgress";
+        if (prefs.getBoolean(key, false)) {
+            resumeGame(20000);
+        } else {
+            startGame(20000);
+        }
     });
 } else {
     addButton("🔒 Level 2 — Locked", v -> {});
@@ -8952,7 +9164,12 @@ if (highestLevelUnlocked >= 2) {
 if (highestLevelUnlocked >= 3) {
     addButton("🔴 Level 3 — Hard", v -> {
         currentLevel = 3;
-        startGame(10000);
+        String key = "bibleChallengeAttempt_3_inProgress";
+        if (prefs.getBoolean(key, false)) {
+            resumeGame(10000);
+        } else {
+            startGame(10000);
+        }
     });
 } else {
     addButton("🔒 Level 3 — Locked", v -> {});
@@ -8961,7 +9178,12 @@ if (highestLevelUnlocked >= 3) {
 if (highestLevelUnlocked >= 4) {
     addButton("🟣 Level 4 — Expert", v -> {
         currentLevel = 4;
-        startGame(8000);
+        String key = "bibleChallengeAttempt_4_inProgress";
+        if (prefs.getBoolean(key, false)) {
+            resumeGame(8000);
+        } else {
+            startGame(8000);
+        }
     });
 } else {
     addButton("🔒 Level 4 — Locked", v -> {});
@@ -8970,13 +9192,18 @@ if (highestLevelUnlocked >= 4) {
 if (highestLevelUnlocked >= 5) {
     addButton("👑 Level 5 — Scholar", v -> {
         currentLevel = 5;
-        startGame(6000);
+        String key = "bibleChallengeAttempt_5_inProgress";
+        if (prefs.getBoolean(key, false)) {
+            resumeGame(6000);
+        } else {
+            startGame(6000);
+        }
     });
 } else {
     addButton("🔒 Level 5 — Locked", v -> {});
 }
 
-    }
+            }
 void showBibleScramble() {
     BibleScrambleGame game = new BibleScrambleGame(this);
     game.showLevelMenu();
