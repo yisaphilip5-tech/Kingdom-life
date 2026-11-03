@@ -8318,17 +8318,38 @@ prefs.edit()
     }
 
     void startGame(int milliseconds) {
-        stopTimer();
+    stopTimer();
 
-        timeLimit = milliseconds;
-       currentQuestion = 0;
-score = 0;
-correctAnswers = 0;
-wrongAnswers = 0; 
+    timeLimit = milliseconds;
+    currentQuestion = 0;
+    score = 0;
+    correctAnswers = 0;
+    wrongAnswers = 0;
 
-        showQuestion();
-    }
+    showQuestion();
+}
 
+void resumeGame(int milliseconds) {
+    stopTimer();
+
+    timeLimit = milliseconds;
+
+    String prefix = "bibleChallengeAttempt_" + currentLevel + "_";
+
+    currentQuestion = prefs.getInt(
+            prefix + "question", 0);
+
+    score = prefs.getInt(
+            prefix + "score", 0);
+
+    correctAnswers = prefs.getInt(
+            prefix + "correct", 0);
+
+    wrongAnswers = prefs.getInt(
+            prefix + "wrong", 0);
+
+    showQuestion();
+}
     void showQuestion() {
         stopTimer();
         content.removeAllViews();
@@ -8366,7 +8387,10 @@ backParams.gravity = Gravity.LEFT;
 
 content.addView(backButton, backParams);
 
-        answered = false;
+        String answeredKey = "bibleChallengeAnswered_"
+        + currentLevel + "_" + currentQuestion;
+
+answered = prefs.getBoolean(answeredKey, false);
         int questionCount;
 
 if (currentLevel == 2) {
@@ -8569,6 +8593,12 @@ answerButtons[i].setBackground(optionBackground);
                 stopBibleChallengeTick();
                 if (!answered) {
                     answered = true;
+                    String answeredKey = "bibleChallengeAnswered_"
+        + currentLevel + "_" + currentQuestion;
+
+prefs.edit()
+        .putBoolean(answeredKey, true)
+        .apply();
                     wrongAnswers++;
                     String correctOption;
 
@@ -8601,6 +8631,12 @@ return;
 }
 
 answered = true;
+        String answeredKey = "bibleChallengeAnswered_"
+        + currentLevel + "_" + currentQuestion;
+
+prefs.edit()
+        .putBoolean(answeredKey, true)
+        .apply();
 stopTimer();
 stopBibleChallengeTick();
 
@@ -8624,25 +8660,41 @@ if (currentLevel == 2) {
 boolean isCorrect = selected == correctAnswer;
 
 if (isCorrect) {
-    android.media.MediaPlayer correctSound =
-        android.media.MediaPlayer.create(this, R.raw.answer_correct);
 
-if (correctSound != null) {
-    correctSound.setOnCompletionListener(mp -> mp.release());
-    correctSound.start();
-}
-    score += 10;
-    totalPoints += 10;
+    String rewardKey = "bibleChallengeRewarded_"
+            + currentLevel + "_" + currentQuestion;
+
+    boolean alreadyRewarded =
+            prefs.getBoolean(rewardKey, false);
+
+    android.media.MediaPlayer correctSound =
+            android.media.MediaPlayer.create(
+                    this, R.raw.answer_correct);
+
+    if (correctSound != null) {
+        correctSound.setOnCompletionListener(
+                mp -> mp.release());
+        correctSound.start();
+    }
+
     correctAnswers++;
 
-    prefs.edit()
-            .putInt("totalPoints", totalPoints)
-            .apply();
+    if (!alreadyRewarded) {
+        score += 10;
+        totalPoints += 10;
 
-    checkAchievementNotifications();
+        prefs.edit()
+                .putInt("totalPoints", totalPoints)
+                .putBoolean(rewardKey, true)
+                .apply();
 
-    feedback.setText("Correct! +10 points");
+        checkAchievementNotifications();
 
+        feedback.setText("Correct! +10 points");
+    } else {
+        feedback.setText(
+                "Correct! This question's points were already earned.");
+    }
 } else {
 
     android.media.MediaPlayer wrongSound =
@@ -8729,7 +8781,16 @@ for (int i = 0; i < buttons.length; i++) {
     buttons[i].setTextColor(android.graphics.Color.WHITE);
     buttons[i].setEnabled(false);
 }
+String attemptPrefix =
+        "bibleChallengeAttempt_" + currentLevel + "_";
 
+prefs.edit()
+        .putInt(attemptPrefix + "question", currentQuestion)
+        .putInt(attemptPrefix + "score", score)
+        .putInt(attemptPrefix + "correct", correctAnswers)
+        .putInt(attemptPrefix + "wrong", wrongAnswers)
+        .putBoolean(attemptPrefix + "inProgress", true)
+        .apply();
         }
     
 
