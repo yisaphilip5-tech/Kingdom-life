@@ -200,7 +200,7 @@ return new String[]{
         }
     }
 
-    // Returns one word for each of the 125 individual levels.
+    // Returns one word for each of the 250 individual levels.
     public static String getWordForLevel(int level) {
 
         if (level < 1 || level > 250) {
