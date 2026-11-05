@@ -14,6 +14,7 @@ public class BibleScrambleGame {
 
     private final MainActivity activity;
     private int level = 1;
+    private int levelPage = 0;
 private int score = 0;
 private int correctlySolved = 0;
 private int trialsRemaining = 0;
@@ -91,6 +92,18 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
     description.setGravity(Gravity.CENTER);
     description.setPadding(0, 0, 0, 20);
     activity.content.addView(description);
+        TextView pageIndicator = new TextView(activity);
+pageIndicator.setText(
+        levelPage == 0
+                ? "PAGE 1 OF 2  •  LEVELS 1–125"
+                : "PAGE 2 OF 2  •  LEVELS 126–250");
+pageIndicator.setTextSize(16);
+pageIndicator.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+pageIndicator.setTextColor(kingdomGold);
+pageIndicator.setGravity(Gravity.CENTER);
+pageIndicator.setPadding(0, 0, 0, 20);
+
+activity.content.addView(pageIndicator);
 
     int unlockedLevel = activity.prefs.getInt(
             "bibleScrambleUnlockedLevel", 1);
@@ -100,7 +113,10 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
 
 LinearLayout levelRow = null;
 
-for (int i = 1; i <= 250; i++) {
+int startLevel = levelPage == 0 ? 1 : 126;
+int endLevel = levelPage == 0 ? 125 : 250;
+
+for (int i = startLevel; i <= endLevel; i++) {
 final int selectedLevel = i;
 
 if (i % 2 == 1) {
@@ -159,16 +175,6 @@ if (isUnlocked) {
 
 levelRow.addView(buttonFrame);
 
-if (i % 2 == 0 || i == 250) {
-    // Add an empty space after the last button if needed.
-    if (i == 250 && i % 2 == 1) {
-        View spacer = new View(activity);
-        levelRow.addView(
-                spacer,
-                new LinearLayout.LayoutParams(0, 1, 1f));
-    }
-}
-
 if (i == animatedLevel && isUnlocked) {
     TextView lockIcon = new TextView(activity);
     lockIcon.setText("🔒");
@@ -200,6 +206,52 @@ if (i == animatedLevel && isUnlocked) {
 }
 
 }
+        LinearLayout pageNavigation = new LinearLayout(activity);
+pageNavigation.setOrientation(LinearLayout.HORIZONTAL);
+pageNavigation.setGravity(Gravity.CENTER);
+pageNavigation.setPadding(8, 20, 8, 20);
+
+if (levelPage == 1) {
+    android.widget.Button previousButton =
+            new android.widget.Button(activity);
+
+    previousButton.setText("⬅ Previous Page");
+    previousButton.setAllCaps(false);
+
+    previousButton.setOnClickListener(v -> {
+        levelPage = 0;
+        showLevelMenu();
+    });
+
+    pageNavigation.addView(
+            previousButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f));
+}
+
+if (levelPage == 0) {
+    android.widget.Button nextButton =
+            new android.widget.Button(activity);
+
+    nextButton.setText("Next Page ➡");
+    nextButton.setAllCaps(false);
+
+    nextButton.setOnClickListener(v -> {
+        levelPage = 1;
+        showLevelMenu();
+    });
+
+    pageNavigation.addView(
+            nextButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f));
+}
+
+activity.content.addView(pageNavigation);
 
     // The old bottom Back to Games button has been removed.
                     }
