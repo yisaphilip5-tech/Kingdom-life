@@ -102,6 +102,8 @@ public static final String TRANSLATION_WEB = "WEB";
 private static final String KJV_BASE_URL =
         "https://www.publicdomainaudiobibles.com/content/mp3/KJV/";
 
+    private static final String WEB_BASE_URL =
+        "https://ebible.org/eng-web/audio/";
 public static int getBookCount() {
     return BOOKS.length;
 }
@@ -160,10 +162,11 @@ public static String getAudioUrl(
 
     Book book = findBook(bookName);
 
-    if (translation == null) {
+    if (translation == null || book == null) {
         return null;
     }
 
+    // KJV AUDIO
     if (TRANSLATION_KJV.equalsIgnoreCase(translation)) {
 
         return KJV_BASE_URL
@@ -176,10 +179,162 @@ public static String getAudioUrl(
                 + ".mp3";
     }
 
-    // WEB audio URL will be added after its
-    // exact chapter-file structure is verified.
+    // WEB AUDIO
+    if (TRANSLATION_WEB.equalsIgnoreCase(translation)) {
+
+        int bookIndex = -1;
+        int previousChapters = 0;
+
+        for (int i = 0; i < BOOKS.length; i++) {
+
+            if (BOOKS[i].name.equalsIgnoreCase(book.name)) {
+                bookIndex = i;
+                break;
+            }
+
+            previousChapters += BOOKS[i].chapters;
+        }
+
+        if (bookIndex == -1) {
+            return null;
+        }
+
+        int trackNumber = previousChapters + chapter;
+
+        String audioBookName =
+                getWebBookTitle(book.name);
+
+        String folderName =
+                String.format(Locale.US, "%02d", bookIndex + 1)
+                + "_"
+                + audioBookName.replace(" ", "_");
+
+        String fileName;
+
+        // Genesis uses a special filename structure.
+        if (book.name.equals("Genesis")) {
+
+            fileName = "01_"
+                    + String.format(
+                            Locale.US,
+                            "%02d",
+                            chapter
+                    )
+                    + "_Genesis_Chapter_"
+                    + numberToWords(chapter)
+                    + ".mp3";
+        }
+
+        // Psalms uses its own filename structure.
+        else if (book.name.equals("Psalms")) {
+
+            fileName = String.format(
+                    Locale.US,
+                    "%04d",
+                    trackNumber
+            )
+            + " Psalms-"
+            + numberToWords(chapter)
+            + ".mp3";
+        }
+
+        // Other books.
+        else {
+
+            fileName = "01 "
+                    + String.format(
+                            Locale.US,
+                            "%04d",
+                            trackNumber
+                    )
+                    + " "
+                    + audioBookName
+                    + "-Chapter "
+                    + numberToWords(chapter)
+                    + ".mp3";
+        }
+
+        return WEB_BASE_URL
+                + folderName
+                + "/"
+                + fileName.replace(" ", "%20");
+    }
 
     return null;
 }
+    private static String getWebBookTitle(String bookName) {
 
-        }
+    switch (bookName) {
+
+        case "1 Samuel": return "First Samuel";
+        case "2 Samuel": return "Second Samuel";
+
+        case "1 Kings": return "First Kings";
+        case "2 Kings": return "Second Kings";
+
+        case "1 Chronicles": return "First Chronicles";
+        case "2 Chronicles": return "Second Chronicles";
+
+        case "1 Corinthians": return "First Corinthians";
+        case "2 Corinthians": return "Second Corinthians";
+
+        case "1 Thessalonians": return "First Thessalonians";
+        case "2 Thessalonians": return "Second Thessalonians";
+
+        case "1 Timothy": return "First Timothy";
+        case "2 Timothy": return "Second Timothy";
+
+        case "1 Peter": return "First Peter";
+        case "2 Peter": return "Second Peter";
+
+        case "1 John": return "First John";
+        case "2 John": return "Second John";
+        case "3 John": return "Third John";
+
+        case "Revelation": return "Revelations";
+
+        default:
+            return bookName;
+    }
+}
+
+private static String numberToWords(int number) {
+
+    String[] ones = {
+            "", "One", "Two", "Three", "Four",
+            "Five", "Six", "Seven", "Eight", "Nine",
+            "Ten", "Eleven", "Twelve", "Thirteen",
+            "Fourteen", "Fifteen", "Sixteen",
+            "Seventeen", "Eighteen", "Nineteen"
+    };
+
+    String[] tens = {
+            "", "", "Twenty", "Thirty", "Forty",
+            "Fifty", "Sixty", "Seventy",
+            "Eighty", "Ninety"
+    };
+
+    if (number < 20) {
+        return ones[number];
+    }
+
+    if (number < 100) {
+
+        return tens[number / 10]
+                + (number % 10 == 0
+                ? ""
+                : " " + ones[number % 10]);
+    }
+
+    if (number < 1000) {
+
+        return ones[number / 100]
+                + " Hundred"
+                + (number % 100 == 0
+                ? ""
+                : " " + numberToWords(number % 100));
+    }
+
+    return "";
+}
+}
