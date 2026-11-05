@@ -50,9 +50,12 @@ public class KingdomMusicService extends Service {
             }
 
             if (uriText != null) {
-                playAudio(Uri.parse(uriText));
-            }
 
+    // Stop Audio Bible before starting Kingdom Music
+    stopService(new Intent(this, AudioBibleService.class));
+
+    playAudio(Uri.parse(uriText));
+            }
         } else if (ACTION_PAUSE.equals(action)) {
             if (player != null && player.isPlaying()) {
                 player.pause();
