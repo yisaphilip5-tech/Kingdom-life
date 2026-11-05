@@ -19,6 +19,7 @@ public class AudioBibleService extends MediaSessionService {
         super.onCreate();
 
         player = new ExoPlayer.Builder(this).build();
+        stopService(new android.content.Intent(this, KingdomMusicService.class));
 
         AudioAttributes audioAttributes =
                 new AudioAttributes.Builder()
