@@ -119,7 +119,7 @@ int endLevel = levelPage == 0 ? 125 : 250;
 for (int i = startLevel; i <= endLevel; i++) {
 final int selectedLevel = i;
 
-if (i % 2 == 1) {
+if ((i - startLevel) % 2 == 0) {
     levelRow = new LinearLayout(activity);
     levelRow.setOrientation(LinearLayout.HORIZONTAL);
 
