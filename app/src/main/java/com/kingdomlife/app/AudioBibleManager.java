@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import androidx.media3.common.MediaItem;
+import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.Player;
 import androidx.media3.session.MediaController;
@@ -13,11 +14,13 @@ import androidx.media3.session.SessionToken;
 
 import com.google.common.util.concurrent.ListenableFuture;
 
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 
 public class AudioBibleManager {
 
     public interface PlaybackListener {
+
         void onPlaybackChanged(
                 boolean isPlaying,
                 int playbackState,
@@ -31,6 +34,7 @@ public class AudioBibleManager {
     }
 
     private final Context context;
+
     private final Handler handler =
             new Handler(Looper.getMainLooper());
 
@@ -41,16 +45,22 @@ public class AudioBibleManager {
     private PlaybackListener listener;
 
     private String currentBook;
+
     private String currentTranslation = "KJV";
+
     private int currentChapter = 1;
+
+    private String pendingAudioUrl;
+
+    private boolean connecting = false;
+
+    private boolean released = false;
 
     private final float[] playbackSpeeds = {
             0.75f, 1.0f, 1.25f, 1.5f, 1.75f, 2.0f
     };
 
     private int speedIndex = 1;
-
-    private boolean released = false;
 
     private final Player.Listener playerListener =
             new Player.Listener() {
@@ -75,16 +85,19 @@ public class AudioBibleManager {
     };
 
     private final Runnable progressUpdater = new Runnable() {
+
         @Override
         public void run() {
+
+            if (released) {
+                return;
+            }
 
             if (controller != null && listener != null) {
                 notifyPlaybackChanged();
             }
 
-            if (!released) {
-                handler.postDelayed(this, 500);
-            }
+            handler.postDelayed(this, 500);
         }
     };
 
@@ -96,11 +109,19 @@ public class AudioBibleManager {
     }
 
     public void setPlaybackListener(PlaybackListener listener) {
+
         this.listener = listener;
+
         notifyPlaybackChanged();
     }
 
     private void connectToService() {
+
+        if (released || connecting || controller != null) {
+            return;
+        }
+
+        connecting = true;
 
         SessionToken sessionToken = new SessionToken(
                 context,
@@ -114,33 +135,72 @@ public class AudioBibleManager {
                 new MediaController.Builder(context, sessionToken)
                         .buildAsync();
 
-        controllerFuture.addListener(() -> {
+        ListenableFuture<MediaController> future =
+                controllerFuture;
+
+        future.addListener(() -> {
 
             try {
 
-                controller = controllerFuture.get();
+                MediaController connectedController =
+                        future.get();
+
+                connecting = false;
+
+                if (released) {
+                    connectedController.release();
+                    return;
+                }
+
+                controller = connectedController;
 
                 controller.addListener(playerListener);
 
-                notifyPlaybackChanged();
-
                 handler.removeCallbacks(progressUpdater);
+
                 handler.post(progressUpdater);
 
-            } catch (ExecutionException | InterruptedException e) {
+                notifyPlaybackChanged();
 
-                if (listener != null) {
-                    listener.onError(
-                            "Unable to connect to Audio Bible."
-                    );
+                // Play a chapter requested while connecting.
+                if (pendingAudioUrl != null) {
+
+                    String audioUrl = pendingAudioUrl;
+
+                    pendingAudioUrl = null;
+
+                    loadAndPlay(audioUrl);
                 }
+
+            } catch (
+                    ExecutionException |
+                    InterruptedException |
+                    CancellationException e
+            ) {
+
+                connecting = false;
+
+                controllerFuture = null;
 
                 if (e instanceof InterruptedException) {
                     Thread.currentThread().interrupt();
                 }
+
+                if (!released) {
+                    reportError(
+                            "Unable to connect to Audio Bible. Please try again."
+                    );
+                }
             }
 
         }, command -> handler.post(command));
+    }
+
+    private void connectIfNeeded() {
+
+        if (controller == null && !connecting && !released) {
+            connectToService();
+        }
     }
 
     public boolean isConnected() {
@@ -153,14 +213,23 @@ public class AudioBibleManager {
             int chapter
     ) {
 
-        currentTranslation = translation;
-        currentBook = book;
-        currentChapter = chapter;
+        if (released) {
+            return;
+        }
+
+        if (translation == null || book == null) {
+            reportError("Invalid Bible selection.");
+            return;
+        }
 
         if (!AudioBibleData.isValidChapter(book, chapter)) {
             reportError("Invalid Bible chapter.");
             return;
         }
+
+        currentTranslation = translation;
+        currentBook = book;
+        currentChapter = chapter;
 
         String audioUrl = AudioBibleData.getAudioUrl(
                 translation,
@@ -175,25 +244,20 @@ public class AudioBibleManager {
             return;
         }
 
-        if (controller == null) {
+        if (controller != null) {
+            loadAndPlay(audioUrl);
+        } else {
+
+            // Keep the latest requested chapter until connected.
+            pendingAudioUrl = audioUrl;
+
             connectIfNeeded();
-            handler.postDelayed(() -> {
-                if (controller != null) {
-                    loadAndPlay(audioUrl);
-                } else {
-                    reportError("Audio service is not ready.");
-                }
-            }, 500);
-
-            return;
         }
-
-        loadAndPlay(audioUrl);
     }
 
     private void loadAndPlay(String audioUrl) {
 
-        if (controller == null) {
+        if (controller == null || released) {
             return;
         }
 
@@ -203,7 +267,7 @@ public class AudioBibleManager {
                         currentBook + "_" + currentChapter
                 )
                 .setMediaMetadata(
-                        new androidx.media3.common.MediaMetadata.Builder()
+                        new MediaMetadata.Builder()
                                 .setTitle(
                                         currentBook + " " + currentChapter
                                 )
@@ -223,20 +287,11 @@ public class AudioBibleManager {
         applyPlaybackSpeed();
 
         if (listener != null) {
+
             listener.onChapterChanged(
                     currentBook,
                     currentChapter
             );
-        }
-    }
-
-    private void connectIfNeeded() {
-
-        if (controller == null &&
-                (controllerFuture == null ||
-                        controllerFuture.isDone())) {
-
-            connectToService();
         }
     }
 
@@ -269,6 +324,8 @@ public class AudioBibleManager {
 
     public void stop() {
 
+        pendingAudioUrl = null;
+
         if (controller != null) {
             controller.stop();
         }
@@ -284,7 +341,9 @@ public class AudioBibleManager {
                 AudioBibleData.getChapterCount(currentBook);
 
         if (currentChapter < totalChapters) {
+
             currentChapter++;
+
             playChapter(
                     currentTranslation,
                     currentBook,
@@ -300,7 +359,9 @@ public class AudioBibleManager {
         }
 
         if (currentChapter > 1) {
+
             currentChapter--;
+
             playChapter(
                     currentTranslation,
                     currentBook,
@@ -388,17 +449,27 @@ public class AudioBibleManager {
 
         released = true;
 
+        pendingAudioUrl = null;
+
         handler.removeCallbacks(progressUpdater);
 
         if (controller != null) {
+
             controller.removeListener(playerListener);
+
             controller.release();
+
             controller = null;
+
         } else if (controllerFuture != null) {
+
             MediaController.releaseFuture(controllerFuture);
         }
 
         controllerFuture = null;
+
+        connecting = false;
+
         listener = null;
     }
-  }
+}
