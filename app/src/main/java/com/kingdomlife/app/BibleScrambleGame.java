@@ -100,7 +100,7 @@ private GradientDrawable makeGameCard(int color, int borderColor) {
 
 LinearLayout levelRow = null;
 
-for (int i = 1; i <= 125; i++) {
+for (int i = 1; i <= 250; i++) {
 final int selectedLevel = i;
 
 if (i % 2 == 1) {
@@ -159,7 +159,7 @@ if (isUnlocked) {
 
 levelRow.addView(buttonFrame);
 
-if (i % 2 == 0 || i == 125) {
+if (i % 2 == 0 || i == 250) {
     // Add an empty space after the last button if needed.
     if (i == 125 && i % 2 == 1) {
         View spacer = new View(activity);
@@ -257,7 +257,7 @@ private int getTrialLimit(String word) {
     activity.content.addView(title);
 
     TextView progress = new TextView(activity);
-    progress.setText("Level " + level + " of 125");
+    progress.setText("Level " + level + " of 250");
     progress.setTextSize(18);
     progress.setTextColor(activity.darkText);
     progress.setGravity(Gravity.CENTER);
@@ -378,7 +378,7 @@ if (!alreadySolved) {
             activity.content.addView(feedback);
 
             activity.addButton(
-                    level == 125
+                    level == 250
                             ? "🏆 Finish Bible Scramble"
                             : "➡️ Continue to Next Level",
                     nextView -> completeLevel());
@@ -449,14 +449,14 @@ if (!alreadySolved) {
     int unlockedLevel = activity.prefs.getInt(
             "bibleScrambleUnlockedLevel", 1);
 
-    if (level >= unlockedLevel && level < 125) {
+    if (level >= unlockedLevel && level < 250) {
         activity.prefs.edit()
                 .putInt("bibleScrambleUnlockedLevel", level + 1)
                 .putInt("bibleScramblePendingAnimation", level + 1)
                 .apply();
     }
 
-    if (level == 125) {
+    if (level == 250) {
         android.media.MediaPlayer player =
                 android.media.MediaPlayer.create(
                         activity,
@@ -473,7 +473,7 @@ if (!alreadySolved) {
 
     TextView title = new TextView(activity);
     title.setText(
-            level == 125
+            level == 250
                     ? "🏆 Bible Scramble Completed!"
                     : "🎉 Level " + level + " Completed!");
     title.setTextSize(26);
@@ -486,7 +486,7 @@ if (!alreadySolved) {
     TextView result = new TextView(activity);
     result.setText(
             "You unscrambled the word successfully!\n\n"
-                    + "🧩 Level: " + level + " of 125\n"
+                    + "🧩 Level: " + level + " of 250\n"
                     + "⭐ Points earned: " + score
                     + "\n⭐ Total Points: " + activity.totalPoints);
     result.setTextSize(20);
@@ -495,7 +495,7 @@ if (!alreadySolved) {
     result.setPadding(0, 10, 0, 30);
     activity.content.addView(result);
 
-    if (level < 125) {
+    if (level < 250) {
         activity.addButton(
                 "➡️ Continue to Level " + (level + 1),
                 v -> startLevel(level + 1));
