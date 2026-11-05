@@ -53,6 +53,8 @@ import android.widget.Space;
 import android.content.SharedPreferences;
 
 public class MainActivity extends Activity {
+    // Audio Bible manager — retained while navigating between screens
+private AudioBibleManager audioBibleManager;
     
     
 
@@ -5060,6 +5062,43 @@ TextView title = new TextView(this);
     title.setTextColor(darkText);
     title.setPadding(0, 15, 0, 20);
     content.addView(title);
+        // AUDIO BIBLE PLAYER
+
+if (audioBibleManager == null) {
+    audioBibleManager =
+            new AudioBibleManager(getApplicationContext());
+}
+
+AudioBiblePlayerView audioPlayer =
+        new AudioBiblePlayerView(
+                this,
+                audioBibleManager,
+                translation,
+                book,
+                chapter
+        );
+
+// Update the Bible reader when the audio chapter changes
+audioPlayer.setOnChapterChangedListener(
+        (newBook, newChapter) -> {
+
+            if (!book.equals(newBook)
+                    || chapter != newChapter) {
+
+                showBibleChapter(newBook, newChapter);
+            }
+        }
+);
+
+LinearLayout.LayoutParams audioPlayerParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+audioPlayerParams.setMargins(0, 0, 0, 20);
+
+content.addView(audioPlayer, audioPlayerParams);
 
 
     try {
