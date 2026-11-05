@@ -45,7 +45,7 @@
         <service
     android:name=".AudioBibleService"
     android:foregroundServiceType="mediaPlayback"
-    android:exported="false"
+    android:exported="false">
 
     <intent-filter>
         <action android:name="androidx.media3.session.MediaSessionService" />
