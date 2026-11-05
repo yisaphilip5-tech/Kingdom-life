@@ -161,7 +161,7 @@ levelRow.addView(buttonFrame);
 
 if (i % 2 == 0 || i == 250) {
     // Add an empty space after the last button if needed.
-    if (i == 125 && i % 2 == 1) {
+    if (i == 250 && i % 2 == 1) {
         View spacer = new View(activity);
         levelRow.addView(
                 spacer,
