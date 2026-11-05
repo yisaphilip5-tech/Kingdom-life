@@ -90,9 +90,8 @@ public class AudioBiblePlayerView extends LinearLayout {
                     int newChapter
             ) {
 
-                book = newBook;
-                chapter = newChapter;
-
+                AudioBiblePlayerView.this.book = newBook;
+AudioBiblePlayerView.this.chapter = newChapter;
                 updateChapterTitle();
 
                 if (chapterChangedListener != null) {
