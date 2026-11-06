@@ -933,7 +933,7 @@ progressView.setText(
     progressView.setPadding(0, 8, 0, 4);
 
     body.addView(progressView);
-}
+
 } else {
 
     int target = achievement.target;
