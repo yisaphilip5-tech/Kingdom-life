@@ -340,177 +340,232 @@ android.view.WindowInsets.Type.systemBars()
 
     private boolean isAchievementUnlocked(String key) {
 
-        int points = prefs.getInt("totalPoints", 0);
-        int learnedVerses = prefs.getInt("learnedVerses", 0);
-        int dailyStreak = prefs.getInt("dailyStreak", 0);
+    int points = prefs.getInt("totalPoints", 0);
+    int learnedVerses = prefs.getInt("learnedVerses", 0);
+    int dailyStreak = prefs.getInt("dailyStreak", 0);
 
-        boolean challengeComplete =
-                prefs.getBoolean("challengeCompletedToday", false);
+    boolean challengeComplete =
+            prefs.getBoolean("challengeCompletedToday", false);
 
-        int journeyQuestions =
-                prefs.getInt("bibleJourney_questions_completed", 0);
+    int journeyQuestions =
+            prefs.getInt("bibleJourney_questions_completed", 0);
 
-        int journeyBooks =
-                prefs.getInt("bibleJourney_books_completed", 0);
+    int journeyBooks =
+            prefs.getInt("bibleJourney_books_completed", 0);
 
-        int scrambleWords =
-                prefs.getInt("bibleScramble_words_solved", 0);
+    int scrambleWords =
+            prefs.getInt("bibleScramble_words_solved", 0);
 
-        int missingWordCorrect =
-                prefs.getInt("missingWord_correct_answers", 0);
+    int missingWordCorrect =
+            prefs.getInt("missingWord_correct_answers", 0);
 
-        int referenceCorrect =
-                prefs.getInt("memory_reference_correct_answers", 0);
+    int referenceCorrect =
+            prefs.getInt("memory_reference_correct_answers", 0);
 
-        int guessVerseCorrect =
-                prefs.getInt("memory_guess_correct_answers", 0);
+    int guessVerseCorrect =
+            prefs.getInt("memory_guess_correct_answers", 0);
 
-        int completeVerseCorrect =
-                prefs.getInt("memory_complete_correct_answers", 0);
+    int completeVerseCorrect =
+            prefs.getInt("memory_complete_correct_answers", 0);
 
-        boolean level1 =
-                prefs.getBoolean("challenge_level_1_completed", false);
+    boolean level1 =
+            prefs.getBoolean("challenge_level_1_completed", false);
 
-        boolean level2 =
-                prefs.getBoolean("challenge_level_2_completed", false);
+    boolean level2 =
+            prefs.getBoolean("challenge_level_2_completed", false);
 
-        boolean level3 =
-                prefs.getBoolean("challenge_level_3_completed", false);
+    boolean level3 =
+            prefs.getBoolean("challenge_level_3_completed", false);
 
-        boolean level4 =
-                prefs.getBoolean("challenge_level_4_completed", false);
+    boolean level4 =
+            prefs.getBoolean("challenge_level_4_completed", false);
 
-        boolean level5 =
-                prefs.getBoolean("challenge_level_5_completed", false);
+    boolean level5 =
+            prefs.getBoolean("challenge_level_5_completed", false);
 
-        SharedPreferences jigsawPrefs =
-                getSharedPreferences(
-                        "KingdomLifeJigsawPrefs",
-                        MODE_PRIVATE
-                );
+    switch (key) {
 
-        boolean jigsaw1 =
-                jigsawPrefs.getBoolean("level1RewardClaimed", false);
+        // POINTS AND DAILY PROGRESS
 
-        boolean jigsaw2 =
-                jigsawPrefs.getBoolean("level2RewardClaimed", false);
+        case "first_step":
+            return points >= 5;
 
-        boolean jigsaw3 =
-                jigsawPrefs.getBoolean("level3RewardClaimed", false);
+        case "bible_learner":
+            return learnedVerses >= 5;
 
-        switch (key) {
+        case "streak_keeper":
+            return dailyStreak >= 3;
 
-            case "first_step":
-                return points >= 5;
+        case "point_builder":
+            return points >= 50;
 
-            case "bible_learner":
-                return learnedVerses >= 5;
+        case "challenge_complete":
+            return challengeComplete;
 
-            case "streak_keeper":
-                return dailyStreak >= 3;
+        // BIBLE CHALLENGE
 
-            case "point_builder":
-                return points >= 50;
+        case "easy_challenger":
+            return level1;
 
-            case "challenge_complete":
-                return challengeComplete;
+        case "medium_challenger":
+            return level2;
 
-            case "easy_challenger":
-                return level1;
+        case "hard_challenger":
+            return level3;
 
-            case "medium_challenger":
-                return level2;
+        case "challenge_master":
+            return level1 && level2 && level3;
 
-            case "hard_challenger":
-                return level3;
+        case "bible_challenge_master":
+            return level1 && level2 && level3
+                    && level4 && level5;
 
-            case "challenge_master":
-                return level1 && level2 && level3;
+        // BIBLE JOURNEY QUESTIONS
 
-            case "bible_challenge_master":
-                return level1 && level2 && level3
-                        && level4 && level5;
+        case "questions_100":
+            return journeyQuestions >= 100;
 
-            case "questions_100":
-                return journeyQuestions >= 100;
+        case "questions_250":
+            return journeyQuestions >= 250;
 
-            case "questions_250":
-                return journeyQuestions >= 250;
+        case "questions_500":
+            return journeyQuestions >= 500;
 
-            case "questions_500":
-                return journeyQuestions >= 500;
+        case "questions_1000":
+            return journeyQuestions >= 1000;
 
-            case "questions_1000":
-                return journeyQuestions >= 1000;
+        // BIBLE JOURNEY BOOKS
 
-            case "books_5":
-                return journeyBooks >= 5;
+        case "books_5":
+            return journeyBooks >= 5;
 
-            case "books_10":
-                return journeyBooks >= 10;
+        case "books_10":
+            return journeyBooks >= 10;
 
-            case "books_25":
-                return journeyBooks >= 25;
+        case "books_25":
+            return journeyBooks >= 25;
 
-            case "books_50":
-                return journeyBooks >= 50;
+        case "books_50":
+            return journeyBooks >= 50;
 
-            case "books_66":
-                return journeyBooks >= 66;
+        case "books_66":
+            return journeyBooks >= 66;
 
-            case "scramble_10_words":
-                return scrambleWords >= 10;
+        // BIBLE SCRAMBLE
 
-            case "scramble_25_words":
-                return scrambleWords >= 25;
+        case "scramble_10_words":
+            return scrambleWords >= 10;
 
-            case "scramble_75_words":
-                return scrambleWords >= 75;
+        case "scramble_25_words":
+            return scrambleWords >= 25;
 
-            case "big_picture":
-                return jigsaw1 && jigsaw2 && jigsaw3;
+        case "scramble_75_words":
+            return scrambleWords >= 75;
 
-            case "word_hearer":
-                return missingWordCorrect >= 25;
+        case "scramble_100_words":
+            return scrambleWords >= 100;
 
-            case "scripture_detective":
-                return referenceCorrect >= 25;
+        case "scramble_200_words":
+            return scrambleWords >= 200;
 
-            case "verse_guardian":
-                return guessVerseCorrect >= 25;
+        case "scramble_250_words":
+            return scrambleWords >= 250;
 
-            case "verse_finisher":
-                return completeVerseCorrect >= 25;
+        // JIGSAW PUZZLE
 
-            case "gods_vessel_15":
-                return learnedVerses >= 15;
+        case "big_picture":
+            return countClaimedJigsawRewards() >= 3;
 
-            case "gods_vessel_25":
-                return learnedVerses >= 25;
+        case "jigsaw_10_levels":
+            return countClaimedJigsawRewards() >= 10;
 
-            // We will connect these two to their real
-            // progress conditions after inspecting the app.
-            case "word_student":
-            case "finisher":
-                return false;
+        case "jigsaw_25_levels":
+            return countClaimedJigsawRewards() >= 25;
 
-            default:
-                return false;
-        }
+        case "jigsaw_50_levels":
+            return countClaimedJigsawRewards() >= 50;
+
+        case "jigsaw_75_levels":
+            return countClaimedJigsawRewards() >= 75;
+
+        case "jigsaw_90_levels":
+            return countClaimedJigsawRewards() >= 90;
+
+        // MISSING WORD
+
+        case "word_hearer":
+            return missingWordCorrect >= 25;
+
+        // GUESS THE REFERENCE
+
+        case "scripture_detective":
+            return referenceCorrect >= 25;
+
+        case "reference_50":
+            return referenceCorrect >= 50;
+
+        case "reference_100":
+            return referenceCorrect >= 100;
+
+        // GUESS THE VERSE
+
+        case "verse_guardian":
+            return guessVerseCorrect >= 25;
+
+        case "guess_verse_50":
+            return guessVerseCorrect >= 50;
+
+        case "guess_verse_100":
+            return guessVerseCorrect >= 100;
+
+        // COMPLETE THE VERSE
+
+        case "verse_finisher":
+            return completeVerseCorrect >= 25;
+
+        case "complete_verse_50":
+            return completeVerseCorrect >= 50;
+
+        case "complete_verse_100":
+            return completeVerseCorrect >= 100;
+
+        // BIBLE LEARNING
+
+        case "gods_vessel_15":
+            return learnedVerses >= 15;
+
+        case "gods_vessel_25":
+            return learnedVerses >= 25;
+
+        // NOT YET CONNECTED
+
+        case "word_student":
+        case "finisher":
+            return false;
+
+        default:
+            return false;
+    }
     }
 
     private int getAchievementProgress(String key) {
 
     switch (key) {
 
+        // POINTS
+
         case "first_step":
         case "point_builder":
             return prefs.getInt("totalPoints", 0);
+
+        // BIBLE LEARNING
 
         case "bible_learner":
         case "gods_vessel_15":
         case "gods_vessel_25":
             return prefs.getInt("learnedVerses", 0);
+
+        // DAILY PROGRESS
 
         case "streak_keeper":
             return prefs.getInt("dailyStreak", 0);
@@ -519,6 +574,8 @@ android.view.WindowInsets.Type.systemBars()
             return prefs.getBoolean(
                     "challengeCompletedToday", false
             ) ? 1 : 0;
+
+        // BIBLE CHALLENGE
 
         case "easy_challenger":
             return prefs.getBoolean(
@@ -541,6 +598,8 @@ android.view.WindowInsets.Type.systemBars()
         case "bible_challenge_master":
             return countCompletedChallengeLevels(5);
 
+        // BIBLE JOURNEY QUESTIONS
+
         case "questions_100":
         case "questions_250":
         case "questions_500":
@@ -548,6 +607,8 @@ android.view.WindowInsets.Type.systemBars()
             return prefs.getInt(
                     "bibleJourney_questions_completed", 0
             );
+
+        // BIBLE JOURNEY BOOKS
 
         case "books_5":
         case "books_10":
@@ -558,32 +619,58 @@ android.view.WindowInsets.Type.systemBars()
                     "bibleJourney_books_completed", 0
             );
 
+        // BIBLE SCRAMBLE
+
         case "scramble_10_words":
         case "scramble_25_words":
         case "scramble_75_words":
+        case "scramble_100_words":
+        case "scramble_200_words":
+        case "scramble_250_words":
             return prefs.getInt(
                     "bibleScramble_words_solved", 0
             );
 
+        // JIGSAW PUZZLE
+
         case "big_picture":
+        case "jigsaw_10_levels":
+        case "jigsaw_25_levels":
+        case "jigsaw_50_levels":
+        case "jigsaw_75_levels":
+        case "jigsaw_90_levels":
             return countClaimedJigsawRewards();
+
+        // MISSING WORD
 
         case "word_hearer":
             return prefs.getInt(
                     "missingWord_correct_answers", 0
             );
 
+        // GUESS THE REFERENCE
+
         case "scripture_detective":
+        case "reference_50":
+        case "reference_100":
             return prefs.getInt(
                     "memory_reference_correct_answers", 0
             );
 
+        // GUESS THE VERSE
+
         case "verse_guardian":
+        case "guess_verse_50":
+        case "guess_verse_100":
             return prefs.getInt(
                     "memory_guess_correct_answers", 0
             );
 
+        // COMPLETE THE VERSE
+
         case "verse_finisher":
+        case "complete_verse_50":
+        case "complete_verse_100":
             return prefs.getInt(
                     "memory_complete_correct_answers", 0
             );
@@ -591,8 +678,7 @@ android.view.WindowInsets.Type.systemBars()
         default:
             return isAchievementUnlocked(key) ? 1 : 0;
     }
-}
-
+    }
 private int countCompletedChallengeLevels(int maximumLevel) {
 
     int completed = 0;
