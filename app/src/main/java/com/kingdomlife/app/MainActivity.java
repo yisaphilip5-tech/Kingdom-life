@@ -4366,6 +4366,30 @@ content.addView(backButton, backParams);
             ),
             () -> showDescendantsOfGoodChapters()
     );
+        // Success Is My Birthright — second row.
+android.widget.LinearLayout successRow =
+        new android.widget.LinearLayout(this);
+
+successRow.setOrientation(
+        android.widget.LinearLayout.HORIZONTAL
+);
+
+successRow.setGravity(Gravity.CENTER);
+
+content.addView(successRow);
+
+addLibraryBook(
+        successRow,
+        R.drawable.success_is_my_birthright_cover,
+        "Success Is My Birthright",
+        getReadingStatus(
+                "Success Is My Birthright",
+                "SuccessBirthrightReadingProgress",
+                completedBooks
+        ),
+        () -> showSuccessBookChapters()
+);
+        
 }
 
 private String getReadingStatus(
@@ -5357,6 +5381,36 @@ void showSuccessBookChapter(int chapterIndex, int startingPage) {
                             completedChapters
                     )
                     .apply();
+            // Mark the book as completed when every chapter is finished.
+if (completedChapters.size() == chapters.size()) {
+
+    android.content.SharedPreferences readingPrefs =
+            getSharedPreferences(
+                    "BibleReadingPrefs",
+                    MODE_PRIVATE
+            );
+
+    java.util.Set<String> completedStoryBooks =
+            new java.util.HashSet<>(
+                    readingPrefs.getStringSet(
+                            "completedStoryBooks",
+                            java.util.Collections.emptySet()
+                    )
+            );
+
+    if (completedStoryBooks.add("Success Is My Birthright")) {
+        readingPrefs.edit()
+                .putStringSet(
+                        "completedStoryBooks",
+                        completedStoryBooks
+                )
+                .putInt(
+                        "storyBooksRead",
+                        completedStoryBooks.size()
+                )
+                .apply();
+    }
+}
         }
 
         previousButton.setEnabled(currentPage[0] > 0);
