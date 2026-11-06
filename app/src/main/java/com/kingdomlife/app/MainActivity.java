@@ -2,6 +2,7 @@
 package com.kingdomlife.app;
 
 import com.kingdomlife.app.descendants.DescendantsOfGoodLibrary;
+import com.kingdomlife.app.success.SuccessIsMyBirthrightLibrary;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -4081,82 +4082,194 @@ booksRow.addView(
                 1
         )
 );
+// Success Is My Birthright — second row.
+LinearLayout successBooksRow = new LinearLayout(this);
+successBooksRow.setOrientation(LinearLayout.HORIZONTAL);
+successBooksRow.setGravity(android.view.Gravity.CENTER);
+successBooksRow.setWeightSum(2);
 
-addCard(
-"⏩ Continue Reading",
-"Return to where you last stopped reading.",
-v -> {
-android.content.SharedPreferences pilgrimPrefs =
-getSharedPreferences(
-"PilgrimsProgressReadingProgress",
-MODE_PRIVATE
+LinearLayout.LayoutParams successRowParams =
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+successRowParams.setMargins(0, 0, 0, 20);
+content.addView(successBooksRow, successRowParams);
+
+LinearLayout successBook = new LinearLayout(this);
+successBook.setOrientation(LinearLayout.VERTICAL);
+successBook.setGravity(android.view.Gravity.CENTER);
+successBook.setPadding(6, 6, 6, 6);
+successBook.setOnClickListener(
+        v -> showSuccessBookChapters()
 );
 
-        android.content.SharedPreferences storyPrefs =
-                getSharedPreferences(
-                        "DescendantsReadingProgress",
-                        MODE_PRIVATE
+ImageView successCover = new ImageView(this);
+successCover.setImageResource(
+        R.drawable.success_is_my_birthright_cover
+);
+successCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+successCover.setAdjustViewBounds(true);
+successCover.setContentDescription(
+        "Success Is My Birthright book cover"
+);
+
+successBook.addView(
+        successCover,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                180
+        )
+);
+
+TextView successTitle = new TextView(this);
+successTitle.setText("Success Is My Birthright");
+successTitle.setTextSize(16);
+successTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+successTitle.setTextColor(darkText);
+successTitle.setGravity(android.view.Gravity.CENTER);
+successTitle.setPadding(0, 8, 0, 8);
+successBook.addView(successTitle);
+
+TextView successDescription = new TextView(this);
+successDescription.setText("Christian living and success");
+successDescription.setTextSize(13);
+successDescription.setTextColor(darkText);
+successDescription.setGravity(android.view.Gravity.CENTER);
+successBook.addView(successDescription);
+
+successBooksRow.addView(
+        successBook,
+        new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        )
+);
+
+// Empty space keeps the two-column layout balanced.
+View emptyBookSpace = new View(this);
+successBooksRow.addView(
+        emptyBookSpace,
+        new LinearLayout.LayoutParams(
+                0,
+                1,
+                1
+        )
+);
+addCard(
+        "⏩ Continue Reading",
+        "Return to where you last stopped reading.",
+        v -> {
+            android.content.SharedPreferences pilgrimPrefs =
+                    getSharedPreferences(
+                            "PilgrimsProgressReadingProgress",
+                            MODE_PRIVATE
+                    );
+
+            android.content.SharedPreferences storyPrefs =
+                    getSharedPreferences(
+                            "DescendantsReadingProgress",
+                            MODE_PRIVATE
+                    );
+
+            android.content.SharedPreferences successPrefs =
+                    getSharedPreferences(
+                            "SuccessBirthrightReadingProgress",
+                            MODE_PRIVATE
+                    );
+
+            boolean pilgrimStarted =
+                    pilgrimPrefs.contains("lastChapter");
+
+            boolean descendantsStarted =
+                    storyPrefs.contains("lastChapter");
+
+            boolean successStarted =
+                    successPrefs.contains("lastChapter");
+
+            java.util.ArrayList<String> availableBooks =
+                    new java.util.ArrayList<>();
+
+            if (pilgrimStarted) {
+                availableBooks.add("The Pilgrim's Progress");
+            }
+
+            if (descendantsStarted) {
+                availableBooks.add("Descendants of Good");
+            }
+
+            if (successStarted) {
+                availableBooks.add("Success Is My Birthright");
+            }
+
+            if (availableBooks.isEmpty()) {
+                showMessage(
+                        "Continue Reading",
+                        "Open a book and start reading to save your position."
                 );
+                return;
+            }
 
-        boolean pilgrimStarted =
-                pilgrimPrefs.contains("lastChapter");
+            if (availableBooks.size() == 1) {
+                String selectedBook = availableBooks.get(0);
 
-        boolean descendantsStarted =
-                storyPrefs.contains("lastChapter");
+                if (selectedBook.equals("The Pilgrim's Progress")) {
+                    PilgrimsProgressBook.continueReading(
+                            this, content
+                    );
 
-        if (pilgrimStarted && descendantsStarted) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Continue Reading")
-                    .setItems(
-                            new String[]{
-                                    "The Pilgrim's Progress",
-                                    "Descendants of Good"
-                            },
-                            (dialog, which) -> {
-                                if (which == 0) {
-                                    PilgrimsProgressBook.continueReading(
-                                            this, content
-                                    );
-                                } else {
-                                    int lastChapter =
-                                            storyPrefs.getInt(
-                                                    "lastChapter", 0
-                                            );
-                                    int lastPage =
-                                            storyPrefs.getInt(
-                                                    "lastPage", 0
-                                            );
+                } else if (selectedBook.equals("Descendants of Good")) {
+                    showDescendantsBookmarkedPage(
+                            storyPrefs.getInt("lastChapter", 0),
+                            storyPrefs.getInt("lastPage", 0)
+                    );
 
-                                    showDescendantsBookmarkedPage(
-                                            lastChapter, lastPage
-                                    );
+                } else {
+                    showSuccessBookBookmarkedPage(
+                            successPrefs.getInt("lastChapter", 0),
+                            successPrefs.getInt("lastPage", 0)
+                    );
+                }
+
+            } else {
+                new AlertDialog.Builder(this)
+                        .setTitle("Continue Reading")
+                        .setItems(
+                                availableBooks.toArray(new String[0]),
+                                (dialog, which) -> {
+                                    String selectedBook =
+                                            availableBooks.get(which);
+
+                                    if (selectedBook.equals(
+                                            "The Pilgrim's Progress")) {
+
+                                        PilgrimsProgressBook.continueReading(
+                                                this, content
+                                        );
+
+                                    } else if (selectedBook.equals(
+                                            "Descendants of Good")) {
+
+                                        showDescendantsBookmarkedPage(
+                                                storyPrefs.getInt("lastChapter", 0),
+                                                storyPrefs.getInt("lastPage", 0)
+                                        );
+
+                                    } else if (selectedBook.equals(
+                                            "Success Is My Birthright")) {
+
+                                        showSuccessBookBookmarkedPage(
+                                                successPrefs.getInt("lastChapter", 0),
+                                                successPrefs.getInt("lastPage", 0)
+                                        );
+                                    }
                                 }
-                            }
-                    )
-                    .setNegativeButton("Cancel", null)
-                    .show();
-
-        } else if (pilgrimStarted) {
-            PilgrimsProgressBook.continueReading(
-                    this, content
-            );
-
-        } else if (descendantsStarted) {
-            int lastChapter = storyPrefs.getInt("lastChapter", 0);
-            int lastPage = storyPrefs.getInt("lastPage", 0);
-
-            showDescendantsBookmarkedPage(
-                    lastChapter, lastPage
-            );
-
-        } else {
-            showMessage(
-                    "Continue Reading",
-                    "Open a book and start reading to save your position."
-            );
+                        )
+                        .setNegativeButton("Cancel", null)
+                        .show();
+            }
         }
-    }
-
 );
         addCard("📚 My Library", "View your books and reading status.", v -> showKingdomLibrary());
 
@@ -4409,6 +4522,16 @@ content.addView(title);
 
 android.content.SharedPreferences bookmarkPrefs =
         getSharedPreferences("DescendantsBookmarks", MODE_PRIVATE);
+        android.content.SharedPreferences successBookmarkPrefs =
+        getSharedPreferences(
+                "SuccessBirthrightBookmarks",
+                MODE_PRIVATE
+        );
+
+java.util.List<SuccessIsMyBirthrightLibrary.Chapter> successChapters =
+        SuccessIsMyBirthrightLibrary.getChapters();
+
+boolean foundSuccessBookmark = false;
 
 java.util.List<DescendantsOfGoodLibrary.Chapter> chapters =
         DescendantsOfGoodLibrary.getChapters();
@@ -4573,8 +4696,94 @@ for (int i = 0; i < chapters.size(); i++) {
         }
     }
 }
+// Success Is My Birthright bookmarks.
+for (int i = 0; i < successChapters.size(); i++) {
 
-if (!foundBookmark && !foundPilgrimBookmark) {
+    final int chapterIndex = i;
+
+    SuccessIsMyBirthrightLibrary.Chapter chapter =
+            successChapters.get(i);
+
+    for (int pageIndex = 0;
+         pageIndex < chapter.pages.size();
+         pageIndex++) {
+
+        final int savedPageIndex = pageIndex;
+
+        String bookmarkKey =
+                chapterIndex + "_" + pageIndex;
+
+        if (successBookmarkPrefs.getBoolean(
+                bookmarkKey, false)) {
+
+            foundSuccessBookmark = true;
+
+            LinearLayout bookmarkRow =
+                    new LinearLayout(this);
+
+            bookmarkRow.setOrientation(
+                    LinearLayout.HORIZONTAL
+            );
+
+            bookmarkRow.setGravity(
+                    android.view.Gravity.CENTER_VERTICAL
+            );
+
+            android.widget.Button openButton =
+                    new android.widget.Button(this);
+
+            openButton.setText(
+                    "Success Is My Birthright — "
+                    + chapter.title
+                    + " • Page "
+                    + (pageIndex + 1)
+            );
+
+            openButton.setOnClickListener(v -> {
+                showSuccessBookBookmarkedPage(
+                        chapterIndex,
+                        savedPageIndex
+                );
+            });
+
+            android.widget.Button removeButton =
+                    new android.widget.Button(this);
+
+            removeButton.setText("Remove");
+
+            removeButton.setOnClickListener(v -> {
+                successBookmarkPrefs.edit()
+                        .remove(bookmarkKey)
+                        .apply();
+
+                showDescendantsBookmarks();
+            });
+
+            bookmarkRow.addView(
+                    openButton,
+                    new LinearLayout.LayoutParams(
+                            0,
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            1
+                    )
+            );
+
+            bookmarkRow.addView(removeButton);
+
+            content.addView(
+                    bookmarkRow,
+                    new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+            );
+        }
+    }
+                    }
+        
+if (!foundBookmark
+        && !foundPilgrimBookmark
+        && !foundSuccessBookmark) {
     TextView emptyMessage = new TextView(this);
     emptyMessage.setText(
             "You haven't bookmarked any passages yet.\n\n"
@@ -4849,6 +5058,331 @@ nextButton.setEnabled(
 );
 
 };
+
+    previousButton.setOnClickListener(v -> {
+        if (currentPage[0] > 0) {
+            currentPage[0]--;
+            updatePage.run();
+        }
+    });
+
+    nextButton.setOnClickListener(v -> {
+        if (currentPage[0] < chapter.pages.size() - 1) {
+            currentPage[0]++;
+            updatePage.run();
+        }
+    });
+
+    updatePage.run();
+    }
+    // Open a saved page in Success Is My Birthright.
+void showSuccessBookBookmarkedPage(int chapterIndex, int pageIndex) {
+    android.content.SharedPreferences bookPrefs =
+            getSharedPreferences(
+                    "SuccessBirthrightReadingProgress",
+                    MODE_PRIVATE
+            );
+
+    bookPrefs.edit()
+            .putInt("lastChapter", chapterIndex)
+            .putInt("lastPage", pageIndex)
+            .apply();
+
+    showSuccessBookChapter(chapterIndex, pageIndex);
+}
+
+
+// Open the chapter list.
+void showSuccessBookChapters() {
+    stopTimer();
+    content.removeAllViews();
+
+    java.util.List<SuccessIsMyBirthrightLibrary.Chapter> chapters =
+            SuccessIsMyBirthrightLibrary.getChapters();
+
+    TextView heading = new TextView(this);
+    heading.setText("Success Is My Birthright");
+    heading.setTextSize(24);
+    heading.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    heading.setTextColor(darkText);
+    heading.setPadding(0, 20, 0, 15);
+    content.addView(heading);
+
+    TextView description = new TextView(this);
+    description.setText("Understanding Success Through God's Principles");
+    description.setTextSize(15);
+    description.setTextColor(darkText);
+    description.setPadding(0, 0, 0, 20);
+    content.addView(description);
+
+    ImageButton backButton = new ImageButton(this);
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(v -> showKingdomBooks());
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(60, 60)
+    );
+
+    for (int i = 0; i < chapters.size(); i++) {
+        final int chapterIndex = i;
+
+        SuccessIsMyBirthrightLibrary.Chapter chapter =
+                chapters.get(i);
+
+        addCard(
+                "Chapter " + (i + 1),
+                chapter.title,
+                v -> showSuccessBookChapter(chapterIndex)
+        );
+    }
+}
+
+
+// Open a chapter and display its pages.
+void showSuccessBookChapter(int chapterIndex) {
+    showSuccessBookChapter(chapterIndex, -1);
+}
+
+
+void showSuccessBookChapter(int chapterIndex, int startingPage) {
+    stopTimer();
+    content.removeAllViews();
+
+    java.util.List<SuccessIsMyBirthrightLibrary.Chapter> chapters =
+            SuccessIsMyBirthrightLibrary.getChapters();
+
+    if (chapterIndex < 0 || chapterIndex >= chapters.size()) {
+        showSuccessBookChapters();
+        return;
+    }
+
+    SuccessIsMyBirthrightLibrary.Chapter chapter =
+            chapters.get(chapterIndex);
+
+    if (chapter.pages == null || chapter.pages.isEmpty()) {
+        showMessage(
+                "Chapter Unavailable",
+                "This chapter does not contain any pages yet."
+        );
+        return;
+    }
+
+    ImageButton backButton = new ImageButton(this);
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(
+            v -> showSuccessBookChapters()
+    );
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(60, 60)
+    );
+
+    android.content.SharedPreferences textPrefs =
+            getSharedPreferences(
+                    "TextAppearancePrefs",
+                    MODE_PRIVATE
+            );
+
+    int savedTextSize = textPrefs.getInt("textSize", 18);
+
+    String savedTextMode =
+            textPrefs.getString("textMode", "Light");
+
+    int selectedTextColor = savedTextMode.equals("Dark")
+            ? Color.WHITE
+            : Color.BLACK;
+
+    TextView chapterTitle = new TextView(this);
+    chapterTitle.setText(chapter.title);
+    chapterTitle.setTextSize(savedTextSize + 8);
+    chapterTitle.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    chapterTitle.setTextColor(selectedTextColor);
+    chapterTitle.setPadding(0, 15, 0, 10);
+    content.addView(chapterTitle);
+
+    TextView chapterSubtitle = new TextView(this);
+    chapterSubtitle.setText(chapter.subtitle);
+    chapterSubtitle.setTextSize(
+            Math.max(12, savedTextSize - 2)
+    );
+    chapterSubtitle.setTextColor(selectedTextColor);
+    chapterSubtitle.setPadding(0, 0, 0, 20);
+    content.addView(chapterSubtitle);
+
+    TextView pageText = new TextView(this);
+    pageText.setTextSize(savedTextSize);
+    pageText.setTextColor(selectedTextColor);
+    pageText.setLineSpacing(8, 1.0f);
+    pageText.setPadding(0, 10, 0, 20);
+    pageText.setTextIsSelectable(true);
+
+    content.addView(
+            pageText,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    // Bookmark button.
+    LinearLayout bookmarkRow = new LinearLayout(this);
+    bookmarkRow.setOrientation(LinearLayout.HORIZONTAL);
+    bookmarkRow.setGravity(android.view.Gravity.LEFT);
+
+    TextView bookmarkButton = new TextView(this);
+    bookmarkButton.setText("🔖");
+    bookmarkButton.setTextSize(28);
+    bookmarkButton.setPadding(8, 8, 8, 8);
+    bookmarkButton.setContentDescription("Bookmark this page");
+
+    bookmarkRow.addView(bookmarkButton);
+    content.addView(bookmarkRow);
+
+    // Previous and Next buttons.
+    LinearLayout navigation = new LinearLayout(this);
+    navigation.setOrientation(LinearLayout.HORIZONTAL);
+    navigation.setGravity(android.view.Gravity.CENTER);
+
+    android.widget.Button previousButton =
+            new android.widget.Button(this);
+    previousButton.setText("← Previous");
+
+    android.widget.Button nextButton =
+            new android.widget.Button(this);
+    nextButton.setText("Next →");
+
+    navigation.addView(
+            previousButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    navigation.addView(
+            nextButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    content.addView(navigation);
+
+    final int[] currentPage = {0};
+
+    android.content.SharedPreferences bookPrefs =
+            getSharedPreferences(
+                    "SuccessBirthrightReadingProgress",
+                    MODE_PRIVATE
+            );
+
+    int savedChapter = bookPrefs.getInt("lastChapter", 0);
+    int savedPage = bookPrefs.getInt("lastPage", 0);
+
+    if (startingPage >= 0) {
+        currentPage[0] = Math.max(
+                0,
+                Math.min(startingPage, chapter.pages.size() - 1)
+        );
+    } else if (savedChapter == chapterIndex) {
+        currentPage[0] = Math.max(
+                0,
+                Math.min(savedPage, chapter.pages.size() - 1)
+        );
+    }
+
+    Runnable updatePage = () -> {
+        pageText.setText(chapter.pages.get(currentPage[0]));
+
+        // Save reading position.
+        bookPrefs.edit()
+                .putInt("lastChapter", chapterIndex)
+                .putInt("lastPage", currentPage[0])
+                .apply();
+
+        // Record visited pages.
+        android.content.SharedPreferences visitedPrefs =
+                getSharedPreferences(
+                        "SuccessBirthrightVisitedPages",
+                        MODE_PRIVATE
+                );
+
+        String pageKey = chapterIndex + "_" + currentPage[0];
+
+        visitedPrefs.edit()
+                .putBoolean(pageKey, true)
+                .apply();
+
+        // Record completed chapters.
+        boolean chapterCompleted = true;
+
+        for (int i = 0; i < chapter.pages.size(); i++) {
+            if (!visitedPrefs.getBoolean(
+                    chapterIndex + "_" + i,
+                    false
+            )) {
+                chapterCompleted = false;
+                break;
+            }
+        }
+
+        if (chapterCompleted) {
+            java.util.Set<String> completedChapters =
+                    new java.util.HashSet<>(
+                            visitedPrefs.getStringSet(
+                                    "completedChapters",
+                                    java.util.Collections.emptySet()
+                            )
+                    );
+
+            completedChapters.add(String.valueOf(chapterIndex));
+
+            visitedPrefs.edit()
+                    .putStringSet(
+                            "completedChapters",
+                            completedChapters
+                    )
+                    .apply();
+        }
+
+        previousButton.setEnabled(currentPage[0] > 0);
+
+        nextButton.setEnabled(
+                currentPage[0] < chapter.pages.size() - 1
+        );
+    };
+
+    bookmarkButton.setOnClickListener(v -> {
+        String bookmarkKey =
+                chapterIndex + "_" + currentPage[0];
+
+        getSharedPreferences(
+                "SuccessBirthrightBookmarks",
+                MODE_PRIVATE
+        ).edit()
+                .putBoolean(bookmarkKey, true)
+                .apply();
+
+        android.widget.Toast.makeText(
+                this,
+                "Page bookmarked!",
+                android.widget.Toast.LENGTH_SHORT
+        ).show();
+    });
 
     previousButton.setOnClickListener(v -> {
         if (currentPage[0] > 0) {
