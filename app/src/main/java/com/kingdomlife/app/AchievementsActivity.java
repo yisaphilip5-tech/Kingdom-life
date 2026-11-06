@@ -705,7 +705,7 @@ private int countClaimedJigsawRewards() {
 
     int completed = 0;
 
-    for (int level = 1; level <= 3; level++) {
+    for (int level = 1; level <= 90; level++) {
 
         if (jigsawPrefs.getBoolean(
                 "level" + level + "RewardClaimed",
@@ -716,7 +716,7 @@ private int countClaimedJigsawRewards() {
     }
 
     return completed;
-    }
+}
     private void addAchievementCard(
             LinearLayout row,
             AchievementData achievement,
