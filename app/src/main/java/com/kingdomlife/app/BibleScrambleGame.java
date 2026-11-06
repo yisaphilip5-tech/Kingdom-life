@@ -425,16 +425,7 @@ if (!alreadySolved) {
 } else {
     score = 0;
 }
-            .putInt("totalPoints", activity.totalPoints)
-            .putBoolean(solvedKey, true)
-            .putBoolean("bibleScrambleSolved", true)
-            .apply();
-
-    activity.checkAchievementNotifications();
-
-} else {
-    score = 0;
-}
+            .
             TextView feedback = new TextView(activity);
             feedback.setText(
         alreadySolved
