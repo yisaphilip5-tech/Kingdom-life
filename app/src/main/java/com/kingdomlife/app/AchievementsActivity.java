@@ -540,8 +540,7 @@ android.view.WindowInsets.Type.systemBars()
         // NOT YET CONNECTED
 
         case "word_student":
-        case "finisher":
-            return false;
+    return countCompletedMemoryVerseLevels() >= 30;
 
         default:
             return false;
