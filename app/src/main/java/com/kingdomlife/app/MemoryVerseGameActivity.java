@@ -1248,6 +1248,20 @@ if (correct) {
 
 
 private void showFinalResult() {
+    // Save this Memory Verse level as completed.
+android.content.SharedPreferences memoryPrefs =
+        getSharedPreferences(
+                "KingdomLifePrefs",
+                MODE_PRIVATE
+        );
+
+String completedKey =
+        "memory_" + gameType +
+        "_level_" + level + "_completed";
+
+memoryPrefs.edit()
+        .putBoolean(completedKey, true)
+        .apply();
 
 android.media.MediaPlayer levelCompletePlayer =
         android.media.MediaPlayer.create(
