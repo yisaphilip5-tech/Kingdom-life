@@ -425,13 +425,13 @@ public class AchievementData {
 ));
 
         achievements.add(new AchievementData(
-                "finisher",
-                "Finisher",
-                "Complete all game modes and their required levels.",
-                R.drawable.finisher,
-                1,
-                "All Games"
-        ));
+        "finisher",
+        "Finisher",
+        "Complete all 644 stages across Bible Journey, Bible Challenge, the three Memory Verse games, Bible Scramble, Missing Word, and Jigsaw Puzzle.",
+        R.drawable.finisher,
+        644,
+        "All Games"
+));
 
         achievements.add(new AchievementData(
                 "gods_vessel_15",
