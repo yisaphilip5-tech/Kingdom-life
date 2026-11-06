@@ -673,6 +673,8 @@ android.view.WindowInsets.Type.systemBars()
             return prefs.getInt(
                     "memory_complete_correct_answers", 0
             );
+            case "word_student":
+    return countCompletedMemoryVerseLevels();
 
         default:
             return isAchievementUnlocked(key) ? 1 : 0;
@@ -716,6 +718,31 @@ private int countClaimedJigsawRewards() {
 
     return completed;
 }
+    private int countCompletedMemoryVerseLevels() {
+
+    SharedPreferences memoryPrefs = getSharedPreferences(
+            "KingdomLifePrefs",
+            MODE_PRIVATE
+    );
+
+    int completed = 0;
+
+    String[] types = {"guess", "complete", "reference"};
+
+    for (String type : types) {
+        for (int level = 1; level <= 10; level++) {
+
+            String key = "memory_" + type +
+                    "_level_" + level + "_completed";
+
+            if (memoryPrefs.getBoolean(key, false)) {
+                completed++;
+            }
+        }
+    }
+
+    return completed;
+    }
     private void addAchievementCard(
             LinearLayout row,
             AchievementData achievement,
@@ -798,12 +825,13 @@ private int countClaimedJigsawRewards() {
         body.addView(descriptionView);
 
 // Individual achievement progress
-if (achievement.key.equals("word_student")
-        || achievement.key.equals("finisher")) {
+if (achievement.key.equals("word_student")) {
+
+    int completedLevels = countCompletedMemoryVerseLevels();
 
     TextView progressView = new TextView(this);
     progressView.setText(
-            "Progress tracking not connected yet"
+            completedLevels + " / 30 Memory Verse levels completed"
     );
     progressView.setTextSize(11);
     progressView.setTextColor(Color.LTGRAY);
@@ -812,6 +840,17 @@ if (achievement.key.equals("word_student")
 
     body.addView(progressView);
 
+} else if (achievement.key.equals("finisher")) {
+
+    TextView progressView = new TextView(this);
+    progressView.setText("Progress tracking not connected yet");
+    progressView.setTextSize(11);
+    progressView.setTextColor(Color.LTGRAY);
+    progressView.setGravity(Gravity.CENTER);
+    progressView.setPadding(0, 8, 0, 4);
+
+    body.addView(progressView);
+}
 } else {
 
     int target = achievement.target;
