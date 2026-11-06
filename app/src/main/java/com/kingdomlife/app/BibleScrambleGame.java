@@ -425,7 +425,7 @@ if (!alreadySolved) {
 } else {
     score = 0;
 }
-            .
+    
             TextView feedback = new TextView(activity);
             feedback.setText(
         alreadySolved
