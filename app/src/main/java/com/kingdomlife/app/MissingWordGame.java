@@ -615,6 +615,13 @@ activity.prefs.edit()
     }
 
     private void showResults() {
+        // Record this Missing Word level as completed.
+String completedKey =
+        "missingWord_level_" + currentLevel + "_completed";
+
+activity.prefs.edit()
+        .putBoolean(completedKey, true)
+        .apply();
 android.media.MediaPlayer levelCompletePlayer =
 android.media.MediaPlayer.create(
 activity,
