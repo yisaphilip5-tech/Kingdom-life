@@ -416,13 +416,13 @@ public class AchievementData {
         // OTHER ACHIEVEMENTS
 
         achievements.add(new AchievementData(
-                "word_student",
-                "Word Student",
-                "Master all Memory Verse game levels.",
-                R.drawable.word_student,
-                3,
-                "Memory Verse"
-        ));
+        "word_student",
+        "Word Student",
+        "Complete all 30 Memory Verse levels across Guess the Verse, Complete the Verse, and Guess Reference.",
+        R.drawable.word_student,
+        30,
+        "Memory Verse"
+));
 
         achievements.add(new AchievementData(
                 "finisher",
