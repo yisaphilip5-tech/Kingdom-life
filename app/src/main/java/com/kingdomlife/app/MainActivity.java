@@ -5904,15 +5904,6 @@ addCard(
     title.setPadding(0, 15, 0, 15);
     content.addView(title);
 
-    
-    addCard(
-            "🔊 Button Sounds",
-            "Control sounds when buttons are pressed.",
-            v -> showMessage(
-                    "🔊 Button Sounds",
-                    "Button sound controls will be available here."
-            )
-    );
         
 addCard(
         "🎵 Kingdom Music",
