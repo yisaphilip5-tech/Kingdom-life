@@ -45,6 +45,11 @@ public final class SuccessIsMyBirthrightLibrary {
         Chapter05UnderstandingSuccess.SUBTITLE,
         Chapter05UnderstandingSuccess.PAGES
 ));
+        chapters.add(new Chapter(
+        Chapter06WordOfGodOurGuide.TITLE,
+        Chapter06WordOfGodOurGuide.SUBTITLE,
+        Chapter06WordOfGodOurGuide.PAGES
+));
 
         return chapters;
     }
