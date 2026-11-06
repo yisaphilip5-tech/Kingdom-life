@@ -402,7 +402,29 @@ if (!alreadySolved) {
     score = 5;
     activity.totalPoints += 5;
 
+    // Count all previously completed Scramble levels.
+    int wordsSolved = 0;
+
+    for (int solvedLevel = 1; solvedLevel <= 250; solvedLevel++) {
+        if (activity.prefs.getBoolean(
+                "bibleScrambleSolvedLevel_" + solvedLevel,
+                false)) {
+            wordsSolved++;
+        }
+    }
+
     activity.prefs.edit()
+            .putInt("bibleScramble_words_solved", wordsSolved)
+            .putInt("totalPoints", activity.totalPoints)
+            .putBoolean(solvedKey, true)
+            .putBoolean("bibleScrambleSolved", true)
+            .apply();
+
+    activity.checkAchievementNotifications();
+
+} else {
+    score = 0;
+}
             .putInt("totalPoints", activity.totalPoints)
             .putBoolean(solvedKey, true)
             .putBoolean("bibleScrambleSolved", true)
