@@ -541,6 +541,9 @@ android.view.WindowInsets.Type.systemBars()
 
         case "word_student":
     return countCompletedMemoryVerseLevels() >= 30;
+            case "finisher":
+    return countCompletedAllGameStages() >= 644;
+            
 
         default:
             return false;
@@ -675,7 +678,8 @@ android.view.WindowInsets.Type.systemBars()
             );
             case "word_student":
     return countCompletedMemoryVerseLevels();
-
+            case "finisher":
+    return countCompletedAllGameStages();
         default:
             return isAchievementUnlocked(key) ? 1 : 0;
     }
@@ -740,6 +744,81 @@ private int countClaimedJigsawRewards() {
             }
         }
     }
+
+    return completed;
+    }
+    private int countCompletedAllGameStages() {
+
+    int completed = 0;
+
+    // 1. Bible Journey: 66 books × 4 difficulties
+    String[] books = {
+            "Genesis", "Exodus", "Leviticus", "Numbers",
+            "Deuteronomy", "Joshua", "Judges", "Ruth",
+            "1 Samuel", "2 Samuel", "1 Kings", "2 Kings",
+            "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah",
+            "Esther", "Job", "Psalms", "Proverbs",
+            "Ecclesiastes", "Song of Solomon", "Isaiah",
+            "Jeremiah", "Lamentations", "Ezekiel", "Daniel",
+            "Hosea", "Joel", "Amos", "Obadiah", "Jonah",
+            "Micah", "Nahum", "Habakkuk", "Zephaniah",
+            "Haggai", "Zechariah", "Malachi",
+            "Matthew", "Mark", "Luke", "John", "Acts",
+            "Romans", "1 Corinthians", "2 Corinthians",
+            "Galatians", "Ephesians", "Philippians",
+            "Colossians", "1 Thessalonians", "2 Thessalonians",
+            "1 Timothy", "2 Timothy", "Titus", "Philemon",
+            "Hebrews", "James", "1 Peter", "2 Peter",
+            "1 John", "2 John", "3 John", "Jude", "Revelation"
+    };
+
+    String[] difficulties = {
+            "Easy", "Medium", "Hard", "Scholar"
+    };
+
+    for (String book : books) {
+        for (String difficulty : difficulties) {
+            if (prefs.getBoolean(
+                    "bibleJourney_" + book + "_"
+                            + difficulty + "_completed",
+                    false)) {
+                completed++;
+            }
+        }
+    }
+
+    // 2. Bible Challenge: 5 levels
+    for (int level = 1; level <= 5; level++) {
+        if (prefs.getBoolean(
+                "challenge_level_" + level + "_completed",
+                false)) {
+            completed++;
+        }
+    }
+
+    // 3. Three Memory Verse modes: 30 levels
+    completed += countCompletedMemoryVerseLevels();
+
+    // 4. Bible Scramble: 250 levels
+    for (int level = 1; level <= 250; level++) {
+        if (prefs.getBoolean(
+                "bibleScrambleSolvedLevel_" + level,
+                false)) {
+            completed++;
+        }
+    }
+
+    // 5. Missing Word: 5 levels
+    for (int level = 1; level <= 5; level++) {
+        if (prefs.getBoolean(
+                "missingWord_level_" + level + "_completed",
+                false)) {
+            completed++;
+        }
+    }
+
+    // 6. Jigsaw Puzzle: 90 levels
+    completed += countClaimedJigsawRewards();
 
     return completed;
     }
@@ -843,7 +922,11 @@ if (achievement.key.equals("word_student")) {
 } else if (achievement.key.equals("finisher")) {
 
     TextView progressView = new TextView(this);
-    progressView.setText("Progress tracking not connected yet");
+    int completedStages = countCompletedAllGameStages();
+
+progressView.setText(
+        completedStages + " / 644 game stages completed"
+);
     progressView.setTextSize(11);
     progressView.setTextColor(Color.LTGRAY);
     progressView.setGravity(Gravity.CENTER);
