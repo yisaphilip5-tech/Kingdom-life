@@ -904,35 +904,71 @@ private int countClaimedJigsawRewards() {
         body.addView(descriptionView);
 
 // Individual achievement progress
-if (achievement.key.equals("word_student")) {
+if (achievement.key.equals("word_student")
+        || achievement.key.equals("finisher")) {
 
-    int completedLevels = countCompletedMemoryVerseLevels();
+    int target;
+    int progress;
+    String unit;
 
+    if (achievement.key.equals("word_student")) {
+        target = 30;
+        progress = countCompletedMemoryVerseLevels();
+        unit = "Memory Verse levels";
+    } else {
+        target = 644;
+        progress = countCompletedAllGameStages();
+        unit = "game stages";
+    }
+
+    int displayedProgress = Math.min(progress, target);
+
+    // Gold progress text
     TextView progressView = new TextView(this);
     progressView.setText(
-            completedLevels + " / 30 Memory Verse levels completed"
+            "Progress: " + displayedProgress
+                    + " of " + target + " " + unit
     );
     progressView.setTextSize(11);
-    progressView.setTextColor(Color.LTGRAY);
+    progressView.setTextColor(BRIGHT_GOLD);
     progressView.setGravity(Gravity.CENTER);
     progressView.setPadding(0, 8, 0, 4);
 
     body.addView(progressView);
 
-} else if (achievement.key.equals("finisher")) {
+    // Horizontal progress bar
+    ProgressBar progressBar = new ProgressBar(
+            this,
+            null,
+            android.R.attr.progressBarStyleHorizontal
+    );
 
-    TextView progressView = new TextView(this);
-    int completedStages = countCompletedAllGameStages();
+    progressBar.setMax(target);
+    progressBar.setProgress(displayedProgress);
 
-progressView.setText(
-        completedStages + " / 644 game stages completed"
-);
-    progressView.setTextSize(11);
-    progressView.setTextColor(Color.LTGRAY);
-    progressView.setGravity(Gravity.CENTER);
-    progressView.setPadding(0, 8, 0, 4);
+    if (android.os.Build.VERSION.SDK_INT >= 21) {
+        progressBar.setProgressTintList(
+                android.content.res.ColorStateList.valueOf(
+                        BRIGHT_GOLD
+                )
+        );
 
-    body.addView(progressView);
+        progressBar.setProgressBackgroundTintList(
+                android.content.res.ColorStateList.valueOf(
+                        Color.rgb(75, 65, 90)
+                )
+        );
+    }
+
+    LinearLayout.LayoutParams progressParams =
+            new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    12
+            );
+
+    progressParams.setMargins(8, 2, 8, 4);
+
+    body.addView(progressBar, progressParams);
 
 } else {
 
