@@ -55,6 +55,11 @@ public final class SuccessIsMyBirthrightLibrary {
         Chapter07FoundationOfSuccessfulLife.SUBTITLE,
         Chapter07FoundationOfSuccessfulLife.PAGES
 ));
+        chapters.add(new Chapter(
+        Chapter08DiscoveringPurposeAndDirection.TITLE,
+        Chapter08DiscoveringPurposeAndDirection.SUBTITLE,
+        Chapter08DiscoveringPurposeAndDirection.PAGES
+));
 
         return chapters;
     }
