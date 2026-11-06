@@ -226,9 +226,36 @@ public class AchievementData {
         achievements.add(new AchievementData(
                 "scramble_75_words",
                 "The Word Unraveller",
-                "Solve all 75 Bible Scramble words.",
+                "Solve 75 Bible Scramble words.",
                 R.drawable.bible_scramble_master,
                 75,
+                "Bible Scramble"
+        ));
+
+        achievements.add(new AchievementData(
+                "scramble_100_words",
+                "Word Collector",
+                "Solve 100 Bible Scramble words.",
+                R.drawable.word_weaver,
+                100,
+                "Bible Scramble"
+        ));
+
+        achievements.add(new AchievementData(
+                "scramble_200_words",
+                "Word Conqueror",
+                "Solve 200 Bible Scramble words.",
+                R.drawable.bible_scramble_master,
+                200,
+                "Bible Scramble"
+        ));
+
+        achievements.add(new AchievementData(
+                "scramble_250_words",
+                "Bible Scramble Legend",
+                "Solve all 250 Bible Scramble words.",
+                R.drawable.kingdom_champion,
+                250,
                 "Bible Scramble"
         ));
 
@@ -237,9 +264,54 @@ public class AchievementData {
         achievements.add(new AchievementData(
                 "big_picture",
                 "The Big Picture",
-                "Complete all three Jigsaw Puzzle levels.",
+                "Complete the original three Jigsaw Puzzle levels.",
                 R.drawable.puzzle_pro,
                 3,
+                "Jigsaw Puzzle"
+        ));
+
+        achievements.add(new AchievementData(
+                "jigsaw_10_levels",
+                "Puzzle Beginner",
+                "Complete 10 Jigsaw Puzzle levels.",
+                R.drawable.puzzle_pro,
+                10,
+                "Jigsaw Puzzle"
+        ));
+
+        achievements.add(new AchievementData(
+                "jigsaw_25_levels",
+                "Puzzle Explorer",
+                "Complete 25 Jigsaw Puzzle levels.",
+                R.drawable.puzzle_pro,
+                25,
+                "Jigsaw Puzzle"
+        ));
+
+        achievements.add(new AchievementData(
+                "jigsaw_50_levels",
+                "Puzzle Champion",
+                "Complete 50 Jigsaw Puzzle levels.",
+                R.drawable.puzzle_pro,
+                50,
+                "Jigsaw Puzzle"
+        ));
+
+        achievements.add(new AchievementData(
+                "jigsaw_75_levels",
+                "Puzzle Master",
+                "Complete 75 Jigsaw Puzzle levels.",
+                R.drawable.puzzle_pro,
+                75,
+                "Jigsaw Puzzle"
+        ));
+
+        achievements.add(new AchievementData(
+                "jigsaw_90_levels",
+                "Jigsaw Legend",
+                "Complete all 90 Jigsaw Puzzle levels.",
+                R.drawable.kingdom_champion,
+                90,
                 "Jigsaw Puzzle"
         ));
 
@@ -265,6 +337,24 @@ public class AchievementData {
                 "Memory Verse"
         ));
 
+        achievements.add(new AchievementData(
+                "reference_50",
+                "Reference Explorer",
+                "Answer 50 Guess the Reference questions correctly.",
+                R.drawable.memory_verse_master,
+                50,
+                "Memory Verse"
+        ));
+
+        achievements.add(new AchievementData(
+                "reference_100",
+                "Reference Master",
+                "Answer 100 Guess the Reference questions correctly.",
+                R.drawable.kingdom_champion,
+                100,
+                "Memory Verse"
+        ));
+
         // GUESS THE VERSE
 
         achievements.add(new AchievementData(
@@ -273,6 +363,24 @@ public class AchievementData {
                 "Answer 25 Guess the Verse questions correctly.",
                 R.drawable.memory_verse_master,
                 25,
+                "Memory Verse"
+        ));
+
+        achievements.add(new AchievementData(
+                "guess_verse_50",
+                "Verse Explorer",
+                "Answer 50 Guess the Verse questions correctly.",
+                R.drawable.memory_verse_master,
+                50,
+                "Memory Verse"
+        ));
+
+        achievements.add(new AchievementData(
+                "guess_verse_100",
+                "Verse Champion",
+                "Answer 100 Guess the Verse questions correctly.",
+                R.drawable.kingdom_champion,
+                100,
                 "Memory Verse"
         ));
 
@@ -287,7 +395,25 @@ public class AchievementData {
                 "Memory Verse"
         ));
 
-        // NEW ACHIEVEMENTS
+        achievements.add(new AchievementData(
+                "complete_verse_50",
+                "Verse Completer",
+                "Complete 50 verses correctly.",
+                R.drawable.word_student,
+                50,
+                "Memory Verse"
+        ));
+
+        achievements.add(new AchievementData(
+                "complete_verse_100",
+                "Scripture Finisher",
+                "Complete 100 verses correctly.",
+                R.drawable.kingdom_champion,
+                100,
+                "Memory Verse"
+        ));
+
+        // OTHER ACHIEVEMENTS
 
         achievements.add(new AchievementData(
                 "word_student",
@@ -336,4 +462,4 @@ public class AchievementData {
 
         return achievements;
     }
-          }
+}
