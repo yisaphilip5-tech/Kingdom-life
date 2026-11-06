@@ -65,6 +65,11 @@ public final class SuccessIsMyBirthrightLibrary {
         Chapter09DisciplineDiligenceConsistency.SUBTITLE,
         Chapter09DisciplineDiligenceConsistency.PAGES
 ));
+        chapters.add(new Chapter(
+        Chapter10OvercomingObstacles.TITLE,
+        Chapter10OvercomingObstacles.SUBTITLE,
+        Chapter10OvercomingObstacles.PAGES
+));
 
         return chapters;
     }
