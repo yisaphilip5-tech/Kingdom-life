@@ -25,6 +25,11 @@ public final class SuccessIsMyBirthrightLibrary {
                 Chapter01WhatIsSuccess.SUBTITLE,
                 Chapter01WhatIsSuccess.PAGES
         ));
+        chapters.add(new Chapter(
+        Chapter02GoodSuccessAndBadSuccess.TITLE,
+        Chapter02GoodSuccessAndBadSuccess.SUBTITLE,
+        Chapter02GoodSuccessAndBadSuccess.PAGES
+));
 
         return chapters;
     }
