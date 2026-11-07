@@ -77,62 +77,76 @@ public void setOnAudioStatusListener(OnAudioStatusListener listener) {
         createPlayerInterface();
 
         manager.setPlaybackListener(
-                new AudioBibleManager.PlaybackListener() {
+        new AudioBibleManager.PlaybackListener() {
 
-            @Override
-            public void onPlaybackChanged(
-                    boolean isPlaying,
-                    int playbackState,
-                    long position,
-                    long duration
-            ) {
+    @Override
+    public void onPlaybackChanged(
+            boolean isPlaying,
+            int playbackState,
+            long position,
+            long duration
+    ) {
 
-                updatePlaybackState(
-                        isPlaying,
-                        playbackState,
-                        position,
-                        duration
-                );
+        updatePlaybackState(
+                isPlaying,
+                playbackState,
+                position,
+                duration
+        );
+
+        if (playbackState == Player.STATE_READY && !readyNotified) {
+            readyNotified = true;
+
+            if (audioStatusListener != null) {
+                audioStatusListener.onAudioReady();
             }
+        }
+    }
 
-            @Override
-            public void onChapterChanged(
-                    String newBook,
-                    int newChapter
-            ) {
+    @Override
+    public void onChapterChanged(
+            String newBook,
+            int newChapter
+    ) {
 
-                AudioBiblePlayerView.this.book = newBook;
-AudioBiblePlayerView.this.chapter = newChapter;
-                updateChapterTitle();
+        AudioBiblePlayerView.this.book = newBook;
+        AudioBiblePlayerView.this.chapter = newChapter;
+        updateChapterTitle();
 
-                if (chapterChangedListener != null) {
-                    chapterChangedListener.onChapterChanged(
-                            newBook,
-                            newChapter
-                    );
-                }
-            }
+        if (chapterChangedListener != null) {
+            chapterChangedListener.onChapterChanged(
+                    newBook,
+                    newChapter
+            );
+        }
+    }
 
-            @Override
-            public void onError(String message) {
+    @Override
+    public void onError(String message) {
 
-                chapterTitle.setText(message);
-            }
-        });
+        chapterTitle.setText(message);
+
+        if (audioStatusListener != null) {
+            audioStatusListener.onAudioError(message);
+        }
+    }
+});
 
     }
     public void startChapterPlayback() {
     if (manager == null) {
         if (audioStatusListener != null) {
-            audioStatusListener.onAudioError("Audio player is unavailable.");
+            audioStatusListener.onAudioError(
+                    "Audio player is unavailable."
+            );
         }
         return;
     }
 
     readyNotified = false;
-    startChapterPlayback();
+    hasStarted = true;
+    manager.playChapter(translation, book, chapter);
     }
-
     private GradientDrawable createPanelBackground() {
 
         GradientDrawable background =
@@ -331,13 +345,7 @@ AudioBiblePlayerView.this.chapter = newChapter;
 
             } else if (!hasStarted) {
 
-                hasStarted = true;
-
-                manager.playChapter(
-                        translation,
-                        book,
-                        chapter
-                );
+                startChapterPlayback();
 
             } else {
 
