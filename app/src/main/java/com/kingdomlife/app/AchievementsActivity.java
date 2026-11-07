@@ -1060,12 +1060,14 @@ if (achievement.key.equals("word_student")
 TextView statusView = new TextView(this);
         body.addView(statusView);
 
-        LinearLayout.LayoutParams cardParams =
-                new LinearLayout.LayoutParams(
-                        0,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        1f
-                );
+        float density = getResources().getDisplayMetrics().density;
+
+LinearLayout.LayoutParams cardParams =
+        new LinearLayout.LayoutParams(
+                0,
+                (int) (320 * density),
+                1f
+        );
 
         cardParams.setMargins(4, 4, 4, 4);
         row.addView(card, cardParams);
