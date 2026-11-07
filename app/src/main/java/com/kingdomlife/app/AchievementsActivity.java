@@ -839,7 +839,7 @@ private int countClaimedJigsawRewards() {
         card.setClipChildren(false);
         card.setClipToPadding(false);
         
-float density = getResources().getDisplayMetrics().density;
+
         LinearLayout body = new LinearLayout(this);
         body.setOrientation(LinearLayout.VERTICAL);
         body.setGravity(Gravity.CENTER);
