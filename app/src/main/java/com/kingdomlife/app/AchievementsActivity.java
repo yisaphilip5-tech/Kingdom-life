@@ -894,8 +894,9 @@ private int countClaimedJigsawRewards() {
         titleView.setGravity(Gravity.CENTER);
         titleView.setPadding(0, 6, 0, 5);
 
-        body.addView(titleView);
-        LinearLayout.LayoutParams titleParams =
+        float density = getResources().getDisplayMetrics().density;
+
+LinearLayout.LayoutParams titleParams =
         new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 (int) (42 * density)
@@ -1057,7 +1058,6 @@ progressArea.addView(progressBar, progressBarParams);
 TextView statusView = new TextView(this);
         body.addView(statusView);
 
-        float density = getResources().getDisplayMetrics().density;
 
 LinearLayout.LayoutParams cardParams =
         new LinearLayout.LayoutParams(
