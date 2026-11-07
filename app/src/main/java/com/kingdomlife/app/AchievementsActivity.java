@@ -894,6 +894,14 @@ private int countClaimedJigsawRewards() {
         titleView.setPadding(0, 6, 0, 5);
 
         body.addView(titleView);
+        LinearLayout.LayoutParams titleParams =
+        new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                (int) (42 * density)
+        );
+
+titleParams.gravity = Gravity.CENTER;
+body.addView(titleView, titleParams);
 
         TextView descriptionView = new TextView(this);
         descriptionView.setText(achievement.description);
@@ -901,162 +909,150 @@ private int countClaimedJigsawRewards() {
         descriptionView.setTextColor(Color.WHITE);
         descriptionView.setGravity(Gravity.CENTER);
 
-        body.addView(descriptionView);
-
-// Individual achievement progress
-if (achievement.key.equals("word_student")
-        || achievement.key.equals("finisher")) {
-
-    int target;
-    int progress;
-    String unit;
-
-    if (achievement.key.equals("word_student")) {
-        target = 30;
-        progress = countCompletedMemoryVerseLevels();
-        unit = "Memory Verse levels";
-    } else {
-        target = 644;
-        progress = countCompletedAllGameStages();
-        unit = "game stages";
-    }
-
-    int displayedProgress = Math.min(progress, target);
-
-    // Gold progress text
-    TextView progressView = new TextView(this);
-    progressView.setText(
-            "Progress: " + displayedProgress
-                    + " of " + target + " " + unit
-    );
-    progressView.setTextSize(11);
-    progressView.setTextColor(BRIGHT_GOLD);
-    progressView.setGravity(Gravity.CENTER);
-    progressView.setPadding(0, 8, 0, 4);
-
-    body.addView(progressView);
-
-    // Horizontal progress bar
-    ProgressBar progressBar = new ProgressBar(
-            this,
-            null,
-            android.R.attr.progressBarStyleHorizontal
-    );
-
-    progressBar.setMax(target);
-    progressBar.setProgress(displayedProgress);
-
-    if (android.os.Build.VERSION.SDK_INT >= 21) {
-        progressBar.setProgressTintList(
-                android.content.res.ColorStateList.valueOf(
-                        BRIGHT_GOLD
-                )
+        LinearLayout.LayoutParams descriptionParams =
+        new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                (int) (52 * density)
         );
 
-        progressBar.setProgressBackgroundTintList(
-                android.content.res.ColorStateList.valueOf(
-                        Color.rgb(75, 65, 90)
-                )
-        );
-    }
+descriptionParams.gravity = Gravity.CENTER;
+body.addView(descriptionView, descriptionParams);
+// Uniform achievement progress section
 
-    LinearLayout.LayoutParams progressParams =
-            new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    12
-            );
+int target = achievement.target;
+int progress;
 
-    progressParams.setMargins(8, 2, 8, 4);
+// Special progress calculations
+if (achievement.key.equals("word_student")) {
 
-    body.addView(progressBar, progressParams);
+    progress = countCompletedMemoryVerseLevels();
+
+} else if (achievement.key.equals("finisher")) {
+
+    progress = countCompletedAllGameStages();
 
 } else {
 
-    int target = achievement.target;
-
-    if (achievement.key.equals("easy_challenger")
-            || achievement.key.equals("medium_challenger")
-            || achievement.key.equals("hard_challenger")) {
-        target = 1;
-    }
-
-    int progress = Math.max(
+    progress = Math.max(
             0,
             getAchievementProgress(achievement.key)
     );
-
-    int displayedProgress = Math.min(progress, target);
-
-    String unit = "completed";
-
-    if (achievement.category.equals("Points")) {
-        unit = "points";
-    } else if (achievement.category.equals("Bible Learning")) {
-        unit = "verses";
-    } else if (achievement.category.equals("Daily Progress")) {
-        unit = "days";
-    } else if (achievement.category.equals("Bible Journey")) {
-        unit = achievement.key.startsWith("books_")
-                ? "books" : "questions";
-    } else if (achievement.category.equals("Bible Scramble")) {
-        unit = "words";
-    } else if (achievement.category.equals("Missing Word")) {
-        unit = "answers";
-    } else if (achievement.category.equals("Memory Verse")) {
-        unit = "answers";
-    } else if (achievement.category.equals("Jigsaw Puzzle")) {
-        unit = "levels";
-    } else if (achievement.category.equals("Bible Challenge")) {
-        unit = achievement.key.equals("challenge_complete")
-                ? "challenge" : "levels";
-    }
-
-    TextView progressView = new TextView(this);
-    progressView.setText(
-            "Progress: " + displayedProgress
-                    + " of " + target + " " + unit
-    );
-    progressView.setTextSize(11);
-    progressView.setTextColor(BRIGHT_GOLD);
-    progressView.setGravity(Gravity.CENTER);
-    progressView.setPadding(0, 8, 0, 4);
-
-    body.addView(progressView);
-
-    ProgressBar progressBar = new ProgressBar(
-            this,
-            null,
-            android.R.attr.progressBarStyleHorizontal
-    );
-
-    progressBar.setMax(target);
-    progressBar.setProgress(displayedProgress);
-
-    if (android.os.Build.VERSION.SDK_INT >= 21) {
-        progressBar.setProgressTintList(
-                android.content.res.ColorStateList.valueOf(
-                        BRIGHT_GOLD
-                )
-        );
-
-        progressBar.setProgressBackgroundTintList(
-                android.content.res.ColorStateList.valueOf(
-                        Color.rgb(75, 65, 90)
-                )
-        );
-    }
-
-    LinearLayout.LayoutParams progressParams =
-            new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    12
-            );
-
-    progressParams.setMargins(8, 2, 8, 4);
-
-    body.addView(progressBar, progressParams);
 }
 
+// Preserve the original target for individual challenge levels
+if (achievement.key.equals("easy_challenger")
+        || achievement.key.equals("medium_challenger")
+        || achievement.key.equals("hard_challenger")) {
+
+    target = 1;
+}
+
+int displayedProgress = Math.min(progress, target);
+
+// Determine progress unit
+String unit = "completed";
+
+if (achievement.key.equals("word_student")) {
+    unit = "Memory Verse levels";
+} else if (achievement.key.equals("finisher")) {
+    unit = "game stages";
+} else if (achievement.category.equals("Points")) {
+    unit = "points";
+} else if (achievement.category.equals("Bible Learning")) {
+    unit = "verses";
+} else if (achievement.category.equals("Daily Progress")) {
+    unit = "days";
+} else if (achievement.category.equals("Bible Journey")) {
+    unit = achievement.key.startsWith("books_")
+            ? "books" : "questions";
+} else if (achievement.category.equals("Bible Scramble")) {
+    unit = "words";
+} else if (achievement.category.equals("Missing Word")
+        || achievement.category.equals("Memory Verse")) {
+    unit = "answers";
+} else if (achievement.category.equals("Jigsaw Puzzle")) {
+    unit = "levels";
+} else if (achievement.category.equals("Bible Challenge")) {
+    unit = achievement.key.equals("challenge_complete")
+            ? "challenge" : "levels";
+}
+
+// Fixed-height progress area for every card
+float progressDensity =
+        getResources().getDisplayMetrics().density;
+
+LinearLayout progressArea = new LinearLayout(this);
+progressArea.setOrientation(LinearLayout.VERTICAL);
+progressArea.setGravity(Gravity.CENTER);
+
+body.addView(
+        progressArea,
+        new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                (int) (52 * progressDensity)
+        )
+);
+
+// Progress text
+TextView progressView = new TextView(this);
+
+progressView.setText(
+        "Progress: " + displayedProgress
+                + " of " + target + " " + unit
+);
+
+progressView.setTextSize(11);
+progressView.setTextColor(BRIGHT_GOLD);
+progressView.setGravity(Gravity.CENTER);
+progressView.setMaxLines(2);
+
+progressArea.addView(
+        progressView,
+        new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                (int) (32 * progressDensity)
+        )
+);
+
+// Progress bar
+ProgressBar progressBar = new ProgressBar(
+        this,
+        null,
+        android.R.attr.progressBarStyleHorizontal
+);
+
+progressBar.setMax(Math.max(1, target));
+progressBar.setProgress(displayedProgress);
+
+if (android.os.Build.VERSION.SDK_INT >= 21) {
+
+    progressBar.setProgressTintList(
+            android.content.res.ColorStateList.valueOf(
+                    BRIGHT_GOLD
+            )
+    );
+
+    progressBar.setProgressBackgroundTintList(
+            android.content.res.ColorStateList.valueOf(
+                    Color.rgb(75, 65, 90)
+            )
+    );
+}
+
+LinearLayout.LayoutParams progressBarParams =
+        new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                (int) (12 * progressDensity)
+        );
+
+progressBarParams.setMargins(
+        (int) (8 * progressDensity),
+        0,
+        (int) (8 * progressDensity),
+        0
+);
+
+progressArea.addView(progressBar, progressBarParams);
 TextView statusView = new TextView(this);
         body.addView(statusView);
 
