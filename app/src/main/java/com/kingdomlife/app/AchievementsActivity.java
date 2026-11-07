@@ -1062,7 +1062,7 @@ TextView statusView = new TextView(this);
 LinearLayout.LayoutParams cardParams =
         new LinearLayout.LayoutParams(
                 0,
-                (int) (320 * density),
+                (int) (300 * density),
                 1f
         );
 
