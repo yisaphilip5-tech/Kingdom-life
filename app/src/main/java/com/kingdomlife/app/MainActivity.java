@@ -5679,6 +5679,45 @@ audioPlayer.setOnChapterChangedListener(
         }
 );
 
+// Keep the player hidden until the chapter audio is ready
+audioPlayer.setVisibility(View.GONE);
+
+// Loading message
+TextView audioLoading = new TextView(this);
+audioLoading.setText("Loading audio...");
+audioLoading.setTextColor(Color.WHITE);
+audioLoading.setTextSize(15);
+audioLoading.setGravity(Gravity.CENTER);
+audioLoading.setVisibility(View.GONE);
+
+content.addView(audioLoading);
+Button[] speakerButtonRef = new Button[1];
+audioPlayer.setOnAudioStatusListener(
+        new AudioBiblePlayerView.OnAudioStatusListener() {
+
+    @Override
+    public void onAudioReady() {
+        audioLoading.setVisibility(View.GONE);
+        audioPlayer.setVisibility(View.VISIBLE);
+        if (speakerButtonRef[0] != null) {
+    speakerButtonRef[0].setEnabled(true);
+        }
+    }
+
+    @Override
+    public void onAudioError(String message) {
+        audioLoading.setVisibility(View.GONE);
+        if (speakerButtonRef[0] != null) {
+    speakerButtonRef[0].setEnabled(true);
+        }
+        Toast.makeText(
+                MainActivity.this,
+                message,
+                Toast.LENGTH_LONG
+        ).show();
+    }
+});
+
 LinearLayout.LayoutParams audioPlayerParams =
         new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -5688,7 +5727,6 @@ LinearLayout.LayoutParams audioPlayerParams =
 audioPlayerParams.setMargins(0, 0, 0, 20);
 
 content.addView(audioPlayer, audioPlayerParams);
-
 
     try {
 
@@ -5944,6 +5982,37 @@ actionRow.addView(
                 45
         )
 );
+            // 🔊 Play Entire Chapter — Verse 1 Only
+if (verseNumber.equals("1")) {
+
+    Button speakerButton = new Button(this);
+    speakerButtonRef[0] = speakerButton;
+
+    speakerButton.setText("🔊");
+    speakerButton.setTextSize(15);
+    speakerButton.setAllCaps(false);
+    speakerButton.setTextColor(darkText);
+    speakerButton.setBackgroundColor(Color.TRANSPARENT);
+    speakerButton.setPadding(0, 0, 0, 0);
+
+    speakerButton.setOnClickListener(v -> {
+
+        audioPlayer.setVisibility(View.GONE);
+
+        // Prevent multiple loading requests
+        speakerButton.setEnabled(false);
+
+        audioLoading.setText("Loading audio...");
+        audioLoading.setVisibility(View.VISIBLE);
+
+        audioPlayer.startChapterPlayback();
+    });
+
+    actionRow.addView(
+            speakerButton,
+            new LinearLayout.LayoutParams(45, 45)
+    );
+}
 
 verseLayout.addView(actionRow);
 
