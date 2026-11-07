@@ -14,6 +14,17 @@ import androidx.media3.common.Player;
 import java.util.Locale;
 
 public class AudioBiblePlayerView extends LinearLayout {
+    public interface OnAudioStatusListener {
+    void onAudioReady();
+    void onAudioError(String message);
+}
+
+private OnAudioStatusListener audioStatusListener;
+private boolean readyNotified = false;
+
+public void setOnAudioStatusListener(OnAudioStatusListener listener) {
+    this.audioStatusListener = listener;
+}
 
     private static final int PURPLE = Color.rgb(30, 24, 55);
     private static final int GOLD = Color.rgb(184, 134, 11);
@@ -109,6 +120,17 @@ AudioBiblePlayerView.this.chapter = newChapter;
             }
         });
 
+    }
+    public void startChapterPlayback() {
+    if (manager == null) {
+        if (audioStatusListener != null) {
+            audioStatusListener.onAudioError("Audio player is unavailable.");
+        }
+        return;
+    }
+
+    readyNotified = false;
+    startChapterPlayback();
     }
 
     private GradientDrawable createPanelBackground() {
