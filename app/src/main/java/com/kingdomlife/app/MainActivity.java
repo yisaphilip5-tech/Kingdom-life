@@ -5124,21 +5124,7 @@ void showSuccessBookChapters() {
     java.util.List<SuccessIsMyBirthrightLibrary.Chapter> chapters =
             SuccessIsMyBirthrightLibrary.getChapters();
 
-    TextView heading = new TextView(this);
-    heading.setText("Success Is My Birthright");
-    heading.setTextSize(24);
-    heading.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-    heading.setTextColor(darkText);
-    heading.setPadding(0, 20, 0, 15);
-    content.addView(heading);
-
-    TextView description = new TextView(this);
-    description.setText("Understanding Success Through God's Principles");
-    description.setTextSize(15);
-    description.setTextColor(darkText);
-    description.setPadding(0, 0, 0, 20);
-    content.addView(description);
-
+    // Back button — first item, above the book header
     ImageButton backButton = new ImageButton(this);
     backButton.setImageResource(
             android.R.drawable.ic_media_previous
@@ -5151,6 +5137,24 @@ void showSuccessBookChapters() {
             new LinearLayout.LayoutParams(60, 60)
     );
 
+    // Book heading
+    TextView heading = new TextView(this);
+    heading.setText("Success Is My Birthright");
+    heading.setTextSize(24);
+    heading.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    heading.setTextColor(darkText);
+    heading.setPadding(0, 20, 0, 15);
+    content.addView(heading);
+
+    // Book description
+    TextView description = new TextView(this);
+    description.setText("Understanding Success Through God's Principles");
+    description.setTextSize(15);
+    description.setTextColor(darkText);
+    description.setPadding(0, 0, 0, 20);
+    content.addView(description);
+
+    // Chapter list
     for (int i = 0; i < chapters.size(); i++) {
         final int chapterIndex = i;
 
@@ -5164,9 +5168,6 @@ void showSuccessBookChapters() {
         );
     }
 }
-
-
-// Open a chapter and display its pages.
 void showSuccessBookChapter(int chapterIndex) {
     showSuccessBookChapter(chapterIndex, -1);
 }
