@@ -351,7 +351,7 @@ private void openSavedBook(String bookName) {
         showComingSoon(bookName);
     }
 }
-private void showKingdomLibrary() {
+public void showKingdomLibrary() {
 
     content.removeAllViews();
 
@@ -466,9 +466,25 @@ private void addLibraryBook(
             )
     );
 
-    bookRow.setOnClickListener(v -> showComingSoon(bookName));
+    bookRow.setOnClickListener(v -> {
 
-    content.addView(bookRow);
+    if (bookName.equals("The Pilgrim's Progress")) {
+
+        PilgrimsProgressBook.open(this, content);
+
+    } else if (bookName.equals("Descendants of Good")) {
+
+        showDescendantsOfGoodChapters();
+
+    } else if (bookName.equals("Success Is My Birthright")) {
+
+        showSuccessBookChapters();
+
+    } else {
+
+        showComingSoon(bookName);
+    }
+});
 }
 
 private void addBackButton() {
