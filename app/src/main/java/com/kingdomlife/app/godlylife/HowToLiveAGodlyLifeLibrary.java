@@ -29,6 +29,14 @@ public final class HowToLiveAGodlyLifeLibrary {
     public static List<Chapter> getChapters() {
 
         List<Chapter> chapters = new ArrayList<>();
+        // Introduction — displayed before Chapter One
+chapters.add(new Chapter(
+        HowToLiveAGodlyLifeIntroduction.TITLE,
+        "Opening Introduction",
+        java.util.Arrays.asList(
+                HowToLiveAGodlyLifeIntroduction.CONTENT
+        )
+));
 
         chapters.add(new Chapter(
                 Chapter01UnderstandingTheChristWay.TITLE,
