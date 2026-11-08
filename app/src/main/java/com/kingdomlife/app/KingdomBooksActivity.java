@@ -201,14 +201,12 @@ public void showKingdomBooks() {
         v -> showSuccessBookChapters());
 
     addBookCover(
-            secondRow,
-            R.drawable.how_to_live_a_godly_life_cover,
-            "How to Live a Godly Life the Christ Way",
-            "Faith, obedience, love and victory",
-            v -> showGodlyLifeChapters()
-                    "How to Live a Godly Life the Christ Way"
-            )
-    );
+        secondRow,
+        R.drawable.how_to_live_a_godly_life_cover,
+        "How to Live a Godly Life the Christ Way",
+        "Faith, obedience, love and victory",
+        v -> showGodlyLifeChapters()
+);
 
     // Spacing below the book covers
     View spacing = new View(this);
