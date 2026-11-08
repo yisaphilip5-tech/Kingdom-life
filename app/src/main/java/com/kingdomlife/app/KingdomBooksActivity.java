@@ -136,7 +136,7 @@ private void applyKingdomBackground() {
     }
 }
 
-private void showKingdomBooks() {
+public void showKingdomBooks() {
     content.removeAllViews();
 
     // Back button
