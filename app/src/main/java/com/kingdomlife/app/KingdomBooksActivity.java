@@ -536,17 +536,17 @@ private void addBookCover(
 
     TextView name = new TextView(this);
     name.setText(bookTitle);
-    name.setTextSize(16);
+    name.setTextSize(14);
     name.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     name.setTextColor(DARK_TEXT);
     name.setGravity(Gravity.CENTER);
-    name.setPadding(0, dp(8), 0, dp(8));
+    name.setPadding(0, dp(4), 0, dp(4));
 
     book.addView(name);
 
     TextView details = new TextView(this);
     details.setText(description);
-    details.setTextSize(13);
+    details.setTextSize(11);
     details.setTextColor(DARK_TEXT);
     details.setGravity(Gravity.CENTER);
 
