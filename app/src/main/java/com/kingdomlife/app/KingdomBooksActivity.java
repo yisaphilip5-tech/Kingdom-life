@@ -729,6 +729,7 @@ private void showKingdomBookmarks() {
         for (int pageIndex = 0;
              pageIndex < chapter.pages.size();
              pageIndex++) {
+            final int savedPageIndex = pageIndex;
 
             String key = chapterIndex + "_" + pageIndex;
 
@@ -750,7 +751,7 @@ private void showKingdomBookmarks() {
                 openButton.setOnClickListener(v ->
         showSuccessBookBookmarkedPage(
                 chapterIndex,
-                pageIndex
+                savedPageIndex
         )
 );
                 android.widget.Button removeButton =
