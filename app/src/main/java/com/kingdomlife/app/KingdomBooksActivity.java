@@ -35,11 +35,25 @@ protected void onCreate(Bundle savedInstanceState) {
     content.setPadding(20, 15, 20, 25);
 
     scrollView.addView(content);
+
+    // Keep content clear of the phone's system bars.
+    scrollView.setOnApplyWindowInsetsListener((view, insets) -> {
+
+        view.setPadding(
+                insets.getSystemWindowInsetLeft(),
+                insets.getSystemWindowInsetTop(),
+                insets.getSystemWindowInsetRight(),
+                insets.getSystemWindowInsetBottom()
+        );
+
+        return insets;
+    });
+
     setContentView(scrollView);
 
-applyKingdomBackground();
+    applyKingdomBackground();
 
-showKingdomBooks();
+    showKingdomBooks();
 }
 
 private int dp(float value) {
