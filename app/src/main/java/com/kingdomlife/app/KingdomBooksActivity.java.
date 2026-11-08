@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -221,6 +222,16 @@ private void showKingdomBooks() {
                     1, dp(15)
             )
     );
+addCard(
+        "⏩ Continue Reading",
+        "Return to where you last stopped reading.",
+        v -> continueReading()
+);
+addCard(
+        "📚 My Library",
+        "View your books and reading status.",
+        v -> showKingdomLibrary()
+);
 }
 
 private LinearLayout createBooksRow() {
@@ -240,6 +251,219 @@ private LinearLayout createBooksRow() {
     content.addView(row, params);
 
     return row;
+}
+private void continueReading() {
+
+    android.content.SharedPreferences pilgrimPrefs =
+            getSharedPreferences(
+                    "PilgrimsProgressReadingProgress",
+                    MODE_PRIVATE
+            );
+
+    android.content.SharedPreferences descendantsPrefs =
+            getSharedPreferences(
+                    "DescendantsReadingProgress",
+                    MODE_PRIVATE
+            );
+
+    android.content.SharedPreferences successPrefs =
+            getSharedPreferences(
+                    "SuccessBirthrightReadingProgress",
+                    MODE_PRIVATE
+            );
+
+    java.util.ArrayList<String> availableBooks =
+            new java.util.ArrayList<>();
+
+    if (pilgrimPrefs.contains("lastChapter")) {
+        availableBooks.add("The Pilgrim's Progress");
+    }
+
+    if (descendantsPrefs.contains("lastChapter")) {
+        availableBooks.add("Descendants of Good");
+    }
+
+    if (successPrefs.contains("lastChapter")) {
+        availableBooks.add("Success Is My Birthright");
+    }
+
+    if (availableBooks.isEmpty()) {
+        new android.app.AlertDialog.Builder(this)
+                .setTitle("Continue Reading")
+                .setMessage(
+                        "Open a book and start reading to save your position."
+                )
+                .setPositiveButton("OK", null)
+                .show();
+        return;
+    }
+
+    if (availableBooks.size() == 1) {
+        openSavedBook(availableBooks.get(0));
+        return;
+    }
+
+    new android.app.AlertDialog.Builder(this)
+            .setTitle("Continue Reading")
+            .setItems(
+                    availableBooks.toArray(new String[0]),
+                    (dialog, which) ->
+                            openSavedBook(availableBooks.get(which))
+            )
+            .setNegativeButton("Cancel", null)
+            .show();
+}
+
+private void openSavedBook(String bookName) {
+
+    if (bookName.equals("The Pilgrim's Progress")) {
+
+        PilgrimsProgressBook.continueReading(
+                this, content
+        );
+
+    } else {
+
+        showComingSoon(bookName);
+    }
+}
+private void showKingdomLibrary() {
+
+    content.removeAllViews();
+
+    addBackButton();
+
+    TextView title = new TextView(this);
+    title.setText("📚 My Library");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(DARK_TEXT);
+    title.setPadding(0, dp(15), 0, dp(20));
+    content.addView(title);
+
+    android.content.SharedPreferences readingPrefs =
+            getSharedPreferences("BibleReadingPrefs", MODE_PRIVATE);
+
+    java.util.Set<String> completedBooks =
+            new java.util.HashSet<>(
+                    readingPrefs.getStringSet(
+                            "completedStoryBooks",
+                            java.util.Collections.emptySet()
+                    )
+            );
+
+    addLibraryBook(
+            R.drawable.descendants_of_good_cover,
+            "Descendants of Good",
+            "DescendantsReadingProgress",
+            completedBooks
+    );
+
+    addLibraryBook(
+            R.drawable.success_is_my_birthright_cover,
+            "Success Is My Birthright",
+            "SuccessBirthrightReadingProgress",
+            completedBooks
+    );
+
+    addLibraryBook(
+            R.drawable.how_to_live_a_godly_life_cover,
+            "How to Live a Godly Life the Christ Way",
+            "GodlyLifeReadingProgress",
+            completedBooks
+    );
+
+    addLibraryBook(
+            android.R.drawable.ic_menu_view,
+            "The Pilgrim's Progress",
+            "PilgrimsProgressReadingProgress",
+            completedBooks
+    );
+}
+
+private void addLibraryBook(
+        int coverResource,
+        String bookName,
+        String progressPrefsName,
+        java.util.Set<String> completedBooks) {
+
+    android.content.SharedPreferences progressPrefs =
+            getSharedPreferences(progressPrefsName, MODE_PRIVATE);
+
+    String status;
+
+    if (completedBooks.contains(bookName)) {
+        status = "Completed";
+    } else if (progressPrefs.contains("lastChapter")) {
+        status = "In Progress";
+    } else {
+        status = "Not Started";
+    }
+
+    LinearLayout bookRow = new LinearLayout(this);
+    bookRow.setOrientation(LinearLayout.HORIZONTAL);
+    bookRow.setGravity(Gravity.CENTER_VERTICAL);
+    bookRow.setPadding(dp(8), dp(8), dp(8), dp(8));
+
+    ImageView cover = new ImageView(this);
+    cover.setImageResource(coverResource);
+    cover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
+    bookRow.addView(
+            cover,
+            new LinearLayout.LayoutParams(dp(100), dp(130))
+    );
+
+    LinearLayout details = new LinearLayout(this);
+    details.setOrientation(LinearLayout.VERTICAL);
+    details.setPadding(dp(12), 0, 0, 0);
+
+    TextView name = new TextView(this);
+    name.setText(bookName);
+    name.setTextSize(16);
+    name.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    name.setTextColor(DARK_TEXT);
+
+    TextView readingStatus = new TextView(this);
+    readingStatus.setText(status);
+    readingStatus.setTextSize(14);
+    readingStatus.setTextColor(DARK_TEXT);
+    readingStatus.setPadding(0, dp(8), 0, 0);
+
+    details.addView(name);
+    details.addView(readingStatus);
+
+    bookRow.addView(
+            details,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    bookRow.setOnClickListener(v -> showComingSoon(bookName));
+
+    content.addView(bookRow);
+}
+
+private void addBackButton() {
+
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setContentDescription("Back to Kingdom Books");
+    backButton.setOnClickListener(v -> showKingdomBooks());
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(dp(60), dp(60))
+    );
 }
 
 private void addBookCover(
