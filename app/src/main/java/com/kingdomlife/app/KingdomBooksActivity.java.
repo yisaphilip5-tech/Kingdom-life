@@ -136,7 +136,177 @@ private void applyKingdomBackground() {
 }
 
 private void showKingdomBooks() {
-    // We will add the Kingdom Books screen in the next step.
+    content.removeAllViews();
+
+    // Back button
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(this);
+
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setOnClickListener(v -> finish());
+
+    content.addView(
+            backButton,
+            new LinearLayout.LayoutParams(dp(60), dp(60))
+    );
+
+    // Heading
+    TextView title = new TextView(this);
+    title.setText("📚 Kingdom Books");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(DARK_TEXT);
+    title.setPadding(0, dp(15), 0, dp(10));
+    content.addView(title);
+
+    TextView message = new TextView(this);
+    message.setText(
+            "Explore Christian books and inspiring stories."
+    );
+    message.setTextSize(16);
+    message.setTextColor(DARK_TEXT);
+    message.setPadding(0, 0, 0, dp(20));
+    content.addView(message);
+
+    // First row
+    LinearLayout firstRow = createBooksRow();
+    content.addView(firstRow);
+
+    addBookCover(
+            firstRow,
+            android.R.drawable.ic_menu_view,
+            "The Pilgrim's Progress",
+            "By John Bunyan",
+            v -> PilgrimsProgressBook.open(this, content)
+    );
+
+    addBookCover(
+            firstRow,
+            R.drawable.descendants_of_good_cover,
+            "Descendants of Good",
+            "Christian fiction",
+            v -> showComingSoon("Descendants of Good")
+    );
+
+    // Second row
+    LinearLayout secondRow = createBooksRow();
+    content.addView(secondRow);
+
+    addBookCover(
+            secondRow,
+            R.drawable.success_is_my_birthright_cover,
+            "Success Is My Birthright",
+            "Christian living and success",
+            v -> showComingSoon("Success Is My Birthright")
+    );
+
+    addBookCover(
+            secondRow,
+            R.drawable.how_to_live_a_godly_life_cover,
+            "How to Live a Godly Life the Christ Way",
+            "Faith, obedience, love and victory",
+            v -> showComingSoon(
+                    "How to Live a Godly Life the Christ Way"
+            )
+    );
+
+    // Spacing below the book covers
+    View spacing = new View(this);
+    content.addView(
+            spacing,
+            new LinearLayout.LayoutParams(
+                    1, dp(15)
+            )
+    );
+}
+
+private LinearLayout createBooksRow() {
+    LinearLayout row = new LinearLayout(this);
+    row.setOrientation(LinearLayout.HORIZONTAL);
+    row.setGravity(Gravity.CENTER);
+    row.setWeightSum(2);
+
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    params.setMargins(0, 0, 0, dp(20));
+
+    content.addView(row, params);
+
+    return row;
+}
+
+private void addBookCover(
+        LinearLayout row,
+        int imageResource,
+        String bookTitle,
+        String description,
+        View.OnClickListener listener) {
+
+    LinearLayout book = new LinearLayout(this);
+    book.setOrientation(LinearLayout.VERTICAL);
+    book.setGravity(Gravity.CENTER);
+    book.setPadding(dp(6), dp(6), dp(6), dp(6));
+    book.setClickable(true);
+    book.setFocusable(true);
+    book.setOnClickListener(listener);
+
+    ImageView cover = new ImageView(this);
+    cover.setImageResource(imageResource);
+    cover.setScaleType(ImageView.ScaleType.FIT_CENTER);
+    cover.setAdjustViewBounds(true);
+    cover.setContentDescription(bookTitle + " book cover");
+
+    book.addView(
+            cover,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    dp(180)
+            )
+    );
+
+    TextView name = new TextView(this);
+    name.setText(bookTitle);
+    name.setTextSize(16);
+    name.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    name.setTextColor(DARK_TEXT);
+    name.setGravity(Gravity.CENTER);
+    name.setPadding(0, dp(8), 0, dp(8));
+
+    book.addView(name);
+
+    TextView details = new TextView(this);
+    details.setText(description);
+    details.setTextSize(13);
+    details.setTextColor(DARK_TEXT);
+    details.setGravity(Gravity.CENTER);
+
+    book.addView(details);
+
+    row.addView(
+            book,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+}
+
+private void showComingSoon(String bookName) {
+    new android.app.AlertDialog.Builder(this)
+            .setTitle(bookName)
+            .setMessage(
+                    "This book's reader is being connected."
+            )
+            .setPositiveButton("OK", null)
+            .show();
 }
 
 }
