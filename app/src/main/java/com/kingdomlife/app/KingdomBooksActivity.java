@@ -65,21 +65,21 @@ private void addCard(
 
     LinearLayout card = new LinearLayout(this);
     card.setOrientation(LinearLayout.VERTICAL);
-    card.setPadding(dp(16), dp(14), dp(16), dp(14));
+    card.setPadding(dp(10), dp(8), dp(10), dp(8));
     card.setBackground(makeBackground(Color.WHITE, GOLD));
     card.setElevation(dp(3));
 
     TextView title = new TextView(this);
     title.setText(heading);
-    title.setTextSize(18);
+    title.setTextSize(16);
     title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
     title.setTextColor(PURPLE);
 
     TextView description = new TextView(this);
     description.setText(message);
-    description.setTextSize(14);
+    description.setTextSize(12);
     description.setTextColor(DARK_TEXT);
-    description.setPadding(0, dp(6), 0, 0);
+    description.setPadding(0, dp(4), 0, 0);
 
     card.addView(title);
     card.addView(description);
@@ -90,7 +90,7 @@ private void addCard(
                     LinearLayout.LayoutParams.WRAP_CONTENT
             );
 
-    params.setMargins(0, 0, 0, dp(14));
+    params.setMargins(0, 0, 0, dp(8));
 
     content.addView(card, params);
 
