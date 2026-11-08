@@ -232,6 +232,11 @@ addCard(
         "View your books and reading status.",
         v -> showKingdomLibrary()
 );
+addCard(
+        "🔖 My Bookmarks",
+        "Open and manage your saved reading pages.",
+        v -> showKingdomBookmarks()
+);
 }
 
 private LinearLayout createBooksRow() {
@@ -532,5 +537,247 @@ private void showComingSoon(String bookName) {
             .setPositiveButton("OK", null)
             .show();
 }
+private void showKingdomBookmarks() {
+    content.removeAllViews();
 
+    addBackButton();
+
+    TextView title = new TextView(this);
+    title.setText("🔖 My Bookmarks");
+    title.setTextSize(24);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(DARK_TEXT);
+    title.setPadding(0, dp(15), 0, dp(10));
+    content.addView(title);
+
+    android.content.SharedPreferences pilgrimPrefs =
+            getSharedPreferences(
+                    "PilgrimsProgressBookmarks",
+                    MODE_PRIVATE
+            );
+
+    android.content.SharedPreferences descendantsPrefs =
+            getSharedPreferences(
+                    "DescendantsBookmarks",
+                    MODE_PRIVATE
+            );
+
+    android.content.SharedPreferences successPrefs =
+            getSharedPreferences(
+                    "SuccessBirthrightBookmarks",
+                    MODE_PRIVATE
+            );
+
+    boolean foundBookmark = false;
+
+    // The Pilgrim's Progress bookmarks.
+    for (int chapterIndex = 0; chapterIndex < 100; chapterIndex++) {
+        for (int pageIndex = 0; pageIndex < 100; pageIndex++) {
+
+            String key = chapterIndex + "_" + pageIndex;
+
+            if (pilgrimPrefs.getBoolean(key, false)) {
+                foundBookmark = true;
+
+                final int savedChapter = chapterIndex;
+                final int savedPage = pageIndex;
+
+                LinearLayout row = createBookmarkRow();
+
+                android.widget.Button openButton =
+                        new android.widget.Button(this);
+
+                openButton.setText(
+                        "The Pilgrim's Progress — Chapter "
+                                + (chapterIndex + 1)
+                                + " • Page "
+                                + (pageIndex + 1)
+                );
+
+                openButton.setOnClickListener(v ->
+                        PilgrimsProgressBook.openBookmarkedPage(
+                                this,
+                                content,
+                                savedChapter,
+                                savedPage
+                        )
+                );
+
+                android.widget.Button removeButton =
+                        new android.widget.Button(this);
+
+                removeButton.setText("Remove");
+
+                removeButton.setOnClickListener(v -> {
+                    pilgrimPrefs.edit()
+                            .remove(key)
+                            .apply();
+
+                    showKingdomBookmarks();
+                });
+
+                addBookmarkButtons(row, openButton, removeButton);
+            }
+        }
+    }
+
+    // Descendants of Good bookmarks.
+    java.util.List<DescendantsOfGoodLibrary.Chapter>
+            descendantsChapters =
+            DescendantsOfGoodLibrary.getChapters();
+
+    for (int i = 0; i < descendantsChapters.size(); i++) {
+        final int chapterIndex = i;
+
+        DescendantsOfGoodLibrary.Chapter chapter =
+                descendantsChapters.get(i);
+
+        for (int pageIndex = 0;
+             pageIndex < chapter.pages.size();
+             pageIndex++) {
+
+            String key = chapterIndex + "_" + pageIndex;
+
+            if (descendantsPrefs.getBoolean(key, false)) {
+                foundBookmark = true;
+
+                final int savedPage = pageIndex;
+
+                LinearLayout row = createBookmarkRow();
+
+                android.widget.Button openButton =
+                        new android.widget.Button(this);
+
+                openButton.setText(
+                        "Descendants of Good — "
+                                + chapter.title
+                                + " • Page "
+                                + (pageIndex + 1)
+                );
+
+                openButton.setOnClickListener(v ->
+                        showComingSoon("Descendants of Good")
+                );
+
+                android.widget.Button removeButton =
+                        new android.widget.Button(this);
+
+                removeButton.setText("Remove");
+
+                removeButton.setOnClickListener(v -> {
+                    descendantsPrefs.edit()
+                            .remove(key)
+                            .apply();
+
+                    showKingdomBookmarks();
+                });
+
+                addBookmarkButtons(row, openButton, removeButton);
+            }
+        }
+    }
+
+    // Success Is My Birthright bookmarks.
+    java.util.List<SuccessIsMyBirthrightLibrary.Chapter>
+            successChapters =
+            SuccessIsMyBirthrightLibrary.getChapters();
+
+    for (int i = 0; i < successChapters.size(); i++) {
+        final int chapterIndex = i;
+
+        SuccessIsMyBirthrightLibrary.Chapter chapter =
+                successChapters.get(i);
+
+        for (int pageIndex = 0;
+             pageIndex < chapter.pages.size();
+             pageIndex++) {
+
+            String key = chapterIndex + "_" + pageIndex;
+
+            if (successPrefs.getBoolean(key, false)) {
+                foundBookmark = true;
+
+                LinearLayout row = createBookmarkRow();
+
+                android.widget.Button openButton =
+                        new android.widget.Button(this);
+
+                openButton.setText(
+                        "Success Is My Birthright — "
+                                + chapter.title
+                                + " • Page "
+                                + (pageIndex + 1)
+                );
+
+                openButton.setOnClickListener(v ->
+                        showComingSoon("Success Is My Birthright")
+                );
+
+                android.widget.Button removeButton =
+                        new android.widget.Button(this);
+
+                removeButton.setText("Remove");
+
+                removeButton.setOnClickListener(v -> {
+                    successPrefs.edit()
+                            .remove(key)
+                            .apply();
+
+                    showKingdomBookmarks();
+                });
+
+                addBookmarkButtons(row, openButton, removeButton);
+            }
+        }
+    }
+
+    if (!foundBookmark) {
+        TextView emptyMessage = new TextView(this);
+
+        emptyMessage.setText(
+                "You haven't bookmarked any passages yet.\n\n"
+                        + "Open a chapter and tap 🔖 to save a page."
+        );
+
+        emptyMessage.setTextSize(16);
+        emptyMessage.setTextColor(DARK_TEXT);
+        emptyMessage.setPadding(0, dp(20), 0, dp(20));
+
+        content.addView(emptyMessage);
+    }
+}
+private LinearLayout createBookmarkRow() {
+    LinearLayout row = new LinearLayout(this);
+    row.setOrientation(LinearLayout.HORIZONTAL);
+    row.setGravity(android.view.Gravity.CENTER_VERTICAL);
+
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    params.setMargins(0, 0, 0, dp(10));
+
+    content.addView(row, params);
+
+    return row;
+}
+
+private void addBookmarkButtons(
+        LinearLayout row,
+        android.widget.Button openButton,
+        android.widget.Button removeButton) {
+
+    row.addView(
+            openButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    row.addView(removeButton);
+}
 }
