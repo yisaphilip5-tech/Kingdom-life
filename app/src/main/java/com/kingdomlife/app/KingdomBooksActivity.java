@@ -174,7 +174,7 @@ public void showKingdomBooks() {
 
     // First row
     LinearLayout firstRow = createBooksRow();
-    content.addView(firstRow);
+    
 
     addBookCover(
             firstRow,
@@ -193,8 +193,7 @@ public void showKingdomBooks() {
 
     // Second row
     LinearLayout secondRow = createBooksRow();
-    content.addView(secondRow);
-
+    
     addBookCover(secondRow,
         R.drawable.success_is_my_birthright_cover,
         "Success Is My Birthright",
