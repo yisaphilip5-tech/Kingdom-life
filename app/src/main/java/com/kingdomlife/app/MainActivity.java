@@ -3514,9 +3514,11 @@ title.setPadding(0, 15, 0, 20);
 content.addView(title);
 
 addCard(
-        "📚 Kingdom Books",
-        "Read Christian books, inspiring stories, and lessons.",
-        v -> showKingdomBooks()
+    "📚 Kingdom Books",
+    "Read Christian books, inspiring stories, and lessons.",
+    v -> startActivity(
+            new Intent(MainActivity.this, KingdomBooksActivity.class)
+    )
 );
 
 addCard(
