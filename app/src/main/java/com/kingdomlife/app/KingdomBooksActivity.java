@@ -205,7 +205,7 @@ public void showKingdomBooks() {
             R.drawable.how_to_live_a_godly_life_cover,
             "How to Live a Godly Life the Christ Way",
             "Faith, obedience, love and victory",
-            v -> showComingSoon(
+            v -> showGodlyLifeChapters(
                     "How to Live a Godly Life the Christ Way"
             )
     );
@@ -287,6 +287,17 @@ private void continueReading() {
     if (successPrefs.contains("lastChapter")) {
         availableBooks.add("Success Is My Birthright");
     }
+    android.content.SharedPreferences godlyLifePrefs =
+        getSharedPreferences(
+                "GodlyLifeReadingProgress",
+                MODE_PRIVATE
+        );
+
+if (godlyLifePrefs.contains("lastChapter")) {
+    availableBooks.add(
+            "How to Live a Godly Life the Christ Way"
+    );
+}
 
     if (availableBooks.isEmpty()) {
         new android.app.AlertDialog.Builder(this)
@@ -335,18 +346,31 @@ private void openSavedBook(String bookName) {
 
     } else if (bookName.equals("Success Is My Birthright")) {
 
-        android.content.SharedPreferences prefs =
-                getSharedPreferences(
-                        "SuccessBirthrightReadingProgress",
-                        MODE_PRIVATE
-                );
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "SuccessBirthrightReadingProgress",
+                    MODE_PRIVATE
+            );
 
-        int chapterIndex = prefs.getInt("lastChapter", 0);
+    int chapterIndex = prefs.getInt("lastChapter", 0);
 
-        showSuccessBookChapter(chapterIndex);
+    showSuccessBookChapter(chapterIndex);
 
-    } else {
+} else if (bookName.equals(
+        "How to Live a Godly Life the Christ Way")) {
 
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "GodlyLifeReadingProgress",
+                    MODE_PRIVATE
+            );
+
+    int chapterIndex = prefs.getInt("lastChapter", 0);
+    int pageIndex = prefs.getInt("lastPage", 0);
+
+    showGodlyLifeChapter(chapterIndex, pageIndex);
+
+} else {
         showComingSoon(bookName);
     }
 }
@@ -478,11 +502,15 @@ private void addLibraryBook(
     } else if (bookName.equals("Success Is My Birthright")) {
 
         showSuccessBookChapters();
+        } else if (bookName.equals(
+        "How to Live a Godly Life the Christ Way")) {
 
-    } else {
+    showGodlyLifeChapters();
 
-        showComingSoon(bookName);
+} else {
+    showComingSoon(bookName);
     }
+    
 });
 }
 
@@ -770,6 +798,65 @@ private void showKingdomBookmarks() {
             }
         }
     }
+    // How to Live a Godly Life bookmarks
+android.content.SharedPreferences godlyLifePrefs =
+        getSharedPreferences("GodlyLifeBookmarks", MODE_PRIVATE);
+
+java.util.List<HowToLiveAGodlyLifeLibrary.Chapter> godlyLifeChapters =
+        HowToLiveAGodlyLifeLibrary.getChapters();
+
+for (int i = 0; i < godlyLifeChapters.size(); i++) {
+
+    final int chapterIndex = i;
+
+    HowToLiveAGodlyLifeLibrary.Chapter chapter =
+            godlyLifeChapters.get(i);
+
+    for (int pageIndex = 0; pageIndex < chapter.pages.size(); pageIndex++) {
+
+        String key = chapterIndex + "_" + pageIndex;
+
+        if (godlyLifePrefs.getBoolean(key, false)) {
+
+            foundBookmark = true;
+
+            final int savedPage = pageIndex;
+
+            LinearLayout row = createBookmarkRow();
+
+            android.widget.Button openButton =
+                    new android.widget.Button(this);
+
+            String entryLabel = chapterIndex == 0
+                    ? "Introduction"
+                    : "Chapter " + chapterIndex;
+
+            openButton.setText(
+                    "How to Live a Godly Life — " +
+                    entryLabel + " • Page " + (pageIndex + 1)
+            );
+
+            openButton.setOnClickListener(v ->
+                    showGodlyLifeBookmarkedPage(
+                            chapterIndex,
+                            savedPage
+                    )
+            );
+
+            android.widget.Button removeButton =
+                    new android.widget.Button(this);
+
+            removeButton.setText("Remove");
+
+            removeButton.setOnClickListener(v -> {
+                godlyLifePrefs.edit().remove(key).apply();
+                showKingdomBookmarks();
+            });
+
+            addBookmarkButtons(row, openButton, removeButton);
+        }
+    }
+}
 
     if (!foundBookmark) {
         TextView emptyMessage = new TextView(this);
@@ -1189,6 +1276,332 @@ private void showSuccessBookChapters() {
         );
     }
 }
+    private void showGodlyLifeChapters() {
+    content.removeAllViews();
+
+    addBackButton();
+
+    java.util.List<HowToLiveAGodlyLifeLibrary.Chapter> chapters =
+            HowToLiveAGodlyLifeLibrary.getChapters();
+
+    TextView heading = new TextView(this);
+    heading.setText("How to Live a Godly Life the Christ Way");
+    heading.setTextSize(24);
+    heading.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    heading.setTextColor(DARK_TEXT);
+    heading.setPadding(0, dp(20), 0, dp(15));
+    content.addView(heading);
+
+    TextView description = new TextView(this);
+    description.setText(
+            "A journey of faith, holiness, spiritual growth and salvation."
+    );
+    description.setTextSize(15);
+    description.setTextColor(DARK_TEXT);
+    description.setPadding(0, 0, 0, dp(20));
+    content.addView(description);
+
+    for (int i = 0; i < chapters.size(); i++) {
+        final int chapterIndex = i;
+
+        HowToLiveAGodlyLifeLibrary.Chapter chapter =
+                chapters.get(i);
+
+        String entryTitle = chapterIndex == 0
+                ? "Introduction"
+                : "Chapter " + chapterIndex;
+
+        addCard(
+                entryTitle,
+                chapter.title,
+                v -> showGodlyLifeChapter(chapterIndex)
+        );
+    }
+    }
+    private void showGodlyLifeChapter(int chapterIndex) {
+    showGodlyLifeChapter(chapterIndex, -1);
+}
+
+private void showGodlyLifeChapter(
+        int chapterIndex, int startingPage) {
+
+    content.removeAllViews();
+
+    java.util.List<HowToLiveAGodlyLifeLibrary.Chapter> chapters =
+            HowToLiveAGodlyLifeLibrary.getChapters();
+
+    if (chapterIndex < 0 || chapterIndex >= chapters.size()) {
+        showGodlyLifeChapters();
+        return;
+    }
+
+    HowToLiveAGodlyLifeLibrary.Chapter chapter =
+            chapters.get(chapterIndex);
+
+    if (chapter.pages == null || chapter.pages.isEmpty()) {
+        addBackButton();
+
+        TextView unavailable = new TextView(this);
+        unavailable.setText(
+                "This section does not contain any pages yet."
+        );
+        unavailable.setTextSize(16);
+        unavailable.setTextColor(DARK_TEXT);
+        content.addView(unavailable);
+        return;
+    }
+
+    addBackButton();
+
+    android.content.SharedPreferences textPrefs =
+            getSharedPreferences(
+                    "TextAppearancePrefs",
+                    MODE_PRIVATE
+            );
+
+    int savedTextSize = textPrefs.getInt("textSize", 18);
+
+    String savedTextMode =
+            textPrefs.getString("textMode", "Light");
+
+    int selectedTextColor = savedTextMode.equals("Dark")
+            ? Color.WHITE
+            : Color.BLACK;
+
+    TextView chapterTitle = new TextView(this);
+    chapterTitle.setText(chapter.title);
+    chapterTitle.setTextSize(savedTextSize + 8);
+    chapterTitle.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    chapterTitle.setTextColor(selectedTextColor);
+    chapterTitle.setPadding(0, dp(15), 0, dp(10));
+    content.addView(chapterTitle);
+
+    TextView chapterSubtitle = new TextView(this);
+    chapterSubtitle.setText(chapter.subtitle);
+    chapterSubtitle.setTextSize(
+            Math.max(12, savedTextSize - 2)
+    );
+    chapterSubtitle.setTextColor(selectedTextColor);
+    chapterSubtitle.setPadding(0, 0, 0, dp(20));
+    content.addView(chapterSubtitle);
+
+    TextView pageText = new TextView(this);
+    pageText.setTextSize(savedTextSize);
+    pageText.setTextColor(selectedTextColor);
+    pageText.setLineSpacing(dp(8), 1.0f);
+    pageText.setPadding(0, dp(10), 0, dp(20));
+    pageText.setTextIsSelectable(true);
+
+    content.addView(
+            pageText,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    final int[] currentPage = {0};
+
+    android.content.SharedPreferences bookPrefs =
+            getSharedPreferences(
+                    "GodlyLifeReadingProgress",
+                    MODE_PRIVATE
+            );
+
+    int savedChapter = bookPrefs.getInt("lastChapter", 0);
+    int savedPage = bookPrefs.getInt("lastPage", 0);
+
+    if (startingPage >= 0) {
+        currentPage[0] = Math.max(
+                0,
+                Math.min(startingPage, chapter.pages.size() - 1)
+        );
+    } else if (savedChapter == chapterIndex) {
+        currentPage[0] = Math.max(
+                0,
+                Math.min(savedPage, chapter.pages.size() - 1)
+        );
+    }
+
+    // Bookmark button.
+    LinearLayout bookmarkRow = new LinearLayout(this);
+    bookmarkRow.setOrientation(LinearLayout.HORIZONTAL);
+
+    TextView bookmarkButton = new TextView(this);
+    bookmarkButton.setText("🔖");
+    bookmarkButton.setTextSize(28);
+    bookmarkButton.setPadding(
+            dp(8), dp(8), dp(8), dp(8)
+    );
+    bookmarkButton.setContentDescription("Bookmark this page");
+
+    bookmarkRow.addView(bookmarkButton);
+    content.addView(bookmarkRow);
+
+    bookmarkButton.setOnClickListener(v -> {
+        String key = chapterIndex + "_" + currentPage[0];
+
+        getSharedPreferences(
+                "GodlyLifeBookmarks",
+                MODE_PRIVATE
+        ).edit()
+                .putBoolean(key, true)
+                .apply();
+
+        android.widget.Toast.makeText(
+                this,
+                "Page bookmarked!",
+                android.widget.Toast.LENGTH_SHORT
+        ).show();
+    });
+
+    // Page navigation.
+    LinearLayout navigation = new LinearLayout(this);
+    navigation.setOrientation(LinearLayout.HORIZONTAL);
+    navigation.setGravity(Gravity.CENTER);
+
+    android.widget.Button previousButton =
+            new android.widget.Button(this);
+    previousButton.setText("← Previous");
+
+    android.widget.Button nextButton =
+            new android.widget.Button(this);
+    nextButton.setText("Next →");
+
+    navigation.addView(
+            previousButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    navigation.addView(
+            nextButton,
+            new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
+            )
+    );
+
+    content.addView(navigation);
+
+    Runnable updatePage = () -> {
+
+        pageText.setText(chapter.pages.get(currentPage[0]));
+
+        // Save reading position.
+        bookPrefs.edit()
+                .putInt("lastChapter", chapterIndex)
+                .putInt("lastPage", currentPage[0])
+                .apply();
+
+        // Record visited pages.
+        android.content.SharedPreferences visitedPrefs =
+                getSharedPreferences(
+                        "GodlyLifeVisitedPages",
+                        MODE_PRIVATE
+                );
+
+        String pageKey = chapterIndex + "_" + currentPage[0];
+
+        visitedPrefs.edit()
+                .putBoolean(pageKey, true)
+                .apply();
+
+        // Check chapter completion.
+        boolean chapterCompleted = true;
+
+        for (int i = 0; i < chapter.pages.size(); i++) {
+            if (!visitedPrefs.getBoolean(
+                    chapterIndex + "_" + i,
+                    false
+            )) {
+                chapterCompleted = false;
+                break;
+            }
+        }
+
+        if (chapterCompleted) {
+
+            java.util.Set<String> completedChapters =
+                    new java.util.HashSet<>(
+                            visitedPrefs.getStringSet(
+                                    "completedChapters",
+                                    java.util.Collections.emptySet()
+                            )
+                    );
+
+            completedChapters.add(
+                    String.valueOf(chapterIndex)
+            );
+
+            visitedPrefs.edit()
+                    .putStringSet(
+                            "completedChapters",
+                            completedChapters
+                    )
+                    .apply();
+
+            // Check completion of the entire book.
+            if (completedChapters.size() == chapters.size()) {
+
+                android.content.SharedPreferences readingPrefs =
+                        getSharedPreferences(
+                                "BibleReadingPrefs",
+                                MODE_PRIVATE
+                        );
+
+                java.util.Set<String> completedStoryBooks =
+                        new java.util.HashSet<>(
+                                readingPrefs.getStringSet(
+                                        "completedStoryBooks",
+                                        java.util.Collections.emptySet()
+                                )
+                        );
+
+                if (completedStoryBooks.add(
+                        "How to Live a Godly Life the Christ Way")) {
+
+                    readingPrefs.edit()
+                            .putStringSet(
+                                    "completedStoryBooks",
+                                    completedStoryBooks
+                            )
+                            .putInt(
+                                    "storyBooksRead",
+                                    completedStoryBooks.size()
+                            )
+                            .apply();
+                }
+            }
+        }
+
+        previousButton.setEnabled(currentPage[0] > 0);
+
+        nextButton.setEnabled(
+                currentPage[0] < chapter.pages.size() - 1
+        );
+    };
+
+    previousButton.setOnClickListener(v -> {
+        if (currentPage[0] > 0) {
+            currentPage[0]--;
+            updatePage.run();
+        }
+    });
+
+    nextButton.setOnClickListener(v -> {
+        if (currentPage[0] < chapter.pages.size() - 1) {
+            currentPage[0]++;
+            updatePage.run();
+        }
+    });
+
+    updatePage.run();
+        }
 private void showSuccessBookChapter(int chapterIndex) {
     showSuccessBookChapter(chapterIndex, -1);
 }
@@ -1209,6 +1622,20 @@ private void showSuccessBookBookmarkedPage(
 
     showSuccessBookChapter(chapterIndex, pageIndex);
 }
+    private void showGodlyLifeBookmarkedPage(
+        int chapterIndex,
+        int pageIndex
+) {
+    getSharedPreferences(
+            "GodlyLifeReadingProgress",
+            MODE_PRIVATE
+    ).edit()
+            .putInt("lastChapter", chapterIndex)
+            .putInt("lastPage", pageIndex)
+            .apply();
+
+    showGodlyLifeChapter(chapterIndex, pageIndex);
+    }
 
 private void showSuccessBookChapter(
         int chapterIndex, int startingPage) {
