@@ -530,7 +530,7 @@ private void addBookCover(
             cover,
             new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
-                    dp(180)
+                    dp(130)
             )
     );
 
