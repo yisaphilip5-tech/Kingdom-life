@@ -1,0 +1,101 @@
+package com.kingdomlife.app;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
+import com.kingdomlife.app.descendants.DescendantsOfGoodLibrary;
+import com.kingdomlife.app.success.SuccessIsMyBirthrightLibrary;
+
+public class KingdomBooksActivity extends Activity {
+
+private LinearLayout content;
+
+private final int PURPLE = Color.rgb(30, 24, 55);
+private final int GOLD = Color.rgb(184, 134, 11);
+private final int DARK_TEXT = Color.rgb(45, 45, 45);
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    ScrollView scrollView = new ScrollView(this);
+
+    content = new LinearLayout(this);
+    content.setOrientation(LinearLayout.VERTICAL);
+    content.setPadding(20, 15, 20, 25);
+
+    scrollView.addView(content);
+    setContentView(scrollView);
+
+    showKingdomBooks();
+}
+
+private int dp(float value) {
+    return (int) (value * getResources()
+            .getDisplayMetrics().density + 0.5f);
+}
+
+private GradientDrawable makeBackground(
+        int backgroundColor, int strokeColor) {
+
+    GradientDrawable drawable = new GradientDrawable();
+    drawable.setColor(backgroundColor);
+    drawable.setCornerRadius(dp(18));
+    drawable.setStroke(dp(2), strokeColor);
+
+    return drawable;
+}
+
+private void addCard(
+        String heading,
+        String message,
+        View.OnClickListener listener) {
+
+    LinearLayout card = new LinearLayout(this);
+    card.setOrientation(LinearLayout.VERTICAL);
+    card.setPadding(dp(16), dp(14), dp(16), dp(14));
+    card.setBackground(makeBackground(Color.WHITE, GOLD));
+    card.setElevation(dp(3));
+
+    TextView title = new TextView(this);
+    title.setText(heading);
+    title.setTextSize(18);
+    title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+    title.setTextColor(PURPLE);
+
+    TextView description = new TextView(this);
+    description.setText(message);
+    description.setTextSize(14);
+    description.setTextColor(DARK_TEXT);
+    description.setPadding(0, dp(6), 0, 0);
+
+    card.addView(title);
+    card.addView(description);
+
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+    params.setMargins(0, 0, 0, dp(14));
+
+    content.addView(card, params);
+
+    card.setOnClickListener(listener);
+}
+
+private void showKingdomBooks() {
+    // We will add the Kingdom Books screen in the next step.
+}
+
+}
