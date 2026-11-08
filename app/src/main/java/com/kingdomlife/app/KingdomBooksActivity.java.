@@ -36,7 +36,9 @@ protected void onCreate(Bundle savedInstanceState) {
     scrollView.addView(content);
     setContentView(scrollView);
 
-    showKingdomBooks();
+applyKingdomBackground();
+
+showKingdomBooks();
 }
 
 private int dp(float value) {
@@ -92,6 +94,45 @@ private void addCard(
     content.addView(card, params);
 
     card.setOnClickListener(listener);
+}
+private void applyKingdomBackground() {
+
+    android.content.SharedPreferences displayPrefs =
+            getSharedPreferences(
+                    "KingdomLifeDisplayPrefs",
+                    MODE_PRIVATE
+            );
+
+    String displayMode =
+            displayPrefs.getString("displayMode", "AUTO");
+
+    if (displayMode.equals("DAY")) {
+
+        content.setBackgroundResource(
+                R.drawable.kingdom_home_bg
+        );
+
+    } else if (displayMode.equals("NIGHT")) {
+
+        content.setBackgroundResource(
+                R.drawable.kingdom_night_bg
+        );
+
+    } else {
+
+        int hour = java.util.Calendar.getInstance()
+                .get(java.util.Calendar.HOUR_OF_DAY);
+
+        if (hour >= 6 && hour < 18) {
+            content.setBackgroundResource(
+                    R.drawable.kingdom_home_bg
+            );
+        } else {
+            content.setBackgroundResource(
+                    R.drawable.kingdom_night_bg
+            );
+        }
+    }
 }
 
 private void showKingdomBooks() {
