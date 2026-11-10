@@ -2830,6 +2830,541 @@ public class SermonsActivity extends Activity {
             16, DARK_TEXT, false
     );
         }
+    private void showMayWeekOne() {
+    addText("Understanding the Word of God",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Hebrews 4:12",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "The Word of God is central to the life of every "
+            + "believer. It reveals God's nature, His instructions "
+            + "and His purpose for humanity. It is not merely "
+            + "a collection of written words; it is God's truth "
+            + "given to guide, teach and transform our lives.\n\n"
+            + "To grow spiritually, we must learn to value "
+            + "the Word, study it and allow it to influence "
+            + "our thoughts, decisions and conduct.",
+            16, DARK_TEXT, false
+    );
+
+    addText("What Is the Word of God?",
+            19, PURPLE, true);
+
+    addText(
+            "The Word of God is God's revealed truth. "
+            + "It communicates His will, His promises "
+            + "and His instructions to us. The Bible "
+            + "is the written Word through which we "
+            + "learn about God and His dealings with people.\n\n"
+            + "The Word gives us a foundation for faith "
+            + "and helps us distinguish truth from error.",
+            16, DARK_TEXT, false
+    );
+
+    addText("The Word of God Is:",
+            19, PURPLE, true);
+
+    addText("1. Power",
+            18, PURPLE, true);
+
+    addText(
+            "God's Word carries His power to accomplish "
+            + "His purposes. When God speaks, His Word "
+            + "is not empty or powerless.",
+            16, DARK_TEXT, false
+    );
+
+    addText("2. A Hammer",
+            18, PURPLE, true);
+
+    addText(
+            "The Word of God is compared to a hammer "
+            + "that breaks a rock in pieces. This shows "
+            + "its power to confront and break down "
+            + "what stands against God's truth.",
+            16, DARK_TEXT, false
+    );
+
+    addText("3. A Two-Edged Sword",
+            18, PURPLE, true);
+
+    addText(
+            "God's Word is living and powerful, sharper "
+            + "than any two-edged sword. It reaches "
+            + "the heart and reveals our thoughts "
+            + "and intentions.",
+            16, DARK_TEXT, false
+    );
+
+    addText("4. Light",
+            18, PURPLE, true);
+
+    addText(
+            "The Word gives direction and understanding. "
+            + "Like a light, it helps us see the right "
+            + "path and avoid walking in darkness.",
+            16, DARK_TEXT, false
+    );
+
+    addText("5. Water",
+            18, PURPLE, true);
+
+    addText(
+            "Water cleanses and refreshes. In the same "
+            + "way, God's Word works in our lives, "
+            + "bringing cleansing and spiritual renewal.",
+            16, DARK_TEXT, false
+    );
+
+    addText("6. Fire",
+            18, PURPLE, true);
+
+    addText(
+            "The Word is also compared to fire. "
+            + "It can expose what is false and challenge "
+            + "what does not agree with God's truth.",
+            16, DARK_TEXT, false
+    );
+
+    addText("7. The Bible",
+            18, PURPLE, true);
+
+    addText(
+            "The Bible is the written Word of God "
+            + "and the foundation for our study. "
+            + "Through it, we learn God's instructions "
+            + "and discover how to live according "
+            + "to His will.",
+            16, DARK_TEXT, false
+    );
+
+    addText("What Does the Word of God Do?",
+            19, PURPLE, true);
+
+    addText(
+            "• It gives victory.\n"
+            + "• It gives divine health.\n"
+            + "• It protects.\n"
+            + "• It provides.\n"
+            + "• It shows us the way.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Practical Application",
+            19, PURPLE, true);
+
+    addText(
+            "• Read the Bible consistently.\n"
+            + "• Study passages carefully instead of reading "
+            + "without understanding.\n"
+            + "• Write down important lessons and Scriptures.\n"
+            + "• Believe God's truth and apply it to daily life.\n"
+            + "• Allow the Word to guide your decisions "
+            + "and conduct.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "How much value do I place on God's Word? "
+            + "Am I allowing it to guide my thoughts, "
+            + "decisions and everyday life?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Heavenly Father, give me a genuine hunger "
+            + "for Your Word. Help me to study it with "
+            + "understanding, believe its truth and apply "
+            + "it in my daily life. Let Your Word guide "
+            + "my decisions and transform my character. "
+            + "Amen.",
+            16, DARK_TEXT, false
+    );
+    }
+    private void showMayWeekTwo() {
+    addText("How the Word of God Works in Our Lives",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Hebrews 4:12",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "The Word of God is not meant to be read and "
+            + "forgotten. It is living and powerful, and "
+            + "it works in the lives of those who receive "
+            + "it with faith and allow it to guide them.\n\n"
+            + "Understanding how God's Word works helps "
+            + "us recognise why we must study it, believe "
+            + "it and apply it. Its influence reaches "
+            + "our faith, our understanding and the way "
+            + "we live.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. Discover the Word Before You Recover",
+            19, PURPLE, true);
+
+    addText(
+            "Before we can stand on what God has said, "
+            + "we must first discover what His Word teaches. "
+            + "We cannot confidently apply a promise "
+            + "we have never taken time to understand.\n\n"
+            + "This is why studying Scripture is important. "
+            + "As we discover God's truth, we learn what "
+            + "He has made available to us and how to "
+            + "respond to life's situations with faith.\n\n"
+            + "The Word should not be treated as a collection "
+            + "of words we repeat without understanding. "
+            + "We must know what it says and allow that "
+            + "truth to shape our confidence in God.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Matthew 8:17",
+            15, DARK_TEXT, false);
+
+    addText("2. The Word of God Quickens Our Mortal Bodies",
+            19, PURPLE, true);
+
+    addText(
+            "The Word of God brings life and strengthens "
+            + "our hope in Him. Isaiah 58:8 speaks of "
+            + "light breaking forth and health springing "
+            + "forth speedily.\n\n"
+            + "This reminds us that God cares about the "
+            + "whole person. His Word encourages us to "
+            + "trust Him, seek His help and live according "
+            + "to His instructions.\n\n"
+            + "We should receive this truth with faith "
+            + "without treating it as a promise that "
+            + "believers will never experience sickness "
+            + "or physical difficulty.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Isaiah 58:8",
+            15, DARK_TEXT, false);
+
+    addText("3. The Word of God Transmits Divine Nature",
+            19, PURPLE, true);
+
+    addText(
+            "God's Word reveals His nature and introduces "
+            + "us to His character. John 1:1–5 presents "
+            + "Jesus Christ as the Word, describing Him "
+            + "as the source of life and the light of men.\n\n"
+            + "As we receive and follow God's Word, "
+            + "we learn to reflect His character. "
+            + "Our thoughts, attitudes and conduct "
+            + "should increasingly agree with the truth "
+            + "we have received.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: John 1:1–5",
+            15, DARK_TEXT, false);
+
+    addText("4. The Word Produces Transformation",
+            19, PURPLE, true);
+
+    addText(
+            "The Word of God does not only give us "
+            + "information; it calls us to transformation. "
+            + "When we study it, believe it and obey it, "
+            + "it influences the way we think and live.\n\n"
+            + "This transformation is seen in our choices, "
+            + "our character and our response to others. "
+            + "The goal is not simply to know more Scripture, "
+            + "but to become people whose lives reflect "
+            + "what God has taught us.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Practical Application",
+            19, PURPLE, true);
+
+    addText(
+            "• Search the Scriptures to understand God's promises.\n"
+            + "• Do not repeat Bible verses without understanding them.\n"
+            + "• Receive God's Word with faith and wisdom.\n"
+            + "• Allow Scripture to influence your choices and conduct.\n"
+            + "• Put what you learn into practice.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Am I discovering and understanding God's Word, "
+            + "or am I only hearing it without allowing "
+            + "it to influence my life?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Heavenly Father, give me understanding of Your "
+            + "Word. Help me discover Your truth, receive "
+            + "it with faith and allow it to transform "
+            + "my life. May my thoughts, decisions and "
+            + "conduct reflect Your character. Amen.",
+            16, DARK_TEXT, false
+    );
+        }
+    private void showMayWeekThree() {
+    addText("Hindrances to the Study of the Word of God",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Psalm 119:11",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "Studying the Word of God is essential for "
+            + "spiritual growth. Through Scripture, we "
+            + "receive understanding, direction and "
+            + "instruction for our daily lives.\n\n"
+            + "However, there are things that can prevent "
+            + "us from giving God's Word the attention "
+            + "it deserves. Some affect our spiritual "
+            + "condition, while others affect our discipline "
+            + "and ability to concentrate. Recognising "
+            + "these hindrances helps us deal with them "
+            + "and become more intentional about studying "
+            + "the Bible.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. Sin",
+            19, PURPLE, true);
+
+    addText(
+            "Sin can affect our relationship with God "
+            + "and our attitude towards His Word. When "
+            + "we knowingly hold on to wrongdoing, "
+            + "we may become unwilling to accept the "
+            + "correction and instruction Scripture gives.\n\n"
+            + "God's Word exposes what is wrong and "
+            + "shows us the way to live rightly. Instead "
+            + "of avoiding Scripture when it corrects us, "
+            + "we should respond with humility, repentance "
+            + "and a willingness to change.",
+            16, DARK_TEXT, false
+    );
+
+    addText("2. Distraction",
+            19, PURPLE, true);
+
+    addText(
+            "Distraction occurs when other things "
+            + "continually compete for our attention "
+            + "and prevent us from concentrating on "
+            + "the Word of God.\n\n"
+            + "Phones, entertainment, unnecessary "
+            + "conversations and excessive activities "
+            + "can take time away from Bible study. "
+            + "We must therefore learn to create a "
+            + "quiet and suitable time for reading "
+            + "and understanding Scripture.",
+            16, DARK_TEXT, false
+    );
+
+    addText("3. Slothfulness",
+            19, PURPLE, true);
+
+    addText(
+            "Slothfulness means laziness or an unwillingness "
+            + "to make the necessary effort. A person may "
+            + "desire spiritual growth but fail to develop "
+            + "the discipline required to study God's Word "
+            + "consistently.\n\n"
+            + "We should not depend only on moments "
+            + "when we feel motivated. Building a regular "
+            + "Bible-study habit requires commitment, "
+            + "discipline and deliberate effort.",
+            16, DARK_TEXT, false
+    );
+
+    addText("4. Restlessness of Mind",
+            19, PURPLE, true);
+
+    addText(
+            "A restless mind struggles to remain focused. "
+            + "Even when we open the Bible, worries, "
+            + "unsettled thoughts and concerns may "
+            + "continually interrupt our concentration.\n\n"
+            + "We can deal with this by setting aside "
+            + "a suitable time, reducing unnecessary "
+            + "distractions and approaching Bible study "
+            + "calmly. We should also bring our concerns "
+            + "before God in prayer and ask Him for "
+            + "understanding.",
+            16, DARK_TEXT, false
+    );
+
+    addText("How to Overcome These Hindrances",
+            19, PURPLE, true);
+
+    addText(
+            "• Deal honestly with sin through repentance "
+            + "and obedience to God's Word.\n"
+            + "• Set aside distractions during Bible study.\n"
+            + "• Develop discipline and consistency.\n"
+            + "• Choose a suitable time and place to study.\n"
+            + "• Pray for understanding and a focused mind.\n"
+            + "• Put into practice what you learn.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Which of these four hindrances most often "
+            + "affects my personal study of God's Word, "
+            + "and what practical step can I take "
+            + "to overcome it?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Heavenly Father, help me remove every "
+            + "hindrance that prevents me from studying "
+            + "Your Word. Give me a sincere heart, "
+            + "discipline, concentration and a desire "
+            + "to understand Scripture. Help me not "
+            + "only to read Your Word but also to obey "
+            + "and practise it. Amen.",
+            16, DARK_TEXT, false
+    );
+    }
+    private void showMayWeekFour() {
+    addText("The Word of God and the Development of Christian Character",
+            22, Color.BLACK, true);
+
+    addText("Main Scriptures: 2 Timothy 3:16–17; Matthew 5:13–16",
+            16, Color.DKGRAY, true);
+
+    addText(
+            "Christian character is the ability to behave like Jesus Christ. "
+            + "Developing this character requires more than knowing the Word "
+            + "of God; we must allow the Word to teach us, correct us and "
+            + "guide the way we live.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. The Word Teaches Us How to Live",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Learning the Character of Christ",
+            "The Word of God reveals the nature, teachings and example of "
+            + "Jesus Christ. As we study it, we learn how a Christian should "
+            + "think, speak and behave."
+    );
+
+    addTeachingPoint(
+            "The Word Corrects Our Behaviour",
+            "According to 2 Timothy 3:16–17, Scripture is useful for teaching, "
+            + "reproof, correction and instruction in righteousness. It shows "
+            + "us what is wrong and guides us towards what is right."
+    );
+
+    addText("2. Developing Christian Character Through the Word",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Honesty",
+            "The Word teaches us to speak truthfully and deal sincerely "
+            + "with others. We develop honesty by putting these teachings "
+            + "into practice in our daily lives."
+    );
+
+    addTeachingPoint(
+            "Moral Excellence",
+            "God's Word helps us recognise what is right and wrong. "
+            + "As we obey its instructions, we learn to make choices "
+            + "that honour God."
+    );
+
+    addTeachingPoint(
+            "Purity",
+            "The Word guides us towards a pure relationship with God "
+            + "and sincere relationships with other people. We must allow "
+            + "its teachings to influence our thoughts, intentions and actions."
+    );
+
+    addText("3. Let Your Character Reflect the Word",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Be a Doer of the Word",
+            "It is not enough to hear or read the Word. We must practise "
+            + "what it teaches. As we consistently obey God's Word, "
+            + "our character begins to reflect what we have learned."
+    );
+
+    addTeachingPoint(
+            "Become the Light of the World",
+            "Matthew 5:13–16 teaches that believers are the salt of the earth "
+            + "and the light of the world. When our character reflects Christ, "
+            + "our lives become a testimony that can encourage others "
+            + "to know Him."
+    );
+
+    addText("Key Lesson",
+            18, Color.BLACK, true);
+
+    addText(
+            "The Word of God is not meant to remain in our minds alone. "
+            + "It must influence our character and daily conduct. "
+            + "As we study, receive and obey the Word, we grow in "
+            + "Christlikeness.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection",
+            18, Color.BLACK, true);
+
+    addText(
+            "Am I allowing God's Word to change the way I think, speak "
+            + "and behave towards Him and other people?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer",
+            18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, help me to receive Your Word and put it into "
+            + "practice. Let it shape my thoughts, words and actions. "
+            + "Help me grow in honesty, moral excellence and purity, "
+            + "so that my life will reflect Jesus Christ. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
 
     private void addTeachingPoint(
             String heading,
