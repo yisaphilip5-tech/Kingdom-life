@@ -3365,6 +3365,713 @@ public class SermonsActivity extends Activity {
             16, Color.BLACK, false
     );
     }
+    private void showJuneWeekOne() {
+    addText("Understanding Healing and Health",
+            22, Color.BLACK, true);
+
+    addText("Introduction",
+            18, Color.BLACK, true);
+
+    addText(
+            "Healing and health are important parts of our understanding "
+            + "of God's care for us. Before discussing how faith relates "
+            + "to healing, we must first understand what healing means. "
+            + "Healing is more than simply feeling better; it speaks of "
+            + "being free from sickness and disease, and being restored "
+            + "to wholeness and well-being.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. What Is Healing and Health?",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Healing Is Being Free from Sickness",
+            "Healing means being delivered from sickness. When a person "
+            + "is sick, the body is not functioning in the way it should. "
+            + "Healing describes the restoration of health and freedom "
+            + "from that sickness."
+    );
+
+    addTeachingPoint(
+            "Healing Is Being Made Whole",
+            "To be whole means to be restored to a state of well-being. "
+            + "It describes more than a temporary feeling of relief; "
+            + "it points to the restoration of the person from the effects "
+            + "of sickness."
+    );
+
+    addTeachingPoint(
+            "Healing Is Being Hale and Hearty",
+            "To be hale and hearty means to be healthy, strong and well. "
+            + "This helps us understand that healing is connected with "
+            + "the restoration of health and the ability to live well."
+    );
+
+    addTeachingPoint(
+            "Healing Comes from God",
+            "God is the source of healing. When we consider healing, "
+            + "we must recognise that our confidence is ultimately in Him. "
+            + "We look to God as the one who cares for us and is able "
+            + "to restore health."
+    );
+
+    addTeachingPoint(
+            "Healing Is a Gift",
+            " Healing is a gift. A gift is received, "
+            + "not earned as a reward. This reminds us to approach God "
+            + "with gratitude and to recognise His goodness."
+    );
+
+    addTeachingPoint(
+            "Healing Is Freedom from Disease",
+            "Disease is another form of sickness that affects the body. "
+            + "Therefore, when we talk about healing, we are also talking "
+            + "about freedom from disease and the restoration of health."
+    );
+
+    addText("2. How Does Faith Come Into Healing?",
+            18, Color.BLACK, true);
+
+    addText(
+            "Having understood what healing means, the next question is: "
+            + "how does faith relate to it? Let's identify faith for "
+            + "salvation and faith for healing. This shows that faith is "
+            + "not discussed only in connection with becoming a Christian; "
+            + "it is also part of how a believer looks to God for healing.",
+            16, Color.BLACK, false
+    );
+
+    addTeachingPoint(
+            "Faith for Salvation",
+            "Salvation begins with believing in Jesus Christ and trusting "
+            + "in what He has done. Faith involves accepting God's provision "
+            + "rather than depending on our own efforts. It is through "
+            + "faith that we receive the salvation God offers."
+    );
+
+    addTeachingPoint(
+            "Faith for Healing",
+            "In the same way, when we seek God for healing, we exercise "
+            + "faith by trusting in Him. We acknowledge Him as the source "
+            + "of healing and bring our needs before Him with confidence. "
+            + "Faith means relying on God rather than allowing fear to "
+            + "become the foundation of our response."
+    );
+
+    addText("3. Understanding the God-Kind of Faith",
+            18, Color.BLACK, true);
+
+    addText(
+            "The God-kind of faith is believing in "
+            + "the heart and confessing with the mouth what one believes "
+            + "in the heart. In other words, faith is not merely saying "
+            + "something without believing it. It begins with genuine "
+            + "belief within the heart, and that belief is expressed "
+            + "through our words.",
+            16, Color.BLACK, false
+    );
+
+    addTeachingPoint(
+            "Believing in the Heart",
+            "Faith begins with what we truly believe. It involves trusting "
+            + "God and holding firmly to what we have received from His Word."
+    );
+
+    addTeachingPoint(
+            "Confessing with the Mouth",
+            "What we believe should also be reflected in what we say. "
+            + "Our words should agree with the faith we profess, rather "
+            + "than constantly speaking from fear and doubt."
+    );
+
+    addText("Key Lesson",
+            18, Color.BLACK, true);
+
+    addText(
+            "Healing means freedom from sickness and disease, restoration "
+            + "to wholeness, and being hale and hearty. God is the source "
+            + "of healing, and faith teaches us to trust Him. Our faith "
+            + "should be genuine in the heart and reflected in our words.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection",
+            18, Color.BLACK, true);
+
+    addText(
+            "Do I understand what healing means? When I bring my needs "
+            + "before God, am I trusting Him from my heart, and do my "
+            + "words reflect that trust?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer",
+            18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You for being the source of healing. "
+            + "Help me understand Your goodness and grow in genuine faith. "
+            + "Teach me to trust You in my heart and let my words reflect "
+            + "that trust. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showJuneWeekTwo() {
+    addText("Jesus the Healer: Individuals He Healed and Miracles He Performed",
+            22, Color.BLACK, true);
+
+    addText("Introduction",
+            18, Color.BLACK, true);
+
+    addText(
+            "During His earthly ministry, Jesus demonstrated His compassion "
+            + "and power through many miracles. He healed the sick, restored "
+            + "the weak, gave sight to the blind and even raised the dead. "
+            + "These miracles revealed that Jesus was not indifferent to "
+            + "human suffering. He showed mercy to individuals and brought "
+            + "hope to people whose situations appeared impossible.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Individuals Jesus Healed",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Peter's Mother-in-law",
+            "In Matthew 8:14–15, Jesus entered Peter's house and saw "
+            + "his mother-in-law lying sick with a fever. He touched her "
+            + "hand, and the fever left her. She immediately got up "
+            + "and ministered to Him. This account shows Jesus' concern "
+            + "for people even in their personal and everyday struggles."
+    );
+
+    addTeachingPoint(
+            "The Woman with the Issue of Blood",
+            "Mark 5:25–34 tells us about a woman who had suffered from "
+            + "an issue of blood for twelve years. She had endured much "
+            + "and spent what she had seeking help, but her condition "
+            + "continued. When she heard about Jesus, she came in faith "
+            + "and touched His garment. She was healed. Jesus recognised "
+            + "her and spoke to her with compassion, calling her daughter."
+    );
+
+    addTeachingPoint(
+            "Jairus' Daughter",
+            "In Mark 5:21–24, 35–43, Jairus came to Jesus because his "
+            + "daughter was seriously ill. Before they arrived, news came "
+            + "that the child had died. Jesus encouraged Jairus not to "
+            + "fear but to believe. He went to the house and raised the "
+            + "girl back to life. This miracle demonstrates His authority "
+            + "even over death."
+    );
+
+    addTeachingPoint(
+            "Blind Bartimaeus",
+            "Mark 10:46–52 records the healing of blind Bartimaeus. "
+            + "When he heard that Jesus was passing by, he cried out "
+            + "for mercy. Although people tried to silence him, he "
+            + "continued calling. Jesus stopped, called him and restored "
+            + "his sight. Bartimaeus then followed Jesus along the way."
+    );
+
+    addTeachingPoint(
+            "The Ten Lepers",
+            "In Luke 17:11–19, ten lepers cried out to Jesus for mercy. "
+            + "Jesus instructed them to go and show themselves to the "
+            + "priests. As they went, they were cleansed. One of them "
+            + "returned to give glory to God and thank Jesus. This account "
+            + "teaches us not to receive God's goodness without expressing "
+            + "gratitude."
+    );
+
+    addTeachingPoint(
+            "Lazarus",
+            "John 11:1–44 tells the story of Lazarus, who had been dead "
+            + "for four days before Jesus arrived. Jesus went to the tomb "
+            + "and called Lazarus out. Lazarus came out alive. This miracle "
+            + "reveals Jesus' authority over death and His power to do "
+            + "what human strength cannot accomplish."
+    );
+
+    addText("2. Miracles Jesus Performed",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Turning Water into Wine",
+            "In John 2:1–11, Jesus attended a wedding in Cana where "
+            + "the wine ran out. He instructed the servants to fill "
+            + "waterpots with water, and the water became wine. "
+            + "This was the beginning of His miracles and revealed "
+            + "His glory to His disciples."
+    );
+
+    addTeachingPoint(
+            "Raising the Dead",
+            "Jesus demonstrated authority over death by raising people "
+            + "back to life. Examples include Jairus' daughter "
+            + "(Mark 5:35–43), the widow's son at Nain (Luke 7:11–17) "
+            + "and Lazarus (John 11:1–44). These accounts reveal "
+            + "that His power was not limited by what appeared impossible."
+    );
+
+    addTeachingPoint(
+            "Healing the Sick",
+            "Jesus healed people suffering from different sicknesses "
+            + "and diseases. Matthew 4:23–24 describes how He went "
+            + "throughout Galilee teaching, preaching and healing "
+            + "all manner of sickness and disease among the people."
+    );
+
+    addTeachingPoint(
+            "Making the Lame Walk",
+            "In John 5:1–9, Jesus met a man who had been infirm for "
+            + "thirty-eight years. Jesus told him to rise, take up "
+            + "his bed and walk. The man was immediately made whole "
+            + "and began to walk."
+    );
+
+    addTeachingPoint(
+            "Making the Blind See",
+            "John 9:1–7 records how Jesus restored the sight of a man "
+            + "who had been blind from birth. Jesus instructed him "
+            + "to wash in the pool of Siloam, and he returned seeing. "
+            + "This miracle revealed the power of God at work through Jesus."
+    );
+
+    addTeachingPoint(
+            "Healing the Woman with the Issue of Blood",
+            "The healing of the woman with the issue of blood "
+            + "(Mark 5:25–34) is another demonstration of Jesus' "
+            + "healing power. Her long period of suffering ended "
+            + "when she encountered Him."
+    );
+
+    addText("3. Lessons from the Healing Ministry of Jesus",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Jesus Is Compassionate",
+            "Jesus did not ignore people because of their conditions "
+            + "or circumstances. He showed mercy and responded to "
+            + "those who came to Him."
+    );
+
+    addTeachingPoint(
+            "Jesus Has Power over Sickness and Disease",
+            "The different healings recorded in Scripture demonstrate "
+            + "His authority over many forms of sickness and disease."
+    );
+
+    addTeachingPoint(
+            "Jesus Has Authority over Death",
+            "The raising of Jairus' daughter, the widow's son and "
+            + "Lazarus shows that even death was not beyond His authority."
+    );
+
+    addTeachingPoint(
+            "We Should Give God Glory",
+            "When we recognise God's goodness in our lives, we should "
+            + "respond with gratitude and give Him the glory, just as "
+            + "the Samaritan leper returned to thank Jesus."
+    );
+
+    addText("Key Lesson",
+            18, Color.BLACK, true);
+
+    addText(
+            "The healing ministry of Jesus reveals His compassion, "
+            + "love and authority. He cared for individuals, restored "
+            + "those who were suffering and demonstrated the power "
+            + "of God through His miracles.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection",
+            18, Color.BLACK, true);
+
+    addText(
+            "What do the healing miracles of Jesus teach me about "
+            + "His compassion, power and concern for people?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer",
+            18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You for revealing Your power and "
+            + "compassion through Jesus Christ. Help me to understand "
+            + "His works, grow in faith and always give You glory "
+            + "for Your goodness. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+        }
+    private void showJuneWeekThree() {
+    addText("The Healing Power and Spiritual Significance of Anointing Oil",
+            22, Color.BLACK, true);
+
+    addText("Introduction",
+            18, Color.BLACK, true);
+
+    addText(
+            "Anointing oil has an important place in the Bible. It was "
+            + "used in different acts of consecration and ministry. "
+            + "In the ministry of Jesus and His disciples, anointing "
+            + "with oil was also associated with prayer for the sick. "
+            + "However, the power to heal does not belong to the oil "
+            + "itself; it belongs to God. Understanding this helps us "
+            + "approach anointing with faith, reverence and the right "
+            + "understanding of God's power.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. What Is in the Anointing Oil?",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "The Spirit of the Lord",
+            "Luke 4:18 records Jesus declaring that the Spirit of the "
+            + "Lord was upon Him because God had anointed Him to preach "
+            + "the gospel, heal the brokenhearted, proclaim deliverance "
+            + "and set the oppressed free. This shows that the anointing "
+            + "is connected with the empowerment of the Holy Spirit "
+            + "for God's purpose. The healing ministry of Jesus was "
+            + "an expression of the Spirit's work through Him."
+    );
+
+    addTeachingPoint(
+            "The Oil Represents the Power of God",
+            "Oil is used in Scripture as a symbol of anointing and "
+            + "consecration. Its spiritual significance points beyond "
+            + "the physical substance to God, who is the source of "
+            + "power. When oil is used during prayer for the sick, "
+            + "our confidence must remain in God rather than in "
+            + "the oil as an object."
+    );
+
+    addTeachingPoint(
+            "A Seal of Exemption from Evil",
+            "Ezekiel 9:4 describes a mark placed on the foreheads "
+            + "of those who grieved over the evil taking place "
+            + "in Jerusalem. The mark distinguished them from "
+            + "those who faced judgment. This vision reminds us "
+            + "that God knows those who belong to Him. It should "
+            + "not be interpreted to mean that applying physical "
+            + "oil guarantees freedom from every difficulty."
+    );
+
+    addTeachingPoint(
+            "The Mystery of the Fan and the Fire",
+            "Matthew 3:11–12 speaks about the One who would baptise "
+            + "with the Holy Ghost and with fire. The passage then "
+            + "describes a fan used to separate wheat from chaff. "
+            + "The wheat is gathered while the chaff is burned. "
+            + "This picture speaks of separation and judgment. "
+            + "First Corinthians 6:19 reminds us that our bodies "
+            + "are the temple of the Holy Ghost. Therefore, our "
+            + "lives should honour God and reflect His presence."
+    );
+
+    addText("2. The Healing Power Associated with Anointing Oil",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Anointing and Prayer for the Sick",
+            "James 5:14–15 teaches that when someone is sick, "
+            + "the person should call for the elders of the church. "
+            + "They are to pray over the sick person and anoint "
+            + "them with oil in the name of the Lord. The passage "
+            + "places the emphasis on prayer, faith and dependence "
+            + "on God. It shows that anointing oil can accompany "
+            + "prayer for healing."
+    );
+
+    addTeachingPoint(
+            "The Disciples Anointed the Sick",
+            "Mark 6:12–13 records how the disciples went out "
+            + "preaching repentance. They cast out many devils "
+            + "and anointed many that were sick with oil, "
+            + "and healed them. This demonstrates that anointing "
+            + "with oil was part of their ministry to people "
+            + "who needed healing."
+    );
+
+    addTeachingPoint(
+            "God Is the Source of Healing",
+            "The physical oil is not a medicine or a magical "
+            + "substance. God is the one we depend on for healing. "
+            + "When anointing oil is used, it should direct our "
+            + "attention towards Him and strengthen our expression "
+            + "of faith through prayer."
+    );
+
+    addText("3. How to Apply the Anointing Oil",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Apply It on the Forehead",
+            "Anointing the forehead may be practised as a symbolic "
+            + "act of dedication and prayer. The significance "
+            + "is in the faith and prayer directed towards God, "
+            + "not in the physical act alone."
+    );
+
+    addTeachingPoint(
+            "Set Aside a Portion for Anointing",
+            "A portion of oil may be set aside for use during "
+            + "prayer and anointing. Its use should remain "
+            + "reverent and symbolic. The oil should not be "
+            + "consumed as a healing treatment."
+    );
+
+    addTeachingPoint(
+            "Anoint the Premises of Your Home or Business",
+            "Some Christians use anointing oil when praying "
+            + "over their homes or business premises as an act "
+            + "of dedication to God. This should go together "
+            + "with a commitment to live and work in ways "
+            + "that honour Him."
+    );
+
+    addText("4. The Right Attitude Towards Anointing",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Have Faith in God",
+            "Our confidence must be in God, not in the physical "
+            + "oil. We should approach Him sincerely, trusting "
+            + "His power, wisdom and goodness."
+    );
+
+    addTeachingPoint(
+            "Pray with Understanding",
+            "Anointing should not become an empty religious activity. "
+            + "We should understand why we are praying and remember "
+            + "that the Lord is the one we are calling upon."
+    );
+
+    addTeachingPoint(
+            "Honour God with Your Body",
+            "First Corinthians 6:19 teaches that our bodies are "
+            + "the temple of the Holy Ghost. We should therefore "
+            + "honour God through our choices, conduct and "
+            + "care for our bodies."
+    );
+
+    addTeachingPoint(
+            "Do Not Neglect Medical Care",
+            "Prayer and anointing should not prevent anyone from "
+            + "seeking appropriate medical attention. We can pray "
+            + "and trust God while also receiving responsible "
+            + "medical care."
+    );
+
+    addText("Key Lesson",
+            18, Color.BLACK, true);
+
+    addText(
+            "Anointing oil is associated with consecration and "
+            + "prayer for the sick in Scripture. Its significance "
+            + "points us towards God, who is the source of healing. "
+            + "Our faith must remain in Him, and our lives should "
+            + "reflect the presence and work of His Spirit.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection",
+            18, Color.BLACK, true);
+
+    addText(
+            "Is my confidence in God, or have I placed too much "
+            + "confidence in the physical oil? Do I understand "
+            + "the relationship between prayer, faith and healing?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer",
+            18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You for being the source "
+            + "of healing and restoration. Help me understand "
+            + "the significance of anointing and the work of "
+            + "Your Holy Spirit. Teach me to pray with faith, "
+            + "depend on You and honour You with my life. "
+            + "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+        }
+    private void showJuneWeekFour() {
+    addText("Understanding Our Heritage Over Sickness and Disease",
+            22, Color.BLACK, true);
+
+    addText("Introduction",
+            18, Color.BLACK, true);
+
+    addText(
+            "As children of God, we need to understand what we have "
+            + "received through our relationship with Jesus Christ. "
+            + "Being born again gives us a new life and brings us into "
+            + "a new relationship with God. Through redemption, our "
+            + "identity and spiritual position are no longer defined "
+            + "by the kingdom of darkness. We now belong to Christ. "
+            + "Understanding this heritage helps us face sickness "
+            + "and disease with faith, confidence and hope in God. "
+            + "It does not mean that Christians can never become sick; "
+            + "rather, it reminds us that sickness does not define "
+            + "our identity in Christ.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. New Birth and Everlasting Life",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Understanding the New Birth",
+            "John 3:16 explains God's love for the world and His gift "
+            + "of His only begotten Son, so that whoever believes in "
+            + "Him should not perish but have everlasting life. "
+            + "This is the foundation of our new life in Christ. "
+            + "Being born again means receiving a new spiritual life "
+            + "through faith in Jesus. Our relationship with God is "
+            + "no longer based on our former life but on what Christ "
+            + "has done for us."
+    );
+
+    addTeachingPoint(
+            "We Have Everlasting Life",
+            "First John 3:2 reminds us that we are now the children "
+            + "of God, even though the full reality of what we shall "
+            + "be has not yet been revealed. This gives us confidence "
+            + "in our identity and future in Christ. Everlasting life "
+            + "is God's gift, and it gives us a hope that goes beyond "
+            + "the temporary conditions we experience in this world."
+    );
+
+    addTeachingPoint(
+            "Open Your Understanding to God's Word",
+            "Psalm 119:18 is a prayer asking God to open our eyes "
+            + "so that we may behold wonderful things from His law. "
+            + "As we study God's Word, we should also ask Him to "
+            + "help us understand what He has made available to us "
+            + "through Christ. Knowing our heritage requires more "
+            + "than hearing about it; we must understand and live "
+            + "according to the truth of God's Word."
+    );
+
+    addText("2. Translation from Darkness into Light",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "A Change of Spiritual Kingdom",
+            "Being born again brings about a change in our spiritual "
+            + "identity. We are no longer meant to live according "
+            + "to the ways of darkness. Through Christ, we receive "
+            + "a new life and are called to walk in the light of God. "
+            + "This change should be seen in our decisions, character "
+            + "and daily conduct."
+    );
+
+    addTeachingPoint(
+            "Jesus Gives Abundant Life",
+            "John 10:10 contrasts the purpose of the thief, who comes "
+            + "to steal, kill and destroy, with the purpose of Jesus, "
+            + "who came so that we may have life and have it more "
+            + "abundantly. Christ is the source of this life. "
+            + "Therefore, we should not allow fear, sickness or "
+            + "difficult circumstances to make us forget the hope "
+            + "and life we have received in Him."
+    );
+
+    addTeachingPoint(
+            "Live According to Your New Identity",
+            "Our new identity should influence how we live. "
+            + "We should turn away from sinful practices, grow "
+            + "in the knowledge of God and allow His Word to guide "
+            + "our choices. Living in the light means choosing "
+            + "what pleases God and allowing our conduct to reflect "
+            + "our relationship with Christ."
+    );
+
+    addText("3. Our Position Through Redemption",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Repositioned in Christ",
+            "Through redemption, we have been given a new spiritual "
+            + "position in Christ. Ephesians 2:6 says that God has "
+            + "raised us up together and made us sit together in "
+            + "heavenly places in Christ Jesus. This reveals the "
+            + "spiritual position we have received through our "
+            + "relationship with Him. We are no longer identified "
+            + "with our former life; our identity is now found in "
+            + "Christ."
+    );
+
+    addTeachingPoint(
+            "Far Above Sickness and Disease",
+            "Our position in Christ gives us a reason to face "
+            + "sickness and disease with faith rather than fear. "
+            + "We can pray, trust God's power and look to Him "
+            + "for healing and strength. Sickness is not our "
+            + "identity, and it does not cancel the life we have "
+            + "received in Christ. Being seated with Christ in "
+            + "heavenly places gives us a spiritual perspective "
+            + "that is greater than the challenges we face."
+    );
+
+    addTeachingPoint(
+            "Walk in the Reality of Your Heritage",
+            "Knowing our position in Christ should affect our "
+            + "daily lives. We should grow in God's Word, maintain "
+            + "our faith, pray and continue to trust Him in every "
+            + "situation. We should not allow sickness or difficult "
+            + "circumstances to take away our confidence in God's "
+            + "love and promises. We can seek prayer and appropriate "
+            + "medical care while continuing to trust God."
+    );
+
+    addText("Key Lesson",
+            18, Color.BLACK, true);
+
+    addText(
+            "Through the new birth, we receive everlasting life "
+            + "and a new identity in Christ. Redemption has given "
+            + "us a new spiritual position: we are seated together "
+            + "with Christ in heavenly places. Therefore, we can "
+            + "face sickness and disease with faith, knowing that "
+            + "our hope and identity are in Him. We must continue "
+            + "to grow in the understanding of our heritage through "
+            + "God's Word.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection",
+            18, Color.BLACK, true);
+
+    addText(
+            "Do I truly understand my new identity and position "
+            + "in Christ? When I face sickness or difficult "
+            + "circumstances, do I remember the life and hope "
+            + "I have received through redemption?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer",
+            18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You for the gift of everlasting "
+            + "life through Jesus Christ. Help me understand my "
+            + "new identity and position in You. Open my eyes to "
+            + "the truth of Your Word and strengthen my faith "
+            + "when I face sickness or difficult situations. "
+            + "Teach me to live according to the heritage I have "
+            + "received through Christ. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+            }
 
     private void addTeachingPoint(
             String heading,
