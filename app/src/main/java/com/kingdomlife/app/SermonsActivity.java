@@ -50,11 +50,11 @@ public class SermonsActivity extends Activity {
                     "How to Give an Acceptable Thanksgiving to God"
             },
             {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
+        "Understanding the Love of God",
+        "The Importance of Love in the Christian Life",
+        "Walking in Love Towards Others",
+        "How to Demonstrate Genuine Christian Love"
+},
             {
                     "Week 1 Teaching",
                     "Week 2 Teaching",
@@ -971,6 +971,681 @@ public class SermonsActivity extends Activity {
             15,
             DARK_TEXT,
             false
+    );
+    }
+    private void showFebruaryWeekOne() {
+
+    addText(
+            "Main Scriptures",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "John 3:16\n"
+                    + "Romans 5:8\n"
+                    + "1 John 4:8–10\n"
+                    + "Ephesians 2:4–5",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Introduction",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "The love of God is one of the greatest "
+                    + "truths revealed in the Bible. God's "
+                    + "love is not based on human perfection "
+                    + "or achievement. He demonstrated His "
+                    + "love by giving His Son, Jesus Christ, "
+                    + "for the salvation of humanity. "
+                    + "Understanding this love helps us "
+                    + "develop a closer relationship with Him.",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addTeachingPoint(
+            "1. God's Love Is Unconditional",
+            "God's love is not something we earn through "
+                    + "our achievements. Romans 5:8 shows "
+                    + "that Christ died for us while we were "
+                    + "still sinners. His love is demonstrated "
+                    + "through His grace and mercy."
+    );
+
+    addTeachingPoint(
+            "2. God's Love Was Demonstrated Through Jesus Christ",
+            "John 3:16 reveals the great expression of "
+                    + "God's love: He gave His only begotten "
+                    + "Son so that whoever believes in Him "
+                    + "should not perish but have everlasting life."
+    );
+
+    addTeachingPoint(
+            "3. God's Love Is Great and Rich in Mercy",
+            "Ephesians 2:4–5 describes God as rich in "
+                    + "mercy because of His great love "
+                    + "towards us. His love brings hope, "
+                    + "forgiveness and new life through Christ."
+    );
+
+    addTeachingPoint(
+            "4. God Is the Source of True Love",
+            "1 John 4:8 teaches that God is love. "
+                    + "True love begins with Him. As we "
+                    + "know God and grow in our relationship "
+                    + "with Him, we learn to understand "
+                    + "and express His love."
+    );
+
+    addTeachingPoint(
+            "5. God's Love Gives Us Confidence in Him",
+            "Knowing that God loves us helps us approach "
+                    + "Him with confidence and trust. "
+                    + "We can depend on His faithfulness "
+                    + "and remember that His love is revealed "
+                    + "through His Word and His actions."
+    );
+
+    addText(
+            "Key Lessons",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "• God's love is not earned through human achievements.\n"
+                    + "• Jesus Christ is the greatest demonstration of God's love.\n"
+                    + "• God's love is accompanied by mercy and grace.\n"
+                    + "• God is the source of true love.\n"
+                    + "• Knowing God's love helps us trust Him more.",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Reflection",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Do I truly understand how much God loves me, "
+                    + "and does that understanding influence "
+                    + "the way I relate to Him?",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Closing Prayer",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Heavenly Father, thank You for Your great "
+                    + "love towards me. Help me understand "
+                    + "the depth of Your love and grow "
+                    + "in my relationship with You. Teach "
+                    + "me to trust You and reflect Your "
+                    + "love in my daily life. In Jesus' "
+                    + "name, Amen.",
+            15,
+            DARK_TEXT,
+            false
+    );
+    }
+    private void showFebruaryWeekTwo() {
+
+    addText(
+            "Main Scriptures",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "1 Corinthians 13:1–3\n"
+                    + "John 13:34–35\n"
+                    + "1 John 4:7–8\n"
+                    + "Colossians 3:14",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Introduction",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Love is central to the Christian life. "
+                    + "Our faith should be reflected not only "
+                    + "in what we say or know, but also in "
+                    + "how we treat others. The Bible teaches "
+                    + "that love is essential to our Christian "
+                    + "character and our relationship with God.",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addTeachingPoint(
+            "1. Love Is a Commandment From Jesus",
+            "In John 13:34–35, Jesus commands His disciples "
+                    + "to love one another as He has loved them. "
+                    + "Love is not merely an optional quality "
+                    + "for Christians; it is part of our calling."
+    );
+
+    addTeachingPoint(
+            "2. Love Is Greater Than Spiritual Display Without It",
+            "1 Corinthians 13:1–3 explains that even great "
+                    + "abilities, knowledge and sacrifices "
+                    + "amount to nothing without love. "
+                    + "Our spiritual activities should be "
+                    + "accompanied by genuine love."
+    );
+
+    addTeachingPoint(
+            "3. Love Shows That We Know God",
+            "1 John 4:7–8 teaches that love comes from God. "
+                    + "Anyone who truly knows God should "
+                    + "grow in love because God Himself is love."
+    );
+
+    addTeachingPoint(
+            "4. Love Brings Unity Among Believers",
+            "Colossians 3:14 describes love as the bond "
+                    + "of perfectness. Love helps believers "
+                    + "live together in unity, patience "
+                    + "and understanding."
+    );
+
+    addTeachingPoint(
+            "5. Love Gives Meaning to Our Christian Conduct",
+            "Our actions should be guided by love rather "
+                    + "than selfishness, pride or the desire "
+                    + "to hurt others. Genuine Christian love "
+                    + "should influence our words, decisions "
+                    + "and relationships."
+    );
+
+    addText(
+            "Key Lessons",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "• Love is a commandment from Jesus.\n"
+                    + "• Spiritual gifts and knowledge should be accompanied by love.\n"
+                    + "• Knowing God should produce love in us.\n"
+                    + "• Love helps maintain unity among believers.\n"
+                    + "• Let love guide your words and actions.",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Reflection",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Can people recognise the love of Christ "
+                    + "through the way I treat them, or do "
+                    + "my actions sometimes contradict "
+                    + "what I profess to believe?",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Closing Prayer",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Heavenly Father, help me understand the "
+                    + "importance of love in my Christian "
+                    + "life. Teach me to love as Christ "
+                    + "loved, to walk in unity with others "
+                    + "and to let my actions reflect Your "
+                    + "character. In Jesus' name, Amen.",
+            15,
+            DARK_TEXT,
+            false
+    );
+    }
+    private void showFebruaryWeekThree() {
+
+    addText(
+            "Main Scriptures",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Ephesians 4:31–32\n"
+                    + "Matthew 5:43–45\n"
+                    + "Romans 12:9–10\n"
+                    + "1 John 3:17–18",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Introduction",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Christian love should not remain only in "
+                    + "our hearts or in the words we speak. "
+                    + "It should be visible in the way we "
+                    + "treat people. God calls us to show "
+                    + "kindness, forgiveness, compassion "
+                    + "and genuine concern for others, "
+                    + "including those who may not treat "
+                    + "us kindly.",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addTeachingPoint(
+            "1. Love Others With Genuine Sincerity",
+            "Romans 12:9 teaches that love should be "
+                    + "without dissimulation. This means "
+                    + "our love should be genuine, not "
+                    + "pretended or motivated by personal "
+                    + "gain. We should treat people with "
+                    + "honesty and sincerity."
+    );
+
+    addTeachingPoint(
+            "2. Show Kindness and Compassion",
+            "Ephesians 4:32 encourages believers to be "
+                    + "kind, tenderhearted and forgiving "
+                    + "towards one another. Love should "
+                    + "be seen in our patience, kindness "
+                    + "and willingness to understand others."
+    );
+
+    addTeachingPoint(
+            "3. Love Even Those Who Are Difficult to Love",
+            "In Matthew 5:43–45, Jesus teaches us to "
+                    + "love our enemies and pray for those "
+                    + "who persecute us. Christian love "
+                    + "should not depend only on how "
+                    + "others treat us. We should respond "
+                    + "with goodness rather than hatred."
+    );
+
+    addTeachingPoint(
+            "4. Demonstrate Love Through Practical Actions",
+            "1 John 3:17–18 teaches that love should "
+                    + "not be expressed only through "
+                    + "words and speech, but through "
+                    + "actions and truth. We should be "
+                    + "willing to help people when we "
+                    + "have the ability and opportunity."
+    );
+
+    addTeachingPoint(
+            "5. Honour and Value Others",
+            "Romans 12:10 encourages believers to "
+                    + "love one another with brotherly "
+                    + "love and give preference to one "
+                    + "another in honour. Love teaches "
+                    + "us to respect people and avoid "
+                    + "selfishness and pride."
+    );
+
+    addText(
+            "Key Lessons",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "• Let your love be genuine and sincere.\n"
+                    + "• Show kindness and compassion to others.\n"
+                    + "• Do not repay hatred with hatred.\n"
+                    + "• Demonstrate love through practical actions.\n"
+                    + "• Respect and honour other people.",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Reflection",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Can people see genuine Christian love "
+                    + "through my behaviour, especially "
+                    + "when I am dealing with people "
+                    + "who are difficult to relate to?",
+            15,
+            DARK_TEXT,
+            false
+    );
+
+    addText(
+            "Closing Prayer",
+            18,
+            PURPLE,
+            true
+    );
+
+    addText(
+            "Heavenly Father, teach me to walk in "
+                    + "genuine love towards others. Help "
+                    + "me to be kind, compassionate, "
+                    + "forgiving and willing to help. "
+                    + "Remove selfishness and hatred "
+                    + "from my heart, and let the love "
+                    + "of Christ be seen in my life. "
+                    + "In Jesus' name, Amen.",
+            15,
+            DARK_TEXT,
+            false
+    );
+    }
+    private void showFebruaryWeekThree() {
+    addText("Faith Without Love Is Nothing",
+            22, PURPLE, true);
+
+    addText("Main Scripture: 1 Corinthians 13:2–3",
+            17, DARK_TEXT, true);
+
+    addText(
+            "Faith, knowledge and spiritual gifts are valuable, "
+            + "but they are not substitutes for love. Our walk with "
+            + "God must be rooted in genuine love for Him.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. Faith Must Be Rooted in Love",
+            19, PURPLE, true);
+
+    addText(
+            "1 Corinthians 13:2–3 teaches that even great faith, "
+            + "understanding and sacrifice amount to nothing without love. "
+            + "Our relationship with God should not be based only on "
+            + "what we receive from Him, but also on our love for Him.",
+            16, DARK_TEXT, false
+    );
+
+    addText("2. Love for God Must Be Genuine",
+            19, PURPLE, true);
+
+    addText(
+            "Our love for God should influence our thoughts, decisions "
+            + "and daily conduct. It should also reflect in how we treat "
+            + "other people.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: 1 John 4:20; 1 Peter 1:22",
+            15, DARK_TEXT, false);
+
+    addText("3. Grow Deeper in the Love of God",
+            19, PURPLE, true);
+
+    addText(
+            "The love of God should become deeply rooted in our hearts. "
+            + "We should continually seek to understand and experience "
+            + "the depth of His love.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: Ephesians 3:17–18; Song of Solomon 8:6",
+            15, DARK_TEXT, false);
+
+    addText("4. Lovers of God Become Pathfinders",
+            19, PURPLE, true);
+
+    addText(
+            "Your handwritten notes describe lovers of God as "
+            + "pathfinders and trailblazers, and describe them as "
+            + "limit breakers. This highlights the importance of "
+            + "allowing love for God to shape our lives and purpose.",
+            16, DARK_TEXT, false
+    );
+
+    addText("5. Reposition Yourself in the Love of God",
+            19, PURPLE, true);
+
+    addText(
+            "Do not allow your relationship with God to become "
+            + "routine or merely outward. Examine your heart and "
+            + "make room for a deeper, more genuine love for Him.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Small Ideas to Remember",
+            19, PURPLE, true);
+
+    addText(
+            "• Faith should work together with love.\n"
+            + "• Love for God should influence everyday choices.\n"
+            + "• Spiritual activities should come from a sincere heart.\n"
+            + "• Love is more than words; it should be reflected in our lives.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Am I pursuing God because I genuinely love Him, "
+            + "or only because of what I hope to receive from Him?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Lord, help me to grow in genuine love for You. "
+            + "Let my faith, service and daily decisions be rooted "
+            + "in love. Give me a heart that seeks You sincerely. Amen.",
+            16, DARK_TEXT, false
+    );
+    }
+    private void showFebruaryWeekFour() {
+    addText("Proofs of My Love for God and How to Apply Love in My Life",
+            22, PURPLE, true);
+
+    addText("Main Scripture: John 21:17",
+            17, DARK_TEXT, true);
+
+    addText(
+            "Love for God should be more than a confession. "
+            + "It should be demonstrated through our attitude, "
+            + "choices, devotion and actions.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. I Will Love God's Word",
+            19, PURPLE, true);
+
+    addText(
+            "A person who loves God should also develop a love "
+            + "for His Word. God's Word should not be something "
+            + "we read only when we need an answer; it should "
+            + "be part of our daily walk with Him.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: Psalm 119:97; 1 Samuel 13:14",
+            15, DARK_TEXT, false);
+
+    addText("How to Apply It",
+            17, PURPLE, true);
+
+    addText(
+            "• Set aside time to read the Bible daily.\n"
+            + "• Think about what you have read.\n"
+            + "• Practise what the Scriptures teach.",
+            15, DARK_TEXT, false
+    );
+
+    addText("2. I Will Love God's House",
+            19, PURPLE, true);
+
+    addText(
+            "Love for God should reflect in our attitude towards "
+            + "His house and fellowship with other believers. "
+            + "We should value opportunities to worship, learn "
+            + "and grow together.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Psalm 84:7",
+            15, DARK_TEXT, false);
+
+    addText("How to Apply It",
+            17, PURPLE, true);
+
+    addText(
+            "• Participate sincerely in church gatherings.\n"
+            + "• Respect the place and activities of worship.\n"
+            + "• Encourage others to grow in fellowship.",
+            15, DARK_TEXT, false
+    );
+
+    addText("3. Giving Will Be a Delight",
+            19, PURPLE, true);
+
+    addText(
+            "Genuine love expresses itself through generosity. "
+            + "Giving should come from a willing and loving heart, "
+            + "not merely from pressure or a desire to impress people.",
+            16, DARK_TEXT, false
+    );
+
+    addText(
+            "Scriptures: 1 John 3:17; 2 Corinthians 8:1–8",
+            15, DARK_TEXT, false
+    );
+
+    addText("How to Apply It",
+            17, PURPLE, true);
+
+    addText(
+            "• Share what you can with someone in need.\n"
+            + "• Give willingly and sincerely.\n"
+            + "• Be generous with your time, kindness and help.",
+            15, DARK_TEXT, false
+    );
+
+    addText("4. I Will Have a Heart for Souls",
+            19, PURPLE, true);
+
+    addText(
+            "Love for God should produce concern for other people. "
+            + "We should care about their spiritual growth and "
+            + "well-being instead of thinking only about ourselves.",
+            16, DARK_TEXT, false
+    );
+
+    addText("How to Apply It",
+            17, PURPLE, true);
+
+    addText(
+            "• Pray for people who need God's help.\n"
+            + "• Show kindness and compassion.\n"
+            + "• Share your faith respectfully when opportunities arise.",
+            15, DARK_TEXT, false
+    );
+
+    addText("5. Zero Love for God, Zero Effort",
+            19, PURPLE, true);
+
+    addText(
+            "Love should produce a willingness to serve and obey God. "
+            + "If we claim to love Him, our lives should show a sincere "
+            + "desire to follow His ways.",
+            16, DARK_TEXT, false
+    );
+
+    addText("How to Apply It",
+            17, PURPLE, true);
+
+    addText(
+            "• Serve God with sincerity.\n"
+            + "• Be consistent in your Christian responsibilities.\n"
+            + "• Do what is right even when nobody is watching.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Small Lessons to Remember",
+            19, PURPLE, true);
+
+    addText(
+            "• Love is demonstrated through action.\n"
+            + "• Our devotion should be genuine, not just outward.\n"
+            + "• We can show love through small daily decisions.\n"
+            + "• Loving God should influence how we treat people.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Which of these proofs of love for God is strongest "
+            + "in my life, and which one do I need to improve?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Father, help me to demonstrate my love for You "
+            + "through Your Word, worship, giving, service and "
+            + "care for others. Let my love be sincere and visible "
+            + "in my everyday life. Amen.",
+            16, DARK_TEXT, false
     );
     }
 
