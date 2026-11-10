@@ -43,82 +43,105 @@ public class SermonsActivity extends Activity {
     };
 
     private final String[][] weeklyTeachings = {
-            {
-                    "What Is Thanksgiving?",
-                    "Characteristics of an Acceptable Thanksgiving",
-                    "Why Should I Give Thanks to God?",
-                    "How to Give an Acceptable Thanksgiving to God"
-            },
-            {
-        "Understanding the Love of God",
-        "The Importance of Love in the Christian Life",
-        "Walking in Love Towards Others",
-        "How to Demonstrate Genuine Christian Love"
-},
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            },
-            {
-                    "Week 1 Teaching",
-                    "Week 2 Teaching",
-                    "Week 3 Teaching",
-                    "Week 4 Teaching"
-            }
-    };
+        // January — Thanksgiving
+        {
+                "What Is Thanksgiving?",
+                "Characteristics of an Acceptable Thanksgiving",
+                "Why Should I Give Thanks to God?",
+                "How to Give an Acceptable Thanksgiving to God"
+        },
 
-    private int selectedMonth;
-    private int selectedWeek;
+        // February — Love
+        {
+                "Understanding the Love of God",
+                "The Importance of Love in the Christian Life",
+                "Faith Without Love Is Nothing",
+                "Proofs of My Love for God and How to Apply Love in My Life"
+        },
+
+        // March — Divine Guidance (The Supernatural)
+        {
+                "Understanding the Supernatural",
+                "Spiritual Atmospheres That Grant Access to the Supernatural",
+                "Why Must I Operate in the Supernatural?",
+                "How to Walk in the Supernatural"
+        },
+
+        // April — Prayer
+        {
+                "Understanding Prayer: Our Hotline to God",
+                "Getting Ready to Pray and Write",
+                "The Dominion Power of a Praying and Fasting Teenager",
+                "Prayer and Fasting: The Lifewire of Every Growing Church"
+        },
+
+        // May — The Word of God
+        {
+                "Understanding the Word of God",
+                "How the Word of God Works in Our Lives",
+                "Hindrances to the Study of the Word of God",
+                "The Word of God and the Development of Christian Character"
+        },
+
+        // June — Divine Health
+        {
+                "Understanding Healing and Health",
+                "Jesus the Healer: Individuals He Healed and Miracles He Performed",
+                "The Healing Power and Spiritual Significance of Anointing Oil",
+                "Understanding Our Heritage Over Sickness and Disease"
+        },
+
+        // July — Wisdom
+        {
+                "Understanding Wisdom",
+                "Types of Wisdom",
+                "Characteristics of Wisdom",
+                "How to Activate and Apply the Wisdom of God in My Life"
+        },
+
+        // August — Success
+        {
+                "Understanding Success: What Is Success?",
+                "Types of Success",
+                "Wisdom That Empowers for Success",
+                "Steps to Living a Successful Life"
+        },
+
+        // September — The Holy Spirit
+        {
+                "Understanding the Holy Spirit and the Promise of His Coming",
+                "The Day of Pentecost: The Coming of the Holy Spirit",
+                "The Significance and Manifestations of the Holy Spirit",
+                "The Work and Ministry of the Holy Spirit in the Life of a Believer"
+        },
+
+        // October — Faith
+        {
+                "Understanding the Faith That Moves Mountains",
+                "The Characteristics and Expressions of Genuine Faith",
+                "The Faith That Overcomes Challenges and Produces Results",
+                "How to Develop and Grow Your Faith"
+        },
+
+        // November — Praise
+        {
+                "What Is Praise?",
+                "Understanding the Power of Praise",
+                "What Is an Acceptable Praise?",
+                "How to Give an Acceptable Praise"
+        },
+
+        // December — Fasting
+        {
+                "Understanding Fasting: What Is Fasting?",
+                "The Biblical Purpose and Importance of Fasting",
+                "The Spiritual Benefits and Power of Fasting",
+                "How to Fast Acceptably and Effectively"
+        }
+};
+
+private int selectedMonth;
+private int selectedWeek;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
