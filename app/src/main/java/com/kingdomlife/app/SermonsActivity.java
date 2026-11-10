@@ -1648,6 +1648,534 @@ public class SermonsActivity extends Activity {
             16, DARK_TEXT, false
     );
     }
+    private void showMarchWeekOne() {
+    addText("Understanding the Supernatural",
+            22, PURPLE, true);
+
+    addText("Main Scripture: John 3:3–8",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "The supernatural describes the dimension of life "
+            + "that goes beyond ordinary human ability and depends "
+            + "on God's power. It reminds us that our Christian "
+            + "walk is not limited to what we can achieve by "
+            + "human strength alone.",
+            16, DARK_TEXT, false
+    );
+
+    addText("What Is the Supernatural?",
+            19, PURPLE, true);
+
+    addText("1. The Answer or Key to the Impossible",
+            18, PURPLE, true);
+
+    addText(
+            "The supernatural is"
+            + " the answer or key to all that is impossible. "
+            + "It points us towards God's ability to do what "
+            + "human strength cannot accomplish.",
+            16, DARK_TEXT, false
+    );
+
+    addText("2. A Product of Faith",
+            18, PURPLE, true);
+
+    addText(
+            "The supernatural is also described "
+            + "as a product of faith. Faith enables us to trust "
+            + "God beyond what our physical circumstances "
+            + "seem to show.",
+            16, DARK_TEXT, false
+    );
+
+    addText("3. The Security of Our Destiny in Christ",
+            18, PURPLE, true);
+
+    addText(
+            "The supernatural is the security of our destiny "
+            + "in Christ. Our hope and future are anchored in "
+            + "our relationship with Jesus, rather than in "
+            + "human ability alone.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Why Does Understanding It Matter?",
+            19, PURPLE, true);
+
+    addText(
+            "• It helps us depend on God rather than only on "
+            + "our own strength.\n"
+            + "• It encourages us to develop our faith.\n"
+            + "• It reminds us that our identity and hope "
+            + "are found in Christ.\n"
+            + "• It helps us approach difficult situations "
+            + "with trust in God.",
+            15, DARK_TEXT, false
+    );
+
+    addText(" Faith and Responsibility",
+            19, PURPLE, true);
+
+    addText(
+            "Trusting God does not mean refusing to take "
+            + "responsible action. Faith should encourage us "
+            + "to obey God's Word, make wise decisions and "
+            + "do our part while depending on Him.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Do I depend only on what I can see and achieve, "
+            + "or am I learning to trust God and His Word?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Father, help me understand the life You have "
+            + "called me to live in Christ. Strengthen my faith, "
+            + "teach me to depend on You and guide my steps "
+            + "according to Your Word. Amen.",
+            16, DARK_TEXT, false
+    );
+    }
+    private void showMarchWeekTwo() {
+    addText("Spiritual Atmospheres That Grant Access to the Supernatural",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Romans 4:19–22",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "Operating in the supernatural requires more than "
+            + "desiring to experience God's power. We must also "
+            + "pay attention to certain spiritual atmospheres "
+            + "that help us position ourselves to encounter "
+            + "and experience the supernatural.\n\n"
+            + "These atmospheres influence our relationship with "
+            + "God, strengthen our faith and help us remain "
+            + "conscious of His presence. They include the "
+            + "atmosphere of glory, faith, prayer, praise and "
+            + "worship, and joy.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. The Atmosphere of Glory",
+            19, PURPLE, true);
+
+    addText(
+            "The atmosphere of glory draws our attention to "
+            + "God's presence, greatness and majesty. To operate "
+            + "in the supernatural, we must recognise that "
+            + "everything begins with God and that all glory "
+            + "belongs to Him.\n\n"
+            + "When our hearts are focused on His glory, "
+            + "we become more conscious of His presence "
+            + "rather than being consumed by our circumstances.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: John 1:14",
+            15, DARK_TEXT, false);
+
+    addText("2. The Atmosphere of Faith",
+            19, PURPLE, true);
+
+    addText(
+            "Faith is essential to operating in the supernatural "
+            + "because it enables us to trust God's ability "
+            + "beyond what our physical circumstances reveal.\n\n"
+            + "Abraham did not allow his circumstances to destroy "
+            + "his confidence in God's promise. Instead, he grew "
+            + "strong in faith, giving glory to God and remaining "
+            + "fully persuaded that God was able to fulfil "
+            + "what He had promised.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Romans 4:19–22",
+            15, DARK_TEXT, false);
+
+    addText("3. The Atmosphere of Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer creates an atmosphere of communion and "
+            + "dependence on God. It is through prayer that "
+            + "we express our hearts to Him, seek His direction "
+            + "and maintain fellowship with Him.\n\n"
+            + "A person who desires to operate in the supernatural "
+            + "must learn to make prayer an important part "
+            + "of daily life. Prayer keeps our attention on God "
+            + "and helps us seek His will.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: John 17:1; 2 Chronicles 1:3",
+            15, DARK_TEXT, false);
+
+    addText("4. The Atmosphere of Praise and Worship",
+            19, PURPLE, true);
+
+    addText(
+            "Praise and worship establish an atmosphere "
+            + "of honour and adoration towards God. They shift "
+            + "our attention away from distractions and remind "
+            + "us of His greatness and faithfulness.\n\n"
+            + "As we praise and worship God sincerely, "
+            + "we express our gratitude, acknowledge His power "
+            + "and give Him the honour He deserves. Our worship "
+            + "should come from a sincere heart, not merely "
+            + "from outward activity.",
+            16, DARK_TEXT, false
+    );
+
+    addText("5. The Atmosphere of Joy",
+            19, PURPLE, true);
+
+    addText(
+            "Joy is another important atmosphere to cultivate "
+            + "in our walk with God. Operating in the supernatural "
+            + "should not be separated from a heart that finds "
+            + "confidence and delight in God.\n\n"
+            + "This joy is not based only on whether everything "
+            + "around us is going well. It comes from knowing "
+            + "God, trusting His goodness and remaining confident "
+            + "in Him even during difficult seasons.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: Psalm 67:5–7; Proverbs 28:12",
+            15, DARK_TEXT, false);
+
+    addText("How to Cultivate These Atmospheres",
+            19, PURPLE, true);
+
+    addText(
+            "• Give God glory in your thoughts, words and actions.\n"
+            + "• Build your faith through His Word.\n"
+            + "• Maintain a consistent life of prayer.\n"
+            + "• Make praise and sincere worship part of your devotion.\n"
+            + "• Choose to remain joyful and confident in God.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Which of these spiritual atmospheres am I "
+            + "cultivating in my daily walk with God? "
+            + "What changes do I need to make to become "
+            + "more intentional about them?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Father, help me to cultivate the right spiritual "
+            + "atmospheres in my life. Let my heart remain "
+            + "conscious of Your glory, established in faith, "
+            + "committed to prayer, filled with praise and "
+            + "rooted in joy. Help me to grow in my walk with "
+            + "You and experience the life You have called "
+            + "me to live. Amen.",
+            16, DARK_TEXT, false
+    );
+        }
+    private void showMarchWeekThree() {
+    addText("Why Must I Operate in the Supernatural?",
+            22, PURPLE, true);
+
+    addText("Main Scriptures: Zechariah 4:6; John 15:5",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "God has not called us to live the Christian life "
+            + "by human strength alone. Our journey of faith "
+            + "requires His power, wisdom and direction.\n\n"
+            + "Operating in the supernatural means learning "
+            + "to depend on God beyond our natural abilities "
+            + "and allowing His power to work in our lives. "
+            + "It is not about seeking extraordinary experiences "
+            + "for their own sake, but about living in dependence "
+            + "on God and fulfilling His purpose.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. To Live Beyond Human Limitations",
+            19, PURPLE, true);
+
+    addText(
+            "Human ability has limitations, but God's power "
+            + "is not limited by human strength. There are "
+            + "situations that require wisdom, strength and "
+            + "help beyond what we can provide for ourselves.\n\n"
+            + "This is why we must learn to depend on God "
+            + "rather than making our natural ability "
+            + "the final measure of what is possible.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: Zechariah 4:6; Luke 18:27",
+            15, DARK_TEXT, false);
+
+    addText("2. To Fulfil God's Purpose for Our Lives",
+            19, PURPLE, true);
+
+    addText(
+            "God's purpose for our lives requires more than "
+            + "personal ambition. We need His guidance and "
+            + "strength to fulfil the assignments He has "
+            + "given us.\n\n"
+            + "Operating in the supernatural helps us recognise "
+            + "that we cannot successfully fulfil God's purpose "
+            + "while ignoring our dependence on Him.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: John 15:5",
+            15, DARK_TEXT, false);
+
+    addText("3. To Receive Divine Guidance",
+            19, PURPLE, true);
+
+    addText(
+            "We do not always know the right steps to take "
+            + "or understand everything that lies ahead. "
+            + "We therefore need God's wisdom and direction.\n\n"
+            + "As we maintain fellowship with Him through "
+            + "prayer and His Word, we learn to seek His "
+            + "direction instead of depending only on "
+            + "our own understanding.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: Proverbs 3:5–6; Isaiah 30:21",
+            15, DARK_TEXT, false);
+
+    addText("4. To Stand Firm in Difficult Times",
+            19, PURPLE, true);
+
+    addText(
+            "The Christian life comes with challenges, "
+            + "but we are not expected to face them "
+            + "without God's help.\n\n"
+            + "Operating in the supernatural teaches us "
+            + "to remain strong in faith, depend on God's "
+            + "promises and continue trusting Him even "
+            + "when circumstances are difficult.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: Ephesians 6:10; 2 Corinthians 12:9",
+            15, DARK_TEXT, false);
+
+    addText("5. To Be Effective Witnesses for Christ",
+            19, PURPLE, true);
+
+    addText(
+            "Our Christian lives should point people towards "
+            + "Jesus. God empowers His children to serve, "
+            + "show His love and bear witness to the truth "
+            + "of the Gospel.\n\n"
+            + "We need His help to live out our faith "
+            + "and represent Christ faithfully wherever "
+            + "we find ourselves.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scriptures: Acts 1:8; Matthew 5:14–16",
+            15, DARK_TEXT, false);
+
+    addText("How This Should Reflect in My Life",
+            19, PURPLE, true);
+
+    addText(
+            "• Depend on God when facing situations beyond "
+            + "your ability.\n"
+            + "• Seek His direction before making important "
+            + "decisions.\n"
+            + "• Build your faith through His Word.\n"
+            + "• Remain prayerful during difficult seasons.\n"
+            + "• Allow your life to reflect the character "
+            + "and teachings of Christ.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Am I depending on God in my daily decisions, "
+            + "challenges and responsibilities, or am I "
+            + "trying to handle everything through "
+            + "my own strength?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Father, help me to depend on Your power "
+            + "and wisdom in every area of my life. "
+            + "Teach me to trust You beyond my limitations, "
+            + "follow Your direction and fulfil Your purpose "
+            + "for my life. Let my life bring glory to You. Amen.",
+            16, DARK_TEXT, false
+    );
+        }
+    private void showMarchWeekFour() {
+    addText("How to Walk in the Supernatural",
+            22, PURPLE, true);
+
+    addText("Main Scripture: John 3:3–8",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "Understanding the supernatural and recognising "
+            + "the spiritual atmospheres that grant access to it "
+            + "are important, but we must also understand how "
+            + "to walk in this dimension of life.\n\n"
+            + "Walking in the supernatural involves living "
+            + "in a relationship with God, depending on His Word "
+            + "and allowing our faith to influence our words "
+            + "and actions.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. Be Born Again and Speak in Tongues",
+            19, PURPLE, true);
+
+    addText(
+            "The foundation of walking in the supernatural "
+            + "begins with the new birth. Jesus explained in "
+            + "John 3:3–8 that a person must be born again "
+            + "to enter the kingdom of God.\n\n"
+            + "Being born again introduces us to a new life "
+            + "in Christ. Speaking in tongues is also identified "
+            + "in this teaching as part of the believer's "
+            + "spiritual life and expression of faith.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: John 3:3–8",
+            15, DARK_TEXT, false);
+
+    addText("2. Read, Study and Believe the Word of God",
+            19, PURPLE, true);
+
+    addText(
+            "To walk in the supernatural, we must give "
+            + "ourselves to the Word of God. It is not enough "
+            + "to own a Bible or occasionally read a passage. "
+            + "We must study it, understand it and believe "
+            + "what it teaches.\n\n"
+            + "The Word of God builds our faith and provides "
+            + "the foundation for our confidence in His promises. "
+            + "The more we understand His Word, the better "
+            + "equipped we become to live according to it.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: 2 Timothy 2:15",
+            15, DARK_TEXT, false);
+
+    addText("3. Act and Say What the Word of God Says",
+            19, PURPLE, true);
+
+    addText(
+            "Walking in the supernatural requires agreement "
+            + "with God's Word in both speech and conduct. "
+            + "We should not only believe the Word in our hearts "
+            + "but also allow it to guide the way we speak "
+            + "and behave.\n\n"
+            + "When our actions agree with what we believe, "
+            + "our faith becomes visible in our daily lives. "
+            + "We must therefore learn to respond to situations "
+            + "with confidence in God's truth rather than "
+            + "allowing fear and discouragement to control us.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Faith Talk",
+            19, PURPLE, true);
+
+    addText(
+            "• I will always put the Word in my mouth.\n"
+            + "• Say daily: God bless you.",
+            16, DARK_TEXT, false
+    );
+
+    addText("4. Maintain a Lifestyle of Faith",
+            19, PURPLE, true);
+
+    addText(
+            "Faith should not be something we practise only "
+            + "when we attend church or face difficult situations. "
+            + "It should become part of our daily walk with God.\n\n"
+            + "As we continue to read, believe, speak and act "
+            + "according to God's Word, we develop consistency "
+            + "in our walk of faith.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Practical Application",
+            19, PURPLE, true);
+
+    addText(
+            "• Maintain your relationship with Jesus Christ.\n"
+            + "• Give time to reading and studying Scripture.\n"
+            + "• Believe God's Word and put it into practice.\n"
+            + "• Be intentional about the words you speak.\n"
+            + "• Let your daily conduct reflect your faith.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Am I allowing God's Word to influence my thoughts, "
+            + "speech and actions, or do I only listen to it "
+            + "without practising it?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Father, help me to walk in the life You have "
+            + "called me to live through Christ. Give me "
+            + "a hunger for Your Word, strengthen my faith "
+            + "and teach me to speak and act according "
+            + "to Your truth. Let my life continually reflect "
+            + "Your power and glory. Amen.",
+            16, DARK_TEXT, false
+    );
+    }
 
     private void addTeachingPoint(
             String heading,
