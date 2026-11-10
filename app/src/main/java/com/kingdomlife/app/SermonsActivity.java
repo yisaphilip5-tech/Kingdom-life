@@ -4796,6 +4796,874 @@ public class SermonsActivity extends Activity {
             16, Color.BLACK, false
     );
     }
+    private void showAugustWeekOne() {
+
+    addText("Understanding Success: What Is Success?",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+
+    addText(
+            "Success is a goal many people desire, but not everyone understands " +
+            "what true success means. Some people measure success by wealth, " +
+            "positions, popularity, academic achievements or material possessions. " +
+            "Although these things may be part of a person's achievements, they do " +
+            "not by themselves define a truly successful life. From a Christian " +
+            "perspective, success involves making meaningful progress, fulfilling " +
+            "God's purpose and living according to His principles. True success " +
+            "should not only be seen in what we acquire but also in the kind of " +
+            "person we become and the positive impact our lives make.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Understanding the Meaning of Success",
+            18, Color.BLACK, true);
+
+    addText(
+            "Success can be understood as the accomplishment of worthwhile goals " +
+            "and the steady progress towards becoming what we are meant to be. " +
+            "It involves growth, development, achievement and the responsible use " +
+            "of the abilities and opportunities available to us. Success is not " +
+            "always achieved at once. It often involves learning, making corrections, " +
+            "overcoming challenges and remaining committed to the right direction.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "As Christians, we must understand that success should be measured " +
+            "in the light of God's Word. We should not pursue achievements at the " +
+            "expense of our faith, character or relationship with God.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Joshua 1:8; Psalm 1:1–3",
+            15, Color.DKGRAY, false);
+
+    addText("2. Success Is More Than Material Achievement",
+            18, Color.BLACK, true);
+
+    addText(
+            "Material possessions, financial stability, education and professional " +
+            "achievements can be valuable, but they are not the complete measure " +
+            "of success. A person may possess many things and still lack peace, " +
+            "good character, meaningful relationships or spiritual growth. " +
+            "God wants us to understand that our lives are more valuable than " +
+            "the things we possess.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "We should therefore avoid comparing our lives with others or believing " +
+            "that our worth is determined by how much we own. Instead, we should " +
+            "pursue meaningful progress while maintaining the values that matter " +
+            "to God.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: Luke 12:15; Mark 8:36",
+            15, Color.DKGRAY, false);
+
+    addText("3. Success Involves Growth and Continuous Progress",
+            18, Color.BLACK, true);
+
+    addText(
+            "A successful life requires a willingness to grow. We should not become " +
+            "comfortable with remaining at the same level when there is room to " +
+            "develop our knowledge, abilities, character and understanding. " +
+            "Growth requires learning, discipline, patience and consistent effort. " +
+            "There may be challenges and setbacks along the way, but these should " +
+            "not automatically make us abandon worthwhile goals.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Every day presents opportunities to improve. We can grow spiritually " +
+            "through God's Word, develop our abilities through learning, become " +
+            "more responsible in our duties and improve how we relate with others. " +
+            "These small and consistent steps contribute to meaningful progress.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: Proverbs 4:18; Philippians 3:13–14",
+            15, Color.DKGRAY, false);
+
+    addText("4. Success Must Agree with God's Purpose",
+            18, Color.BLACK, true);
+
+    addText(
+            "Not every achievement represents success in God's eyes. The way we " +
+            "pursue our goals matters just as much as the goals themselves. " +
+            "We should not gain recognition through dishonesty, take advantage " +
+            "of others or abandon our convictions simply to get ahead. " +
+            "Godly success involves pursuing worthwhile goals through principles " +
+            "that honour God.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "God has given each person abilities, opportunities and responsibilities. " +
+            "We should seek to discover how to use these gifts meaningfully rather " +
+            "than living only for personal recognition. When our ambitions are " +
+            "guided by God's principles, our achievements can become a blessing " +
+            "to others as well.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: Proverbs 16:3; Colossians 3:23–24",
+            15, Color.DKGRAY, false);
+
+    addText("5. Good Success Versus Bad Success",
+            18, Color.BLACK, true);
+
+    addText(
+            "It is important to understand that there is a difference between " +
+            "achieving something and achieving it in a way that pleases God. " +
+            "A person may become wealthy, influential or popular through methods " +
+            "that involve dishonesty, exploitation or disobedience. Such achievements " +
+            "may appear successful outwardly, but they do not reflect godly success.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Good success is pursued with integrity, wisdom, diligence and respect " +
+            "for God's principles. It does not require us to sacrifice our faith " +
+            "or character to obtain results. We should desire achievements that " +
+            "we can pursue with a clear conscience and use responsibly.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: Proverbs 10:9; Proverbs 28:6; Mark 8:36",
+            15, Color.DKGRAY, false);
+
+    addText("6. Why Should We Pursue a Successful Life?",
+            18, Color.BLACK, true);
+
+    addText(
+            "We should desire success because our lives have purpose and our " +
+            "abilities should not be wasted. God expects us to be responsible " +
+            "with what He has entrusted to us. Developing our gifts, fulfilling " +
+            "our responsibilities and making meaningful contributions can help " +
+            "us serve others and honour God.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Success also enables us to become more useful in our families, " +
+            "communities and places of responsibility. We should therefore pursue " +
+            "growth not merely to impress people but to become responsible individuals " +
+            "who use their opportunities and resources wisely.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: Matthew 5:16; 1 Peter 4:10",
+            15, Color.DKGRAY, false);
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+
+    addText(
+            "True success is more than wealth, fame, position or material achievement. " +
+            "It involves meaningful growth, fulfilling worthwhile goals and living " +
+            "according to God's principles. We must pursue progress without sacrificing " +
+            "our faith or character. The goal is not simply to achieve something, " +
+            "but to become responsible people whose lives honour God and positively " +
+            "affect others.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+
+    addText(
+            "How do I currently measure success? Am I pursuing achievements that " +
+            "agree with God's principles? What areas of my life need improvement, " +
+            "and how can I use my abilities and opportunities more responsibly?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You for the abilities, opportunities and purpose " +
+            "You have given me. Help me understand true success and guide me as I " +
+            "pursue meaningful goals. Teach me to grow in wisdom, discipline and " +
+            "character. Keep me from pursuing achievements that will take me away " +
+            "from Your principles. Help me use my gifts responsibly and let my life " +
+            "bring glory to Your name. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showAugustWeekTwo() {
+
+    addText("Types of Success", 22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+
+    addText(
+            "Success is not limited to one area of life. A person may make progress " +
+            "financially but neglect their spiritual life, or achieve academic and " +
+            "professional goals while failing to care for their physical well-being. " +
+            "A balanced understanding of success recognises the importance of " +
+            "different areas of our lives. In this teaching, we will consider three " +
+            "important areas: spiritual success, physical success and financial success. " +
+            "Each requires attention, discipline and responsible choices.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Spiritual Success", 18, Color.BLACK, true);
+
+    addText(
+            "Spiritual success begins with having a meaningful relationship with God " +
+            "and growing in our faith. It involves becoming more committed to God, " +
+            "developing a consistent prayer life and maintaining an attitude of " +
+            "gratitude. Spiritual success is not measured simply by how often we " +
+            "attend religious activities, but also by the growth of our faith, " +
+            "obedience to God's Word and the character we demonstrate in everyday life.",
+            16, Color.BLACK, false
+    );
+
+    addText("A. Commitment to God", 17, Color.BLACK, true);
+
+    addText(
+            "Commitment means making God an important part of our daily lives. " +
+            "It involves choosing to follow His principles, remain faithful to Him " +
+            "and continue growing spiritually. Our relationship with God should " +
+            "not depend only on how convenient life is. We should remain devoted " +
+            "to Him in both favourable and difficult seasons.",
+            16, Color.BLACK, false
+    );
+
+    addText("B. Prayer", 17, Color.BLACK, true);
+
+    addText(
+            "Prayer is an important part of spiritual growth. Through prayer, " +
+            "we communicate with God, express our gratitude, seek His direction " +
+            "and depend on His strength. A consistent prayer life helps us remain " +
+            "conscious of God and strengthens our relationship with Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("C. Gratitude", 17, Color.BLACK, true);
+
+    addText(
+            "A grateful person recognises God's goodness and appreciates what " +
+            "He has provided. Gratitude prevents us from becoming controlled by " +
+            "constant comparison or dissatisfaction. Even while pursuing greater " +
+            "goals, we should learn to appreciate our present blessings and give " +
+            "God thanks in every situation.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Practical Application: Set aside time for prayer, study God's Word, " +
+            "remain committed to His principles and develop the habit of thanking " +
+            "Him daily.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: Matthew 6:33; 1 Thessalonians 5:17–18; Colossians 2:6–7",
+            15, Color.DKGRAY, false);
+
+    addText("2. Physical Success", 18, Color.BLACK, true);
+
+    addText(
+            "Physical success involves taking responsible care of the body and " +
+            "maintaining habits that support health and well-being. Our bodies " +
+            "are important, and we need to care for them so that we can carry out " +
+            "our daily responsibilities. Physical well-being does not mean that " +
+            "a person will never experience illness or difficulty. It means " +
+            "recognising the importance of healthy habits and seeking appropriate " +
+            "care when necessary.",
+            16, Color.BLACK, false
+    );
+
+    addText("A. Exercise Regularly", 17, Color.BLACK, true);
+
+    addText(
+            "Regular physical activity helps the body remain active and supports " +
+            "general health. Exercise can improve strength, movement and endurance. " +
+            "It does not have to be complicated; suitable activities such as walking, " +
+            "stretching and other enjoyable forms of exercise can become part of " +
+            "a healthy routine.",
+            16, Color.BLACK, false
+    );
+
+    addText("B. Avoid Substance Abuse", 17, Color.BLACK, true);
+
+    addText(
+            "Avoiding the misuse of harmful substances is an important part of " +
+            "caring for the body. We should make responsible choices and avoid " +
+            "habits that can damage our health, judgment and ability to fulfil " +
+            "our responsibilities.",
+            16, Color.BLACK, false
+    );
+
+    addText("C. Get Adequate Sleep", 17, Color.BLACK, true);
+
+    addText(
+            "Rest is necessary for the body and mind. Adequate sleep supports " +
+            "concentration, learning, recovery and general well-being. We should " +
+            "develop a reasonable sleeping routine rather than constantly " +
+            "overworking ourselves or neglecting rest.",
+            16, Color.BLACK, false
+    );
+
+    addText("D. Stay Hydrated", 17, Color.BLACK, true);
+
+    addText(
+            "Drinking enough water is another simple but important way to care " +
+            "for the body. Water supports normal body functions, and we should " +
+            "make it a habit to drink water regularly throughout the day.",
+            16, Color.BLACK, false
+    );
+
+    addText("E. Eat and Drink Responsibly", 17, Color.BLACK, true);
+
+    addText(
+            "What we eat and drink contributes to our general well-being. We " +
+            "should make balanced food choices, maintain healthy eating habits " +
+            "and avoid careless patterns that may negatively affect our health. " +
+            "Caring for the body requires consistency rather than occasional effort.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Practical Application: Develop healthy routines that include suitable " +
+            "physical activity, adequate rest, drinking enough water, balanced meals " +
+            "and avoiding harmful substances. Seek appropriate medical advice when needed.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: 1 Corinthians 6:19–20; 1 Timothy 4:8",
+            15, Color.DKGRAY, false);
+
+    addText("3. Financial Success", 18, Color.BLACK, true);
+
+    addText(
+            "Financial success involves learning to manage resources responsibly, " +
+            "developing useful abilities and making thoughtful financial decisions. " +
+            "It is not simply about how much money a person possesses. It also " +
+            "involves understanding how to earn, save, budget, plan and use money " +
+            "wisely. Financial responsibility requires discipline, patience and " +
+            "a willingness to keep learning.",
+            16, Color.BLACK, false
+    );
+
+    addText("A. Invest in Yourself", 17, Color.BLACK, true);
+
+    addText(
+            "One valuable investment is the development of your own knowledge " +
+            "and abilities. Learning, education and personal development can " +
+            "prepare you for opportunities and responsibilities. We should not " +
+            "be satisfied with what we already know when there is room to improve.",
+            16, Color.BLACK, false
+    );
+
+    addText("B. Develop Useful Skills", 17, Color.BLACK, true);
+
+    addText(
+            "Skills help us solve problems, provide services and contribute " +
+            "meaningfully to society. We should identify areas where we have " +
+            "interest or ability and work towards improving them. Practical " +
+            "skills, professional knowledge and creativity can open opportunities " +
+            "for responsible work and productivity.",
+            16, Color.BLACK, false
+    );
+
+    addText("C. Seek Financial Mentorship", 17, Color.BLACK, true);
+
+    addText(
+            "Learning from people with sound financial experience can help us " +
+            "understand money management and avoid preventable mistakes. Good " +
+            "mentorship should encourage responsible planning, patience and " +
+            "careful decision-making. We should also examine advice wisely rather " +
+            "than following every financial suggestion without understanding it.",
+            16, Color.BLACK, false
+    );
+
+    addText("D. Budget and Manage Spending", 17, Color.BLACK, true);
+
+    addText(
+            "Budgeting helps us understand what comes in, what goes out and " +
+            "how available resources should be allocated. Without a plan, it " +
+            "is easy to spend carelessly and neglect important needs. Learning " +
+            "to distinguish between needs and wants helps us become more " +
+            "responsible with money.",
+            16, Color.BLACK, false
+    );
+
+    addText("E. Avoid Unnecessary Debt", 17, Color.BLACK, true);
+
+    addText(
+            "Financial responsibility includes understanding the consequences " +
+            "of borrowing. We should avoid unnecessary borrowing and be careful " +
+            "about making financial commitments we cannot reasonably meet. " +
+            "Before taking on an obligation, we should understand its terms " +
+            "and consider how repayment will affect our responsibilities.",
+            16, Color.BLACK, false
+    );
+
+    addText("F. Understand That God Gives the Ability to Get Wealth",
+            17, Color.BLACK, true);
+
+    addText(
+            "Our abilities, opportunities and resources should never make us " +
+            "forget God. Scripture reminds us that it is God who gives us the " +
+            "ability to acquire wealth. We should therefore remain humble, " +
+            "grateful and responsible with whatever comes into our hands. " +
+            "Financial progress should never become an excuse for pride, greed " +
+            "or dishonesty.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Practical Application: Continue developing useful skills, learn " +
+            "to plan your spending, seek sound guidance, avoid unnecessary " +
+            "financial commitments and handle resources with integrity.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scriptures: Deuteronomy 8:18; Proverbs 21:5; Luke 14:28",
+            15, Color.DKGRAY, false);
+
+    addText("Bringing the Three Areas Together",
+            18, Color.BLACK, true);
+
+    addText(
+            "Spiritual, physical and financial success should not be treated " +
+            "as unrelated parts of life. They influence one another. Spiritual " +
+            "growth helps us develop values and discipline. Physical well-being " +
+            "supports our ability to carry out daily responsibilities. Financial " +
+            "responsibility helps us manage resources and meet legitimate needs. " +
+            "We should therefore give attention to these areas while remembering " +
+            "that our relationship with God and our character must remain central.",
+            16, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+
+    addText(
+            "Success has different dimensions. Spiritual success involves growing " +
+            "in our relationship with God through commitment, prayer and gratitude. " +
+            "Physical success involves caring responsibly for our bodies, while " +
+            "financial success involves developing abilities and managing resources " +
+            "wisely. A balanced life requires us to give attention to these areas " +
+            "without allowing any of them to replace our commitment to God.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+
+    addText(
+            "Which of these three areas am I giving the most attention to? " +
+            "Am I neglecting my spiritual growth, physical well-being or " +
+            "financial responsibilities? What practical step can I take " +
+            "to become more responsible in each area?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You for every area of life You have entrusted " +
+            "to me. Help me grow spiritually, care responsibly for my body and " +
+            "develop wisdom in managing my resources. Teach me commitment, " +
+            "discipline, gratitude and responsibility. Help me use my abilities " +
+            "and opportunities wisely, and let every area of my life honour You. " +
+            "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+            }
+    private void showAugustWeekThree() {
+
+    addText("Wisdom That Empowers for Success", 22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+
+    addText(
+            "Success requires more than desire, ambition or hard work. We also need " +
+            "wisdom to know what to do, how to do it and when to take action. " +
+            "A person may have opportunities, abilities and resources but still " +
+            "make decisions that prevent progress. Wisdom helps us use what we have " +
+            "responsibly and make choices that lead towards worthwhile goals. " +
+            "For a Christian, true wisdom comes from God and must be guided by His Word. " +
+            "It empowers us to pursue success while maintaining godly character.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Understanding the Place of Wisdom in Success",
+            18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is the ability to apply knowledge and understanding correctly. " +
+            "It involves knowing what to do and making the right decisions at the " +
+            "right time. Knowledge may tell us what is available, but wisdom helps " +
+            "us determine how to use it properly. This is why wisdom is important " +
+            "in every area of life. Whether we are pursuing spiritual growth, " +
+            "developing our abilities or managing resources, we need wisdom to " +
+            "make responsible choices.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Proverbs 4:7; James 1:5",
+            15, Color.DKGRAY, false
+    );
+
+    addText("2. Wisdom for Making the Right Decisions",
+            18, Color.BLACK, true
+    );
+
+    addText(
+            "Our decisions influence the direction of our lives. Some choices may " +
+            "produce immediate satisfaction but create difficulties later, while " +
+            "other choices may require patience and discipline but lead to better " +
+            "outcomes. Wisdom helps us look beyond the immediate benefits of a " +
+            "decision and consider its possible consequences. It also teaches us " +
+            "not to make important decisions carelessly or simply because others " +
+            "are doing the same thing.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Before making important decisions, seek God's direction, " +
+            "consider the principles of His Word and think about the possible " +
+            "consequences. Do not allow pressure, excitement or temporary emotions " +
+            "to control your choices.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Proverbs 3:5–6; Proverbs 14:12",
+            15, Color.DKGRAY, false
+    );
+
+    addText("3. Wisdom for Managing Opportunities and Resources",
+            18, Color.BLACK, true
+    );
+
+    addText(
+            "Opportunities and resources are valuable, but they must be managed " +
+            "properly. Wisdom helps us recognise opportunities, prepare for them " +
+            "and make good use of what is available. It also teaches us not to " +
+            "waste our time, abilities, finances or other resources. Having " +
+            "something is not enough; we must learn how to use it responsibly.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Identify the abilities and opportunities available to " +
+            "you and develop them. Plan your activities, manage your time carefully " +
+            "and avoid wasting resources. When an opportunity comes, consider " +
+            "whether it is worthwhile and how you can handle it responsibly.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Luke 16:10; Proverbs 21:5",
+            15, Color.DKGRAY, false
+    );
+
+    addText("4. Wisdom for Solving Problems",
+            18, Color.BLACK, true
+    );
+
+    addText(
+            "Challenges are part of life, and success does not mean that we will " +
+            "never encounter difficulties. Wisdom helps us respond to problems " +
+            "with understanding instead of panic or careless reactions. It enables " +
+            "us to examine situations, identify possible solutions and learn from " +
+            "experience. Rather than giving up immediately when something becomes " +
+            "difficult, a wise person seeks understanding and considers the best " +
+            "way forward.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: When faced with a challenge, take time to understand " +
+            "the problem. Seek godly counsel where necessary, consider available " +
+            "solutions and take responsible steps. Do not allow frustration to " +
+            "make you abandon a worthwhile goal.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Proverbs 24:3–6; Ecclesiastes 10:10",
+            15, Color.DKGRAY, false
+    );
+
+    addText("5. Wisdom for Building Relationships",
+            18, Color.BLACK, true
+    );
+
+    addText(
+            "Our relationships can influence our growth and direction in life. " +
+            "Wisdom teaches us how to communicate respectfully, choose good " +
+            "companions, listen to others and handle disagreements properly. " +
+            "It also helps us recognise the importance of godly counsel and " +
+            "surrounding ourselves with people who encourage good values. " +
+            "A person who desires success should not neglect the way they treat others.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Practise honesty, patience, humility and respect in " +
+            "your relationships. Be willing to listen and learn. Choose companions " +
+            "who encourage positive growth, and avoid relationships that continually " +
+            "lead you towards destructive choices.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Proverbs 13:20; Proverbs 15:22; Ephesians 4:29",
+            15, Color.DKGRAY, false
+    );
+
+    addText("6. Wisdom for Avoiding Destructive Choices",
+            18, Color.BLACK, true
+    );
+
+    addText(
+            "Wisdom does not only help us know what to do; it also helps us recognise " +
+            "what we should avoid. Some attitudes and habits can gradually damage " +
+            "our progress. Dishonesty, laziness, pride, greed and uncontrolled " +
+            "behaviour can lead to consequences that affect our future. A wise " +
+            "person understands that not every opportunity should be accepted " +
+            "and not every desire should be followed.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Examine your habits and decisions regularly. Avoid " +
+            "shortcuts that require dishonesty or compromise your values. Develop " +
+            "self-control, remain teachable and be willing to walk away from " +
+            "choices that can harm your future.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Proverbs 22:3; Proverbs 10:9; 1 Corinthians 10:23",
+            15, Color.DKGRAY, false
+    );
+
+    addText("7. Applying God's Wisdom in Everyday Responsibilities",
+            18, Color.BLACK, true
+    );
+
+    addText(
+            "Wisdom must be demonstrated through our daily actions. It should " +
+            "influence how we study, work, manage our responsibilities, use our " +
+            "abilities and relate with people. We should not separate our spiritual " +
+            "lives from our everyday decisions. God's wisdom should be visible in " +
+            "our diligence, honesty, discipline and willingness to do what is right.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Whatever responsibility is entrusted to you, handle it " +
+            "with diligence and integrity. Whether you are studying, working, " +
+            "serving others or developing a skill, give it proper attention. " +
+            "Do not wait for a major opportunity before practising responsibility " +
+            "in the little things.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Colossians 3:23–24; Luke 16:10",
+            15, Color.DKGRAY, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is an important foundation for lasting success. It helps us " +
+            "make sound decisions, manage opportunities and resources, solve " +
+            "problems, build healthy relationships and avoid destructive choices. " +
+            "Godly wisdom must not remain something we only hear about; it must " +
+            "be applied in our daily lives. As we seek wisdom from God and practise " +
+            "His principles, we become better prepared to fulfil our responsibilities " +
+            "and pursue worthwhile goals.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+
+    addText(
+            "Am I seeking God's wisdom before making important decisions? " +
+            "How do I manage the opportunities and resources available to me? " +
+            "Are my habits, relationships and daily choices helping me move " +
+            "towards the kind of success that honours God?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You because You are the source of true wisdom. " +
+            "Give me wisdom and understanding to make the right decisions. " +
+            "Teach me to manage my opportunities and resources responsibly, " +
+            "solve problems with understanding and build relationships that " +
+            "encourage godly growth. Help me avoid destructive choices and " +
+            "remain diligent in my responsibilities. Let Your wisdom guide " +
+            "my thoughts, decisions and actions as I pursue success. " +
+            "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+        }
+    private void showAugustWeekFour() {
+
+    addText("Steps to Living a Successful Life", 22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Living a successful life requires more than having dreams or setting goals. " +
+            "It involves making daily choices that agree with God's Word and developing " +
+            "the character, discipline and commitment needed to fulfil your purpose. " +
+            "Success is built through a consistent walk with God and faithful attention " +
+            "to the responsibilities He has placed before you.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Build a Genuine Relationship with God", 18, Color.BLACK, true);
+    addText(
+            "The foundation of a successful Christian life is a genuine relationship " +
+            "with God. Before pursuing achievements, develop a personal walk with Him. " +
+            "Know Him through His Word, trust Him in your decisions and allow your life " +
+            "to reflect His character. When your relationship with God comes first, " +
+            "your priorities and direction become better aligned with His purpose.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Matthew 6:33; John 15:5.", 15, Color.DKGRAY, false);
+
+    addText("2. Make God's Word the Foundation of Your Life", 18, Color.BLACK, true);
+    addText(
+            "God's Word provides direction, correction and wisdom for daily living. " +
+            "Do not merely read the Bible; study it, understand it and put it into " +
+            "practice. Let the Word guide your choices, attitudes, relationships and " +
+            "plans. A life built on God's instructions has a firm foundation even when " +
+            "challenges arise.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Joshua 1:8; Psalm 119:105; James 1:22.", 15, Color.DKGRAY, false);
+
+    addText("3. Develop a Consistent Prayer Life", 18, Color.BLACK, true);
+    addText(
+            "Prayer keeps your relationship with God active and gives you an opportunity " +
+            "to seek His wisdom, express your gratitude and commit your plans to Him. " +
+            "Make prayer a regular part of your daily routine rather than something you " +
+            "only remember when difficulties arise. Through prayer, learn to depend on " +
+            "God instead of relying entirely on your own understanding.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: 1 Thessalonians 5:17; Philippians 4:6–7; Proverbs 3:5–6.",
+            15, Color.DKGRAY, false);
+
+    addText("4. Follow the Guidance of the Holy Spirit", 18, Color.BLACK, true);
+    addText(
+            "A successful Christian life requires sensitivity to the leading of the " +
+            "Holy Spirit. Do not make every decision based only on pressure, emotions " +
+            "or what other people are doing. Seek God's direction and allow the Holy " +
+            "Spirit to guide you through His truth. His guidance helps you make choices " +
+            "that agree with God's purpose.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 16:13; Romans 8:14.", 15, Color.DKGRAY, false);
+
+    addText("5. Be Diligent and Committed to Your Responsibilities", 18, Color.BLACK, true);
+    addText(
+            "Success requires diligence. Whatever responsibility you have been given, " +
+            "approach it with seriousness and commitment. Do not depend only on motivation " +
+            "or wait until you feel ready before taking action. Be faithful in your " +
+            "studies, work, service and daily duties. Small responsibilities handled " +
+            "faithfully can prepare you for greater opportunities.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Proverbs 22:29; Colossians 3:23–24.", 15, Color.DKGRAY, false);
+
+    addText("6. Develop Useful Skills and Keep Learning", 18, Color.BLACK, true);
+    addText(
+            "God has given people abilities and opportunities to develop. Do not remain " +
+            "satisfied with what you already know. Identify the skills you need for your " +
+            "purpose and make deliberate efforts to improve them. Learn from people with " +
+            "experience, seek good instruction and remain willing to grow. Developing " +
+            "your abilities helps you become more useful and prepared for opportunities.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Proverbs 18:15; 2 Timothy 2:15.", 15, Color.DKGRAY, false);
+
+    addText("7. Practise Discipline, Patience and Consistency", 18, Color.BLACK, true);
+    addText(
+            "A successful life is not built in one day. It takes discipline to do what " +
+            "is right even when it is difficult, patience to continue while waiting for " +
+            "results and consistency to keep making progress. Avoid giving up simply " +
+            "because results are not immediate. Develop good habits and remain committed " +
+            "to the right path.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Hebrews 12:1; Galatians 6:9; Proverbs 13:4.",
+            15, Color.DKGRAY, false);
+
+    addText("8. Use Opportunities and Resources Wisely", 18, Color.BLACK, true);
+    addText(
+            "Time, abilities, knowledge, relationships and material resources should " +
+            "be handled responsibly. Do not waste the opportunities available to you. " +
+            "Plan carefully, manage what you have and make thoughtful decisions about " +
+            "how you use your resources. Faithfulness in handling what you have today " +
+            "can prepare you for greater responsibilities tomorrow.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Luke 16:10; Ephesians 5:15–16.", 15, Color.DKGRAY, false);
+
+    addText("9. Maintain Godly Character While Pursuing Your Goals", 18, Color.BLACK, true);
+    addText(
+            "Success should never come at the expense of your character. Do not sacrifice " +
+            "honesty, purity, humility or obedience to God just to achieve something. " +
+            "Your conduct matters just as much as your accomplishments. Let your life " +
+            "demonstrate integrity and kindness so that your achievements bring honour " +
+            "to God and become a positive influence on others.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Proverbs 10:9; Matthew 5:16; 1 Timothy 4:12.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Set aside time daily for prayer and the study of God's Word.\n" +
+            "2. Identify one responsibility you need to handle more diligently.\n" +
+            "3. Choose a useful skill you can begin developing.\n" +
+            "4. Make a simple plan for using your time and resources wisely.\n" +
+            "5. Examine your decisions and ensure that your goals agree with godly character.\n" +
+            "6. Remain patient and consistent as you work towards meaningful goals.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "A successful life is built through a genuine relationship with God, " +
+            "obedience to His Word, prayer, the guidance of the Holy Spirit, diligence, " +
+            "continuous learning, discipline and godly character. Success is not merely " +
+            "about what you achieve; it is also about who you become and how faithfully " +
+            "you fulfil your God-given responsibilities.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Which of these steps am I already practising, and which ones do I need " +
+            "to improve? What practical change can I begin making today to live a " +
+            "more purposeful and successful life?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for giving me the opportunity to live a " +
+            "purposeful and successful life. Help me to grow in my relationship with " +
+            "You, follow Your Word and depend on the guidance of the Holy Spirit. " +
+            "Give me wisdom, discipline, patience and diligence. Help me develop my " +
+            "abilities, use my opportunities wisely and maintain godly character in " +
+            "everything I do. May my life bring glory to Your name. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
 
     private void addTeachingPoint(
             String heading,
