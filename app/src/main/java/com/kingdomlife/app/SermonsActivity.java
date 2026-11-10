@@ -6881,7 +6881,1097 @@ public class SermonsActivity extends Activity {
             16, Color.BLACK, false
     );
         }
+    private void showNovemberWeekOne() {
 
+    addText("What Is Praise?",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Praise is an important part of our relationship with God. " +
+            "It is an expression of appreciation, honour and acknowledgement " +
+            "of who God is and what He has done. When we praise God, we " +
+            "recognise His greatness, goodness, faithfulness and mighty works. " +
+            "Praise should not be limited to moments when everything is going " +
+            "well. We can praise God because He remains worthy of our praise " +
+            "in every season of life.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Understanding the Meaning of Praise",
+            18, Color.BLACK, true);
+    addText(
+            "Praise means expressing admiration, appreciation and honour " +
+            "towards God for His greatness and goodness. It involves declaring " +
+            "His wonderful attributes, acknowledging His mighty works and " +
+            "giving Him the glory He deserves. Praise is more than singing " +
+            "songs; it is an expression of a heart that recognises the greatness " +
+            "of God. Through praise, we openly declare that God is worthy of " +
+            "honour, worship and thanksgiving.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 100:4; Psalm 150:1–2; Psalm 145:3.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Praise Is Appreciating and Acknowledging God",
+            18, Color.BLACK, true);
+    addText(
+            "Praise involves appreciating God for who He is and acknowledging " +
+            "Him for what He has done, what He is doing and what He will yet " +
+            "do. We should never become so occupied with our daily activities " +
+            "that we forget His goodness. David understood the importance of " +
+            "remembering God's benefits. In Psalm 103, he encouraged his soul " +
+            "to bless the Lord and remember all His benefits. In the same way, " +
+            "we should develop a heart that continually recognises God's " +
+            "faithfulness and expresses gratitude to Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 103:1–5; Psalm 34:1; Psalm 107:1–2.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("3. Praise Is a Commandment",
+            18, Color.BLACK, true);
+    addText(
+            "Praising God is not something we should do only when we feel " +
+            "happy or when we receive something from Him. Scripture repeatedly " +
+            "instructs us to praise the Lord. This shows that praise is an " +
+            "important responsibility in the life of every believer. Even " +
+            "when circumstances are difficult, we can still recognise God's " +
+            "goodness and remain grateful to Him. We should therefore make " +
+            "praise a consistent part of our Christian lives.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 150:1–2; Hebrews 13:15; Psalm 34:1.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("4. Why Praise Is Important in Our Walk with God",
+            18, Color.BLACK, true);
+    addText(
+            "Praise helps us keep our attention on God rather than allowing " +
+            "our circumstances to become the centre of our lives. It reminds " +
+            "us of His greatness, strengthens our gratitude and encourages " +
+            "us to remain conscious of His presence. Praise also helps us " +
+            "express our confidence in God even during difficult seasons. " +
+            "Paul and Silas demonstrated this when they prayed and sang praises " +
+            "to God while in prison. Their circumstances did not prevent them " +
+            "from honouring God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 16:25–26; Psalm 34:1; Psalm 92:1–2.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("5. The Role of Praise in Divine Intervention",
+            18, Color.BLACK, true);
+    addText(
+            "Praise is one of the ways believers express their dependence " +
+            "and confidence in God. An important example is the experience " +
+            "of King Jehoshaphat in 2 Chronicles 20. When a great multitude " +
+            "came against Judah, Jehoshaphat sought the Lord and encouraged " +
+            "the people to trust Him. He appointed singers to praise the Lord " +
+            "as the army went out. As they began to sing and praise, the Lord " +
+            "set ambushments against their enemies, and Judah experienced a " +
+            "great victory. This account teaches us that when we face challenges, " +
+            "we should seek God, trust His Word and continue to honour Him. " +
+            "God deserves our praise, and He remains able to intervene in " +
+            "situations beyond our human ability.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: 2 Chronicles 20:17; 2 Chronicles 20:21–22.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("6. Praise and Victory Over the Enemy",
+            18, Color.BLACK, true);
+    addText(
+            "Praise helps us maintain our confidence in God when we face " +
+            "opposition. David provides a powerful example of someone who " +
+            "continually acknowledged and praised the Lord. In Psalm 18, " +
+            "David declared that he would call upon the Lord, who is worthy " +
+            "to be praised. David understood that his strength and deliverance " +
+            "came from God, not merely from his own ability. His life teaches " +
+            "us to look to God for strength and to give Him the glory for " +
+            "every victory. We must remember that praise is not a magical " +
+            "formula for controlling outcomes; our confidence must remain " +
+            "in God and His wisdom.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 18:3; Psalm 34:1; Psalm 149:6–9.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Make time every day to appreciate God for who He is.\n" +
+            "2. Remember His goodness and acknowledge what He has done in your life.\n" +
+            "3. Develop the habit of praising God even when circumstances are difficult.\n" +
+            "4. Read and meditate on biblical accounts of people who praised God.\n" +
+            "5. Follow the examples of David and Jehoshaphat by trusting God in difficult situations.\n" +
+            "6. Use songs, thanksgiving and sincere words to express your praise to God.\n" +
+            "7. Give God the glory rather than taking credit for what He has helped you accomplish.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Praise is the expression of appreciation, honour and acknowledgement " +
+            "of God for who He is and what He has done. It is a commandment and " +
+            "an important part of our walk with God. Through the examples of " +
+            "David and Jehoshaphat, we learn to remain confident in God, " +
+            "acknowledge His greatness and praise Him in every season of life.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Do I appreciate God only when things are going well, or do I " +
+            "recognise His greatness in every season? Am I intentional about " +
+            "remembering His goodness and giving Him the glory? What can I " +
+            "begin doing differently to make praise a consistent part of my life?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for Your goodness, faithfulness and " +
+            "greatness. Forgive me for the times I have forgotten to appreciate " +
+            "You. Give me a grateful heart that continually acknowledges who " +
+            "You are and what You have done. Teach me to praise You in every " +
+            "season, whether things are easy or difficult. Help me to follow " +
+            "the examples of David and Jehoshaphat by trusting You and giving " +
+            "You the glory in all things. May my life continually bring honour " +
+            "to Your name. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showNovemberWeekTwo() {
+
+    addText("Understanding the Power of Praise",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Praise is more than an expression of happiness or a religious " +
+            "activity. It is an important spiritual expression through which " +
+            "we acknowledge God's greatness, honour His name and demonstrate " +
+            "our confidence in Him. Throughout Scripture, we see how people " +
+            "praised God in difficult situations and experienced His intervention. " +
+            "Understanding the power of praise helps us recognise why it should " +
+            "remain an important part of our relationship with God.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Praise Invites Us to Recognise God's Presence",
+            18, Color.BLACK, true);
+    addText(
+            "When we praise God, we turn our attention towards Him and " +
+            "acknowledge His greatness. Praise helps us become conscious of " +
+            "His presence rather than allowing our circumstances to dominate " +
+            "our thoughts. Psalm 22:3 describes God as inhabiting the praises " +
+            "of Israel. This reminds us of the special place praise has in " +
+            "our relationship with Him. We should approach God with reverence, " +
+            "thanksgiving and sincere hearts.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 22:3; Psalm 100:4; Psalm 95:1–3.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("2. Praise Is a Key to Divine Intervention",
+            18, Color.BLACK, true);
+    addText(
+            "One of the remarkable examples of praise in Scripture is the " +
+            "experience of King Jehoshaphat. When Judah faced a great army, " +
+            "Jehoshaphat sought the Lord and encouraged the people to trust " +
+            "Him. Singers were appointed to go before the army, praising God " +
+            "for His mercy. As they began to sing and praise, the Lord caused " +
+            "confusion among their enemies, and Judah experienced victory. " +
+            "This account teaches us to seek God and remain confident in Him " +
+            "when we face situations beyond our ability.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: 2 Chronicles 20:17–22.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("3. Praise Helps Us Overcome Difficult Situations",
+            18, Color.BLACK, true);
+    addText(
+            "Praise does not mean that difficulties will never occur. Rather, " +
+            "it teaches us to keep our confidence in God even when situations " +
+            "are challenging. Paul and Silas demonstrated this when they were " +
+            "imprisoned. Instead of allowing their situation to stop them from " +
+            "honouring God, they prayed and sang praises at midnight. Suddenly, " +
+            "there was a great earthquake, the prison foundations were shaken " +
+            "and the prison doors were opened. Their example teaches us that " +
+            "we can continue to praise God even in difficult seasons.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 16:22–26.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("4. Praise Helps Us Remember God's Goodness and Faithfulness",
+            18, Color.BLACK, true);
+    addText(
+            "Praise helps us remember that God has been faithful in the past " +
+            "and remains worthy of our trust. David regularly encouraged his " +
+            "soul to bless the Lord and remember His benefits. When we remember " +
+            "God's goodness, forgiveness, mercy and provision, we develop a " +
+            "grateful heart. Instead of concentrating only on what we lack, " +
+            "we learn to recognise the many reasons we have to give God thanks.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 103:1–5; Psalm 34:1; Psalm 136:1.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("5. Praise Gives God the Glory for Our Victories",
+            18, Color.BLACK, true);
+    addText(
+            "Whenever we experience success, deliverance or an answer to " +
+            "prayer, we should remember to give God the glory. David understood " +
+            "that his strength and victories came from the Lord. In Psalm 18, " +
+            "he declared that he would call upon the Lord, who is worthy to " +
+            "be praised. Praise keeps us from becoming proud or taking all " +
+            "the credit for what God has helped us accomplish. It reminds us " +
+            "that every good gift and every true victory should lead us to honour Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 18:3; Psalm 115:1; James 1:17.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("6. Praise Strengthens Our Confidence in God",
+            18, Color.BLACK, true);
+    addText(
+            "When we praise God, we declare that He is greater than the " +
+            "challenges we face. This does not mean that we ignore our problems " +
+            "or pretend that they do not exist. It means that we refuse to " +
+            "measure God's ability by the size of our difficulties. Praise " +
+            "helps us focus on God's character, His power and His faithfulness. " +
+            "As we remember who He is, we are encouraged to keep trusting Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Habakkuk 3:17–19; Isaiah 26:3–4; Psalm 27:1.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("7. Praise Can Be a Testimony to Others",
+            18, Color.BLACK, true);
+    addText(
+            "Our praise can also encourage other people to recognise God's " +
+            "goodness. When believers continue to honour God during difficult " +
+            "seasons, their lives can become an example of trust and confidence " +
+            "in Him. David's psalms openly declared God's greatness and mighty " +
+            "works, giving others reasons to praise Him too. Our testimony " +
+            "should point people towards God rather than draw attention to ourselves.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 40:1–3; Psalm 145:4–7; Matthew 5:16.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Make praise a regular part of your daily relationship with God.\n" +
+            "2. Remember God's past goodness whenever you face a difficult situation.\n" +
+            "3. Follow Jehoshaphat's example by seeking God and trusting Him in challenges.\n" +
+            "4. Learn from Paul and Silas to continue honouring God during difficult seasons.\n" +
+            "5. Give God the glory whenever you experience success or receive an answer to prayer.\n" +
+            "6. Use praise to express your confidence in God's character and faithfulness.\n" +
+            "7. Let your testimony encourage others to recognise God's goodness.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "The power of praise is seen in how it directs our attention to " +
+            "God, strengthens our confidence in Him and gives Him the glory " +
+            "He deserves. The examples of Jehoshaphat, David, Paul and Silas " +
+            "teach us to praise God in every season and trust Him through " +
+            "every challenge. Praise is not a formula for controlling God; " +
+            "it is an expression of faith, honour and dependence on Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "How do I respond to God when I face difficult situations? Do I " +
+            "remember His goodness and continue to praise Him? Am I willing " +
+            "to give Him the glory for the victories and blessings in my life?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You because You are worthy of all praise. " +
+            "Help me to understand the importance of praising You in every " +
+            "season of my life. Teach me to trust You when I face difficulties " +
+            "and to remember Your goodness and faithfulness. Give me a grateful " +
+            "heart that honours You in my words and actions. May my life bring " +
+            "glory to Your name and encourage others to recognise Your goodness. " +
+            "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+            }
+    private void showNovemberWeekThree() {
+
+    addText("What Is an Acceptable Praise?",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "God deserves our praise, but our praise should come from a " +
+            "sincere heart that honours Him. Acceptable praise is praise " +
+            "offered with genuine gratitude, faith, reverence and obedience " +
+            "to God. It is not merely an outward activity or a performance " +
+            "before people. God looks beyond our outward expressions and " +
+            "considers the condition of our hearts. Therefore, we must " +
+            "understand what makes our praise pleasing and acceptable to Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Acceptable Praise Comes from a Sincere Heart",
+            18, Color.BLACK, true);
+    addText(
+            "Praise that pleases God must come from a genuine heart. We " +
+            "should not praise Him merely to impress people or receive " +
+            "recognition. Our expressions of praise must be sincere and " +
+            "must reflect what we truly believe about God. Jesus taught " +
+            "that God desires people who worship Him in spirit and in truth. " +
+            "This reminds us that our relationship with God must be genuine, " +
+            "and our praise should reflect that sincerity.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 4:23–24; Psalm 51:17.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("2. Acceptable Praise Must Be Offered with Thanksgiving",
+            18, Color.BLACK, true);
+    addText(
+            "Thanksgiving is an important expression of acceptable praise. " +
+            "We should recognise God's goodness and appreciate Him for His " +
+            "mercy, faithfulness, provision and protection. Instead of " +
+            "complaining continually or forgetting His benefits, we should " +
+            "cultivate a grateful heart. Thanksgiving reminds us that every " +
+            "good thing comes from God and that He deserves our appreciation.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 100:4; Psalm 103:1–5; 1 Thessalonians 5:18.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("3. Acceptable Praise Must Be Offered in Faith",
+            18, Color.BLACK, true);
+    addText(
+            "Our praise should reflect confidence in God's character and " +
+            "faithfulness. We should not praise Him only because we can " +
+            "see the answers we desire. Even when situations are difficult, " +
+            "we can acknowledge that God remains good and worthy of praise. " +
+            "Habakkuk demonstrated this attitude when he declared his " +
+            "confidence in God even though the expected harvest and " +
+            "provision were absent. Acceptable praise therefore comes from " +
+            "a heart that trusts God in every season.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Habakkuk 3:17–19; Hebrews 11:6.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("4. Acceptable Praise Must Honour God",
+            18, Color.BLACK, true);
+    addText(
+            "God alone deserves the glory and honour that belong to Him. " +
+            "Our praise should not be centred on ourselves or used as an " +
+            "opportunity to attract attention. When we praise God, we should " +
+            "recognise His greatness and acknowledge that He is the source " +
+            "of our strength and blessings. David continually declared the " +
+            "greatness of the Lord and encouraged others to magnify His name.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 34:1–3; Psalm 115:1; Psalm 29:1–2.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("5. Acceptable Praise Must Agree with a Life of Obedience",
+            18, Color.BLACK, true);
+    addText(
+            "Our praise should not be separated from the way we live. God " +
+            "desires obedience rather than outward religious activities " +
+            "that are not supported by a sincere relationship with Him. " +
+            "We cannot deliberately live in disobedience while treating " +
+            "praise as a substitute for doing what God commands. An " +
+            "acceptable expression of praise should come from a life that " +
+            "is willing to honour God through its choices and actions.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: 1 Samuel 15:22; Romans 12:1; Colossians 3:17.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("6. Acceptable Praise Should Be Offered Continually",
+            18, Color.BLACK, true);
+    addText(
+            "Praise should not be restricted to special occasions or " +
+            "moments when we receive good news. Hebrews teaches believers " +
+            "to offer the sacrifice of praise continually. This means that " +
+            "we should develop a lifestyle of acknowledging God and giving " +
+            "Him thanks. David declared that he would bless the Lord at all " +
+            "times. We should also learn to maintain a heart of praise in " +
+            "different seasons of life.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Hebrews 13:15; Psalm 34:1; Ephesians 5:19–20.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("7. Acceptable Praise Must Come from a Life That Belongs to God",
+            18, Color.BLACK, true);
+    addText(
+            "Our praise should reflect a genuine commitment to God. " +
+            "Romans 12:1 encourages believers to present their bodies " +
+            "as a living sacrifice, holy and acceptable unto God. This " +
+            "teaches us that honouring God involves more than what we say " +
+            "or sing. Our conduct, decisions and daily responsibilities " +
+            "should also reflect our commitment to Him. A life that seeks " +
+            "to please God gives meaning to the praise we offer.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 12:1–2; 1 Corinthians 10:31.",
+            15, Color.DKGRAY, false
+    );
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Examine your heart and make sure your praise is sincere.\n" +
+            "2. Develop a habit of thanking God for His goodness and faithfulness.\n" +
+            "3. Continue trusting God and acknowledging His greatness during difficult seasons.\n" +
+            "4. Give God the glory instead of seeking attention for yourself.\n" +
+            "5. Make obedience to God's Word part of your daily life.\n" +
+            "6. Practise praising God regularly, not only when you need something.\n" +
+            "7. Let your conduct reflect the God you praise.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Acceptable praise is offered to God with sincerity, thanksgiving, " +
+            "faith, reverence and obedience. It is not merely an outward " +
+            "expression but something that should reflect the condition " +
+            "of our hearts and the way we live. God deserves praise from " +
+            "people who genuinely desire to honour Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Is my praise sincere, or am I more concerned about how people " +
+            "see me? Does my daily conduct agree with the praise I offer " +
+            "God? What changes do I need to make so that my praise reflects " +
+            "a genuine heart that honours Him?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You because You are worthy of all praise. " +
+            "Give me a sincere and grateful heart that honours You in every " +
+            "season. Help me to praise You in faith, walk in obedience to " +
+            "Your Word and give You the glory in everything I do. Remove " +
+            "every desire to seek human recognition, and teach me to live " +
+            "a life that pleases You. May my words, actions and attitude " +
+            "continually bring honour to Your name. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+            }
+    private void showNovemberWeekFour() {
+
+    addText("How to Give an Acceptable Praise",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Praise is an important part of our relationship with God. " +
+            "However, acceptable praise must come from a heart that honours Him. " +
+            "It involves more than singing or speaking words of appreciation; " +
+            "it should reflect our relationship with God and the way we live. " +
+            "Let us examine some ways to give acceptable praise to God.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Be Born Again", 18, Color.BLACK, true);
+    addText(
+            "Acceptable praise begins with a genuine relationship with God through " +
+            "Jesus Christ. Being born again means receiving Christ and becoming " +
+            "a new creation. Our praise should come from a heart that belongs to God. " +
+            "When we surrender our lives to Christ, we can worship God sincerely " +
+            "and live in a way that honours Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 3:3–7; 2 Corinthians 5:17; John 1:12.",
+            15, Color.DKGRAY, false);
+
+    addText("2. By Prayer and Supplication", 18, Color.BLACK, true);
+    addText(
+            "Prayer and supplication help us maintain communication with God. " +
+            "As we come before Him with thanksgiving and make our requests known, " +
+            "we express our dependence on Him. Prayer should not be separated from " +
+            "praise, because we can approach God with grateful hearts even while " +
+            "presenting our needs. We should pray sincerely and trust Him with the " +
+            "outcome.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Philippians 4:6; Ephesians 6:18; 1 Timothy 2:1.",
+            15, Color.DKGRAY, false);
+
+    addText("3. By Doing the Right Thing at the Right Time",
+            18, Color.BLACK, true);
+    addText(
+            "Acceptable praise should also be reflected in our actions. God desires " +
+            "that we do what is right and fulfil our responsibilities faithfully. " +
+            "There is a proper time for every purpose, and we should learn to act " +
+            "with wisdom rather than delay what we ought to do. Our obedience, " +
+            "good conduct and willingness to do what pleases God can bring honour " +
+            "to His name.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Ecclesiastes 3:1; Galatians 6:9–10; Colossians 3:17.",
+            15, Color.DKGRAY, false);
+
+    addText("4. By Worshipping God's Name", 18, Color.BLACK, true);
+    addText(
+            "Worshipping God's name means giving Him the honour, reverence and " +
+            "adoration He deserves. We should praise Him for who He is and " +
+            "acknowledge His greatness. Our worship should be sincere and should " +
+            "come from the heart, not merely from outward expressions. Let our " +
+            "words, songs and actions continually bring glory to God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Psalm 34:1–3; Psalm 29:2; Psalm 96:8.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Maintain a genuine relationship with Jesus Christ.\n" +
+            "2. Make prayer and supplication a regular part of your life.\n" +
+            "3. Be willing to do what is right and fulfil your responsibilities.\n" +
+            "4. Honour God's name through sincere worship and daily conduct.\n" +
+            "5. Let your life consistently reflect gratitude and reverence for God.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Acceptable praise is not limited to songs or spoken words. " +
+            "It comes from a heart that belongs to God and is expressed through " +
+            "prayer, obedience, right actions and sincere worship.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Does my relationship with God, my prayers, my actions and my worship " +
+            "show that I genuinely honour Him?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, help me to give You acceptable praise. " +
+            "Give me a sincere heart, strengthen my prayer life, and help me " +
+            "to do what is right. May my words, actions and worship continually " +
+            "bring glory to Your name, in Jesus' name. Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showDecemberWeekOne() {
+
+    addText("Understanding Fasting: What Is Fasting?",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Fasting is a spiritual practice found throughout the Bible. " +
+            "God's people fasted during different seasons when they wanted " +
+            "to seek Him, humble themselves, pray or receive direction. " +
+            "Fasting is closely connected with prayer and a sincere desire " +
+            "to draw closer to God. However, fasting is not a way to force " +
+            "God to answer us or to impress other people. What matters most " +
+            "is the condition of our hearts and our genuine relationship with Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. The Meaning of Fasting",
+            18, Color.BLACK, true);
+    addText(
+            "Biblical fasting is a spiritual discipline in which a person " +
+            "sets aside ordinary activities or certain comforts for a period " +
+            "of focused prayer and seeking God. In many Bible accounts, fasting " +
+            "involved abstaining from food for a time, but its purpose was " +
+            "spiritual rather than merely physical. Fasting should direct our " +
+            "attention towards God and help us approach Him with humility. " +
+            "It is important to understand that fasting does not make God " +
+            "love us more or guarantee that every request will be granted.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Matthew 6:16–18; Ezra 8:21.",
+            15, Color.DKGRAY, false);
+
+    addText("2. The Purpose of Fasting",
+            18, Color.BLACK, true);
+    addText(
+            "People in the Bible fasted for different spiritual reasons. " +
+            "Some fasted while seeking God's direction, others during difficult " +
+            "situations, and some as an expression of repentance and humility. " +
+            "Fasting can help us give focused attention to prayer and examine " +
+            "our relationship with God. Ezra and the people who returned with " +
+            "him sought God's protection through prayer and fasting. Their " +
+            "example reminds us to depend on God rather than relying only " +
+            "on our own strength.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Ezra 8:21–23; Joel 2:12–13.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Fasting and Prayer",
+            18, Color.BLACK, true);
+    addText(
+            "Fasting and prayer are closely connected in Scripture. Prayer " +
+            "allows us to communicate with God, express our needs and seek " +
+            "His guidance. Fasting is sometimes practised alongside prayer " +
+            "as an expression of devotion and dependence on Him. In Acts 13, " +
+            "the believers ministered to the Lord and fasted, and the Holy " +
+            "Spirit gave them direction concerning the work to which Barnabas " +
+            "and Saul were called. This teaches us the importance of seeking " +
+            "God's direction with a sincere and attentive heart.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 13:2–3; Luke 2:36–37.",
+            15, Color.DKGRAY, false);
+
+    addText("4. The Heart Behind Fasting",
+            18, Color.BLACK, true);
+    addText(
+            "God is concerned about the condition of our hearts. Fasting " +
+            "should not be done to attract attention, receive praise from " +
+            "people or appear more spiritual than others. Jesus taught His " +
+            "disciples not to make a display of fasting. Instead, they were " +
+            "to approach it sincerely before God. Our attitude should be " +
+            "humility, honesty and a genuine desire to seek Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Matthew 6:16–18; Joel 2:12–13.",
+            15, Color.DKGRAY, false);
+
+    addText("5. What Fasting Is Not",
+            18, Color.BLACK, true);
+    addText(
+            "Fasting is not a way to manipulate God, force Him to grant " +
+            "our wishes or prove that we are more spiritual than someone else. " +
+            "It is also not a replacement for obedience, kindness, justice " +
+            "or genuine love for others. Isaiah 58 teaches that outward " +
+            "religious activities are not enough when people's actions are " +
+            "unjust or unkind. True devotion to God should influence how " +
+            "we treat the people around us.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Isaiah 58:3–7; Matthew 6:16–18.",
+            15, Color.DKGRAY, false);
+
+    addText("6. God Desires a Sincere Heart",
+            18, Color.BLACK, true);
+    addText(
+            "God desires more than outward religious activities. He wants " +
+            "people who sincerely seek Him and demonstrate His character " +
+            "through their actions. Isaiah 58 connects genuine devotion with " +
+            "helping those in need, showing kindness and treating others " +
+            "rightly. Therefore, our relationship with God should be reflected " +
+            "in the way we live. A sincere heart seeks God while also showing " +
+            "love, compassion and obedience.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Isaiah 58:6–7; Micah 6:8.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Learn the biblical purpose of fasting and prayer.\n" +
+            "2. Make time for prayer and studying God's Word.\n" +
+            "3. Examine your motives and approach God sincerely.\n" +
+            "4. Practise humility, kindness and obedience in your daily life.\n" +
+            "5. Seek God's direction instead of trying to force a particular outcome.\n" +
+            "6. Remember that your health matters. Do not skip meals or attempt " +
+            "a food fast without guidance from a parent or guardian and a " +
+            "qualified healthcare professional.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Fasting is a biblical spiritual discipline associated with " +
+            "prayer, humility and seeking God. Its value is not found in " +
+            "outward appearance or the mere act of abstaining from food, " +
+            "but in a sincere heart that desires God and is willing to obey Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Do I understand why people in the Bible fasted? Are my prayers " +
+            "and spiritual activities motivated by a genuine desire to seek " +
+            "God? Does my relationship with Him influence how I treat others?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, help me to understand the true purpose of " +
+            "fasting and prayer. Give me a sincere heart that desires to " +
+            "know You more. Teach me to seek Your direction, walk in humility " +
+            "and demonstrate Your love through my actions. Help me to value " +
+            "obedience above outward appearance and to depend on You in every " +
+            "situation. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+        }
+    private void showDecemberWeekTwo() {
+
+    addText("The Biblical Purpose and Importance of Fasting",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Throughout the Bible, fasting appears during important moments " +
+            "when individuals and communities sought God. They turned to Him " +
+            "in times of difficulty, repentance, decision-making and spiritual " +
+            "service. These accounts show that fasting was connected with " +
+            "humility, prayer and dependence on God. Understanding its biblical " +
+            "purpose helps us recognise that spiritual devotion is not about " +
+            "outward appearance, but about sincerely seeking God and responding " +
+            "to His Word.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Fasting as an Expression of Humility Before God",
+            18, Color.BLACK, true);
+    addText(
+            "One biblical purpose of fasting was to express humility before God. " +
+            "When people recognised their dependence on Him, they humbled " +
+            "themselves and sought His help. Ezra proclaimed a fast by the river " +
+            "Ahava so that the people could humble themselves before God and " +
+            "seek a safe journey. Their example teaches us that we should not " +
+            "depend only on our own ability, but acknowledge our need for God's " +
+            "wisdom, protection and guidance.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Ezra 8:21–23; Psalm 35:13.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Fasting During Times of Repentance",
+            18, Color.BLACK, true);
+    addText(
+            "In Scripture, fasting was sometimes associated with repentance. " +
+            "When people recognised their wrongdoing, they turned towards God " +
+            "and sought His mercy. Joel called the people to return to God with " +
+            "all their hearts, with fasting, weeping and mourning. However, " +
+            "repentance is more than an outward religious activity. It involves " +
+            "a sincere change of heart and a willingness to turn away from " +
+            "wrongdoing and follow God's ways.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Joel 2:12–13; Jonah 3:5–10.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Fasting While Seeking God's Direction",
+            18, Color.BLACK, true);
+    addText(
+            "Another purpose of fasting in the Bible was to seek God's direction. " +
+            "In Acts 13, the believers were ministering to the Lord and fasting " +
+            "when the Holy Spirit gave instructions concerning Barnabas and Saul. " +
+            "This account reminds us of the importance of giving attention to " +
+            "God through prayer, worship and His Word when seeking direction. " +
+            "We should remain willing to follow what God teaches rather than " +
+            "simply expecting Him to approve every decision we have already made.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 13:1–3; Acts 14:21–23.",
+            15, Color.DKGRAY, false);
+
+    addText("4. Fasting in Times of Trouble and Danger",
+            18, Color.BLACK, true);
+    addText(
+            "The Bible also records occasions when people sought God during " +
+            "times of serious trouble. When Queen Esther learned about the " +
+            "danger facing her people, she asked the Jews in Shushan to join " +
+            "her in a period of fasting before she approached the king. " +
+            "Their response demonstrated unity, dependence on God and the " +
+            "importance of seeking Him during difficult circumstances. " +
+            "This teaches us to turn to God for wisdom and courage when we " +
+            "face situations beyond our understanding.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Esther 4:15–17.",
+            15, Color.DKGRAY, false);
+
+    addText("5. Fasting and Spiritual Service",
+            18, Color.BLACK, true);
+    addText(
+            "Fasting also appears in the lives of people who were devoted " +
+            "to serving God. Anna, a prophetess, worshipped God with fasting " +
+            "and prayers. Her life demonstrated consistent devotion and " +
+            "faithfulness. Similarly, the believers in Antioch worshipped " +
+            "the Lord and fasted while serving Him. These examples remind " +
+            "us that our spiritual lives should involve consistent prayer, " +
+            "worship, faithfulness and willingness to serve God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Luke 2:36–38; Acts 13:2–3.",
+            15, Color.DKGRAY, false);
+
+    addText("6. Fasting Should Be Accompanied by Righteous Living",
+            18, Color.BLACK, true);
+    addText(
+            "The importance of fasting cannot be separated from the way " +
+            "we live. In Isaiah 58, God corrected people who observed " +
+            "religious practices but continued to act unjustly and neglect " +
+            "others. God called them to demonstrate compassion, share with " +
+            "those in need and stop oppressing others. This teaches us that " +
+            "genuine devotion must be reflected in our character. Prayer " +
+            "and spiritual activities should encourage us to live with " +
+            "justice, kindness and love.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Isaiah 58:6–10; Micah 6:8.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Remember to depend on God rather than relying only on yourself.\n" +
+            "2. Be willing to acknowledge your mistakes and turn away from wrongdoing.\n" +
+            "3. Seek God's direction through prayer and the study of His Word.\n" +
+            "4. Turn to God for wisdom and courage during difficult situations.\n" +
+            "5. Develop a consistent attitude of prayer, worship and service.\n" +
+            "6. Demonstrate your devotion through kindness, honesty and obedience.\n" +
+            "7. Never put your health at risk through food restriction. You can " +
+            "seek God through prayer, worship and studying His Word without " +
+            "skipping meals.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "The Bible shows that fasting was practised during times of " +
+            "humility, repentance, seeking direction, trouble and spiritual " +
+            "service. Its importance must be understood alongside sincere " +
+            "prayer, obedience and a life that reflects God's character.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "When I face difficult situations or need direction, do I sincerely " +
+            "seek God? Does my devotion influence my character and the way " +
+            "I treat other people?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, teach me to depend on You in every situation. " +
+            "Give me a humble and repentant heart. Help me seek Your direction, " +
+            "remain faithful in prayer and serve You sincerely. Let my life " +
+            "reflect Your love, kindness and righteousness. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showDecemberWeekThree() {
+
+    addText("The Spiritual Benefits and Power of Fasting",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Throughout Scripture, fasting is associated with moments of " +
+            "prayer, devotion and seeking God. It was practised by individuals " +
+            "who desired to humble themselves before Him, seek His direction " +
+            "and remain committed to His purpose. The spiritual value of " +
+            "fasting is not found in the physical act alone, but in a sincere " +
+            "heart that desires God. When considered alongside prayer, worship " +
+            "and obedience, fasting teaches us important lessons about our " +
+            "relationship with Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Fasting Encourages Humility Before God",
+            18, Color.BLACK, true);
+    addText(
+            "One important spiritual benefit associated with fasting is " +
+            "the reminder that we depend on God. It encourages us to recognise " +
+            "that our strength, wisdom and understanding are limited, while " +
+            "God remains our source of help. Ezra and the people who returned " +
+            "with him humbled themselves before God and sought His protection. " +
+            "Their example teaches us to approach God with humility rather " +
+            "than pride or self-confidence.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Ezra 8:21–23; James 4:10.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Fasting Creates Time for Focused Prayer",
+            18, Color.BLACK, true);
+    addText(
+            "Fasting is often practised alongside prayer. It can serve as " +
+            "a reminder to give deliberate attention to seeking God rather " +
+            "than allowing everyday activities to distract us. In the Bible, " +
+            "Anna served God with fasting and prayers. Her example shows " +
+            "the value of a life devoted to worship and communication with " +
+            "God. We should develop a consistent prayer life and make time " +
+            "to speak with God and study His Word.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Luke 2:36–38; Colossians 4:2.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Fasting Is Associated with Seeking God's Direction",
+            18, Color.BLACK, true);
+    addText(
+            "There are moments when we need wisdom and direction concerning " +
+            "important decisions. In Acts 13, the believers in Antioch were " +
+            "ministering to the Lord and fasting when the Holy Spirit gave " +
+            "instructions concerning Barnabas and Saul. This account reminds " +
+            "us of the importance of seeking God's direction through prayer, " +
+            "worship and attention to His Word. We should remain willing to " +
+            "follow His instructions rather than insist on our own plans.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 13:1–3; Proverbs 3:5–6.",
+            15, Color.DKGRAY, false);
+
+    addText("4. Fasting Reminds Us to Depend on God's Strength",
+            18, Color.BLACK, true);
+    addText(
+            "Human strength and ability are limited, but God is faithful " +
+            "to those who trust Him. Fasting is sometimes observed during " +
+            "difficult seasons when people seek God's help. However, it is " +
+            "not a guarantee that every difficulty will immediately disappear. " +
+            "Rather, our confidence should remain in God, who gives strength " +
+            "to those who are weary and helps His people through challenging " +
+            "situations.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Isaiah 40:29–31; 2 Corinthians 12:9.",
+            15, Color.DKGRAY, false);
+
+    addText("5. Fasting Can Accompany Repentance and Spiritual Renewal",
+            18, Color.BLACK, true);
+    addText(
+            "Fasting appears in Scripture during times when people recognised " +
+            "their need to return to God. Joel called the people to return " +
+            "to the Lord with all their hearts. This teaches us that spiritual " +
+            "renewal begins with sincerity, repentance and a willingness to " +
+            "follow God's ways. Outward religious activities cannot replace " +
+            "a genuine change of heart. God desires people who are willing " +
+            "to turn away from wrongdoing and walk in obedience.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Joel 2:12–13; Psalm 51:10–12.",
+            15, Color.DKGRAY, false);
+
+    addText("6. Fasting Should Produce a Life of Love and Righteousness",
+            18, Color.BLACK, true);
+    addText(
+            "The spiritual value of fasting must also be reflected in our " +
+            "daily conduct. Isaiah 58 teaches that God was not pleased with " +
+            "people who observed religious practices while neglecting justice " +
+            "and compassion. He called them to help those in need and treat " +
+            "others rightly. This reminds us that spiritual growth should " +
+            "produce visible changes in our character. Our devotion to God " +
+            "should be demonstrated through love, kindness, honesty and " +
+            "obedience.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Isaiah 58:6–10; Galatians 5:22–23.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Approach God with humility and recognise your dependence on Him.\n" +
+            "2. Develop a consistent habit of prayer and Bible study.\n" +
+            "3. Seek God's wisdom before making important decisions.\n" +
+            "4. Trust God for strength when facing difficult situations.\n" +
+            "5. Examine your heart and be willing to repent when necessary.\n" +
+            "6. Demonstrate spiritual growth through love, kindness and obedience.\n" +
+            "7. Remember that prayer and seeking God do not require you to " +
+            "skip meals or put your health at risk.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "The spiritual value of fasting is connected with humility, " +
+            "prayer, seeking God's direction and a sincere desire to live " +
+            "according to His Word. True spiritual growth should be reflected " +
+            "in our character, choices and treatment of others.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Am I genuinely seeking God in my daily life? Do I depend on " +
+            "His wisdom and strength? Is my spiritual devotion producing " +
+            "greater love, humility and obedience in my character?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, help me to grow in my relationship with You. " +
+            "Give me a humble heart, strengthen my prayer life and guide " +
+            "me in Your ways. Help me depend on Your strength, seek Your " +
+            "wisdom and demonstrate Your love through my actions. May my " +
+            "life bring honour to Your name. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showDecemberWeekFour() {
+    addText("How to Fast Acceptably and Effectively", 22, Color.BLACK, true);
+
+    addText("Introduction", 20, Color.BLACK, true);
+    addText("Fasting is a spiritual discipline discussed throughout the Bible. However, acceptable fasting is not simply about going without food or being seen by others. It is about sincerely seeking God through prayer, humility, repentance and obedience. God is concerned with the condition of our hearts and the way we live.", 16, Color.BLACK, false);
+
+    addText("1. Have a Sincere Heart and the Right Motive", 18, Color.BLACK, true);
+    addText("Fasting should come from a genuine desire to draw closer to God, not to impress people or receive their praise. Jesus taught that our devotion should be sincere and not performed for public recognition. God sees what is done in secret and knows the true intentions of our hearts.", 16, Color.BLACK, false);
+    addText("Scripture: Matthew 6:16–18; 1 Samuel 16:7", 14, Color.DKGRAY, false);
+
+    addText("2. Combine Prayer with Your Desire to Seek God", 18, Color.BLACK, true);
+    addText("Prayer is an important part of seeking God. Biblical examples show people combining fasting with prayer when they needed God's direction, help or intervention. Our focus should be on communicating with God, listening to His Word and trusting His wisdom.", 16, Color.BLACK, false);
+    addText("Scripture: Acts 13:2–3; Ezra 8:21–23", 14, Color.DKGRAY, false);
+
+    addText("3. Repent and Turn Away from Wrongdoing", 18, Color.BLACK, true);
+    addText("Acceptable fasting must be accompanied by a willingness to turn away from sin and live according to God's instructions. Isaiah 58 teaches that God does not desire an outward religious practice while people continue in injustice, oppression and selfishness. True devotion should produce a changed attitude and a life that pleases God.", 16, Color.BLACK, false);
+    addText("Scripture: Joel 2:12–13; Isaiah 58:6–10", 14, Color.DKGRAY, false);
+
+    addText("4. Let Your Devotion Show Through Love and Good Works", 18, Color.BLACK, true);
+    addText("Seeking God should influence how we treat other people. We should show kindness, help those in need, forgive others and act justly. A person cannot separate devotion to God from love and concern for people. Our faith should be visible through our actions.", 16, Color.BLACK, false);
+    addText("Scripture: Isaiah 58:7–10; Micah 6:8; James 1:27", 14, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText("• Examine your motives whenever you set aside time to seek God.\n• Make time for sincere prayer and Bible study.\n• Ask God to help you recognise and turn away from wrongdoing.\n• Practise kindness, forgiveness and compassion.\n• Do not use fasting to impress people or force God to answer a request.\n• Remember that seeking God does not require skipping meals. Young people should not undertake food restrictions or change their eating habits for fasting without guidance from a parent or guardian and a qualified healthcare professional.", 16, Color.BLACK, false);
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText("Acceptable devotion is rooted in a sincere heart, prayer, repentance, obedience and love. God desires a life that reflects His character, not merely an outward religious activity.", 16, Color.BLACK, false);
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText("Are my motives for seeking God sincere? Do my prayers and devotion influence the way I treat others and live each day?", 16, Color.BLACK, false);
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText("Heavenly Father, help me to seek You with a sincere heart. Teach me to pray, obey Your Word, turn away from wrongdoing and show love to others. Let my devotion be pleasing to You and let my daily life reflect Your goodness. In Jesus' name, Amen.", 16, Color.BLACK, false);
+    }
+    
     private void addTeachingPoint(
             String heading,
             String explanation) {
