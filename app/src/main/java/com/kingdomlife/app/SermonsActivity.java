@@ -427,49 +427,149 @@ private int selectedWeek;
     }
 
     private void showTeaching(
-            int monthIndex,
-            int weekIndex) {
+int monthIndex,
+int weekIndex) {
 
-        content.removeAllViews();
+content.removeAllViews();
 
-        addBackButton(() -> showMonth(monthIndex));
+addBackButton(() -> showMonth(monthIndex));
 
-        addText(
-                months[monthIndex] + " — Week "
-                        + (weekIndex + 1),
-                23,
-                DARK_TEXT,
-                true
-        );
+addText(
+        months[monthIndex] + " — Week "
+                + (weekIndex + 1),
+        23,
+        DARK_TEXT,
+        true
+);
 
-        addText(
-                weeklyTeachings[monthIndex][weekIndex],
-                20,
-                DARK_TEXT,
-                true
-        );
+addText(
+        weeklyTeachings[monthIndex][weekIndex],
+        20,
+        DARK_TEXT,
+        true
+);
 
-        if (monthIndex == 0 && weekIndex == 0) {
-            showJanuaryWeekOne();
-        } else {
+switch (monthIndex) {
 
-            addText(
-                    "This teaching is being prepared.",
-                    16,
-                    DARK_TEXT,
-                    false
-            );
-
-            addText(
-                    "The full sermon will be added when its "
-                            + "source material has been organised.",
-                    14,
-                    DARK_TEXT,
-                    false
-            );
+    case 0: // January — Thanksgiving
+        switch (weekIndex) {
+            case 0: showJanuaryWeekOne(); break;
+            case 1: showJanuaryWeekTwo(); break;
+            case 2: showJanuaryWeekThree(); break;
+            case 3: showJanuaryWeekFour(); break;
         }
-    }
+        break;
 
+    case 1: // February — Love
+        switch (weekIndex) {
+            case 0: showFebruaryWeekOne(); break;
+            case 1: showFebruaryWeekTwo(); break;
+            case 2: showFebruaryWeekThree(); break;
+            case 3: showFebruaryWeekFour(); break;
+        }
+        break;
+
+    case 2: // March — Divine Guidance
+        switch (weekIndex) {
+            case 0: showMarchWeekOne(); break;
+            case 1: showMarchWeekTwo(); break;
+            case 2: showMarchWeekThree(); break;
+            case 3: showMarchWeekFour(); break;
+        }
+        break;
+
+    case 3: // April — Prayer
+        switch (weekIndex) {
+            case 0: showAprilWeekOne(); break;
+            case 1: showAprilWeekTwo(); break;
+            case 2: showAprilWeekThree(); break;
+            case 3: showAprilWeekFour(); break;
+        }
+        break;
+
+    case 4: // May — The Word of God
+        switch (weekIndex) {
+            case 0: showMayWeekOne(); break;
+            case 1: showMayWeekTwo(); break;
+            case 2: showMayWeekThree(); break;
+            case 3: showMayWeekFour(); break;
+        }
+        break;
+
+    case 5: // June — Divine Health
+        switch (weekIndex) {
+            case 0: showJuneWeekOne(); break;
+            case 1: showJuneWeekTwo(); break;
+            case 2: showJuneWeekThree(); break;
+            case 3: showJuneWeekFour(); break;
+        }
+        break;
+
+    case 6: // July — Wisdom
+        switch (weekIndex) {
+            case 0: showJulyWeekOne(); break;
+            case 1: showJulyWeekTwo(); break;
+            case 2: showJulyWeekThree(); break;
+            case 3: showJulyWeekFour(); break;
+        }
+        break;
+
+    case 7: // August — Success
+        switch (weekIndex) {
+            case 0: showAugustWeekOne(); break;
+            case 1: showAugustWeekTwo(); break;
+            case 2: showAugustWeekThree(); break;
+            case 3: showAugustWeekFour(); break;
+        }
+        break;
+
+    case 8: // September — The Holy Spirit
+        switch (weekIndex) {
+            case 0: showSeptemberWeekOne(); break;
+            case 1: showSeptemberWeekTwo(); break;
+            case 2: showSeptemberWeekThree(); break;
+            case 3: showSeptemberWeekFour(); break;
+        }
+        break;
+
+    case 9: // October — Faith
+        switch (weekIndex) {
+            case 0: showOctoberWeekOne(); break;
+            case 1: showOctoberWeekTwo(); break;
+            case 2: showOctoberWeekThree(); break;
+            case 3: showOctoberWeekFour(); break;
+        }
+        break;
+
+    case 10: // November — Praise
+        switch (weekIndex) {
+            case 0: showNovemberWeekOne(); break;
+            case 1: showNovemberWeekTwo(); break;
+            case 2: showNovemberWeekThree(); break;
+            case 3: showNovemberWeekFour(); break;
+        }
+        break;
+
+    case 11: // December — Fasting
+        switch (weekIndex) {
+            case 0: showDecemberWeekOne(); break;
+            case 1: showDecemberWeekTwo(); break;
+            case 2: showDecemberWeekThree(); break;
+            case 3: showDecemberWeekFour(); break;
+        }
+        break;
+
+    default:
+        addText(
+                "This teaching is not available.",
+                16,
+                DARK_TEXT,
+                false
+        );
+        break;
+}
+
+    }
     private void showJanuaryWeekOne() {
 
         addText(
