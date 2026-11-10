@@ -2176,6 +2176,660 @@ public class SermonsActivity extends Activity {
             16, DARK_TEXT, false
     );
     }
+    private void showAprilWeekOne() {
+    addText("Understanding Prayer: Our Hotline to God",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Isaiah 58:6–8",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer is one of the most important parts of "
+            + "our relationship with God. It is our means "
+            + "of communicating with our Heavenly Father, "
+            + "sharing our hearts with Him and seeking His "
+            + "direction, help and intervention.\n\n"
+            + "Think of a hotline as a line established for "
+            + "communication. In the same way, prayer gives "
+            + "believers the opportunity to communicate "
+            + "with God continually. It is not something "
+            + "reserved only for emergencies; it is a "
+            + "relationship we maintain every day.",
+            16, DARK_TEXT, false
+    );
+
+    addText("What Is Prayer?",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer is primarily communication with our "
+            + "Heavenly Father. It is how we express our "
+            + "gratitude, present our requests, seek His "
+            + "guidance and develop fellowship with Him.\n\n"
+            + "Prayer is more than presenting a list of "
+            + "needs. It also involves listening, trusting "
+            + "and aligning our hearts with God's will.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. Prayer Is Our Means of Communicating with God",
+            18, PURPLE, true);
+
+    addText(
+            "Communication helps build and maintain a "
+            + "relationship. Through prayer, we draw near "
+            + "to God and express what is in our hearts. "
+            + "We can speak to Him about our needs, "
+            + "challenges, decisions and thanksgiving.\n\n"
+            + "A consistent prayer life helps us remain "
+            + "conscious of God's presence instead of "
+            + "turning to Him only when problems arise.",
+            16, DARK_TEXT, false
+    );
+
+    addText("2. Prayer and Fasting Help Us Seek God",
+            18, PURPLE, true);
+
+    addText(
+            "Prayer and fasting are important spiritual "
+            + "practices. Isaiah 58:6–8 connects the right "
+            + "kind of fasting with freedom, the breaking "
+            + "of oppressive burdens and caring for others.\n\n"
+            + "Fasting should not be treated as a way to "
+            + "force God to act. It should accompany a "
+            + "sincere desire to seek Him and live according "
+            + "to His ways.",
+            16, DARK_TEXT, false
+    );
+
+    addText("3. Prayer Makes Room for Divine Intervention",
+            18, PURPLE, true);
+
+    addText(
+            "Prayer brings our situations before God. "
+            + "It is an expression of dependence on Him "
+            + "and trust in His ability to help us.\n\n"
+            + "Prayer does not mean that everything will "
+            + "happen exactly when or how we expect. "
+            + "Rather, it keeps us dependent on God as "
+            + "we trust His wisdom and timing.",
+            16, DARK_TEXT, false
+    );
+
+    addText("4. Prayer Helps Us Receive Understanding "
+            + "and Direction",
+            18, PURPLE, true);
+
+    addText(
+            "As we spend time with God, we can seek "
+            + "understanding concerning His Word and "
+            + "direction for our lives. Prayer should "
+            + "therefore be accompanied by a willingness "
+            + "to listen and obey what God teaches us.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Practical Application",
+            19, PURPLE, true);
+
+    addText(
+            "• Make personal prayer a regular part of "
+            + "your daily life.\n"
+            + "• Approach God sincerely and honestly.\n"
+            + "• Include thanksgiving, requests and time "
+            + "to seek His direction.\n"
+            + "• Let your prayer life influence your "
+            + "attitude and conduct.\n"
+            + "• When fasting, do so with the right "
+            + "heart and purpose.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Is prayer a regular part of my relationship "
+            + "with God, or do I remember to pray only "
+            + "when I need something?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Heavenly Father, help me develop a consistent "
+            + "and sincere prayer life. Teach me to seek "
+            + "You beyond my needs, to trust Your wisdom "
+            + "and to remain sensitive to Your direction. "
+            + "Let my relationship with You grow stronger "
+            + "every day. Amen.",
+            16, DARK_TEXT, false
+    );
+    }
+    private void showAprilWeekTwo() {
+    addText("Getting Ready to Pray and Write",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Mark 10:36",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer is an important part of our relationship "
+            + "with God, but we should not approach it carelessly. "
+            + "Preparation helps us become focused, sincere "
+            + "and intentional when we come before Him.\n\n"
+            + "Getting ready to pray involves preparing our "
+            + "hearts, examining our motives, exercising faith "
+            + "and understanding what we are bringing before "
+            + "God. It also involves preparing to write down "
+            + "important lessons and instructions from His Word.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. Prepare Your Heart",
+            19, PURPLE, true);
+
+    addText(
+            "Before praying, take time to examine the condition "
+            + "of your heart. Prayer should come from a sincere "
+            + "desire to communicate with God, not merely from "
+            + "a desire to perform a religious activity.\n\n"
+            + "A prepared heart is willing to seek God, receive "
+            + "His instruction and respond to what He reveals "
+            + "through His Word.",
+            16, DARK_TEXT, false
+    );
+
+    addText("2. Consecration",
+            19, PURPLE, true);
+
+    addText(
+            "Consecration means setting yourself apart for "
+            + "God. It involves making room for Him and "
+            + "being intentional about your spiritual life.\n\n"
+            + "When we prepare ourselves through consecration, "
+            + "we approach prayer with greater seriousness "
+            + "and a willingness to honour God.",
+            16, DARK_TEXT, false
+    );
+
+    addText("3. Forgiveness",
+            19, PURPLE, true);
+
+    addText(
+            "Forgiveness is an important part of preparing "
+            + "our hearts for prayer. We should be willing "
+            + "to forgive those who have offended us and "
+            + "also seek God's forgiveness when we have "
+            + "done wrong.\n\n"
+            + "Holding on to bitterness can affect our "
+            + "relationships with others and our spiritual "
+            + "attitude. We should therefore approach God "
+            + "with humble and forgiving hearts.",
+            16, DARK_TEXT, false
+    );
+
+    addText("4. Have the Right Motive",
+            19, PURPLE, true);
+
+    addText(
+            "Our reasons for praying matter. Prayer should "
+            + "not be driven by selfish ambition, pride "
+            + "or a desire to impress other people.\n\n"
+            + "We should seek God because we desire a genuine "
+            + "relationship with Him and want our lives "
+            + "to agree with His will.",
+            16, DARK_TEXT, false
+    );
+
+    addText("5. Have Faith",
+            19, PURPLE, true);
+
+    addText(
+            "Faith is important when we approach God in prayer. "
+            + "We should pray with confidence in His ability "
+            + "and trustworthiness, rather than allowing "
+            + "doubt to control our hearts.\n\n"
+            + "Faith does not mean that we dictate how God "
+            + "must answer. It means that we trust Him "
+            + "even while we wait for His response.",
+            16, DARK_TEXT, false
+    );
+
+    addText("6. Know What You Want",
+            19, PURPLE, true);
+
+    addText(
+            "Before you begin praying, take time to understand "
+            + "what you are asking God for. Be specific "
+            + "and intentional about the matters you want "
+            + "to bring before Him.\n\n"
+            + "Knowing what you want helps you pray with "
+            + "focus. It also helps you recognise the areas "
+            + "where you need God's wisdom, help and direction.",
+            16, DARK_TEXT, false
+    );
+
+    addText("7. Search the Scriptures",
+            19, PURPLE, true);
+
+    addText(
+            "Preparation for prayer should include searching "
+            + "the Word of God. Scripture helps us understand "
+            + "God's character, His promises and His will.\n\n"
+            + "Rather than praying without understanding, "
+            + "look into the Bible for guidance concerning "
+            + "the matters you are bringing before God.",
+            16, DARK_TEXT, false
+    );
+
+    addText("8. Write Out Key Points from the Bible",
+            19, PURPLE, true);
+
+    addText(
+            "Writing is a useful way to preserve what you "
+            + "learn during Bible study and prayer. Write "
+            + "down important Scriptures, key points, "
+            + "questions and instructions that stand out "
+            + "to you.\n\n"
+            + "These notes can help you remember what you "
+            + "have studied, reflect on it later and put "
+            + "what you learn into practice.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Practical Application",
+            19, PURPLE, true);
+
+    addText(
+            "Before your next prayer session:\n"
+            + "• Prepare your heart and set time apart for God.\n"
+            + "• Examine your motives and be willing to forgive.\n"
+            + "• Identify the matters you want to pray about.\n"
+            + "• Search the Scriptures for understanding.\n"
+            + "• Write down important points from your study.\n"
+            + "• Pray with faith and trust in God.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Do I prepare my heart and understand what "
+            + "I am bringing before God, or do I approach "
+            + "prayer without focus or preparation?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Heavenly Father, prepare my heart to seek You "
+            + "sincerely. Help me to walk in forgiveness, "
+            + "maintain the right motives and grow in faith. "
+            + "Give me understanding as I study Your Word "
+            + "and help me remember and practise what "
+            + "You teach me. Amen.",
+            16, DARK_TEXT, false
+    );
+    }
+    private void showAprilWeekThree() {
+    addText("The Dominion Power of a Praying and Fasting Believer",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Matthew 17:1–5, 19–21",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer is not meant to be an occasional activity "
+            + "in the life of a believer. It is an important "
+            + "part of spiritual growth, empowerment and "
+            + "fellowship with God.\n\n"
+            + "A teenager who continually and consistently "
+            + "engages in a lifestyle of prayer and seeking "
+            + "God is developing a strong spiritual foundation. "
+            + "Such a life is not controlled by age or outward "
+            + "limitations, but is built on dependence on God.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Who Is a Praying and Fasting Believer ?",
+            19, PURPLE, true);
+
+    addText(
+            "A praying and fasting believer is one who "
+            + "is intentional about maintaining a lifestyle "
+            + "of seeking God. Prayer becomes a regular part "
+            + "of their relationship with Him rather than "
+            + "something done only when difficulties arise.\n\n"
+            + "This kind of believer desires spiritual growth, "
+            + "takes God's Word seriously and makes room "
+            + "for fellowship with Him.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Why Do We Pray and Fast for Empowerment?",
+            19, PURPLE, true);
+
+    addText("1. To Gain Command and Authority as Sons of God",
+            18, PURPLE, true);
+
+    addText(
+            "Prayer helps believers depend on God's power "
+            + "rather than relying only on human strength. "
+            + "Matthew 17:19–21 records the disciples asking "
+            + "Jesus why they could not cast out a particular "
+            + "demon. Jesus addressed their lack of faith "
+            + "and taught them about the importance of faith "
+            + "and prayer.\n\n"
+            + "Spiritual authority is not about controlling "
+            + "people or showing superiority. It is about "
+            + "living under God's authority and depending "
+            + "on Him to fulfil His purpose.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Matthew 17:19–21",
+            15, DARK_TEXT, false);
+
+    addText("2. To Access Our Inheritance in Christ",
+            18, PURPLE, true);
+
+    addText(
+            "God has given believers an inheritance through "
+            + "their relationship with Christ. Prayer helps "
+            + "us grow in our understanding of what God "
+            + "has made available to us and how to live "
+            + "according to His promises.\n\n"
+            + "We should not approach prayer as a way of "
+            + "earning God's love or forcing Him to give "
+            + "us something. We pray because we belong "
+            + "to Him and depend on His grace.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Deuteronomy 2:24",
+            15, DARK_TEXT, false);
+
+    addText("How to Gain Power for Dominion",
+            19, PURPLE, true);
+
+    addText("1. Be Born Again",
+            18, PURPLE, true);
+
+    addText(
+            "The foundation of a believer's spiritual life "
+            + "is a genuine relationship with Jesus Christ. "
+            + "Being born again means receiving new life "
+            + "through faith in Him.\n\n"
+            + "Before focusing on spiritual power, we must "
+            + "first establish our lives in Christ and allow "
+            + "Him to shape our character and conduct.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Acts 2:38",
+            15, DARK_TEXT, false);
+
+    addText("2. Schedule Personal Prayer Time",
+            18, PURPLE, true);
+
+    addText(
+            "Consistency is important in developing a "
+            + "prayer life. Scheduling personal prayer time "
+            + "helps us become intentional about spending "
+            + "time with God.\n\n"
+            + "Jesus Himself made time to pray, even when "
+            + "there were many demands on His attention. "
+            + "This teaches us not to allow our daily "
+            + "activities to completely displace our "
+            + "fellowship with God.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Mark 1:35",
+            15, DARK_TEXT, false);
+
+    addText("3. Avoid Sin and Ungodly Relationships",
+            18, PURPLE, true);
+
+    addText(
+            "A life of prayer should also be accompanied "
+            + "by a life that honours God. We must be "
+            + "intentional about the choices we make, "
+            + "the influences we accept and the relationships "
+            + "we maintain.\n\n"
+            + "Avoiding ungodly influences does not mean "
+            + "treating people with hatred or disrespect. "
+            + "It means maintaining godly values and "
+            + "choosing relationships that do not lead "
+            + "us away from our faith.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Proverbs 28:19",
+            15, DARK_TEXT, false);
+
+    addText("The Importance of Prayer and Fasting",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer and fasting are presented in Scripture "
+            + "as spiritual practices that help believers "
+            + "seek God with focus and sincerity. They "
+            + "should not become performances or methods "
+            + "of forcing God to respond.\n\n"
+            + "Fasting should always be approached wisely "
+            + " You should not undertake food restriction "
+            + "without guidance from God or a trusted "
+            + "health professional. Prayer, Bible study "
+            + "and setting aside distractions are also "
+            + "meaningful ways to focus on God.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Practical Application",
+            19, PURPLE, true);
+
+    addText(
+            "• Build a consistent personal prayer routine.\n"
+            + "• Make time to study and understand God's Word.\n"
+            + "• Examine your choices and relationships.\n"
+            + "• Depend on God rather than your own strength.\n"
+            + "• Seek spiritual growth with sincerity and humility.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Am I developing a consistent relationship "
+            + "with God through prayer, and do my daily "
+            + "choices reflect the faith I profess?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Heavenly Father, help me grow in my relationship "
+            + "with You. Give me the discipline to seek You "
+            + "consistently, the wisdom to make godly choices "
+            + "and the faith to depend on Your power. Help "
+            + "me understand my inheritance in Christ and "
+            + "live a life that brings glory to Your name. Amen.",
+            16, DARK_TEXT, false
+    );
+        }
+    private void showAprilWeekFour() {
+    addText("Prayer and Fasting: The Lifeline of Every Growing Church",
+            22, PURPLE, true);
+
+    addText("Main Scripture: Luke 11:9",
+            17, DARK_TEXT, true);
+
+    addText("Introduction",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer and fasting are important to the spiritual "
+            + "life of a believer and the growth of the Church. "
+            + "Just as a lifeline supports something that "
+            + "depends on it, prayer sustains our fellowship "
+            + "with God and keeps us dependent on Him.\n\n"
+            + "A growing church needs more than activities "
+            + "and programmes. It needs believers who seek "
+            + "God sincerely, depend on His power and desire "
+            + "to understand His Word. Prayer and fasting "
+            + "help create room for this spiritual growth.",
+            16, DARK_TEXT, false
+    );
+
+    addText("1. Prayer Is a Divine Licence for Divine Intervention",
+            19, PURPLE, true);
+
+    addText(
+            "Prayer is an opportunity God has given us "
+            + "to bring our needs and situations before Him. "
+            + "Through prayer, we acknowledge that human "
+            + "strength is limited and that we need God's "
+            + "wisdom, help and intervention.\n\n"
+            + "When we pray, we are not forcing God to act. "
+            + "We are expressing our dependence on Him "
+            + "and trusting His power, wisdom and timing.",
+            16, DARK_TEXT, false
+    );
+
+    addText("2. Prayer Guarantees Access to Our Inheritance",
+            19, PURPLE, true);
+
+    addText(
+            "Through Jesus Christ, believers receive an "
+            + "inheritance that comes from God's grace. "
+            + "Prayer helps us draw near to God and grow "
+            + "in our understanding of the life and promises "
+            + "we have received through Christ.\n\n"
+            + "We do not earn this inheritance through "
+            + "prayer or fasting. It is God's gift, received "
+            + "through grace. Prayer helps us live in "
+            + "relationship with the One who has given it.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Ephesians 2:8",
+            15, DARK_TEXT, false);
+
+    addText("3. Pray for Revelation of God's Word",
+            19, PURPLE, true);
+
+    addText(
+            "It is possible to read the Bible without "
+            + "understanding the full meaning or significance "
+            + "of what we are reading. This is why we should "
+            + "also pray for understanding and insight "
+            + "as we study Scripture.\n\n"
+            + "Prayer helps us approach God's Word with "
+            + "a teachable heart. We should desire not only "
+            + "to read it but also to understand it, believe "
+            + "it and put it into practice.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: John 6:68",
+            15, DARK_TEXT, false);
+
+    addText("4. Prayer and Fasting Enhance Spiritual Refreshment",
+            19, PURPLE, true);
+
+    addText(
+            "Spiritual refreshment involves being renewed "
+            + "in our relationship with God. Prayer and "
+            + "fasting can help believers set aside "
+            + "distractions and focus more intentionally "
+            + "on seeking Him.\n\n"
+            + "As we spend time with God, study His Word "
+            + "and bring our hearts before Him, we are "
+            + "reminded of His faithfulness and encouraged "
+            + "to continue growing in our faith.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Scripture: Psalm 32:2–3",
+            15, DARK_TEXT, false
+    );
+
+    addText("The Importance of Prayer in a Growing Church",
+            19, PURPLE, true);
+
+    addText(
+            "A church grows spiritually when its members "
+            + "learn to seek God, depend on His Word "
+            + "and live out their faith. Prayer should "
+            + "therefore be part of both personal devotion "
+            + "and the shared life of the church.\n\n"
+            + "When believers pray together with sincerity "
+            + "and unity, they encourage one another "
+            + "and strengthen their commitment to God's "
+            + "purpose.",
+            16, DARK_TEXT, false
+    );
+
+    addText("Practical Application",
+            19, PURPLE, true);
+
+    addText(
+            "• Make prayer a consistent part of your life.\n"
+            + "• Pray for God's help and direction.\n"
+            + "• Ask for understanding when studying Scripture.\n"
+            + "• Participate sincerely in corporate prayer.\n"
+            + "• Make time to seek God without unnecessary "
+            + "distractions.\n"
+            + "• Approach fasting wisely and with appropriate "
+            + "guidance; prayer and Bible study can also "
+            + "be practised without restricting food.",
+            15, DARK_TEXT, false
+    );
+
+    addText("Personal Reflection",
+            19, PURPLE, true);
+
+    addText(
+            "Does prayer occupy an important place in "
+            + "my personal walk with God, and am I "
+            + "contributing to the spiritual growth "
+            + "of my church through sincere prayer?",
+            16, DARK_TEXT, false
+    );
+
+    addText("Prayer",
+            19, PURPLE, true);
+
+    addText(
+            "Heavenly Father, help me develop a consistent "
+            + "and sincere prayer life. Give me understanding "
+            + "of Your Word, renew my heart and teach me "
+            + "to depend on You in every situation. Help "
+            + "Your Church grow in unity, faith and devotion "
+            + "to You. May our lives continually honour "
+            + "Your name. Amen.",
+            16, DARK_TEXT, false
+    );
+        }
 
     private void addTeachingPoint(
             String heading,
