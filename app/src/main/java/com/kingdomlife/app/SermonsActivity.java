@@ -5664,6 +5664,631 @@ public class SermonsActivity extends Activity {
             16, Color.BLACK, false
     );
     }
+    private void showSeptemberWeekOne() {
+
+    addText("Understanding the Holy Spirit and the Promise of His Coming",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Before Jesus left His disciples, He promised that they would not be " +
+            "left without help. He told them about the coming of the Holy Spirit, " +
+            "who would be their Comforter and Helper. This promise was fulfilled " +
+            "when the Holy Spirit came upon the apostles on the Day of Pentecost. " +
+            "The coming of the Holy Spirit marked an important moment in the life " +
+            "of the early Church.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Understanding Who the Holy Spirit Is", 18, Color.BLACK, true);
+    addText(
+            "The Holy Spirit is the Spirit of God. He is not merely a feeling or " +
+            "an influence; He is the divine Helper whom Jesus promised to His " +
+            "disciples. Through the Holy Spirit, believers receive help in their " +
+            "Christian walk and are guided in the things of God. Understanding " +
+            "the Holy Spirit helps us recognise the importance of His presence " +
+            "in our lives.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 14:16–17; Acts 5:3–4.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Jesus Promised to Send the Holy Spirit", 18, Color.BLACK, true);
+    addText(
+            "Jesus knew that His disciples would need divine help after His " +
+            "departure. He therefore promised that the Father would send them " +
+            "another Comforter who would remain with them. This promise showed " +
+            "that the disciples would not be left alone to carry out the work " +
+            "Jesus had given them. The Holy Spirit would continue to help and " +
+            "strengthen them.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 14:16–18; John 15:26.",
+            15, Color.DKGRAY, false);
+
+    addText("3. The Holy Spirit Is Our Comforter and Helper", 18, Color.BLACK, true);
+    addText(
+            "Jesus described the Holy Spirit as the Comforter who would be with " +
+            "His disciples. The Holy Spirit helps believers in their walk with " +
+            "God and strengthens them to remain faithful. His presence reminds " +
+            "us that God has not left us without help. We can depend on Him as " +
+            "we face the responsibilities and challenges of Christian living.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 14:16; Romans 8:26.",
+            15, Color.DKGRAY, false);
+
+    addText("4. The Holy Spirit Guides Us into All Truth", 18, Color.BLACK, true);
+    addText(
+            "Jesus also promised that the Holy Spirit would guide His disciples " +
+            "into all truth. He would help them understand and remember the " +
+            "things Jesus had taught them. In the same way, believers should " +
+            "remain attentive to the Holy Spirit and allow God's truth to shape " +
+            "their understanding, decisions and conduct.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 14:26; John 16:13.",
+            15, Color.DKGRAY, false);
+
+    addText("5. The Promise of the Holy Spirit Was Fulfilled", 18, Color.BLACK, true);
+    addText(
+            "After His resurrection, Jesus instructed His disciples to wait for " +
+            "the promise of the Father. He explained that they would receive " +
+            "power when the Holy Spirit came upon them. The disciples obeyed " +
+            "and waited together. On the Day of Pentecost, the promise was " +
+            "fulfilled as the Holy Spirit came upon them.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Luke 24:49; Acts 1:4–8; Acts 2:1–4.",
+            15, Color.DKGRAY, false);
+
+    addText("6. The Holy Spirit Empowers Believers", 18, Color.BLACK, true);
+    addText(
+            "Jesus promised that the disciples would receive power when the " +
+            "Holy Spirit came upon them. This power would enable them to become " +
+            "witnesses of Jesus Christ. The coming of the Holy Spirit was not " +
+            "simply an experience for the disciples; it prepared them to carry " +
+            "out the work of spreading the Gospel. Believers should therefore " +
+            "recognise their need for the Holy Spirit's help in living and " +
+            "sharing their faith.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 1:8; 2 Timothy 1:7.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Understand that the Holy Spirit is God's promised Helper.\n" +
+            "2. Read and reflect on the promises Jesus made concerning the Holy Spirit.\n" +
+            "3. Depend on God's help rather than relying only on your own strength.\n" +
+            "4. Pay attention to the truth of God's Word as you seek His guidance.\n" +
+            "5. Be willing to share your faith and represent Jesus Christ.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "The Holy Spirit is God's promised Comforter and Helper. Jesus " +
+            "promised to send Him to His disciples, and that promise was " +
+            "fulfilled on the Day of Pentecost. The Holy Spirit guides, helps " +
+            "and empowers believers to live for God and bear witness to Jesus Christ.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Why did Jesus promise to send the Holy Spirit to His disciples? " +
+            "What does it mean to depend on the Holy Spirit for help and guidance " +
+            "in your daily Christian life?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for the gift and promise of the Holy Spirit. " +
+            "Help me to understand His presence and His work in my life. Teach me " +
+            "to depend on His help, follow the truth of Your Word and live in a way " +
+            "that honours You. Empower me to remain faithful and to be a true " +
+            "witness of Jesus Christ. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showSeptemberWeekTwo() {
+
+    addText("The Day of Pentecost: The Coming of the Holy Spirit",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "The Day of Pentecost was a significant moment in the history of " +
+            "the early Church. It was the day the promise Jesus made concerning " +
+            "the Holy Spirit was fulfilled. The disciples who had waited for " +
+            "this promise experienced the coming of the Holy Spirit in a " +
+            "remarkable way. This event brought a new boldness and empowerment " +
+            "that helped them carry the message of Jesus Christ to others.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. The Disciples Waited for the Promise", 18, Color.BLACK, true);
+    addText(
+            "Before the Day of Pentecost, Jesus had instructed His disciples " +
+            "to wait for the promise of the Father. He told them that they " +
+            "would receive power when the Holy Spirit came upon them. They " +
+            "therefore gathered and waited as Jesus had instructed. Their " +
+            "experience teaches the importance of trusting God's promises " +
+            "and following His instructions.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Luke 24:49; Acts 1:4–8.",
+            15, Color.DKGRAY, false);
+
+    addText("2. A Sound Came from Heaven", 18, Color.BLACK, true);
+    addText(
+            "When the Day of Pentecost arrived, the disciples were gathered " +
+            "together in one place. Suddenly, there came a sound from heaven " +
+            "like a rushing mighty wind, and it filled the house where they " +
+            "were sitting. This was part of the remarkable way in which the " +
+            "coming of the Holy Spirit was manifested.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 2:1–2.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Cloven Tongues Like as of Fire Appeared", 18, Color.BLACK, true);
+    addText(
+            "The Scriptures further record that there appeared unto the " +
+            "disciples cloven tongues like as of fire, and one sat upon each " +
+            "of them. This was another remarkable occurrence on the Day of " +
+            "Pentecost. The event showed that the promise of the Holy Spirit " +
+            "was being fulfilled among the waiting disciples.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 2:3.",
+            15, Color.DKGRAY, false);
+
+    addText("4. They Were Filled with the Holy Spirit", 18, Color.BLACK, true);
+    addText(
+            "The disciples were all filled with the Holy Ghost and began to " +
+            "speak with other tongues as the Spirit gave them utterance. " +
+            "This was a central part of the Pentecost experience recorded " +
+            "in Scripture. They did not speak by their own ability; they " +
+            "spoke as the Spirit enabled them.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 2:4.",
+            15, Color.DKGRAY, false);
+
+    addText("5. The Significance of the Day of Pentecost", 18, Color.BLACK, true);
+
+    addText("A. The Holy Spirit Came Upon the Disciples", 17, Color.BLACK, true);
+    addText(
+            "The Holy Spirit came upon the apostles, fulfilling the promise " +
+            "Jesus had made to them. They were no longer to depend only on " +
+            "their own strength as they carried out the work entrusted to them.",
+            16, Color.BLACK, false
+    );
+
+    addText("B. They Became Bold to Preach the Gospel", 17, Color.BLACK, true);
+    addText(
+            "The coming of the Holy Spirit brought boldness to the disciples. " +
+            "They became courageous in proclaiming the Gospel of Jesus Christ. " +
+            "The same disciples who had waited for the promise now began to " +
+            "declare the message of Christ openly.",
+            16, Color.BLACK, false
+    );
+
+    addText("C. They Spoke with Other Tongues", 17, Color.BLACK, true);
+    addText(
+            "As the Holy Spirit gave them utterance, the disciples spoke with " +
+            "other tongues. This was one of the manifestations that accompanied " +
+            "the coming of the Holy Spirit on the Day of Pentecost.",
+            16, Color.BLACK, false
+    );
+
+    addText("D. Many People Believed in Jesus and Were Saved", 17, Color.BLACK, true);
+    addText(
+            "The events of Pentecost drew attention to the message being " +
+            "proclaimed. As the Gospel was preached, many people believed " +
+            "in Jesus Christ and were saved. The coming of the Holy Spirit " +
+            "therefore helped advance the message of salvation.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 2:5–11, 37–41.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Trust God's promises and remain obedient to His instructions.\n" +
+            "2. Recognise your need for the Holy Spirit's empowerment.\n" +
+            "3. Be courageous in sharing the Gospel of Jesus Christ.\n" +
+            "4. Allow your life and words to point others towards Jesus.\n" +
+            "5. Remember that the work of spreading the Gospel is not meant " +
+            "to depend on human strength alone.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "The Day of Pentecost marked the fulfilment of Jesus' promise " +
+            "concerning the Holy Spirit. The disciples were filled with the " +
+            "Holy Spirit, spoke with other tongues and received boldness to " +
+            "preach the Gospel. Through their witness, many people believed " +
+            "in Jesus Christ.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "What happened on the Day of Pentecost? What changes did the " +
+            "coming of the Holy Spirit bring to the disciples, and how can " +
+            "their boldness in preaching the Gospel encourage you today?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for fulfilling Your promise by sending " +
+            "the Holy Spirit. Help me to trust Your promises, remain obedient " +
+            "to Your Word and depend on Your Spirit. Give me courage to stand " +
+            "for Jesus Christ and share the Gospel with others. May my life " +
+            "be a faithful witness of Your goodness. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+            }
+    private void showSeptemberWeekThree() {
+
+    addText("The Significance and Manifestations of the Holy Spirit",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "The coming of the Holy Spirit brought empowerment and transformation " +
+            "to the early believers. His work was seen through spiritual manifestations " +
+            "and through the changes He produced in their lives. The Holy Spirit enables " +
+            "believers to serve God, bear witness to Jesus Christ and develop godly " +
+            "character. Therefore, understanding His manifestations involves looking " +
+            "both at His supernatural work and at the fruit He produces in our daily lives.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. The Holy Spirit Gives Power to Witness", 18, Color.BLACK, true);
+    addText(
+            "One important reason Jesus promised the Holy Spirit was to empower His " +
+            "disciples to become witnesses of Him. Before Pentecost, the disciples had " +
+            "been instructed to wait for this power. When the Holy Spirit came upon " +
+            "them, they received boldness to proclaim the Gospel. This teaches us that " +
+            "sharing the message of Jesus Christ should not depend on human courage alone; " +
+            "we need the help and empowerment of the Holy Spirit.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 1:8; Acts 4:31.",
+            15, Color.DKGRAY, false);
+
+    addText("2. The Manifestation of Speaking in Other Tongues", 18, Color.BLACK, true);
+    addText(
+            "On the Day of Pentecost, the disciples were filled with the Holy Spirit " +
+            "and began to speak with other tongues as the Spirit gave them utterance. " +
+            "This was one of the remarkable manifestations that accompanied the " +
+            "coming of the Holy Spirit. It demonstrated that the disciples were " +
+            "empowered by the Spirit rather than relying on their natural ability.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 2:1–4; Acts 10:44–46.",
+            15, Color.DKGRAY, false);
+
+    addText("3. The Manifestation of Prophecy", 18, Color.BLACK, true);
+    addText(
+            "The Scriptures reveal that the coming of the Holy Spirit is associated " +
+            "with prophecy. Peter explained that the events of Pentecost fulfilled " +
+            "the prophecy that God would pour out His Spirit upon all flesh. Sons " +
+            "and daughters would prophesy, showing that the work of the Holy Spirit " +
+            "was not limited to a particular group of people. God would work through " +
+            "those who received His Spirit.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 2:16–18; Joel 2:28–29.",
+            15, Color.DKGRAY, false);
+
+    addText("4. The Manifestation of Visions and Dreams", 18, Color.BLACK, true);
+    addText(
+            "Peter also referred to the promise that young men would see visions " +
+            "and old men would dream dreams when God poured out His Spirit. These " +
+            "manifestations demonstrate that God can communicate and reveal things " +
+            "according to His purpose. Believers should remain grounded in Scripture " +
+            "and seek God's wisdom when considering spiritual experiences.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 2:17; Joel 2:28.",
+            15, Color.DKGRAY, false);
+
+    addText("5. Manifestation of the Fruit of the Spirit ", 18, Color.BLACK, true);
+    addText(
+            "Beyond supernatural manifestations, the presence of the Holy Spirit " +
+            "should also be reflected in the character of a believer. Galatians " +
+            "5:22–23 describes the fruit of the Spirit. These qualities show the " +
+            "kind of life the Holy Spirit develops in us as we walk with God. " +
+            "They should become visible in our attitudes, relationships, decisions " +
+            "and everyday conduct.",
+            16, Color.BLACK, false
+    );
+
+    addText("A. Love", 17, Color.BLACK, true);
+    addText(
+            "Love enables us to care for others sincerely, treat people with kindness " +
+            "and show the kind of love that reflects God's character. It teaches us " +
+            "not to live selfishly but to consider the well-being of others.",
+            15, Color.BLACK, false
+    );
+
+    addText("B. Joy", 17, Color.BLACK, true);
+    addText(
+            "Joy gives us an inward gladness that is not controlled entirely by " +
+            "our circumstances. It helps us remain thankful and hopeful in God " +
+            "even when life becomes challenging.",
+            15, Color.BLACK, false
+    );
+
+    addText("C. Peace", 17, Color.BLACK, true);
+    addText(
+            "Peace helps us remain calm and trust God instead of allowing fear, " +
+            "confusion or unnecessary conflict to control our lives. It also " +
+            "encourages us to live peacefully with others.",
+            15, Color.BLACK, false
+    );
+
+    addText("D. Longsuffering", 17, Color.BLACK, true);
+    addText(
+            "Longsuffering means patience and the ability to endure difficulties " +
+            "without quickly giving up or responding with anger. It helps us " +
+            "remain patient with others and with the process of growth.",
+            15, Color.BLACK, false
+    );
+
+    addText("E. Gentleness", 17, Color.BLACK, true);
+    addText(
+            "Gentleness is shown through a considerate and humble attitude. " +
+            "It affects how we speak to people, correct others and respond " +
+            "when disagreements arise.",
+            15, Color.BLACK, false
+    );
+
+    addText("F. Goodness", 17, Color.BLACK, true);
+    addText(
+            "Goodness involves choosing what is right and showing kindness " +
+            "through our actions. It encourages us to do good even when there " +
+            "is no personal reward or recognition.",
+            15, Color.BLACK, false
+    );
+
+    addText("G. Faith", 17, Color.BLACK, true);
+    addText(
+            "Faithfulness means being dependable, trustworthy and committed " +
+            "to God. It should be seen in our words, promises, responsibilities " +
+            "and relationship with others.",
+            15, Color.BLACK, false
+    );
+
+    addText("H. Meekness", 17, Color.BLACK, true);
+    addText(
+            "Meekness is strength expressed with humility and self-control. " +
+            "It helps us avoid pride, receive correction and treat others " +
+            "with respect.",
+            15, Color.BLACK, false
+    );
+
+    addText("I. Temperance", 17, Color.BLACK, true);
+    addText(
+            "Temperance means self-control. It helps us manage our emotions, " +
+            "desires, words and actions instead of allowing them to control us. " +
+            "It enables us to make choices that agree with God's Word.",
+            15, Color.BLACK, false
+    );
+
+    addText("Scripture: Galatians 5:22–23.",
+            15, Color.DKGRAY, false);
+
+    addText("6. The Difference Between Spiritual Manifestations and the Fruit of the Spirit",
+            18, Color.BLACK, true);
+    addText(
+            "Spiritual manifestations demonstrate the Holy Spirit's empowerment " +
+            "and work through believers, while the fruit of the Spirit describes " +
+            "the godly character He develops within them. Both are important in " +
+            "the Christian life. A believer should not focus only on spiritual " +
+            "experiences while neglecting love, patience, humility and self-control. " +
+            "The work of the Holy Spirit should be reflected both in how we serve " +
+            "God and in how we live.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Galatians 5:22–25; 1 Corinthians 12:4–7.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Depend on the Holy Spirit for boldness to share the Gospel.\n" +
+            "2. Study the biblical accounts of the manifestations of the Holy Spirit.\n" +
+            "3. Practise love and kindness in your relationships.\n" +
+            "4. Learn to respond with patience and gentleness when challenged.\n" +
+            "5. Develop faithfulness in your responsibilities.\n" +
+            "6. Exercise self-control in your words, choices and behaviour.\n" +
+            "7. Examine your daily conduct and identify areas where you need spiritual growth.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "The Holy Spirit empowers believers for service and develops godly " +
+            "character in their lives. His manifestations demonstrate His work " +
+            "and empowerment, while the fruit of the Spirit shows the character " +
+            "that should become evident in those who walk with Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Which fruit of the Spirit is most evident in my daily life? Which " +
+            "qualities do I need to develop further? Do my attitudes and actions " +
+            "reflect the work of the Holy Spirit in me?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for the Holy Spirit and His work in my life. " +
+            "Help me to depend on His empowerment and to grow in the fruit of the " +
+            "Spirit. Develop love, joy, peace, patience, gentleness, goodness, " +
+            "faithfulness, meekness and self-control in me. Let my life reflect " +
+            "Your character and help me become a faithful witness of Jesus Christ. " +
+            "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showSeptemberWeekFour() {
+
+    addText("The Work and Ministry of the Holy Spirit in the Life of a Believer",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "The Holy Spirit was not sent only for the disciples who lived during " +
+            "the time of Jesus. His ministry remains important in the life of every " +
+            "believer. Jesus promised that the Holy Spirit would be with His disciples " +
+            "as their Comforter and Helper. He would guide them into all truth and " +
+            "empower them to fulfil the work God had given them. Understanding His " +
+            "ministry helps us recognise our dependence on Him in our daily Christian walk.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. The Holy Spirit Is Our Comforter", 18, Color.BLACK, true);
+    addText(
+            "Jesus promised His disciples another Comforter who would abide with " +
+            "them. This promise reveals the care of God for His people. The Holy " +
+            "Spirit comforts and strengthens believers, reminding them that they " +
+            "are not left alone in their walk with God. In times of difficulty, " +
+            "we can depend on God's presence and find strength in Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 14:16–18; John 15:26.",
+            15, Color.DKGRAY, false);
+
+    addText("2. The Holy Spirit Is Our Helper", 18, Color.BLACK, true);
+    addText(
+            "There are situations in which human strength and understanding are " +
+            "not enough. The Holy Spirit helps believers in their weaknesses and " +
+            "assists them in their walk with God. We should therefore learn to " +
+            "depend on His help rather than believing that we can accomplish " +
+            "everything through our own strength.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 8:26; John 14:16.",
+            15, Color.DKGRAY, false);
+
+    addText("3. The Holy Spirit Guides Us into All Truth", 18, Color.BLACK, true);
+    addText(
+            "One of the important ministries of the Holy Spirit is to guide " +
+            "believers into all truth. Jesus explained that the Spirit would " +
+            "teach His disciples and remind them of the things He had spoken. " +
+            "The Holy Spirit helps us understand God's truth and directs our " +
+            "attention to what agrees with His Word. We must remain willing " +
+            "to learn, obey and follow the truth revealed in Scripture.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 14:26; John 16:13.",
+            15, Color.DKGRAY, false);
+
+    addText("4. The Holy Spirit Empowers Us to Be Witnesses", 18, Color.BLACK, true);
+    addText(
+            "Jesus told His disciples that they would receive power after the " +
+            "Holy Spirit came upon them and that they would become His witnesses. " +
+            "The Holy Spirit gives believers the boldness and strength needed " +
+            "to proclaim the Gospel. This means that sharing our faith and " +
+            "representing Christ should be done with dependence on the Spirit " +
+            "rather than human confidence alone.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 1:8; Acts 4:31.",
+            15, Color.DKGRAY, false);
+
+    addText("5. The Holy Spirit Helps Us Live for God", 18, Color.BLACK, true);
+    addText(
+            "The Christian life is not meant to be lived by human effort alone. " +
+            "Believers need the Holy Spirit's help to walk in obedience and " +
+            "resist the desires that oppose God's will. As we yield ourselves " +
+            "to His leading, our conduct should increasingly reflect the " +
+            "character that pleases God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Galatians 5:16; Romans 8:13–14.",
+            15, Color.DKGRAY, false);
+
+    addText("6. The Holy Spirit Helps Us Remember the Teachings of Jesus",
+            18, Color.BLACK, true);
+    addText(
+            "Jesus explained that the Comforter, the Holy Ghost, would teach " +
+            "His disciples all things and bring His words to their remembrance. " +
+            "This ministry helped the disciples understand and remember the " +
+            "teachings of Jesus. It also reminds believers of the importance " +
+            "of learning God's Word and depending on the Holy Spirit as they " +
+            "grow in understanding and obedience.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: John 14:26.",
+            15, Color.DKGRAY, false);
+
+    addText("7. The Holy Spirit Makes Us Effective in God's Work",
+            18, Color.BLACK, true);
+    addText(
+            "The Holy Spirit empowers believers to serve God and contribute " +
+            "to the work of His Kingdom. The early disciples were strengthened " +
+            "to preach the Gospel, and their witness helped many people hear " +
+            "and believe the message of Jesus Christ. We should not treat our " +
+            "abilities as substitutes for the Spirit's help. Instead, we should " +
+            "serve faithfully while depending on God for strength and direction.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Acts 1:8; 1 Corinthians 12:4–7.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Depend on the Holy Spirit in your daily Christian walk.\n" +
+            "2. Seek His guidance through prayer and the study of God's Word.\n" +
+            "3. Remain willing to learn and obey the truth of Scripture.\n" +
+            "4. Ask God for boldness to share the Gospel with others.\n" +
+            "5. Do not depend entirely on your own strength when facing challenges.\n" +
+            "6. Make room for spiritual growth by yielding your life to God's leading.\n" +
+            "7. Serve God faithfully and use your abilities to benefit others.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "The Holy Spirit is our Comforter, Helper and Guide. He teaches, " +
+            "strengthens and empowers believers to live for God and fulfil " +
+            "their responsibilities as witnesses of Jesus Christ. We must " +
+            "learn to depend on His ministry rather than relying only on " +
+            "our natural strength and understanding.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Do I depend on the Holy Spirit in my daily decisions and Christian " +
+            "responsibilities? Am I willing to follow His guidance through " +
+            "God's Word? How can I become a more effective witness of Jesus Christ?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for the gift and ministry of the Holy " +
+            "Spirit. Help me to depend on Him as my Comforter, Helper and Guide. " +
+            "Teach me to understand Your Word, obey Your instructions and walk " +
+            "in Your truth. Give me boldness to share the Gospel and strength " +
+            "to live a life that honours You. May I become more effective in " +
+            "serving You and fulfilling Your purpose for my life. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+        }
 
     private void addTeachingPoint(
             String heading,
