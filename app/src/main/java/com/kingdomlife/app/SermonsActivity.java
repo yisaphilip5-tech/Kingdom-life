@@ -6289,6 +6289,598 @@ public class SermonsActivity extends Activity {
             16, Color.BLACK, false
     );
         }
+    private void showOctoberWeekOne() {
+
+    addText("Understanding the Faith That Moves Mountains",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Faith is an important part of the Christian life. It enables us to " +
+            "trust God beyond what we can see, understand or accomplish through " +
+            "our natural ability. Faith gives us access to the world of unlimited " +
+            "possibilities because it rests on the power and faithfulness of God. " +
+            "It is not merely a positive thought; it is a confident response to " +
+            "God and His Word.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. What Is Faith?", 18, Color.BLACK, true);
+    addText(
+            "Faith is access to the world of unlimited possibilities. It is the " +
+            "confidence that God is able to do what He has promised, even when " +
+            "the circumstances around us appear impossible. Faith looks beyond " +
+            "what is visible and depends on God's ability rather than human limitations. " +
+            "When Jesus said that all things are possible to him that believeth, " +
+            "He showed the importance of believing in God's power.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Mark 9:23–27; Hebrews 11:1.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Faith Is a Living Force", 18, Color.BLACK, true);
+    addText(
+            "Faith is a living force drawn from the living Word of God to produce " +
+            "living proofs. Genuine faith is not empty talk or mere agreement with " +
+            "a statement. It begins with believing God's Word and is demonstrated " +
+            "through the way we live, speak and act. When we receive God's Word " +
+            "with faith, it influences our decisions and gives us confidence to " +
+            "obey Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 10:17; James 2:17–18.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Faith Gives Access to Unlimited Possibilities", 18, Color.BLACK, true);
+    addText(
+            "There are situations that may appear beyond human ability, but faith " +
+            "reminds us that God is not limited by what we see. In Mark 9, a father " +
+            "brought his son to Jesus and needed help to believe. Jesus directed his " +
+            "attention to the possibility of God's intervention. This account teaches " +
+            "us to bring our difficulties to God and trust Him rather than allowing " +
+            "impossible-looking circumstances to determine what we believe.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Mark 9:23–27; Luke 1:37.",
+            15, Color.DKGRAY, false);
+
+    addText("4. Faith Is Demonstrated Through Our Actions", 18, Color.BLACK, true);
+    addText(
+            "Faith should influence what we do, not only what we say. In Matthew 14, " +
+            "Peter stepped out of the boat at the word of Jesus and walked on the " +
+            "water. When he became afraid because of the wind, he began to sink and " +
+            "cried out to Jesus for help. This account shows the importance of keeping " +
+            "our attention on Christ and trusting His Word even when circumstances " +
+            "become frightening.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Matthew 14:23–31; James 2:17.",
+            15, Color.DKGRAY, false);
+
+    addText("5. Faith Must Be Strengthened and Protected", 18, Color.BLACK, true);
+    addText(
+            "Our faith can face challenges, doubts and difficult circumstances. " +
+            "Jesus warned Peter that Satan desired to sift him as wheat, but Jesus " +
+            "also said that He had prayed for Peter's faith not to fail. This reminds " +
+            "us that our faith is valuable and must be strengthened through our " +
+            "relationship with God, prayer and attention to His Word. When challenges " +
+            "come, we should not abandon our trust in God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Luke 22:31–32; 1 Peter 1:6–7.",
+            15, Color.DKGRAY, false);
+
+    addText("6. Faith Helps Us Live in Righteousness", 18, Color.BLACK, true);
+    addText(
+            "Faith is not only for receiving answers to prayers or overcoming " +
+            "difficult situations. It also affects how we live before God. Through " +
+            "faith, we trust God's instructions and choose to walk in obedience. " +
+            "A life of faith should therefore be reflected in our conduct, decisions " +
+            "and commitment to doing what pleases God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 1:17; Hebrews 10:38.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Read and meditate on God's Word so that your faith can be strengthened.\n" +
+            "2. Bring difficult situations to God instead of allowing fear to control you.\n" +
+            "3. Practise obeying God's Word even when it requires courage.\n" +
+            "4. Keep your attention on Christ when challenges arise.\n" +
+            "5. Protect your faith through prayer and consistent fellowship with God.\n" +
+            "6. Let your faith be reflected in your daily actions and conduct.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Faith gives us access to the world of unlimited possibilities because " +
+            "it places our confidence in God and His Word. It is a living force that " +
+            "should produce visible evidence through our actions and way of life. " +
+            "We must continue to strengthen and protect our faith, especially when " +
+            "we face challenges.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "What does faith mean to me? Do I depend on God's Word when circumstances " +
+            "become difficult? Is my faith visible through my actions, decisions " +
+            "and daily relationship with God?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for Your Word and for the gift of faith. " +
+            "Help me to trust You even when I face difficult situations. Strengthen " +
+            "my faith, remove fear and doubt from my heart, and teach me to keep " +
+            "my attention on Jesus Christ. Let my faith produce visible evidence " +
+            "through my actions and my obedience to Your Word. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showOctoberWeekTwo() {
+
+    addText("The Characteristics and Expressions of Genuine Faith",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Genuine faith is more than saying that we believe in God. It is a " +
+            "living confidence in God and His Word that influences our thoughts, " +
+            "words and actions. Faith should be evident in the way we respond to " +
+            "challenges, obey God's instructions and approach the responsibilities " +
+            "of life. When faith is active in us, it produces evidence through the " +
+            "way we live.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Genuine Faith Is a Living Force", 18, Color.BLACK, true);
+    addText(
+            "Faith is a living force drawn from the living Word of God to produce " +
+            "living proofs. It is not merely an idea or an empty confession. It " +
+            "begins when we receive God's Word and allow it to influence our lives. " +
+            "A person who genuinely believes God's Word should show that belief " +
+            "through obedience, confidence and practical actions.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 10:17; James 2:17–18.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Genuine Faith Believes God's Word", 18, Color.BLACK, true);
+    addText(
+            "Faith depends on what God has spoken rather than being controlled " +
+            "only by what the eyes can see. Abraham believed God's promise even " +
+            "when the circumstances appeared difficult. Genuine faith therefore " +
+            "requires us to take God's Word seriously and trust His faithfulness " +
+            "even when we have not yet seen the outcome.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 4:18–21; Hebrews 11:1.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Genuine Faith Is Expressed Through Our Words", 18, Color.BLACK, true);
+    addText(
+            "What we believe should influence what we say. Faith-filled speech " +
+            "agrees with God's Word instead of allowing fear and discouragement " +
+            "to control our confession. This does not mean pretending that " +
+            "problems do not exist; it means speaking with confidence in God's " +
+            "promises while continuing to trust and obey Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Mark 11:22–23; 2 Corinthians 4:13.",
+            15, Color.DKGRAY, false);
+
+    addText("4. Genuine Faith Is Demonstrated Through Obedience",
+            18, Color.BLACK, true);
+    addText(
+            "Faith is demonstrated when we act on what God has said. It is not " +
+            "enough to hear God's instructions and agree with them without " +
+            "putting them into practice. Genuine faith moves us to obey God, " +
+            "even when obedience requires patience, courage or sacrifice. " +
+            "Our actions should give evidence of what we believe.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: James 2:17–24; Hebrews 11:8.",
+            15, Color.DKGRAY, false);
+
+    addText("5. Genuine Faith Produces Confidence in God",
+            18, Color.BLACK, true);
+    addText(
+            "Faith gives us confidence to depend on God when we face uncertainty. " +
+            "It does not mean that we will never experience fear or difficulty. " +
+            "Rather, it means that we choose to trust God's ability and faithfulness " +
+            "instead of allowing difficult circumstances to become greater than " +
+            "our confidence in Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Proverbs 3:5–6; Hebrews 10:35–36.",
+            15, Color.DKGRAY, false);
+
+    addText("6. Genuine Faith Can Grow to Greater Levels",
+            18, Color.BLACK, true);
+    addText(
+            "The Scriptures speak about different expressions and measures of " +
+            "faith. Jesus spoke about little faith and great faith, showing that " +
+            "believers should not remain stagnant in their confidence in God. " +
+            "As we continue to receive God's Word, practise obedience and depend " +
+            "on Him, our faith can become stronger and more mature.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Matthew 8:10; Matthew 14:31; Romans 12:3.",
+            15, Color.DKGRAY, false);
+
+    addText("7. Genuine Faith Produces Visible Results",
+            18, Color.BLACK, true);
+    addText(
+            "Faith should not remain hidden in our hearts without influencing " +
+            "our lives. Its evidence can be seen in our obedience, perseverance, " +
+            "love and willingness to follow God's instructions. The lives of " +
+            "people recorded in Hebrews 11 demonstrate how faith influenced " +
+            "their decisions and actions. Genuine faith produces a life that " +
+            "shows confidence in God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Hebrews 11:1–10; James 2:18.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Read God's Word regularly and allow it to shape your beliefs.\n" +
+            "2. Speak in agreement with God's promises rather than allowing fear to control you.\n" +
+            "3. Put your faith into action through obedience to God's instructions.\n" +
+            "4. Trust God when circumstances are uncertain or difficult.\n" +
+            "5. Keep growing through prayer, study and consistent obedience.\n" +
+            "6. Let your actions demonstrate the faith you profess.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Genuine faith is a living confidence in God and His Word. It is " +
+            "expressed through our words, obedience, decisions and daily conduct. " +
+            "It can grow stronger as we continue to walk with God, and its " +
+            "evidence should be seen in the way we live.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Does my daily conduct agree with what I say I believe? Do I act " +
+            "on God's Word when obedience is difficult? What can I do to " +
+            "strengthen my faith and allow it to become more evident in my life?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for Your Word and for the gift of faith. " +
+            "Help me to develop genuine faith that influences my thoughts, words " +
+            "and actions. Teach me to trust Your promises, obey Your instructions " +
+            "and remain confident in You during difficult times. Let my life " +
+            "produce evidence of my faith and bring glory to Your name. " +
+            "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showOctoberWeekThree() {
+
+    addText("The Faith That Overcomes Challenges and Produces Results",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Every believer will encounter situations that test their faith. " +
+            "There may be moments when circumstances appear difficult, answers " +
+            "seem delayed or the way forward is unclear. However, faith enables " +
+            "us to remain confident in God and His promises. Overcoming challenges " +
+            "through faith does not mean that difficulties will never occur; it " +
+            "means that we continue to trust God and follow His Word even in the " +
+            "midst of them.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Faith Keeps Us Confident in God's Promises",
+            18, Color.BLACK, true);
+    addText(
+            "One way faith helps us overcome challenges is by keeping our " +
+            "confidence in what God has promised. Abraham faced circumstances " +
+            "that appeared contrary to God's promise, yet he remained strong " +
+            "in faith and gave glory to God. His example teaches us not to allow " +
+            "what we see around us to destroy our confidence in God's faithfulness. " +
+            "We must learn to hold firmly to His Word.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 4:18–21; Hebrews 10:23.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Faith Helps Us Overcome Fear and Doubt",
+            18, Color.BLACK, true);
+    addText(
+            "Fear and doubt can weaken our confidence when we face difficult " +
+            "situations. In Matthew 14, Peter began walking on the water towards " +
+            "Jesus, but when he noticed the strong wind, he became afraid and " +
+            "began to sink. Jesus reached out and helped him. This account teaches " +
+            "us to keep our attention on Christ rather than allowing frightening " +
+            "circumstances to control our response. When fear arises, we should " +
+            "turn to God for help.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Matthew 14:28–31; 2 Timothy 1:7.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Faith Gives Us Strength to Persevere",
+            18, Color.BLACK, true);
+    addText(
+            "Sometimes the answer to a prayer does not come immediately. During " +
+            "such moments, faith teaches us to remain patient and continue trusting " +
+            "God. We should not abandon what is right simply because we have not " +
+            "seen the result we desire. Perseverance helps us remain committed " +
+            "to God's instructions while waiting on Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Galatians 6:9; Hebrews 10:35–36.",
+            15, Color.DKGRAY, false);
+
+    addText("4. Faith Moves Us to Take Action",
+            18, Color.BLACK, true);
+    addText(
+            "Genuine faith is expressed through action. It is not enough to " +
+            "say that we believe if we are unwilling to obey God's instructions. " +
+            "James explains that faith without works is dead. This means that " +
+            "our actions should agree with what we profess to believe. When God " +
+            "gives us direction through His Word, we must be willing to act upon it.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: James 2:17–18; Hebrews 11:8.",
+            15, Color.DKGRAY, false);
+
+    addText("5. Faith Enables Us to Face Impossible Situations",
+            18, Color.BLACK, true);
+    addText(
+            "There are situations that may appear impossible from a human " +
+            "perspective. However, God's power is not limited by human ability. " +
+            "When a father brought his son to Jesus, he asked for help with " +
+            "his unbelief. Jesus responded by teaching him about the possibility " +
+            "of believing. This account encourages us to bring our difficulties " +
+            "to God and trust Him even when we do not know how the solution will come.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Mark 9:17–27; Luke 1:37.",
+            15, Color.DKGRAY, false);
+
+    addText("6. Faith Produces Results According to God's Will",
+            18, Color.BLACK, true);
+    addText(
+            "Faith is not simply a way of trying to obtain whatever we desire. " +
+            "It is confidence in God, His wisdom and His promises. We must " +
+            "therefore bring our requests before Him while remaining willing " +
+            "to trust His will. The results of faith may be seen through answered " +
+            "prayer, strengthened character, obedience, perseverance and God's " +
+            "work in our lives.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: 1 John 5:14–15; Hebrews 11:6.",
+            15, Color.DKGRAY, false);
+
+    addText("7. Faith Gives Us Victory Through Christ",
+            18, Color.BLACK, true);
+    addText(
+            "The Christian life involves challenges, but believers are encouraged " +
+            "to remain confident in Christ. Victory does not mean that we will " +
+            "never experience hardship. It means that hardship does not have to " +
+            "separate us from God's love or cause us to abandon our faith. Through " +
+            "Christ, we can remain steadfast and continue living according to God's Word.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: 1 John 5:4–5; Romans 8:35–39.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Identify a challenge that is testing your faith and take it to God in prayer.\n" +
+            "2. Find relevant promises in God's Word and meditate on them.\n" +
+            "3. Refuse to let fear and discouragement control your decisions.\n" +
+            "4. Remain patient and continue doing what is right while waiting on God.\n" +
+            "5. Put your faith into action through obedience to God's instructions.\n" +
+            "6. Trust God's wisdom and remain committed to His will, whatever the outcome.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Faith enables us to face challenges with confidence in God. It helps " +
+            "us overcome fear, persevere through difficult seasons, obey God's " +
+            "Word and remain steadfast. Genuine faith is not merely spoken; it " +
+            "is demonstrated through our actions and continued trust in God.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "When I face difficult situations, do I respond with faith or allow " +
+            "fear to control me? Am I willing to obey God's Word even when the " +
+            "outcome is not yet clear? What challenge do I need to commit to God today?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You because I can depend on You in every " +
+            "situation. Strengthen my faith when I face challenges. Help me " +
+            "overcome fear and doubt, remain patient during difficult seasons " +
+            "and obey Your Word. Teach me to trust Your wisdom and remain " +
+            "steadfast in Christ. Let my life demonstrate genuine faith through " +
+            "my words and actions. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+        }
+    private void showOctoberWeekFour() {
+
+    addText("How to Develop and Grow Your Faith",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+    addText(
+            "Faith is essential to the Christian life, but it is also something " +
+            "that believers must continually develop. We should not remain at " +
+            "the same level of faith throughout our walk with God. Just as the " +
+            "body grows through proper nourishment, our faith grows as we receive " +
+            "God's Word, maintain fellowship with Him and put His instructions " +
+            "into practice. Developing our faith requires commitment, consistency " +
+            "and a willingness to trust God in every area of life.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Build Your Faith Through the Word of God",
+            18, Color.BLACK, true);
+    addText(
+            "The Word of God is one of the primary ways through which our faith " +
+            "is developed. Romans 10:17 teaches that faith comes by hearing the " +
+            "Word of God. This means that we must regularly read, hear, study and " +
+            "meditate on Scripture. As we become more familiar with God's promises " +
+            "and instructions, our confidence in Him becomes stronger. We should " +
+            "make the Word a consistent part of our daily lives rather than " +
+            "depending on it only when difficulties arise.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Romans 10:17; Joshua 1:8; Psalm 1:2–3.",
+            15, Color.DKGRAY, false);
+
+    addText("2. Develop a Consistent Prayer Life",
+            18, Color.BLACK, true);
+    addText(
+            "Prayer helps us maintain fellowship and communication with God. " +
+            "Through prayer, we express our dependence on Him, seek His guidance " +
+            "and bring our concerns before Him. A consistent prayer life helps " +
+            "us remain spiritually attentive and strengthens our relationship " +
+            "with our Heavenly Father. We should therefore create time to pray " +
+            "regularly and not allow our busy schedules to replace our fellowship " +
+            "with God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: 1 Thessalonians 5:17; Luke 18:1; Philippians 4:6–7.",
+            15, Color.DKGRAY, false);
+
+    addText("3. Exercise Your Faith Through Obedience",
+            18, Color.BLACK, true);
+    addText(
+            "Faith grows when we act upon what God has said. It is not enough " +
+            "to hear His Word without making a decision to obey it. Abraham " +
+            "demonstrated faith when he obeyed God's instruction to leave his " +
+            "country and go to the place God would show him. In the same way, " +
+            "we must be willing to follow God's instructions even when we do " +
+            "not understand every detail. Each act of obedience gives us an " +
+            "opportunity to practise trusting Him.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: James 2:17–18; Hebrews 11:8; John 14:23.",
+            15, Color.DKGRAY, false);
+
+    addText("4. Guard Your Heart Against Fear and Doubt",
+            18, Color.BLACK, true);
+    addText(
+            "Fear and doubt can weaken our confidence in God when we allow " +
+            "them to dominate our thoughts. This is why we must pay attention " +
+            "to what we believe and what we allow to influence our hearts. " +
+            "Whenever negative thoughts arise, we should return to the truth " +
+            "of God's Word and remind ourselves of His faithfulness. Growing " +
+            "faith does not mean that questions or difficult feelings will never " +
+            "arise; it means learning to turn to God rather than allowing fear " +
+            "to determine our decisions.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Proverbs 4:23; 2 Timothy 1:7; Mark 9:24.",
+            15, Color.DKGRAY, false);
+
+    addText("5. Associate with People Who Strengthen Your Faith",
+            18, Color.BLACK, true);
+    addText(
+            "The people we regularly associate with can influence our beliefs, " +
+            "attitudes and decisions. It is important to build relationships " +
+            "with people who encourage us to follow Christ and remain committed " +
+            "to God's Word. Fellowship with other believers gives us opportunities " +
+            "to learn, encourage one another and grow together. We should choose " +
+            "companionship that helps us become stronger in our walk with God.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Hebrews 10:24–25; Proverbs 13:20; 1 Thessalonians 5:11.",
+            15, Color.DKGRAY, false);
+
+    addText("6. Remain Patient and Steadfast in Your Walk with God",
+            18, Color.BLACK, true);
+    addText(
+            "Faith development is a continuous journey. There will be times " +
+            "when we must wait, remain patient and continue trusting God. We " +
+            "should not become discouraged because our growth or desired results " +
+            "do not appear immediately. Instead, we must remain committed to " +
+            "God's Word and continue doing what is right. As we remain steadfast, " +
+            "we develop spiritual maturity and become better prepared to face " +
+            "the challenges of life.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Hebrews 10:35–36; Galatians 6:9; James 1:3–4.",
+            15, Color.DKGRAY, false);
+
+    addText("7. Put Your Faith into Practice Every Day",
+            18, Color.BLACK, true);
+    addText(
+            "Faith should be visible in our everyday lives. It should influence " +
+            "how we speak, make decisions, treat others and respond to difficult " +
+            "situations. We must not limit the practice of faith to church " +
+            "activities or moments of prayer. Instead, we should demonstrate " +
+            "trust in God through honesty, love, forgiveness, responsibility " +
+            "and obedience. As we consistently apply God's Word, our faith " +
+            "becomes an active part of our daily living.",
+            16, Color.BLACK, false
+    );
+    addText("Scripture: Colossians 3:17; 2 Corinthians 5:7; James 2:18.",
+            15, Color.DKGRAY, false);
+
+    addText("Practical Application", 18, Color.BLACK, true);
+    addText(
+            "1. Set aside time each day to read and meditate on God's Word.\n" +
+            "2. Develop a regular prayer routine and remain consistent in it.\n" +
+            "3. Identify one instruction from Scripture and make a deliberate effort to obey it.\n" +
+            "4. Replace thoughts of fear and doubt with the truth of God's Word.\n" +
+            "5. Build friendships with people who encourage your spiritual growth.\n" +
+            "6. Remain patient and steadfast when answers or results seem delayed.\n" +
+            "7. Practise your faith through your words, choices and actions every day.",
+            15, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+    addText(
+            "Faith grows as we continually receive God's Word, maintain fellowship " +
+            "with Him, obey His instructions and put what we believe into practice. " +
+            "We must be intentional about our spiritual growth and remain steadfast " +
+            "in our walk with God. Developing faith is not a one-time experience; " +
+            "it is a lifelong commitment to trusting and following Him.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+    addText(
+            "Am I making time to study God's Word and pray consistently? Do my " +
+            "actions agree with what I profess to believe? What changes can I " +
+            "make today to strengthen my faith and grow in my relationship with God?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+    addText(
+            "Heavenly Father, thank You for giving me the opportunity to grow " +
+            "in faith. Help me to love Your Word, remain consistent in prayer " +
+            "and obey Your instructions. Strengthen my heart against fear and " +
+            "doubt. Lead me into relationships that encourage my spiritual " +
+            "growth, and teach me to remain patient and steadfast in every " +
+            "season. May my faith be evident in my words, decisions and actions. " +
+            "Help me to grow daily in my walk with You. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+        }
 
     private void addTeachingPoint(
             String heading,
