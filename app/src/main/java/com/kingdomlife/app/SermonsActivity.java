@@ -2769,7 +2769,7 @@ public class SermonsActivity extends Activity {
             16, DARK_TEXT, false
     );
 
-    addText("Scripture: Psalm 32:2–3",
+    addText("Scripture: Acts 3:19",
             15, DARK_TEXT, false
     );
 
