@@ -1,15 +1,17 @@
 package com.kingdomlife.app;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.view.Gravity;
+import android.graphics.drawable.GradientDrawable;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class SermonsActivity extends Activity {
 
@@ -17,25 +19,30 @@ public class SermonsActivity extends Activity {
 
     private final int PURPLE = Color.rgb(30, 24, 55);
     private final int GOLD = Color.rgb(184, 134, 11);
-    private final int WHITE = Color.WHITE;
-    private final int LIGHT = Color.rgb(245, 242, 235);
+    private final int DARK_TEXT = Color.rgb(45, 45, 45);
 
     private final String[] months = {
-            "January - Thanksgiving",
-            "February - Love",
-            "March - Divine Guidance (The Supernatural)",
-            "April - Prayer",
-            "May - The Word of God",
-            "June - Divine Health",
-            "July - Wisdom",
-            "August - Success",
-            "September - The Holy Spirit",
-            "October - Faith",
-            "November - Praise",
-            "December - Fasting"
+            "January", "February", "March", "April",
+            "May", "June", "July", "August",
+            "September", "October", "November", "December"
     };
 
-    private final String[][] weeklyTopics = {
+    private final String[] topics = {
+            "Thanksgiving",
+            "Love",
+            "Divine Guidance (The Supernatural)",
+            "Prayer",
+            "The Word of God",
+            "Divine Health",
+            "Wisdom",
+            "Success",
+            "The Holy Spirit",
+            "Faith",
+            "Praise",
+            "Fasting"
+    };
+
+    private final String[][] weeklyTeachings = {
             {
                     "What Is Thanksgiving?",
                     "Characteristics of an Acceptable Thanksgiving",
@@ -43,72 +50,75 @@ public class SermonsActivity extends Activity {
                     "How to Give an Acceptable Thanksgiving to God"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             },
             {
-                    "Week 1 - To be developed",
-                    "Week 2 - To be developed",
-                    "Week 3 - To be developed",
-                    "Week 4 - To be developed"
+                    "Week 1 Teaching",
+                    "Week 2 Teaching",
+                    "Week 3 Teaching",
+                    "Week 4 Teaching"
             }
     };
+
+    private int selectedMonth;
+    private int selectedWeek;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,42 +128,169 @@ public class SermonsActivity extends Activity {
 
         content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
-        content.setPadding(20, 20, 20, 30);
+        content.setPadding(dp(20), dp(15), dp(20), dp(25));
 
         scrollView.addView(content);
+
+        // Keep content clear of the phone's system bars.
+        scrollView.setOnApplyWindowInsetsListener((view, insets) -> {
+            view.setPadding(
+                    insets.getSystemWindowInsetLeft(),
+                    insets.getSystemWindowInsetTop(),
+                    insets.getSystemWindowInsetRight(),
+                    insets.getSystemWindowInsetBottom()
+            );
+            return insets;
+        });
+
         setContentView(scrollView);
+
+        applyKingdomBackground();
+
+        Calendar calendar = Calendar.getInstance();
+
+        selectedMonth =
+                calendar.get(Calendar.MONTH);
+
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        selectedWeek = Math.min((day - 1) / 7, 3);
 
         showSermonsHome();
     }
 
-    private void addTitle(String text) {
-        TextView title = new TextView(this);
-        title.setText(text);
-        title.setTextSize(25);
-        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-        title.setTextColor(GOLD);
-        title.setPadding(0, 20, 0, 15);
-        content.addView(title);
+    private int dp(float value) {
+        return (int) (value * getResources()
+                .getDisplayMetrics().density + 0.5f);
     }
 
-    private void addText(String text, int size) {
+    private GradientDrawable makeBackground(
+            int backgroundColor,
+            int strokeColor) {
+
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setColor(backgroundColor);
+        drawable.setCornerRadius(dp(18));
+        drawable.setStroke(dp(2), strokeColor);
+
+        return drawable;
+    }
+
+    private void applyKingdomBackground() {
+
+        android.content.SharedPreferences displayPrefs =
+                getSharedPreferences(
+                        "KingdomLifeDisplayPrefs",
+                        MODE_PRIVATE
+                );
+
+        String displayMode =
+                displayPrefs.getString("displayMode", "AUTO");
+
+        if (displayMode.equals("DAY")) {
+
+            content.setBackgroundResource(
+                    R.drawable.kingdom_home_bg
+            );
+
+        } else if (displayMode.equals("NIGHT")) {
+
+            content.setBackgroundResource(
+                    R.drawable.kingdom_night_bg
+            );
+
+        } else {
+
+            int hour = Calendar.getInstance()
+                    .get(Calendar.HOUR_OF_DAY);
+
+            if (hour >= 6 && hour < 18) {
+                content.setBackgroundResource(
+                        R.drawable.kingdom_home_bg
+                );
+            } else {
+                content.setBackgroundResource(
+                        R.drawable.kingdom_night_bg
+                );
+            }
+        }
+    }
+
+    private void addBackButton(Runnable action) {
+
+        ImageButton backButton = new ImageButton(this);
+
+        backButton.setImageResource(
+                android.R.drawable.ic_media_previous
+        );
+
+        backButton.setBackgroundColor(Color.TRANSPARENT);
+        backButton.setContentDescription("Back");
+
+        backButton.setOnClickListener(v -> action.run());
+
+        content.addView(
+                backButton,
+                new LinearLayout.LayoutParams(
+                        dp(60),
+                        dp(60)
+                )
+        );
+    }
+
+    private TextView addText(
+            String text,
+            int size,
+            int color,
+            boolean bold) {
+
         TextView view = new TextView(this);
+
         view.setText(text);
         view.setTextSize(size);
-        view.setTextColor(WHITE);
-        view.setPadding(0, 8, 0, 8);
+        view.setTextColor(color);
+
+        if (bold) {
+            view.setTypeface(
+                    Typeface.DEFAULT,
+                    Typeface.BOLD
+            );
+        }
+
+        view.setPadding(0, dp(5), 0, dp(8));
+
         content.addView(view);
+
+        return view;
     }
 
-    private void addButton(String text, Runnable action) {
-        Button button = new Button(this);
-        button.setText(text);
-        button.setTextColor(WHITE);
-        button.setAllCaps(false);
-        button.setTextSize(15);
-        button.setBackgroundTintList(
-                android.content.res.ColorStateList.valueOf(PURPLE)
-        );
+    private void addCard(
+            String heading,
+            String description,
+            View.OnClickListener listener) {
+
+        LinearLayout card = new LinearLayout(this);
+        card.setOrientation(LinearLayout.VERTICAL);
+        card.setPadding(dp(12), dp(10), dp(12), dp(10));
+        card.setBackground(makeBackground(Color.WHITE, GOLD));
+        card.setElevation(dp(3));
+        card.setClickable(true);
+        card.setFocusable(true);
+
+        TextView title = new TextView(this);
+        title.setText(heading);
+        title.setTextSize(16);
+        title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        title.setTextColor(PURPLE);
+
+        TextView details = new TextView(this);
+        details.setText(description);
+        details.setTextSize(13);
+        details.setTextColor(DARK_TEXT);
+        details.setPadding(0, dp(5), 0, 0);
+
+        card.addView(title);
+        card.addView(details);
 
         LinearLayout.LayoutParams params =
                 new LinearLayout.LayoutParams(
@@ -161,225 +298,330 @@ public class SermonsActivity extends Activity {
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 );
 
-        params.setMargins(0, 8, 0, 8);
+        params.setMargins(0, 0, 0, dp(10));
 
-        content.addView(button, params);
+        content.addView(card, params);
 
-        button.setOnClickListener(v -> action.run());
+        card.setOnClickListener(listener);
     }
 
-    private void showSermonsHome() {
+    public void showSermonsHome() {
+
         content.removeAllViews();
-        content.setBackgroundColor(PURPLE);
 
-        addButton("⬅ Back to Learn & Grow", this::finish);
-
-        addTitle("🎙️ Kingdom Life Sermons");
+        addBackButton(this::finish);
 
         addText(
-                "Grow in faith through weekly biblical teachings.",
-                16
+                "🎙️ Kingdom Sermons",
+                24,
+                DARK_TEXT,
+                true
         );
 
         addText(
-                "12 monthly topics • 48 regular weekly teachings",
-                14
+                "Grow in faith through biblical teachings.",
+                15,
+                DARK_TEXT,
+                false
+        );
+
+        addCard(
+                "📖 This Month: " + months[selectedMonth],
+                topics[selectedMonth],
+                v -> showMonth(selectedMonth)
+        );
+
+        addText(
+                "All Monthly Topics",
+                19,
+                DARK_TEXT,
+                true
         );
 
         for (int i = 0; i < months.length; i++) {
+
             final int monthIndex = i;
 
-            addButton(
-                    "📖 " + months[i],
-                    () -> showMonth(monthIndex)
+            addCard(
+                    months[i],
+                    topics[i],
+                    v -> showMonth(monthIndex)
             );
         }
 
-        addTitle("Additional Fifth-Week Teachings");
-
-        addText(
-                "Four additional teachings will be organised here " +
-                "to complete the 52-week annual programme.",
-                15
+        addCard(
+                "📚 Additional Fifth-Week Teachings",
+                "Four additional teachings will complete the annual "
+                        + "52-week sermon programme.",
+                v -> showAdditionalTeachings()
         );
     }
 
     private void showMonth(int monthIndex) {
+
         content.removeAllViews();
-        content.setBackgroundColor(PURPLE);
 
-        addButton("⬅ Back to Sermons", this::showSermonsHome);
-
-        addTitle(months[monthIndex]);
+        addBackButton(this::showSermonsHome);
 
         addText(
-                "Select a weekly teaching:",
-                16
+                months[monthIndex],
+                24,
+                DARK_TEXT,
+                true
+        );
+
+        addText(
+                "Monthly Topic: " + topics[monthIndex],
+                17,
+                DARK_TEXT,
+                true
+        );
+
+        addText(
+                "Weekly Teachings",
+                19,
+                DARK_TEXT,
+                true
         );
 
         for (int i = 0; i < 4; i++) {
+
             final int weekIndex = i;
 
-            addButton(
-                    "Week " + (i + 1) + ": " +
-                            weeklyTopics[monthIndex][i],
-                    () -> openTeaching(monthIndex, weekIndex)
+            String label = "Week " + (i + 1);
+
+            if (monthIndex == selectedMonth
+                    && weekIndex == selectedWeek) {
+                label += " • Current Week";
+            }
+
+            addCard(
+                    label + ": " + weeklyTeachings[monthIndex][i],
+                    "Open this week's biblical teaching.",
+                    v -> showTeaching(monthIndex, weekIndex)
             );
         }
     }
 
-    private void openTeaching(int monthIndex, int weekIndex) {
+    private void showTeaching(
+            int monthIndex,
+            int weekIndex) {
+
+        content.removeAllViews();
+
+        addBackButton(() -> showMonth(monthIndex));
+
+        addText(
+                months[monthIndex] + " — Week "
+                        + (weekIndex + 1),
+                23,
+                DARK_TEXT,
+                true
+        );
+
+        addText(
+                weeklyTeachings[monthIndex][weekIndex],
+                20,
+                DARK_TEXT,
+                true
+        );
 
         if (monthIndex == 0 && weekIndex == 0) {
             showJanuaryWeekOne();
-            return;
+        } else {
+
+            addText(
+                    "This teaching is being prepared.",
+                    16,
+                    DARK_TEXT,
+                    false
+            );
+
+            addText(
+                    "The full sermon will be added when its "
+                            + "source material has been organised.",
+                    14,
+                    DARK_TEXT,
+                    false
+            );
         }
-
-        content.removeAllViews();
-        content.setBackgroundColor(PURPLE);
-
-        addButton(
-                "⬅ Back to " + months[monthIndex],
-                () -> showMonth(monthIndex)
-        );
-
-        addTitle(
-                "Week " + (weekIndex + 1)
-        );
-
-        addText(
-                weeklyTopics[monthIndex][weekIndex],
-                21
-        );
-
-        addText(
-                "This teaching will be added after the message " +
-                "has been prepared and approved.",
-                16
-        );
     }
 
     private void showJanuaryWeekOne() {
-        content.removeAllViews();
-        content.setBackgroundColor(PURPLE);
-
-        addButton(
-                "⬅ Back to January",
-                () -> showMonth(0)
-        );
-
-        addTitle("JANUARY — THANKSGIVING");
-
-        addText("WEEK 1: WHAT IS THANKSGIVING?", 21);
 
         addText(
-                "Main Scriptures: 1 Thessalonians 5:18; " +
-                "2 Thessalonians 2:13; Luke 17:15–18.",
-                15
+                "Main Scriptures",
+                18,
+                PURPLE,
+                true
         );
 
-        addSection(
+        addText(
+                "1 Thessalonians 5:18\n"
+                        + "2 Thessalonians 2:13\n"
+                        + "Luke 17:15–18",
+                15,
+                DARK_TEXT,
+                false
+        );
+
+        addText(
                 "Introduction",
-                "Thanksgiving is the act of expressing gratitude " +
-                "and appreciation to God for His goodness, faithfulness, " +
-                "provision and work in our lives. It is more than simply " +
-                "saying, 'Thank You, Lord.' It is a recognition that " +
-                "everything we have and every good thing we experience " +
-                "ultimately comes from Him."
+                18,
+                PURPLE,
+                true
         );
 
-        addSection(
-                "1. Thanksgiving Is an Expression of Gratitude to God",
-                "When we give thanks, we acknowledge that God is the " +
-                "source of our blessings. We recognise His hand in our " +
-                "lives rather than taking His goodness for granted.\n\n" +
-                "Scripture: 1 Thessalonians 5:18."
+        addText(
+                "Thanksgiving is an expression of gratitude to God. "
+                        + "It is an important part of our Christian "
+                        + "life and a way of acknowledging God's "
+                        + "goodness and faithfulness.",
+                15,
+                DARK_TEXT,
+                false
         );
 
-        addSection(
+        addTeachingPoint(
+                "1. Thanksgiving Is an Expression of Gratitude",
+                "Thanksgiving is how we express our appreciation "
+                        + "to God for His goodness, kindness and "
+                        + "faithfulness."
+        );
+
+        addTeachingPoint(
                 "2. Thanksgiving Is a Debt We Owe God",
-                "God has continually shown us goodness, mercy and " +
-                "faithfulness. Therefore, giving Him thanks is an " +
-                "appropriate response to all He has done.\n\n" +
-                "In Luke 17:15–18, ten lepers were healed, but only one " +
-                "returned to give glory to God. This teaches us not to " +
-                "receive God's blessings and forget to appreciate Him."
+                "In Luke 17:15–18, ten lepers were healed, but "
+                        + "only one returned to give thanks. "
+                        + "We should not receive God's blessings "
+                        + "without remembering to appreciate Him."
         );
 
-        addSection(
-                "3. Thanksgiving Helps Us Recognise and Preserve Our Blessings",
-                "When we regularly thank God, we become more conscious " +
-                "of His goodness. We learn not to take His blessings " +
-                "for granted.\n\n" +
-                "Thanksgiving is connected with increase and the " +
-                "preservation of blessings. We should recognise that " +
-                "every increase comes from God and continue to " +
-                "acknowledge Him."
+        addTeachingPoint(
+                "3. Thanksgiving Helps Us Recognise Our Blessings",
+                "A thankful heart remembers God's goodness and "
+                        + "does not take His blessings for granted."
         );
 
-        addSection(
+        addTeachingPoint(
                 "4. Thanksgiving Gives God the Glory",
-                "Thanksgiving directs our attention away from pride " +
-                "and towards God. Instead of claiming all the credit " +
-                "for ourselves, we acknowledge His help and goodness.\n\n" +
-                "Scripture: Matthew 16:17."
+                "Our thanksgiving should direct the glory and "
+                        + "honour to God, recognising Him as "
+                        + "the source of our blessings."
         );
 
-        addSection(
+        addText(
                 "Key Lessons",
-                "• Thanksgiving is an expression of genuine gratitude.\n" +
-                "• Never take God's blessings for granted.\n" +
-                "• Gratitude should be part of daily Christian life.\n" +
-                "• Acknowledge God as the source of every good thing.\n" +
-                "• Give God glory even during difficult circumstances."
+                18,
+                PURPLE,
+                true
         );
 
-        addSection(
-                "Conclusion",
-                "Thanksgiving is not merely a religious activity; " +
-                "it is an attitude of the heart. God deserves our " +
-                "gratitude because of who He is and because of His " +
-                "goodness towards us. Let us learn to recognise His " +
-                "hand in our lives and never forget to give Him the glory."
+        addText(
+                "• Develop a grateful heart.\n"
+                        + "• Do not take God's blessings for granted.\n"
+                        + "• Make gratitude part of everyday life.\n"
+                        + "• Recognise God as the source of your blessings.\n"
+                        + "• Give thanks even during difficult times.",
+                15,
+                DARK_TEXT,
+                false
         );
 
-        addSection(
+        addText(
                 "Reflection",
-                "Do I remember to thank God only when I receive " +
-                "something, or is gratitude part of my everyday life?"
+                18,
+                PURPLE,
+                true
         );
 
-        addSection(
+        addText(
+                "Do I remember to thank God only when I receive "
+                        + "something, or is gratitude part of my "
+                        + "everyday life?",
+                15,
+                DARK_TEXT,
+                false
+        );
+
+        addText(
                 "Closing Prayer",
-                "Father, thank You for Your goodness and faithfulness " +
-                "in my life. Help me to develop a grateful heart and " +
-                "never take Your blessings for granted. Teach me to " +
-                "acknowledge You in all things and always give You " +
-                "the glory, in Jesus' name. Amen."
+                18,
+                PURPLE,
+                true
+        );
+
+        addText(
+                "Heavenly Father, give me a grateful heart. "
+                        + "Help me to recognise Your goodness, "
+                        + "remember Your blessings and give You "
+                        + "the glory in every situation. In Jesus' "
+                        + "name, Amen.",
+                15,
+                DARK_TEXT,
+                false
         );
     }
 
-    private void addSection(String heading, String body) {
+    private void addTeachingPoint(
+            String heading,
+            String explanation) {
 
-        TextView headingView = new TextView(this);
-        headingView.setText(heading);
-        headingView.setTextSize(18);
-        headingView.setTypeface(
-                Typeface.DEFAULT,
-                Typeface.BOLD
+        addText(
+                heading,
+                17,
+                PURPLE,
+                true
         );
-        headingView.setTextColor(GOLD);
-        headingView.setPadding(0, 18, 0, 5);
 
-        content.addView(headingView);
-
-        TextView bodyView = new TextView(this);
-        bodyView.setText(body);
-        bodyView.setTextSize(15);
-        bodyView.setTextColor(WHITE);
-        bodyView.setLineSpacing(5, 1f);
-        bodyView.setPadding(0, 5, 0, 10);
-
-        content.addView(bodyView);
+        addText(
+                explanation,
+                15,
+                DARK_TEXT,
+                false
+        );
     }
-          }
+
+    private void showAdditionalTeachings() {
+
+        content.removeAllViews();
+
+        addBackButton(this::showSermonsHome);
+
+        addText(
+                "Additional Fifth-Week Teachings",
+                22,
+                DARK_TEXT,
+                true
+        );
+
+        addText(
+                "These four extra teachings will be assigned "
+                        + "to selected months as the annual "
+                        + "sermon programme is completed.",
+                15,
+                DARK_TEXT,
+                false
+        );
+
+        for (int i = 1; i <= 4; i++) {
+
+            addCard(
+                    "Additional Teaching " + i,
+                    "Content to be added.",
+                    v -> showMessage(
+                            "This additional teaching is "
+                                    + "still being prepared."
+                    )
+            );
+        }
+    }
+
+    private void showMessage(String message) {
+
+        new android.app.AlertDialog.Builder(this)
+                .setMessage(message)
+                .setPositiveButton("OK", null)
+                .show();
+    }
+            }
