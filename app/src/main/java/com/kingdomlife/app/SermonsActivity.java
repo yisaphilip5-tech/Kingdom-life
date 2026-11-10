@@ -4072,6 +4072,730 @@ public class SermonsActivity extends Activity {
             16, Color.BLACK, false
     );
             }
+    private void showJulyWeekOne() {
+    addText("Understanding Wisdom",
+            22, Color.BLACK, true);
+
+    addText("Introduction",
+            18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is an important part of living a purposeful "
+            + "and successful life. It is not simply having knowledge "
+            + "or knowing many things; it is knowing what to do "
+            + "and applying that understanding in the right way. "
+            + "A person may have knowledge but still make poor "
+            + "decisions if that knowledge is not applied wisely. "
+            + "Wisdom helps us think through situations, recognise "
+            + "what is right and make decisions that agree with "
+            + "God's purpose.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Wisdom Is the Principal Thing",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "The Importance of Wisdom",
+            "Proverbs 4:7 teaches that wisdom is the principal thing "
+            + "and encourages us to get wisdom. This shows that "
+            + "wisdom should be something we deliberately pursue. "
+            + "It is important in our relationship with God, "
+            + "our decisions, our responsibilities and the way "
+            + "we handle everyday situations. We should not make "
+            + "decisions carelessly or depend only on what we "
+            + "think we know. We need wisdom to understand "
+            + "situations and respond appropriately."
+    );
+
+    addTeachingPoint(
+            "Wisdom Is Knowing What to Do and Doing It",
+            "Wisdom involves more than knowing the right thing. "
+            + "It also involves putting that understanding into "
+            + "practice. For example, knowing that honesty is "
+            + "important is knowledge, but choosing to be honest "
+            + "even when it is difficult is an application of "
+            + "wisdom. Wisdom therefore connects understanding "
+            + "with action. It helps us make choices that reflect "
+            + "what we know to be right."
+    );
+
+    addTeachingPoint(
+            "Thinking Things Through with God",
+            "Wisdom also involves taking time to think through "
+            + "our decisions with God in view. Instead of acting "
+            + "only on emotions, pressure or assumptions, we "
+            + "should seek God's direction and consider whether "
+            + "our choices agree with His Word. This helps us "
+            + "avoid careless decisions and develop a life guided "
+            + "by godly understanding."
+    );
+
+    addText("2. Why Do We Need Wisdom?",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "To Succeed in Life",
+            "Wisdom helps us handle the opportunities and "
+            + "responsibilities that come our way. Success "
+            + "requires more than desire; it requires good "
+            + "judgement, discipline and the ability to make "
+            + "appropriate decisions. Wisdom helps us recognise "
+            + "what needs to be done and take responsible steps "
+            + "towards our goals."
+    );
+
+    addTeachingPoint(
+            "To Fulfil Our Goals",
+            "Having goals is important, but we also need wisdom "
+            + "to know how to pursue them. Wisdom helps us "
+            + "consider our priorities, use our time well and "
+            + "choose the right steps. It helps us avoid being "
+            + "distracted by things that do not contribute "
+            + "to the purpose we are pursuing."
+    );
+
+    addTeachingPoint(
+            "To Understand What We Are Doing",
+            "Wisdom helps us understand the purpose and "
+            + "importance of our actions. Rather than doing "
+            + "things without understanding, we learn to "
+            + "consider why we are doing them and what "
+            + "their results may be. This gives direction "
+            + "to our actions and helps us act with intention."
+    );
+
+    addText("3. The Ultimate Purpose of Wisdom",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Glory",
+            "Wisdom should ultimately bring glory to God. "
+            + "When we use the understanding He gives us "
+            + "to make good decisions and fulfil His purpose, "
+            + "our lives can become a testimony of His goodness. "
+            + "Our abilities and achievements should not make "
+            + "us proud; they should lead us to honour the "
+            + "One who gives wisdom."
+    );
+
+    addTeachingPoint(
+            "Stability",
+            "Wisdom helps establish stability in our lives. "
+            + "It teaches us to think carefully, act responsibly "
+            + "and avoid decisions that can create unnecessary "
+            + "problems. A wise person does not allow every "
+            + "situation or emotion to determine their actions. "
+            + "Instead, they learn to make decisions based "
+            + "on understanding and godly direction."
+    );
+
+    addTeachingPoint(
+            "Mighty Works",
+            "Wisdom can help us use our abilities and opportunities "
+            + "effectively. When we apply understanding correctly, "
+            + "we can accomplish meaningful things and contribute "
+            + "positively to the lives of others. The things we "
+            + "accomplish should point back to God and reflect "
+            + "the wisdom He gives."
+    );
+
+    addText("Key Lesson",
+            18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is the principal thing. It involves knowing "
+            + "what to do, thinking things through with God "
+            + "and putting understanding into action. We need "
+            + "wisdom to succeed in life, fulfil our goals "
+            + "and live purposefully. Its ultimate purpose "
+            + "should be to bring glory to God, establish "
+            + "stability and help us accomplish meaningful works.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection",
+            18, Color.BLACK, true);
+
+    addText(
+            "Do I only have knowledge, or am I also applying "
+            + "what I know wisely? Do I involve God in my "
+            + "decisions and think carefully before I act?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer",
+            18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You because You are the "
+            + "source of wisdom. Help me understand the "
+            + "importance of wisdom and teach me to apply "
+            + "what I know correctly. Guide my thoughts, "
+            + "decisions and actions so that my life will "
+            + "fulfil Your purpose and bring glory to Your name. "
+            + "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showJulyWeekTwo() {
+    addText("Types of Wisdom",
+            22, Color.BLACK, true);
+
+    addText("Introduction",
+            18, Color.BLACK, true);
+
+    addText(
+            "Not every kind of wisdom comes from the same source "
+            + "or produces the same results. A person may be clever, "
+            + "experienced or knowledgeable and still make decisions "
+            + "that are contrary to God's will. This is why we must "
+            + "understand the different types of wisdom and learn "
+            + "to recognise the wisdom that should guide our lives. "
+            + "James 3:13–17 describes the difference between wisdom "
+            + "that is earthly, sensual and devilish and the wisdom "
+            + "that comes from above.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Earthly Wisdom",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Wisdom Based on the World's Standards",
+            "Earthly wisdom is understanding and judgement that "
+            + "are limited to the standards, values and reasoning "
+            + "of this world. It may be based on human experience, "
+            + "education, observation or personal ambition without "
+            + "considering God's direction. James 3:15 describes "
+            + "this kind of wisdom as not coming from above but "
+            + "as earthly. This teaches us that human intelligence "
+            + "alone is not the same as the wisdom of God."
+    );
+
+    addTeachingPoint(
+            "The Limitation of Earthly Wisdom",
+            "Human knowledge can be useful, but it has limitations. "
+            + "When a person depends entirely on personal reasoning "
+            + "and ignores God's Word, their decisions may lead "
+            + "them away from His purpose. Proverbs 3:5–6 teaches "
+            + "us not to lean entirely on our own understanding "
+            + "but to acknowledge God in all our ways. We should "
+            + "therefore allow God's direction to guide the way "
+            + "we use our knowledge and experience."
+    );
+
+    addText("2. Sensual Wisdom",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Wisdom Governed by Natural Desires",
+            "Sensual wisdom is wisdom that is controlled by the "
+            + "natural or fleshly desires of a person rather than "
+            + "by the Spirit of God. It allows feelings, impulses "
+            + "and personal desires to determine decisions without "
+            + "proper regard for God's truth. James 3:15 uses "
+            + "the word sensual when describing wisdom that "
+            + "does not come from above. This reminds us that "
+            + "not every feeling or desire should become the "
+            + "basis for our choices."
+    );
+
+    addTeachingPoint(
+            "Do Not Allow Feelings to Control Your Decisions",
+            "Our emotions are part of human life, but they should "
+            + "not become our highest authority. A person who "
+            + "always follows immediate desires may make decisions "
+            + "without considering their consequences or whether "
+            + "those decisions please God. Galatians 5:16 encourages "
+            + "believers to walk in the Spirit rather than fulfil "
+            + "the desires of the flesh. We must learn to bring "
+            + "our desires under the guidance of God's Word."
+    );
+
+    addText("3. Devilish Wisdom",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Wisdom That Reflects the Nature of Evil",
+            "Devilish wisdom is not wisdom that comes from God. "
+            + "James 3:15 identifies it as wisdom that is earthly, "
+            + "sensual and devilish. It is associated with attitudes "
+            + "and actions that oppose God's character, such as "
+            + "envy, selfish ambition and disorder. James 3:14–16 "
+            + "warns against bitter envy and selfish ambition "
+            + "because they produce confusion and evil practices."
+    );
+
+    addTeachingPoint(
+            "Recognise Its Fruits",
+            "One way to recognise this kind of wisdom is by "
+            + "examining the results it produces. When someone's "
+            + "thinking encourages hatred, manipulation, jealousy, "
+            + "dishonesty or selfish ambition, it does not reflect "
+            + "the wisdom of God. We must be careful not to admire "
+            + "an idea simply because it appears clever or "
+            + "successful. Its character and results must also "
+            + "be examined in the light of God's Word."
+    );
+
+    addText("4. Divine Wisdom",
+            18, Color.BLACK, true);
+
+    addTeachingPoint(
+            "Wisdom That Comes from God",
+            "Divine wisdom is the wisdom that comes from above. "
+            + "James 3:17 explains that the wisdom from above "
+            + "is first pure, then peaceable, gentle and easy "
+            + "to be entreated. It is full of mercy and good fruits, "
+            + "without partiality and without hypocrisy. Unlike "
+            + "wisdom that is controlled by selfish desires, "
+            + "divine wisdom reflects God's character and leads "
+            + "us towards what is right."
+    );
+
+    addTeachingPoint(
+            "Divine Wisdom Produces Godly Results",
+            "A person walking in divine wisdom does not seek "
+            + "only personal advantage. God's wisdom teaches "
+            + "us to act with purity, peace, humility and mercy. "
+            + "It influences how we treat people, handle "
+            + "responsibilities and respond to difficult situations. "
+            + "When our decisions are guided by divine wisdom, "
+            + "the results should reflect the character and "
+            + "principles of God."
+    );
+
+    addTeachingPoint(
+            "Seek Wisdom from God",
+            "James 1:5 encourages anyone who lacks wisdom to "
+            + "ask God, who gives generously to all without "
+            + "reproach. This shows that divine wisdom is "
+            + "something we should continually seek from God. "
+            + "We should not assume that our own understanding "
+            + "is always sufficient. Through prayer, the study "
+            + "of Scripture and obedience, we can grow in "
+            + "understanding and learn to make decisions "
+            + "that honour Him."
+    );
+
+    addText("Key Lesson",
+            18, Color.BLACK, true);
+
+    addText(
+            "There are different types of wisdom, but they do "
+            + "not all come from the same source or produce "
+            + "the same results. Earthly, sensual and devilish "
+            + "wisdom are described in James 3 as wisdom that "
+            + "does not come from above. Divine wisdom comes "
+            + "from God and produces purity, peace, gentleness "
+            + "and good fruits. We must seek the wisdom that "
+            + "comes from above and allow it to guide our lives.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection",
+            18, Color.BLACK, true);
+
+    addText(
+            "What kind of wisdom is influencing my decisions? "
+            + "Am I allowing worldly standards, personal desires "
+            + "or selfish ambition to control my choices, "
+            + "or am I seeking the wisdom that comes from God?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer",
+            18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, help me recognise the different "
+            + "types of wisdom. Deliver me from thinking and "
+            + "acting in ways that oppose Your Word. Give me "
+            + "divine wisdom that is pure, peaceable, gentle "
+            + "and full of mercy. Guide my thoughts and decisions "
+            + "so that my life will reflect Your character. "
+            + "In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+            }
+    private void showJulyWeekThree() {
+
+    addText("Characteristics of Wisdom", 22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is more than having knowledge or being able to speak intelligently. " +
+            "It is demonstrated through our thoughts, decisions, attitudes and daily conduct. " +
+            "A person may know many things but still make unwise decisions. True wisdom " +
+            "helps us understand what is right, choose what is beneficial and live in a " +
+            "way that honours God. The characteristics of wisdom reveal themselves in " +
+            "both our relationship with God and our relationship with other people.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Inspiration", 18, Color.BLACK, true);
+
+    addText(
+            "Inspiration is one of the elements of wisdom. A wise person seeks inspiration " +
+            "from God and allows godly principles to influence their thoughts and decisions. " +
+            "Instead of depending entirely on personal ideas, we should seek God's direction " +
+            "and allow His Word to shape our understanding. This helps us approach challenges " +
+            "with faith, purpose and a desire to do what is right.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: James 1:5", 15, Color.DKGRAY, false);
+
+    addText("2. Creativity", 18, Color.BLACK, true);
+
+    addText(
+            "Wisdom makes room for creativity. A wise person does not approach every " +
+            "challenge carelessly or assume that there is no solution. Instead, they think " +
+            "constructively, identify possibilities and make good use of the abilities and " +
+            "resources available to them. Creativity guided by wisdom is not simply about " +
+            "having new ideas; it is about using those ideas responsibly and productively.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Exodus 35:30–35", 15, Color.DKGRAY, false);
+
+    addText("3. Revelation and Understanding", 18, Color.BLACK, true);
+
+    addText(
+            "Revelation is another element of wisdom. It involves gaining understanding " +
+            "and insight into God's Word and His principles. A wise person does not merely " +
+            "hear or read the Word; they seek to understand it and apply it correctly. " +
+            "God's Word gives light and helps us see situations from a godly perspective. " +
+            "As we grow in understanding, our decisions and conduct should also reflect " +
+            "what we have learned.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Ephesians 1:17–18; Psalm 119:130", 15, Color.DKGRAY, false);
+
+    addText("4. Guidance", 18, Color.BLACK, true);
+
+    addText(
+            "A wise person understands the importance of direction. They do not make " +
+            "every decision based only on feelings, pressure or what other people are doing. " +
+            "They seek God's guidance, consider His Word and carefully examine the choices " +
+            "before them. Wisdom helps us recognise the right path and avoid decisions " +
+            "that can lead us away from God's purpose.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Proverbs 3:5–6", 15, Color.DKGRAY, false);
+
+    addText("5. Patience", 18, Color.BLACK, true);
+
+    addText(
+            "Patience is an important characteristic of wisdom. A wise person does not " +
+            "rush into decisions or allow temporary emotions to control their actions. " +
+            "They understand that some situations require time, careful thought and " +
+            "self-control. Patience also helps us listen properly, respond thoughtfully " +
+            "and avoid unnecessary mistakes.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Proverbs 14:29; James 1:19", 15, Color.DKGRAY, false);
+
+    addText("6. Meekness and Gentleness", 18, Color.BLACK, true);
+
+    addText(
+            "Meekness is not weakness. It is the ability to remain humble, gentle and " +
+            "controlled even when dealing with difficult situations. A wise person does " +
+            "not use knowledge to look down on others or create arguments. Instead, " +
+            "they communicate respectfully, consider other people's feelings and remain " +
+            "willing to receive correction. True wisdom is reflected in a person's attitude, " +
+            "not just in their words.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: James 3:13; Galatians 5:22–23", 15, Color.DKGRAY, false);
+
+    addText("7. Honesty and Integrity", 18, Color.BLACK, true);
+
+    addText(
+            "A wise person values truth and integrity. They understand that character " +
+            "matters just as much as knowledge or achievement. They speak honestly, keep " +
+            "their promises and do what is right even when nobody is watching. Dishonesty " +
+            "may appear to offer temporary advantages, but it damages trust and character. " +
+            "Wisdom teaches us to live sincerely and responsibly.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Proverbs 10:9; Proverbs 12:22", 15, Color.DKGRAY, false);
+
+    addText("8. Discernment", 18, Color.BLACK, true);
+
+    addText(
+            "Discernment is the ability to distinguish between what is right and wrong, " +
+            "helpful and harmful, or wise and unwise. A discerning person does not accept " +
+            "everything simply because it sounds attractive or popular. They examine " +
+            "situations carefully, consider the consequences and measure their choices " +
+            "against God's principles. Discernment helps us make decisions that protect " +
+            "our values and future.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Hebrews 5:14; Philippians 1:9–10", 15, Color.DKGRAY, false);
+
+    addText("9. Humility and Teachability", 18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is accompanied by humility. A wise person does not assume that they " +
+            "know everything. They remain willing to learn, listen to godly counsel and " +
+            "accept correction when necessary. Pride can prevent a person from recognising " +
+            "their mistakes, but humility creates room for growth. We become wiser when " +
+            "we are willing to learn from God and from sound instruction.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Proverbs 11:2; Proverbs 12:15", 15, Color.DKGRAY, false);
+
+    addText("10. Self-Control", 18, Color.BLACK, true);
+
+    addText(
+            "Self-control is another evidence of wisdom. A wise person learns to govern " +
+            "their words, emotions and actions. They do not allow anger, pressure or " +
+            "impulsive desires to make decisions for them. They understand that not every " +
+            "thought needs to be spoken and not every feeling needs to become an action. " +
+            "Self-control helps us respond with maturity and maintain good relationships.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Proverbs 16:32; Galatians 5:22–23", 15, Color.DKGRAY, false);
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is not measured only by what we know, but also by how we live. " +
+            "It is reflected in our inspiration, creativity, revelation and guidance, " +
+            "as well as in our patience, meekness, honesty, discernment, humility and " +
+            "self-control. As we grow in godly wisdom, our character should increasingly " +
+            "reflect the values and principles of God's Word.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+
+    addText(
+            "Which of these characteristics of wisdom do you need to develop more in " +
+            "your daily life? Are your decisions, words and actions showing the wisdom " +
+            "you are learning from God's Word?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You for being the source of true wisdom. Give me " +
+            "understanding and help me develop a character that reflects Your wisdom. " +
+            "Teach me to be patient, meek, honest, humble and discerning. Guide my " +
+            "thoughts, words and decisions so that my life will honour You. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
+    private void showJulyWeekFour() {
+
+    addText("How to Activate and Apply the Wisdom of God in My Life",
+            22, Color.BLACK, true);
+
+    addText("Introduction", 18, Color.BLACK, true);
+
+    addText(
+            "Wisdom is not meant to remain something we only learn about; it is " +
+            "something we must activate and demonstrate in our daily lives. God's " +
+            "wisdom helps us make sound decisions, handle challenges, relate properly " +
+            "with others and live according to His purpose. However, walking in this " +
+            "wisdom requires an intentional relationship with God and the willingness " +
+            "to put His Word into practice. We must move beyond knowing what wisdom " +
+            "is and learn how to apply it in our thoughts, conversations, relationships, " +
+            "responsibilities and decisions.",
+            16, Color.BLACK, false
+    );
+
+    addText("1. Develop an Intimate Relationship with God",
+            18, Color.BLACK, true);
+
+    addText(
+            "The foundation of godly wisdom is an intimate relationship with God. " +
+            "We cannot fully understand His ways without drawing closer to Him. " +
+            "Developing this relationship involves spending time with Him through " +
+            "prayer, studying His Word, worship and obedience. As we grow in fellowship " +
+            "with God, we become more conscious of His principles and learn to depend " +
+            "on Him for direction.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Make time for God daily. Before making important decisions, " +
+            "seek His direction and consider whether your choices agree with His Word. " +
+            "Do not allow your relationship with Him to become something you remember " +
+            "only when you need help.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Colossians 2:9; Colossians 1:24; Colossians 1:27; Romans 11:33",
+            15, Color.DKGRAY, false
+    );
+
+    addText("2. Spiritual-Mindedness: Let the Word of God Dominate Your Thinking",
+            18, Color.BLACK, true);
+
+    addText(
+            "Spiritual-mindedness means deliberately turning our minds towards the " +
+            "things of the Spirit and allowing God's Word to influence our thoughts, " +
+            "understanding and decisions. We must not allow worldly thinking, temporary " +
+            "concerns, distractions or the opinions of others to control our minds. " +
+            "Instead, we should continually focus on God's truth and allow His principles " +
+            "to shape our priorities and responses. Spiritual-mindedness requires us " +
+            "to keep our attention on the things of God and develop the habit of thinking " +
+            "in agreement with His Word.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Make meditation on God's Word a regular habit. Think carefully " +
+            "about what you read and allow it to influence your choices. When facing " +
+            "pressure or difficult situations, pause and consider God's principles " +
+            "before responding. Practise directing your attention towards things that " +
+            "strengthen your spiritual life.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Romans 12:2; John 12:24; Joshua 1:8; Proverbs (reference unclear in the handwritten notes)",
+            15, Color.DKGRAY, false
+    );
+
+    addText("3. Renewal of the Mind Is the First Step",
+            18, Color.BLACK, true);
+
+    addText(
+            "The renewal of the mind is essential to developing spiritual wisdom. " +
+            "It involves replacing thoughts and attitudes that oppose God's Word " +
+            "with thoughts that agree with His truth. Instead of allowing fear, " +
+            "pride, confusion or unhealthy influences to determine our decisions, " +
+            "we should continually train our minds to follow God's principles. " +
+            "As our thinking changes, our way of living and responding to situations " +
+            "also begins to change.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Pay attention to the thoughts you entertain. When you " +
+            "recognise a thought or attitude that leads you away from God's principles, " +
+            "replace it with the truth of His Word. Be willing to change your thinking " +
+            "when Scripture corrects you.",
+            16, Color.BLACK, false
+    );
+
+    addText("Scripture: Romans 8:6", 15, Color.DKGRAY, false);
+
+    addText("4. Supernatural Research: Interacting with Spiritual Materials",
+            18, Color.BLACK, true);
+
+    addText(
+            "Developing wisdom also requires a willingness to study and learn. " +
+            "Supernatural research involves giving attention to spiritual materials " +
+            "that help us grow in the knowledge of God and understand His Word more " +
+            "deeply. We should not be careless about spiritual learning. Reading, " +
+            "studying, meditating and carefully examining Scripture help us develop " +
+            "understanding. Everything we learn should be examined in the light of " +
+            "God's Word.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Do not read the Bible merely to finish a chapter. Take time " +
+            "to understand what you are reading. Write down important lessons, examine " +
+            "the Scriptures and consider how to apply what you learn at home, in school, " +
+            "in your relationships and in your responsibilities.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: Ecclesiastes 1:13; 2 Timothy 3:15",
+            15, Color.DKGRAY, false
+    );
+
+    addText("5. Maintain a Prayerful Lifestyle",
+            18, Color.BLACK, true);
+
+    addText(
+            "Prayer is an important part of our relationship with God. A prayerful " +
+            "person continually depends on God for direction, understanding and " +
+            "strength. Prayer should not be limited to emergencies; it should become " +
+            "a regular part of our daily lives. Through prayer, we express our " +
+            "dependence on God, seek His help and remain attentive to His direction.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Application: Establish a consistent personal prayer time. Pray about " +
+            "your decisions, responsibilities, relationships and spiritual growth. " +
+            "When you are uncertain about what to do, seek God's wisdom rather than " +
+            "acting carelessly. Let prayer become a regular part of your life.",
+            16, Color.BLACK, false
+    );
+
+    addText(
+            "Scriptures: James 4:6; Psalm 42:9",
+            15, Color.DKGRAY, false
+    );
+
+    addText("Putting God's Wisdom into Everyday Life",
+            18, Color.BLACK, true);
+
+    addText(
+            "The wisdom of God must be visible in the way we live. It should influence " +
+            "how we speak to people, respond to correction, manage our time, handle " +
+            "conflicts and make decisions. When dealing with others, practise patience, " +
+            "meekness and honesty. When faced with choices, consider the consequences " +
+            "and seek godly direction. When given responsibilities, handle them with " +
+            "diligence and integrity. Do not separate spiritual growth from everyday " +
+            "conduct. The wisdom we receive from God should be reflected in our actions.",
+            16, Color.BLACK, false
+    );
+
+    addText("Key Lesson", 18, Color.BLACK, true);
+
+    addText(
+            "Activating and applying God's wisdom requires an intimate relationship " +
+            "with Him, a mind controlled by His Word, continuous renewal of our thinking, " +
+            "spiritual-mindedness, serious study and a consistent prayer life. " +
+            "True wisdom is demonstrated when we put what we learn into practice. " +
+            "We must allow God's wisdom to guide not only our spiritual activities " +
+            "but also our everyday decisions and behaviour.",
+            16, Color.BLACK, false
+    );
+
+    addText("Reflection", 18, Color.BLACK, true);
+
+    addText(
+            "Am I allowing God's Word to influence my daily decisions? Do I make time " +
+            "for prayer and the study of Scripture? In what areas of my life do I need " +
+            "to start applying God's wisdom more intentionally?",
+            16, Color.BLACK, false
+    );
+
+    addText("Prayer", 18, Color.BLACK, true);
+
+    addText(
+            "Heavenly Father, thank You because You are the source of true wisdom. " +
+            "Help me develop an intimate relationship with You and allow Your Word " +
+            "to guide my thoughts and decisions. Renew my mind, increase my understanding " +
+            "and teach me to remain spiritually minded. Give me discipline to study " +
+            "Your Word and maintain a consistent prayer life. Help me apply Your wisdom " +
+            "in my relationships, responsibilities and everyday decisions. Let my " +
+            "life reflect Your wisdom and bring glory to Your name. In Jesus' name, Amen.",
+            16, Color.BLACK, false
+    );
+    }
 
     private void addTeachingPoint(
             String heading,
