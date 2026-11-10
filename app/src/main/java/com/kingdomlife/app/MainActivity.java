@@ -3523,8 +3523,10 @@ addCard(
 
 addCard(
         "🎙️ Sermons",
-        "Listen to sermons and messages for spiritual encouragement.",
-        v -> showSermons()
+        "Explore monthly sermon topics and weekly teachings.",
+        v -> startActivity(
+                new Intent(MainActivity.this, SermonsActivity.class)
+        )
 );
 
 addCard(
