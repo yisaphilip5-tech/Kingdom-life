@@ -872,19 +872,19 @@ String savedNames = prefs.getString(NAMES_KEY, "");
     }
 
     @Override
-    protected void onDestroy() {
+protected void onDestroy() {
 
-        // KingdomMusicService manages playback independently.
-        super.onDestroy();
-    }
+    // KingdomMusicService manages playback independently.
+    super.onDestroy();
 }
-    private void toast(String message) {
 
-        Toast.makeText(
-                this,
-                message,
-                Toast.LENGTH_SHORT
-        ).show();
-            }
-    
-    
+private void toast(String message) {
+
+    Toast.makeText(
+            this,
+            message,
+            Toast.LENGTH_SHORT
+    ).show();
+}
+
+}
