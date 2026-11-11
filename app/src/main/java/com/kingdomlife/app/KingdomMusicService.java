@@ -39,6 +39,9 @@ public class KingdomMusicService extends Service {
 
     private MediaPlayer player;
     private String currentTitle = "Kingdom Music";
+    private String currentUri = null;
+
+    private boolean isPrepared = false;
 
     private final Handler handler =
             new Handler(Looper.getMainLooper());
@@ -72,24 +75,37 @@ public class KingdomMusicService extends Service {
         if (ACTION_PLAY.equals(action)) {
 
             String uriText = intent.getStringExtra(EXTRA_URI);
-            currentTitle = intent.getStringExtra(EXTRA_TITLE);
+            String title = intent.getStringExtra(EXTRA_TITLE);
 
-            if (currentTitle == null ||
-                    currentTitle.trim().isEmpty()) {
-                currentTitle = "Kingdom Music";
+            if (uriText == null) {
+                return START_NOT_STICKY;
             }
 
-            if (uriText != null) {
+            if (title != null && !title.trim().isEmpty()) {
+                currentTitle = title;
+            }
 
-                // Stop Audio Bible before starting Kingdom Music
-                stopService(new Intent(this, AudioBibleService.class));
+            // If the same song is already loaded, resume it.
+            if (player != null &&
+                    isPrepared &&
+                    uriText.equals(currentUri)) {
+
+                resumePlayback();
+
+            } else {
+
+                stopService(
+                        new Intent(this, AudioBibleService.class)
+                );
 
                 playAudio(Uri.parse(uriText));
             }
 
         } else if (ACTION_PAUSE.equals(action)) {
 
-            if (player != null && player.isPlaying()) {
+            if (player != null && isPrepared &&
+                    player.isPlaying()) {
+
                 player.pause();
                 showNotification("Paused");
                 sendProgress();
@@ -97,8 +113,7 @@ public class KingdomMusicService extends Service {
 
         } else if (ACTION_SEEK.equals(action)) {
 
-            if (player != null && player.isPlaying() ||
-                    player != null) {
+            if (player != null && isPrepared) {
 
                 int position = intent.getIntExtra(
                         EXTRA_POSITION, 0
@@ -121,15 +136,45 @@ public class KingdomMusicService extends Service {
         return START_NOT_STICKY;
     }
 
-    private void playAudio(Uri uri) {
+    private void resumePlayback() {
+
+        if (player == null || !isPrepared) {
+            return;
+        }
 
         try {
+
+            if (!player.isPlaying()) {
+                player.start();
+            }
+
             startForeground(
                     NOTIFICATION_ID,
                     buildNotification("Playing")
             );
 
+            sendProgress();
+
+            handler.removeCallbacks(progressRunnable);
+            handler.post(progressRunnable);
+
+        } catch (IllegalStateException ignored) {
+        }
+    }
+
+    private void playAudio(Uri uri) {
+
+        try {
+
+            startForeground(
+                    NOTIFICATION_ID,
+                    buildNotification("Loading")
+            );
+
             releasePlayer();
+
+            currentUri = uri.toString();
+            isPrepared = false;
 
             player = new MediaPlayer();
 
@@ -147,30 +192,39 @@ public class KingdomMusicService extends Service {
             player.setDataSource(this, uri);
 
             player.setOnPreparedListener(mp -> {
+
+                isPrepared = true;
+
                 mp.start();
+
                 showNotification("Playing");
 
                 sendProgress();
+
                 handler.removeCallbacks(progressRunnable);
                 handler.post(progressRunnable);
             });
 
             player.setOnCompletionListener(mp -> {
+
                 stopPlayback();
                 stopForeground(true);
                 stopSelf();
             });
 
             player.setOnErrorListener((mp, what, extra) -> {
+
                 stopPlayback();
                 stopForeground(true);
                 stopSelf();
+
                 return true;
             });
 
             player.prepareAsync();
 
         } catch (Exception e) {
+
             stopPlayback();
             stopForeground(true);
             stopSelf();
@@ -179,11 +233,12 @@ public class KingdomMusicService extends Service {
 
     private void sendProgress() {
 
-        if (player == null) {
+        if (player == null || !isPrepared) {
             return;
         }
 
         try {
+
             Intent progress = new Intent(ACTION_PROGRESS);
 
             progress.setPackage(getPackageName());
@@ -289,7 +344,11 @@ public class KingdomMusicService extends Service {
 
         handler.removeCallbacks(progressRunnable);
 
+        isPrepared = false;
+        currentUri = null;
+
         if (player != null) {
+
             try {
                 player.release();
             } catch (Exception ignored) {
@@ -301,6 +360,7 @@ public class KingdomMusicService extends Service {
 
     @Override
     public void onDestroy() {
+
         releasePlayer();
         super.onDestroy();
     }
@@ -309,4 +369,4 @@ public class KingdomMusicService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-}
+    }
