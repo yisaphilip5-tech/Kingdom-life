@@ -123,16 +123,38 @@ public class KingdomMusicActivity extends Activity {
 
         setContentView(scroll);
 
-        TextView title = new TextView(this);
-        title.setText("🎵 Kingdom Music");
-        title.setTextColor(darkText);
-        title.setTextSize(26);
-        title.setTypeface(null, Typeface.BOLD);
-        title.setGravity(Gravity.CENTER);
-        title.setPadding(0, dp(12), 0, dp(20));
+        LinearLayout header = new LinearLayout(this);
+header.setOrientation(LinearLayout.HORIZONTAL);
+header.setGravity(Gravity.CENTER_VERTICAL);
 
-        root.addView(title);
+TextView backArrow = new TextView(this);
+backArrow.setText("‹");
+backArrow.setTextColor(Color.WHITE);
+backArrow.setTextSize(42);
+backArrow.setGravity(Gravity.CENTER);
+backArrow.setOnClickListener(v -> finish());
 
+header.addView(backArrow,
+        new LinearLayout.LayoutParams(
+                dp(55),
+                dp(55)
+        ));
+
+TextView title = new TextView(this);
+title.setText("🎵 Kingdom Music");
+title.setTextColor(Color.WHITE);
+title.setTextSize(23);
+title.setTypeface(null, Typeface.BOLD);
+title.setGravity(Gravity.CENTER);
+
+header.addView(title,
+        new LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1
+        ));
+
+root.addView(header);
         Button choose = makeButton("＋ Choose Music");
         choose.setOnClickListener(v -> chooseMusic());
 
@@ -235,9 +257,9 @@ public class KingdomMusicActivity extends Activity {
                 });
 
         // Put playback controls inside the Now Playing panel.
-        addControlRows();
+        addControlRows(playerCard);
 
-        root.addView(playerCard, cardMargins());
+root.addView(playerCard, cardMargins());
         TextView listTitle = new TextView(this);
         listTitle.setText("Your Music");
         listTitle.setTextColor(darkText);
@@ -251,12 +273,7 @@ public class KingdomMusicActivity extends Activity {
         songList.setOrientation(LinearLayout.VERTICAL);
 
         root.addView(songList);
-
-        Button back = makeButton("⬅ Back to Settings");
-        back.setOnClickListener(v -> finish());
-
-        root.addView(back);
-
+        
         refreshSongList();
     }
 
@@ -349,49 +366,46 @@ public class KingdomMusicActivity extends Activity {
 
         return button;
     }
+    private void addControlRows(LinearLayout panel) {
 
-    private void addControlRows() {
+    LinearLayout controls = new LinearLayout(this);
+    controls.setOrientation(LinearLayout.HORIZONTAL);
+    controls.setGravity(Gravity.CENTER);
+    controls.setPadding(0, dp(8), 0, 0);
 
-        LinearLayout firstRow = new LinearLayout(this);
-        firstRow.setGravity(Gravity.CENTER);
-        firstRow.setOrientation(LinearLayout.HORIZONTAL);
+    addControl(controls, "⏮", this::previousSong);
+    addControl(controls, "▶", this::playSong);
+    addControl(controls, "⏸", this::pauseSong);
+    addControl(controls, "⏭", this::nextSong);
+    addControl(controls, "⏹", this::stopSong);
 
-        addControl(firstRow, "⏮ Previous", this::previousSong);
-        addControl(firstRow, "▶ Play", this::playSong);
-        addControl(firstRow, "⏸ Pause", this::pauseSong);
+    panel.addView(controls);
+}
 
-        root.addView(firstRow);
+private void addControl(
+        LinearLayout row,
+        String symbol,
+        Runnable action) {
 
-        LinearLayout secondRow = new LinearLayout(this);
-        secondRow.setGravity(Gravity.CENTER);
-        secondRow.setOrientation(LinearLayout.HORIZONTAL);
+    Button button = makeButton(symbol);
 
-        addControl(secondRow, "⏭ Next", this::nextSong);
-        addControl(secondRow, "⏹ Stop", this::stopSong);
+    button.setTextSize(21);
+    button.setMinWidth(0);
+    button.setPadding(0, 0, 0, 0);
 
-        root.addView(secondRow);
-    }
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    0,
+                    dp(48),
+                    1
+            );
 
-    private void addControl(
-            LinearLayout row,
-            String label,
-            Runnable action) {
+    params.setMargins(dp(2), dp(2), dp(2), dp(2));
 
-        Button button = makeButton(label);
-        button.setTextSize(13);
-        button.setPadding(dp(3), 0, dp(3), 0);
+    row.addView(button, params);
 
-        LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(
-                        0, dp(55), 1
-                );
-
-        params.setMargins(dp(3), dp(4), dp(3), dp(4));
-
-        row.addView(button, params);
-
-        button.setOnClickListener(v -> action.run());
-    }
+    button.setOnClickListener(v -> action.run());
+}
 
     private String formatTime(int milliseconds) {
 
