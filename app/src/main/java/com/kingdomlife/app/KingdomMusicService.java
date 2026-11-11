@@ -10,22 +10,49 @@ import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 
 public class KingdomMusicService extends Service {
 
-    public static final String ACTION_PLAY = "com.kingdomlife.app.MUSIC_PLAY";
-    public static final String ACTION_PAUSE = "com.kingdomlife.app.MUSIC_PAUSE";
-    public static final String ACTION_STOP = "com.kingdomlife.app.MUSIC_STOP";
+    public static final String ACTION_PLAY =
+            "com.kingdomlife.app.MUSIC_PLAY";
+    public static final String ACTION_PAUSE =
+            "com.kingdomlife.app.MUSIC_PAUSE";
+    public static final String ACTION_STOP =
+            "com.kingdomlife.app.MUSIC_STOP";
+    public static final String ACTION_SEEK =
+            "com.kingdomlife.app.MUSIC_SEEK";
+
+    public static final String ACTION_PROGRESS =
+            "com.kingdomlife.app.MUSIC_PROGRESS";
 
     public static final String EXTRA_URI = "music_uri";
     public static final String EXTRA_TITLE = "music_title";
+    public static final String EXTRA_POSITION = "music_position";
+    public static final String EXTRA_DURATION = "music_duration";
 
-    private static final String CHANNEL_ID = "kingdom_music_channel";
+    private static final String CHANNEL_ID =
+            "kingdom_music_channel";
     private static final int NOTIFICATION_ID = 7301;
 
     private MediaPlayer player;
     private String currentTitle = "Kingdom Music";
+
+    private final Handler handler =
+            new Handler(Looper.getMainLooper());
+
+    private final Runnable progressRunnable = new Runnable() {
+        @Override
+        public void run() {
+            sendProgress();
+
+            if (player != null) {
+                handler.postDelayed(this, 500);
+            }
+        }
+    };
 
     @Override
     public void onCreate() {
@@ -35,6 +62,7 @@ public class KingdomMusicService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
         if (intent == null) {
             return START_NOT_STICKY;
         }
@@ -42,27 +70,49 @@ public class KingdomMusicService extends Service {
         String action = intent.getAction();
 
         if (ACTION_PLAY.equals(action)) {
+
             String uriText = intent.getStringExtra(EXTRA_URI);
             currentTitle = intent.getStringExtra(EXTRA_TITLE);
 
-            if (currentTitle == null || currentTitle.trim().isEmpty()) {
+            if (currentTitle == null ||
+                    currentTitle.trim().isEmpty()) {
                 currentTitle = "Kingdom Music";
             }
 
             if (uriText != null) {
 
-    // Stop Audio Bible before starting Kingdom Music
-    stopService(new Intent(this, AudioBibleService.class));
+                // Stop Audio Bible before starting Kingdom Music
+                stopService(new Intent(this, AudioBibleService.class));
 
-    playAudio(Uri.parse(uriText));
+                playAudio(Uri.parse(uriText));
             }
+
         } else if (ACTION_PAUSE.equals(action)) {
+
             if (player != null && player.isPlaying()) {
                 player.pause();
                 showNotification("Paused");
+                sendProgress();
+            }
+
+        } else if (ACTION_SEEK.equals(action)) {
+
+            if (player != null && player.isPlaying() ||
+                    player != null) {
+
+                int position = intent.getIntExtra(
+                        EXTRA_POSITION, 0
+                );
+
+                try {
+                    player.seekTo(position);
+                    sendProgress();
+                } catch (IllegalStateException ignored) {
+                }
             }
 
         } else if (ACTION_STOP.equals(action)) {
+
             stopPlayback();
             stopForeground(true);
             stopSelf();
@@ -72,8 +122,12 @@ public class KingdomMusicService extends Service {
     }
 
     private void playAudio(Uri uri) {
+
         try {
-            startForeground(NOTIFICATION_ID, buildNotification("Playing"));
+            startForeground(
+                    NOTIFICATION_ID,
+                    buildNotification("Playing")
+            );
 
             releasePlayer();
 
@@ -81,8 +135,12 @@ public class KingdomMusicService extends Service {
 
             player.setAudioAttributes(
                     new AudioAttributes.Builder()
-                            .setUsage(AudioAttributes.USAGE_MEDIA)
-                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                            .setUsage(
+                                    AudioAttributes.USAGE_MEDIA
+                            )
+                            .setContentType(
+                                    AudioAttributes.CONTENT_TYPE_MUSIC
+                            )
                             .build()
             );
 
@@ -91,6 +149,10 @@ public class KingdomMusicService extends Service {
             player.setOnPreparedListener(mp -> {
                 mp.start();
                 showNotification("Playing");
+
+                sendProgress();
+                handler.removeCallbacks(progressRunnable);
+                handler.post(progressRunnable);
             });
 
             player.setOnCompletionListener(mp -> {
@@ -115,20 +177,53 @@ public class KingdomMusicService extends Service {
         }
     }
 
+    private void sendProgress() {
+
+        if (player == null) {
+            return;
+        }
+
+        try {
+            Intent progress = new Intent(ACTION_PROGRESS);
+
+            progress.setPackage(getPackageName());
+
+            progress.putExtra(
+                    EXTRA_POSITION,
+                    player.getCurrentPosition()
+            );
+
+            progress.putExtra(
+                    EXTRA_DURATION,
+                    player.getDuration()
+            );
+
+            sendBroadcast(progress);
+
+        } catch (IllegalStateException ignored) {
+        }
+    }
+
     private Notification buildNotification(String status) {
-        Intent openIntent = new Intent(this, KingdomMusicActivity.class);
+
+        Intent openIntent = new Intent(
+                this,
+                KingdomMusicActivity.class
+        );
 
         int pendingFlags = PendingIntent.FLAG_UPDATE_CURRENT;
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             pendingFlags |= PendingIntent.FLAG_IMMUTABLE;
         }
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(
-                this,
-                7302,
-                openIntent,
-                pendingFlags
-        );
+        PendingIntent pendingIntent =
+                PendingIntent.getActivity(
+                        this,
+                        7302,
+                        openIntent,
+                        pendingFlags
+                );
 
         Notification.Builder builder;
 
@@ -148,23 +243,34 @@ public class KingdomMusicService extends Service {
     }
 
     private void showNotification(String status) {
+
         NotificationManager manager =
-                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                (NotificationManager) getSystemService(
+                        NOTIFICATION_SERVICE
+                );
 
         if (manager != null) {
-            manager.notify(NOTIFICATION_ID, buildNotification(status));
+            manager.notify(
+                    NOTIFICATION_ID,
+                    buildNotification(status)
+            );
         }
     }
 
     private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(
-                    CHANNEL_ID,
-                    "Kingdom Music",
-                    NotificationManager.IMPORTANCE_LOW
-            );
 
-            channel.setDescription("Music playback controls and status");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            NotificationChannel channel =
+                    new NotificationChannel(
+                            CHANNEL_ID,
+                            "Kingdom Music",
+                            NotificationManager.IMPORTANCE_LOW
+                    );
+
+            channel.setDescription(
+                    "Music playback controls and status"
+            );
 
             NotificationManager manager =
                     getSystemService(NotificationManager.class);
@@ -180,6 +286,9 @@ public class KingdomMusicService extends Service {
     }
 
     private void releasePlayer() {
+
+        handler.removeCallbacks(progressRunnable);
+
         if (player != null) {
             try {
                 player.release();
@@ -200,4 +309,4 @@ public class KingdomMusicService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-          }
+}
