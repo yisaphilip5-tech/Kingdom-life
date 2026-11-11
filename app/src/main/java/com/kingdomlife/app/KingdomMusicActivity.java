@@ -232,12 +232,12 @@ public class KingdomMusicActivity extends Activity {
 
                 userSeeking = false;
             }
-        });
+                });
 
-        root.addView(playerCard, cardMargins());
-
+        // Put playback controls inside the Now Playing panel.
         addControlRows();
 
+        root.addView(playerCard, cardMargins());
         TextView listTitle = new TextView(this);
         listTitle.setText("Your Music");
         listTitle.setTextColor(darkText);
