@@ -7,6 +7,9 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.media.AudioAttributes;
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
+import android.widget.SeekBar;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -35,7 +38,8 @@ public class AudioSermonsService extends Service {
     public static final String EXTRA_TITLE = "sermon_title";
     public static final String EXTRA_POSITION = "sermon_position";
     public static final String EXTRA_DURATION = "sermon_duration";
-
+    public static final String EXTRA_IS_PLAYING =
+        "sermon_is_playing";
     private static final String CHANNEL_ID =
             "kingdom_sermons_channel";
 
@@ -297,6 +301,10 @@ public class AudioSermonsService extends Service {
                     EXTRA_DURATION,
                     player.getDuration()
             );
+            progress.putExtra(
+        EXTRA_IS_PLAYING,
+        player.isPlaying()
+);
 
             sendBroadcast(progress);
 
