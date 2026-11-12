@@ -186,6 +186,48 @@ private int selectedWeek;
         return (int) (value * getResources()
                 .getDisplayMetrics().density + 0.5f);
     }
+    // Returns the current calendar month (0 = January).
+private int getCurrentMonth() {
+    return Calendar.getInstance().get(Calendar.MONTH);
+}
+
+// Returns the number of the current week in the month.
+// Days 1–7 = Week 1
+// Days 8–14 = Week 2
+// Days 15–21 = Week 3
+// Days 22–28 = Week 4
+// Days 29–31 = Fifth week
+private int getCurrentWeek() {
+    int day = Calendar.getInstance().get(
+            Calendar.DAY_OF_MONTH
+    );
+
+    return ((day - 1) / 7) + 1;
+}
+
+// Checks whether a month has been released.
+private boolean isMonthReleased(int monthIndex) {
+    return monthIndex <= getCurrentMonth();
+}
+
+// Checks whether a normal weekly teaching has been released.
+private boolean isWeekReleased(
+        int monthIndex,
+        int weekIndex) {
+
+    int currentMonth = getCurrentMonth();
+
+    if (monthIndex < currentMonth) {
+        return true;
+    }
+
+    if (monthIndex > currentMonth) {
+        return false;
+    }
+
+    // weekIndex is zero-based.
+    return weekIndex < Math.min(getCurrentWeek(), 4);
+}
 
     private GradientDrawable makeBackground(
             int backgroundColor,
@@ -363,6 +405,9 @@ private int selectedWeek;
 
         for (int i = 0; i < months.length; i++) {
 
+    if (!isMonthReleased(i)) {
+        continue;
+    }
             final int monthIndex = i;
 
             addCard(
@@ -408,6 +453,9 @@ private int selectedWeek;
         );
 
         for (int i = 0; i < 4; i++) {
+            if (!isWeekReleased(monthIndex, i)) {
+    continue;
+            }
 
             final int weekIndex = i;
 
@@ -429,6 +477,10 @@ private int selectedWeek;
     private void showTeaching(
 int monthIndex,
 int weekIndex) {
+        if (!isWeekReleased(monthIndex, weekIndex)) {
+    showMonth(monthIndex);
+    return;
+        }
 
 content.removeAllViews();
 
@@ -8015,37 +8067,53 @@ switch (monthIndex) {
 
     private void showAdditionalTeachings() {
 
-        content.removeAllViews();
+    content.removeAllViews();
 
-        addBackButton(this::showSermonsHome);
+    addBackButton(this::showSermonsHome);
 
-        addText(
-                "Additional Fifth-Week Teachings",
-                22,
-                DARK_TEXT,
-                true
-        );
+    addText(
+            "Additional Fifth-Week Teachings",
+            22,
+            DARK_TEXT,
+            true
+    );
 
-        addText(
-                "These four extra teachings will be assigned "
-                        + "to selected months as the annual "
-                        + "sermon programme is completed.",
-                15,
-                DARK_TEXT,
-                false
-        );
+    addText(
+            "These four extra teachings are released "
+                    + "progressively throughout the year.",
+            15,
+            DARK_TEXT,
+            false
+    );
 
-        for (int i = 1; i <= 4; i++) {
+    String[] additionalMonths = {
+            "February",
+            "March",
+            "November",
+            "July"
+    };
 
-            addCard(
-                    "Additional Teaching " + i,
-                    "Content to be added.",
-                    v -> showMessage(
-                            "This additional teaching is "
-                                    + "still being prepared."
-                    )
-            );
+    int[] monthIndexes = {
+            1, 2, 10, 6
+    };
+
+    for (int i = 0; i < additionalMonths.length; i++) {
+
+        if (monthIndexes[i] > Calendar.getInstance()
+                .get(Calendar.MONTH)) {
+            continue;
         }
+
+        addCard(
+                "Additional Teaching " + (i + 1),
+                "Released in " + additionalMonths[i]
+                        + " • Content to be added.",
+                v -> showMessage(
+                        "This additional teaching is "
+                                + "still being prepared."
+                )
+        );
+    }
     }
 
     private void showMessage(String message) {
