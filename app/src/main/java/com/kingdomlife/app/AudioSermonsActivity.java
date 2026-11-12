@@ -1307,115 +1307,139 @@ isSermonPlaying = true;
             false
     );
 
-    addSpace(page, 15);
+    addSpace(page, 20);
+
+    // Playback progress bar
+    sermonSeekBar = new SeekBar(this);
+    sermonSeekBar.setMax(1);
+    sermonSeekBar.setProgress(0);
+
+    page.addView(
+            sermonSeekBar,
+            new LinearLayout.LayoutParams(
+                    -1,
+                    dp(45)
+            )
+    );
+
+    // Playback time
+    LinearLayout timeRow = new LinearLayout(this);
+    timeRow.setOrientation(LinearLayout.HORIZONTAL);
+    timeRow.setGravity(Gravity.CENTER_VERTICAL);
+
+    currentTimeText = new TextView(this);
+    currentTimeText.setText("00:00");
+    currentTimeText.setTextColor(textColor);
+
+    durationText = new TextView(this);
+    durationText.setText("00:00");
+    durationText.setTextColor(textColor);
+    durationText.setGravity(Gravity.RIGHT);
+
+    timeRow.addView(
+            currentTimeText,
+            new LinearLayout.LayoutParams(
+                    0,
+                    -2,
+                    1
+            )
+    );
+
+    timeRow.addView(
+            durationText,
+            new LinearLayout.LayoutParams(
+                    0,
+                    -2,
+                    1
+            )
+    );
+
+    page.addView(timeRow);
 
     addSpace(page, 15);
 
-sermonSeekBar = new SeekBar(this);
-sermonSeekBar.setMax(1);
+    // Playback buttons
+    LinearLayout controls = new LinearLayout(this);
+    controls.setOrientation(LinearLayout.HORIZONTAL);
+    controls.setGravity(Gravity.CENTER);
 
-page.addView(
-        sermonSeekBar,
-        new LinearLayout.LayoutParams(
-                -1,
-                dp(45)
-        )
-);
+    playPauseButton = new Button(this);
+    playPauseButton.setText(
+            isSermonPlaying ? "Pause" : "Play"
+    );
 
-LinearLayout timeRow = new LinearLayout(this);
-timeRow.setOrientation(LinearLayout.HORIZONTAL);
-timeRow.setGravity(Gravity.CENTER_VERTICAL);
+    Button stopButton = new Button(this);
+    stopButton.setText("Stop");
 
-currentTimeText = new TextView(this);
-currentTimeText.setText("00:00");
-currentTimeText.setTextColor(textColor);
+    controls.addView(playPauseButton);
+    controls.addView(stopButton);
 
-durationText = new TextView(this);
-durationText.setText("00:00");
-durationText.setTextColor(textColor);
+    page.addView(controls);
 
-timeRow.addView(
-        currentTimeText,
-        new LinearLayout.LayoutParams(0, -2, 1)
-);
+    // Play/Pause
+    playPauseButton.setOnClickListener(
+            v -> toggleSermonPlayback()
+    );
 
-timeRow.addView(
-        durationText,
-        new LinearLayout.LayoutParams(
-                0,
-                -2,
-                1
-        )
-);
+    // Stop
+    stopButton.setOnClickListener(
+            v -> stopSermonPlayback()
+    );
 
-durationText.setGravity(Gravity.RIGHT);
+    // Seek listener
+    sermonSeekBar.setOnSeekBarChangeListener(
+            new SeekBar.OnSeekBarChangeListener() {
 
-page.addView(timeRow);
-
-addSpace(page, 15);
-
-LinearLayout controls = new LinearLayout(this);
-controls.setOrientation(LinearLayout.HORIZONTAL);
-controls.setGravity(Gravity.CENTER);
-
-playPauseButton = new Button(this);
-playPauseButton.setText(
-        isSermonPlaying ? "Pause" : "Play"
-);
-
-Button stopButton = new Button(this);
-stopButton.setText("Stop");
-
-controls.addView(playPauseButton);
-controls.addView(stopButton);
-
-page.addView(controls);
-
-playPauseButton.setOnClickListener(
-        v -> toggleSermonPlayback()
-);
-
-stopButton.setOnClickListener(
-        v -> stopSermonPlayback()
-);
-        sermonSeekBar.setOnSeekBarChangeListener(
-        new SeekBar.OnSeekBarChangeListener() {
-
-    @Override
-    public void onProgressChanged(
-            SeekBar seekBar,
-            int progress,
-            boolean fromUser
-    ) {
-        // Wait until the user finishes dragging.
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-        // User started seeking.
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
-        Intent intent = new Intent(
-                AudioSermonsActivity.this,
-                AudioSermonsService.class
-        );
-
-        intent.setAction(
-                AudioSermonsService.ACTION_SEEK
-        );
-
-        intent.putExtra(
-                AudioSermonsService.EXTRA_POSITION,
-                seekBar.getProgress()
-        );
-
-        startService(intent);
-    }
-});
+        @Override
+        public void onProgressChanged(
+                SeekBar seekBar,
+                int progress,
+                boolean fromUser
+        ) {
         }
+
+        @Override
+        public void onStartTrackingTouch(
+                SeekBar seekBar
+        ) {
+        }
+
+        @Override
+        public void onStopTrackingTouch(
+                SeekBar seekBar
+        ) {
+
+            Intent intent = new Intent(
+                    AudioSermonsActivity.this,
+                    AudioSermonsService.class
+            );
+
+            intent.setAction(
+                    AudioSermonsService.ACTION_SEEK
+            );
+
+            intent.putExtra(
+                    AudioSermonsService.EXTRA_POSITION,
+                    seekBar.getProgress()
+            );
+
+            startService(intent);
+        }
+    });
+
+    // Request current playback information
+    Intent progressIntent = new Intent(
+            this,
+            AudioSermonsService.class
+    );
+
+    progressIntent.setAction(
+            AudioSermonsService.ACTION_REQUEST_PROGRESS
+    );
+
+    startService(progressIntent);
+                }
+
     private String formatSermonTime(int milliseconds) {
 
     int totalSeconds = Math.max(0, milliseconds) / 1000;
