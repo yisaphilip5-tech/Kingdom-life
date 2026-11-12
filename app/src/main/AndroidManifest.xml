@@ -43,6 +43,9 @@
         <activity
             android:name=".KingdomMusicActivity"
             android:exported="false" />
+        <activity
+    android:name=".AudioSermonsActivity"
+    android:exported="false" />
 
         <service
             android:name=".KingdomMusicService"
