@@ -55,6 +55,10 @@
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />
         <service
+    android:name=".AudioSermonsService"
+    android:exported="false"
+    android:foregroundServiceType="mediaPlayback" />
+        <service
     android:name=".AudioBibleService"
     android:foregroundServiceType="mediaPlayback"
     android:exported="false">
