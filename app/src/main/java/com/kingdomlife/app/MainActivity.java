@@ -3523,9 +3523,9 @@ addCard(
 
 addCard(
         "🎙️ Sermons",
-        "Explore monthly sermon topics and weekly teachings.",
+        "Explore written and audio sermon teachings.",
         v -> startActivity(
-                new Intent(MainActivity.this, SermonsActivity.class)
+                new Intent(MainActivity.this, KingdomSermonsActivity.class)
         )
 );
 
