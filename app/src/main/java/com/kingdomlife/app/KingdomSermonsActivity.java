@@ -197,4 +197,8 @@ content.addView(
 
         card.setOnClickListener(listener);
     }
+    private int dp(int value) {
+    return (int) (value * getResources()
+            .getDisplayMetrics().density + 0.5f);
+    }
           }
