@@ -183,118 +183,115 @@ public class AudioSermonsActivity extends Activity {
     // --------------------------------------------------
     // MAIN LIBRARY SCREEN
     // --------------------------------------------------
-
     private void showLibraryHome() {
 
-        content = new LinearLayout(this);
-        content.setOrientation(LinearLayout.VERTICAL);
+    ScrollView scrollView = new ScrollView(this);
 
-        applyKingdomBackground();
+    content = new LinearLayout(this);
+    content.setOrientation(LinearLayout.VERTICAL);
 
-        setContentView(content);
+    pageSetupBackground();
 
-        ScrollView scrollView = new ScrollView(this);
+    scrollView.addView(content);
 
-        LinearLayout.LayoutParams scrollParams =
-                new LinearLayout.LayoutParams(
-                        -1,
-                        -1
-                );
+    // Keep content clear of the phone's system bars.
+    scrollView.setOnApplyWindowInsetsListener((view, insets) -> {
 
-        content.addView(scrollView, scrollParams);
-
-        LinearLayout page = new LinearLayout(this);
-        page.setOrientation(LinearLayout.VERTICAL);
-
-        page.setPadding(
-                dp(18),
-                dp(18),
-                dp(18),
-                dp(30)
+        view.setPadding(
+                insets.getSystemWindowInsetLeft(),
+                insets.getSystemWindowInsetTop(),
+                insets.getSystemWindowInsetRight(),
+                insets.getSystemWindowInsetBottom()
         );
 
-        scrollView.addView(page);
+        return insets;
+    });
 
-        addBackButton(page);
+    setContentView(scrollView);
 
-        addText(
-                page,
-                "🎧 Audio Sermons Library",
-                25,
-                headingColor,
-                true
-        );
+    LinearLayout page = new LinearLayout(this);
+    page.setOrientation(LinearLayout.VERTICAL);
 
-        addText(
-                page,
-                "Listen, learn and grow through the Word.",
-                14,
-                textColor,
-                false
-        );
+    page.setPadding(
+            dp(18),
+            dp(18),
+            dp(18),
+            dp(30)
+    );
 
-        addSpace(page, 18);
+    content.addView(page);
 
-        addSectionTitle(page, "Browse Sermons");
+    addBackButton(page);
 
-        addSourceFilters(page);
+    addText(
+            page,
+            "🎧 Audio Sermons Library",
+            25,
+            headingColor,
+            true
+    );
 
-        addSpace(page, 15);
+    addText(
+            page,
+            "Listen, learn and grow through the Word.",
+            14,
+            textColor,
+            false
+    );
 
-        addSectionTitle(page, "Categories");
+    addSpace(page, 18);
 
-        addCategoryFilters(page);
+    addSectionTitle(page, "Browse Sermons");
+    addSourceFilters(page);
 
-        addSpace(page, 15);
+    addSpace(page, 15);
 
-        addSectionTitle(page, "Featured Sermons");
+    addSectionTitle(page, "Categories");
+    addCategoryFilters(page);
 
-        addFeaturedSection(page);
+    addSpace(page, 15);
 
-        addSpace(page, 15);
+    addSectionTitle(page, "Featured Sermons");
+    addFeaturedSection(page);
 
-        addSectionTitle(page, "All Sermons");
+    addSpace(page, 15);
 
-        listContainer = new LinearLayout(this);
-        listContainer.setOrientation(LinearLayout.VERTICAL);
+    addSectionTitle(page, "All Sermons");
 
-        page.addView(listContainer);
+    listContainer = new LinearLayout(this);
+    listContainer.setOrientation(LinearLayout.VERTICAL);
+    page.addView(listContainer);
 
-        displaySermons();
+    displaySermons();
 
-        addSpace(page, 18);
+    addSpace(page, 18);
 
-        addSectionTitle(page, "Your Library");
+    addSectionTitle(page, "Your Library");
 
-        addMenuCard(
-                page,
-                "⭐ Favourites",
-                "Your saved sermons",
-                v -> showFavourites()
-        );
+    addMenuCard(
+            page,
+            "⭐ Favourites",
+            "Your saved sermons",
+            v -> showFavourites()
+    );
 
-        addMenuCard(
-                page,
-                "📥 Add Offline Sermons",
-                "Choose audio files from your device",
-                v -> pickOfflineAudio()
-        );
+    addMenuCard(
+            page,
+            "📥 Add Offline Sermons",
+            "Choose audio files from your device",
+            v -> pickOfflineAudio()
+    );
 
-        addMenuCard(
-                page,
-                "▶ Now Playing",
-                "Your audio player will appear here",
-                v -> showMessage(
-                        "The audio player will be connected "
-                                + "in the next development step."
-                )
-        );
+    addMenuCard(
+            page,
+            "▶ Now Playing",
+            "Your audio player will appear here",
+            v -> showMessage(
+                    "The audio player will be connected "
+                            + "in the next development step."
+            )
+    );
     }
-
-    // --------------------------------------------------
-    // SOURCE FILTERS
-    // --------------------------------------------------
-
     private void addSourceFilters(LinearLayout parent) {
 
         LinearLayout row = new LinearLayout(this);
