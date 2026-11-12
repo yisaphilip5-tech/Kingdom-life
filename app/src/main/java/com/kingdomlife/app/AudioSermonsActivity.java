@@ -957,42 +957,30 @@ public class AudioSermonsActivity extends Activity {
         return card;
     }
 
-    private void addBackButton(
-            LinearLayout parent
-    ) {
+    private void addBackButton(LinearLayout parent) {
 
-        TextView back = new TextView(this);
+    ImageView back = new ImageView(this);
 
-        back.setText("‹");
-        back.setTextSize(38);
-        back.setTextColor(headingColor);
+    back.setImageResource(android.R.drawable.ic_media_previous);
+    back.setColorFilter(headingColor);
+    back.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
-        back.setGravity(Gravity.CENTER);
+    LinearLayout.LayoutParams params =
+            new LinearLayout.LayoutParams(
+                    dp(42),
+                    dp(42)
+            );
 
-        back.setBackground(
-                roundedBackground(
-                        cardColor,
-                        GOLD,
-                        30
-                )
-        );
+    params.setMargins(
+            0,
+            0,
+            0,
+            dp(12)
+    );
 
-        LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(
-                        dp(48),
-                        dp(48)
-                );
+    parent.addView(back, params);
 
-        params.setMargins(
-                0,
-                0,
-                0,
-                dp(12)
-        );
-
-        parent.addView(back, params);
-
-        back.setOnClickListener(v -> finish());
+    back.setOnClickListener(v -> finish());
     }
 
     private void addSectionTitle(
