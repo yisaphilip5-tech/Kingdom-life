@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.widget.ImageView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -88,15 +89,23 @@ protected void onCreate(Bundle savedInstanceState) {
 
         content.removeAllViews();
 
-        TextView back = new TextView(this);
-        back.setText("‹  Back");
-        back.setTextSize(18);
-        back.setTextColor(GOLD);
-        back.setTypeface(null, Typeface.BOLD);
-        back.setPadding(4, 8, 4, 18);
-        back.setOnClickListener(v -> finish());
+        ImageView back = new ImageView(this);
 
-        content.addView(back);
+back.setImageResource(android.R.drawable.ic_media_previous);
+back.setColorFilter(GOLD);
+back.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+
+LinearLayout.LayoutParams backParams =
+        new LinearLayout.LayoutParams(
+                dp(42),
+                dp(42)
+        );
+
+backParams.setMargins(0, 0, 0, dp(12));
+
+content.addView(back, backParams);
+
+back.setOnClickListener(v -> finish());
 
         TextView title = new TextView(this);
         title.setText("Kingdom Sermons");
