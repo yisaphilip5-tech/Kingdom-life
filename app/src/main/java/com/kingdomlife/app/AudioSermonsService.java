@@ -33,6 +33,8 @@ public class AudioSermonsService extends Service {
 
     public static final String ACTION_PROGRESS =
             "com.kingdomlife.app.SERMON_PROGRESS";
+    public static final String ACTION_REQUEST_PROGRESS =
+        "com.kingdomlife.app.SERMON_REQUEST_PROGRESS";
 
     public static final String EXTRA_URI = "sermon_uri";
     public static final String EXTRA_TITLE = "sermon_title";
@@ -126,6 +128,9 @@ public class AudioSermonsService extends Service {
             seekTo(
                     intent.getIntExtra(EXTRA_POSITION, 0)
             );
+            } else if (ACTION_REQUEST_PROGRESS.equals(action)) {
+
+    sendProgress();
 
         } else if (ACTION_STOP.equals(action)) {
 
