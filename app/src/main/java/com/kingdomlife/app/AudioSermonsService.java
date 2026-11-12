@@ -97,6 +97,10 @@ public class AudioSermonsService extends Service {
             if (title != null && !title.trim().isEmpty()) {
                 currentTitle = title;
             }
+            startForeground(
+        NOTIFICATION_ID,
+        buildNotification("Loading")
+);
 
             if (player != null
                     && isPrepared
