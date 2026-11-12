@@ -89,24 +89,24 @@ protected void onCreate(Bundle savedInstanceState) {
 
         content.removeAllViews();
 
-        ImageView back = new ImageView(this);
+        ImageButton backButton = new ImageButton(this);
 
-back.setImageResource(android.R.drawable.ic_media_previous);
-back.setColorFilter(GOLD);
-back.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+backButton.setImageResource(
+        android.R.drawable.ic_media_previous
+);
 
-LinearLayout.LayoutParams backParams =
+backButton.setBackgroundColor(Color.TRANSPARENT);
+backButton.setContentDescription("Back");
+
+backButton.setOnClickListener(v -> finish());
+
+content.addView(
+        backButton,
         new LinearLayout.LayoutParams(
-                dp(42),
-                dp(42)
-        );
-
-backParams.setMargins(0, 0, 0, dp(12));
-
-content.addView(back, backParams);
-
-back.setOnClickListener(v -> finish());
-
+                dp(60),
+                dp(60)
+        )
+);
         TextView title = new TextView(this);
         title.setText("Kingdom Sermons");
         title.setTextSize(27);
