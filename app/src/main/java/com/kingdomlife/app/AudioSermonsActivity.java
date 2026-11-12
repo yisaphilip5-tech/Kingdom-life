@@ -47,8 +47,67 @@ public class AudioSermonsActivity extends Activity {
     private SermonItem currentSermon;
 private boolean isSermonPlaying = false;
 
-    private static final int PICK_AUDIO_REQUEST = 2001;
+private SeekBar sermonSeekBar;
+private TextView currentTimeText;
+private TextView durationText;
+private Button playPauseButton;
 
+private boolean isReceiverRegistered = false;
+    private final BroadcastReceiver sermonProgressReceiver =
+        new BroadcastReceiver() {
+
+    @Override
+    public void onReceive(
+            android.content.Context context,
+            Intent intent
+    ) {
+
+        if (intent == null
+                || !AudioSermonsService.ACTION_PROGRESS.equals(
+                        intent.getAction()
+                )) {
+            return;
+        }
+
+        int position = intent.getIntExtra(
+                AudioSermonsService.EXTRA_POSITION,
+                0
+        );
+
+        int duration = intent.getIntExtra(
+                AudioSermonsService.EXTRA_DURATION,
+                0
+        );
+
+        isSermonPlaying = intent.getBooleanExtra(
+                AudioSermonsService.EXTRA_IS_PLAYING,
+                false
+        );
+
+        if (sermonSeekBar != null) {
+            sermonSeekBar.setMax(Math.max(duration, 1));
+            sermonSeekBar.setProgress(
+                    Math.min(position, duration)
+            );
+        }
+
+        if (currentTimeText != null) {
+            currentTimeText.setText(formatSermonTime(position));
+        }
+
+        if (durationText != null) {
+            durationText.setText(formatSermonTime(duration));
+        }
+
+        if (playPauseButton != null) {
+            playPauseButton.setText(
+                    isSermonPlaying ? "Pause" : "Play"
+            );
+        }
+    }
+};
+
+private static final int PICK_AUDIO_REQUEST = 2001;
     private static class SermonItem {
 
         String title;
@@ -82,7 +141,17 @@ private boolean isSermonPlaying = false;
         prepareSampleLibrary();
 
         showLibraryHome();
+        registerSermonProgressReceiver();
     }
+    @Override
+protected void onDestroy() {
+    super.onDestroy();
+
+    if (isReceiverRegistered) {
+        unregisterReceiver(sermonProgressReceiver);
+        isReceiverRegistered = false;
+    }
+}
 
     private void prepareSampleLibrary() {
 
@@ -1115,6 +1184,68 @@ isSermonPlaying = true;
 
     showMessage("Opening: " + sermon.title);
     }
+    private void toggleSermonPlayback() {
+
+    if (currentSermon == null
+            || currentSermon.audioUri == null) {
+        showMessage("Select a sermon first.");
+        return;
+    }
+
+    Intent intent = new Intent(
+            this,
+            AudioSermonsService.class
+    );
+
+    if (isSermonPlaying) {
+        intent.setAction(
+                AudioSermonsService.ACTION_PAUSE
+        );
+    } else {
+        intent.setAction(
+                AudioSermonsService.ACTION_PLAY
+        );
+
+        intent.putExtra(
+                AudioSermonsService.EXTRA_URI,
+                currentSermon.audioUri.toString()
+        );
+
+        intent.putExtra(
+                AudioSermonsService.EXTRA_TITLE,
+                currentSermon.title
+        );
+    }
+
+    startService(intent);
+    }
+    private void stopSermonPlayback() {
+
+    Intent intent = new Intent(
+            this,
+            AudioSermonsService.class
+    );
+
+    intent.setAction(
+            AudioSermonsService.ACTION_STOP
+    );
+
+    startService(intent);
+
+    isSermonPlaying = false;
+
+    if (sermonSeekBar != null) {
+        sermonSeekBar.setProgress(0);
+    }
+
+    if (currentTimeText != null) {
+        currentTimeText.setText("00:00");
+    }
+
+    if (playPauseButton != null) {
+        playPauseButton.setText("Play");
+    }
+    }
     private void showNowPlaying() {
 
     LinearLayout page = createPage();
@@ -1178,14 +1309,152 @@ isSermonPlaying = true;
 
     addSpace(page, 15);
 
-    addText(
-            page,
-            "Playback controls will appear here next.",
-            14,
-            textColor,
-            false
-    );
+    addSpace(page, 15);
+
+sermonSeekBar = new SeekBar(this);
+sermonSeekBar.setMax(100);
+
+page.addView(
+        sermonSeekBar,
+        new LinearLayout.LayoutParams(
+                -1,
+                dp(45)
+        )
+);
+
+LinearLayout timeRow = new LinearLayout(this);
+timeRow.setOrientation(LinearLayout.HORIZONTAL);
+timeRow.setGravity(Gravity.CENTER_VERTICAL);
+
+currentTimeText = new TextView(this);
+currentTimeText.setText("00:00");
+currentTimeText.setTextColor(textColor);
+
+durationText = new TextView(this);
+durationText.setText("00:00");
+durationText.setTextColor(textColor);
+
+timeRow.addView(
+        currentTimeText,
+        new LinearLayout.LayoutParams(0, -2, 1)
+);
+
+timeRow.addView(
+        durationText,
+        new LinearLayout.LayoutParams(
+                0,
+                -2,
+                1
+        )
+);
+
+durationText.setGravity(Gravity.RIGHT);
+
+page.addView(timeRow);
+
+addSpace(page, 15);
+
+LinearLayout controls = new LinearLayout(this);
+controls.setOrientation(LinearLayout.HORIZONTAL);
+controls.setGravity(Gravity.CENTER);
+
+playPauseButton = new Button(this);
+playPauseButton.setText(
+        isSermonPlaying ? "Pause" : "Play"
+);
+
+Button stopButton = new Button(this);
+stopButton.setText("Stop");
+
+controls.addView(playPauseButton);
+controls.addView(stopButton);
+
+page.addView(controls);
+
+playPauseButton.setOnClickListener(
+        v -> toggleSermonPlayback()
+);
+
+stopButton.setOnClickListener(
+        v -> stopSermonPlayback()
+);
+        sermonSeekBar.setOnSeekBarChangeListener(
+        new SeekBar.OnSeekBarChangeListener() {
+
+    @Override
+    public void onProgressChanged(
+            SeekBar seekBar,
+            int progress,
+            boolean fromUser
+    ) {
+        // Wait until the user finishes dragging.
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+        // User started seeking.
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+        Intent intent = new Intent(
+                AudioSermonsActivity.this,
+                AudioSermonsService.class
+        );
+
+        intent.setAction(
+                AudioSermonsService.ACTION_SEEK
+        );
+
+        intent.putExtra(
+                AudioSermonsService.EXTRA_POSITION,
+                seekBar.getProgress()
+        );
+
+        startService(intent);
+    }
+});
         }
+    private String formatSermonTime(int milliseconds) {
+
+    int totalSeconds = Math.max(0, milliseconds) / 1000;
+
+    int minutes = totalSeconds / 60;
+    int seconds = totalSeconds % 60;
+
+    return String.format(
+            java.util.Locale.getDefault(),
+            "%02d:%02d",
+            minutes,
+            seconds
+    );
+    }
+    private void registerSermonProgressReceiver() {
+
+    if (isReceiverRegistered) {
+        return;
+    }
+
+    IntentFilter filter = new IntentFilter(
+            AudioSermonsService.ACTION_PROGRESS
+    );
+
+    if (Build.VERSION.SDK_INT >= 33) {
+        registerReceiver(
+                sermonProgressReceiver,
+                filter,
+                android.content.Context.RECEIVER_NOT_EXPORTED
+        );
+    } else {
+        registerReceiver(
+                sermonProgressReceiver,
+                filter
+        );
+    }
+
+    isReceiverRegistered = true;
+    }
 }
   
       
