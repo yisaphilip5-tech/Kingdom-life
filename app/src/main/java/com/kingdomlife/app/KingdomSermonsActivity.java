@@ -2,6 +2,8 @@ package com.kingdomlife.app;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.widget.ImageButton;
+import android.graphics.Color;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
