@@ -424,6 +424,18 @@ private boolean isWeekReleased(
                 v -> showAdditionalTeachings()
         );
     }
+    addCard(
+        "🎧 Audio Sermons Library",
+        "Explore Kingdom Life, online and offline sermons.",
+        v -> {
+            Intent intent = new Intent(
+                    SermonsActivity.this,
+                    AudioSermonsActivity.class
+            );
+
+            startActivity(intent);
+        }
+);
 
     private void showMonth(int monthIndex) {
 
