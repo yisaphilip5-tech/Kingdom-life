@@ -1312,7 +1312,7 @@ isSermonPlaying = true;
     addSpace(page, 15);
 
 sermonSeekBar = new SeekBar(this);
-sermonSeekBar.setMax(100);
+sermonSeekBar.setMax(1);
 
 page.addView(
         sermonSeekBar,
