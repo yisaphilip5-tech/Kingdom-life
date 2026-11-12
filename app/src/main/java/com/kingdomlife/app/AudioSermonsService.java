@@ -296,6 +296,15 @@ public class AudioSermonsService extends Service {
                     new Intent(ACTION_PROGRESS);
 
             progress.setPackage(getPackageName());
+            progress.putExtra(
+        EXTRA_TITLE,
+        currentTitle
+);
+
+progress.putExtra(
+        EXTRA_URI,
+        currentUri
+);
 
             progress.putExtra(
                     EXTRA_POSITION,
