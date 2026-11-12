@@ -68,7 +68,41 @@ private boolean isReceiverRegistered = false;
                 )) {
             return;
         }
+        
+String receivedTitle = intent.getStringExtra(
+        AudioSermonsService.EXTRA_TITLE
+);
 
+String receivedUri = intent.getStringExtra(
+        AudioSermonsService.EXTRA_URI
+);
+
+if (receivedUri != null && !receivedUri.trim().isEmpty()) {
+
+    if (currentSermon == null
+            || currentSermon.audioUri == null
+            || !receivedUri.equals(
+                    currentSermon.audioUri.toString()
+            )) {
+
+        currentSermon = new SermonItem(
+                receivedTitle != null
+                        ? receivedTitle
+                        : "Now Playing",
+                "Unknown speaker",
+                "Unknown ministry",
+                "Audio sermon",
+                "Local audio",
+                Uri.parse(receivedUri)
+        );
+    }
+}
+        if (content != null
+        && currentSermon != null
+        && sermonSeekBar == null) {
+
+    showNowPlaying();
+        }
         int position = intent.getIntExtra(
                 AudioSermonsService.EXTRA_POSITION,
                 0
