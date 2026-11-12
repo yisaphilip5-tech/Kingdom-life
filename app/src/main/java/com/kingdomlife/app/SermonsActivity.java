@@ -424,7 +424,7 @@ private boolean isWeekReleased(
                         + "52-week sermon programme.",
                 v -> showAdditionalTeachings()
         );
-    }
+    
     addCard(
         "🎧 Audio Sermons Library",
         "Explore Kingdom Life, online and offline sermons.",
@@ -437,6 +437,7 @@ private boolean isWeekReleased(
             startActivity(intent);
         }
 );
+    }
 
     private void showMonth(int monthIndex) {
 
