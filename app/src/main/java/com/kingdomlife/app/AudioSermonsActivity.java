@@ -118,6 +118,11 @@ public class AudioSermonsActivity extends Activity {
     // DISPLAY MODE
     // --------------------------------------------------
 
+    
+private int dp(int value) {
+    return (int) (value * getResources()
+            .getDisplayMetrics().density + 0.5f);
+}
     private void applyKingdomBackground() {
 
         android.content.SharedPreferences displayPrefs =
@@ -192,7 +197,7 @@ public class AudioSermonsActivity extends Activity {
     content = new LinearLayout(this);
     content.setOrientation(LinearLayout.VERTICAL);
 
-    pageSetupBackground();
+    applyKingdomBackground();
 
     scrollView.addView(content);
 
