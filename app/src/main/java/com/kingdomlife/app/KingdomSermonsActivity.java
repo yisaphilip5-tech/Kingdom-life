@@ -24,22 +24,36 @@ public class KingdomSermonsActivity extends Activity {
     private final int DARK_TEXT = Color.rgb(35, 30, 45);
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-        ScrollView scrollView = new ScrollView(this);
-        scrollView.setFillViewport(true);
+    ScrollView scrollView = new ScrollView(this);
 
-        content = new LinearLayout(this);
-        content.setOrientation(LinearLayout.VERTICAL);
-        content.setPadding(20, 28, 20, 28);
+    content = new LinearLayout(this);
+    content.setOrientation(LinearLayout.VERTICAL);
+    content.setPadding(20, 15, 20, 25);
 
-        scrollView.addView(content);
-        setContentView(scrollView);
+    scrollView.addView(content);
 
-        applyKingdomBackground();
-        showSermonChoices();
-    }
+    // Keep content clear of the phone's system bars.
+    scrollView.setOnApplyWindowInsetsListener((view, insets) -> {
+
+        view.setPadding(
+                insets.getSystemWindowInsetLeft(),
+                insets.getSystemWindowInsetTop(),
+                insets.getSystemWindowInsetRight(),
+                insets.getSystemWindowInsetBottom()
+        );
+
+        return insets;
+    });
+
+    setContentView(scrollView);
+
+    applyKingdomBackground();
+
+    showSermonChoices();
+}
 
     private void applyKingdomBackground() {
 
