@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.graphics.Color;
 import android.widget.ImageView;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
 import android.view.View;
@@ -43,6 +44,8 @@ public class AudioSermonsActivity extends Activity {
 
     private final ArrayList<String> favourites =
             new ArrayList<>();
+    private SermonItem currentSermon;
+private boolean isSermonPlaying = false;
 
     private static final int PICK_AUDIO_REQUEST = 2001;
 
@@ -290,14 +293,11 @@ private int dp(int value) {
     );
 
     addMenuCard(
-            page,
-            "▶ Now Playing",
-            "Your audio player will appear here",
-            v -> showMessage(
-                    "The audio player will be connected "
-                            + "in the next development step."
-            )
-    );
+        page,
+        "▶ Now Playing",
+        "Open your audio sermon player",
+        v -> showNowPlaying()
+);
     }
     private void addSourceFilters(LinearLayout parent) {
 
@@ -622,21 +622,18 @@ private int dp(int value) {
 
         listen.setOnClickListener(v -> {
 
-            if (sermon.audioUri == null) {
+    if (sermon.audioUri == null) {
 
-                showMessage(
-                        "This sermon is awaiting its "
-                                + "audio source."
-                );
+        showMessage(
+                "This sermon is awaiting its "
+                        + "audio source."
+        );
 
-            } else {
+    } else {
 
-                showMessage(
-                        "The audio player will be connected "
-                                + "in the next development step."
-                );
-            }
-        });
+        playSermon(sermon);
+    }
+});
 
         Button favourite = new Button(this);
 
@@ -1087,6 +1084,108 @@ private int dp(int value) {
                 Toast.LENGTH_LONG
         ).show();
     }
+    private void playSermon(SermonItem sermon) {
+        currentSermon = sermon;
+isSermonPlaying = true;
+
+    Intent intent = new Intent(
+            this,
+            AudioSermonsService.class
+    );
+
+    intent.setAction(
+            AudioSermonsService.ACTION_PLAY
+    );
+
+    intent.putExtra(
+            AudioSermonsService.EXTRA_URI,
+            sermon.audioUri.toString()
+    );
+
+    intent.putExtra(
+            AudioSermonsService.EXTRA_TITLE,
+            sermon.title
+    );
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        startForegroundService(intent);
+    } else {
+        startService(intent);
+    }
+
+    showMessage("Opening: " + sermon.title);
+    }
+    private void showNowPlaying() {
+
+    LinearLayout page = createPage();
+
+    addBackButton(page);
+
+    addText(
+            page,
+            "▶ Now Playing",
+            24,
+            headingColor,
+            true
+    );
+
+    addSpace(page, 20);
+
+    if (currentSermon == null) {
+
+        addText(
+                page,
+                "No sermon selected",
+                18,
+                headingColor,
+                true
+        );
+
+        addText(
+                page,
+                "Choose a sermon from your library to begin listening.",
+                14,
+                textColor,
+                false
+        );
+
+        return;
+    }
+
+    addText(
+            page,
+            "🎧 " + currentSermon.title,
+            20,
+            headingColor,
+            true
+    );
+
+    addText(
+            page,
+            "Speaker: " + currentSermon.speaker,
+            14,
+            textColor,
+            false
+    );
+
+    addText(
+            page,
+            "Ministry: " + currentSermon.ministry,
+            14,
+            textColor,
+            false
+    );
+
+    addSpace(page, 15);
+
+    addText(
+            page,
+            "Playback controls will appear here next.",
+            14,
+            textColor,
+            false
+    );
+        }
 }
   
       
