@@ -170,15 +170,14 @@ private static final int PICK_AUDIO_REQUEST = 2001;
             this.audioUri = audioUri;
         }
     }
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        prepareSampleLibrary();
-
-        showLibraryHome();
-        registerSermonProgressReceiver();
+loadFavourites();
+prepareSampleLibrary();
+showLibraryHome();
+registerSermonProgressReceiver();
     }
     @Override
 protected void onDestroy() {
@@ -763,12 +762,14 @@ private int dp(int value) {
 
             if (favourites.contains(sermon.title)) {
 
-                favourites.remove(sermon.title);
+    favourites.remove(sermon.title);
 
-            } else {
+} else {
 
-                favourites.add(sermon.title);
-            }
+    favourites.add(sermon.title);
+}
+
+saveFavourites();
 
             updateFavouriteButton(favourite, sermon);
         });
@@ -796,6 +797,39 @@ private int dp(int value) {
                 )
         );
     }
+    
+private void saveFavourites() {
+
+    getSharedPreferences(
+            "KingdomLifeSermonPrefs",
+            MODE_PRIVATE
+    ).edit()
+            .putStringSet(
+                    "favourite_sermons",
+                    new java.util.HashSet<>(favourites)
+            )
+            .apply();
+}
+    
+private void loadFavourites() {
+
+    java.util.Set<String> savedFavourites =
+            getSharedPreferences(
+                    "KingdomLifeSermonPrefs",
+                    MODE_PRIVATE
+            ).getStringSet(
+                    "favourite_sermons",
+                    new java.util.HashSet<>()
+            );
+
+    favourites.clear();
+
+    if (savedFavourites != null) {
+        favourites.addAll(savedFavourites);
+    }
+}
+    
+    
 
     private String getSourceLabel(String source) {
 
