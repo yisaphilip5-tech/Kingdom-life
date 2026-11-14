@@ -1251,6 +1251,8 @@ private void saveCurrentSermon() {
         currentSermon = sermon;
 isSermonPlaying = true;
 
+saveCurrentSermon();
+
     Intent intent = new Intent(
             this,
             AudioSermonsService.class
