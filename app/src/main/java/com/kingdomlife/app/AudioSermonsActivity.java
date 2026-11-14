@@ -1394,14 +1394,34 @@ private int loadLastSermonPosition() {
             MODE_PRIVATE
     ).getInt("last_sermon_position", 0);
 }
-    
-    
-    
     private void playSermon(SermonItem sermon) {
-        currentSermon = sermon;
-isSermonPlaying = true;
 
-saveCurrentSermon();
+    String selectedUri = sermon.audioUri.toString();
+
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "KingdomLifeSermonPrefs",
+                    MODE_PRIVATE
+            );
+
+    String savedUri = prefs.getString(
+            "last_sermon_uri",
+            null
+    );
+
+    int savedPosition = 0;
+
+    if (selectedUri.equals(savedUri)) {
+        savedPosition = prefs.getInt(
+                "last_sermon_position",
+                0
+        );
+    }
+
+    currentSermon = sermon;
+    isSermonPlaying = true;
+
+    saveCurrentSermon();
 
     Intent intent = new Intent(
             this,
@@ -1414,34 +1434,18 @@ saveCurrentSermon();
 
     intent.putExtra(
             AudioSermonsService.EXTRA_URI,
-            sermon.audioUri.toString()
+            selectedUri
     );
 
     intent.putExtra(
             AudioSermonsService.EXTRA_TITLE,
             sermon.title
     );
-        int savedPosition = getSharedPreferences(
-        "KingdomLifeSermonPrefs",
-        MODE_PRIVATE
-).getInt("last_sermon_position", 0);
 
-String savedUri = getSharedPreferences(
-        "KingdomLifeSermonPrefs",
-        MODE_PRIVATE
-).getString("last_sermon_uri", null);
-
-if (sermon.audioUri.toString().equals(savedUri)) {
     intent.putExtra(
             AudioSermonsService.EXTRA_POSITION,
             savedPosition
     );
-} else {
-    intent.putExtra(
-            AudioSermonsService.EXTRA_POSITION,
-            0
-    );
-}
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         startForegroundService(intent);
@@ -1451,6 +1455,8 @@ if (sermon.audioUri.toString().equals(savedUri)) {
 
     showMessage("Opening: " + sermon.title);
     }
+
+    
     private void toggleSermonPlayback() {
 
     if (currentSermon == null
