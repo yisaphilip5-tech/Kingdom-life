@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import java.util.Calendar;
 import android.view.View;
+import android.content.Intent;
 import android.widget.ProgressBar;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -1055,9 +1056,49 @@ progressBarParams.setMargins(
 );
 
 progressArea.addView(progressBar, progressBarParams);
-TextView statusView = new TextView(this);
-        body.addView(statusView);
 
+TextView statusView = new TextView(this);
+
+if (unlocked) {
+
+    statusView.setText("↗ Share Achievement");
+    statusView.setTextSize(12);
+    statusView.setTypeface(
+            Typeface.DEFAULT,
+            Typeface.BOLD
+    );
+    statusView.setTextColor(PURPLE);
+    statusView.setGravity(Gravity.CENTER);
+    statusView.setPadding(12, 8, 12, 8);
+
+    GradientDrawable shareBackground =
+            new GradientDrawable();
+
+    shareBackground.setColor(BRIGHT_GOLD);
+    shareBackground.setCornerRadius(20);
+
+    statusView.setBackground(shareBackground);
+
+    statusView.setOnClickListener(v ->
+            shareAchievement(achievement)
+    );
+
+} else {
+
+    statusView.setVisibility(View.GONE);
+
+}
+
+LinearLayout.LayoutParams shareParams =
+        new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+
+shareParams.setMargins(8, 5, 8, 0);
+
+body.addView(statusView, shareParams);
+        
 
 LinearLayout.LayoutParams cardParams =
         new LinearLayout.LayoutParams(
@@ -1072,6 +1113,39 @@ LinearLayout.LayoutParams cardParams =
         // Newly unlocked animation is connected after
         // the existing saved-state logic is migrated.
     }
+    
+private void shareAchievement(AchievementData achievement) {
+
+    String shareText =
+            "🏆 Kingdom Life Achievement Unlocked!\n\n" +
+            achievement.name + "\n\n" +
+            achievement.description + "\n\n" +
+            "I'm growing in faith and living with purpose " +
+            "with Kingdom Life! 👑";
+
+    Intent shareIntent =
+            new Intent(Intent.ACTION_SEND);
+
+    shareIntent.setType("text/plain");
+
+    shareIntent.putExtra(
+            Intent.EXTRA_SUBJECT,
+            "Kingdom Life Achievement"
+    );
+
+    shareIntent.putExtra(
+            Intent.EXTRA_TEXT,
+            shareText
+    );
+
+    startActivity(
+            Intent.createChooser(
+                    shareIntent,
+                    "Share Achievement"
+            )
+    );
+}
+    
 
     private void animateAchievementUnlock(
             View card,
