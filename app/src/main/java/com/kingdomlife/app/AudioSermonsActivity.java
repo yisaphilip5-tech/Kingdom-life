@@ -188,7 +188,9 @@ loadFavourites();
 prepareSampleLibrary();
 loadOfflineSermons();
 loadCurrentSermon();
+registerSermonProgressReceiver();
 showLibraryHome();
+
     }
     @Override
 protected void onDestroy() {
