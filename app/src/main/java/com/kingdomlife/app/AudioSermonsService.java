@@ -111,14 +111,27 @@ public class AudioSermonsService extends Service {
 );
 
             if (player != null
-                    && isPrepared
-                    && uriText.equals(currentUri)) {
+        && isPrepared
+        && uriText.equals(currentUri)) {
 
-                resumePlayback();
+    int duration = player.getDuration();
 
-            } else {
+    int resumePosition = Math.max(
+            0,
+            Math.min(pendingResumePosition, duration)
+    );
 
-                playAudio(Uri.parse(uriText));
+    if (resumePosition > 0) {
+        player.seekTo(resumePosition);
+    }
+
+    pendingResumePosition = 0;
+
+    resumePlayback();
+
+} else {
+
+    playAudio(Uri.parse(uriText));
             }
 
         } else if (ACTION_PAUSE.equals(action)) {
