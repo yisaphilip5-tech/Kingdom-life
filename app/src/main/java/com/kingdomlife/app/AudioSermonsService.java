@@ -101,6 +101,10 @@ public class AudioSermonsService extends Service {
             if (title != null && !title.trim().isEmpty()) {
                 currentTitle = title;
             }
+            pendingResumePosition = intent.getIntExtra(
+        EXTRA_POSITION,
+        0
+);
             startForeground(
         NOTIFICATION_ID,
         buildNotification("Loading")
