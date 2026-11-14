@@ -186,9 +186,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
 loadFavourites();
 prepareSampleLibrary();
+loadOfflineSermons();
 loadCurrentSermon();
 showLibraryHome();
-registerSermonProgressReceiver();
     }
     @Override
 protected void onDestroy() {
@@ -821,6 +821,92 @@ private void saveFavourites() {
             )
             .apply();
 }
+    private void saveOfflineSermons() {
+
+    org.json.JSONArray savedSermons = new org.json.JSONArray();
+
+    for (SermonItem sermon : sermons) {
+
+        if (sermon.audioUri == null) {
+            continue;
+        }
+
+        org.json.JSONObject item = new org.json.JSONObject();
+
+        try {
+            item.put("title", sermon.title);
+            item.put("uri", sermon.audioUri.toString());
+            item.put("speaker", sermon.speaker);
+            item.put("ministry", sermon.ministry);
+            item.put("category", sermon.category);
+            item.put("source", sermon.source);
+
+            savedSermons.put(item);
+
+        } catch (org.json.JSONException ignored) {
+        }
+    }
+
+    getSharedPreferences(
+            "KingdomLifeSermonPrefs",
+            MODE_PRIVATE
+    ).edit()
+            .putString(
+                    "offline_sermons",
+                    savedSermons.toString()
+            )
+            .apply();
+    }
+    private void loadOfflineSermons() {
+
+    String savedData = getSharedPreferences(
+            "KingdomLifeSermonPrefs",
+            MODE_PRIVATE
+    ).getString("offline_sermons", "[]");
+
+    try {
+
+        org.json.JSONArray savedSermons =
+                new org.json.JSONArray(savedData);
+
+        for (int i = 0; i < savedSermons.length(); i++) {
+
+            org.json.JSONObject item =
+                    savedSermons.getJSONObject(i);
+
+            String title = item.getString("title");
+            Uri audioUri = Uri.parse(item.getString("uri"));
+
+            String speaker = item.optString("speaker", "Device Audio");
+            String ministry = item.optString("ministry", "Offline Library");
+            String category = item.optString("category", "Other");
+            String source = item.optString("source", "Offline");
+
+            boolean alreadyAdded = false;
+
+            for (SermonItem existing : sermons) {
+                if (existing.audioUri != null &&
+                        existing.audioUri.equals(audioUri)) {
+                    alreadyAdded = true;
+                    break;
+                }
+            }
+
+            if (!alreadyAdded) {
+                sermons.add(new SermonItem(
+                        title,
+                        speaker,
+                        ministry,
+                        category,
+                        source,
+                        audioUri
+                ));
+            }
+        }
+
+    } catch (org.json.JSONException ignored) {
+    }
+    }
     
 private void loadFavourites() {
 
@@ -969,16 +1055,18 @@ private void loadFavourites() {
                     }
                 }
 
-                sermons.add(
-                        new SermonItem(
-                                fileName,
-                                "Device Audio",
-                                "Offline Library",
-                                "Other",
-                                "Offline",
-                                                        audioUri
-                        )
-                );
+                SermonItem newSermon = new SermonItem(
+        fileName,
+        "Device Audio",
+        "Offline Library",
+        "Other",
+        "Offline",
+        audioUri
+);
+
+sermons.add(newSermon);
+
+saveOfflineSermons();
 
                 selectedSource = "Offline";
                 selectedCategory = "All";
