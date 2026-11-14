@@ -1247,6 +1247,41 @@ private void saveCurrentSermon() {
             .apply();
 }
     
+private void loadCurrentSermon() {
+
+    android.content.SharedPreferences prefs =
+            getSharedPreferences(
+                    "KingdomLifeSermonPrefs",
+                    MODE_PRIVATE
+            );
+
+    String title = prefs.getString(
+            "last_sermon_title",
+            null
+    );
+
+    String uriText = prefs.getString(
+            "last_sermon_uri",
+            null
+    );
+
+    if (title == null || uriText == null) {
+        return;
+    }
+
+    Uri audioUri = Uri.parse(uriText);
+
+    currentSermon = new SermonItem(
+            title,
+            "Previously selected sermon",
+            "Kingdom Life",
+            "Other",
+            "Offline",
+            audioUri
+    );
+}
+    
+    
     private void playSermon(SermonItem sermon) {
         currentSermon = sermon;
 isSermonPlaying = true;
