@@ -526,7 +526,14 @@ private void addLibraryBook(
 });
     content.addView(bookRow);
 
-addSpace(content, 12);
+View space = new View(this);
+content.addView(
+        space,
+        new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                dp(12)
+        )
+);
 }
 
 private void addBackButton() {
