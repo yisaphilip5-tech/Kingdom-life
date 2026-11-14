@@ -120,6 +120,16 @@ if (receivedUri != null && !receivedUri.trim().isEmpty()) {
                 AudioSermonsService.EXTRA_IS_PLAYING,
                 false
         );
+        
+getSharedPreferences(
+        "KingdomLifeSermonPrefs",
+        MODE_PRIVATE
+).edit()
+        .putInt("last_sermon_position", position)
+        .putInt("last_sermon_duration", duration)
+        .putBoolean("last_sermon_was_playing", isSermonPlaying)
+        .apply();
+        
 
         if (sermonSeekBar != null) {
             sermonSeekBar.setMax(Math.max(duration, 1));
