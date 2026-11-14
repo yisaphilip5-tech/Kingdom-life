@@ -50,6 +50,7 @@ public class AudioSermonsService extends Service {
     private String currentUri;
 
     private boolean isPrepared = false;
+    private int pendingResumePosition = 0;
 
     private final Handler handler =
             new Handler(Looper.getMainLooper());
