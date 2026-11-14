@@ -876,6 +876,13 @@ private void saveFavourites() {
 
             String title = item.getString("title");
             Uri audioUri = Uri.parse(item.getString("uri"));
+            try {
+    getContentResolver().takePersistableUriPermission(
+            audioUri,
+            Intent.FLAG_GRANT_READ_URI_PERMISSION
+    );
+} catch (Exception ignored) {
+            }
 
             String speaker = item.optString("speaker", "Device Audio");
             String ministry = item.optString("ministry", "Offline Library");
