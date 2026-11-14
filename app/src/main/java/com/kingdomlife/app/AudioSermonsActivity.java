@@ -1292,6 +1292,15 @@ private void loadCurrentSermon() {
     );
 }
     
+private int loadLastSermonPosition() {
+
+    return getSharedPreferences(
+            "KingdomLifeSermonPrefs",
+            MODE_PRIVATE
+    ).getInt("last_sermon_position", 0);
+}
+    
+    
     
     private void playSermon(SermonItem sermon) {
         currentSermon = sermon;
