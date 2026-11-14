@@ -433,7 +433,7 @@ public void showKingdomLibrary() {
     );
 
     addLibraryBook(
-            android.R.drawable.ic_menu_view,
+            R.drawable.pilgrims_progress_cover,
             "The Pilgrim's Progress",
             "PilgrimsProgressReadingProgress",
             completedBooks
