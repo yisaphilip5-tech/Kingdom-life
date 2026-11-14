@@ -497,12 +497,75 @@ loadingScreen.addView(loadingProgress);
 
 content.addView(loadingScreen);
 
-// Open Home after loading
+
+// Open the correct screen after loading
 new Handler().postDelayed(() -> {
-    showHome();
+
     bottomNav.setVisibility(View.VISIBLE);
-}, 1200);
+
+    String notificationType =
+            getIntent().getStringExtra(
+                    "open_notification_type"
+            );
+
+    if (notificationType != null) {
+
+        openNotificationDestination(notificationType);
+
+        getIntent().removeExtra(
+                "open_notification_type"
+        );
+
+    } else {
+
+        showHome();
+
     }
+
+}, 1200);
+        
+    }
+    
+@Override
+protected void onNewIntent(Intent intent) {
+
+    super.onNewIntent(intent);
+
+    setIntent(intent);
+
+    String notificationType =
+            intent.getStringExtra(
+                    "open_notification_type"
+            );
+
+    if (notificationType != null) {
+
+        openNotificationDestination(notificationType);
+
+        intent.removeExtra(
+                "open_notification_type"
+        );
+    }
+}
+    
+    
+private void openNotificationDestination(String type) {
+
+    if ("daily".equals(type)) {
+
+        showDailyChallenge();
+
+    } else if ("bible".equals(type)) {
+
+        showBible();
+
+    } else if ("memory".equals(type)) {
+
+        showMemoryVerse();
+
+    }
+}
+    
     void showHome() {
         stopTimer();
 content.removeAllViews();
