@@ -176,6 +176,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 loadFavourites();
 prepareSampleLibrary();
+loadCurrentSermon();
 showLibraryHome();
 registerSermonProgressReceiver();
     }
