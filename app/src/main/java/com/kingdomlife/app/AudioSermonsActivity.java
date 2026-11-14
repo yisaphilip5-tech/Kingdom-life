@@ -1461,9 +1461,14 @@ saveCurrentSermon();
     addSpace(page, 20);
 
     // Playback progress bar
-    sermonSeekBar = new SeekBar(this);
-    sermonSeekBar.setMax(1);
-    sermonSeekBar.setProgress(0);
+    
+sermonSeekBar = new SeekBar(this);
+
+int savedPosition = loadLastSermonPosition();
+
+sermonSeekBar.setMax(1);
+sermonSeekBar.setProgress(savedPosition);
+        
 
     page.addView(
             sermonSeekBar,
