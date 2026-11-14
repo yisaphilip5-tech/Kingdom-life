@@ -192,7 +192,7 @@ public void showKingdomBooks() {
 
     addBookCover(
             firstRow,
-            android.R.drawable.ic_menu_view,
+            R.drawable.pilgrims_progress_cover,
             "The Pilgrim's Progress",
             "By John Bunyan",
             v -> PilgrimsProgressBook.open(this, content)
