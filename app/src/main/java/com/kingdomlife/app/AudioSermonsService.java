@@ -171,10 +171,22 @@ public class AudioSermonsService extends Service {
 
             player.setOnPreparedListener(mp -> {
 
-                isPrepared = true;
+    isPrepared = true;
 
-                mp.start();
+    int duration = mp.getDuration();
 
+    int resumePosition = Math.max(
+            0,
+            Math.min(pendingResumePosition, duration)
+    );
+
+    if (resumePosition > 0) {
+        mp.seekTo(resumePosition);
+    }
+
+    pendingResumePosition = 0;
+
+    mp.start();
                 startForeground(
                         NOTIFICATION_ID,
                         buildNotification("Playing")
