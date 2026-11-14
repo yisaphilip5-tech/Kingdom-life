@@ -1224,6 +1224,29 @@ private void loadFavourites() {
                 Toast.LENGTH_LONG
         ).show();
     }
+    
+private void saveCurrentSermon() {
+
+    if (currentSermon == null ||
+            currentSermon.audioUri == null) {
+        return;
+    }
+
+    getSharedPreferences(
+            "KingdomLifeSermonPrefs",
+            MODE_PRIVATE
+    ).edit()
+            .putString(
+                    "last_sermon_title",
+                    currentSermon.title
+            )
+            .putString(
+                    "last_sermon_uri",
+                    currentSermon.audioUri.toString()
+            )
+            .apply();
+}
+    
     private void playSermon(SermonItem sermon) {
         currentSermon = sermon;
 isSermonPlaying = true;
