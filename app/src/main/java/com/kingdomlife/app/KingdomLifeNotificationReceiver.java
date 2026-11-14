@@ -58,27 +58,45 @@ public class KingdomLifeNotificationReceiver
                     "Practice your Memory Verse and strengthen your Bible memory.";
         }
 
-        Intent openApp =
-                new Intent(
-                        context,
-                        MainActivity.class
-                );
-
-        openApp.setFlags(
-                Intent.FLAG_ACTIVITY_NEW_TASK |
-                Intent.FLAG_ACTIVITY_CLEAR_TOP
+        
+Intent openApp =
+        new Intent(
+                context,
+                MainActivity.class
         );
 
-        PendingIntent pendingIntent =
-                PendingIntent.getActivity(
-                        context,
-                        0,
-                        openApp,
-                        PendingIntent.FLAG_UPDATE_CURRENT |
-                        (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-                                ? PendingIntent.FLAG_IMMUTABLE
-                                : 0)
-                );
+openApp.setFlags(
+        Intent.FLAG_ACTIVITY_NEW_TASK |
+        Intent.FLAG_ACTIVITY_CLEAR_TOP |
+        Intent.FLAG_ACTIVITY_SINGLE_TOP
+);
+
+openApp.putExtra(
+        "open_notification_type",
+        type
+);
+
+int notificationRequestCode;
+
+if ("daily".equals(type)) {
+    notificationRequestCode = 2001;
+} else if ("bible".equals(type)) {
+    notificationRequestCode = 2002;
+} else {
+    notificationRequestCode = 2003;
+}
+
+PendingIntent pendingIntent =
+        PendingIntent.getActivity(
+                context,
+                notificationRequestCode,
+                openApp,
+                PendingIntent.FLAG_UPDATE_CURRENT |
+                (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                        ? PendingIntent.FLAG_IMMUTABLE
+                        : 0)
+        );
+            
 
         Notification.Builder builder;
 
