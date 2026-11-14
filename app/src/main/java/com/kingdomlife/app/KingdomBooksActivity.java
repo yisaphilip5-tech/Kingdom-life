@@ -524,6 +524,9 @@ private void addLibraryBook(
     }
     
 });
+    content.addView(bookRow);
+
+addSpace(content, 12);
 }
 
 private void addBackButton() {
