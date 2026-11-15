@@ -28,10 +28,13 @@ import java.util.Locale;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.json.JSONObject;
 import android.view.Gravity;
 import android.view.MotionEvent;
+import androidx.core.content.FileProvider;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -1710,7 +1713,7 @@ prefs.edit()
             % dailyThoughts.length
     );
 
-    showMessage(
+    showDailyMessage(
         "💭 Food for Thought",
         dailyThoughts[thoughtIndex]
 );
@@ -1809,11 +1812,286 @@ prefs.edit()
         specialPrayer = dailyPrayers[prayerIndex];
     }
 
-    showMessage(
+    showDailyMessage(
         specialTitle,
         specialPrayer
 );
   }
+    private void showDailyMessage(
+        String heading,
+        String message
+) {
+    showMessage(heading, message);
+
+    // Remove the existing Back button temporarily.
+    if (content.getChildCount() > 0) {
+        content.removeViewAt(
+                content.getChildCount() - 1
+        );
+    }
+
+    addButton(
+            "📤 Share",
+            v -> shareDailyContent(heading, message)
+    );
+
+    addButton(
+            "⬅️ Back to Home",
+            v -> showHome()
+    );
+    }
+    private void shareDailyContent(
+        String heading,
+        String message
+) {
+
+    try {
+
+        LinearLayout shareCard =
+                new LinearLayout(this);
+
+        shareCard.setOrientation(
+                LinearLayout.VERTICAL
+        );
+
+        shareCard.setGravity(Gravity.CENTER);
+        shareCard.setPadding(
+                dpDaily(28),
+                dpDaily(35),
+                dpDaily(28),
+                dpDaily(35)
+        );
+
+        GradientDrawable background =
+                new GradientDrawable();
+
+        background.setColor(
+                Color.rgb(30, 24, 55)
+        );
+
+        background.setCornerRadius(
+                dpDaily(28)
+        );
+
+        background.setStroke(
+                dpDaily(3),
+                Color.rgb(184, 134, 11)
+        );
+
+        shareCard.setBackground(background);
+
+        // Original daily content heading.
+        TextView title = new TextView(this);
+
+        title.setText(heading);
+        title.setTextSize(25);
+
+        title.setTypeface(
+                Typeface.DEFAULT,
+                Typeface.BOLD
+        );
+
+        title.setTextColor(
+                Color.rgb(255, 215, 0)
+        );
+
+        title.setGravity(Gravity.CENTER);
+
+        shareCard.addView(
+                title,
+                new LinearLayout.LayoutParams(
+                        -1,
+                        -2
+                )
+        );
+
+        addDailyShareSpace(shareCard, 25);
+
+        // Decorative gold divider.
+        View divider = new View(this);
+
+        divider.setBackgroundColor(
+                Color.rgb(184, 134, 11)
+        );
+
+        shareCard.addView(
+                divider,
+                new LinearLayout.LayoutParams(
+                        dpDaily(100),
+                        dpDaily(2)
+                )
+        );
+
+        addDailyShareSpace(shareCard, 25);
+
+        // Actual daily prayer or thought.
+        TextView body = new TextView(this);
+
+        body.setText(message);
+        body.setTextSize(19);
+        body.setTextColor(Color.WHITE);
+        body.setGravity(Gravity.CENTER);
+
+        body.setLineSpacing(
+                dpDaily(7),
+                1.0f
+        );
+
+        body.setPadding(
+                dpDaily(5),
+                dpDaily(5),
+                dpDaily(5),
+                dpDaily(5)
+        );
+
+        shareCard.addView(
+                body,
+                new LinearLayout.LayoutParams(
+                        -1,
+                        -2
+                )
+        );
+
+        // Measure and draw the image.
+        int imageWidth = dpDaily(360);
+
+        shareCard.measure(
+                View.MeasureSpec.makeMeasureSpec(
+                        imageWidth,
+                        View.MeasureSpec.EXACTLY
+                ),
+                View.MeasureSpec.makeMeasureSpec(
+                        0,
+                        View.MeasureSpec.UNSPECIFIED
+                )
+        );
+
+        shareCard.layout(
+                0,
+                0,
+                shareCard.getMeasuredWidth(),
+                shareCard.getMeasuredHeight()
+        );
+
+        Bitmap bitmap = Bitmap.createBitmap(
+                shareCard.getMeasuredWidth(),
+                shareCard.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888
+        );
+
+        Canvas canvas = new Canvas(bitmap);
+        shareCard.draw(canvas);
+
+        // Save image in private cache.
+        File directory = new File(
+                getCacheDir(),
+                "shared_daily_content"
+        );
+
+        if (!directory.exists()
+                && !directory.mkdirs()) {
+            throw new java.io.IOException(
+                    "Could not create image directory"
+            );
+        }
+
+        String fileName =
+                "daily_content_" +
+                System.currentTimeMillis() +
+                ".png";
+
+        File imageFile = new File(
+                directory,
+                fileName
+        );
+
+        try (FileOutputStream output =
+                     new FileOutputStream(imageFile)) {
+
+            bitmap.compress(
+                    Bitmap.CompressFormat.PNG,
+                    100,
+                    output
+            );
+
+            output.flush();
+        }
+
+        bitmap.recycle();
+
+        Uri imageUri = FileProvider.getUriForFile(
+                this,
+                getPackageName() + ".fileprovider",
+                imageFile
+        );
+
+        // Native Android sharing.
+        Intent shareIntent =
+                new Intent(Intent.ACTION_SEND);
+
+        shareIntent.setType("image/png");
+
+        shareIntent.putExtra(
+                Intent.EXTRA_STREAM,
+                imageUri
+        );
+
+        shareIntent.setClipData(
+                android.content.ClipData.newUri(
+                        getContentResolver(),
+                        "Kingdom Life Daily Content",
+                        imageUri
+                )
+        );
+
+        shareIntent.addFlags(
+                Intent.FLAG_GRANT_READ_URI_PERMISSION
+        );
+
+        startActivity(
+                Intent.createChooser(
+                        shareIntent,
+                        "Share Daily Content"
+                )
+        );
+
+    } catch (Exception e) {
+
+        Toast.makeText(
+                this,
+                "Unable to share daily content. Please try again.",
+                Toast.LENGTH_LONG
+        ).show();
+
+        e.printStackTrace();
+    }
+}
+
+// Convert dp to pixels.
+private int dpDaily(float value) {
+
+    return (int) (
+            value * getResources()
+                    .getDisplayMetrics().density
+    );
+}
+
+// Add spacing to the share-only image.
+private void addDailyShareSpace(
+        LinearLayout layout,
+        int height
+) {
+
+    View space = new View(this);
+
+    layout.addView(
+            space,
+            new LinearLayout.LayoutParams(
+                    1,
+                    dpDaily(height)
+            )
+    );
+}
 
     void showMemoryVerse() {
 
