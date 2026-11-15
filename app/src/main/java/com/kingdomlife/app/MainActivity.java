@@ -1710,7 +1710,7 @@ prefs.edit()
             % dailyThoughts.length
     );
 
-    showMessage(
+    showDailyContent(
             "💭 Food for Thought",
             dailyThoughts[thoughtIndex]
     );
