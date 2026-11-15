@@ -11,6 +11,13 @@ import java.util.Calendar;
 import android.view.View;
 import android.content.Intent;
 import android.widget.ProgressBar;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.net.Uri;
+import android.widget.Toast;
+import androidx.core.content.FileProvider;
+import java.io.File;
+import java.io.FileOutputStream;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -1116,37 +1123,320 @@ LinearLayout.LayoutParams cardParams =
     
 private void shareAchievement(AchievementData achievement) {
 
-    String shareText =
-            "🏆 Kingdom Life Achievement Unlocked!\n\n" +
-            achievement.name + "\n\n" +
-            achievement.description + "\n\n" +
-            "I'm growing in faith and living with purpose " +
-            "with Kingdom Life! 👑";
+    try {
 
-    Intent shareIntent =
-            new Intent(Intent.ACTION_SEND);
+        // Create a separate card for sharing.
+        LinearLayout shareCard = new LinearLayout(this);
+        shareCard.setOrientation(LinearLayout.VERTICAL);
+        shareCard.setGravity(Gravity.CENTER);
+        shareCard.setPadding(
+                dp(24), dp(28), dp(24), dp(28)
+        );
 
-    shareIntent.setType("text/plain");
+        GradientDrawable cardBackground =
+                new GradientDrawable();
 
-    shareIntent.putExtra(
-            Intent.EXTRA_SUBJECT,
-            "Kingdom Life Achievement"
-    );
+        cardBackground.setColor(PURPLE);
+        cardBackground.setCornerRadius(dp(28));
+        cardBackground.setStroke(dp(3), GOLD);
 
-    shareIntent.putExtra(
-            Intent.EXTRA_TEXT,
-            shareText
-    );
+        shareCard.setBackground(cardBackground);
 
-    startActivity(
-            Intent.createChooser(
-                    shareIntent,
-                    "Share Achievement"
-            )
+        // Card heading
+        TextView heading = new TextView(this);
+        heading.setText("🏆 ACHIEVEMENT UNLOCKED");
+        heading.setTextSize(20);
+        heading.setTypeface(
+                Typeface.DEFAULT,
+                Typeface.BOLD
+        );
+        heading.setTextColor(BRIGHT_GOLD);
+        heading.setGravity(Gravity.CENTER);
+
+        shareCard.addView(
+                heading,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+        );
+
+        addShareSpace(shareCard, 20);
+
+        // Actual achievement badge
+        ImageView badge = new ImageView(this);
+        badge.setImageResource(achievement.badgeResource);
+        badge.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
+        shareCard.addView(
+                badge,
+                new LinearLayout.LayoutParams(
+                        dp(135),
+                        dp(135)
+                )
+        );
+
+        addShareSpace(shareCard, 16);
+
+        // Achievement name
+        TextView name = new TextView(this);
+        name.setText(achievement.name);
+        name.setTextSize(23);
+        name.setTypeface(
+                Typeface.DEFAULT,
+                Typeface.BOLD
+        );
+        name.setTextColor(BRIGHT_GOLD);
+        name.setGravity(Gravity.CENTER);
+
+        shareCard.addView(
+                name,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+        );
+
+        addShareSpace(shareCard, 12);
+
+        // Achievement description
+        TextView description = new TextView(this);
+        description.setText(achievement.description);
+        description.setTextSize(16);
+        description.setTextColor(Color.WHITE);
+        description.setGravity(Gravity.CENTER);
+        description.setPadding(
+                dp(8), 0, dp(8), dp(8)
+        );
+
+        shareCard.addView(
+                description,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+        );
+
+        addShareSpace(shareCard, 22);
+
+        // Celebration section replaces the progress bar.
+        LinearLayout celebration =
+                new LinearLayout(this);
+
+        celebration.setOrientation(
+                LinearLayout.VERTICAL
+        );
+
+        celebration.setGravity(Gravity.CENTER);
+        celebration.setPadding(
+                dp(12), dp(18), dp(12), dp(18)
+        );
+
+        GradientDrawable celebrationBackground =
+                new GradientDrawable();
+
+        celebrationBackground.setColor(BRIGHT_GOLD);
+        celebrationBackground.setCornerRadius(dp(20));
+
+        celebration.setBackground(
+                celebrationBackground
+        );
+
+        TextView congratulations = new TextView(this);
+        congratulations.setText(
+                "🎉 Congratulations!"
+        );
+        congratulations.setTextSize(20);
+        congratulations.setTypeface(
+                Typeface.DEFAULT,
+                Typeface.BOLD
+        );
+        congratulations.setTextColor(PURPLE);
+        congratulations.setGravity(Gravity.CENTER);
+
+        celebration.addView(congratulations);
+
+        TextView complete = new TextView(this);
+        complete.setText("Achievement Complete");
+        complete.setTextSize(17);
+        complete.setTypeface(
+                Typeface.DEFAULT,
+                Typeface.BOLD
+        );
+        complete.setTextColor(PURPLE);
+        complete.setGravity(Gravity.CENTER);
+
+        celebration.addView(complete);
+
+        TextView wellDone = new TextView(this);
+        wellDone.setText("Well done 👏");
+        wellDone.setTextSize(16);
+        wellDone.setTextColor(PURPLE);
+        wellDone.setGravity(Gravity.CENTER);
+
+        celebration.addView(wellDone);
+
+        shareCard.addView(
+                celebration,
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+        );
+
+        // Measure and draw the separate card as an image.
+        int imageWidth = dp(360);
+
+        shareCard.measure(
+                View.MeasureSpec.makeMeasureSpec(
+                        imageWidth,
+                        View.MeasureSpec.EXACTLY
+                ),
+                View.MeasureSpec.makeMeasureSpec(
+                        0,
+                        View.MeasureSpec.UNSPECIFIED
+                )
+        );
+
+        shareCard.layout(
+                0,
+                0,
+                shareCard.getMeasuredWidth(),
+                shareCard.getMeasuredHeight()
+        );
+
+        Bitmap bitmap = Bitmap.createBitmap(
+                shareCard.getMeasuredWidth(),
+                shareCard.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888
+        );
+
+        Canvas canvas = new Canvas(bitmap);
+        shareCard.draw(canvas);
+
+        // Save image in the app's private cache.
+        File directory = new File(
+                getCacheDir(),
+                "shared_achievements"
+        );
+
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        String safeKey = achievement.key.replaceAll(
+                "[^a-zA-Z0-9_-]",
+                "_"
+        );
+
+        File imageFile = new File(
+                directory,
+                "achievement_" + safeKey + ".png"
+        );
+
+        try (FileOutputStream output =
+                     new FileOutputStream(imageFile)) {
+
+            bitmap.compress(
+                    Bitmap.CompressFormat.PNG,
+                    100,
+                    output
+            );
+
+            output.flush();
+        }
+
+        bitmap.recycle();
+
+        // Secure image sharing through FileProvider.
+        Uri imageUri = FileProvider.getUriForFile(
+                this,
+                getPackageName() + ".fileprovider",
+                imageFile
+        );
+
+        String shareText =
+                "🏆 Achievement Unlocked! 🎉\n\n" +
+                "I'm growing in faith and living with purpose " +
+                "with Kingdom Life! 👑";
+
+        Intent shareIntent =
+                new Intent(Intent.ACTION_SEND);
+
+        shareIntent.setType("image/png");
+
+        shareIntent.putExtra(
+                Intent.EXTRA_STREAM,
+                imageUri
+        );
+
+        shareIntent.putExtra(
+                Intent.EXTRA_TEXT,
+                shareText
+        );
+
+        shareIntent.putExtra(
+                Intent.EXTRA_SUBJECT,
+                "Achievement Unlocked!"
+        );
+
+        shareIntent.setClipData(
+                android.content.ClipData.newUri(
+                        getContentResolver(),
+                        "Kingdom Life Achievement",
+                        imageUri
+                )
+        );
+
+        shareIntent.addFlags(
+                Intent.FLAG_GRANT_READ_URI_PERMISSION
+        );
+
+        startActivity(
+                Intent.createChooser(
+                        shareIntent,
+                        "Share Achievement"
+                )
+        );
+
+    } catch (Exception e) {
+
+        Toast.makeText(
+                this,
+                "Unable to share achievement. Please try again.",
+                Toast.LENGTH_LONG
+        ).show();
+
+        e.printStackTrace();
+    }
+}
+
+// Convert dp values into screen pixels.
+private int dp(float value) {
+    return (int) (
+            value * getResources()
+                    .getDisplayMetrics().density
     );
 }
-    
 
+// Add spacing to the share-only card.
+private void addShareSpace(
+        LinearLayout layout,
+        int height
+) {
+
+    View space = new View(this);
+
+    layout.addView(
+            space,
+            new LinearLayout.LayoutParams(
+                    1,
+                    dp(height)
+            )
+    );
+            }
+    
+    
     private void animateAchievementUnlock(
             View card,
             View lockView,
