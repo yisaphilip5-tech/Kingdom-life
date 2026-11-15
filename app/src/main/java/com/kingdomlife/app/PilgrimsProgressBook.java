@@ -42,8 +42,10 @@ private static final int PURPLE = Color.rgb(30, 24, 55);
 private static final int GOLD = Color.rgb(184, 134, 11);
 
 public static void open(Activity a, LinearLayout container) {
+
     activity = a;
     content = container;
+
     chapters = new JSONArray();
     chapterIndex = 0;
     pageIndex = 0;
@@ -52,29 +54,30 @@ public static void open(Activity a, LinearLayout container) {
 
     content.removeAllViews();
     content.setOrientation(LinearLayout.VERTICAL);
-    // Top-left back arrow
-android.widget.ImageButton backButton =
-new android.widget.ImageButton(activity);
 
-backButton.setImageResource(
-        android.R.drawable.ic_media_previous
-);
-backButton.setScaleX(1.3f);
-backButton.setScaleY(1.3f);
-backButton.setContentDescription("Back to Spiritual Books");
-backButton.setBackgroundColor(Color.TRANSPARENT);
-backButton.setScaleType(
-        android.widget.ImageView.ScaleType.CENTER_INSIDE
-);
+    // Back button
+    android.widget.ImageButton backButton =
+            new android.widget.ImageButton(activity);
 
-backButton.setOnClickListener(v -> returnToBooks());
+    backButton.setImageResource(
+            android.R.drawable.ic_media_previous
+    );
+    backButton.setScaleX(1.3f);
+    backButton.setScaleY(1.3f);
+    backButton.setContentDescription("Back to Spiritual Books");
+    backButton.setBackgroundColor(Color.TRANSPARENT);
+    backButton.setScaleType(
+            android.widget.ImageView.ScaleType.CENTER_INSIDE
+    );
 
-LinearLayout.LayoutParams backParams =
-        new LinearLayout.LayoutParams(100, 70);
-backParams.gravity = Gravity.LEFT;
+    backButton.setOnClickListener(v -> returnToBooks());
 
-content.addView(backButton, backParams);
+    LinearLayout.LayoutParams backParams =
+            new LinearLayout.LayoutParams(100, 70);
+    backParams.gravity = Gravity.LEFT;
+    content.addView(backButton, backParams);
 
+    // Book title
     TextView title = new TextView(activity);
     title.setText("The Pilgrim's Progress");
     title.setTextSize(24);
@@ -84,8 +87,39 @@ content.addView(backButton, backParams);
     title.setPadding(8, 12, 8, 12);
     content.addView(title);
 
+    // Simple loading message
+    LinearLayout loadingPanel = new LinearLayout(activity);
+    loadingPanel.setOrientation(LinearLayout.VERTICAL);
+    loadingPanel.setGravity(Gravity.CENTER);
+
+    TextView loadingText = new TextView(activity);
+    loadingText.setText("Loading book...");
+    loadingText.setTextSize(19);
+    loadingText.setTypeface(null, Typeface.BOLD);
+    loadingText.setTextColor(GOLD);
+    loadingText.setGravity(Gravity.CENTER);
+
+    loadingPanel.addView(
+            loadingText,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+    );
+
+    content.addView(
+            loadingPanel,
+            new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    0,
+                    1
+            )
+    );
+
+    // Load the book HTML
     bookView = new WebView(activity);
     bookView.setBackgroundColor(Color.WHITE);
+    bookView.setVisibility(View.GONE);
 
     WebSettings settings = bookView.getSettings();
     settings.setJavaScriptEnabled(true);
@@ -119,6 +153,7 @@ content.addView(backButton, backParams);
             "file:///android_asset/PilgrimsProgress.html"
     );
 }
+    
 public static void continueReading(Activity a, LinearLayout container) {
 pendingBookmarkChapter = -1;
 pendingBookmarkPage = -1;
