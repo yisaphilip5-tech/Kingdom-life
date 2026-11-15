@@ -532,6 +532,170 @@ private static void extractChapters() {
     });
 }
     
+private static void loadReaderHtml() {
+    try {
+        android.content.SharedPreferences appearancePrefs =
+                activity.getSharedPreferences(
+                        "TextAppearancePrefs",
+                        Activity.MODE_PRIVATE
+                );
+
+        int readerTextSize =
+                appearancePrefs.getInt("textSize", 18);
+
+        String readerTextMode =
+                appearancePrefs.getString("textMode", "Light");
+
+        String readerTextColor =
+                readerTextMode.equals("Dark")
+                        ? "#222222" : "#444444";
+
+        String chapterJson = chapters.toString();
+
+        String html =
+                "<!DOCTYPE html><html><head>" +
+                "<meta name='viewport' content='width=device-width, initial-scale=1'>" +
+                "<style>" +
+                "*{box-sizing:border-box;}" +
+                "html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff;}" +
+                "#viewport{width:100%;height:100%;min-height:100vh;padding:14px;overflow:hidden;}" +
+                "#page{width:100%;height:100%;overflow:hidden;" +
+                "font-family:Georgia,serif;font-size:" + readerTextSize +
+                "px;line-height:1.5;color:" + readerTextColor + ";}" +
+                "#page h1,#page h2,#page h3,#page h4{margin-top:0;}" +
+                "#page img{max-width:100%;height:auto;}" +
+                "#page p{margin:0 0 12px 0;}" +
+                "#measure{position:absolute;left:-10000px;top:0;visibility:hidden;" +
+                "width:calc(100vw - 28px);font-family:Georgia,serif;" +
+                "font-size:" + readerTextSize + "px;line-height:1.5;}" +
+                "</style></head><body>" +
+                "<div id='viewport'><div id='page'></div></div>" +
+                "<div id='measure'></div>" +
+                "<script>" +
+                "var allChapters=" + chapterJson + ";" +
+                "var currentChapter=" + chapterIndex + ";" +
+                "var currentPage=" + pageIndex + ";" +
+                "var pages=[];" +
+
+                "function makePages(){" +
+                "var c=allChapters[currentChapter];" +
+                "var source=document.createElement('div');" +
+                "source.innerHTML='<h2>'+c.title+'</h2>'+c.html;" +
+                "var measure=document.getElementById('measure');" +
+                "var viewport=document.getElementById('viewport');" +
+                "var available=viewport.clientHeight-28;" +
+                "measure.style.width=(viewport.clientWidth-28)+'px';" +
+                "measure.style.height=available+'px';" +
+                "measure.style.overflow='hidden';" +
+                "measure.style.padding='0';" +
+                "measure.style.visibility='hidden';" +
+                "measure.style.position='absolute';" +
+                "measure.innerHTML='';" +
+                "pages=[];" +
+                "var currentHtml='';" +
+
+                "function fits(html){" +
+                "measure.innerHTML=html;" +
+                "return measure.scrollHeight<=measure.clientHeight+1;" +
+                "}" +
+
+                "function savePage(){" +
+                "if(currentHtml.trim()!=='')pages.push(currentHtml);" +
+                "currentHtml='';" +
+                "}" +
+
+                "var blocks=Array.from(source.childNodes);" +
+                "blocks.forEach(function(node){" +
+                "if(node.nodeType===3&&!node.textContent.trim())return;" +
+                "var html=node.nodeType===3?" +
+                "'<p>'+node.textContent+'</p>':node.outerHTML;" +
+                "var candidate=currentHtml+html;" +
+
+                "if(fits(candidate)){" +
+                "currentHtml=candidate;" +
+                "return;" +
+                "}" +
+
+                "if(currentHtml!=='')savePage();" +
+
+                "if(fits(html)){" +
+                "currentHtml=html;" +
+                "return;" +
+                "}" +
+
+                "var text=node.textContent||'';" +
+                "var words=text.trim().split(/\\s+/);" +
+                "var chunk='';" +
+
+                "words.forEach(function(word){" +
+                "var next=chunk?chunk+' '+word:word;" +
+                "var paragraph='<p>'+next+'</p>';" +
+
+                "if(!fits(currentHtml+paragraph)&&chunk!==''){" +
+                "currentHtml+='<p>'+chunk+'</p>';" +
+                "savePage();" +
+                "chunk=word;" +
+                "}else{" +
+                "chunk=next;" +
+                "}" +
+                "});" +
+
+                "if(chunk!==''){" +
+                "var paragraph='<p>'+chunk+'</p>';" +
+                "if(!fits(currentHtml+paragraph)&&currentHtml!=='')savePage();" +
+                "currentHtml+=paragraph;" +
+                "}" +
+                "});" +
+
+                "if(currentHtml.trim()!=='')pages.push(currentHtml);" +
+                "if(pages.length===0)pages.push(source.innerHTML);" +
+                "currentPage=Math.max(0,Math.min(currentPage,pages.length-1));" +
+                "showPage();" +
+                "AndroidBook.pageCount(pages.length);" +
+                "}" +
+
+                "function showPage(){" +
+                "var page=document.getElementById('page');" +
+                "page.innerHTML=pages[currentPage]||'';" +
+                "AndroidBook.pageChanged(currentPage);" +
+                "}" +
+
+                "function goPage(p){" +
+                "var target=parseInt(p,10);" +
+                "if(isNaN(target))return;" +
+                "currentPage=Math.max(0,Math.min(target,pages.length-1));" +
+                "showPage();" +
+                "}" +
+
+                "window.onload=function(){setTimeout(makePages,100);};" +
+                "window.onresize=function(){" +
+                "setTimeout(function(){" +
+                "var oldPage=currentPage;" +
+                "makePages();" +
+                "currentPage=Math.max(0,Math.min(oldPage,pages.length-1));" +
+                "showPage();" +
+                "},150);" +
+                "};" +
+                "</script></body></html>";
+
+        bookView.loadDataWithBaseURL(
+                "file:///android_asset/",
+                html,
+                "text/html",
+                "UTF-8",
+                null
+        );
+
+    } catch (Exception e) {
+        Toast.makeText(
+                activity,
+                "Could not open this chapter.",
+                Toast.LENGTH_LONG
+        ).show();
+    }
+}
+    
+    
 private static void previousPage() {
     if (pageIndex > 0) {
         pageIndex--;
