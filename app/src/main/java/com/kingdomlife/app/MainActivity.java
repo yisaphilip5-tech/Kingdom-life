@@ -1710,10 +1710,10 @@ prefs.edit()
             % dailyThoughts.length
     );
 
-    showDailyContent(
-            "💭 Food for Thought",
-            dailyThoughts[thoughtIndex]
-    );
+    showMessage(
+        "💭 Food for Thought",
+        dailyThoughts[thoughtIndex]
+);
     }
     
   void showPrayer() {
@@ -1810,9 +1810,9 @@ prefs.edit()
     }
 
     showMessage(
-            specialTitle,
-            specialPrayer
-    );
+        specialTitle,
+        specialPrayer
+);
   }
 
     void showMemoryVerse() {
