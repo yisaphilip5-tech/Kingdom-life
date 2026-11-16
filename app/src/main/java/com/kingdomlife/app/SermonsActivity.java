@@ -419,24 +419,12 @@ private boolean isWeekReleased(
         }
 
         addCard(
-                "📚 Additional Fifth-Week Teachings",
-                "Four additional teachings will complete the annual "
-                        + "52-week sermon programme.",
+                "📚 Additional Teachings",
+                "Additional teachings will complete the annual "
+                        + "1 year sermon programme.",
                 v -> showAdditionalTeachings()
         );
     
-    addCard(
-        "🎧 Audio Sermons Library",
-        "Explore Kingdom Life, online and offline sermons.",
-        v -> {
-            Intent intent = new Intent(
-                    SermonsActivity.this,
-                    AudioSermonsActivity.class
-            );
-
-            startActivity(intent);
-        }
-);
     }
 
     private void showMonth(int monthIndex) {
