@@ -198,6 +198,21 @@ public static String getAudioUrl(
         if (bookIndex == -1) {
             return null;
         }
+        // WEB Updated audio: Mark through Romans
+if (bookIndex >= 40 && bookIndex <= 44) {
+
+    int webuBookNumber = 71 + (bookIndex - 40);
+
+    String fileName = String.format(
+            Locale.US,
+            "WEB-%03d-%s_%02d.mp3",
+            webuBookNumber,
+            book.name,
+            chapter
+    );
+
+    return "https://ebible.org/engwebu/mp3/" + fileName;
+}
 
         int trackNumber = previousChapters + chapter;
         int webTrackNumber = trackNumber;
