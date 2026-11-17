@@ -209,71 +209,73 @@ public static String getAudioUrl(
                 + "_"
                 + audioBookName.replace(" ", "_");
 
+
 String fileName;
 
-// Genesis uses a special filename structure.
 if (book.name.equals("Genesis")) {
 
     fileName = "01_"
-            + String.format(
-                    Locale.US,
-                    "%02d",
-                    chapter
-            )
+            + String.format(Locale.US, "%02d", chapter)
             + "_Genesis_Chapter_"
             + numberToWords(chapter)
             + ".mp3";
-}
 
-// Psalms uses its own filename structure.
+}
 else if (book.name.equals("Psalms")) {
 
-    fileName = String.format(
-            Locale.US,
-            "%04d",
-            trackNumber
-    )
-    + " Psalms-"
-    + numberToWords(chapter)
-    + ".mp3";
-}
+    fileName = String.format(Locale.US, "%04d", trackNumber)
+            + " Psalms-"
+            + numberToWords(chapter)
+            + ".mp3";
 
-// Other Old Testament books.
+}
+else if (bookIndex == 8) {
+
+    // 1 Samuel
+    fileName = "09_"
+            + String.format(Locale.US, "%02d", chapter + 36)
+            + "_First_Samuel_Chapter_"
+            + numberToWords(chapter).replace(" ", "_")
+            + ".mp3";
+
+}
+else if (bookIndex >= 9 && bookIndex <= 12) {
+
+    // 2 Samuel through 1 Chronicles
+    fileName = "01 "
+            + String.format(Locale.US, "%04d", trackNumber)
+            + " "
+            + audioBookName
+            + "-Chapter "
+            + numberToWords(chapter)
+            + ".mp3";
+
+}
 else if (bookIndex < 39) {
 
-    fileName = String.format(
-            Locale.US,
-            "%02d",
-            bookIndex + 1
-    )
-    + "_"
-    + String.format(
-            Locale.US,
-            "%02d",
-            chapter
-    )
-    + "_"
-    + audioBookName.replace(" ", "_")
-    + "_Chapter_"
-    + numberToWords(chapter).replace(" ", "_")
-    + ".mp3";
-}
+    // Earlier Old Testament books
+    fileName = String.format(Locale.US, "%02d", bookIndex + 1)
+            + "_"
+            + String.format(Locale.US, "%02d", chapter)
+            + "_"
+            + audioBookName.replace(" ", "_")
+            + "_Chapter_"
+            + numberToWords(chapter).replace(" ", "_")
+            + ".mp3";
 
-// New Testament books.
+}
 else {
 
+    // New Testament
     fileName = "01 "
-            + String.format(
-                    Locale.US,
-                    "%04d",
-                    trackNumber
-            )
+            + String.format(Locale.US, "%04d", trackNumber)
             + " "
             + audioBookName
             + "-Chapter "
             + numberToWords(chapter)
             + ".mp3";
 }
+        
         
 
         return WEB_BASE_URL
