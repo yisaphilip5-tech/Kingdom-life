@@ -200,6 +200,11 @@ public static String getAudioUrl(
         }
 
         int trackNumber = previousChapters + chapter;
+        int webTrackNumber = trackNumber;
+
+if ((bookIndex == 22 && chapter >= 17) || bookIndex > 22) {
+    webTrackNumber--;
+}
 
         String audioBookName =
                 getWebBookTitle(book.name);
@@ -299,7 +304,7 @@ else if (bookIndex == 20 || bookIndex == 21) {
 else if (bookIndex >= 22 && bookIndex <= 28) {
     // Isaiah and Jeremiah
     fileName = "01 "
-            + String.format(Locale.US, "%04d", trackNumber)
+            + String.format(Locale.US, "%04d", webtrackNumber)
             + " "
             + audioBookName
             + "-Chapter "
@@ -312,7 +317,7 @@ else if (bookIndex >= 29 && bookIndex <= 39) {
 
     // Amos, Obadiah, Jonah, Micah and Nahum
     fileName = "01 "
-            + String.format(Locale.US, "%04d", trackNumber)
+            + String.format(Locale.US, "%04d", webtrackNumber)
             + " "
             + audioBookName
             + "-Chapter "
