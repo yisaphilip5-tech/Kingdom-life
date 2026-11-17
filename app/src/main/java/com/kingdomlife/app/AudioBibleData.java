@@ -240,19 +240,42 @@ public static String getAudioUrl(
 
         // Other books.
         else {
+// Other Old Testament books (excluding Psalms).
+else if (bookIndex < 39) {
 
-            fileName = "01 "
-                    + String.format(
-                            Locale.US,
-                            "%04d",
-                            trackNumber
-                    )
-                    + " "
-                    + audioBookName
-                    + "-Chapter "
-                    + numberToWords(chapter)
-                    + ".mp3";
-        }
+    fileName = String.format(
+            Locale.US,
+            "%02d",
+            bookIndex + 1
+    )
+    + "_"
+    + String.format(
+            Locale.US,
+            "%02d",
+            chapter
+    )
+    + "_"
+    + audioBookName.replace(" ", "_")
+    + "_Chapter_"
+    + numberToWords(chapter).replace(" ", "_")
+    + ".mp3";
+}
+
+// New Testament books.
+else {
+
+    fileName = "01 "
+            + String.format(
+                    Locale.US,
+                    "%04d",
+                    trackNumber
+            )
+            + " "
+            + audioBookName
+            + "-Chapter "
+            + numberToWords(chapter)
+            + ".mp3";
+}
 
         return WEB_BASE_URL
                 + folderName
