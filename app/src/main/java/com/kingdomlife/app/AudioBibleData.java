@@ -304,7 +304,7 @@ else if (bookIndex == 20 || bookIndex == 21) {
 else if (bookIndex >= 22 && bookIndex <= 28) {
     // Isaiah and Jeremiah
     fileName = "01 "
-            + String.format(Locale.US, "%04d", webtrackNumber)
+            + String.format(Locale.US, "%04d", webTrackNumber)
             + " "
             + audioBookName
             + "-Chapter "
@@ -317,7 +317,7 @@ else if (bookIndex >= 29 && bookIndex <= 39) {
 
     // Amos, Obadiah, Jonah, Micah and Nahum
     fileName = "01 "
-            + String.format(Locale.US, "%04d", webtrackNumber)
+            + String.format(Locale.US, "%04d", webTrackNumber)
             + " "
             + audioBookName
             + "-Chapter "
