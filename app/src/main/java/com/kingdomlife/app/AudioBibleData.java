@@ -249,6 +249,104 @@ if (bookIndex >= 45 && bookIndex <= 49) {
     return "https://ebible.org/engwebu/mp3/" + fileName;
 }
         
+// WEB Updated audio: Colossians through 2 Timothy
+if (bookIndex >= 50 && bookIndex <= 54) {
+
+    int webuBookNumber = 81 + (bookIndex - 50);
+    String audioBookCode = "";
+
+    switch (bookIndex) {
+        case 50:
+            audioBookCode = "COL";
+            break;
+        case 51:
+            audioBookCode = "1TH";
+            break;
+        case 52:
+            audioBookCode = "2TH";
+            break;
+        case 53:
+            audioBookCode = "1TI";
+            break;
+        case 54:
+            audioBookCode = "2TI";
+            break;
+    }
+
+    String fileName = String.format(
+            Locale.US,
+            "WEB-%03d-%s_%02d.mp3",
+            webuBookNumber,
+            audioBookCode,
+            chapter
+    );
+
+    return "https://ebible.org/engwebu/mp3/" + fileName;
+}
+        
+// WEB Updated audio: Titus through 1 Peter
+if (bookIndex >= 55 && bookIndex <= 59) {
+
+    int webuBookNumber = 86 + (bookIndex - 55);
+    String audioBookCode = "";
+
+    switch (bookIndex) {
+        case 55: audioBookCode = "TIT"; break;
+        case 56: audioBookCode = "PHM"; break;
+        case 57: audioBookCode = "HEB"; break;
+        case 58: audioBookCode = "JAS"; break;
+        case 59: audioBookCode = "1PE"; break;
+    }
+
+    String fileName = String.format(
+            Locale.US,
+            "WEB-%03d-%s_%02d.mp3",
+            webuBookNumber,
+            audioBookCode,
+            chapter
+    );
+
+    return "https://ebible.org/engwebu/mp3/" + fileName;
+}
+        
+ // WEB Updated audio: 2 Peter through Jude
+if (bookIndex >= 60 && bookIndex <= 64) {
+
+    int webuBookNumber = 91 + (bookIndex - 60);
+    String audioBookCode = "";
+
+    switch (bookIndex) {
+        case 60: audioBookCode = "2PE"; break;
+        case 61: audioBookCode = "1JN"; break;
+        case 62: audioBookCode = "2JN"; break;
+        case 63: audioBookCode = "3JN"; break;
+        case 64: audioBookCode = "JUD"; break;
+    }
+
+    String fileName = String.format(
+            Locale.US,
+            "WEB-%03d-%s_%02d.mp3",
+            webuBookNumber,
+            audioBookCode,
+            chapter
+    );
+
+    return "https://ebible.org/engwebu/mp3/" + fileName;
+}
+        
+// WEB Updated audio: Revelation
+if (bookIndex == 65) {
+
+    String fileName = String.format(
+            Locale.US,
+            "WEB-096-REV_%02d.mp3",
+            chapter
+    );
+
+    return "https://ebible.org/engwebu/mp3/" + fileName;
+}
+        
+        
 
         int trackNumber = previousChapters + chapter;
         int webTrackNumber = trackNumber;
