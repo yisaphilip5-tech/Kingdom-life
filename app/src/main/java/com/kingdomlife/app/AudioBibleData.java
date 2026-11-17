@@ -213,6 +213,42 @@ if (bookIndex >= 40 && bookIndex <= 44) {
 
     return "https://ebible.org/engwebu/mp3/" + fileName;
 }
+        
+// WEB Updated audio: 1 Corinthians through Philippians
+if (bookIndex >= 45 && bookIndex <= 49) {
+
+    int webuBookNumber = 76 + (bookIndex - 45);
+    String audioBookCode = "";
+
+    switch (bookIndex) {
+        case 45:
+            audioBookCode = "1_Cor";
+            break;
+        case 46:
+            audioBookCode = "2_Cor";
+            break;
+        case 47:
+            audioBookCode = "Gal";
+            break;
+        case 48:
+            audioBookCode = "Eph";
+            break;
+        case 49:
+            audioBookCode = "PHN";
+            break;
+    }
+
+    String fileName = String.format(
+            Locale.US,
+            "WEB-%03d-%s_%02d.mp3",
+            webuBookNumber,
+            audioBookCode,
+            chapter
+    );
+
+    return "https://ebible.org/engwebu/mp3/" + fileName;
+}
+        
 
         int trackNumber = previousChapters + chapter;
         int webTrackNumber = trackNumber;
