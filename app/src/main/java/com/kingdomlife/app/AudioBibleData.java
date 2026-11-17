@@ -209,38 +209,36 @@ public static String getAudioUrl(
                 + "_"
                 + audioBookName.replace(" ", "_");
 
-        String fileName;
+String fileName;
 
-        // Genesis uses a special filename structure.
-        if (book.name.equals("Genesis")) {
+// Genesis uses a special filename structure.
+if (book.name.equals("Genesis")) {
 
-            fileName = "01_"
-                    + String.format(
-                            Locale.US,
-                            "%02d",
-                            chapter
-                    )
-                    + "_Genesis_Chapter_"
-                    + numberToWords(chapter)
-                    + ".mp3";
-        }
-
-        // Psalms uses its own filename structure.
-        else if (book.name.equals("Psalms")) {
-
-            fileName = String.format(
+    fileName = "01_"
+            + String.format(
                     Locale.US,
-                    "%04d",
-                    trackNumber
+                    "%02d",
+                    chapter
             )
-            + " Psalms-"
+            + "_Genesis_Chapter_"
             + numberToWords(chapter)
             + ".mp3";
-        }
+}
 
-        // Other books.
-        else {
-// Other Old Testament books (excluding Psalms).
+// Psalms uses its own filename structure.
+else if (book.name.equals("Psalms")) {
+
+    fileName = String.format(
+            Locale.US,
+            "%04d",
+            trackNumber
+    )
+    + " Psalms-"
+    + numberToWords(chapter)
+    + ".mp3";
+}
+
+// Other Old Testament books.
 else if (bookIndex < 39) {
 
     fileName = String.format(
@@ -276,6 +274,7 @@ else {
             + numberToWords(chapter)
             + ".mp3";
 }
+        
 
         return WEB_BASE_URL
                 + folderName
